@@ -1,8 +1,4 @@
-<html>
-<body>
-<xmp theme="united" style="display:none;">
-
-# Arkadia Skrypty, wersja 2.7a
+## Arkadia Skrypty
 
 ---
 
@@ -11,7 +7,7 @@ Wersja, której używasz: sprawdź nagłówek komendy `/skrypty`.
 
 ---
 
-## INSTALACJA
+### INSTALACJA
 
 #### UWAGA
 W celu poprawnego działania skryptów, w ustawieniach trzeba włączyć obsługę GMCP! Bez tego skrypty nie będą działać poprawnie.
@@ -28,10 +24,7 @@ Aktualizacja skryptów już po instalacji to: `/aktualizuj_skrypty`.
 
 Od teraz, w `Triggers`, `Aliases`, `Scripts` oraz `Keys` (z górnego paska) mamy katalog `skrypty_master`. Tego folderu **nie wolno ruszać**. Z każdą aktualizacją, ten katalog jest usuwany i jest instalowany nowy, dlatego też jeśli chce się mieć jakieś własne triggery, aliasy, skrypty i key bindy to **koniecznie** trzeba to robić poza katalogiem `skrypty_master`. Na przykład na poniższym screenshocie widać, że mam dwa aliasy. Są one równoległe do skryptów, a nie w folderze _skrypty_master_.
 
-<div style="text-align:center">
-<img src="screenshot/wlasne_aliasy.png" width="80%" align="center">
-</div>
-<br>
+![casadadasd](http://kamerdyner.net/~george/img/wlasne_aliasy.png)
 
 Mając zainstalowane skrypty, można przystąpić do dodania swoich ustawień; ten punkt jest opcjonalny jeśli chcemy mieć możliwość modyfikowania ustawień typu:
 
@@ -121,12 +114,9 @@ użyc trzeba nazwy configu, który jest w waszym katalogu profilu.
 W `0` oczywiście daje się tekst, który widzi się po podaniu imienia
 przy logowaniu.
 
-Tak to wygląda dla postaci `Adremen`.
+Tak to wygląda dla postaci `Adremen`.
 
-<div style="text-align:center">
-<img src="screenshot/trigger_config.png" width="80%" align="center">
-</div>
-<br>
+![alt tag](http://kamerdyner.net/~george/img/trigger_config.png)
 
 ##### UWAGA: 
 Czasami jest tak, że tekst wyglżda lekko _rozjechany_. To znaczy, 
@@ -368,15 +358,3 @@ jedna postać pasujaca. Można zrobić `/przeszukaj [imie]` i `/idzdo [id]`, gdz
 - wraz ze startem Mudleta, ładowane są triggery pokazujące imiona wszystkich graczy zgildiowanych (za wyjątkiem GP). NPC + osoby GP pojawią się gdy zostaną zobaczone w grze, wtedy jest ładowany ich trigger z bazy danych.
 
 
----
-
-## KONTAKT
-
-1. Na IRCNet: Kanał \#arkadia, nick @dzordzyk
-2. Na forum: [@Adremen](http://arkadia.rpg.pl/forum/memberlist.php?mode=viewprofile&u=1084)
-3. [Temat](http://arkadia.rpg.pl/forum/viewtopic.php?f=15&t=752), w którym można uzyskać pomoc na forum
-
-</xmp>
-</body>
-  <script src="http://strapdownjs.com/v/0.2/strapdown.js"></script>
-</html>

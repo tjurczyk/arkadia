@@ -135,10 +135,10 @@ Pomoc znajduje się w '/ekwipunek'. W skryptach jest wsparcie lampy - liczenie b
 
 ---
 
-## ZIOLA
+## ZIOŁA
 
 Pomoc znajduje się w `/ziola`
-Skrypt potrafi wydrukować wypis co jest w woreczku po `zajrzeniu do niego`. Potrafi też zbudować bazę ziół - rozpozna co jest w którym woreczku i będą działały bindy do brania ziół z odpowiednich woreczków (skrypt będzie 
+Skrypt potrafi wydrukować wypis co jest w woreczku po `zajrzeniu do niego`. Potrafi też zbudować bazeę ziół - rozpozna co jest w którym woreczku i będą działały bindy do brania ziół z odpowiednich woreczków (skrypt będzie 
 więdział w których jest ile którego zioła).
 Jest również komenda do pakowania ziół: 
 
@@ -200,43 +200,43 @@ Są dostępne statystyki parowań, otrzymamych ciosów itp., Statystyki dostępn
 
 ## LICZNIKI
 
-Liczniki zabitych
+**Liczniki zabitych**
 
 `/zabici` - pokazuje zabitych,
-
+<br>
 `/zabici_reset` - resetuje licznik zabitych.
 <br>
 `/zabici2` - globalni zabici od ostatniego resetu licznika,
-
+<br>
 `/zabici2!` - globalni zabici z uwzglednieniem zabitych/dzien,
-
+<br>
 `/zabici2 [data]` - log zabitych z [dnia]. Przykładowo: `/zabici2 2017/1/22`.
-
+<br>
 `/zabici2_reset` - resetuje globalny licznik zabitych.
 <br><br>
-Liczniki postępów
-
+**Liczniki postępów**
+<br>
 `/postepy` - pokazuje postępy (czas, wrogowie itp),
-
+<br>
 `/postepy_reset` - resetuje licznik postępów.
 <br>
 `/postepy2` - globalny licznik postępów od ostatniego resetu,
-
+<br>
 `/postepy2+` - dodaje jeden postep do globalnego licznika,
-
+<br>
 `/postepy2+ [ile]` - dodaje [ile] postepow do globalnego licznika. Przykładowo: `/postepy2+ 4` doda 4 postepy. **Musi to byc liczba mniejsza badz rowna 15!**,
-
+<br>
 `/postepy2- [id]` - usuwa wpis z globalnego licznika o tym _id_. _id_ można znaleźć jako pierwsza kolumna od lewej w `/postepy2`,
-
+<br>
 `/postepy2_reset` - resetuje globalny licznik postepow. 
 <br><br>
-Licznik poziomu (w miejscu, gdzie można medytować)
-
+**Licznik poziomu** (w miejscu, gdzie można medytować)
+<br>
 `/licz_poziom`
 
 ---
 
-## ZBIERANIE Z CIAL
+## ZBIERANIE Z CIAŁ
 
 Pomoc dostępna w `/zbieranie`
 
@@ -248,7 +248,7 @@ Dolny pasek zawiera też element `Collect`, który można klikać i zmieniać op
 
 ---
 
-## STATKI/DYLIZANSE
+## STATKI/DYLIŻANSE
 
 Działają wszystkie statki. Przy wejściu będzie bind będzie brał pieniądze z pojemnika `money`, kupował bilet, wsiadał na statek oraz wkładał monety do pojemnika `money`; przy dopłynięciu zbindowane będzie zejście.
 Dyliżanse w Imperium działają, wozy/powozy w Ishtar nie wszystkie.

@@ -200,12 +200,26 @@ Są dostępne statystyki parowań, otrzymamych ciosów itp., Statystyki dostępn
 
 ## LICZNIKI
 
-Liczniki postępów:
+Liczniki zabitych
+
+`/zabici` - pokazuje zabitych,
+
+`/zabici_reset` - resetuje licznik zabitych.
+<br>
+`/zabici2` - globalni zabici od ostatniego resetu licznika,
+
+`/zabici2!` - globalni zabici z uwzglednieniem zabitych/dzien,
+
+`/zabici2 [data]` - log zabitych z [dnia]. Przykładowo: `/zabici2 2017/1/22`.
+
+`/zabici2_reset` - resetuje globalny licznik zabitych.
+<br><br>
+Liczniki postępów
 
 `/postepy` - pokazuje postępy (czas, wrogowie itp),
 
 `/postepy_reset` - resetuje licznik postępów.
-
+<br>
 `/postepy2` - globalny licznik postępów od ostatniego resetu,
 
 `/postepy2+` - dodaje jeden postep do globalnego licznika,
@@ -215,9 +229,8 @@ Liczniki postępów:
 `/postepy2- [id]` - usuwa wpis z globalnego licznika o tym _id_. _id_ można znaleźć jako pierwsza kolumna od lewej w `/postepy2`,
 
 `/postepy2_reset` - resetuje globalny licznik postepow. 
-
-<br>
-Licznik poziomów
+<br><br>
+Licznik poziomu (w miejscu, gdzie można medytować)
 
 `/licz_poziom`
 

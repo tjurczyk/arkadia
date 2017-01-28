@@ -85,7 +85,7 @@ Z racji różnic Windows, Linux i OS X, profile są w innych miejscach
 i trzeba sobie samemu sprawdzić gdzie dany profil się znajduje.
 
 Aby zatem przygotować plik konfiguracyjny do jakiegoś imienia, wystarczy z paczki skopiować plik `imie.txt` do naszego katalogu profilu i zmienić mu nazwę na przykładowo `adremen.txt`.
-W katalogu profilu możemy mieć oczywiście wiele takich plików (najsensowniej jeden plik na jedną postać).
+W katalogu profilu możemy mieć oczywiście wiele takich plików (najsensowniej jeden plik na jedną postać).
 
 Wpisywanie `/laduj imie` za każdym razem kiedy włącza się Mudleta lub loguje może być dość uciążliwe, dlatego proponuję zrobić prosty trigger, który będzie nam ładowal ustawienia naszej postaci na konkretny tekst, czyli na przykład: "Witaj, Adremenie. Podaj swe haslo".
 

@@ -1,0 +1,442 @@
+function load_my_settings()
+
+---------------------------------------------------------------------------------
+------------     OD TEGO MIEJSCA W DOL MOZNA ZMIENIAC ZAWARTOSC    --------------
+---------------------------------------------------------------------------------
+
+-- Wszystkie linie zaczynajace sie od '--' to komentarze i nie maja zadnego
+-- znaczenia w kontekscie ustawien.
+
+------------------------------------------
+
+-- Tutaj ustaw Twoje imie (miedzy innymi do globalnego licznika postepow i zabitych)
+-- Musi to byc w postaci: scripts.character_name = "Adremen"
+scripts.character_name = nil
+
+------------------------------------------
+
+-- Domyslna opcja czy maja byc numerowani neutralni osobnicy na lokacji
+--
+-- Dozwolone wartosci
+-- true  - beda numerowani wszyscy osobnicy
+-- false - beda numerowani tylko aktualni wrogowie
+--
+-- Komenda do zmiany w trakcie gry: '/numeruj'
+ateam.all_numbering = false
+
+------------------------------------------
+
+-- Domyslna opcja do /z oraz /zz
+--
+-- Dozwolone wartosci:
+-- 1 - tylko atak ('zabij')
+-- 2 - tylko atak + wskazanie ('zabij' + 'wskaz ... jako cel ataku')
+-- 3 - komplet ('zabij', 'wskaz', 'rozkaz wszystkim zaatakowac ...')
+--
+-- Komenda do zmiany w trakcie gry: '/rozkazuj'
+ateam.attack_mode = 3
+
+------------------------------------------
+
+-- Ustawianie ataku do bindow zamiast zwyklego 'zabij'
+-- Przykladowo: 
+--
+-- ateam.attack_command = "chzabij"
+--
+-- bedzie wykonywalo "chzabij" zamiast "zabij" w bindach skryptowych.
+-- 
+-- Jesli pozostawione nieruszone to bedzie zwykle "zabij"
+ateam.attack_command = nil
+
+------------------------------------------
+
+-- Domyslna opcja zbierania
+--
+-- Dozwolone wartosci:
+-- uzyj komendy '/zbieranie' aby zobaczyc wszystkie dozwolone wartosci
+--
+-- Komenda do zmiany w trakcie gry: '/zbieranie [wartosc_ustawienia]'
+scripts.inv.collect.current_mode = 7
+
+------------------------------------------
+
+-- Domyslna opcja do ZIOL (ile to jest 'wiele' w woreczku)
+--
+-- Dozwolone wartosci:
+-- jakakolwiek liczba
+herbs["many_to_int"] = 25
+
+------------------------------------------
+
+-- Domyslna opcja do ZIOL (podczas pakowania, ile zapakowac ziol do woreczka)
+--
+-- Dozwolone wartosci:
+-- jakakolwiek liczba
+herbs["full_bag_amount"] = 44
+
+------------------------------------------
+
+-- Domyslne pojemniki do monet (money), kamieni (stones), jedzenia (food),
+-- i wszystkiego innego (other)
+--
+-- Dozwolone wartosci:
+-- - 1 (to jest "plecak")
+-- - 2 (to jest "torba")
+-- - 3 (to jest "worek")
+-- - 4 (to jest "sakiewka")
+-- - 5 (to jest "mieszek")
+-- - 6 (to jest "sakwa")
+-- - 7 (to jest "wor")
+scripts.inv["money_bag"] = 1
+scripts.inv["stones_bag"] = 1
+scripts.inv["food_bag"] = 1
+scripts.inv["other_bag"] = 1
+
+------------------------------------------
+
+--
+-- Konfiguracja bindow do mowienia jezykowego
+-- Tutaj definiuje sie dany alias do poszczegolnego jezyka,
+-- przykladowo jesli chce miec 'estalijski' pod 'e', a 'bretonski' pod 'b'
+-- to bedzie to wygladalo tak:
+-- misc.lang["aliases"] = {["s"] = "starsza mowa", ["b"] = "bretonski"}
+-- wtedy w grze po zrobieniu 's tekst w starszej mowie' zostanie powiedziane
+-- w starszej mowie, a 'b tekst po bretonsku' zostanie powiedziane po bretonsku.
+-- Wszystkie jezyki mozna zobaczyc w Mudlecie: '/jezyki'
+--
+misc.lang["aliases"] = {}
+
+-- Konfiguracja przyslowkow do bindow
+-- Do kazdego binda (czyli przykladowo 's' oraz 'b' z poprzedniego przykladu)
+-- mozna sobie ustawic przyslowki, przykladowo:
+--
+-- misc.lang["aliases_prefix"] = {["s"] = "spokojnie", ["b"] = "nerwowo"}
+--
+-- wtedy przy uzywaniu 's' tekst bedzie wypowiadany spokojnie w starszej mowie,
+-- a 'b' tekst bedzie wypowiadany nerwowo po bretonsku.
+-- Mozna miec rozne bindy do tych samych jezykow z roznymi przyslowkami.
+misc.lang["aliases_prefix"] = {}
+
+------------------------------------------
+
+-- Konfiguracja pojemnikow na bron do /db[id], /ob[id] itp, pomoc w '/bronie'
+-- 
+-- Przykladowo:
+-- scripts.inv.weapons.case = {"pochwy lyrijskiej", "zlocistej pochwy"}
+-- w tym przypadku wszystko z '1', czyli /ob1, /db1 itp bedzie do 'pochwy lyrijskiej' itd.
+-- Nazwy musza byc w dopelniaczu!
+--
+scripts.inv.weapons.case = {}
+
+-- Ta opcja sluzy do tego, z ktorej pochwy ma brac/wkladac przy naciskaniu
+-- 'bron' na pasku dolnym UI, czyli dla przykladu z powyzej bedzie to dla pochwy lyrijskiej
+scripts.inv.weapons.click_id = 1
+
+-- Jesli chce sie miec pod odpowiednim id tarcze, trzeba tutaj ustawic jej id.
+-- wtedy po ustawieniu np 2, bedzie mozna zrobic '/db2' i wyjmie i zalozy tarcze.
+-- UWAGA: Jesli ustawia sie id tarczy, to wtedy w powyzszym w 'weapons.case' musi
+-- byc ustawione cokolwiek jako to id, czyli na przyklad majac jako 2 bedzie to:
+-- scripts.inv.weapons.case = {"pochwy lyrijskiej", "cos tam", "zlocistej pochwy"}
+-- wtedy 1 i 3 to pochwy, 2 to cokolwiek (nieistotne, bo to id jest do tarczy).
+scripts.inv.weapons.shield_id = false
+
+-- Co robic przy akcji dotyczacej tarczy. Jesli 'mode' jest 1 to bedzie robilo
+-- 'wloz tarcze do <pojemnika_other>', 'wez tarcze z <pojemnika_other>;zaloz ja'.
+-- Jesli ustawi sie 2 to jest to 'gzzarzuc tarcze' oraz 'gzzdejmij' (plecy musza byc wtedy wolne).
+scripts.inv.weapons.shield_mode = 1
+
+-- Konfiguracja zachowania /db oraz /ob. Mozna sobie zdefiniowac ktore tarcze elementy
+-- (1, 2, 3, ktores dwa albo wszystkie) maja byc dobywane/zakladane i opuszczane/chowane
+-- przy /db i /ob.
+-- jesli pozostawi sie tak jak jest (czyli {}) to bedzie 'dobadz wszystkich broni' i 
+-- analogicznie dla opuszczania. Jesli ustawi sie:
+-- scripts.inv.main_weapons_action = {1, 2}
+-- to przy /db i /ob beda wykonywane akcje na pojemniku 1 i 2.
+-- Jest wsparcie dla tarczy (jesli jest ustawiona jako slot powyzej)
+scripts.inv.main_weapons_action = {}
+
+-- Konfiguracja jaka ma byc komenda dobywania.
+-- Domyslnie jest to 'podobadz broni z ...' i  i taka komenda
+-- pozostanie gdy pozostawi sie te opcje nieustawiona. Mozna na przyklad dla straznika zrobic:
+-- scripts.inv.weapon1_action = "powyjmij bron z <pojemnika>;gzdobadz broni"
+-- wtedy zamiast standardowego 'podobadz broni z ...' wykona zdefiniowane akcje.
+-- Trzeba pamietac o <pojemnika>, ktore automatycznie bedzie zastapione odpowiednia
+-- nazwa pojemnika.
+scripts.inv.weapon1_action_on = false
+scripts.inv.weapon2_action_on = false
+scripts.inv.weapon3_action_on = false
+
+-- To samo co powyzej ale dla opuszczania broni.
+-- Jesli nie jest zdefiniowane to jest wykonywane domyslne 'powsun bron ...'
+scripts.inv.weapon1_action_off = false
+scripts.inv.weapon2_action_pff = false
+scripts.inv.weapon3_action_off = false
+
+------------------------------------------
+
+-- Domyslna opcja do BAZY POSTACI czy ma pokazywac imiona/gildie przy nieznajomych
+-- (nie dotyczy wrogow, wrogowie sa zawsze pokazywani)
+--
+-- Dozwolone wartosci:
+-- false - nie bedzie pokazywal
+-- true - bedzie pokazywal
+scripts.people["showing_names"] = true
+
+-- Domyslna opcja do BAZY POSTACI czy ma zapamietywac postacie przy przedstawianiu
+--
+-- Dozwolone wartosci:
+-- false - nie bedzie pokazywal
+-- true - bedzie pokazywal
+scripts.people["updating_names"] = false
+
+-- Wrogowie (postacie i gildie)
+-- Wystarczy dac klucz = wartosc jako gildia i "true", przykladowo:
+-- scripts.people.enemy_guild = {"SC", "MC"}
+-- lub scripts.people.enemy_people = {"Rurek", "Ogorek"}
+
+scripts.people.enemy_guilds = {}
+scripts.people.enemy_people = {}
+
+-- Kolorowanie wszystkich czlonkow gildii w bazie (po imionach i shortach).
+-- Wystarczy dac klucz = wartosc jako gildia i kolor, przykladowo:
+--
+-- scripts.people.colored_guilds = {
+-- ["CKN"] = "green",
+-- }
+--
+-- Sprawdz '/kolory' aby zobaczyc dostepne kolory w Mudlecie.
+scripts.people.colored_guilds = {}
+
+-- Kolorowanie poszczegolnych ludzi z bazy.
+-- Wystarczy dac klucz = wartosc jako osoba i kolor, przykladowo:
+--
+-- scripts.people.colored_guilds = {
+-- ["Adremen"] = "green",
+-- ["piekny dostojny rurek"] = "red",
+-- }
+--
+-- Sprawdz '/kolory' aby zobaczyc dostepne kolory w Mudlecie.
+scripts.people.colored_people = {}
+
+
+------------------------------------------
+
+-- Akcje przed i po wycinaniu. Czasami jest potrzeba, aby schowac jakas bron
+-- gdzies, dobyc sztyletu, i po wycinaniu to samo. 'pre' to przed wycinaniem,
+-- 'post' to po wycinaniu.
+
+-- Dozwolone wartosci:
+-- [lista] komend do wykonania, np: 
+-- misc.cutting_pre = {"powsun bron do uprzezy", "powyjmij bron z pochwy", "dobadz sztyletu"}
+--misc.cutting_pre = {"powsun bron do uprzezy", "powyjmij bron z pochwy", "dobadz sztyletu"}
+--misc.cutting_post = {"powsun bron do pochwy", "powyjmij bron z uprzezy", "dobadz jej"}
+misc.cutting_pre = {}
+misc.cutting_post = {}
+
+------------------------------------------
+
+--
+-- Konfiguracja UI
+--
+
+-- Wysokosc procentowa okna glownego okna kondycji
+-- height to wysokosc procentowa, width to szerokosc procentowa
+scripts.ui.states_window_height = 45
+scripts.ui.states_window_width = 50
+
+-- W ktorym miejscu (% okna) ma sie zaczac dolna belka
+scripts.ui.footer_start = 0
+-- Wysokosc (w pikselsach) dolnej belki
+scripts.ui.footer_height = 70
+-- SZerokosc (w %) dolnej belki
+scripts.ui.footer_width = 100
+
+-- Jaki % dolnej belki ma zajmowac roza wiatrow
+scripts.ui.footer_map_width_p = 14
+-- Jaki % dolnej belki ma zajmowac prawa czesc belki (informacyjna z zaslonami itp)
+scripts.ui.footer_info_width_p = 46
+
+-- Margines szerokosci (w pikselach) rozy wiatrow
+scripts.ui.footer_map_width_margin = 0
+-- Margines wysokosci (w pikselach) rozy wiatrow
+scripts.ui.footer_map_height_margin = 0
+
+-- Ile elementow/jeden wiersz ma byc w srodkowym pasku
+-- Moga byc tam maksymalnie 3 wiersze, wiec przy uzywaniu wszystkich
+-- paskow, 4 lub 5 to dobra wartosc
+scripts.ui.footer_main_items_per_row = 4
+
+-- Wielkosc czcionki na rozy wiatrow (tych symboli i special exitow)
+scripts.ui.footer_map_font_size = 10
+-- Wielkosc czcionki na belce srodkowej i prawej
+scripts.ui.footer_font_size = 11
+-- Wielkosc czcionki w oknie stanow
+scripts.ui.states_font_size = 11
+
+scripts.ui.footer_r = 0
+scripts.ui.footer_g = 0
+scripts.ui.footer_b = 47
+
+-- 
+-- Konfiguracja tego co i jak ma byc na srodkowym dolnym pasku
+--
+-- 'footer_mode' to styl belki.
+-- Dozwolone wartosci:
+-- mode0 - wylaczony
+-- mode1 - pasek z suwakami (bardziej graficznie)
+-- mode2 - pasek z wartosciami tekstowymi (bardziej minimalistyczny niz 1)
+scripts.ui.cfg["footer_mode"] = "mode2"
+
+-- footer_items to elementy, jakie maja tam byc. Kolejnosc taka jak jest
+-- tutaj jest kolejnoscia, jaka bedzie na belce.
+scripts.ui.cfg["footer_items"] = {
+"zmeczenie",
+"mana",
+"pragnienie",
+"upicie",
+--"kac",
+--"kondycja",
+--"postepy",
+--"panika",
+--"glod",
+--"forma",
+--"przeciazenie",
+}
+
+scripts.ui.bind_color = "<LawnGreen>"
+
+--
+-- Kolor podswietlania magicznych broni/zbroi
+--
+scripts.magic_weapons_color = "tomato"
+
+------------------------------------------
+
+-- Konfiguracja gagow
+--
+-- Ponizej jest opcja co ma byc robione:
+-- 
+-- '0' - nic, wyswietlane beda taki tekst jak przychodzi z arkadii
+-- '1' - bedzie usuwana dana linia (nie bedzie w ogole informacji, ze przyszla)
+-- '2' - bedzie gagowana z tagiem, np [bron] _oryginalna_linia_ 
+--       (konfiguracja kolorow ponizej)
+--
+scripts.gag_settings = {
+  ["moje_ciosy"] = 2,
+  ["moje_spece"] = 2,
+  ["innych_ciosy"] = 2,
+  ["innych_ciosy_we_mnie"] = 2,
+  ["innych_spece"] = 2,
+  ["moje_uniki"] = 2,
+  ["innych_uniki"] = 2,
+  ["moje_parowanie"] = 2,
+  ["innych_parowanie"] = 2,
+  ["zaslony_udane"] = 2,
+  ["zaslony_nieudane"] = 2,
+  ["cele"] = 2,
+  ["rozkazy"] = 2,
+  ["bloki"] = 2,
+  ["bron"] = 2,
+  ["npc"] = 2,
+}
+
+-- Ponizej jest opcja kolorow do tagow (czyli tylko kiedy opcja = 2)
+-- Tabela kolorow jest tutaj: http://wiki.mudlet.org/images/c/c3/ShowColors.png
+--
+scripts.gag_colors["moje_ciosy"] = "alice_blue"
+scripts.gag_colors["moje_spece"] = "green_yellow"
+
+scripts.gag_colors["innych_ciosy"] = "LightGrey"
+scripts.gag_colors["innych_ciosy_we_mnie"] = "pink"
+scripts.gag_colors["innych_spece"] = "slate_grey"
+
+scripts.gag_colors["moje_uniki"] = "SteelBlue"
+scripts.gag_colors["innych_uniki"] = "dark_slate_grey"
+
+scripts.gag_colors["moje_parowanie"] = "SteelBlue"
+scripts.gag_colors["innych_parowanie"] = "dark_slate_gray"
+
+scripts.gag_colors["zaslony_udane"] = "deep_sky_blue"
+scripts.gag_colors["zaslony_nieudane"] = "dark_slate_blue"
+
+scripts.gag_colors["bron"] = "gold"
+
+scripts.gag_colors["npc"] = "floral_white"
+
+
+
+
+
+
+---------------------------------------------------------------------------------
+-------------------       PONIZEJ USTAWIENIA MAPPERA       ----------------------
+---------------------------------------------------------------------------------
+
+-- Domyslna opcja czy ma byc uzywane GPS po lokacjach
+--
+-- Dozwolone wartosci
+-- true  - bedzie uzywane
+-- false - nie bedzie uzywane
+amap.using_room_gps = true
+
+-- Domyslna opcja czy maja byc pokazywane notki i bindy
+-- podczas wejscia na lokacje
+--
+-- Dozwolone wartosci
+-- true  - beda pokazywane notki
+-- false - nie beda pokazywane notki (mozna ja wtedy zobaczyc w '/lok')
+--
+-- Komenda do zmiany w trakcie gry: '/pokazuj_notki'
+-- Komenda do zmiany w trakcie gry: '/pokazuj_bindy'
+amap.db.show_notes = true
+amap.db.show_binds = true
+
+------------------------------------------
+
+-- Domyslna opcja startowa opoznienia chodzika
+--
+-- Dozwolone wartosci
+-- <jakakolwiek liczba>
+-- Mozna zmienic '/opoz' w trakcie gry
+--
+-- Komenda do zmiany w trakcie gry: '/opoz [wartosc]'
+amap.walker_delay = 2
+
+------------------------------------------
+
+-- Domyslna opcja startowa rozy wiatrow (czy ma byc wlaczona)
+--
+-- Dozwolone wartosci
+-- true  - roza bedzie wlaczona przy starcie Mudleta
+-- false - roza nie bedzie wlaczona przy starcie Mudleta
+--
+-- Komenda do zmiany w trakcie gry: '/roza'
+amap.ui.active = false
+
+------------------------------------------
+
+-- Czy uzywac skroconego listowania kierunkow
+-- false to wylaczone, true to wlaczone
+amap.shorten_exits = false
+
+------------------------------------------
+
+amap.locating["name"] = "Adremenie"
+amap.locating["loc_id"] = 1
+
+---------------------------------------------------------------------------------
+------------       OD TEGO MIEJSCA PONIZEJ NIC NIE ZMIENIAJ       ---------------
+---------------------------------------------------------------------------------
+
+
+scripts:print_log("Ok, profil zaladowany")
+
+end
+
+tempTimer(0.3, function () load_my_settings() end)
+tempTimer(0.4, function () scripts.people:enemy_people_starter() end)
+tempTimer(0.55, function () scripts.people:color_people_starter() end)
+tempTimer(0.7, function () scripts.people:trigger_people_starter() end)
+tempTimer(1, function () expandAlias("/ui_restart", false) end)
+tempTimer(1.5, function () scripts.ui:set_gag_options() end)
+tempTimer(1.7, function () misc.lang:init() end)

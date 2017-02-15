@@ -50,6 +50,16 @@ ateam.attack_command = nil
 
 ------------------------------------------
 
+-- Startowa opcja odglosu ataku na postac.
+-- Domyslnie ustawiona jest opcja 1 - beepowane beda ataki tylko ludzi,
+-- ktorych mamy na liscie wrogow.
+-- Dodatkowo, mozliwe opcje:
+-- 0 - zadne ataki nie sa beepowane
+-- 2 - beepowane sa ataki od kogokolwiek
+misc.attack_beep.mode = 1
+
+------------------------------------------
+
 -- Domyslna opcja zbierania
 --
 -- Dozwolone wartosci:
@@ -310,6 +320,11 @@ scripts.ui.bind_color = "<LawnGreen>"
 --
 scripts.magic_weapons_color = "tomato"
 
+--
+-- Kolor uzywany przy /tcolor (pomoc w '/bindy')
+--
+scripts["tcolor_color"] = "orange"
+
 ------------------------------------------
 
 -- Konfiguracja gagow
@@ -335,6 +350,7 @@ scripts.gag_settings = {
   ["zaslony_nieudane"] = 2,
   ["cele"] = 2,
   ["rozkazy"] = 2,
+  ["ogluchy"] = 2,
   ["bloki"] = 2,
   ["bron"] = 2,
   ["npc"] = 2,

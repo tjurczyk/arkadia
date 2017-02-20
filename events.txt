@@ -1,0 +1,68 @@
+Dostepne eventy w skryptach:
+--------------------------------------
+
+- "amapNewLocation", argumenty: amap.curr.id, direction
+  Argumenty: 
+    arg1: ID nowej lokacji
+    arg2: kierunek, ktory zostal zlapany jako ruch
+
+  Event ten jest podnoszony gdy mapper wykryje nowy poprawny ruch na mapie.
+
+- "amapGateStoppedWalker"
+
+  Event podniesiony w momencie, kiedy chodzik zostal zatrzymany brama.
+
+- "amapGateStopped"
+
+  Event podniesiony w momencie, kiedy ruch zostal zablokowany przez brame.
+
+- "amapWalkerTerminated"
+
+  Event podniesiony gdy chodzik zostanie przerwany (niezaleznie od przyczyny: bloker, ruch manualny, '/stop').
+
+- "amapWalkerFinished"
+
+  Event podniesiony gdy chodzik dotrze do celu.
+
+- "amapBlockerFired"
+
+  Event podniesiony gdy ktorys z blokerow zostal odpalony
+
+- "amapPauserStarted"
+
+  Event podniesiony gdy zadzialal pauser (czyli tymczasowo wylaczyl mapper)
+
+- "amapPauserStopped"
+
+  Event podniesiony gdy pauser zostal wylaczony (czyli wlaczyl mapper z powrotem)
+
+--------------------------------------
+
+
+- "ateamAttackingDifferentTarget"
+
+  Event ten jest podniesiony w momencie, kiedy postac atakuje innego przeciwnika niz aktualny cel ataku.
+
+- "ateamToAttackTarget"
+
+  Event podniesiony w momencie, kiedy istnieje cel ataku, a postac nie bije aktualnie nikogo.
+
+- "ateamTeamFollowBind"
+
+  Event podniesiony gdy zostalo zbindowane przejscie specjalne za prowadzacym
+
+
+--------------------------------------
+
+
+- "playBeep"
+
+  Po podniesieniu tego eventa jest wykonywany 'beep'. Warunkiem jest posiadanie katalogu sounds/ w katalogu profilu przekopiowanego z paczki skryptow.
+
+- "miscAttackBeepModeOne"
+
+  Event podniesiony gdy postac zostala zaatakowana przez kogos z wrogow.
+
+- "miscAttackBeepModeTwo"
+
+  Event podniesiony gdy postac zostala zaatakowana.

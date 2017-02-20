@@ -1,12 +1,11 @@
-## Arkadia Mapper, wersja 2.7
+## Arkadia Mapper, wersja 2.19
 
 Pomoc dostępna pod komendą: '/mapper'
 Wersja, której używasz: sprawdź nagłówek komendy `/skrypty`.
 
 ### INSTALACJA
 
-*W celu poprawnego działania skryptów, w ustawieniach trzeba włączyć obsługę GMCP! Bez tego skrypty nie będą działać poprawnie.
-Przed instalacją koniecznie włącz opcję _Enable GMCP_ w _Settings_ Mudleta i zrestartuj go.*
+**W celu poprawnego działania skryptów, w ustawieniach trzeba włączyć obsługę GMCP! Bez tego skrypty nie będą działać poprawnie. Przed instalacją koniecznie włącz opcję _Enable GMCP_ w _Settings_ Mudleta i zrestartuj go.**
 
 Po instalacji skryptów (patrz [README skryptów](arkadia.kamerdyner.net/master/README.md)) Mapper jest już zainstalowany, 
 
@@ -36,7 +35,7 @@ Klikamy w `Keys` umieszczony na górnym pasku Mudleta, będzie to wyglądało ta
 
 ![Konfiguracja triggera](http://kamerdyner.net/~george/img/keybindy.png)
 
-Klikamy `Add Item` na górnym pasku. *UWAGA*: key binda trzeba utworzyć w głównym katalogu. To znaczy, nie tworzy się go w katalogu `skrypty_master`, bo wtedy przy aktualizacji skryptów key bindy te zostaną usunięte.
+Klikamy `Add Item` na górnym pasku. **UWAGA**: key binda trzeba utworzyć w głównym katalogu. To znaczy, nie tworzy się go w katalogu `skrypty_master`, bo wtedy przy aktualizacji skryptów key bindy te zostaną usunięte.
 Po kliknięciu `Add Item` uzupełniamy następujące pola:
 
   * _Name_: `zachod` (dowolna nazwa binda)
@@ -48,7 +47,7 @@ Po kliknięciu `Add Item` uzupełniamy następujące pola:
 
 Po wpisaniu tego wszystkiego, *ważnym jest aby* kliknąć `Save Item` w lewym górnym rogu oraz `Activate` - przy nazwie key binda, musi znajdować się _zielony ptaszek_, oznacza to, że key bind jest aktywny, czyli włączony.
 
-Całość działa tak, że podczas naciśnięcia tego key binda, funkcja `amap:keybind_pressed("west")` będzie wywołana (nazwy angielskie są *KONIECZNE!*) i wyśle ona kierunek `w` do Arkadii. Tak wygląda cały key bind `zachod` u mnie:
+Całość działa tak, że podczas naciśnięcia tego key binda, funkcja `amap:keybind_pressed("west")` będzie wywołana (nazwy angielskie są **KONIECZNE!**) i wyśle ona kierunek `w` do Arkadii. Tak wygląda cały key bind `zachod` u mnie:
 
 ![Konfiguracja triggera](http://kamerdyner.net/~george/img/keybind_zachod.png)
 
@@ -91,11 +90,11 @@ albo
 
 ## TRYBY MAPPERA
 
-Mapper wspiera trzy tryby, ustawia się je za pomocą `/rysuj [nazwa]`
+Mapper wspiera trzy tryby, ustawia się je za pomocą `/mm [nazwa_trybu]`
 
-- _gmcp_ - rysowanie po GMCP. Wyrysowane będą wszystkie lokacje, które są w GMCP. Jeśli podczas mapowania wejdzie się na lokację bez GMCP to mapper się zgubi. Dobre do mapowania dużych miast i traktów.
-- _manual_ - rysowanie manualne. Dużo opcji, wszystkie są opisane w `/mapper_rys`. Rysowanie po kierunkach odbywa się ze standardowym skokiem 2 (`/mapper_opcje`).
-- _off_ - śledzenie ruchów twoich/drużyny.
+- _draw_ - rysowanie. Dużo opcji, wszystkie są opisane w `/mapper_rys`. Rysowanie po kierunkach odbywa się ze standardowym skokiem 2 (`/mapper_opcje`).
+- _follow_ - mapper będzie śledził chodzenie manualne i drużynę.
+- _off_ - śledzenie i podążanie za drużyną wyłączone.
 
 ---
 
@@ -103,19 +102,6 @@ Mapper wspiera trzy tryby, ustawia się je za pomocą `/rysuj [nazwa]`
 
 Mapper dostarcze wiele opcji rysowania: przejścia normalne, specjalne, różne poziomy, notki, bindy, nazwy, opisy itp. Obowiązkowo do zapoznania się: `/mapper_rys`, `/mapper_opcje`.
 
-
----
-
-## PODĄŻANIE ZA DRUŻYNĄ
-
-Podążanie za drużyną działa praktycznie wszędzie, a dokładniej tam gdzie są standardowe przejścia. Co do przejść specjalnych, muszą być skojarzenia. Przykładowo, kiedy widzi się tekst `podazasz za ... wgłab lasu`, w mapie musi być dodane skojarzenie, żeby mapper wiedział gdzie w takim przypadku prowadzić. Mapa startowa ma już pododawanych sporo  takich podążań, lecz wciąż jest zapewne wiele brakujących. W  przypadku kiedy znajdziecie taki brak będę wdzięczny za skontaktowanie się gdzie dokładnie Mapper się zgubił, abym mógł mapę startową poprawiać. Można też dodać takie skojarzenia samemu, ale wiadomo, że po pobraniu nowej mapy nie będzie niczego co dodaliśmy. 
-
-`/lok_team_fo [przejscie_tekst]#[kierunek]` - doda skojarzenie `[przejscie_tekst]` w tym `[kierunku]`. Przykładowo, jeśli mamy lokację z wyjściem do `gospody` i tekst podążania jest:
-`Podazasz za ... do gospody` to można dodać na aktualnej lokacji: `/lok_team_fo gospody#gospoda`.
-
-Czasami jest tak, że wyjście jest standardowe (w kierunku `w`), a jest tekst `Podazasz za ... przez rzeke`, wtedy trzeba dodać `/lok_team_fo rzeke#w`
-
-Cała pomoc znajduje się w `/mapper_db`.
 
 ---
 

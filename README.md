@@ -1,4 +1,4 @@
-## Arkadia Skrypty
+## Arkadia Skrypty, wersja 2.19
 
 Pomoc dostępna pod `/skrypty`
 Wersja, której używasz: sprawdź nagłówek komendy `/skrypty`.

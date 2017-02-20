@@ -1,21 +1,12 @@
-<html>
-<body>
-<xmp theme="united" style="display:none;">
-
-# Arkadia Mapper, wersja 2.7
-
----
+## Arkadia Mapper, wersja 2.7
 
 Pomoc dostępna pod komendą: '/mapper'
 Wersja, której używasz: sprawdź nagłówek komendy `/skrypty`.
 
----
+### INSTALACJA
 
-## INSTALACJA
-
-#### UWAGA
-W celu poprawnego działania skryptów, w ustawieniach trzeba włączyć obsługę GMCP! Bez tego skrypty nie będą działać poprawnie.
-Przed **instalacją koniecznie** włącz opcję **Enable GMCP** w *Settings* Mudleta i zrestartuj go.
+*W celu poprawnego działania skryptów, w ustawieniach trzeba włączyć obsługę GMCP! Bez tego skrypty nie będą działać poprawnie.
+Przed instalacją koniecznie włącz opcję _Enable GMCP_ w _Settings_ Mudleta i zrestartuj go.*
 
 Po instalacji skryptów (patrz [README skryptów](arkadia.kamerdyner.net/master/README.md)) Mapper jest już zainstalowany, 
 
@@ -43,12 +34,9 @@ Jeśli używa się jakichkolwiek kombinacji klawiatorowych do chodzenia (czy to 
 
 Klikamy w `Keys` umieszczony na górnym pasku Mudleta, będzie to wyglądało tak:
 
-<div style="text-align:center">
-<img src="screenshot/keybindy.png" width="80%" align="center">
-</div>
-<br>
+![Konfiguracja triggera](http://kamerdyner.net/~george/img/keybindy.png)
 
-Klikamy `Add Item` na górnym pasku. **UWAGA**: key binda trzeba utworzyć w głównym katalogu. To znaczy, nie tworzy się go w katalogu `skrypty_master`, bo wtedy przy aktualizacji skryptów key bindy te zostaną usunięte.
+Klikamy `Add Item` na górnym pasku. *UWAGA*: key binda trzeba utworzyć w głównym katalogu. To znaczy, nie tworzy się go w katalogu `skrypty_master`, bo wtedy przy aktualizacji skryptów key bindy te zostaną usunięte.
 Po kliknięciu `Add Item` uzupełniamy następujące pola:
 
   * _Name_: `zachod` (dowolna nazwa binda)
@@ -58,14 +46,11 @@ Po kliknięciu `Add Item` uzupełniamy następujące pola:
 
 `amap:keybind_pressed("west")`
 
-Po wpisaniu tego wszystkiego, **ważnym jest aby** kliknąć `Save Item` w lewym górnym rogu oraz `Activate` - przy nazwie key binda, musi znajdować się _zielony ptaszek_, oznacza to, że key bind jest aktywny, czyli włączony.
+Po wpisaniu tego wszystkiego, *ważnym jest aby* kliknąć `Save Item` w lewym górnym rogu oraz `Activate` - przy nazwie key binda, musi znajdować się _zielony ptaszek_, oznacza to, że key bind jest aktywny, czyli włączony.
 
-Całość działa tak, że podczas naciśnięcia tego key binda, funkcja `amap:keybind_pressed("west")` będzie wywołana (nazwy angielskie są **KONIECZNE!**) i wyśle ona kierunek `w` do Arkadii. Tak wygląda cały key bind `zachod` u mnie:
+Całość działa tak, że podczas naciśnięcia tego key binda, funkcja `amap:keybind_pressed("west")` będzie wywołana (nazwy angielskie są *KONIECZNE!*) i wyśle ona kierunek `w` do Arkadii. Tak wygląda cały key bind `zachod` u mnie:
 
-<div style="text-align:center">
-<img src="screenshot/keybind_zachod.png" width="80%" align="center">
-</div>
-<br>
+![Konfiguracja triggera](http://kamerdyner.net/~george/img/keybind_zachod.png)
 
 Teraz analogicznie trzeba stworzyć key bindy dla wszystkich pozostałych kierunków. Zatem, w key bindzie odpowiedzialnym za `wschod`, białe dolne pole będzie zawierało:
 
@@ -92,10 +77,7 @@ Można sobie też dodać jakiś klawisz, który będzie wysyłał wyjście specj
 
 `compass_click("special1")`
 
-<div style="text-align:center">
-<img src="screenshot/keybind_special.png" width="80%" align="center">
-</div>
-<br>
+![Konfiguracja triggera](http://kamerdyner.net/~george/img/keybind_special.png)
 
 Analogicznie można zrobić key bindy do 2 oraz 3 przejścia specjalnego z róży wiatrów robiąc key bindy z takimi wywołaniami
 
@@ -285,8 +267,3 @@ Przeszukiwanie lokacji nie dziala po notkach.
 1. Na IRCNet: Kanał \#arkadia, nick @dzordzyk
 2. Na forum: [@Adremen](http://arkadia.rpg.pl/forum/memberlist.php?mode=viewprofile&u=1084)
 3. [Temat](http://arkadia.rpg.pl/forum/viewtopic.php?f=15&t=752), w którym można uzyskać pomoc na forum
-
-</xmp>
-</body>
-  <script src="http://strapdownjs.com/v/0.2/strapdown.js"></script>
-</html>

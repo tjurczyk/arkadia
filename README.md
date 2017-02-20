@@ -224,7 +224,7 @@ Są dostępne statystyki parowań, otrzymamych ciosów itp., Statystyki dostępn
 <br>
 `/postepy2+` - dodaje jeden postep do globalnego licznika,
 <br>
-`/postepy2+ [ile]` - dodaje [ile] postepow do globalnego licznika. Przykładowo: `/postepy2+ 4` doda 4 postepy. **Musi to byc liczba mniejsza badz rowna 15!**,
+`/postepy2+ [ile]` - dodaje [ile] postepow do globalnego licznika. Przykładowo: `/postepy2+ 4` doda 4 postepy,
 <br>
 `/postepy2- [id]` - usuwa wpis z globalnego licznika o tym _id_. _id_ można znaleźć jako pierwsza kolumna od lewej w `/postepy2`,
 <br>

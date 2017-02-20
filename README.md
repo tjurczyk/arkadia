@@ -6,7 +6,7 @@ Wersja, której używasz: sprawdź nagłówek komendy `/skrypty`.
 ### INSTALACJA
 
 **W celu poprawnego działania skryptów, w ustawieniach trzeba włączyć obsługę GMCP! Bez tego skrypty nie będą działać poprawnie.
-Przed instalacją koniecznie włącz opcję _Enable GMCP_ w ustawieniach (Settings) Mudleta i zrestartuj go.
+Przed instalacją koniecznie włącz opcję _Enable GMCP_ w ustawieniach (Settings) Mudleta i zrestartuj go.**
 
 Instalacja skryptów to najzwyczajniej zainstalowanie pliku `skrypty_master.xml`.
 

@@ -1,9 +1,7 @@
 ## Arkadia Skrypty, wersja 2.19
 
-Pomoc dostępna pod `/skrypty`
-
-Pomoc do mappera znajduje się [tutaj](https://github.com/tjurczyk/arkadia-skrypty/blob/master/README_MAPPER.md)
-
+Pomoc dostępna pod `/skrypty`<br>
+Pomoc do mappera znajduje się [tutaj](https://github.com/tjurczyk/arkadia-skrypty/blob/master/README_MAPPER.md)<br>
 Wersja, której używasz: sprawdź nagłówek komendy `/skrypty`.
 
 ### INSTALACJA

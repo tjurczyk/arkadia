@@ -1,4 +1,4 @@
-## Arkadia Mapper, wersja 2.19
+## Arkadia Mapper
 
 Pomoc dostępna pod komendą: '/mapper'
 Wersja, której używasz: sprawdź nagłówek komendy `/skrypty`.

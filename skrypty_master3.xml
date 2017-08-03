@@ -31703,39 +31703,129 @@ function scripts.utils:_extract_list_items(list_arr)
   return extracted
 end
 
+
+function scripts.utils:real_len(str)
+--[[
+Funkcja zwracajaca ilosc znakow, ktora pojawi sie na ekranie. Pomija tagi kolorkow itd.
+--]]
+
+	count = 0
+	state = true
+
+	for c in str:gmatch&quot;.&quot; do
+    if c == &quot;&lt;&quot; then
+			state = false
+		elseif c == &quot;&gt;&quot; then
+			state = true
+		end
+		if state and c ~= &quot;&gt;&quot; then
+			count = count +1
+		end
+	end
+	return count
+end
+
 function scripts.utils:print_string_list(list_arr)
   if not list_arr then
     error(&quot;Wrong input&quot;)
   end
-
-  cecho (&quot;\n&quot;)
-  cecho (&quot;----------------------------------- &lt;green&gt;Pojemnik&lt;grey&gt; -----------------------------------&quot;)
-  cecho (&quot;\n  &lt;light_slate_blue&gt;ile &lt;grey&gt;|        &lt;light_slate_blue&gt;nazwa&quot;)
-  cecho (&quot;\n--------------------------------------------------------------------------------&quot;)
-
-  local ret_str = &quot;&quot;
-
-  for k, v in pairs(list_arr) do
-    local amount_str = nil
-    if v[&quot;amount&quot;] == -1 then
-      amount_str = &quot;wie&quot;
-    else
-      local amount_tmp = &quot;   &quot; .. tostring(v[&quot;amount&quot;])
-      amount_str = string.sub(amount_tmp, string.len(amount_tmp)-2, string.len(amount_tmp))
+	
+	cecho(&quot;\n/-------------------------------------------------------------------------------------------------\\\n&quot;)
+	cecho(&quot;|                                             Pojemnik                                            |\n&quot;)
+  cecho(&quot;+-------------------------------------------------------------------------------------------------+\n&quot;)
+	cecho(&quot;|  BRONIE                                        |  TARCZE                                        |\n&quot;)
+	cecho(&quot;+-------------------------------------------------------------------------------------------------+\n&quot;)
+	local bronie, korpus, glowa, tarcze, nogi, rece, wierzch, inne = {},{},{},{},{},{},{},{}
+	
+	for i, x in pairs(list_arr) do
+		local v = &quot;&quot;
+		if x[&quot;amount&quot;] == &quot;wie&quot; then
+      x[&quot;amount&quot;] = &quot;XXX&quot;
     end
-    if scripts.magic_weapons[string.lower(v[&quot;name&quot;])] then
-      ret_str = ret_str .. &quot;\n&lt;grey&gt;  &quot; .. amount_str .. &quot; | &lt;&quot; .. scripts.magic_weapons_color .. &quot;&gt;&quot; .. v[&quot;name&quot;]
-    else
-      ret_str = ret_str .. &quot;\n&lt;grey&gt;  &quot; .. amount_str .. &quot; | &quot; .. v[&quot;name&quot;]
+	  --[amount_str = string.format(&quot;[%3s] &quot;, x[&quot;amount&quot;])--]]
+		amount_str = string.format(&quot;%3s| &quot;, x[&quot;amount&quot;])
+
+		--[[ Wyroznij monety --]]
+  	if string.find(x[&quot;name&quot;], &quot;monet&quot;) then
+			x[&quot;name&quot;] = &quot;&lt;white&gt;&quot;..x[&quot;name&quot;]..&quot;&lt;grey&gt;&quot;
+		end
+		
+		--[[ Koloruj magiki --]]
+		if scripts.magic_weapons[string.lower(x[&quot;name&quot;])] then
+      x[&quot;name&quot;] = &quot;&lt;&quot; .. scripts.magic_weapons_color .. &quot;&gt;&quot; .. x[&quot;name&quot;] .. &quot;&lt;grey&gt;&quot;
     end
-    
-  end
-  
-  cecho (ret_str)
-  --cecho(herbs:get_printable_bag(herbs_arr))
-  --local h_str = herbs:get_printable_bag(herbs_arr)
-  --cecho(herbs:get_printable_bag(herbs_arr))
-  --cecho (&quot;\n--------------------------------------------------------------------------------&quot;)
+		
+		
+    v = amount_str .. x[&quot;name&quot;]
+ 		
+		if string.find(v, &quot;opal&quot;) or  string.find(v, &quot;nefryt&quot;) or string.find(v, &quot;malachit&quot;) or string.find(v, &quot;odnozy&quot;) then
+			table.insert(inne,v)
+		elseif string.find(v, &quot;darda&quot;) or string.find(v, &quot;dardy&quot;) or string.find(v, &quot;multon&quot;) or string.find(v, &quot;kord&quot;) or string.find(v, &quot;puginal&quot;) or string.find(v, &quot;gladius&quot;) or string.find(v, &quot;topor&quot;) or string.find(v, &quot;berdysz&quot;) or string.find(v, &quot;siekier&quot;) or string.find(v, &quot;czekan&quot;) or string.find(v, &quot;oskard&quot;) or string.find(v, &quot;kilof&quot;) or string.find(v, &quot;tasak&quot;) or string.find(v, &quot;tabar&quot;) or string.find(v, &quot;nadziak&quot;) or string.find(v, &quot;miecz&quot;) or string.find(v, &quot;sihill&quot;) or string.find(v, &quot;drannach&quot;) or string.find(v, &quot;szabl&quot;) or string.find(v, &quot;szabel&quot;) or string.find(v, &quot;rapier&quot;) or string.find(v, &quot;scimitar&quot;) or string.find(v, &quot;katzbalger&quot;) or string.find(v, &quot;stilett&quot;) or string.find(v, &quot;pal&quot;) or string.find(v, &quot;sztylet&quot;) or string.find(v, &quot;halabard&quot;) or string.find(v, &quot;falchion&quot;) or string.find(v, &quot;mlot&quot;) or string.find(v, &quot;obusz&quot;) or string.find(v, &quot;wloczni&quot;) or string.find(v, &quot;pik[ei]&quot;) or string.find(v, &quot;noz&quot;) or string.find(v, &quot;maczug&quot;) or string.find(v, &quot;morgenstern&quot;) or string.find(v, &quot;kordelas&quot;) or string.find(v, &quot;mizerykordi&quot;) or string.find(v, &quot;buzdygan&quot;) or string.find(v, &quot;korbacz&quot;) or string.find(v, &quot;gal[ae]z&quot;) or string.find(v, &quot;bulaw&quot;) or string.find(v, &quot;drag&quot;) or string.find(v, &quot;kiscien&quot;) or string.find(v, &quot;nog[ai] stolow&quot;) or string.find(v, &quot;dag[ai]&quot;) or string.find(v, &quot;wloczni[aei]&quot;) or string.find(v, &quot;floret&quot;) or string.find(v, &quot;wekier&quot;) or string.find(v, &quot;walek&quot;) or string.find(v, &quot;kostur&quot;) or string.find(v, &quot;kos[aye]&quot;) or string.find(v, &quot;szponton&quot;) or string.find(v, &quot;partyzan&quot;) or string.find(v, &quot;glewi&quot;) or string.find(v, &quot;gizarm&quot;) or string.find(v, &quot;dzid&quot;) or string.find(v, &quot;naginat&quot;) or string.find(v, &quot;rohatyn&quot;) or string.find(v, &quot;korsek&quot;) or string.find(v, &quot;cep&quot;) or string.find(v, &quot;trojz[ea]b&quot;) or string.find(v, &quot;ronkon&quot;) or string.find(v, &quot;runk&quot;) or string.find(v, &quot;flamberg&quot;) or string.find(v, &quot;poltorak&quot;) or string.find(v, &quot;bulat&quot;) or string.find(v, &quot;nimsz&quot;) or string.find(v, &quot;szamszir&quot;) or string.find(v, &quot;lami&quot;) or string.find(v, &quot;spis[ay]&quot;) or string.find(v, &quot;schiavon&quot;) or string.find(v, &quot;lewak&quot;) or string.find(v, &quot;sierp&quot;) or string.find(v, &quot;lask&quot;) or string.find(v, &quot;wid(e|)l&quot;) or string.find(v, &quot;saif&quot;) or string.find(v, &quot;koncerz&quot;) or string.find(v, &quot;kij&quot;) or string.find(v, &quot;espadon&quot;) or string.find(v, &quot;claymor&quot;) or string.find(v, &quot;cinquend&quot;) or string.find(v, &quot;szpad&quot;) or string.find(v, &quot;karabel&quot;) or string.find(v, &quot;jatagan&quot;) or string.find(v, &quot;baselard&quot;) then
+			table.insert(bronie,v)
+		elseif string.find(v, &quot;tarcz&quot;) or string.find(v, &quot;puklerz&quot;) or string.find(v, &quot;pawez&quot;) then
+			table.insert(tarcze,v)
+		elseif string.find(v, &quot;brygantyn&quot;) or string.find(v, &quot;napiersnik&quot;) or string.find(v, &quot;kirys&quot;) or string.find(v, &quot;kolczug&quot;) or string.find(v, &quot;karacen&quot;) or string.find(v, &quot;kaftan&quot;) or string.find(v, &quot;kolcz&quot;) or string.find(v, &quot;tunik&quot;) or string.find(v, &quot;zbroj&quot;) or string.find(v, &quot;bajdan[ay]&quot;) or string.find(v, &quot;anim[eay]&quot;) or string.find(v, &quot;kozus&quot;) or string.find(v, &quot;kurt&quot;) or string.find(v, &quot;kamizel&quot;) or string.find(v, &quot;becht&quot;) or string.find(v, &quot;pancerz&quot;) then
+			table.insert(korpus,v)
+		elseif string.find(v, &quot;helm&quot;) or string.find(v, &quot;burgonet&quot;) or string.find(v, &quot;misiurk&quot;) or string.find(v, &quot;kaptur&quot;) or string.find(v, &quot;morion&quot;) or string.find(v, &quot;basinet&quot;) or string.find(v, &quot;salad&quot;) or string.find(v, &quot;przylbic&quot;) or string.find(v, &quot;diadem&quot;) or string.find(v, &quot;szyszak&quot;) or string.find(v, &quot;narbut[ay]&quot;) or string.find(v, &quot; armet&quot;) or string.find(v, &quot;casquett&quot;) or string.find(v, &quot; czapk&quot;) or string.find(v, &quot;beret&quot;) or string.find(v, &quot;turban&quot;) or string.find(v, &quot;gigantyczn. wzmacnian. czaszk&quot;) or string.find(v, &quot; barbut&quot;) or string.find(v, &quot;kapalin&quot;) then
+			table.insert(glowa,v)
+		elseif string.find(v, &quot;nagolennik&quot;) or string.find(v, &quot;spoden&quot;) or string.find(v, &quot;nogawic&quot;) or string.find(v, &quot;buty&quot;) or string.find(v, &quot;butow&quot;) or string.find(v, &quot;trzewik&quot;) or string.find(v, &quot;spodni&quot;) or string.find(v, &quot;spodnic&quot;) or string.find(v, &quot;naudziak&quot;) or string.find(v, &quot;sandal&quot;) or string.find(v, &quot;nakolannik&quot;) then
+			table.insert(nogi,v)
+		elseif string.find(v, &quot;nareczak&quot;) or string.find(v, &quot;naramiennik&quot;) or string.find(v, &quot;rekawic&quot;) or string.find(v, &quot;karwasz&quot;) then
+			table.insert(rece,v)
+		elseif string.find(v, &quot;futro&quot;) or string.find(v, &quot;kubraczek&quot;) or string.find(v, &quot;koszula&quot;) or string.find(v, &quot;suknia&quot;) or string.find(v, &quot;plaszcz&quot;) or string.find(v, &quot;peleryn&quot;) or string.find(v, &quot; tog&quot;) or string.find(v, &quot; szat&quot;) or string.find(v, &quot;bloniaste skrzydl&quot;)then
+			table.insert(wierzch,v)
+		else
+			table.insert(inne,v)
+		end
+	end
+	
+	for i = 1,math.max(table.getn (bronie),table.getn (tarcze)) do
+	 if bronie[i]==nil then
+	   bronie[i]=&quot;&quot;
+	 end
+	 if tarcze[i]==nil then
+	   tarcze[i]=&quot;&quot;
+	 end
+		 cecho(&quot;|&quot; .. bronie[i] .. string.rep(&quot; &quot;, 48 - scripts.utils:real_len(bronie[i])) .. &quot;|&quot; .. tarcze[i] .. string.rep(&quot; &quot;, 48 - scripts.utils:real_len(tarcze[i])) .. &quot;|\n&quot;)
+	end
+  cecho(&quot;+-------------------------------------------------------------------------------------------------+\n&quot;)
+	cecho(&quot;|  KORPUS                                        |  GLOWA                                         |\n&quot;)
+	cecho(&quot;+-------------------------------------------------------------------------------------------------+\n&quot;)
+	for i = 1,math.max(table.getn (korpus),table.getn (glowa)) do
+	 if korpus[i]==nil then
+	   korpus[i]=&quot;&quot;
+	 end
+	 if glowa[i]==nil then
+	   glowa[i]=&quot;&quot;
+	 end
+		 cecho(&quot;|&quot; .. korpus[i] .. string.rep(&quot; &quot;, 48 - scripts.utils:real_len(korpus[i])) .. &quot;|&quot; .. glowa[i] .. string.rep(&quot; &quot;, 48 - scripts.utils:real_len(glowa[i])) .. &quot;|\n&quot;)
+	end
+  cecho(&quot;+-------------------------------------------------------------------------------------------------+\n&quot;)
+	cecho(&quot;|  RECE                                          |  NOGI                                          |\n&quot;)
+	cecho(&quot;+-------------------------------------------------------------------------------------------------+\n&quot;)
+	for i = 1,math.max(table.getn (rece),table.getn (nogi)) do
+	 if rece[i]==nil then
+	   rece[i]=&quot;&quot;
+	 end
+	 if nogi[i]==nil then
+	   nogi[i]=&quot;&quot;
+	 end
+		 cecho(&quot;|&quot; .. rece[i] .. string.rep(&quot; &quot;, 48 - scripts.utils:real_len(rece[i])) .. &quot;|&quot; .. nogi[i] .. string.rep(&quot; &quot;, 48 - scripts.utils:real_len(nogi[i])) .. &quot;|\n&quot;)
+	end
+	cecho(&quot;+-------------------------------------------------------------------------------------------------+\n&quot;)
+	cecho(&quot;|  UBRANIA                                       |  INNE                                          |\n&quot;)
+	cecho(&quot;+-------------------------------------------------------------------------------------------------+\n&quot;)
+	for i = 1,math.max(table.getn (wierzch),table.getn (inne)) do
+	 if wierzch[i]==nil then
+	   wierzch[i]=&quot;&quot;
+	 end
+	 if inne[i]==nil then
+	   inne[i]=&quot;&quot;
+	 end
+	cecho(&quot;|&quot; .. wierzch[i] .. string.rep(&quot; &quot;, 48 - scripts.utils:real_len(wierzch[i])) .. &quot;|&quot; .. inne[i] .. string.rep(&quot; &quot;, 48 - scripts.utils:real_len(inne[i])) .. &quot;|\n&quot;)
+	end
+	cecho(&quot;+-------------------------------------------------------------------------------------------------+\n&quot;)
+	
 end
 
 function scripts.utils:serialize_dir_bind(t)

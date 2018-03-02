@@ -32,21 +32,57 @@ ateam.all_numbering = false
 -- 1 - tylko atak ('zabij')
 -- 2 - tylko atak + wskazanie ('zabij' + 'wskaz ... jako cel ataku')
 -- 3 - komplet ('zabij', 'wskaz', 'rozkaz wszystkim zaatakowac ...')
---
--- Komenda do zmiany w trakcie gry: '/rozkazuj'
 ateam.attack_mode = 3
+
+-- Ustawianie ataku do bindow zamiast zwyklego 'zabij'
+-- Przykladowo: ateam.attack_commands = {"chzabij"}
+-- Jesli bedzie to wiecej niz jedna komenda (np: {"gpokrzyk", "chzabij"}),
+-- wtedy ostatni element musi byc elementem, ktory pobiera argument kogo zabic.
+-- 
+ateam.attack_commands = {"zabij"}
+
+-- Ustawianie puszczania zaslon
+-- w mudlecie do zmiany sluzy komenda '/puszczaj_zaslony'
+-- 
+-- Dozwolone wartosci:
+-- true - beda puszczane
+-- false - nie beda puszczane
+ateam.release_guards = false
 
 ------------------------------------------
 
--- Ustawianie ataku do bindow zamiast zwyklego 'zabij'
--- Przykladowo: 
---
--- ateam.attack_command = "chzabij"
---
--- bedzie wykonywalo "chzabij" zamiast "zabij" w bindach skryptowych.
+-- Ustawienie do przelamania. Jakie wypoczecie (przynajmniej)
+-- musi byc, aby lamac przy /prze (w przeciwnym razie nie zostanie wykonane).
+-- Warunek ten mozna ominac korzystajac z '/prze!' oraz '/prze! [id]',
+-- wtedy przelamanie zostanie wykonane bez wzgledu na zmeczenie
 -- 
--- Jesli pozostawione nieruszone to bedzie zwykle "zabij"
-ateam.attack_command = nil
+-- wartosci sa nastepujace:
+-- 9 (domyslne) - przelamanie wystapi zawsze
+-- 8 - przelamanie wystapi jesli jest sie "wycienczonym" i nizej
+-- 7 - przelamanie wystapi jesli jest sie "bardzo wyczerpanym" i nizej
+-- itp. az do 0 (tylko przy w pelni wypoczetym)
+scripts.character.break_fatigue_level = 9
+
+-- Bindowanie dwukrotnego 'alt +' do uzycia +k.
+-- podana wartosc jest wartoscia, przy ktorej pokazana
+-- zostanie informacja o tym bindzie i dwukrotne wcisniecie jego zadziala.
+-- 
+-- wartosci sa nastepujace:
+-- -1  - wylaczone dzialanie tego binda
+--  0  - bind wyskoczy, gdy bedzie sie ledwo zywym
+--  1  - (domyslne) bind wyskoczy, gdy bedzie sie ciezko rannym
+--  itd..
+scripts.character.bind_hp_level = 1
+
+------------------------------------------
+
+-- Ustawienie jak maja dzialac bindowania przejsc specjalnych
+-- Znaczenie opcji:
+-- 
+-- 0 - nie bedzie w ogole bindowalo przejsc specjalnych na podstawie widzianych tekstow
+-- 1 - bedzie bindowalo przejscie tylko na podstawie osoby prowadzacej
+-- 2 - bedzie bindowalo na podstawie kogokolwiek
+ateam.special_follow_bind_mode = 1
 
 ------------------------------------------
 
@@ -67,6 +103,18 @@ misc.attack_beep.mode = 1
 --
 -- Komenda do zmiany w trakcie gry: '/zbieranie [wartosc_ustawienia]'
 scripts.inv.collect.current_mode = 7
+
+------------------------------------------
+
+-- Opcja zbierania poszczegolnych monet
+--
+-- Dozwolone wartosci:
+-- - 1 (wszystko)
+-- - 2 (srebro i zloto)
+-- - 3 (zloto)
+--
+-- Komenda do zmiany w trakcie gry: '/zbieranie [wartosc_ustawienia]'
+scripts.inv.collect.money_type = 1
 
 ------------------------------------------
 
@@ -138,10 +186,6 @@ misc.lang["aliases_prefix"] = {}
 --
 scripts.inv.weapons.case = {}
 
--- Ta opcja sluzy do tego, z ktorej pochwy ma brac/wkladac przy naciskaniu
--- 'bron' na pasku dolnym UI, czyli dla przykladu z powyzej bedzie to dla pochwy lyrijskiej
-scripts.inv.weapons.click_id = 1
-
 -- Jesli chce sie miec pod odpowiednim id tarcze, trzeba tutaj ustawic jej id.
 -- wtedy po ustawieniu np 2, bedzie mozna zrobic '/db2' i wyjmie i zalozy tarcze.
 -- UWAGA: Jesli ustawia sie id tarczy, to wtedy w powyzszym w 'weapons.case' musi
@@ -179,7 +223,7 @@ scripts.inv.weapon3_action_on = false
 -- To samo co powyzej ale dla opuszczania broni.
 -- Jesli nie jest zdefiniowane to jest wykonywane domyslne 'powsun bron ...'
 scripts.inv.weapon1_action_off = false
-scripts.inv.weapon2_action_pff = false
+scripts.inv.weapon2_action_off = false
 scripts.inv.weapon3_action_off = false
 
 ------------------------------------------
@@ -249,6 +293,19 @@ misc.cutting_post = {}
 -- Konfiguracja UI
 --
 
+--
+-- Ustawienie czy ma byc osobne okno rozmow
+--
+-- Domyslnie jest to 'false', czyli wylaczone (wszystkie rozmowy w glownym oknie)
+-- Po ustawieniu 'true', bedzie to osobne okno (takie jak do kondycji).
+--
+scripts.ui.separate_talk_window = false
+
+--
+-- Wielkosc czcionki w oknie rozmow (jesli uzywane)
+--
+scripts.ui.separate_talk_window_font_size = 12
+
 -- Wysokosc procentowa okna glownego okna kondycji
 -- height to wysokosc procentowa, width to szerokosc procentowa
 scripts.ui.states_window_height = 45
@@ -281,7 +338,7 @@ scripts.ui.footer_map_font_size = 10
 -- Wielkosc czcionki na belce srodkowej i prawej
 scripts.ui.footer_font_size = 11
 -- Wielkosc czcionki w oknie stanow
-scripts.ui.states_font_size = 11
+scripts.ui.states_font_size = 12
 
 scripts.ui.footer_r = 0
 scripts.ui.footer_g = 0
@@ -381,7 +438,97 @@ scripts.gag_colors["npc"] = "floral_white"
 
 
 
+------------------------------------------
 
+-- Ponizej znajduje sie konfiguracja keybindow w skryptach.
+--
+-- zmienna `modifier' sluzy do zdefiniowana jaki klawisz
+-- ma byc trzymany podczas binda. Najwazniejsze to:
+-- "Shift", "Control", "Alt"
+-- Mozna nie ustawiac zadnego - wtedy bindem bedzie pojedynczy klawisz
+-- Jesli ustawi sie "Shift" i "Control", trzeba bedzie trzymac te dwa klawisze
+-- podczas binda.
+--
+-- zmienna `key' sluzy do zdefiniowania konkretnego klawisza.
+-- moze to byc dowolny klawisz znaku alfanumerycznego.
+-- dokladna lista znajduje sie tutaj: 
+-- https://github.com/Mudlet/Mudlet/blob/development/src/mudlet-lua/lua/KeyCodes.lua#L2
+
+-- Wsparcie
+scripts.keybind.configuration.fight_support.modifier = {"Control"}
+scripts.keybind.configuration.fight_support.key = "W"
+
+-- Atakowanie celu ataku
+scripts.keybind.configuration.attack_target.modifier = {"Control"}
+scripts.keybind.configuration.attack_target.key = "1"
+
+-- Uzycie kondycji w niskim stanie hp
+scripts.keybind.configuration.critical_hp.modifier = {"Control", "Alt"}
+scripts.keybind.configuration.critical_hp.key = "Equal"
+
+-- Funkcjonalny bind (domyslnie ']')
+scripts.keybind.configuration.functional_key.modifier = {}
+scripts.keybind.configuration.functional_key.key = "BracketRight"
+
+-- Atakowanie osoby z bindow
+scripts.keybind.configuration.attack_bind_obj.modifier = {}
+scripts.keybind.configuration.attack_bind_obj.key = "F1"
+
+-- Przelamywanie i atakowanie celu ataku
+scripts.keybind.configuration.break_attack_target.modifier = {}
+scripts.keybind.configuration.break_attack_target.key = "F2"
+
+-- Blokowanie celu ataku
+scripts.keybind.configuration.block_attack_target.modifier = {}
+scripts.keybind.configuration.block_attack_target.key = "F3"
+
+-- Zbieranie z cial
+scripts.keybind.configuration.collect_from_body.modifier = {"Control"}
+scripts.keybind.configuration.collect_from_body.key = "3"
+
+-- Dopelnianie lampy
+scripts.keybind.configuration.filling_lamp.modifier = {"Control"}
+scripts.keybind.configuration.filling_lamp.key = "4"
+
+-- Odlozenie pustej butelki
+scripts.keybind.configuration.empty_bottle.modifier = {}
+scripts.keybind.configuration.empty_bottle.key = "Backslash"
+
+-- Wsiadanie na statki i dylizanse
+scripts.keybind.configuration.enter_ship.modifier = {}
+scripts.keybind.configuration.enter_ship.key = "BracketLeft"
+
+-- Tymczasowy keybind (1)
+scripts.keybind.configuration.temp1.modifier = {"Control"}
+scripts.keybind.configuration.temp1.key = "Minus"
+
+-- Tymczasowy keybind (2)
+scripts.keybind.configuration.temp2.modifier = {"Control"}
+scripts.keybind.configuration.temp2.key = "Equal"
+
+-- Tymczasowy keybind (3)
+scripts.keybind.configuration.temp3.modifier = {"Alt"}
+scripts.keybind.configuration.temp3.key = "Minus"
+
+-- Tymczasowy keybind (4)
+scripts.keybind.configuration.temp4.modifier = {"Alt"}
+scripts.keybind.configuration.temp4.key = "Equal"
+
+-- Otwieranie bram
+scripts.keybind.configuration.opening_gate.modifier = {"Control"}
+scripts.keybind.configuration.opening_gate.key = "2"
+
+-- Picie ze zrodel wody
+scripts.keybind.configuration.drinking.modifier = {"Control"}
+scripts.keybind.configuration.drinking.key = "N"
+
+-- Bindy do przejsc specjalnych
+scripts.keybind.configuration.special_exit.modifier = {"Control"}
+scripts.keybind.configuration.special_exit.key = "P"
+
+-- Tryby chodzenia
+scripts.keybind.configuration.walk_mode.modifier = {}
+scripts.keybind.configuration.walk_mode.key = "QuoteLeft"
 
 
 ---------------------------------------------------------------------------------
@@ -437,6 +584,12 @@ amap.shorten_exits = false
 
 ------------------------------------------
 
+-- Ustawienie startowe na konkretnej lokacji po zalogowaniu
+-- w 'name' powinna znalezc sie odmiana imienia,
+-- ktore pojawia sie po wpisaniu w Arkadii
+-- (czyli "Witaj Adremenie" dla mnie)
+-- 'loc_id' to numer lokacji na ktorej ma byc mapa ustawiona.
+
 amap.locating["name"] = "Adremenie"
 amap.locating["loc_id"] = 1
 
@@ -450,9 +603,12 @@ scripts:print_log("Ok, profil zaladowany")
 end
 
 tempTimer(0.3, function () load_my_settings() end)
+tempTimer(0.4, function () misc_load_dump() end)
 tempTimer(0.4, function () scripts.people:enemy_people_starter() end)
+tempTimer(0.47, function () scripts.keybind:init() end)
 tempTimer(0.55, function () scripts.people:color_people_starter() end)
 tempTimer(0.7, function () scripts.people:trigger_people_starter() end)
 tempTimer(1, function () expandAlias("/ui_restart", false) end)
+tempTimer(1.1, function() amap:check_room_gps_options() end)
 tempTimer(1.5, function () scripts.ui:set_gag_options() end)
 tempTimer(1.7, function () misc.lang:init() end)

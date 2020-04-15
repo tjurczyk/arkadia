@@ -1,0 +1,16 @@
+function scripts.ui:print_help()
+    cecho("+-------------------------- <green>Arkadia skrypty, ver " .. scripts.ver .. "<grey> ----------------------------+\n")
+    cecho("|                                                                                |\n")
+    cecho("| <yellow>Dostepne KOMENDY:<grey>                                                              |\n")
+    cecho("|                                                                                |\n")
+    cecho("| <light_slate_blue>/ui<grey> - Ta pomoc.                                                                |\n")
+    cecho("|                                                                                |\n")
+    cecho("| <light_slate_blue>/kondycje<grey> - Wlacza okno kondycji.                                              |\n")
+    cecho("|                                                                                |\n")
+    cecho("| <light_slate_blue>/ui_restart<grey> - Po zmianach w ustawienia-skrypty, restartuje okno kondycji       |\n")
+    cecho("| oraz dolne paski. Czasami po zastosowaniu tego, czcionka w glownym oknie       |\n")
+    cecho("| bedzie dziwnie 'rozbita'. Wtedy wystarczy lekko zmniejszych i powiekszyc okno. |\n")
+    cecho("|                                                                                |\n")
+    cecho("+--------------------------------------------------------------------------------+\n")
+end
+

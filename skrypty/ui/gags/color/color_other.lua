@@ -1,0 +1,96 @@
+function trigger_func_skrypty_ui_gags_color_color_other_zabiles_color()
+    selectCurrentLine()
+
+    local counter = 1
+    if misc.counter.killed_amount["JA"] then
+        counter = misc.counter.killed_amount["JA"]
+    end
+    local counter_str = "<tomato> (" .. tostring(counter) .. " / " .. tostring(misc.counter.all_kills) .. ")"
+
+    deleteLine()
+    cecho("\n\n<tomato>[  ZABILES   ] <grey>" .. matches[2] .. counter_str .. "\n\n")
+    scripts.inv.collect:killed_action()
+    resetFormat()
+end
+
+function trigger_func_skrypty_ui_gags_color_color_other_zabil_color()
+    selectCurrentLine()
+    local counter_str = nil
+
+    if ateam.team_names[matches[3]] then
+        local counter = 1
+        if misc.counter.killed_amount[matches[3]] then
+            counter = misc.counter.killed_amount[matches[3]]
+        end
+        counter_str = " (" .. tostring(counter) .. " / " .. tostring(misc.counter.all_kills) .. ")"
+    end
+
+    deleteLine()
+    if counter_str then
+        cecho("\n\n<tomato>[   ZABIL    ] <grey>" .. matches[2] .. counter_str .. "\n\n")
+    else
+        cecho("\n\n<tomato>[   ZABIL    ] <grey>" .. matches[2] .. "\n\n")
+    end
+    scripts.inv.collect:team_killed_action(matches[3])
+    resetFormat()
+end
+
+function trigger_func_skrypty_ui_gags_color_color_other_mozesz_dobywac()
+    raiseEvent("playBeep")
+    selectCurrentLine()
+    deleteLine()
+    cecho("<green>\n\n[    BRON    ]<cornsilk> Mozesz dobyc broni klawiszem ']'\n\n")
+    resetFormat()
+    scripts.utils.bind_functional("dobadz wszystkich broni")
+    scripts.ui:info_action_update("DOBADZ")
+    scripts.ui.info_action_bind = "dobadz wszystkich broni"
+end
+
+function trigger_func_skrypty_ui_gags_color_color_other_wytracenie_tobie()
+    raiseEvent("playBeep")
+    selectCurrentLine()
+    deleteLine()
+    cecho("\n\n<tomato>[    BRON    ] " .. matches[2] .. "\n\n")
+    resetFormat()
+    scripts.ui:info_action_update("WYTRACENIE")
+end
+
+function trigger_func_skrypty_ui_gags_color_color_other_przelamanie()
+    deleteLine()
+    cecho("<green>\n\n[ KTOS LAMIE ] " .. matches[2] .. "\n\n")
+    resetFormat()
+
+    if ateam.team_names[matches[3]] or ateam.team_names[string.lower(matches[3])] then
+        cecho(scripts.ui.bind_color .. "  " .. scripts.keybind:keybind_tostring("opening_gate") .. scripts.ui.bind_color .. "] zabij cel ataku\n")
+    end
+end
+
+function trigger_func_skrypty_ui_gags_color_color_other_przelamanie_ty()
+    deleteLine()
+    cecho("<green>\n\n[ TY LAMIESZ ] " .. matches[2] .. "\n\n")
+    resetFormat()
+end
+
+function trigger_func_skrypty_ui_gags_color_color_other_nie_przelamanie_ty()
+    deleteLine()
+    cecho("<tomato>\n\n[ NIE LAMIESZ] " .. matches[2] .. "\n\n")
+    resetFormat()
+end
+
+function trigger_func_skrypty_ui_gags_color_color_other_nie_przelamanie()
+    deleteLine()
+    cecho("<tomato>\n\n[ NIE LAMIE  ] " .. matches[2] .. "\n\n")
+    resetFormat()
+end
+
+function trigger_func_skrypty_ui_gags_color_color_other_nekro_tilea()
+    raiseEvent("playBeep")
+    selectCurrentLine()
+    deleteLine()
+    cecho("<green>\n\n[    BRON    ]<cornsilk> Wez bron i dobadz jej\n\n")
+    resetFormat()
+    scripts.utils.bind_functional("dobadz wszystkich broni")
+    scripts.ui:info_action_update("WEZ BRON/DOBADZ")
+    scripts.ui.info_action_bind = "dobadz wszystkich broni"
+end
+

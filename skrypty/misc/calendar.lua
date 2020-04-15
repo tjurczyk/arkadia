@@ -1,0 +1,46 @@
+misc["ishtar_calendar"] = {
+    ["Birke"] = "Birke (wczesna wiosna)",
+    ["Blathe"] = "Blathe (pozna wiosna)",
+    ["Feainn"] = "Feainn (wczesne lato)",
+    ["Lammas"] = "Lemmas (pozne lato)",
+    ["Velen"] = "Velen (wczesna jesien)",
+    ["Saovine"] = "Saovine (pozna jesien)",
+    ["Yule"] = "Yule (wczesna zima)",
+    ["Imbaelk"] = "Imbaelk (pozna zima)",
+}
+
+misc["imperium_calendar"] = {
+    ["Nachhexen"] = "Nachhexen (wczesna wiosna)",
+    ["Jahrdrung"] = "Jahrdrung (wiosna)",
+    ["Pflugzeit"] = "Pflugzeit (pozna wiosna)",
+    ["Sigmarszeit"] = "Sigmarszeit (wczesne lato)",
+    ["Sommerzeit"] = "Sommerzeit (lato)",
+    ["Vorgeheim"] = "Vorgenheim (pozne lato)",
+    ["Nachgeheim"] = "Nachgeheim (wczesna jesien)",
+    ["Erntezeit"] = "Erntezeit (jesien)",
+    ["Brauzeit"] = "Brauzeit (pozna jesien)",
+    ["Kaltezeit"] = "Kaltezeit (wczesna zima)",
+    ["Ulrichszeit"] = "Ulrichszeit (zima)",
+    ["Vorhexen"] = "Vorhexen (pozna zima)",
+}
+
+function misc:replace_string_calendar_ishtar(str)
+    local new_calendar_str = misc.ishtar_calendar[str]
+    selectString(str, 1)
+    replace(new_calendar_str)
+end
+
+function misc:replace_string_calendar_imperium(str)
+    local new_calendar_str = misc.imperium_calendar[str]
+    selectString(str, 1)
+    replace(new_calendar_str)
+end
+
+function trigger_func_skrypty_misc_calendar_pory_roku_ishtar()
+    misc:replace_string_calendar_ishtar(matches[2])
+end
+
+function trigger_func_skrypty_misc_calendar_pory_roku_imperium()
+    misc:replace_string_calendar_imperium(matches[2])
+end
+

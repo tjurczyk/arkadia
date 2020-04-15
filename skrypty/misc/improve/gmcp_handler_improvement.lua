@@ -1,0 +1,75 @@
+function gmcp_handler_improvement()
+    local improve_level = 0
+    for k, v in pairs(gmcp.char.state) do
+        if k == "improve" then
+            improve_level = tonumber(v)
+        end
+    end
+
+    if improve_level <= 0 then
+        return
+    end
+
+    if improve_level == misc.improve.current_improve_level then
+        return
+    end
+
+    misc.improve.current_improve_level = improve_level
+
+    if misc.improve["improve2_enabled"] then
+        -- get previous value to know how many to add
+        local prev_val = 0
+
+        if table.size(misc.improve["level_snapshots"]) > 0 then
+            prev_val = misc.improve.level_snapshots[#misc.improve.level_snapshots]["level"]
+        end
+
+        misc.improve:add_improvee2(improve_level - prev_val)
+    else
+        scripts:print_log("Nie zapisuje do globalnych, bo jest wylaczony")
+    end
+
+    -- snapshot of killed mobs
+    local snapshot = {}
+    snapshot["level"] = improve_level
+    snapshot["time"] = getTime(true, "dd/MM hh:mm:ss")
+    snapshot["timestamp"] = getEpoch()
+
+    local last_snapshot = nil
+    if table.size(misc.improve["level_snapshots"]) > 0 then
+        last_snapshot = misc.improve["level_snapshots"][#misc.improve["level_snapshots"]]
+    end
+
+    snapshot["me_killed"] = misc.counter.killed_amount["JA"]
+    snapshot["all_killed"] = misc.counter.all_kills
+
+    local seconds_passed = snapshot["timestamp"] - misc.improve["improve_start_timestamp"]
+    misc.improve["improve_start_timestamp"] = getEpoch()
+    local minutes = math.floor(seconds_passed / 60)
+    local minutes_string = nil
+
+    if minutes < 10 then
+        minutes_string = "0" .. tostring(minutes)
+    else
+        minutes_string = tostring(minutes)
+    end
+
+    local seconds = math.floor(seconds_passed % 60)
+
+    if seconds < 10 then
+        snapshot["time_passed"] = minutes_string .. ":0" .. tostring(seconds)
+    else
+        snapshot["time_passed"] = minutes_string .. ":" .. tostring(seconds)
+    end
+
+    table.insert(misc.improve["level_snapshots"], snapshot)
+    scripts:print_log("[" .. snapshot["time"] .. "] Wlasnie wbiles postepy: " .. misc.improve.levels[improve_level])
+    misc_on_exit_dump()
+end
+
+if scripts.event_handlers["skrypty/misc/improve/gmcp_handler_improvement.gmcp.char.state.gmcp_handler_improvement"] then
+    killAnonymousEventHandler(scripts.event_handlers["skrypty/misc/improve/gmcp_handler_improvement.gmcp.char.state.gmcp_handler_improvement"])
+end
+
+scripts.event_handlers["skrypty/misc/improve/gmcp_handler_improvement.gmcp.char.state.gmcp_handler_improvement"] = registerAnonymousEventHandler("gmcp.char.state", gmcp_handler_improvement)
+

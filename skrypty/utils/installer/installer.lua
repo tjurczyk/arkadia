@@ -27,6 +27,7 @@ function scripts.installer:handle_unzip(event, ...)
     if event == "sysUnzipDone" then
         cecho("\n<CadetBlue>(skrypty)<tomato>: Skrypty rozpakowane\n")
         os.remove(scripts.installer.scripts_zip)
+        scripts.installer:delete_dir(scripts.installer.scripts_directory)
         os.rename(scripts.installer.unzip_directory, scripts.installer.scripts_directory)
         installPackage(scripts.installer.scripts_directory .. "Arkadia.xml")
     elseif event == "sysUnzipError" then
@@ -87,7 +88,7 @@ function scripts.installer:save_map(branch)
     end
 end
 
-function scripts.installer.delete_dir(dir)
+function scripts.installer:delete_dir(dir)
     for file in lfs.dir(dir) do
         local file_path = dir .. '/' .. file
         if file ~= "." and file ~= ".." then

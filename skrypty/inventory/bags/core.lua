@@ -74,7 +74,7 @@ function scripts.inv:_put_get_bag(operation, things, bag_type, bag_count)
 
     table_concat(commands, post_commands)
     table_concat(commands, { true })
-    sendAll(unpack(commands), true)
+    sendAll(unpack(commands))
 end
 
 function scripts.inv:decorate_command_with_proper_bag_forms(command)

@@ -25,4 +25,24 @@ function reloadScripts()
     loadScripts(true)
 end
 
+function reloadSingleScript(path)
+
+    package.loaded[path] = nil
+    local ok, errorMsg = pcall(require, path)
+    if ok then
+        scripts:print_log("Przeladowano paczki '" .. path .. "'")
+    else
+        scripts:print_log("Nie udalo sie przeladowac paczki '" .. path .. ". ' Sprawdz log bledow")
+        error(errorMsg)
+    end
+end
+
+function alias_func_reload()
+    if matches[2] == "" then
+        loadScripts(true)
+    else
+        reloadSingleScript(matches[2])
+    end
+end
+
 loadScripts(false)

@@ -32,7 +32,7 @@ function reloadSingleScript(path)
     if ok then
         scripts:print_log("Przeladowano paczki '" .. path .. "'")
     else
-        scripts:print_log("Nie udalo sie przeladowac paczki '" .. path .. ". ' Sprawdz log bledow")
+        scripts:print_log("Nie udalo sie przeladowac paczki '" .. path .. "'. Sprawdz log bledow")
         error(errorMsg)
     end
 end

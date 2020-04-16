@@ -13,6 +13,11 @@ function scripts.installer:update_scripts(branch)
     scripts.installer.unzip_directory = getMudletHomeDir() .. "/arkadia-" .. tag .. "/"
     scripts.installer.scripts_directory = getMudletHomeDir() .. "/arkadia/"
 
+    if lfs.chdir(scripts.installer.scripts_directory .. "/.git/") then
+        scripts:print_log("Chyba nie chcesz aktualizowac repozytorium w ten sposob? :)")
+        return
+    end
+
     registerAnonymousEventHandler("sysDownloadDone", function(_, filename) scripts.installer:handle_scripts_download(_, filename) end, true)
     downloadFile(scripts.installer.scripts_zip, url)
     scripts:print_log("Pobieram aktualna paczke skryptow")

@@ -100,7 +100,7 @@ function scripts.installer:delete_dir(dir)
             if lfs.attributes(file_path, 'mode') == 'file' then
                 os.remove(file_path)
             elseif lfs.attributes(file_path, 'mode') == 'directory' then
-                deleteDir(file_path)
+                scripts.installer:delete_dir(file_path)
             end
         end
     end

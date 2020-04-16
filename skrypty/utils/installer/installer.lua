@@ -13,7 +13,6 @@ function scripts.installer:update_scripts(branch)
     scripts.installer.unzip_directory = getMudletHomeDir() .. "/arkadia-" .. tag .. "/"
     scripts.installer.scripts_directory = getMudletHomeDir() .. "/arkadia/"
 
-    pcall(scripts.installer.deleteDir, scripts_directory)
     registerAnonymousEventHandler("sysDownloadDone", function(_, filename) scripts.installer:handle_scripts_download(_, filename) end, true)
     downloadFile(scripts.installer.scripts_zip, url)
     scripts:print_log("Pobieram aktualna paczke skryptow")
@@ -31,7 +30,7 @@ end
 function scripts.installer:handle_unzip(event, ...)
     if event == "sysUnzipDone" then
         os.remove(scripts.installer.scripts_zip)
-        scripts.installer:delete_dir(scripts.installer.scripts_directory)
+        pcall(scripts.installer.delete_dir, scripts_directory)
         os.rename(scripts.installer.unzip_directory, scripts.installer.scripts_directory)
         installPackage(scripts.installer.scripts_directory .. "Arkadia.xml")
         scripts:print_log("Ok, zrestartuj Mudleta")
@@ -93,14 +92,14 @@ function scripts.installer:save_map(branch)
     end
 end
 
-function scripts.installer:delete_dir(dir)
+function scripts.installer.delete_dir(dir)
     for file in lfs.dir(dir) do
         local file_path = dir .. '/' .. file
         if file ~= "." and file ~= ".." then
             if lfs.attributes(file_path, 'mode') == 'file' then
                 os.remove(file_path)
             elseif lfs.attributes(file_path, 'mode') == 'directory' then
-                scripts.installer:delete_dir(file_path)
+                scripts.installer.delete_dir(file_path)
             end
         end
     end

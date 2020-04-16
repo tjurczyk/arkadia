@@ -27,12 +27,12 @@ function scripts.installer:handle_scripts_download(_, filename)
     if filename ~= scripts.installer.scripts_zip then
         return true
     end
-    registerAnonymousEventHandler("sysUnzipDone", function(event, ...) scripts.installer:handle_unzip(event, ...) end, true)
-    registerAnonymousEventHandler("sysUnzipError", function(event, ...) scripts.installer:handle_unzip(event, ...) end, true)
+    registerAnonymousEventHandler("sysUnzipDone", function(event, ...) scripts.installer:handle_unzip_scripts(event, ...) end, true)
+    registerAnonymousEventHandler("sysUnzipError", function(event, ...) scripts.installer:handle_unzip_scripts(event, ...) end, true)
     unzipAsync(scripts.installer.scripts_zip, getMudletHomeDir())
 end
 
-function scripts.installer:handle_unzip(event, ...)
+function scripts.installer:handle_unzip_scripts(event, ...)
     if event == "sysUnzipDone" then
         os.remove(scripts.installer.scripts_zip)
         pcall(scripts.installer.delete_dir, scripts_directory)
@@ -40,7 +40,7 @@ function scripts.installer:handle_unzip(event, ...)
         installPackage(scripts.installer.scripts_directory .. "Arkadia.xml")
         scripts:print_log("Ok, zrestartuj Mudleta")
     elseif event == "sysUnzipError" then
-        cecho("\n<CadetBlue>(skrypty)<tomato>: Blad podczas rozpakowywania skryptow\n")
+        scripts:print_log("Blad podczas rozpakowywania skryptow")
     end
 end
 

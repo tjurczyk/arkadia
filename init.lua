@@ -25,8 +25,4 @@ function reloadScripts()
     loadScripts(true)
 end
 
-if not exists("reload scripts", "alias") then
-    permAlias("reload scripts", "Arkadia", "^/reload$", "reloadScripts()")
-end
-
 loadScripts(false)

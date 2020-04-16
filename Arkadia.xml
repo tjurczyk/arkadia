@@ -1121,7 +1121,7 @@
 							<integer>1</integer>
 						</regexCodePropertyList>
 					</Trigger>
-					<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>Zabil-counter</name>
 						<script>trigger_func_skrypty_misc_counter_Zabil_counter()</script>
 						<triggerType>0</triggerType>
@@ -21945,7 +21945,7 @@
 						<string>Wsrod gestych pajeczyn pokrywajacych poludniowa sciane komnaty znajdujesz ukryta dzwignie.</string>
 						<string>Przeszukujesz dokladnie kazdy spalony regal, jednak ze wszystkich zgromadzonych tu ksiazek zostal jedynie czarny popiol...</string>
 						<string>Przeszukujesz rozkopany grob, ale nic tam nie znajdujesz.</string>
-						<string>, znajdujac zamknieta pekata puszke.</string>
+						<string>Przeszukujesz dokladnie .*</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -21981,7 +21981,7 @@
 						<integer>0</integer>
 						<integer>0</integer>
 						<integer>0</integer>
-						<integer>0</integer>
+						<integer>1</integer>
 					</regexCodePropertyList>
 				</Trigger>
 				<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">

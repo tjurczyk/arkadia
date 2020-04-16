@@ -4,14 +4,19 @@ function scripts.installer:update_scripts(branch)
     local tag = branch or "master"
     local url = "https://codeload.github.com/tjurczyk/arkadia-skrypty/zip/" .. tag
 
+    if (mudletOlderThan(4, 6)) then
+        scripts:print_log("Zaktualizuj mudlet do wersji 4.6+ lub pobierz paczke recznie z adresu: " .. url)
+        return
+    end
+
     scripts.installer.scripts_zip = getMudletHomeDir() .. "/scripts.zip"
-    scripts.installer.unzip_directory = getMudletHomeDir() .. "/arkadia-".. tag .."/"
+    scripts.installer.unzip_directory = getMudletHomeDir() .. "/arkadia-" .. tag .. "/"
     scripts.installer.scripts_directory = getMudletHomeDir() .. "/arkadia/"
 
     pcall(scripts.installer.deleteDir, scripts_directory)
     registerAnonymousEventHandler("sysDownloadDone", function(_, filename) scripts.installer:handle_scripts_download(_, filename) end, true)
     downloadFile(scripts.installer.scripts_zip, url)
-    cecho("\n<CadetBlue>(skrypty)<tomato>: Pobieram aktualna paczke skryptow\n")
+    scripts:print_log("Pobieram aktualna paczke skryptow")
 end
 
 function scripts.installer:handle_scripts_download(_, filename)
@@ -25,11 +30,11 @@ end
 
 function scripts.installer:handle_unzip(event, ...)
     if event == "sysUnzipDone" then
-        cecho("\n<CadetBlue>(skrypty)<tomato>: Skrypty rozpakowane\n")
         os.remove(scripts.installer.scripts_zip)
         scripts.installer:delete_dir(scripts.installer.scripts_directory)
         os.rename(scripts.installer.unzip_directory, scripts.installer.scripts_directory)
         installPackage(scripts.installer.scripts_directory .. "Arkadia.xml")
+        scripts:print_log("Ok, zrestartuj Mudleta")
     elseif event == "sysUnzipError" then
         cecho("\n<CadetBlue>(skrypty)<tomato>: Blad podczas rozpakowywania skryptow\n")
     end

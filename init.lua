@@ -1,7 +1,7 @@
-scriptsLoaded = scriptsLoaded or false
+scripts_loaded = scripts_loaded or false
 
-function loadScripts(force)
-    if not force and scriptsLoaded then
+function load_scripts(force)
+    if not force and scripts_loaded then
         return
     end
 
@@ -16,17 +16,10 @@ function loadScripts(force)
         require(v)
     end
 
-    scriptsLoaded = true
+    scripts_loaded = true
 end
 
-function reloadScripts()
-    package.loaded.init = nil
-    require("init")
-    loadScripts(true)
-end
-
-function reloadSingleScript(path)
-
+function reload_single_script(path)
     package.loaded[path] = nil
     local ok, errorMsg = pcall(require, path)
     if ok then
@@ -39,10 +32,12 @@ end
 
 function alias_func_reload()
     if matches[2] == "" then
-        loadScripts(true)
+        package.loaded.init = nil
+        require("init")
+        load_scripts(true)
     else
-        reloadSingleScript(matches[2])
+        reload_single_script(matches[2])
     end
 end
 
-loadScripts(false)
+load_scripts(false)

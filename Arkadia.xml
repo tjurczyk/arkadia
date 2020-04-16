@@ -24792,13 +24792,13 @@
 			<name>init</name>
 			<packageName></packageName>
 			<script>local path = package.path
-            local homeDirectory = getMudletHomeDir():gsub("\\", "/") .. "/arkadia/"
+local homeDirectory = getMudletHomeDir():gsub("\\", "/") .. "/arkadia/"
 
-            local luaDirectory = string.format("%s/%s", homeDirectory, [[?.lua]])
-            package.path = string.format("%s;%s", luaDirectory, path)
+local luaDirectory = string.format("%s/%s", homeDirectory, [[?.lua]])
+package.path = string.format("%s;%s", luaDirectory, path)
 
-            package.loaded.init = nil
-            require("init")
+package.loaded.init = nil
+require("init")
         </script>
 			<eventHandlerList />
 		</Script>

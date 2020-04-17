@@ -4,7 +4,7 @@ scripts.latest = {
 }
 
 function scripts.latest:get_latest_version(callback)
-    registerAnonymousEventHandler("sysDownloadDone", function(_, filename) scripts.latest:handle_download(_, filename, callback) end, true)
+    scripts.event_regsiter:register_event_handler("scripts.lates.get_lates_version", "sysDownloaDone", function(_, filename) scripts.latest:handle_download(_, filename, callback) end)
     downloadFile(scripts.latest.file_name, scripts.latest.url)
 end
 

@@ -1,5 +1,6 @@
 table.insert(mudletModules, "skrypty")
 table.insert(mudletModules, "mapper")
+table.insert(mudletModules, "skrypty/event_register")
 table.insert(mudletModules, "skrypty/db_fix")
 table.insert(mudletModules, "skrypty/team")
 table.insert(mudletModules, "skrypty/character")

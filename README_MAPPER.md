@@ -35,7 +35,7 @@ Klikamy w `Keys` umieszczony na górnym pasku Mudleta, będzie to wyglądało ta
 
 ![Konfiguracja triggera](http://kamerdyner.net/~george/img/keybindy.png)
 
-Klikamy `Add Item` na górnym pasku. **UWAGA**: key binda trzeba utworzyć w głównym katalogu. To znaczy, nie tworzy się go w katalogu `skrypty_master`, bo wtedy przy aktualizacji skryptów key bindy te zostaną usunięte.
+Klikamy `Add Item` na górnym pasku. **UWAGA**: key binda trzeba utworzyć w głównym katalogu. To znaczy, nie tworzy się go w katalogu `arkadia`, bo wtedy przy aktualizacji skryptów key bindy te zostaną usunięte.
 Po kliknięciu `Add Item` uzupełniamy następujące pola:
 
   * _Name_: `zachod` (dowolna nazwa binda)

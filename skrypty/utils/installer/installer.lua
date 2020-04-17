@@ -35,7 +35,7 @@ function scripts.installer:handle_scripts_download(_, filename)
     if filename ~= scripts.installer.scripts_zip then
         return true
     end
-    scripts:print_log("Log paczka pobrana. Rozpakowuje")
+    scripts:print_log("Paczka pobrana. Rozpakowuje")
     registerAnonymousEventHandler("sysUnzipDone", function(event, ...) scripts.installer:handle_unzip_scripts(event, ...) end, true)
     registerAnonymousEventHandler("sysUnzipError", function(event, ...) scripts.installer:handle_unzip_scripts(event, ...) end, true)
     unzipAsync(scripts.installer.scripts_zip, getMudletHomeDir())

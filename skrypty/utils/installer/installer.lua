@@ -26,7 +26,10 @@ function scripts.installer:update_scripts(branch)
         return
     end
 
-    registerAnonymousEventHandler("sysDownloadDone", function(_, filename) scripts.installer:handle_scripts_download(_, filename) end, true)
+    if scripts.installer.scripts_download_handler then
+        killAnonymousEventHandler(scripts.installer.scripts_download_handler)
+    end
+    scripts.installer.scripts_download_handler = registerAnonymousEventHandler("sysDownloadDone", function(_, filename) scripts.installer:handle_scripts_download(_, filename) end, true)
     downloadFile(scripts.installer.scripts_zip, url)
     scripts:print_log("Pobieram paczke skryptow " .. branch)
 end

@@ -1,10 +1,13 @@
 scripts.latest = {
     url = "https://api.github.com/repos/tjurczyk/arkadia/releases/latest",
-    file_name = getMudletHomeDir() .. "/latest.json"
+    file_name = getMudletHomeDir() .. "/latest.json",
 }
 
 function scripts.latest:get_latest_version(callback)
-    registerAnonymousEventHandler("sysDownloadDone", function(_, filename) scripts.latest:handle_download(_, filename, callback) end, true)
+    if scripts.latest.handler then
+        killAnonymousEventHandler(scripts.latest.handler)
+    end
+    scripts.latest.handler = registerAnonymousEventHandler("sysDownloadDone", function(_, filename) scripts.latest:handle_download(_, filename, callback) end)
     downloadFile(scripts.latest.file_name, scripts.latest.url)
 end
 

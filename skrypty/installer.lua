@@ -1,5 +1,5 @@
 function alias_func_skrypty_installer_aktualizuj_skrypty()
-    scripts.installer:update_scripts()
+    scripts.installer:update_scripts_to_latest_release()
 end
 
 function alias_func_skrypty_installer_instaluj_skrypty()

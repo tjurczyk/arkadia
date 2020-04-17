@@ -1,5 +1,13 @@
 scripts.installer = scripts.installer or {}
 
+function scripts.installer:update_scripts_to_latest_release()
+    scripts.latest:get_latest_version(function(version) scripts.installer:on_scripts_version(version) end)
+end
+
+function scripts.installer:on_scripts_version(version)
+    scripts.installer:update_scripts(version)
+end
+
 function scripts.installer:update_scripts(branch)
     local tag = branch or "master"
     local url = "https://codeload.github.com/tjurczyk/arkadia-skrypty/zip/" .. tag
@@ -20,7 +28,7 @@ function scripts.installer:update_scripts(branch)
 
     registerAnonymousEventHandler("sysDownloadDone", function(_, filename) scripts.installer:handle_scripts_download(_, filename) end, true)
     downloadFile(scripts.installer.scripts_zip, url)
-    scripts:print_log("Pobieram aktualna paczke skryptow")
+    scripts:print_log("Pobieram paczke skryptow " .. branch)
 end
 
 function scripts.installer:handle_scripts_download(_, filename)

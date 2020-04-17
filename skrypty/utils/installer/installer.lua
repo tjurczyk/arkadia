@@ -26,7 +26,7 @@ function scripts.installer:update_scripts(branch)
         return
     end
 
-    scripts.event_regsiter:register_event_handler("scripts.installer.update_scripts", "sysDownloaDone", function(_, filename) scripts.installer:handle_scripts_download(_, filename) end)
+    scripts.event_register:register_event_handler("scripts.installer.update_scripts", "sysDownloaDone", function(_, filename) scripts.installer:handle_scripts_download(_, filename) end)
     downloadFile(scripts.installer.scripts_zip, url)
     scripts:print_log("Pobieram paczke skryptow " .. branch)
 end
@@ -36,8 +36,8 @@ function scripts.installer:handle_scripts_download(_, filename)
         return true
     end
     scripts:print_log("Paczka pobrana. Rozpakowuje")
-    scripts.event_regsiter:register_event_handler("scripts.installer.update_scripts", "sysUnzipDone", function(event, ...) scripts.installer:handle_unzip_scripts(event, ...) end, true)
-    scripts.event_regsiter:register_event_handler("scripts.installer.update_scripts", "sysUnzipError", function(event, ...) scripts.installer:handle_unzip_scripts(event, ...) end, true)
+    scripts.event_register:register_event_handler("scripts.installer.update_scripts", "sysUnzipDone", function(event, ...) scripts.installer:handle_unzip_scripts(event, ...) end, true)
+    scripts.event_register:register_event_handler("scripts.installer.update_scripts", "sysUnzipError", function(event, ...) scripts.installer:handle_unzip_scripts(event, ...) end, true)
     unzipAsync(scripts.installer.scripts_zip, getMudletHomeDir())
 end
 

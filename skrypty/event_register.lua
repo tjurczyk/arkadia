@@ -17,7 +17,7 @@ end
 
 function scripts.event_register:kill_event_handler(id)
     if scripts.event_register.handlers[id] then
-        killAnonymousEventHandler(id)
+        killAnonymousEventHandler(scripts.event_register.handlers[id])
         scripts.event_register[id] = nil
     end
 end

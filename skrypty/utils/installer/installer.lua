@@ -36,8 +36,8 @@ function scripts.installer:handle_scripts_download(_, filename)
         return true
     end
     scripts:print_log("Paczka pobrana. Rozpakowuje")
-    scripts.event_register:register_event_handler("scripts.installer.update_scripts", "sysUnzipDone", function(event, ...) scripts.installer:handle_unzip_scripts(event, ...) end, true)
-    scripts.event_register:register_event_handler("scripts.installer.update_scripts", "sysUnzipError", function(event, ...) scripts.installer:handle_unzip_scripts(event, ...) end, true)
+    scripts.event_register:register_event_handler("scripts.installer.update_scripts.unzipok", "sysUnzipDone", function(event, ...) scripts.installer:handle_unzip_scripts(event, ...) end, true)
+    scripts.event_register:register_event_handler("scripts.installer.update_scripts.unziperrr", "sysUnzipError", function(event, ...) scripts.installer:handle_unzip_scripts(event, ...) end, true)
     unzipAsync(scripts.installer.scripts_zip, getMudletHomeDir())
 end
 

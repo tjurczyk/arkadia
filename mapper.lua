@@ -2,7 +2,7 @@ mudlet = mudlet or {}; mudlet.mapper_script = true
 if not amap then
     amap = {
         db = { show_notes = true, show_binds = true },
-        ver = "3.17",
+        ver = "3.18",
         shortcuts = {},
         shorten_exits = false,
         dir_from_key = nil,

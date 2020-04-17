@@ -1,4 +1,4 @@
-scripts.latest = {
+scripts.latest = scripts.latest or {
     url = "https://api.github.com/repos/tjurczyk/arkadia/releases/latest",
     file_name = getMudletHomeDir() .. "/latest.json"
 }

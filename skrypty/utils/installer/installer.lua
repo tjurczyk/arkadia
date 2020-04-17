@@ -29,7 +29,7 @@ function scripts.installer:update_scripts(branch)
     if scripts.installer.scripts_download_handler then
         killAnonymousEventHandler(scripts.installer.scripts_download_handler)
     end
-    scripts.installer.scripts_download_handler = registerAnonymousEventHandler("sysDownloadDone", function(_, filename) scripts.installer:handle_scripts_download(_, filename) end, true)
+    scripts.installer.scripts_download_handler = registerAnonymousEventHandler("sysDownloadDone", function(_, filename) scripts.installer:handle_scripts_download(_, filename) end)
     downloadFile(scripts.installer.scripts_zip, url)
     scripts:print_log("Pobieram paczke skryptow " .. branch)
 end
@@ -38,6 +38,7 @@ function scripts.installer:handle_scripts_download(_, filename)
     if filename ~= scripts.installer.scripts_zip then
         return true
     end
+    scripts:print("Log paczka pobrana. Rozpakowuje")
     registerAnonymousEventHandler("sysUnzipDone", function(event, ...) scripts.installer:handle_unzip_scripts(event, ...) end, true)
     registerAnonymousEventHandler("sysUnzipError", function(event, ...) scripts.installer:handle_unzip_scripts(event, ...) end, true)
     unzipAsync(scripts.installer.scripts_zip, getMudletHomeDir())

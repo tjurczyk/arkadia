@@ -22,12 +22,27 @@ end
     reference: value to be checked as condition to register handler
     Just as in https://wiki.mudlet.org/w/Manual:Miscellaneous_Functions#registerAnonymousEventHandler
 --]]
-function scripts.event_register:register_singlton_event_handler(reference, event, callback, onetime)
+function scripts.event_register:register_singleton_event_handler(reference, event, callback, onetime)
    if reference ~= nil then
        return reference
    else
-        return scripts.event_register:scripts.event_register:register_event_handler(event, callback, onetime)
+        return scripts.event_register:register_event_handler(event, callback, onetime)
    end
+end
+
+--[[
+    Register event handler and store its id, kill handler for reference passed
+    Otherwise return that reference
+
+    Args:
+    reference: value to be checked as condition to register handler
+    Just as in https://wiki.mudlet.org/w/Manual:Miscellaneous_Functions#registerAnonymousEventHandler
+--]]
+function scripts.event_register:force_register_event_handler(reference, event, callback, onetime)
+    if reference ~= nil then
+        pcall(killAnonymousEventHandler, reference)
+    end
+    return scripts.event_register:register_event_handler(event, callback, onetime)
 end
 
 --[[

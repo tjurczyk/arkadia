@@ -10,7 +10,7 @@ scripts.latest = scripts.latest or {
     - callback (function) - function which will be called upon version retrieval with version tag as argument
 --]]
 function scripts.latest:get_latest_version(callback)
-    scripts.latest.handler = scripts.event_register:register_singleton_event_handler(scripts.latest.handler, "sysDownloadDone", function(_, filename) scripts.latest:handle_download(_, filename, callback) end)
+    scripts.latest.handler = scripts.event_register:force_register_event_handler(scripts.latest.handler, "sysDownloadDone", function(_, filename) scripts.latest:handle_download(_, filename, callback) end)
     downloadFile(scripts.latest.file_name, scripts.latest.url)
 end
 

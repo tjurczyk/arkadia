@@ -8,9 +8,10 @@ function scripts.installer:on_scripts_version(version)
     scripts.installer:update_scripts(version)
 end
 
-function scripts.installer:update_scripts(branch)
+function scripts.installer:update_scripts(branch, repo)
     local tag = branch or "master"
-    local url = "https://codeload.github.com/tjurczyk/arkadia-skrypty/zip/" .. tag
+    local repo = repo or "tjurczyk/arkadia"
+    local url = "https://codeload.github.com/" .. repo .. "/zip/" .. tag
 
     if (mudletOlderThan(4, 6)) then
         scripts:print_log("Zaktualizuj mudlet do wersji 4.6+ lub pobierz paczke recznie z adresu: " .. url)
@@ -26,7 +27,7 @@ function scripts.installer:update_scripts(branch)
         return
     end
 
-    scripts.installer.scripts_download_handler = scripts.event_register:register_singleton_event_handler(scripts.installer.scripts_download_handler, "sysDownloadDone", function(_, filename) scripts.installer:handle_scripts_download(_, filename) end)
+    scripts.installer.scripts_download_handler = scripts.event_register:force_register_event_handler(scripts.installer.scripts_download_handler, "sysDownloadDone", function(_, filename) scripts.installer:handle_scripts_download(_, filename) end)
     downloadFile(scripts.installer.scripts_zip, url)
     scripts:print_log("Pobieram paczke skryptow " .. branch)
 end

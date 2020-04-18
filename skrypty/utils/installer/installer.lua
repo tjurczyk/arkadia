@@ -29,7 +29,7 @@ function scripts.installer:update_scripts(branch, repo)
 
     scripts.installer.scripts_download_handler = scripts.event_register:force_register_event_handler(scripts.installer.scripts_download_handler, "sysDownloadDone", function(_, filename) scripts.installer:handle_scripts_download(_, filename) end)
     downloadFile(scripts.installer.scripts_zip, url)
-    scripts:print_log("Pobieram paczke skryptow " .. branch)
+    scripts:print_log("Pobieram paczke skryptow " .. branch .. " z repozytorium " .. repo)
 end
 
 function scripts.installer:handle_scripts_download(_, filename)

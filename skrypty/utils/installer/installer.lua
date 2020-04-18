@@ -9,8 +9,9 @@ function scripts.installer:on_scripts_version(version)
 end
 
 function scripts.installer:update_scripts(branch, repo)
-    local tag = branch or "master"
-    local repo = repo or "tjurczyk/arkadia"
+
+    local tag = branch ~= "" and branch and branch or "master"
+    local repo = repo ~= "" and repo and repo or "tjurczyk/arkadia"
     local url = "https://codeload.github.com/" .. repo .. "/zip/" .. tag
 
     if (mudletOlderThan(4, 6)) then

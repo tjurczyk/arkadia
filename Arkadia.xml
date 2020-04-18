@@ -23794,7 +23794,7 @@
 					<script>alias_func_skrypty_installer_instaluj_skrypty()</script>
 					<command></command>
 					<packageName></packageName>
-					<regex>^/zainstaluj (.*)$</regex>
+					<regex>^/zainstaluj (.\S+) ?(.*)$</regex>
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
 					<name>download_map</name>

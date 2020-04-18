@@ -3,31 +3,45 @@ scripts.latest = scripts.latest or {
     file_name = getMudletHomeDir() .. "/latest.json"
 }
 
+--[[
+    Get latest version of scripts
+
+    Args:
+    - callback (function) - function which will be called upon version retrieval with version tag as argument
+--]]
 function scripts.latest:get_latest_version(callback)
     scripts.event_register:register_event_handler("scripts.lates.get_latest_version", "sysDownloadDone", function(_, filename) scripts.latest:handle_download(_, filename, callback) end)
     downloadFile(scripts.latest.file_name, scripts.latest.url)
 end
 
-function scripts.latest:is_latest(falseCallback, trueCallback)
-    scripts.latest:get_latest_version(function(version) scripts.latest:compare(version, falseCallback, trueCallback) end)
+--[[
+    Check if current version of scripts is latest
+
+    Args:
+    - false_callbck (function) - call if version is not tha latest
+    - true_callback (function) - call if version is latest
+--]]
+function scripts.latest:is_latest(false_callback, true_callback)
+    scripts.latest:get_latest_version(function(version) scripts.latest:compare(version, false_callback, true_callback) end)
 end
 
-function scripts.latest:compare(version, falseCallback, trueCallback)
-    local falseCallback = falseCallback or function() return false end
-    local trueCallback = trueCallback or function() return true end
+
+function scripts.latest:compare(version, false_callback, true_callback)
+    local false_callback = false_callback or function() return false end
+    local true_callback = true_callback or function() return true end
 
     if scripts.ver == version then
-        return trueCallback()
+        return true_callback()
     end
 
-    local current_version = split(scripts.ver, "\.")
-    local repository_version = split(version, "\.")
-    for i = 1, math.max(table.size(current_version), table.size(repository_version))  do
-            if (current_version[i] or "0") > (repository_version[i] or "0") then
-                return trueCallback()
+    local current_version_partials_list = split(scripts.ver, "\.")
+    local repository_version_partial_list = split(version, "\.")
+    for i = 1, math.max(table.size(current_version), table.size(repository_version_partial_list))  do
+            if (current_version_partials_list[i] or "0") > (repository_version_partial_list[i] or "0") then
+                return true_callback()
             end
     end
-    return falseCallback()
+    return false_callback()
 end
 
 function scripts.latest:handle_download(_, filename, callback)
@@ -35,6 +49,7 @@ function scripts.latest:handle_download(_, filename, callback)
         return true
     end
 
+    -- try to read response from github api, deserialize it and call callback function with version number
     local file = io.open(scripts.latest.file_name, "rb")
     if file then
         local response = yajl.to_value(file:read("*a"))

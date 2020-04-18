@@ -10,7 +10,7 @@ scripts.latest = scripts.latest or {
     - callback (function) - function which will be called upon version retrieval with version tag as argument
 --]]
 function scripts.latest:get_latest_version(callback)
-    scripts.event_register:register_event_handler("scripts.lates.get_latest_version", "sysDownloadDone", function(_, filename) scripts.latest:handle_download(_, filename, callback) end)
+    scripts.latest.handler = scripts.event_register:register_singleton_event_handler(scripts.latest.handler, "sysDownloadDone", function(_, filename) scripts.latest:handle_download(_, filename, callback) end)
     downloadFile(scripts.latest.file_name, scripts.latest.url)
 end
 
@@ -18,7 +18,7 @@ end
     Check if current version of scripts is latest
 
     Args:
-    - false_callbck (function) - call if version is not tha latest
+    - false_callback (function) - call if version is not tha latest
     - true_callback (function) - call if version is latest
 --]]
 function scripts.latest:is_latest(false_callback, true_callback)
@@ -48,6 +48,8 @@ function scripts.latest:handle_download(_, filename, callback)
     if filename ~= scripts.latest.file_name then
         return true
     end
+
+    scripts.event_register:kill_event_handler(scripts.latest.handler)
 
     -- try to read response from github api, deserialize it and call callback function with version number
     local file = io.open(scripts.latest.file_name, "rb")

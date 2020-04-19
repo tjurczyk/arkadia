@@ -3,7 +3,8 @@ misc.counter.utils = misc.counter or {}
 misc.counter.utils.two_word_mobs = {
     "czarnego orka",
     "krasnoluda chaosu",
-    "rycerza chaosu"
+    "rycerza chaosu",
+    "smoczego ogra"
 }
 
 function misc.counter.utils:get_entry_key(key)

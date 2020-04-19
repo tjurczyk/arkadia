@@ -1,10 +1,5 @@
 function misc.counter2:add_item(original_text, item)
-    local type_t = string.split(item, " ")
-    local type = type_t[#type_t]
-
-    if table.size(type_t) == 4 and type_t[3] == "czarnego" and type_t[4] == "orka" then
-        type = "czarnego orka"
-    end
+    local type = misc.counter.utils:get_entry_key(item)
 
     local hour = getTime(true, "hh:mm:ss")
     local year = getTime(true, "yyyy")

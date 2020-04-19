@@ -1,13 +1,5 @@
 function misc.counter:add_killed(key, person)
-    -- Find the last key
-    local l_keys = string.split(key, " ")
-    local l_key = nil
-
-    if table.size(l_keys) == 4 and l_keys[4] == "orka" and l_keys[3] == "czarnego" then
-        l_key = "czarnego orka"
-    else
-        l_key = l_keys[table.size(l_keys)]
-    end
+    local l_key = misc.counter.utils:get_entry_key(key)
 
     -- add entry for this person if necessary
     if not misc.counter.killed[person] then

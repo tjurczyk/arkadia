@@ -72,7 +72,7 @@ end
 function trigger_func_skrypty_ui_misc_ghoul_trucizna()
     selectCurrentLine()
     deleteLine()
-    cecho("<tomato>\n\n[  ZDROWIE  ] <grey>" .. matches[2] .. "\n\n")
+    cecho("<tomato>\n\n[  ZDROWIE  ] <grey>" .. matches[1] .. "\n\n")
     scripts.ui:info_action_update("ZATRUTY")
 end
 

@@ -1,4 +1,4 @@
-misc.counter.utils = misc.counter or {}
+misc.counter.utils = misc.counter.utils or {}
 
 misc.counter.utils.two_word_mobs = {
     "czarnego orka",

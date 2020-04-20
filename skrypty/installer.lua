@@ -1,9 +1,9 @@
 function alias_func_skrypty_installer_aktualizuj_skrypty()
-    scripts.installer:update_scripts()
+    scripts.installer:update_scripts_to_latest_release()
 end
 
 function alias_func_skrypty_installer_instaluj_skrypty()
-    scripts.installer:update_scripts(matches[2])
+    scripts.installer:update_scripts(matches[2], matches[3])
 end
 
 function alias_func_skrypty_installer_download_map()

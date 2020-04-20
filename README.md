@@ -9,16 +9,26 @@ Wersja, której używasz: sprawdź nagłówek komendy `/skrypty`.
 **W celu poprawnego działania skryptów, w ustawieniach trzeba włączyć obsługę GMCP! Bez tego skrypty nie będą działać poprawnie.
 Przed instalacją koniecznie włącz opcję _Enable GMCP_ w ustawieniach (Settings) Mudleta i zrestartuj go.**
 
-Instalacja skryptów to najzwyczajniej zainstalowanie pliku `skrypty_master.xml`.
+#### Mudlet 4.6+ i moduł LUA
+
+Wystarczy wkleić poniższą komendę:
+
+```
+lua local a="https://api.github.com/repos/tjurczyk/arkadia/releases/latest"local b=getMudletHomeDir().."/latest.json"local c="https://codeload.github.com/tjurczyk/arkadia-skrypty/zip/"local d=getMudletHomeDir().."/scripts.zip"local e=""local f=getMudletHomeDir().."/arkadia/"function installScripts()downloadFile(b,a)registerAnonymousEventHandler("sysDownloadDone","handleVersionDownload",true)end function handleVersionDownload(g,h,i)if h~=b then return true end local j=io.open(b,"rb")if j then local k=yajl.to_value(j:read("*a"))j:close()os.remove(b)e=getMudletHomeDir().."/arkadia-"..k.name.."/"tempTimer(0.1,function()downloadScripts(k.name)end)end end function downloadScripts(l)pcall(deleteDir,f)registerAnonymousEventHandler("sysDownloadDone","handleDownload",true)downloadFile(d,c..l)cecho("\n<CadetBlue>(skrypty)<tomato>: Pobieram aktualna paczke skryptow ("..l..")\n")end function handleDownload(g,h)if h~=d then return true end registerAnonymousEventHandler("sysUnzipDone","handleUnzipEvents",true)registerAnonymousEventHandler("sysUnzipError","handleUnzipEvents",true)unzipAsync(d,getMudletHomeDir())end function handleUnzipEvents(m,...)if m=="sysUnzipDone"then cecho("\n<CadetBlue>(skrypty)<tomato>: Skrypty rozpakowane\n")os.remove(d)os.rename(e,f)installPackage(f.."Arkadia.xml")uninstallPackage("generic_mapper")uninstallPackage("skrypty3_master")elseif m=="sysUnzipError"then cecho("\n<CadetBlue>(skrypty)<tomato>: Blad podczas rozpakowywania skryptow\n")end end function deleteDir(n)for j in lfs.dir(n)do local o=n..'/'..j if j~="."and j~=".."then if lfs.attributes(o,'mode')=='file'then os.remove(o)elseif lfs.attributes(o,'mode')=='directory'then deleteDir(o)end end end lfs.rmdir(n)end installScripts()
+```
+
+#### Ręczna instalacja
+Po pobraniu paczki należy rozpakować ją bezpośrednio do katalogu z profilem, rozpakować i zmienić nazwę katalogu na `arkadia`
+Po czym wykonujemy jeszcze instalację samej paczki w mudlecie
 
 1. W Mudlecie w górnym pasku wybieramy `Package Manager`
 2. Wybieramy na dole `Install`
-3. Z miejsca, gdzie rozpakowana została paczka wybieramy plik `skrypty_master.xml`
+3. Z katalogu z profilem wybieramy plik `arkadia/Arkadia.xml`
 4. Restartujemy Mudleta.
 
 Aktualizacja skryptów już po instalacji to: `/aktualizuj_skrypty`.
 
-Od teraz, w `Triggers`, `Aliases`, `Scripts` oraz `Keys` (z górnego paska) mamy katalog `skrypty_master`. Tego folderu **nie wolno ruszać**. Z każdą aktualizacją, ten katalog jest usuwany i jest instalowany nowy, dlatego też jeśli chce się mieć jakieś własne triggery, aliasy, skrypty i key bindy to **koniecznie** trzeba to robić poza katalogiem `skrypty_master`. Na przykład na poniższym screenshocie widać, że mam dwa aliasy. Są one równoległe do skryptów, a nie w folderze _skrypty_master_.
+Od teraz, w `Triggers`, `Aliases`, `Scripts` oraz `Keys` (z górnego paska) mamy katalog `arkadia`. Tego folderu **nie wolno ruszać**. Z każdą aktualizacją, ten katalog jest usuwany i jest instalowany nowy, dlatego też jeśli chce się mieć jakieś własne triggery, aliasy, skrypty i key bindy to **koniecznie** trzeba to robić poza katalogiem `arkadia`. Na przykład na poniższym screenshocie widać, że mam dwa aliasy. Są one równoległe do skryptów, a nie w folderze _arkadia_.
 
 ![Własne aliasy](http://kamerdyner.net/~george/img/wlasne_aliasy.png)
 

@@ -1,8 +1,18 @@
 scripts.installer = scripts.installer or {}
 
-function scripts.installer:update_scripts(branch)
-    local tag = branch or "master"
-    local url = "https://codeload.github.com/tjurczyk/arkadia-skrypty/zip/" .. tag
+function scripts.installer:update_scripts_to_latest_release()
+    scripts.latest:get_latest_version(function(version) scripts.installer:on_scripts_version(version) end)
+end
+
+function scripts.installer:on_scripts_version(version)
+    scripts.installer:update_scripts(version)
+end
+
+function scripts.installer:update_scripts(branch, repo)
+
+    local tag = branch ~= "" and branch and branch or "master"
+    local repo = repo ~= "" and repo and repo or "tjurczyk/arkadia"
+    local url = "https://codeload.github.com/" .. repo .. "/zip/" .. tag
 
     if (mudletOlderThan(4, 6)) then
         scripts:print_log("Zaktualizuj mudlet do wersji 4.6+ lub pobierz paczke recznie z adresu: " .. url)
@@ -18,24 +28,26 @@ function scripts.installer:update_scripts(branch)
         return
     end
 
-    registerAnonymousEventHandler("sysDownloadDone", function(_, filename) scripts.installer:handle_scripts_download(_, filename) end, true)
+    scripts.installer.scripts_download_handler = scripts.event_register:force_register_event_handler(scripts.installer.scripts_download_handler, "sysDownloadDone", function(_, filename) scripts.installer:handle_scripts_download(_, filename) end)
     downloadFile(scripts.installer.scripts_zip, url)
-    scripts:print_log("Pobieram aktualna paczke skryptow")
+    scripts:print_log("Pobieram paczke skryptow " .. branch .. " z repozytorium " .. repo)
 end
 
 function scripts.installer:handle_scripts_download(_, filename)
     if filename ~= scripts.installer.scripts_zip then
         return true
     end
-    registerAnonymousEventHandler("sysUnzipDone", function(event, ...) scripts.installer:handle_unzip_scripts(event, ...) end, true)
-    registerAnonymousEventHandler("sysUnzipError", function(event, ...) scripts.installer:handle_unzip_scripts(event, ...) end, true)
+    scripts.event_register:kill_event_handler(scripts.installer.scripts_download_handler)
+    scripts:print_log("Paczka pobrana. Rozpakowuje")
+    scripts.event_register:register_event_handler("sysUnzipDone", function(event, ...) scripts.installer:handle_unzip_scripts(event, ...) end, true)
+    scripts.event_register:register_event_handler("sysUnzipError", function(event, ...) scripts.installer:handle_unzip_scripts(event, ...) end, true)
     unzipAsync(scripts.installer.scripts_zip, getMudletHomeDir())
 end
 
 function scripts.installer:handle_unzip_scripts(event, ...)
     if event == "sysUnzipDone" then
         os.remove(scripts.installer.scripts_zip)
-        pcall(scripts.installer.delete_dir, scripts_directory)
+        pcall(scripts.installer.delete_dir, scripts.installer.scripts_directory)
         os.rename(scripts.installer.unzip_directory, scripts.installer.scripts_directory)
         installPackage(scripts.installer.scripts_directory .. "Arkadia.xml")
         scripts:print_log("Ok, zrestartuj Mudleta")

@@ -58,7 +58,7 @@ function alias_func_mapper_walk_cmd_pre_cmd()
     amap:add_walk_pre_cmd(matches[2])
 end
 
-function alias_func_mapper_walk_cmd_pre_cmd()
+function alias_func_mapper_walk_cmd_pre_cmd_perm()
     amap:add_walk_pre_cmd_permanent(matches[2])
 end
 
@@ -66,19 +66,19 @@ function alias_func_mapper_walk_cmd_post_walk()
     amap:add_walk_post_cmd(matches[2])
 end
 
-function alias_func_mapper_walk_cmd_post_walk()
+function alias_func_mapper_walk_cmd_post_walk_perm()
     amap:add_walk_post_cmd_permanent(matches[2])
 end
 
-function alias_func_mapper_walk_cmd_walk_()
+function alias_func_mapper_walk_cmd_walk_reset()
     amap:reset_walk_cmd()
 end
 
-function alias_func_mapper_walk_cmd_walk_()
+function alias_func_mapper_walk_cmd_walk_reset_perm()
     amap:reset_walk_cmd_permanent()
 end
 
-function alias_func_mapper_walk_cmd_walk_()
+function alias_func_mapper_walk_cmd_walk_delete()
     amap:delete_walk_cmd_permanent()
 end
 

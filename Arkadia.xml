@@ -1121,7 +1121,7 @@
 							<integer>1</integer>
 						</regexCodePropertyList>
 					</Trigger>
-					<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>Zabil-counter</name>
 						<script>trigger_func_skrypty_misc_counter_Zabil_counter()</script>
 						<triggerType>0</triggerType>
@@ -15657,7 +15657,7 @@
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>wejdz_do_otworu</name>
-						<script>trigger_func_skrypty_ui_special_exits_follow_wejdz_do_otworu()</script>
+						<script>trigger_func_skrypty_ui_special_exits_follow_wejdz_do_krypty()</script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
 						<mStayOpen>0</mStayOpen>
@@ -17451,7 +17451,7 @@
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>zejdz-po-drabinie</name>
-						<script>trigger_func_skrypty_ui_special_exits_follow_zejdz_po_drabinie()</script>
+						<script>trigger_func_skrypty_ui_special_exits_follow_zejdz_po_drabinie_2()</script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
 						<mStayOpen>0</mStayOpen>
@@ -21103,7 +21103,7 @@
 							</Trigger>
 							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 								<name>gps_bodrog</name>
-								<script>trigger_func_mapper_localizers_ships_buses_ships_novigrad_bodrog_scala_gps_bodrog()</script>
+								<script>trigger_func_mapper_localizers_ships_buses_ships_novigrad_bodrog_scala_gps_bodrog_1()</script>
 								<triggerType>0</triggerType>
 								<conditonLineDelta>0</conditonLineDelta>
 								<mStayOpen>0</mStayOpen>
@@ -21123,7 +21123,7 @@
 							</Trigger>
 							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 								<name>gps_bodrog</name>
-								<script>trigger_func_mapper_localizers_ships_buses_ships_novigrad_bodrog_scala_gps_bodrog()</script>
+								<script>trigger_func_mapper_localizers_ships_buses_ships_novigrad_bodrog_scala_gps_bodrog_2()</script>
 								<triggerType>0</triggerType>
 								<conditonLineDelta>0</conditonLineDelta>
 								<mStayOpen>0</mStayOpen>
@@ -23552,7 +23552,7 @@
 					</Alias>
 					<Alias isActive="yes" isFolder="no">
 						<name>postepy2+</name>
-						<script>alias_func_skrypty_misc_postepy_postepy2_()</script>
+						<script>alias_func_skrypty_misc_postepy_postepy2_plus()</script>
 						<command></command>
 						<packageName></packageName>
 						<regex>^/postepy2\+$</regex>
@@ -23566,7 +23566,7 @@
 					</Alias>
 					<Alias isActive="yes" isFolder="no">
 						<name>postepy2-</name>
-						<script>alias_func_skrypty_misc_postepy_postepy2_()</script>
+						<script>alias_func_skrypty_misc_postepy_postepy2_minus()</script>
 						<command></command>
 						<packageName></packageName>
 						<regex>^/postepy2- (.*)$</regex>
@@ -23608,14 +23608,14 @@
 					</Alias>
 					<Alias isActive="yes" isFolder="no">
 						<name>zabici2</name>
-						<script>alias_func_skrypty_misc_licznik_zabici2()</script>
+						<script>alias_func_skrypty_misc_licznik_zabici2_short()</script>
 						<command></command>
 						<packageName></packageName>
 						<regex>^/zabici2$</regex>
 					</Alias>
 					<Alias isActive="yes" isFolder="no">
 						<name>zabici2!</name>
-						<script>alias_func_skrypty_misc_licznik_zabici2()</script>
+						<script>alias_func_skrypty_misc_licznik_zabici2_long()</script>
 						<command></command>
 						<packageName></packageName>
 						<regex>^/zabici2!$</regex>
@@ -24232,7 +24232,7 @@
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
 					<name>pre_cmd!</name>
-					<script>alias_func_mapper_walk_cmd_pre_cmd()</script>
+					<script>alias_func_mapper_walk_cmd_pre_cmd_perm()</script>
 					<command></command>
 					<packageName></packageName>
 					<regex>^/pre_walk\! (.*)$</regex>
@@ -24246,28 +24246,28 @@
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
 					<name>post_walk!</name>
-					<script>alias_func_mapper_walk_cmd_post_walk()</script>
+					<script>alias_func_mapper_walk_cmd_post_walk_perm()</script>
 					<command></command>
 					<packageName></packageName>
 					<regex>^/post_walk\! (.*)$</regex>
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
 					<name>walk-</name>
-					<script>alias_func_mapper_walk_cmd_walk_()</script>
+					<script>alias_func_mapper_walk_cmd_walk_reset()</script>
 					<command></command>
 					<packageName></packageName>
 					<regex>^/pwalk-$</regex>
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
 					<name>walk!-</name>
-					<script>alias_func_mapper_walk_cmd_walk_()</script>
+					<script>alias_func_mapper_walk_cmd_walk_reset_perm()</script>
 					<command></command>
 					<packageName></packageName>
 					<regex>^/pwalk\!-$</regex>
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
 					<name>walk!!-</name>
-					<script>alias_func_mapper_walk_cmd_walk_()</script>
+					<script>alias_func_mapper_walk_cmd_walk_delete()</script>
 					<command></command>
 					<packageName></packageName>
 					<regex>^/pwalk\!\!-$</regex>
@@ -24288,7 +24288,7 @@
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
 					<name>w_force</name>
-					<script>alias_func_mapper_dirs_w_force()</script>
+					<script>alias_func_mapper_dirs_w_force_key()</script>
 					<command></command>
 					<packageName></packageName>
 					<regex>^w\!$</regex>
@@ -24316,7 +24316,7 @@
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
 					<name>e_force</name>
-					<script>alias_func_mapper_dirs_e_force()</script>
+					<script>alias_func_mapper_dirs_e_force_key()</script>
 					<command></command>
 					<packageName></packageName>
 					<regex>^e\!$</regex>
@@ -24344,7 +24344,7 @@
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
 					<name>n_force</name>
-					<script>alias_func_mapper_dirs_n_force()</script>
+					<script>alias_func_mapper_dirs_n_force_key()</script>
 					<command></command>
 					<packageName></packageName>
 					<regex>^n\!$</regex>
@@ -24372,7 +24372,7 @@
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
 					<name>s_force</name>
-					<script>alias_func_mapper_dirs_s_force()</script>
+					<script>alias_func_mapper_dirs_s_force_key()</script>
 					<command></command>
 					<packageName></packageName>
 					<regex>^s\!$</regex>
@@ -24400,7 +24400,7 @@
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
 					<name>sw_force</name>
-					<script>alias_func_mapper_dirs_sw_force()</script>
+					<script>alias_func_mapper_dirs_sw_force_key()</script>
 					<command></command>
 					<packageName></packageName>
 					<regex>^sw\!$</regex>
@@ -24428,7 +24428,7 @@
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
 					<name>se_force</name>
-					<script>alias_func_mapper_dirs_se_force()</script>
+					<script>alias_func_mapper_dirs_se_force_key()</script>
 					<command></command>
 					<packageName></packageName>
 					<regex>^se\!$</regex>
@@ -24456,7 +24456,7 @@
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
 					<name>nw_force</name>
-					<script>alias_func_mapper_dirs_nw_force()</script>
+					<script>alias_func_mapper_dirs_nw_force_key()</script>
 					<command></command>
 					<packageName></packageName>
 					<regex>^nw\!$</regex>
@@ -24512,7 +24512,7 @@
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
 					<name>u_force</name>
-					<script>alias_func_mapper_dirs_u_force()</script>
+					<script>alias_func_mapper_dirs_u_force_key()</script>
 					<command></command>
 					<packageName></packageName>
 					<regex>^u\!$</regex>
@@ -24540,7 +24540,7 @@
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
 					<name>d_force</name>
-					<script>alias_func_mapper_dirs_d_force()</script>
+					<script>alias_func_mapper_dirs_d_force_key()</script>
 					<command></command>
 					<packageName></packageName>
 					<regex>^d\!$</regex>

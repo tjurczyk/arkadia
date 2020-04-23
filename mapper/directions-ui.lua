@@ -26,7 +26,7 @@ function trigger_func_mapper_directions_ui_wyjscia_all()
         deleteLine()
         local str = "\n-----:"
 
-        for i, dir in pairs(dirs) do
+        for dir, i in pairs(dirs) do
             str = str .. " " .. string.upper(dir)
         end
         str = str .. "\n"

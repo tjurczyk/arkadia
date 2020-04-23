@@ -238,7 +238,7 @@ function trigger_func_skrypty_ui_special_exits_follow_przeskocz_wyrwe()
     scripts.utils.bind_functional_team_follow(matches[2], "przeskocz wyrwe", 15)
 end
 
-function trigger_func_skrypty_ui_special_exits_follow_wejdz_do_otworu()
+function trigger_func_skrypty_ui_special_exits_follow_wejdz_do_krypty()
     scripts.utils.bind_functional_team_follow(matches[2], "wejdz do krypty", 15)
 end
 
@@ -290,7 +290,7 @@ function trigger_func_skrypty_ui_special_exits_follow_zejdz_po_drabinie()
     scripts.utils.bind_functional_team_follow(matches[2], "opusc bronie;zejdz po drabinie;dobadz wszystkich broni", 15)
 end
 
-function trigger_func_skrypty_ui_special_exits_follow_wejdz_po_drabinie()
+function trigger_func_skrypty_ui_special_exits_follow_wejdz_po_drabinie_2()
     if amap and amap.curr and amap.curr.id == 17944 then
         scripts.utils.bind_functional_team_follow(matches[2], "wespnij sie na gore", 15)
         return

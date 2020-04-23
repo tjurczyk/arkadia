@@ -14,7 +14,7 @@ function alias_func_skrypty_misc_postepy_postepy2_reset()
     misc.improve:reset_improvee2()
 end
 
-function alias_func_skrypty_misc_postepy_postepy2_()
+function alias_func_skrypty_misc_postepy_postepy2_plus()
     misc.improve:add_improvee2(1)
 end
 
@@ -22,7 +22,7 @@ function alias_func_skrypty_misc_postepy_postepy2__val()
     misc.improve:add_improvee2(tonumber(matches[2]))
 end
 
-function alias_func_skrypty_misc_postepy_postepy2_()
+function alias_func_skrypty_misc_postepy_postepy2_minus()
     misc.improve:remove_improvee2(tonumber(matches[2]))
 end
 

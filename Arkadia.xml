@@ -21913,7 +21913,7 @@
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
 						<string>^[ &gt;]*Przestajesz wyrywac .*</string>
-						<string>Rozrywasz lepkie, zbite pajeczyny, przeszukujac leze. W pewnym momencie trafiasz na jakis twardszy</string>
+						<string>Rozrywasz lepkie, zbite pajeczyny, przeszukujac leze.</string>
 						<string>Przeszukujac lozko i lezace na nim ubrania znajdujesz dosc duzy, stalowy klucz.</string>
 						<string>Pracowicie przeszukujesz lozko i lezace na nim ubrania, jednak nie znajdujesz niczego interesujacego.</string>
 						<string>Obolal. podnosisz sie powoli z podlogi.</string>
@@ -21946,6 +21946,9 @@
 						<string>Przeszukujesz dokladnie kazdy spalony regal, jednak ze wszystkich zgromadzonych tu ksiazek zostal jedynie czarny popiol...</string>
 						<string>Przeszukujesz rozkopany grob, ale nic tam nie znajdujesz.</string>
 						<string>Przeszukujesz dokladnie .*</string>
+						<string>scianie ukazuje ci sie niewielka plaskorzezba w marmurze.</string>
+						<string>Wsrod zniszczonych przez czas, zwierzeta i plesn ksiag i pergaminow udaje ci sie odszukac kilka, ktore zachowaly sie w stanie pozwalajacym,</string>
+						<string>udaje ci sie przeszukac dokladnie cialo nieszczesnika, ktory zostal przezen przygnieciony.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -21982,6 +21985,9 @@
 						<integer>0</integer>
 						<integer>0</integer>
 						<integer>1</integer>
+						<integer>0</integer>
+						<integer>0</integer>
+						<integer>0</integer>
 					</regexCodePropertyList>
 				</Trigger>
 				<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">

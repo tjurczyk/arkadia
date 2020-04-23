@@ -27,7 +27,7 @@ function scripts.people:trigger_person_build(item, color)
     local rest_string = string.sub(item["short"], 2, #item["short"])
 
     -- finally, it constructs the regex
-    local regex = nil
+    local regex
 
     local norm_short = string.lower(item["short"])
     local first_entry = false
@@ -39,14 +39,14 @@ function scripts.people:trigger_person_build(item, color)
         first_entry = true
     end
 
-    regex = "(^|\\W)((" .. string.sub(item["short"], 0, 1) .. "|" .. first_capitalized .. ")" .. rest_string .. ")(\\W|$)"
+    regex = "(^|\\W)((" .. string.sub(item["short"], 0, 1) .. "|" .. first_capitalized .. ")" .. rest_string .. ")(?! chaosu)(\\W|$)"
     scripts.people.trigger_suffix[norm_short] = scripts.people.trigger_suffix[norm_short] .. item["name"]
 
     if guild_str then
         scripts.people.trigger_suffix[norm_short] = scripts.people.trigger_suffix[norm_short] .. " " .. guild_str
     end
 
-    local id = nil
+    local id
     if not first_entry then
         id = tempRegexTrigger(regex, "scripts.people:process_person_trigger(matches[3])")
     end

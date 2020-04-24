@@ -7,6 +7,7 @@ function misc.improve:print_improve()
 
     local sum_me_killed = 0
     local sum_all_killed = 0
+    local last_time_stamp = misc.improve["improve_start_timestamp"]
 
     for k, v in pairs(misc.improve["level_snapshots"]) do
         local when_got = string.sub(v["time"] .. "                    ", 1, 18)
@@ -18,6 +19,7 @@ function misc.improve:print_improve()
             misc.improve.level_snapshots[k]["timestamp"] = misc.improve.level_snapshots[k - 1]["timestamp"] + misc.improve.level_snapshots[k]["timestamp"]
         end
 
+        last_time_stamp = v.timestamp
         local time_str = v["time_passed"]
 
         local killed_str = nil
@@ -35,13 +37,21 @@ function misc.improve:print_improve()
         cecho("| " .. name .. sep .. when_got .. sep .. details_time .. sep .. details_killed .. "   |\n")
     end
 
+    local seconds_since_last = getEpoch() - last_time_stamp
+    local since_last_str = string.format("Od ostatniego postepu: %s : zabici: %s/%s",
+            misc.improve:seconds_to_formatted_string(seconds_since_last),
+            tostring(misc.counter.killed_amount["JA"] - sum_me_killed),
+            tostring(misc.counter.all_kills - sum_all_killed))
+
     cecho("|                                                                        |\n")
     cecho("| <orange>ZABITYCH<grey>                                                               |\n")
     cecho("| <LawnGreen>JA<grey> ... : <orange>" .. string.sub(tostring(sum_me_killed) .. "      ", 1, 6) .. "<grey>                                                        |\n")
     cecho("| <LawnGreen>WSZYSCY<grey>: <orange>" .. string.sub(tostring(sum_all_killed) .. "      ", 1, 6) .. "<grey>                                                        |\n")
     cecho("|                                                                        |\n")
+    cecho("| <SlateBlue>".. string.sub(since_last_str .."                            ", 1, 70) .. " <reset>|\n")
     cecho("|                                                                        |\n")
     cecho("+------------------------------------------------------------------------+\n")
+
 end
 
 function misc.improve:improve_reset()

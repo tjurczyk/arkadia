@@ -35,12 +35,12 @@ function scripts.people:color_person_build(item, color)
     local rest_string = string.sub(item["short"], 2, #item["short"])
 
     -- finally, it constructs the regex
-    local regex = nil
+    local regex
     scripts.people.color_table[item["_row_id"]] = color
 
     local norm_short = string.lower(item["short"])
 
-    regex = "(^|\\W)((" .. string.sub(item["short"], 0, 1) .. "|" .. first_capitalized .. ")" .. rest_string .. ")(\\W|$)"
+    regex = "(^|\\W)((" .. string.sub(item["short"], 0, 1) .. "|" .. first_capitalized .. ")" .. rest_string .. ")(?! chaosu)(\\W|$)"
 
     if norm_short ~= "" then
         if item["name"] ~= "" then
@@ -56,12 +56,12 @@ function scripts.people:color_person_build(item, color)
 
     if item["name"] ~= "" then
         if not scripts.people.color_suffix[string.lower(item["name"])] then
-            regex = "(^|\\W)((" .. string.sub(item["short"], 0, 1) .. "|" .. first_capitalized .. ")" .. rest_string .. "|" .. item["name"] .. ")(\\W|$)"
+            regex = "(^|\\W)((" .. string.sub(item["short"], 0, 1) .. "|" .. first_capitalized .. ")" .. rest_string .. "|" .. item["name"] .. ")(?! chaosu)(\\W|$)"
         else
-            regex = "(^|\\W)((" .. string.sub(item["short"], 0, 1) .. "|" .. first_capitalized .. ")" .. rest_string .. ")(\\W|$)"
+            regex = "(^|\\W)((" .. string.sub(item["short"], 0, 1) .. "|" .. first_capitalized .. ")" .. rest_string .. ")(?! chaosu)(\\W|$)"
         end
     else
-        regex = "(^|\\W)((" .. string.sub(item["short"], 0, 1) .. "|" .. first_capitalized .. ")" .. rest_string .. ")(\\W|$)"
+        regex = "(^|\\W)((" .. string.sub(item["short"], 0, 1) .. "|" .. first_capitalized .. ")" .. rest_string .. ")(?! chaosu)(\\W|$)"
     end
 
     local id = tempRegexTrigger(regex, "scripts.people:process_person_color(" .. item["_row_id"] .. ", matches[3])")

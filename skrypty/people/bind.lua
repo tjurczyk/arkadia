@@ -22,7 +22,7 @@ function scripts.people:enemy_person_build(item)
     local rest_string = string.sub(item["short"], 2, #item["short"])
 
     -- finally, it constructs the regex
-    local regex = nil
+    local regex
     scripts.people.enemy_table[item["_row_id"]] = true
 
     local norm_short = string.lower(item["short"])
@@ -42,12 +42,12 @@ function scripts.people:enemy_person_build(item)
     if item["name"] ~= "" then
         scripts.people.enemy_suffix[item["name"]] = ""
         if not scripts.people.enemy_suffix[string.lower(item["name"])] then
-            regex = "(^|\\W)((" .. string.sub(item["short"], 0, 1) .. "|" .. first_capitalized .. ")" .. rest_string .. "|" .. item["name"] .. ")(\\W|$)"
+            regex = "(^|\\W)((" .. string.sub(item["short"], 0, 1) .. "|" .. first_capitalized .. ")" .. rest_string .. "|" .. item["name"] .. ")(?! chaosu)(\\W|$)"
         else
-            regex = "(^|\\W)((" .. string.sub(item["short"], 0, 1) .. "|" .. first_capitalized .. ")" .. rest_string .. ")(\\W|$)"
+            regex = "(^|\\W)((" .. string.sub(item["short"], 0, 1) .. "|" .. first_capitalized .. ")" .. rest_string .. ")(?! chaosu)(\\W|$)"
         end
     else
-        regex = "(^|\\W)((" .. string.sub(item["short"], 0, 1) .. "|" .. first_capitalized .. ")" .. rest_string .. ")(\\W|$)"
+        regex = "(^|\\W)((" .. string.sub(item["short"], 0, 1) .. "|" .. first_capitalized .. ")" .. rest_string .. ")(?! chaosu)(\\W|$)"
     end
 
     local id = tempRegexTrigger(regex, "scripts.people:process_enemy_name(matches[3])")

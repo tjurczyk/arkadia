@@ -24,8 +24,8 @@ function see_person_trigger()
                         local rest_string = string.sub(item["short"], 2, #item["short"])
 
                         -- finally, it constructs the regex
-                        local regex = nil
-                        regex = "(^|\\W)((" .. string.sub(item["short"], 0, 1) .. "|" .. first_capitalized .. ")" .. rest_string .. ")(\\W|$)"
+                        local regex
+                        regex = "(^|\\W)((" .. string.sub(item["short"], 0, 1) .. "|" .. first_capitalized .. ")" .. rest_string .. ")(?! chaosu)(\\W|$)"
                         --echo ("regex: " .. tostring(regex) .. "\n")
                         local trigger_id = tempRegexTrigger(regex, "scripts.people:process_trigger_name(matches[3])")
                         scripts.people.people_triggers[v["desc"]] = trigger_id

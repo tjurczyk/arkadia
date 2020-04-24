@@ -15,3 +15,7 @@ function trigger_func_skrypty_inventory_magic_weapons_gadacz_leczy()
     cecho("<orange>\n Gadacz leczy\n")
 end
 
+function trigger_func_skrypty_inventory_magic_weapons_plaszcz_leczy()
+    cecho("<orange>\n Plaszcz leczy\n")
+end
+

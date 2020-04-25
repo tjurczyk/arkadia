@@ -58,7 +58,7 @@ function scripts.inv:get_magics_to_put_down()
          table.insert(self.magic_items_in_inventory.triggers, tempRegexTrigger(self:get_magic_item_pattern(item),
                  function() table.insert(self.magic_items_in_inventory.items, item) end))
     end
-    tempTimer(1, function() self:after_get_magics_to_put_down() end)
+    tempTimer(0.5 + getNetworkLatency(), function() self:after_get_magics_to_put_down() end)
 end
 
 function scripts.inv:after_get_magics_to_put_down()

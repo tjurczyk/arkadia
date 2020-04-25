@@ -2,7 +2,7 @@ misc["lang"] = misc["lang"] or {}
 
 
 misc.lang["current_lang"] = nil
-misc.lang["alias_ids"] = {}
+misc.lang["alias_ids"] = misc.lang["alias_ids"] or {}
 
 misc.lang["gnome_speech"] = false
 

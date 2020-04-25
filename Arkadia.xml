@@ -14074,6 +14074,9 @@
 							<string>Dobywasz niematerialnego ulotnego szamszira prawa reka, a bron skreca sie i zwija, rosnac i kurczac sie naprzemiennie, </string>
 							<string>Pod wplywem twego pewnego chwytu zdobiony jasniejacy chepesz rozblyskuje jasnym swiatlem, </string>
 							<string>Zaciskasz dlon na egzotycznym jadeitowym palaszu i przez chwile czujesz, jak bron wibruje od zgromadzonej w niej mocy.</string>
+							<string>Ostroznie chwytasz oburacz trzonek koscianego kilofa</string>
+							<string>Pelnym pewnosci siebie ruchem dobywasz</string>
+							<string>Plynnymi, pelnymi pewnosci ruchami dobywasz</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -14093,6 +14096,9 @@
 							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
+							<integer>0</integer>
+							<integer>0</integer>
+							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>

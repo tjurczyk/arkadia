@@ -25,7 +25,7 @@ end
 function scripts.config_loader:add_trigger(name, wolacz)
     local trigger_name = name .. "-login"
     if exists(trigger_name, "trigger") == 0 then
-        local code = "scripts_load_config(\"" .. wolacz .. "\")"
+        local code = "scripts_load_config(\"" .. name .. "\")"
         permRegexTrigger(trigger_name, "", { "Witaj, " .. wolacz .. ". Podaj swe haslo" }, code)
     end
 end

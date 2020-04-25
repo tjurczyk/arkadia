@@ -597,8 +597,8 @@ amap.locating.loc_id = 1
 ------------       OD TEGO MIEJSCA PONIZEJ NIC NIE ZMIENIAJ       ---------------
 ---------------------------------------------------------------------------------
 
-
-scripts:print_log("Ok, profil zaladowany")
+local current_name = scripts.character_name or ""
+scripts:print_log("Ok, profil " .. current_name .. " zaladowany")
 
 end
 

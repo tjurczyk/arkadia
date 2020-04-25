@@ -1,4 +1,4 @@
-scripts.config_loader = {}
+scripts.config_loader = scripts.config_loader or {}
 
 function scripts.config_loader:init_name_file(name, wolacz)
     if self:has_config_file(name) then

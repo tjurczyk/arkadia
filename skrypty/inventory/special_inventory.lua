@@ -9,14 +9,9 @@ function scripts.inv:setup_special_inventory_highlight(item, color)
         error("Wrong input")
     end
 
-    local first_letter = string.sub(item, 1, 1)
-    local upper_first_letter = string.upper(first_letter)
-    local rest_of_string = string.sub(item, 2)
+    local regex = self:get_magic_item_pattern(item)
 
-    local regex = "([" .. upper_first_letter .. first_letter .. "]" .. rest_of_string .. ")"
-
-    local id = tempRegexTrigger(regex, [[ scripts.inv:special_inventory_highlight(matches[2], "]] .. color .. [[") ]])
-    return id
+    return tempRegexTrigger(regex, [[ scripts.inv:special_inventory_highlight(matches[2], "]] .. color .. [[") ]])
 end
 
 function scripts.inv:set_all_magic()
@@ -52,4 +47,43 @@ function scripts.inv:setup_magic_keys_triggers()
     end
 end
 
+function scripts.inv:get_magics_to_put_down()
+    send("i")
+    self.magic_items_in_inventory = {
+        triggers = {},
+        items = {}
+    }
 
+    for k, item  in pairs(scripts.inv["magics_data"]["magics"]) do
+         table.insert(self.magic_items_in_inventory.triggers, tempRegexTrigger(self:get_magic_item_pattern(item),
+                 function() table.insert(self.magic_items_in_inventory.items, item) end))
+    end
+    tempTimer(1, function() self:after_get_magics_to_put_down() end)
+end
+
+function scripts.inv:after_get_magics_to_put_down()
+    for k, trigger in pairs(self.magic_items_in_inventory.triggers) do
+        killTrigger(trigger)
+    end
+
+    if table.size(self.magic_items_in_inventory.items) > 0 then
+        local command = ""
+        for k, item in pairs(self.magic_items_in_inventory.items) do
+            command = command .. "wloz " .. item .. " do skrzyni;"
+        end
+        scripts.utils.bind_functional(command, false, false)
+    end
+    self.magic_items_in_inventory = nil
+end
+
+function scripts.inv:get_magic_item_pattern(item)
+    local first_letter = string.sub(item, 1, 1)
+    local upper_first_letter = string.upper(first_letter)
+    local rest_of_string = string.sub(item, 2)
+
+    return "([" .. upper_first_letter .. first_letter .. "]" .. rest_of_string .. ")"
+end
+
+function alias_func_put_magics_down()
+    scripts.inv:get_magics_to_put_down()
+end

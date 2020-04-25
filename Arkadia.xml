@@ -23151,6 +23151,13 @@
 						<regex>^/ubrania$</regex>
 					</Alias>
 				</AliasGroup>
+				<Alias isActive="no" isFolder="no">
+					<name>New alias</name>
+					<script></script>
+					<command></command>
+					<packageName></packageName>
+					<regex></regex>
+				</Alias>
 			</AliasGroup>
 			<AliasGroup isActive="yes" isFolder="yes">
 				<name>keybind</name>

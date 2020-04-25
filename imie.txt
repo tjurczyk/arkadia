@@ -590,8 +590,8 @@ amap.shorten_exits = false
 -- (czyli "Witaj Adremenie" dla mnie)
 -- 'loc_id' to numer lokacji na ktorej ma byc mapa ustawiona.
 
-amap.locating["name"] = "Adremenie"
-amap.locating["loc_id"] = 1
+amap.locating.name = "Adremenie"
+amap.locating.loc_id = 1
 
 ---------------------------------------------------------------------------------
 ------------       OD TEGO MIEJSCA PONIZEJ NIC NIE ZMIENIAJ       ---------------

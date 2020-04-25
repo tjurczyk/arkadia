@@ -95,6 +95,15 @@ Zobaczymy coś pokroju:
 Z racji różnic Windows, Linux i OS X, profile są w innych miejscach
 i trzeba sobie samemu sprawdzić gdzie dany profil się znajduje.
 
+#### Podstawowa konfiguracjia (nowy sposób)
+Aby stworzyć podstawową konfigurację wystarczy wpisać `/init imie imie_w_wolaczu` np. 
+```
+/init Adremen Adremenie
+```
+Trigger do ładowania automatycznego podczas logowania zostanie automatycznie utworzony, a właściwy plik zostanie utworzony w katalogu profilu.
+Po utworzeniu pokaże się ścieżka do pliku, aby go dalej dostosować otwórz go w ulubionym edytorze.
+
+#### Ręczna konfiguracja (stary sposób)
 Aby zatem przygotować plik konfiguracyjny do jakiegoś imienia, wystarczy z paczki skopiować plik `imie.txt` do naszego katalogu profilu i zmienić mu nazwę na przykładowo `adremen.txt`.
 W katalogu profilu możemy mieć oczywiście wiele takich plików (najsensowniej jeden plik na jedną postać).
 
@@ -109,7 +118,7 @@ Wchodzimy zatem w `Triggers` i robimy `Add Item`, następnie w polach wpisujemy 
 `scripts_load_config("adremen")`
 
 
-I taki alias sprawi, ze logując się i podając imię `adremen`, od razu zostanie załadowany plik `adremen.txt`. Zatem konfigurując to dla innych imion po prostu zamiast `adremen` użyc trzeba nazwy configu, który jest w waszym katalogu profilu. W `0` oczywiście daje się tekst, który widzi się po podaniu imienia przy logowaniu.
+I taki trigger sprawi, ze logując się i podając imię `adremen`, od razu zostanie załadowany plik `adremen.txt`. Zatem konfigurując to dla innych imion po prostu zamiast `adremen` użyc trzeba nazwy configu, który jest w waszym katalogu profilu. W `0` oczywiście daje się tekst, który widzi się po podaniu imienia przy logowaniu.
 
 Tak to wygląda dla postaci `Adremen`.
 

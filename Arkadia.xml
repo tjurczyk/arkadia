@@ -23213,6 +23213,13 @@
 						<regex>^/ubrania$</regex>
 					</Alias>
 				</AliasGroup>
+				<Alias isActive="yes" isFolder="no">
+					<name>/odloz_magie</name>
+					<script>alias_func_put_magics_down()</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/odloz_magie$</regex>
+				</Alias>
 			</AliasGroup>
 			<AliasGroup isActive="yes" isFolder="yes">
 				<name>keybind</name>

@@ -27,6 +27,9 @@ function scripts.inv:print_help()
     cecho("| <light_slate_blue>/nie_zbieraj_extra [przedmiot]<grey> - usunie ze zbieranych extra konkretny przedmiot|\n")
     cecho("| <light_slate_blue>/nie_zbieraj_extra<grey> - usunie wszystkie extra zbieranie przedmioty.              |\n")
     cecho("|                                                                                |\n")
+    cecho("| <light_slate_blue>/odloz_magie<grey> - przygotuje bind specjalny do odlozenia wszystkich magicznych    |\n")
+    cecho("| przedmiotow do skrzyni                                                         |\n")
+    cecho("|                                                                                |\n")
     cecho("+--------------------------------------------------------------------------------+\n")
 end
 

@@ -49,6 +49,7 @@ function scripts.installer:handle_unzip_scripts(event, ...)
         os.remove(scripts.installer.scripts_zip)
         pcall(scripts.installer.delete_dir, scripts.installer.scripts_directory)
         os.rename(scripts.installer.unzip_directory, scripts.installer.scripts_directory)
+        uninstallPackage("Arkadia")
         installPackage(scripts.installer.scripts_directory .. "Arkadia.xml")
         scripts:print_log("Ok, zrestartuj Mudleta")
     elseif event == "sysUnzipError" then

@@ -23970,6 +23970,20 @@
 				<packageName></packageName>
 				<regex>^/lua (.*)$</regex>
 			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>reload</name>
+				<script>alias_func_reload()</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^/reload ?(.*)$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>init_config</name>
+				<script>alias_func_init_config(matches[2], matches[3])</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>/init (\w+) (\w+)</regex>
+			</Alias>
 		</AliasGroup>
 		<AliasGroup isActive="yes" isFolder="yes">
 			<name>mapper</name>
@@ -24846,13 +24860,6 @@
 				<regex>^/nastepny_kierunek$</regex>
 			</Alias>
 		</AliasGroup>
-		<Alias isActive="yes" isFolder="no">
-			<name>reload</name>
-			<script>alias_func_reload()</script>
-			<command></command>
-			<packageName></packageName>
-			<regex>^/reload ?(.*)$</regex>
-		</Alias>
 	</AliasPackage>
 	<ActionPackage />
 	<ScriptPackage>

@@ -58,9 +58,7 @@ function scripts.inv:get_magics_to_put_down()
          table.insert(self.magic_items_in_inventory.triggers, tempRegexTrigger(self:get_magic_item_pattern(item),
                  function() table.insert(self.magic_items_in_inventory.items, item) end))
     end
-    local resume_closure = function() coroutine.resume(scripts.inv.magic_put_down_coroutine) end
-    table.insert(self.magic_items_in_inventory.triggers, tempRegexTrigger("Masz przy sobie|Nie masz nic przy sobie", resume_closure))
-    table.insert(self.magic_items_in_inventory.triggers, tempRegexTrigger("", resume_closure))
+    table.insert(self.magic_items_in_inventory.triggers, tempRegexTrigger("Masz przy sobie|Nie masz nic przy sobie", function() coroutine.resume(scripts.inv.magic_put_down_coroutine) end))
     coroutine.yield(scripts.inv.magic_put_down_coroutine)
     for k, trigger in pairs(self.magic_items_in_inventory.triggers) do
         killTrigger(trigger)

@@ -58,10 +58,8 @@ function scripts.inv:get_magics_to_put_down()
          table.insert(self.magic_items_in_inventory.triggers, tempRegexTrigger(self:get_magic_item_pattern(item),
                  function() table.insert(self.magic_items_in_inventory.items, item) end))
     end
-    tempTimer(0.5 + getNetworkLatency(), function() self:after_get_magics_to_put_down() end)
-end
-
-function scripts.inv:after_get_magics_to_put_down()
+    tempTimer(0.5 + getNetworkLatency(), function() coroutine.resume(scripts.inv.magic_put_down_coroutine) end)
+    coroutine.yield(scripts.inv.magic_put_down_coroutine)
     for k, trigger in pairs(self.magic_items_in_inventory.triggers) do
         killTrigger(trigger)
     end
@@ -76,6 +74,10 @@ function scripts.inv:after_get_magics_to_put_down()
     self.magic_items_in_inventory = nil
 end
 
+function scripts.inv:after_get_magics_to_put_down()
+
+end
+
 function scripts.inv:get_magic_item_pattern(item)
     local first_letter = string.sub(item, 1, 1)
     local upper_first_letter = string.upper(first_letter)
@@ -85,5 +87,8 @@ function scripts.inv:get_magic_item_pattern(item)
 end
 
 function alias_func_put_magics_down()
-    scripts.inv:get_magics_to_put_down()
+    scripts.inv.magic_put_down_coroutine = coroutine.create(function ()
+        scripts.inv:get_magics_to_put_down()
+    end)
+    coroutine.resume(scripts.inv.magic_put_down_coroutine)
 end

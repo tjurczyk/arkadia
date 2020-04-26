@@ -1,6 +1,6 @@
-scripts.character.stats = scripts.character.stats or {}
+scripts.character_stats = scripts.character_stats or {}
 
-function scripts.character.stats:after_death_progress()
+function scripts.character_stats:after_death_progress()
     if selectString(matches[1], 1) > -1 then
         fg("SpringGreen")
     end
@@ -12,5 +12,5 @@ function scripts.character.stats:after_death_progress()
 end
 
 function trigger_func_after_death_progress()
-    scripts.character.stats:after_death_progress()
+    scripts.character_stats:after_death_progress()
 end

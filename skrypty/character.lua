@@ -1,3 +1,4 @@
+scripts.character = scripts.character or {}
 scripts.character.stats = scripts.character.stats or {}
 
 function scripts.character.stats:after_death_progress()

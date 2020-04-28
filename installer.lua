@@ -48,7 +48,7 @@ function handleUnzipEvents(event, ...)
         os.rename(unzipDirectory, scriptsDirectory)
         installPackage(scriptsDirectory .. "Arkadia.xml")
         uninstallPackage("generic_mapper")
-        uninstallPackage("skrypty3_master")
+        uninstallPackage("skrypty_master3")
     elseif event == "sysUnzipError" then
         cecho("\n<CadetBlue>(skrypty)<tomato>: Blad podczas rozpakowywania skryptow\n")
     end
@@ -69,3 +69,4 @@ function deleteDir(dir)
 end
 
 installScripts()
+clearCmdLine()

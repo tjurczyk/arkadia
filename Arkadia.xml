@@ -1784,9 +1784,11 @@
 								<string>Kupiecki stojacy powoz</string>
 								<string>Drewniany stojacy woz</string>
 								<string>Otwarty stojacy powoz</string>
+								<string>Kupiecki stojacy woz z plandeka.</string>
 							</regexCodeList>
 							<regexCodePropertyList>
 								<integer>1</integer>
+								<integer>0</integer>
 								<integer>0</integer>
 								<integer>0</integer>
 								<integer>0</integer>
@@ -1827,11 +1829,9 @@
 							<colorTriggerBgColor>#000000</colorTriggerBgColor>
 							<regexCodeList>
 								<string>[A-Za-z]+ stojacy dylizans</string>
-								<string>Kupiecki stojacy woz z plandeka.</string>
 							</regexCodeList>
 							<regexCodePropertyList>
 								<integer>1</integer>
-								<integer>0</integer>
 							</regexCodePropertyList>
 						</Trigger>
 					</TriggerGroup>

@@ -23220,6 +23220,13 @@
 					<packageName></packageName>
 					<regex>^/odloz_magie$</regex>
 				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>przejrzyj magie</name>
+					<script>alias_func_przejrzyj_magie()</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/przejrzyj_magie( | w )?(.*)$</regex>
+				</Alias>
 			</AliasGroup>
 			<AliasGroup isActive="yes" isFolder="yes">
 				<name>keybind</name>

@@ -22033,6 +22033,7 @@
 						<string>scianie ukazuje ci sie niewielka plaskorzezba w marmurze.</string>
 						<string>Wsrod zniszczonych przez czas, zwierzeta i plesn ksiag i pergaminow udaje ci sie odszukac kilka, ktore zachowaly sie w stanie pozwalajacym,</string>
 						<string>udaje ci sie przeszukac dokladnie cialo nieszczesnika, ktory zostal przezen przygnieciony.</string>
+						<string>znajdujesz ukryta dzwignie.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -22069,6 +22070,7 @@
 						<integer>0</integer>
 						<integer>0</integer>
 						<integer>1</integer>
+						<integer>0</integer>
 						<integer>0</integer>
 						<integer>0</integer>
 						<integer>0</integer>

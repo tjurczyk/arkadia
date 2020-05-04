@@ -47,7 +47,8 @@ function scripts.inv:setup_magic_keys_triggers()
     end
 end
 
-function scripts.inv:get_magics_to_put_down()
+function scripts.inv:get_magics_to_put_down(container)
+    local chosen_container = container or "skrzyni"
     send("i")
     self.magic_items_in_inventory = {
         triggers = {},
@@ -67,7 +68,9 @@ function scripts.inv:get_magics_to_put_down()
     if table.size(self.magic_items_in_inventory.items) > 0 then
         local command = ""
         for k, item in pairs(self.magic_items_in_inventory.items) do
-            command = command .. "wloz " .. item .. " do skrzyni;"
+            if item ~= "krasnoludzka starozytna korone" then
+                command = command .. "wloz " .. item .. " do ".. container .. ";"
+            end
         end
         scripts.utils.bind_functional(command, false, false)
     end

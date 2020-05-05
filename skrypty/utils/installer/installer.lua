@@ -48,10 +48,12 @@ function scripts.installer:handle_unzip_scripts(event, ...)
     if event == "sysUnzipDone" then
         os.remove(scripts.installer.scripts_zip)
         pcall(scripts.installer.delete_dir, scripts.installer.scripts_directory)
-        os.rename(scripts.installer.unzip_directory, scripts.installer.scripts_directory)
         uninstallPackage("Arkadia")
-        installPackage(scripts.installer.scripts_directory .. "Arkadia.xml")
-        scripts:print_log("Ok, zrestartuj Mudleta")
+        tempTimer(1, function()
+            os.rename(scripts.installer.unzip_directory, scripts.installer.scripts_directory)
+            installPackage(scripts.installer.scripts_directory .. "Arkadia.xml")
+            scripts:print_log("Ok, zrestartuj Mudleta")
+        end)
     elseif event == "sysUnzipError" then
         scripts:print_log("Blad podczas rozpakowywania skryptow")
     end

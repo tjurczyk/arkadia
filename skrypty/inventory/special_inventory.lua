@@ -49,30 +49,30 @@ end
 
 function scripts.inv:get_magics_to_put_down(container)
     local chosen_container = container or "skrzyni"
-    send("i")
     self.magic_items_in_inventory = {
         triggers = {},
         items = {}
     }
-
     for k, item  in pairs(scripts.inv["magics_data"]["magics"]) do
-         table.insert(self.magic_items_in_inventory.triggers, tempRegexTrigger(self:get_magic_item_pattern(item),
+        table.insert(self.magic_items_in_inventory.triggers, tempRegexTrigger(self:get_magic_item_pattern(item),
                  function() self.magic_items_in_inventory.items[item] = item end))
     end
     table.insert(self.magic_items_in_inventory.triggers, tempRegexTrigger("Masz przy sobie|Nie masz nic przy sobie", function() coroutine.resume(scripts.inv.magic_put_down_coroutine) end))
+    send("i")
     coroutine.yield(scripts.inv.magic_put_down_coroutine)
     for k, trigger in pairs(self.magic_items_in_inventory.triggers) do
         killTrigger(trigger)
     end
 
+    display(self.magic_items_in_inventory.items)
     if table.size(self.magic_items_in_inventory.items) > 0 then
         local command = ""
         for k, item in pairs(self.magic_items_in_inventory.items) do
             if item ~= "krasnoludzka starozytna korone" then
-                command = command .. "wloz " .. item .. " do ".. container .. ";"
+                command = command .. "wloz " .. item .. " do ".. chosen_container .. ";"
             end
         end
-        scripts.utils.bind_functional(command, false, false)
+        scripts.utils.bind_functional(command, false, true)
     end
     self.magic_items_in_inventory = nil
 end

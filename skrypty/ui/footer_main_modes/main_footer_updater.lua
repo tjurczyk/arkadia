@@ -11,21 +11,28 @@ function scripts.ui:update_bars_mode(mode)
             v = v + 1
         end
 
+        local label = scripts.ui.state_key_to_label_pre[k]
+        local max_value = scripts.ui.footer_bar[k].max
+        local color = scripts.ui.footer_bar[k].background[v]
+        
         if scripts.ui.footer_bar[k] and scripts.ui[k_index] then
             if mode == "gauge" then
                 -- change color and set the right value
-                scripts.ui[k_index]:setValue(v, scripts.ui.footer_bar[k].max)
-                scripts.ui.gauge_front:set("background-color", scripts.ui.footer_bar[k].background[v])
+                scripts.ui[k_index]:setValue(v, max_value)
+                scripts.ui.gauge_front:set("background-color", color)
                 scripts.ui[k_index].front:setStyleSheet(scripts.ui.gauge_front:getCSS())
             elseif mode == "label" and scripts.ui.cfg.footer_mode == "mode2" then
-                local msg = scripts.ui:process_label_text_mode2(scripts.ui.state_key_to_label_pre[k], v, scripts.ui.footer_bar[k].max, scripts.ui.footer_bar[k].background[v])
+                local msg = scripts.ui:process_label_text_mode2(label, v, max_value, color)
                 scripts.ui[k_index]:echo(msg)
             elseif mode == "label" and scripts.ui.cfg.footer_mode == "mode3" then
-                local msg = scripts.ui:process_label_text_mode3(scripts.ui.state_key_to_label_pre[k], v, scripts.ui.footer_bar[k].max, scripts.ui.footer_bar[k].background[v])
+                local msg = scripts.ui:process_label_text_mode3(label, v, max_value, color)
                 scripts.ui[k_index]:echo(msg)
             elseif mode == "label" and scripts.ui.cfg.footer_mode == "mode4" then
-                local msg = scripts.ui:process_label_text_mode4(scripts.ui.state_key_to_label_pre[k], v, scripts.ui.footer_bar[k].max, scripts.ui.footer_bar[k].background[v])
+                local msg = scripts.ui:process_label_text_mode4(label, v, max_value, color)
                 scripts.ui[k_index]:echo(msg)
+            elseif mode == "label" and scripts.ui.cfg.footer_mode == "mode5" then
+                local msg = scripts.ui:process_label_text_mode5(k, label, v, max_value, color)
+				scripts.ui[k_index]:echo(msg)        
             end
         end
     end

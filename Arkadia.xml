@@ -116,7 +116,7 @@
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^[ &gt;]*(.*) zaprasza cie do swojej druzyny\.$</string>
+						<string>^[ &gt;]?\[?(\w*)\]? zaprasza cie do swojej druzyny\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>

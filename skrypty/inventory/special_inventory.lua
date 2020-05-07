@@ -1,3 +1,8 @@
+scripts.inv.get_magics_to_put_down_exempts = {
+    ["plytach twojego starozytnego pancerza do skrzyni"] = "starozytna runiczna zbroje plytowa",
+    ["krasnoludzka starozytna korone"] = false
+}
+
 function scripts.inv:special_inventory_highlight(text, color)
     selectString(text, 1)
     fg(color)
@@ -9,9 +14,7 @@ function scripts.inv:setup_special_inventory_highlight(item, color)
         error("Wrong input")
     end
 
-    local regex = self:get_magic_item_pattern(item)
-
-    return tempRegexTrigger(regex, [[ scripts.inv:special_inventory_highlight(matches[2], "]] .. color .. [[") ]])
+    return tempRegexTrigger(self:get_magic_item_pattern(item), [[ scripts.inv:special_inventory_highlight(matches[2], "]] .. color .. [[") ]])
 end
 
 function scripts.inv:set_all_magic()
@@ -67,7 +70,10 @@ function scripts.inv:get_magics_to_put_down(container)
     if table.size(self.magic_items_in_inventory.items) > 0 then
         local command = ""
         for k, item in pairs(self.magic_items_in_inventory.items) do
-            if item ~= "krasnoludzka starozytna korone" then
+            if self.get_magics_to_put_down_exempts[item] ~= nil then
+                item = self.get_magics_to_put_down_exempts[item]
+            end
+            if item then
                 command = command .. "wloz " .. item .. " do ".. chosen_container .. ";"
             end
         end

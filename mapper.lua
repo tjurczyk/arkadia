@@ -11,6 +11,7 @@ if not amap then
         backup_loc = {},
         mode = "follow",
         walker = false,
+        walker_disabled = false,
         set_walker_delay = 2,
         walker_delay = 2,
         walker_bind = nil,

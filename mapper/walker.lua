@@ -37,6 +37,12 @@ function amap:speedwalk_from_id(room_id, delay)
 end
 
 function doSpeedWalk()
+
+    if amap.walker_disabled then
+        amap:print_log("Chodzik jest wylaczony. Uzyj '/chodzik wlacz' aby go wlaczyc.")
+        return
+    end
+
     -- if drawing, do not use walker
     if amap.mode ~= "follow" then
         amap:print_log("Chodzik dziala tylko na wlaczonym chodzeniu")
@@ -177,8 +183,19 @@ end
 function amap:walker_info()
     if amap.walker then
         amap:print_log("Aktualnie idziesz do lokacji '" .. getRoomName(amap.walker_dest) .. "' z opoznieniem " .. tostring(round(amap.walker_delay, 2)))
+    elseif amap.walker_disabled then
+        amap:print_log("Chodzik jest wylaczony. Uzyj '/chodzik wlacz' aby go wlaczyc.")
     else
         amap:print_log("Chodzik nie pracuje")
+    end
+end
+
+function amap:modify_toggle_walker(value)
+    amap.walker_disabled = not value
+    if amap.walker_disabled then
+        amap:print_log("Chodzik zostal wylaczony")
+    else
+        amap:print_log("Chodzik zostal wlaczony")
     end
 end
 
@@ -193,7 +210,7 @@ end
 
 function alias_func_mapper_walker_walker_stop()
     if amap.walker == false then
-        amap:print_log("Chodzik nie jest wlaczony")
+        amap:print_log("Chodzik nie pracuje")
     else
         amap:terminate_walker()
     end
@@ -217,3 +234,6 @@ function alias_func_mapper_walker_zwolnij_chodzik()
     amap:modify_walker_delay(1.25)
 end
 
+function alias_func_mapper_walker_toggle(value)
+   amap:modify_toggle_walker(value)
+end

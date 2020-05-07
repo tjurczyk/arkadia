@@ -1,5 +1,5 @@
 scripts.inv.get_magics_to_put_down_exempts = {
-    ["plytach twojego starozytnego pancerza do skrzyni"] = "starozytna runiczna zbroje plytowa",
+    ["plytach twojego starozytnego pancerza"] = "starozytna runiczna zbroje plytowa",
     ["krasnoludzka starozytna korone"] = false
 }
 

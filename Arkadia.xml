@@ -1141,7 +1141,7 @@
 							<integer>1</integer>
 						</regexCodePropertyList>
 					</Trigger>
-					<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>Zabil-counter</name>
 						<script>trigger_func_skrypty_misc_counter_Zabil_counter()</script>
 						<triggerType>0</triggerType>
@@ -23214,18 +23214,18 @@
 					</Alias>
 				</AliasGroup>
 				<Alias isActive="yes" isFolder="no">
-					<name>/odloz_magie</name>
+					<name>odloz magie</name>
 					<script>alias_func_put_magics_down()</script>
 					<command></command>
 					<packageName></packageName>
-					<regex>^/odloz_magie$</regex>
+					<regex>^/odloz_magie(| do (\w+))$</regex>
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
 					<name>przejrzyj magie</name>
 					<script>alias_func_przejrzyj_magie()</script>
 					<command></command>
 					<packageName></packageName>
-					<regex>^/przejrzyj_magie( | w )?(.*)$</regex>
+					<regex>^/przejrzyj(| (\w+))$</regex>
 				</Alias>
 			</AliasGroup>
 			<AliasGroup isActive="yes" isFolder="yes">

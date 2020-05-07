@@ -122,9 +122,3 @@ function trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()
     scripts.inv.containers:display_contents(matches[2])
 end
 
-function alias_func_przejrzyj_magie()
-    scripts.inv.containers:set_magics_and_keys_filter()
-    local container = "skrzynie"
-    send("ob " ..container)
-end
-

@@ -29,3 +29,9 @@ scripts.inv.containers.magics_and_keys_filter = function(contents)
 
     return table_concat(keys, magics)
 end
+
+function alias_func_przejrzyj_magie()
+    scripts.inv.containers:set_magics_and_keys_filter()
+    local container = matches[3] or "skrzynie"
+    send("ob " ..container)
+end

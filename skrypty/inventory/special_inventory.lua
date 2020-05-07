@@ -64,7 +64,6 @@ function scripts.inv:get_magics_to_put_down(container)
         killTrigger(trigger)
     end
 
-    display(self.magic_items_in_inventory.items)
     if table.size(self.magic_items_in_inventory.items) > 0 then
         local command = ""
         for k, item in pairs(self.magic_items_in_inventory.items) do
@@ -87,7 +86,7 @@ end
 
 function alias_func_put_magics_down()
     scripts.inv.magic_put_down_coroutine = coroutine.create(function ()
-        scripts.inv:get_magics_to_put_down()
+        scripts.inv:get_magics_to_put_down(matches[3])
     end)
     coroutine.resume(scripts.inv.magic_put_down_coroutine)
 end

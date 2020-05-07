@@ -1,4 +1,16 @@
-scripts["character"] = scripts["character"] or { ["state"] = { ["fatigue"] = -1, ["hp"] = -1, ["mana"] = -1, ["form"] = -1 } }
+scripts["character"] = scripts["character"] or { ["state"] = { 
+    ["fatigue"] = -1, 
+    ["hp"] = -1,
+    ["mana"] = -1,
+    ["form"] = -1,
+    ["soaked"] = -1, 
+    ["stuffed"] = -1, 
+    ["intox"] = -1,
+    ["headache"] = -1,
+    ["panic"] = -1,
+    ["encumbrance"] = -1,
+    ["improve"] = -1
+} }
 
 scripts.character.break_fatigue_level = 9
 
@@ -20,4 +32,3 @@ function scripts.character:check_hp_bind()
         scripts.character.bind_hp_activated = false
     end
 end
-

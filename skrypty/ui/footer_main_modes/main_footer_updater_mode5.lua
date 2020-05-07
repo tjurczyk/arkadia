@@ -3,14 +3,12 @@ function scripts.ui:process_label_text_mode5(key, prefix, val, max_value, color)
     
   local timestamp = os.time(os.date("!*t"))
   if val == -1 then
-    -- this happens at the start
-    return
+    -- this happens at the start, stats have not been loaded yet
+    return nil, false
   end
   
---  if(val == 0) then val = 2 end
-  
-  local change_indicator_duration = scripts.ui.cfg["footer_mode5_settings"]['change_indicator_duration']
-  local settings = scripts.ui.cfg["footer_mode5_settings"]["values"][key];
+  local change_indicator_duration = scripts.ui.cfg.change_indicator_duration
+  local settings = scripts.ui.cfg.footer_mode5_settings.values[key];
   
   if settings.last_changed == nil then
     settings.last_changed = timestamp - change_indicator_duration
@@ -21,8 +19,8 @@ function scripts.ui:process_label_text_mode5(key, prefix, val, max_value, color)
 
   local was_changed = val ~= settings.last_value or (timestamp - settings.last_changed) < change_indicator_duration
   local increased = val > settings.last_value
-  debugc(prefix, 'timediff ', (timestamp - settings.last_changed) < change_indicator_duration)
-  debugc(prefix, 'valdiff ', val, settings.last_value)
+  --debugc(prefix, 'timediff ', (timestamp - settings.last_changed) < change_indicator_duration)
+  --debugc(prefix, 'valdiff ', val, settings.last_value)
   
   settings.last_changed = timestamp
   settings.last_value = val;
@@ -65,5 +63,5 @@ function scripts.ui:process_label_text_mode5(key, prefix, val, max_value, color)
   end
 
   output = output .. '</font></center>';
-  return output
+  return output, was_changed
 end

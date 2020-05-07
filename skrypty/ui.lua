@@ -164,6 +164,10 @@ scripts.ui["states_window_nav_printable_val_map"] = {
 -- to allow O(1)
 scripts.ui.cfg["states_window_nav_hash"] = {}
 
+-- po zmianie wartosci atrybutu jak hp po jakim czasie ma zniknac oznaczenie ze 
+-- atrybut ulegl zmianie
+scripts.ui.cfg["change_indicator_duration"] = 10
+
 scripts.ui.cfg["footer_mode5_settings"] = {
   -- Dostepne wartosci to:
   --   percent - wyswietli np. 10%
@@ -171,8 +175,6 @@ scripts.ui.cfg["footer_mode5_settings"] = {
   --   none    - nie wyswietli zadnej wartosci
   ["display_value_mode"] = "raw",
   
-  -- ile sekund po zmianie wartosci pole bedzie oznaczone jako zmienione
-  ["change_indicator_duration"] = 5,
   ["values"] = {
     ["hp"] = {
        ["color"]= "#e4190c",

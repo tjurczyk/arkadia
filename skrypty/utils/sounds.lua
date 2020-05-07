@@ -1,5 +1,10 @@
+scripts.sounds = scripts.sounds or {}
+
+scripts.sounds.beep = getMudletHomeDir() .. "/arkadia/sounds/beep.wav"
+
+
 function scripts_play_beep()
-    playSoundFile(getMudletHomeDir() .. [[/arkadia/sounds/beep.wav]])
+    playSoundFile(scripts.sounds.beep)
 end
 
 registerAnonymousEventHandler("playBeep", "scripts_play_beep")

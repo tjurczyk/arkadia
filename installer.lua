@@ -1,6 +1,6 @@
 local latest_release = "https://api.github.com/repos/tjurczyk/arkadia/releases/latest"
 local latest_file = getMudletHomeDir() .. "/latest.json"
-local url = "https://codeload.github.com/tjurczyk/arkadia-skrypty/zip/"
+local url = "https://codeload.github.com/tjurczyk/arkadia/zip/"
 local scriptsZip = getMudletHomeDir() .. "/scripts.zip"
 local unzipDirectory = ""
 local scriptsDirectory = getMudletHomeDir() .. "/arkadia/"
@@ -43,12 +43,15 @@ end
 
 function handleUnzipEvents(event, ...)
     if event == "sysUnzipDone" then
-        cecho("\n<CadetBlue>(skrypty)<tomato>: Skrypty rozpakowane\n")
         os.remove(scriptsZip)
-        os.rename(unzipDirectory, scriptsDirectory)
-        installPackage(scriptsDirectory .. "Arkadia.xml")
+        uninstallPackage("Arkadia")
         uninstallPackage("generic_mapper")
         uninstallPackage("skrypty_master3")
+        tempTimer(1, function()
+            os.rename(unzipDirectory, scriptsDirectory)
+            installPackage(scriptsDirectory .. "Arkadia.xml")
+            cecho("\n<CadetBlue>(skrypty)<tomato>: Skrypty zainstalowane\n")
+        end)
     elseif event == "sysUnzipError" then
         cecho("\n<CadetBlue>(skrypty)<tomato>: Blad podczas rozpakowywania skryptow\n")
     end

@@ -12,6 +12,7 @@ function scripts.installer:update_scripts(branch, repo)
 
     local tag = branch ~= "" and branch and branch or "master"
     local repo = repo ~= "" and repo and repo or "tjurczyk/arkadia"
+    local short_repo_name = repo:gsub("(.*)/", "")
     local url = "https://codeload.github.com/" .. repo .. "/zip/" .. tag
 
     if (mudletOlderThan(4, 6)) then
@@ -20,7 +21,7 @@ function scripts.installer:update_scripts(branch, repo)
     end
 
     scripts.installer.scripts_zip = getMudletHomeDir() .. "/scripts.zip"
-    scripts.installer.unzip_directory = getMudletHomeDir() .. "/arkadia-" .. tag .. "/"
+    scripts.installer.unzip_directory = getMudletHomeDir() .. "/".. short_repo_name .."-" .. tag .. "/"
     scripts.installer.scripts_directory = getMudletHomeDir() .. "/arkadia/"
 
     if lfs.chdir(scripts.installer.scripts_directory .. "/.git/") then

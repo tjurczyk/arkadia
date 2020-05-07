@@ -594,6 +594,17 @@ amap.locating.name = "Adremenie"
 amap.locating.loc_id = 1
 
 ---------------------------------------------------------------------------------
+------------------------       USTAWIENIA DZWIEKOW       ------------------------
+---------------------------------------------------------------------------------
+
+-- Ponizej mozna zmienic dzwieki dodane do paczki
+-- przez podanie nowej sciezki do pliku
+-- UWAGA! Sciezki powinny zawierac `/`, a nie `\`
+
+-- Podstawowy beep
+scripts.sounds.beep = getMudletHomeDir() .. "/arkadia/sounds/beep.wav"
+
+---------------------------------------------------------------------------------
 ------------       OD TEGO MIEJSCA PONIZEJ NIC NIE ZMIENIAJ       ---------------
 ---------------------------------------------------------------------------------
 

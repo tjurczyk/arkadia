@@ -1083,7 +1083,7 @@
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
 						<string>Wyglada na to, ze mogl(?:a|o|)by ci jeszcze ([\w\s]*) sluzyc\.</string>
-						<string>\(posluzy ([\w\s]*), .*\)</string>
+						<string>\(posluzy ([\w\s]*)(?:, .*)?\)</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>

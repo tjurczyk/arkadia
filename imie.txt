@@ -578,6 +578,17 @@ amap.ui.active = false
 
 ------------------------------------------
 
+-- Uzywaj dla rozy wiatrow uproszczonych symboli
+-- Jezeli roza wyglada z jakiegos powodu zle
+-- mozna uzyc uproszczonych symboli
+--
+-- Dozwolne wartosci
+-- true  - roza bedzie uzywala podstawowych symboli
+-- false - roza bedzie uzywala prawdziwych strzalek
+amap.ui.use_simplified_compass = false
+
+------------------------------------------
+
 -- Czy uzywac skroconego listowania kierunkow
 -- false to wylaczone, true to wlaczone
 amap.shorten_exits = false

@@ -1,6 +1,7 @@
 scripts.inv.get_magics_to_put_down_exempts = {
     ["plytach twojego starozytnego pancerza"] = "starozytna runiczna zbroje plytowa",
-    ["krasnoludzka starozytna korone"] = false
+    ["krasnoludzka starozytna korone"] = false,
+    ["kruczoczarny misterny miecz"] = false
 }
 
 function scripts.inv:special_inventory_highlight(text, color)

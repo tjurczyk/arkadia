@@ -3,12 +3,12 @@ scripts.inv.containers = scripts.inv.containers or {
 }
 
 function scripts.inv.containers:display_contents(content)
-    local str = scripts.utils:extract_string_list(content)
+    local container_elements = scripts.utils:extract_string_list(content)
     if self.filter then
-        str = self.filter(str)
+        container_elements = self.filter(container_elements)
         self.filter = false
     end
-    scripts.utils:print_string_list(str)
+    scripts.utils:print_string_list(container_elements)
 end
 
 function scripts.inv.containers:set_magics_and_keys_filter()

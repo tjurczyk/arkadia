@@ -165,7 +165,9 @@ function ateam:print_status()
                 --ateam.next_team_id = string.char(string.byte(ateam.next_team_id)+1)
                 ateam:increase_team_id_counter()
                 ateam.team_names[ateam.objs[v]["desc"]] = true
-                enableTrigger("Zabil-counter")
+                if self.killed_by_team_trigger == nil then
+                    self.killed_by_team_trigger = tempRegexTrigger("^([a-zA-Z]+) zabil(|a) (.*)\.$", function() trigger_func_process_kill_for_teammate() end)
+                end
             end
 
             -- if necessary create an entry for the enemy

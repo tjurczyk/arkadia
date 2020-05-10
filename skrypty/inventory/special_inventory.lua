@@ -1,3 +1,9 @@
+scripts.inv.get_magics_to_put_down_exempts = {
+    ["plytach twojego starozytnego pancerza"] = "starozytna runiczna zbroje plytowa",
+    ["krasnoludzka starozytna korone"] = false,
+    ["kruczoczarny misterny miecz"] = false
+}
+
 function scripts.inv:special_inventory_highlight(text, color)
     selectString(text, 1)
     fg(color)
@@ -9,9 +15,7 @@ function scripts.inv:setup_special_inventory_highlight(item, color)
         error("Wrong input")
     end
 
-    local regex = self:get_magic_item_pattern(item)
-
-    return tempRegexTrigger(regex, [[ scripts.inv:special_inventory_highlight(matches[2], "]] .. color .. [[") ]])
+    return tempRegexTrigger(self:get_magic_item_pattern(item), [[ scripts.inv:special_inventory_highlight(matches[2], "]] .. color .. [[") ]])
 end
 
 function scripts.inv:set_all_magic()
@@ -47,18 +51,18 @@ function scripts.inv:setup_magic_keys_triggers()
     end
 end
 
-function scripts.inv:get_magics_to_put_down()
-    send("i")
+function scripts.inv:get_magics_to_put_down(container)
+    local chosen_container = container or "skrzyni"
     self.magic_items_in_inventory = {
         triggers = {},
         items = {}
     }
-
     for k, item  in pairs(scripts.inv["magics_data"]["magics"]) do
-         table.insert(self.magic_items_in_inventory.triggers, tempRegexTrigger(self:get_magic_item_pattern(item),
-                 function() table.insert(self.magic_items_in_inventory.items, item) end))
+        table.insert(self.magic_items_in_inventory.triggers, tempRegexTrigger(self:get_magic_item_pattern(item),
+                 function() self.magic_items_in_inventory.items[item] = item end))
     end
     table.insert(self.magic_items_in_inventory.triggers, tempRegexTrigger("Masz przy sobie|Nie masz nic przy sobie", function() coroutine.resume(scripts.inv.magic_put_down_coroutine) end))
+    send("i")
     coroutine.yield(scripts.inv.magic_put_down_coroutine)
     for k, trigger in pairs(self.magic_items_in_inventory.triggers) do
         killTrigger(trigger)
@@ -67,9 +71,14 @@ function scripts.inv:get_magics_to_put_down()
     if table.size(self.magic_items_in_inventory.items) > 0 then
         local command = ""
         for k, item in pairs(self.magic_items_in_inventory.items) do
-            command = command .. "wloz " .. item .. " do skrzyni;"
+            if self.get_magics_to_put_down_exempts[item] ~= nil then
+                item = self.get_magics_to_put_down_exempts[item]
+            end
+            if item then
+                command = command .. "wloz " .. item .. " do ".. chosen_container .. ";"
+            end
         end
-        scripts.utils.bind_functional(command, false, false)
+        scripts.utils.bind_functional(command, false, true)
     end
     self.magic_items_in_inventory = nil
 end
@@ -84,7 +93,7 @@ end
 
 function alias_func_put_magics_down()
     scripts.inv.magic_put_down_coroutine = coroutine.create(function ()
-        scripts.inv:get_magics_to_put_down()
+        scripts.inv:get_magics_to_put_down(matches[3])
     end)
     coroutine.resume(scripts.inv.magic_put_down_coroutine)
 end

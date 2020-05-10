@@ -34,6 +34,8 @@ function amap_ui_set_dirs_trigger(dirs, leave_as_is)
         amap.ui:reset_special_dirs()
     end
 
+    local dir_set = amap.ui.use_simplified_compass and amap.ui["dir_to_symbol"] or amap.ui["dir_to_fancy_symbol"]
+
     -- do from dirs here
     if dirs then
         for k, v in pairs(dirs) do
@@ -53,7 +55,7 @@ function amap_ui_set_dirs_trigger(dirs, leave_as_is)
             if short_dir and v == false then
                 amap.ui.compass["button_" .. short_dir]:echo("<center>\"</center>")
             elseif short_dir then
-                amap.ui.compass["button_" .. short_dir]:echo("<center>" .. amap.ui["dir_to_symbol"][short_dir] .. "</center>")
+                amap.ui.compass["button_" .. short_dir]:echo("<center>" .. dir_set[short_dir] .. "</center>")
             end
         end
     end

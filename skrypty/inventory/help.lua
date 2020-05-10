@@ -29,7 +29,12 @@ function scripts.inv:print_help()
     cecho("|                                                                                |\n")
     cecho("| <light_slate_blue>/odloz_magie<grey> - przygotuje bind specjalny do odlozenia wszystkich magicznych    |\n")
     cecho("| przedmiotow do skrzyni                                                         |\n")
+    cecho("| <light_slate_blue>/odloz_magie do [pojmenika]<grey> - przygotuje bind specjalny do odlozenia           |\n")
+    cecho("|  wszystkich magicznych przedmiotow do wpisanego pojemnika                      |\n")
     cecho("|                                                                                |\n")
+    cecho("| <light_slate_blue>/przejrzyj<grey> - przeglada skrzynie i wyswietla magiczne przedmioty oraz klucze    |\n")
+    cecho("| <light_slate_blue>/przejrzyj [pojemnik]<grey> - przeglada pojemnik i wyswietla magiczne przedmioty     |\n")
+    cecho("| oraz klucze                                                                    |\n")
     cecho("+--------------------------------------------------------------------------------+\n")
 end
 

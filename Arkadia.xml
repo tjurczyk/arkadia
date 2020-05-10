@@ -116,7 +116,7 @@
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^[ &gt;]*(.*) zaprasza cie do swojej druzyny\.$</string>
+						<string>^[ &gt;]?\[?(\w*)\]? zaprasza cie do swojej druzyny\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -1068,6 +1068,28 @@
 						</regexCodePropertyList>
 					</Trigger>
 				</TriggerGroup>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>posluzy</name>
+					<script>trigger_func_durability_replacement()</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>Wyglada na to, ze mogl(?:a|o|)by ci jeszcze ([\w\s]*) sluzyc\.</string>
+						<string>\(posluzy ([\w\s]*)(?:, .*)?\)</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>1</integer>
+						<integer>1</integer>
+					</regexCodePropertyList>
+				</Trigger>
 			</TriggerGroup>
 			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>misc</name>
@@ -1138,26 +1160,6 @@
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
-							<integer>1</integer>
-						</regexCodePropertyList>
-					</Trigger>
-					<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-						<name>Zabil-counter</name>
-						<script>trigger_func_skrypty_misc_counter_Zabil_counter()</script>
-						<triggerType>0</triggerType>
-						<conditonLineDelta>0</conditonLineDelta>
-						<mStayOpen>0</mStayOpen>
-						<mCommand></mCommand>
-						<packageName></packageName>
-						<mFgColor>#ff0000</mFgColor>
-						<mBgColor>#ffff00</mBgColor>
-						<mSoundFile></mSoundFile>
-						<colorTriggerFgColor>#000000</colorTriggerFgColor>
-						<colorTriggerBgColor>#000000</colorTriggerBgColor>
-						<regexCodeList>
-							<string>^([a-zA-Z]+) zabil(|a) (.*)\.$</string>
-						</regexCodeList>
-						<regexCodePropertyList>
 							<integer>1</integer>
 						</regexCodePropertyList>
 					</Trigger>
@@ -2355,8 +2357,10 @@
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
 						<string>(.*) atakuje cie!</string>
+						<string>(.*) atakuje cie nie dajac ci czasu na skontrowanie swojego ataku!</string>
 					</regexCodeList>
 					<regexCodePropertyList>
+						<integer>1</integer>
 						<integer>1</integer>
 					</regexCodePropertyList>
 				</Trigger>
@@ -22012,6 +22016,9 @@
 						<string>Wsrod zniszczonych przez czas, zwierzeta i plesn ksiag i pergaminow udaje ci sie odszukac kilka, ktore zachowaly sie w stanie pozwalajacym,</string>
 						<string>udaje ci sie przeszukac dokladnie cialo nieszczesnika, ktory zostal przezen przygnieciony.</string>
 						<string>znajdujesz ukryta dzwignie.</string>
+						<string>Przy ciele znajdujesz </string>
+						<string>Twoje palce trafiaja na cos sypkiego i miekkiego. Gdy wyciagasz dlon jest ona pelna blyszczacego piasku.</string>
+						<string>Posrod pajeczyn dostrzegasz tajemniczy symbol wyrysowany kreda.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -22048,6 +22055,9 @@
 						<integer>0</integer>
 						<integer>0</integer>
 						<integer>1</integer>
+						<integer>0</integer>
+						<integer>0</integer>
+						<integer>0</integer>
 						<integer>0</integer>
 						<integer>0</integer>
 						<integer>0</integer>
@@ -23216,11 +23226,18 @@
 					</Alias>
 				</AliasGroup>
 				<Alias isActive="yes" isFolder="no">
-					<name>/odloz_magie</name>
+					<name>odloz magie</name>
 					<script>alias_func_put_magics_down()</script>
 					<command></command>
 					<packageName></packageName>
-					<regex>^/odloz_magie$</regex>
+					<regex>^/odloz_magie(| do (\w+))$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>przejrzyj magie</name>
+					<script>alias_func_przejrzyj_magie()</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/przejrzyj(| (\w+))$</regex>
 				</Alias>
 			</AliasGroup>
 			<AliasGroup isActive="yes" isFolder="yes">

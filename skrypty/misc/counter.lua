@@ -46,7 +46,7 @@ function trigger_func_skrypty_misc_counter_team_left()
     misc.counter["team_killed"] = {}
 end
 
-function trigger_func_skrypty_misc_counter_Zabil_counter()
+function trigger_func_process_kill_for_teammate()
     if ateam.team_names[matches[2]] then
         if not misc.improve["improve_start_timestamp"] then
             misc.improve["improve_start_timestamp"] = getEpoch()

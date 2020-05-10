@@ -22018,6 +22018,7 @@
 						<string>znajdujesz ukryta dzwignie.</string>
 						<string>Przy ciele znajdujesz </string>
 						<string>Twoje palce trafiaja na cos sypkiego i miekkiego. Gdy wyciagasz dlon jest ona pelna blyszczacego piasku.</string>
+						<string>Posrod pajeczyn dostrzegasz tajemniczy symbol wyrysowany kreda.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -22054,6 +22055,7 @@
 						<integer>0</integer>
 						<integer>0</integer>
 						<integer>1</integer>
+						<integer>0</integer>
 						<integer>0</integer>
 						<integer>0</integer>
 						<integer>0</integer>

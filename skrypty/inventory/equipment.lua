@@ -103,27 +103,22 @@ function trigger_func_skrypty_inventory_equipment_ubranie_poziom_znoszenia()
 end
 
 function trigger_func_skrypty_inventory_equipment_zagladanie_plecaki_zamkniete()
-    local str = scripts.utils:extract_string_list(matches[2])
-    scripts.utils:print_string_list(str)
+    scripts.inv.containers:display_contents(matches[2])
 end
 
 function trigger_func_skrypty_inventory_equipment_zagladanie_plecaki_otwarte()
-    local str = scripts.utils:extract_string_list(matches[4])
-    scripts.utils:print_string_list(str)
+    scripts.inv.containers:display_contents(matches[4])
 end
 
 function trigger_func_skrypty_inventory_equipment_zagladanie_skrzynie()
-    local str = scripts.utils:extract_string_list(matches[2])
-    scripts.utils:print_string_list(str)
+    scripts.inv.containers:display_contents(matches[2])
 end
 
 function trigger_func_skrypty_inventory_equipment_zagladanie_skrzynie1()
-    local str = scripts.utils:extract_string_list(matches[4])
-    scripts.utils:print_string_list(str)
+    scripts.inv.containers:display_contents(matches[4])
 end
 
 function trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()
-    local str = scripts.utils:extract_string_list(matches[2])
-    scripts.utils:print_string_list(str)
+    scripts.inv.containers:display_contents(matches[2])
 end
 

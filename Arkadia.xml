@@ -23240,11 +23240,18 @@
 					</Alias>
 				</AliasGroup>
 				<Alias isActive="yes" isFolder="no">
-					<name>/odloz_magie</name>
+					<name>odloz magie</name>
 					<script>alias_func_put_magics_down()</script>
 					<command></command>
 					<packageName></packageName>
-					<regex>^/odloz_magie$</regex>
+					<regex>^/odloz_magie(| do (\w+))$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>przejrzyj magie</name>
+					<script>alias_func_przejrzyj_magie()</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/przejrzyj(| (\w+))$</regex>
 				</Alias>
 			</AliasGroup>
 			<AliasGroup isActive="yes" isFolder="yes">

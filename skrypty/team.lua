@@ -34,8 +34,6 @@ ateam = ateam or {
 states = { [6] = "<green>#######", [5] = "<green>-######", [4] = "<yellow>--#####", [3] = "<yellow>---####", [2] = "<red>----###", [1] = "<red>-----##", [0] = "<red>------#" }
 states_no_color = { [6] = "#######", [5] = "-######", [4] = "--#####", [3] = "---####", [2] = "----###", [1] = "-----##", [0] = "------#" }
 
-disableTrigger("Zabil-counter")
-
 ateam["footer_info_attack_mode_to_text"] = { "A", "AW", "AWR" }
 
 function trigger_func_skrypty_team_start_ateam()

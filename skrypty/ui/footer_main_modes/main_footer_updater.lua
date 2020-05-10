@@ -12,7 +12,7 @@ function scripts.ui:update_bars_mode(mode, redraw)
         source = scripts.character.state
     end
 
-    local anyChanged = false;
+    local any_changed = false;
     local footer_mode = scripts.ui.cfg.footer_mode
 
     for k, v in pairs(source) do
@@ -44,13 +44,13 @@ function scripts.ui:update_bars_mode(mode, redraw)
                 scripts.ui[k_index]:echo(msg)
             elseif mode == "label" and footer_mode == "mode5" then
                 local msg, changed = scripts.ui:process_label_text_mode5(k, label, v, max_value, color)
-                anyChanged = anyChanged or changed 
+                any_changed = any_changed or changed 
 				scripts.ui[k_index]:echo(msg)        
             end
         end
     end
 
-    if not redraw and anyChanged and mode == "label" and footer_mode == "mode5" then
+    if not redraw and any_changed and mode == "label" and footer_mode == "mode5" then
         local change_indicator_duration = scripts.ui.cfg.change_indicator_duration
         if refresh_timer then killTimer(refresh_timer) end
         refresh_timer = tempTimer(change_indicator_duration + 1, [[ scripts.ui:update_bars_mode("label", true) ]])

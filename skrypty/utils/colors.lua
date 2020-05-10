@@ -1,5 +1,5 @@
 
-function scripts.hex_to_rgb (hex) 
+function scripts.utils.hex_to_rgb (hex) 
 	local r, g, b = hex:match("#?(%w%w)(%w%w)(%w%w)")
 	r = (tonumber(r, 16) or 0) / 255
 	g = (tonumber(g, 16) or 0) / 255
@@ -7,14 +7,14 @@ function scripts.hex_to_rgb (hex)
 	return r, g, b
 end
 
-function scripts.rgb_to_hex(r, g, b)
+function scripts.utils.rgb_to_hex(r, g, b)
 	return string.format("#%.2X%.2X%.2X", 255*r, 255*g, 255*b)
 end
 
 
-function scripts.saturate_hex(hex, amount)
-   local r,g,b = scripts.hex_to_rgb(hex)
-   local h,s,l = scripts.rgb_to_hsl(r, g, b)
+function scripts.utils.saturate_hex(hex, amount)
+   local r,g,b = scripts.utils.hex_to_rgb(hex)
+   local h,s,l = scripts.utils.rgb_to_hsl(r, g, b)
  
    if amount < 0 then
      s = s + (s * amount)
@@ -23,26 +23,26 @@ function scripts.saturate_hex(hex, amount)
    end
    s = math.max(0, math.min(1, s))
    
-   r,g,b = scripts.hsl_to_rgb(h, s, l)
-   return scripts.rgb_to_hex(r, g, b)
+   r,g,b = scripts.utils.hsl_to_rgb(h, s, l)
+   return scripts.utils.rgb_to_hex(r, g, b)
 end
 
-function scripts.lighten_hex(hex, amount)
-   local r,g,b = scripts.hex_to_rgb(hex)
-   local h,s,l = scripts.rgb_to_hsl(r, g, b)
+function scripts.utils.lighten_hex(hex, amount)
+   local r,g,b = scripts.utils.hex_to_rgb(hex)
+   local h,s,l = scripts.utils.rgb_to_hsl(r, g, b)
 
    l = l + ((1-l) * amount)
    l = math.max(0, math.min(1, l))
    
-   r,g,b = scripts.hsl_to_rgb(h, s, l)
-   return scripts.rgb_to_hex(r, g, b)
+   r,g,b = scripts.utils.hsl_to_rgb(h, s, l)
+   return scripts.utils.rgb_to_hex(r, g, b)
 end
 
-function scripts.darken_hex(hex, amount) 
-   return scripts.lighten_hex(hex, -amount)
+function scripts.utils.darken_hex(hex, amount) 
+   return scripts.utils.lighten_hex(hex, -amount)
 end
 
-function scripts.hsl_to_rgb(h, s, l)
+function scripts.utils.hsl_to_rgb(h, s, l)
    h = h/360
    local m1, m2
    if l <= 0.5 then 
@@ -69,7 +69,7 @@ function scripts.hsl_to_rgb(h, s, l)
    return _h2rgb(m1, m2, h+1/3), _h2rgb(m1, m2, h), _h2rgb(m1, m2, h-1/3)
 end
 
-function scripts.rgb_to_hsl(r, g, b)
+function scripts.utils.rgb_to_hsl(r, g, b)
       --r, g, b = r/255, g/255, b/255
    local min = math.min(r, g, b)
    local max = math.max(r, g, b)

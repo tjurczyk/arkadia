@@ -45,7 +45,7 @@ function scripts.ui:process_label_text_mode5(key, prefix, val, max_value, color)
     if percent >= i then
       output = output .. '█'
     elseif percent > i - 0.5 then
-      bar_color = scripts.saturate_hex(bar_color, -0.5)
+      bar_color = scripts.utils.saturate_hex(bar_color, -0.5)
       output = output ..  '</font><font color="'..bar_color..'">█'
     else
       output = output .. '</font><font color="#6c6563">█'

@@ -140,7 +140,7 @@ end
 
 function scripts:print_start_message()
     scripts:print_log("Uzywasz Arkadia Skrypty, ver. " .. scripts.ver .. ". Pomoc dostepna w '/skrypty'")
-    scripts.latest:is_latest(function() scripts:print_log("Dostepna jest nowa wersja. Wpisz /aktualizuj_skrypty zeby zaktualizowac") end)
+    scripts.latest:is_latest(function(release_info) scripts:print_log("Dostepna jest nowa wersja (" .. release_info.tag_name .. "). Wpisz /aktualizuj_skrypty zeby zaktualizowac") cecho("\n<SlateGray>" .. release_info.body .."\n<reset>") end)
 end
 
 tempTimer(13, [[ scripts:print_start_message() ]])

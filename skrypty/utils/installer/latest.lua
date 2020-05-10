@@ -7,7 +7,8 @@ scripts.latest = scripts.latest or {
     Get latest version of scripts
 
     Args:
-    - callback (function) - function which will be called upon version retrieval with version tag as argument
+    - callback (function) - function which will be called upon version retrieval with api response as object with release info
+      refer to as an example: https://api.github.com/repos/tjurczyk/arkadia/releases/latest
 --]]
 function scripts.latest:get_latest_version(callback)
     scripts.latest.handler = scripts.event_register:force_register_event_handler(scripts.latest.handler, "sysDownloadDone", function(_, filename) scripts.latest:handle_download(_, filename, callback) end)
@@ -22,7 +23,7 @@ end
     - true_callback (function) - call if version is latest
 --]]
 function scripts.latest:is_latest(false_callback, true_callback)
-    scripts.latest:get_latest_version(function(version) scripts.latest:compare(version, false_callback, true_callback) end)
+    scripts.latest:get_latest_version(function(release_info) scripts.latest:compare(release_info.tag_name, function() false_callback(release_info) end, true_callback) end)
 end
 
 
@@ -56,6 +57,6 @@ function scripts.latest:handle_download(_, filename, callback)
     if file then
         local response = yajl.to_value(file:read("*a"))
         file:close()
-        callback(response.name)
+        callback(response)
     end
 end

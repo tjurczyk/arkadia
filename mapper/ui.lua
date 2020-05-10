@@ -22,6 +22,21 @@ amap.ui["dir_to_symbol"] = {
     ["u"] = "^"
 }
 
+amap.ui["dir_to_fancy_symbol"] = {
+    ["nw"] = "↖",
+    ["n"] = "↑",
+    ["ne"] = "↗",
+    ["w"] = "←",
+    ["e"] = "→",
+    ["sw"] = "↙",
+    ["se"] = "↘",
+    ["s"] = "↓",
+    ["d"] = "▼",
+    ["u"] = "▲"
+}
+
+amap.ui.use_simplified_compass = false
+
 amap.ui["normal_button"] = "background-color: rgba(0,0,0,0);"
 amap.ui["hover_button"] = "background-color: #009E3A;"
 amap.ui["inactive_mapper"] = "background-color: #ff9900;"

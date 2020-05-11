@@ -28,6 +28,7 @@ if not amap then
         can_bind_enemies = true,
         next_dir_bind = nil
     }
+
 end
 
 enableTrigger("room-gps")

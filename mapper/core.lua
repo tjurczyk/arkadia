@@ -1,7 +1,7 @@
 function amap:open_map()
-    tempTimer(1, function() openMapWidget() end)
+    openMapWidget()
 end
-amap:open_map()
+tempTimer(1, function() amap:open_map() end)
 
 function amap:draw_mode_manual()
     amap.mode = "draw"

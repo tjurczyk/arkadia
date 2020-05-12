@@ -37,6 +37,7 @@ function amap_ui_set_dirs_trigger(dirs, leave_as_is)
     local dir_set = amap.ui.use_simplified_compass and amap.ui["dir_to_symbol"] or amap.ui["dir_to_fancy_symbol"]
 
     -- do from dirs here
+    local regular_dirs = {}
     if dirs then
         for k, v in pairs(dirs) do
             -- for each direction, set active
@@ -52,6 +53,7 @@ function amap_ui_set_dirs_trigger(dirs, leave_as_is)
                 short_dir = k
             end
 
+            regular_dirs[short_dir] = true
             if short_dir and v == false then
                 amap.ui.compass["button_" .. short_dir]:echo("<center>\"</center>")
             elseif short_dir then
@@ -61,12 +63,15 @@ function amap_ui_set_dirs_trigger(dirs, leave_as_is)
     end
 
     local exits = getSpecialExitsSwap(amap.curr.id)
+    local special_dirs = {}
     if not exits then
+        raiseEvent("amapCompassDrawingDone", regular_dirs, special_dirs)
         return
     end
 
     local id = 1
     for k, v in pairs(exits) do
+        special_dirs[k] = true
         amap.ui.compass["special_exit" .. id] = k
         amap.ui.compass["button_special" .. id]:echo("<center>" .. k .. "<center>")
         id = id + 1
@@ -74,6 +79,8 @@ function amap_ui_set_dirs_trigger(dirs, leave_as_is)
             break
         end
     end
+
+    raiseEvent("amapCompassDrawingDone", regular_dirs, special_dirs)
 end
 
 function amap.ui:mapper_mode(enabled)

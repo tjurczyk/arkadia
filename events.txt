@@ -2,7 +2,7 @@ Dostepne eventy w skryptach:
 --------------------------------------
 
 - "amapNewLocation", argumenty: amap.curr.id, direction
-  Argumenty: 
+  Argumenty:
     arg1: ID nowej lokacji
     arg2: kierunek, ktory zostal zlapany jako ruch
 
@@ -35,6 +35,13 @@ Dostepne eventy w skryptach:
 - "amapPauserStopped"
 
   Event podniesiony gdy pauser zostal wylaczony (czyli wlaczyl mapper z powrotem)
+
+- "amapCompassDrawingDone"
+
+  Event podniesiony gdy zakonczy sie rysowanie rozy wiatrow
+  Argumenty:
+    arg1: tablica z normalnymi wyjsciami (e.g.: {n = true, s = true})
+    arg2: tablica ze specjalnymi wyjsciami (e.g.: {["przejdz przez szczeline"] = true})
 
 --------------------------------------
 
@@ -78,17 +85,17 @@ Dostepne eventy w skryptach:
 --------------------------------------
 
 - "gmcp_parsing_finished"
-  
+
   Event podniesiony po skonczeniu parsowania ateam.objs
 
 - "ateam_am_attacked"
-  Argumenty: 
+  Argumenty:
     arg1: true lub false, w zaleznosci czy nasza postac zostala zaatakowana, czy przestala byc atakowana
 
   Event podniesiony w momencie, kiedy nasza postac jest zaatakowana/nie zaatakowana
-  
-- "ateam_teammate_attacked"  
-  Argumenty: 
+
+- "ateam_teammate_attacked"
+  Argumenty:
     arg1: true lub false, w zaleznosci czy ktokolwiek z naszej druzyny zostal zostal zaatakowany, czy nikt z druzyny nie jest atakowany
 
   Event podniesiony w momencie, kiedy ktos z naszego teamu zostaje zaatakowany

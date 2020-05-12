@@ -1,40 +1,49 @@
 Highlight = {}
 
-function Highlight:new(locations, color1, color2)
+function Highlight:new(location_ids, color1_rgb_table, color2_rgb_table)
     local o = {}
     setmetatable(o, self)
     self.__index = self
-    o.locations = locations or {}
-    o.color1 = color1 or {255, 255, 255}
-    o.color2 = color2 or {10, 30, 150}
+    o.location_ids = location_ids or {}
+    o.color1_rgb_table = color1_rgb_table or {255, 255, 255}
+    o.color2_rgb_table = color2_rgb_table or {10, 30, 150}
     enabled = false
     return o
 end
 
 function Highlight:on()
-    local color1 = self.color1
-    local color2 = self.color2
-    for k,v in pairs(self.locations) do
-        highlightRoom(tonumber(v), color1[1], color1[2], color1[3], color2[1], color2[2], color2[3], 0.85, 255, 255)
+    for location_id, _ in pairs(self.location_ids) do
+        self:highlight_location(tonumber(location_id), self.color1_rgb_table, self.color2_rgb_table)
     end
     self.enabled = true
 end
 
+function Highlight:highlight_location(location_id, color1_rgb_table, color2_rgb_table)
+    highlightRoom(location_id, color1_rgb_table[1], color1_rgb_table[2], color1_rgb_table[3], color2_rgb_table[1], color2_rgb_table[2], color2_rgb_table[3], 0.85, 255, 255)
+end
+
 function Highlight:off()
-    for k,v in pairs(self.locations) do
-        unHighlightRoom( tonumber(v) )
+    for location_id, _ in pairs(self.location_ids) do
+        unHighlightRoom( tonumber(location_id) )
     end
     self.enabled = false
 end
 
-function Highlight:add_location(location)
-    table.insert(self.locations, location)
-    self:refresh()
+function Highlight:add_location(location_id)
+    self.location_ids[location_id] = location_id
+    self:highlight_location(tonumber(location_id), self.color1_rgb_table, self.color2_rgb_table)
 end
 
-function Highlight:set_locations(locations)
+function Highlight:remove_location(location_id)
+    self.location_ids[location_id] = nil
+    unHighlightRoom( tonumber(location_id) )
+end
+
+function Highlight:set_locations(location_table)
     self:off()
-    self.locations = locations
+    for _, location_id in pairs(location_table) do
+        self.location_ids[location_id] = true
+    end
     self:refresh()
 end
 

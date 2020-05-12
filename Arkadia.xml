@@ -24889,6 +24889,13 @@
 				<packageName></packageName>
 				<regex>^/nastepny_kierunek$</regex>
 			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>zaznaczaj</name>
+				<script>amap.ui.location_marker:toggle_location_marker()</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^/zaznaczaj$</regex>
+			</Alias>
 		</AliasGroup>
 	</AliasPackage>
 	<ActionPackage />

@@ -58,6 +58,8 @@ function doSpeedWalk()
         amap.walker_dest = speedWalkPath[#speedWalkPath]
         amap:print_log("Rozpoczynam chodzik z opoznieniem: " .. round(amap.walker_delay, 2))
 
+        raiseEvent("amapWalkerStarted")
+
         -- if up/down change to u/d
         local curr_move = amap.speed_walk_dir[amap.current_index]
         local t_curr_move = amap.short_to_long[curr_move]

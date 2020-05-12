@@ -47,7 +47,6 @@ end
 function scripts_load_config(name)
     scripts.config_loader.last_config = name
     dofile(scripts.config_loader:get_config_path(name))
-    raiseEvent("profileLoaded")
 end
 
 function alias_func_init_config(name, wolacz)

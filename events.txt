@@ -1,6 +1,20 @@
 Dostepne eventy w skryptach:
 --------------------------------------
 
+- "scriptsLoaded"
+
+  Event podeniesiony tuz po zaladowaniu wszystkich plikow skryptow
+
+- "profileLoaded"
+
+  Event podniesiony po zaladowaniu pliku imie.txt
+
+- "uiReady"
+
+  Event podniesiony po zaladowaniu calego UI
+
+--------------------------------------
+
 - "amapNewLocation", argumenty: amap.curr.id, direction
   Argumenty:
     arg1: ID nowej lokacji
@@ -99,4 +113,42 @@ Dostepne eventy w skryptach:
     arg1: true lub false, w zaleznosci czy ktokolwiek z naszej druzyny zostal zostal zaatakowany, czy nikt z druzyny nie jest atakowany
 
   Event podniesiony w momencie, kiedy ktos z naszego teamu zostaje zaatakowany
+
+- "ateam_all_enemies_killed"
+
+  Event podniesiony po zabiciu wszystkich wrogow na lokacji
+
+--------------------------------------
+
+- "temporary_bind_executed"
+  Argumenty:
+    arg1: id bindu
+
+  Event podniesiony po wykonaniu bindu tymczasowego
+
+--------------------------------------
+
+- "hidden_state"
+  Argumenty:
+    arg1: status ukrycia
+
+  Event podniesiony kiedy zmienia sie status ukrycia
+
+- "weapon_state"
+  Argumenty:
+    arg1: status dobycia broni - true|false
+
+   Event podniesiony kiedy zmienia sie status dobycia broni
+
+- "guard_state"
+  Argumenty:
+    arg1: status zaslony (czas pozostaly lub OK)
+
+   Event podniesiony kiedy zmienia sie status uzycia zaslony
+
+- "order_state"
+  Argumenty:
+    arg1: status rozkazu (czas pozostaly lub OK)
+
+  Event podniesiony kiedy zmienia sie status wydania rozkazu
 

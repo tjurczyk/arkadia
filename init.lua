@@ -17,6 +17,7 @@ function load_scripts(force)
     end
 
     scripts_loaded = true
+    raiseEvent("scriptsLoaded")
 end
 
 function reload_single_script(path)

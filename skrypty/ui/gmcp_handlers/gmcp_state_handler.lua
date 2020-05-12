@@ -2,7 +2,7 @@ function gmcp_state_handler()
     if scripts.ui.cfg["footer_mode"] == "mode1" then
         scripts.ui:update_bars_mode("gauge")
     elseif scripts.ui.cfg["footer_mode"] == "mode2" or scripts.ui.cfg["footer_mode"] == "mode3" or
-            scripts.ui.cfg["footer_mode"] == "mode4" then
+            scripts.ui.cfg["footer_mode"] == "mode4" or scripts.ui.cfg["footer_mode"] == "mode5" then
         scripts.ui:update_bars_mode("label")
     end
 end

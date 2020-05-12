@@ -164,6 +164,54 @@ scripts.ui["states_window_nav_printable_val_map"] = {
 -- to allow O(1)
 scripts.ui.cfg["states_window_nav_hash"] = {}
 
+-- po zmianie wartosci atrybutu jak hp po jakim czasie ma zniknac oznaczenie ze 
+-- atrybut ulegl zmianie
+scripts.ui.cfg["change_indicator_duration"] = 10
+
+scripts.ui.cfg["footer_mode5_settings"] = {
+  -- Dostepne wartosci to:
+  --   percent - wyswietli np. 10%
+  --   raw     - wyswietli np. 5/10
+  --   none    - nie wyswietli zadnej wartosci
+  ["display_value_mode"] = "raw",
+  
+  ["values"] = {
+    ["hp"] = {
+       ["color"]= "#e4190c",
+    },
+    ["fatigue"] = {
+       ["color"]= "#05b12f",
+    },
+    ["mana"] = {
+       ["color"]= "#308dff",
+    },
+    ["soaked"] = {
+       ["color"]= "#add8e6",
+    },
+    ["stuffed"] = {
+       ["color"]= "#8C482E",
+    },
+    ["intox"]= {
+       ["color"]= "#fb00ff",
+    },
+    ["headache"] = {
+       ["color"]= "#777777",
+    },
+    ["panic"] = {
+       ["color"]= "#ffd504",
+    },
+    ["encumbrance"] = {
+       ["color"]= "#e2ef27",
+    },
+    ["improve"] = {
+       ["color"]= "#522699",
+    },
+    ["form"] = {
+       ["color"]= "#ff8404",
+    },
+  }
+}
+
 function scripts.ui:decode_states_window_navbar_key(k)
     if not scripts.ui.states_window_elem_map[k] then
         error("wrong input: " .. k)

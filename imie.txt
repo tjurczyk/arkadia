@@ -787,6 +787,13 @@ amap.ui.use_simplified_compass = false
 
 ------------------------------------------
 
+-- Kolory do oznaczania lokacji w /zaznaczaj
+-- dostepne kolory mozna zobaczyc w /kolory
+amap.ui.location_marker.color = "pale_violet_red"
+amap.ui.location_marker.color2 = "alice_blue"
+
+------------------------------------------
+
 -- Czy uzywac skroconego listowania kierunkow
 -- false to wylaczone, true to wlaczone
 amap.shorten_exits = false

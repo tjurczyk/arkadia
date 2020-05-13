@@ -33,6 +33,8 @@ function misc:zglebiaj_replace(text)
         var = string.lower(string.trim(var))
         cecho(''..i..'. '..var..'\n')
     end
+
+    disableTrigger("zglebiaj")
 end
 
 function misc:zglebiaj_wiedze(index)
@@ -51,7 +53,14 @@ function misc:zglebiaj_wiedze(index)
 end
 
 function alias_func_skrypty_misc_zglebiaj_wiedze()
-    misc:zglebiaj_wiedze(tonumber(matches[2]))
+    local number = string.trim(matches[2])
+    if (number == nil or number == '') then
+        enableTrigger("zglebiaj")
+        send('zglebiaj')
+        tempTimer(1, [[ disableTrigger("zglebiaj") ]])
+    else
+        misc:zglebiaj_wiedze(tonumber(number))
+    end  
 end
 
 function trigger_func_skrypty_misc_knowledge_O_czym_wiedze_checesz_zglebiac()

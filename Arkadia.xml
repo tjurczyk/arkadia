@@ -1891,7 +1891,7 @@
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList />
 					<regexCodePropertyList />
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>zglebiaj</name>
 						<script>trigger_func_skrypty_misc_knowledge_O_czym_wiedze_checesz_zglebiac()</script>
 						<triggerType>0</triggerType>
@@ -23845,7 +23845,7 @@
 						<script>alias_func_skrypty_misc_zglebiaj_wiedze()</script>
 						<command></command>
 						<packageName></packageName>
-						<regex>^zglebiaj\s+(?:wiedze\s+)?(\d+)$</regex>
+						<regex>^zglebiaj(?:\s+wiedze\s+)?\s*(\d*)$</regex>
 					</Alias>
 				</AliasGroup>
 				<Alias isActive="yes" isFolder="no">

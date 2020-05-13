@@ -24,6 +24,7 @@ function scripts.ui:setup()
     tempTimer(2, function() scripts.ui:setup_proportions() end)
     tempTimer(2.1, function() scripts.ui:setup_footer() end)
     tempTimer(2.2, function() scripts.ui:setup_footer_closed() end)
+    tempTimer(3, function() raiseEvent("uiReady") end)
 end
 
 function scripts.ui:setup_proportions()

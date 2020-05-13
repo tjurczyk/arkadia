@@ -18261,7 +18261,7 @@
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
 						<string>^((Jest|Sa) tutaj .* widoczn(e|ych) wyjsc(|ia|ie):) (.*)\.$</string>
-						<string>^((W) (gestych) (ciemnosciach) dostrzegasz .* wiodacy na) (.*)\.$</string>
+						<string>^((W) (gestych) (ciemnosciach) dostrzegasz .* (?:wiodacy|rozwidlajacy sie) na) (.*)\.$</string>
 						<string>^((Korytarze) (jaskini) (ciagna) sie na) (.*)\.$</string>
 						<string>^((Trakt) (wiedzie) (na)) ([^.]+)\.$</string>
 						<string>(([tT]rakt) (rozgalezia) (sie)) na (.*)\.$</string>

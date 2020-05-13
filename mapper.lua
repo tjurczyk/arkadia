@@ -11,7 +11,12 @@ if not amap then
         backup_loc = {},
         mode = "follow",
         walker = false,
+        -- Flaga ustawiana przy uruchamianiu chodzika przy uzyciu komend. Chodzi
+        -- o to by rozroznic uruchomienie chodzika po klinieciu w mape (false)
+        -- od swiadomego przez gracza uruchomienia po wpisaniu komendy (true)
+        walker_set = false,
         walker_disabled = false,
+        walker_on_map_click = true,
         set_walker_delay = 2,
         walker_delay = 2,
         walker_bind = nil,

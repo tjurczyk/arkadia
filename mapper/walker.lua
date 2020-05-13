@@ -1,3 +1,9 @@
+
+function amap:gotoRoom(room_id)
+    amap.walker_set = true
+    gotoRoom(room_id)
+end
+
 function amap:speedwalk_from_shortcut(s_name, delay)
     local room_id = amap.shortcuts:get_room_by_name(s_name)
 
@@ -12,7 +18,7 @@ function amap:speedwalk_from_shortcut(s_name, delay)
         else
             amap.walker_delay = amap.set_walker_delay
         end
-        gotoRoom(room_id)
+        amap:gotoRoom(room_id)
     else
         amap:print_log("Nie mam takiego skrotu, sprawdz '/pokaz_skroty'")
     end
@@ -33,7 +39,7 @@ function amap:speedwalk_from_id(room_id, delay)
     else
         amap.walker_delay = amap.set_walker_delay
     end
-    gotoRoom(room_id)
+    amap:gotoRoom(room_id)
 end
 
 function doSpeedWalk()
@@ -48,6 +54,12 @@ function doSpeedWalk()
         amap:print_log("Chodzik dziala tylko na wlaczonym chodzeniu")
         return
     end
+
+    if amap.walker_on_map_click == false and amap.walker_set == false then
+        amap:print_log("Chodzik po kliknieciu w mape jest wylaczony")
+        return;
+    end
+    amap.walker_set = false
 
     -- if the same location as current, don't run
     if amap.walker == false and (table.size(speedWalkPath) == 0 or amap.curr.id == speedWalkPath[table.size(speedWalkPath)]) then
@@ -92,7 +104,7 @@ function amap:continue_speedwalk()
         amap:terminate_walker()
     end
 
-    gotoRoom(amap.walker_dest)
+    amap:gotoRoom(amap.walker_dest)
 end
 
 function amap:auto_walker()
@@ -173,7 +185,7 @@ function amap:go_to_mail()
             return
         end
 
-        gotoRoom(amap.go_to_room_mail)
+        amap:gotoRoom(amap.go_to_room_mail)
         amap.go_to_room_mail = nil
         return true
     end

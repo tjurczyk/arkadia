@@ -18326,9 +18326,11 @@
 					<regexCodeList>
 						<string>Mozesz podazac traktem na (.*)\. Natomiast (aby|jesli chcesz) zejsc z wytyczonej drogi (wystarczy|musisz|mozesz) udac sie w dowolnym innym kierunku\.</string>
 						<string>Wedrowke przez rozlegle laki mozesz kontynuowac w dowolnie wybranym kierunku.</string>
+						<string>Mozesz stad wyruszyc w dowolnie wybranym kierunku.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
+						<integer>0</integer>
 						<integer>0</integer>
 					</regexCodePropertyList>
 				</Trigger>

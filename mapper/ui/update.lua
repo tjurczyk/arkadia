@@ -53,11 +53,13 @@ function amap_ui_set_dirs_trigger(dirs, leave_as_is)
                 short_dir = k
             end
 
-            regular_dirs[short_dir] = true
-            if short_dir and v == false then
-                amap.ui.compass["button_" .. short_dir]:echo("<center>\"</center>")
-            elseif short_dir then
-                amap.ui.compass["button_" .. short_dir]:echo("<center>" .. dir_set[short_dir] .. "</center>")
+            if short_dir then
+                regular_dirs[short_dir] = true
+                if v == false then
+                    amap.ui.compass["button_" .. short_dir]:echo("<center>\"</center>")
+                else
+                    amap.ui.compass["button_" .. short_dir]:echo("<center>" .. dir_set[short_dir] .. "</center>")
+                end
             end
         end
     end

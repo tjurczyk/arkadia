@@ -1877,6 +1877,42 @@
 					</Trigger>
 				</TriggerGroup>
 				<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>knowledge</name>
+					<script></script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList />
+					<regexCodePropertyList />
+					<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>zglebiaj</name>
+						<script>trigger_func_skrypty_misc_knowledge_O_czym_wiedze_checesz_zglebiac()</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>^Wiedze o czym chcesz zglebiac\? (.*)$</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>1</integer>
+						</regexCodePropertyList>
+					</Trigger>
+				</TriggerGroup>
+				<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>calendar</name>
 					<script></script>
 					<triggerType>0</triggerType>
@@ -23791,13 +23827,27 @@
 					<packageName></packageName>
 					<regex>^um(|iejetnosci)$</regex>
 				</Alias>
-				<Alias isActive="yes" isFolder="no">
+				<AliasGroup isActive="yes" isFolder="yes">
 					<name>wiedza</name>
-					<script>alias_func_skrypty_misc_wiedza()</script>
+					<script></script>
 					<command></command>
 					<packageName></packageName>
-					<regex>^(wiedza)$</regex>
-				</Alias>
+					<regex></regex>
+					<Alias isActive="yes" isFolder="no">
+						<name>wiedza</name>
+						<script>alias_func_skrypty_misc_wiedza()</script>
+						<command></command>
+						<packageName></packageName>
+						<regex>^(wiedza)$</regex>
+					</Alias>
+					<Alias isActive="yes" isFolder="no">
+						<name>zglebiaj</name>
+						<script>alias_func_skrypty_misc_zglebiaj_wiedze()</script>
+						<command></command>
+						<packageName></packageName>
+						<regex>^zglebiaj(?:\s+wiedze\s+)?\s*(\d*)$</regex>
+					</Alias>
+				</AliasGroup>
 				<Alias isActive="yes" isFolder="no">
 					<name>jezyki</name>
 					<script>alias_func_skrypty_misc_jezyki()</script>

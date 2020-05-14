@@ -204,8 +204,6 @@ return {
     "skrypty/misc/counter/counter2",
     "skrypty/misc/stats/core",
     "skrypty/misc/stats/print",
-    "skrypty/misc/lvl_calc/lvl_calculator",
-    "skrypty/misc/lvl_calc/stat_name_values",
     "skrypty/misc/lang/core",
     "skrypty/misc/enemy_eq/core",
     "skrypty/misc/enemy_eq/starter",

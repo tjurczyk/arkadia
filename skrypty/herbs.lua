@@ -1,7 +1,7 @@
 herbs = herbs or {
     db = {},
     data_file_path = getMudletHomeDir() .. "/herbs_data",
-    data_url = "http://158.69.205.60/data/herbs_data.json",
+    data_url = "http://arkadia.kamerdyner.net/data/herbs_data.json",
     settings = { get_herb_counts = { 1, 3 }, use_herb_counts = { 1, 3 } },
     pre_actions = "",
     post_actions = ""

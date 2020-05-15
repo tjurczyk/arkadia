@@ -24360,6 +24360,20 @@
 					<packageName></packageName>
 					<regex>^/wolniej$</regex>
 				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>wlacz_chodzik</name>
+					<script>alias_func_mapper_walker_toggle(true)</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/chodzik wlacz$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>wylacz_chodzik</name>
+					<script>alias_func_mapper_walker_toggle(false)</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/chodzik wylacz$</regex>
+				</Alias>
 			</AliasGroup>
 			<AliasGroup isActive="yes" isFolder="yes">
 				<name>walk_cmd</name>

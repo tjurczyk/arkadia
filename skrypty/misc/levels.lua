@@ -46,9 +46,9 @@ end
 
 function trigger_func_skrypty_misc_levels_scripts_knowledge()
     if matches[3] then
-        misc:knowledge_replace(matches[3])
+        misc.knowledge:knowledge_replace(matches[3])
     else
-        misc:knowledge_replace(matches[2])
+        misc.knowledge:knowledge_replace(matches[2])
     end
 end
 

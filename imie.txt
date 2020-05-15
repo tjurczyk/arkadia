@@ -760,7 +760,7 @@ amap.db.show_binds = true
 -- true/false
 --
 -- Komenda do zmiany w trakcie gry: '/chodzik wlacz' lub '/chodzik wylacz'
-amap.walker_disable = true
+amap.walker_disable = false
 
 ------------------------------------------
 

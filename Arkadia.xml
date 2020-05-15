@@ -1581,8 +1581,8 @@
 							<colorTriggerBgColor>#000000</colorTriggerBgColor>
 							<regexCodeList>
 								<string>.*(rypa|ratwa|rom|arka) przybija do brzegu\.$</string>
-								<string>^Tratwa\.$</string>
-								<string>^Rzeczna tratwa\.$</string>
+								<string>^Tratwa</string>
+								<string>^Rzeczna tratwa</string>
 							</regexCodeList>
 							<regexCodePropertyList>
 								<integer>1</integer>
@@ -1625,8 +1625,8 @@
 							<colorTriggerBgColor>#000000</colorTriggerBgColor>
 							<regexCodeList>
 								<string>^[a-zA-Z]+ [a-z]+ prom[^a-z]$</string>
-								<string>^Prom\.$</string>
-								<string>^Barka\.$</string>
+								<string>^Prom</string>
+								<string>^Barka</string>
 							</regexCodeList>
 							<regexCodePropertyList>
 								<integer>1</integer>

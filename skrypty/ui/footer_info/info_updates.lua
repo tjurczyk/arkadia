@@ -217,3 +217,17 @@ function scripts.ui:info_killed_update()
     end
 end
 
+function scripts.ui:info_combat_state_update(is_combat, cool_off, command)
+    local color, text
+    if is_combat then
+        color = scripts.ui["footer_info_red"]
+        text = "on"
+    else
+        color = cool_off > 0 and scripts.ui["footer_info_yellow"] or scripts.ui["footer_info_normal"]
+        text = cool_off > 0 and cool_off .. "s" or "off"
+    end
+    if command then
+        text = text .. " (" .. command .. ")"
+    end
+    scripts.ui.footer_info_combat_state:echo("<font color='" .. scripts.ui["footer_info_normal"] .. "'>Walka:</font> <font color='" .. color .. "'>" .. text .. "</font>")
+end

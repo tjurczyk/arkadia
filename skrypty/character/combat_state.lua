@@ -16,6 +16,8 @@ function scripts.character.combat_state:start_combat()
     if self.timer then
         killTimer(self.timer)
     end
+    self.command = false
+    scripts.ui:info_combat_state_update(true)
 end
 
 function scripts.character.combat_state:end_combat()
@@ -31,6 +33,7 @@ function scripts.character.combat_state:end_combat()
             self.command = command
         end)
     end
+    scripts.ui:info_combat_state_update(false, 30)
 end
 
 function scripts.character.combat_state:get_cooloff_timer()
@@ -48,6 +51,7 @@ function scripts.character.combat_state:update()
         end
         self.command = false
     end
+    scripts.ui:info_combat_state_update(false, self.time_after_combat, self.command)
 end
 
 scripts.character.combat_state:init()

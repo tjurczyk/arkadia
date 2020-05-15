@@ -223,7 +223,7 @@ function scripts.ui:info_combat_state_update(is_combat, cool_off, command)
         color = scripts.ui["footer_info_red"]
         text = "on"
     else
-        color = cool_off > 0 and scripts.ui["footer_info_yellow"] or scripts.ui["footer_info_normal"]
+        color = cool_off > 0 and scripts.ui["footer_info_yellow"] or scripts.ui["footer_info_green"]
         text = cool_off > 0 and cool_off .. "s" or "off"
     end
     if command then

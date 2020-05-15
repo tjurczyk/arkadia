@@ -1891,26 +1891,6 @@
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList />
 					<regexCodePropertyList />
-					<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-						<name>zglebiaj</name>
-						<script>trigger_func_skrypty_misc_knowledge_O_czym_wiedze_checesz_zglebiac()</script>
-						<triggerType>0</triggerType>
-						<conditonLineDelta>0</conditonLineDelta>
-						<mStayOpen>0</mStayOpen>
-						<mCommand></mCommand>
-						<packageName></packageName>
-						<mFgColor>#ff0000</mFgColor>
-						<mBgColor>#ffff00</mBgColor>
-						<mSoundFile></mSoundFile>
-						<colorTriggerFgColor>#000000</colorTriggerFgColor>
-						<colorTriggerBgColor>#000000</colorTriggerBgColor>
-						<regexCodeList>
-							<string>^Wiedze o czym chcesz zglebiac\? (.*)$</string>
-						</regexCodeList>
-						<regexCodePropertyList>
-							<integer>1</integer>
-						</regexCodePropertyList>
-					</Trigger>
 				</TriggerGroup>
 				<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>calendar</name>
@@ -24379,6 +24359,20 @@
 					<command></command>
 					<packageName></packageName>
 					<regex>^/wolniej$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>wlacz_chodzik</name>
+					<script>alias_func_mapper_walker_toggle(true)</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/chodzik wlacz$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>wylacz_chodzik</name>
+					<script>alias_func_mapper_walker_toggle(false)</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/chodzik wylacz$</regex>
 				</Alias>
 			</AliasGroup>
 			<AliasGroup isActive="yes" isFolder="yes">

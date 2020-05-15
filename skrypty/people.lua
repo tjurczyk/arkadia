@@ -26,7 +26,7 @@ scripts.people["people_triggers_objects"] = scripts.people["people_triggers_obje
 
 scripts.people.enemy_guilds = {}
 scripts.people.enemy_people = {}
-scripts.people.enemy_table = {}
+scripts.people.enemy_table = scripts.people.enemy_table or {}
 scripts.people.enemy_suffix = {}
 
 scripts.people.keep_binds_unchanged = false
@@ -36,7 +36,7 @@ scripts.people.colored_guilds = {}
 scripts.people.colored_people = {}
 scripts.people.color_table = {}
 scripts.people.color_suffix = {}
-scripts.people.color_items = {}
+scripts.people.color_items = scripts.people.color_items or {}
 
 scripts.people.trigger_guilds = {
     "CKN", "ES", "SC", "KS", "KM", "OS",
@@ -45,7 +45,7 @@ scripts.people.trigger_guilds = {
     "ZS", "ZH", "GP"
 }
 --scripts.people.trigger_guilds = {}
-scripts.people.trigger_items = {}
+scripts.people.trigger_items = scripts.people.trigger_items or {}
 scripts.people.trigger_suffix = {}
 
 function trigger_func_skrypty_people_przedstawienie()

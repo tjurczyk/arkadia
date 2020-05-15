@@ -35,14 +35,14 @@ function scripts.latest:compare(version, false_callback, true_callback)
         return true_callback()
     end
 
-    local current_version_partials_list = split(scripts.ver, "\.")
+    local current_version_partials_list = split(scripts.installer:get_version_from_file() or scripts.ver, "\.")
     local repository_version_partial_list = split(version, "\.")
     for i = 1, math.max(table.size(current_version), table.size(repository_version_partial_list))  do
-            if (current_version_partials_list[i] or "0") > (repository_version_partial_list[i] or "0") then
-                return true_callback()
+            if (current_version_partials_list[i] or "0") < (repository_version_partial_list[i] or "0") then
+                return false_callback()
             end
     end
-    return false_callback()
+    return true_callback()
 end
 
 function scripts.latest:handle_download(_, filename, callback)

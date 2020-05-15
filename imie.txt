@@ -754,6 +754,25 @@ amap.db.show_binds = true
 
 ------------------------------------------
 
+-- Domyslna opcja startowa czy chodzik jest wlaczony czy nie
+--
+-- Dozwolone wartosci
+-- true/false
+--
+-- Komenda do zmiany w trakcie gry: '/chodzik wlacz' lub '/chodzik wylacz'
+amap.walker_disable = true
+
+------------------------------------------
+
+-- Domyslna opcja startowa czy chodzik ma uruchamiac sie po kliknieciu w mape
+--
+-- Dozwolone wartosci
+-- true/false
+--
+amap.walker_on_map_click = true
+
+------------------------------------------
+
 -- Domyslna opcja startowa opoznienia chodzika
 --
 -- Dozwolone wartosci

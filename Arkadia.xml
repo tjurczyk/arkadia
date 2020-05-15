@@ -1581,8 +1581,8 @@
 							<colorTriggerBgColor>#000000</colorTriggerBgColor>
 							<regexCodeList>
 								<string>.*(rypa|ratwa|rom|arka) przybija do brzegu\.$</string>
-								<string>^Tratwa</string>
-								<string>^Rzeczna tratwa</string>
+								<string>^Tratwa(\.|,| i)</string>
+								<string>^Rzeczna tratwa(\.|,| i)</string>
 							</regexCodeList>
 							<regexCodePropertyList>
 								<integer>1</integer>
@@ -1625,8 +1625,8 @@
 							<colorTriggerBgColor>#000000</colorTriggerBgColor>
 							<regexCodeList>
 								<string>^[a-zA-Z]+ [a-z]+ prom[^a-z]$</string>
-								<string>^Prom</string>
-								<string>^Barka</string>
+								<string>^Prom(\.|,| i)</string>
+								<string>^Barka(\.|,| i)</string>
 							</regexCodeList>
 							<regexCodePropertyList>
 								<integer>1</integer>
@@ -1648,10 +1648,10 @@
 							<colorTriggerFgColor>#000000</colorTriggerFgColor>
 							<colorTriggerBgColor>#000000</colorTriggerBgColor>
 							<regexCodeList>
-								<string>^([A-Za-z]+) (statek|knara)\.$</string>
-								<string>^([A-Za-z]+) ([a-z]+) statek\.$</string>
+								<string>^([A-Za-z]+) (statek|knara)(\.|,| i)</string>
+								<string>^([A-Za-z]+) ([a-z]+) statek(\.|,| i)</string>
 								<string>Tajemniczy okret</string>
-								<string>Wielki trojmasztowy galeon\.$</string>
+								<string>Wielki trojmasztowy galeon(\.|,| i)</string>
 								<string>Stara niewielka szkuta</string>
 								<string>Smukly drakkar</string>
 								<string>Szeroka knara</string>
@@ -21848,7 +21848,6 @@
 						<string>Podaj tytul notki:</string>
 						<string>adefFhHmnpqrsRux.!?</string>
 						<string>Zaczynasz szukac</string>
-						<string>^Zaczynasz rytmicznie ciagnac za dojki\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>0</integer>
@@ -21865,7 +21864,6 @@
 						<integer>0</integer>
 						<integer>0</integer>
 						<integer>0</integer>
-						<integer>1</integer>
 					</regexCodePropertyList>
 				</Trigger>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -22041,7 +22039,6 @@
 						<string>Przy ciele znajdujesz </string>
 						<string>Twoje palce trafiaja na cos sypkiego i miekkiego. Gdy wyciagasz dlon jest ona pelna blyszczacego piasku.</string>
 						<string>Posrod pajeczyn dostrzegasz tajemniczy symbol wyrysowany kreda.</string>
-						<string>^Przestajesz doic krowe\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -22085,7 +22082,6 @@
 						<integer>0</integer>
 						<integer>0</integer>
 						<integer>0</integer>
-						<integer>1</integer>
 					</regexCodePropertyList>
 				</Trigger>
 				<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">

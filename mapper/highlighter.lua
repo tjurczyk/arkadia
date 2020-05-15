@@ -39,6 +39,11 @@ function Highlight:remove_location(location_id)
     unHighlightRoom( tonumber(location_id) )
 end
 
+function Highlight:clear()
+    self:off()
+    self.location_ids = {}
+end
+
 function Highlight:set_locations(location_table)
     self:off()
     for _, location_id in pairs(location_table) do

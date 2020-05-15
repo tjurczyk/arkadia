@@ -21,7 +21,7 @@ function amap.walker_highlights:highlight_current_path()
 end
 
 function amap.walker_highlights:clear_highlight()
-    self.highlighter:off()
+    self.highlighter:clear()
 end
 
 amap.walker_highlights:register_events()

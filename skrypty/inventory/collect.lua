@@ -50,7 +50,8 @@ function scripts.inv.collect:check_option(mode)
     end
 end
 
-function scripts.inv.collect:key_pressed(force, index)
+function scripts.inv.collect:key_pressed(force, index, put_into_bag)
+    put_into_bag = put_into_bag == nil and true or put_into_bag
     local from = "ciala"
     if index ~= nil then
         from = scripts.id_to_string_biernik[index] .. " ciala"
@@ -66,14 +67,19 @@ function scripts.inv.collect:key_pressed(force, index)
                 sendAll("wez zlote monety z " .. from, true)
             end
 
-            scripts.inv:put_into_bag({ "monety" }, "money", 1)
+            if put_into_bag then
+                scripts.inv:put_into_bag({ "monety" }, "money", 1)
+            end
         end
         if scripts.inv.collect["current_mode"] == 2 or scripts.inv.collect["current_mode"] == 3
                 or scripts.inv.collect["current_mode"] == 5 or scripts.inv.collect["current_mode"] == 6 then
             sendAll("wez kamienie z " .. from,
                 "ocen kamienie",
                 false)
-            scripts.inv:put_into_bag({ "kamienie" }, "gems", 1)
+
+            if put_into_bag then
+                scripts.inv:put_into_bag({ "kamienie" }, "gems", 1)
+            end
         end
         if table.size(scripts.inv.collect.extra) > 0 then
             for _, item in ipairs(scripts.inv.collect.extra) do
@@ -141,9 +147,9 @@ end
 
 function scripts.inv.after_counting_collect(bodies_count)
     local count = scripts.counted_string_to_int[bodies_count]
-    cecho(count .. "\n")
     for i = 1, count, 1 do
-        scripts.inv.collect:key_pressed(true, i)
+        local last = i == count
+        scripts.inv.collect:key_pressed(true, i, last)
     end
 end
 

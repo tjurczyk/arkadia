@@ -2,7 +2,7 @@ scripts.installer = scripts.installer or {}
 scripts.installer.main_repo = "tjurczyk/arkadia"
 
 function scripts.installer:update_scripts_to_latest_release()
-    scripts.latest:get_latest_version(function(version) scripts.installer:on_scripts_version(version) end)
+    scripts.latest:get_latest_version(function(release_info) scripts.installer:on_scripts_version(release_info.tag_name) end)
 end
 
 function scripts.installer:on_scripts_version(version)

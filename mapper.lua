@@ -316,7 +316,40 @@ function trigger_func_mapper_jedziesz_wozem()
 end
 
 function trigger_func_mapper_idziesz()
-    tempTimer(0.07, function() amap:locate(true) end)
+        local exits = {}
+        if table.size(gmcp.room.info.exits) ~= 2 then
+            -- in rare cases if go command was executed and gmcp does not have 2 exits we have to
+            -- use mapper exits
+            for dirs,_ in pairs(getRoomExits(amap.curr.id)) do
+                table.insert(exits, amap.english_to_polish[dir])
+            end
+        else
+            exits = gmcp.room.info.exits
+        end
+
+        if table.size(exits) > 2 or table.size(exits) == 0 then
+            return
+        end
+
+        -- get direction that we came from (in polish)
+        local en_opposite_long = amap.opposite_dir[amap.dir_from_key]
+        local pl_long_dir = amap.english_to_polish[amap.short_to_long[en_opposite_long]]
+
+        -- get from determined exits other direction to one that we came from
+        if exits[1] == pl_long_dir then
+            amap.last_go_dir = exits[2]
+        else
+            amap.last_go_dir = exits[1]
+        end
+
+        amap.dir_from_key = amap.polish_to_english[amap.last_go_dir]
+        amap:follow(amap.dir_from_key, false)
+        registerAnonymousEventHandler("gmcp.room.info", function() amap:locate(true) end, true)
+end
+
+function amap:get_opposite_dir(dir)
+    local en_opposite_long = amap.opposite_dir[dir]
+    return amap.english_to_polish[amap.short_to_long[en_opposite_long]]
 end
 
 function alias_func_mapper_print_options()

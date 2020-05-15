@@ -28,8 +28,8 @@ function scripts.character.combat_state:end_combat()
         if self.trigger then
             killTrigger(self.trigger)
         end
-        self.trigger = tempExactMatchTrigger("Ochlon troche od walki...", function()
-            creplaceLine(matches[1] .. " (" .. self:get_cooloff_timer() .. "s)")
+        self.trigger = tempRegexTrigger("^(Ochlon troche po walce!|Ochlon troche od walki\\.\\.\\.)$", function()
+            creplaceLine(matches[1] .. " <yellow>(" .. self:get_cooloff_timer() .. "s)<reset>")
             self.command = command
         end)
     end
@@ -47,7 +47,7 @@ function scripts.character.combat_state:update()
         killTimer(self.timer)
         killTrigger(self.trigger)
         if self.command then
-            scripts.utils.bind_functional(command)
+            scripts.utils.bind_functional(self.command)
         end
         self.command = false
     end

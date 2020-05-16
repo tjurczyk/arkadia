@@ -24942,6 +24942,13 @@
 				<packageName></packageName>
 				<regex>^/zaznaczaj$</regex>
 			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>idz</name>
+				<script>amap:execute_next_go_dir()</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^/idz$</regex>
+			</Alias>
 		</AliasGroup>
 	</AliasPackage>
 	<ActionPackage />

@@ -1,51 +1,34 @@
--- -- for 'idz' command
--- function go_command(_, command)
--- if command == "idz" then
--- amap:find_next_dir_from_go_and_execute()
--- --local ret_val = amap:manual_go()
--- 
--- --if ret_val then
--- --  amap:follow(ret_val, false)
--- --end
--- end
--- end
-
-
-function go_command()
-    -- parses the gmcp exits and compares them with the dir_from_key to see
-    -- if it can find the next direction. If so, it sets it as the next direction bind.
-    if table.size(gmcp.room.info.exits) ~= 2 then
+--[[
+    Parses the current location with the direction used and sets next_go_dir bind if possible.
+--]]
+function amap:may_prepare_next_go_dir()
+    amap.next_go_dir = nil
+    if not amap.curr.exits or table.size(amap.curr.exits) ~= 2 then
         return
     end
 
-    local current_loc = amap.curr.id
-
-
-
     local en_pressed_short_dir = amap.long_to_short[amap.dir_from_key]
     local en_pressed_opposite_short_dir = amap.opposite_dir[amap.dir_from_key]
-    local pl_long_dir = amap.english_to_polish[amap.short_to_long[en_pressed_opposite_short_dir]]
 
-    local pl_long_next_dir = nil
-    if gmcp.room.info.exits[1] == pl_long_dir then
-        pl_long_next_dir = gmcp.room.info.exits[2]
-    else
-        pl_long_next_dir = gmcp.room.info.exits[1]
+    for dir, _ in pairs(amap.curr.exits) do
+        if dir ~= en_pressed_opposite_short_dir then
+            amap.next_go_dir = amap.short_to_long[dir]
+        end
     end
-
-    local end_long_next_dir = amap.polish_to_english[pl_long_next_dir]
-    amap.next_dir_bind = end_long_next_dir
 end
 
-function amap:execute_next_direction_bind()
-    -- executes the next direction bind if exists.
-    if not amap.next_dir_bind then
+--[[
+    Executes next go dir (if available).
+--]]
+function amap:execute_next_go_dir()
+    -- executes the next go bind if exists.
+    if not amap.next_go_dir then
         amap:print_log("nastepny kierunek nie odnaleziony")
         return
     end
 
-    local next_dir_bind = amap.next_dir_bind
-    amap.next_dir_bind = nil
-    amap:keybind_pressed(next_dir_bind)
+    local next_go_dir = amap.next_go_dir
+    amap.next_go_dir = nil
+    amap:keybind_pressed(next_go_dir)
 end
 

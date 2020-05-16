@@ -57,6 +57,13 @@ Dostepne eventy w skryptach:
     arg1: tablica z normalnymi wyjsciami (e.g.: {n = true, s = true})
     arg2: tablica ze specjalnymi wyjsciami (e.g.: {["przejdz przez szczeline"] = true})
 
+- "amapLocationSteppedBack"
+
+  Event gracz wykona /cofnij i zostanie cofniety na mapie z sukcesem (czyli byla historia lokacji)
+  Argumenty:
+    arg1: lokacja z ktorej mapper sie cofa
+    arg2: lokacja na ktora mapper sie cofa
+
 --------------------------------------
 
 

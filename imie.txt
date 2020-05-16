@@ -543,6 +543,22 @@ scripts.ui.footer_info_row_count = 4
 
 -- info_items to elementy, jakie maja byc w prawej, informacyjnej czesci belki
 -- kolejnosc w tej tabeli jest taka jaka bedzie rowniez na belce
+-- mozliwe opcje to:
+-- "weapon"         - stan dobycia broni
+-- "order"          - stan rozkazu
+-- "cover"          - stan zaslony
+-- "killed"         - licznik zabitych
+-- "sneaky"         - tryb przemykania
+-- "hidden"         - stan ukrycia
+-- "attack"         - tryb atakowania
+-- "collect"        - tryb zbierania z cial
+-- "mail"           - alert poczty
+-- "alert"          - alerty ogolne
+-- "lamp"           - wskazania lampy
+-- "compass         - komendy pre i postwalk
+-- "combat"         - stan walki + ochloniecia po walce
+-- "placeholder"    - puste miejsce, mozna dac odstep pomiedzy konkretnymi elementami, element moze byc deklarowany pare razy
+
 scripts.ui.cfg.info_items = {
     "weapon",
     "order",

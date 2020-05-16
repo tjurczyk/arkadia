@@ -118,6 +118,10 @@ Dostepne eventy w skryptach:
 
   Event podniesiony po zabiciu wszystkich wrogow na lokacji
 
+- "cooledAfterCombat"
+
+  Event podniesiony po ochlonieciu od walki
+
 --------------------------------------
 
 - "temporary_bind_executed"

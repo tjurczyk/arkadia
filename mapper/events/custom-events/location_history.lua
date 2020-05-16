@@ -12,6 +12,7 @@ function amap_step_back_perform()
         return
     end
 
+    amap.curr.next_dir_bind = nil
     amap.curr.id = plocation_id
     local curr_area = getRoomArea(amap.curr.id)
     amap.curr.area = getRoomAreaName(curr_area)

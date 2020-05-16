@@ -2,6 +2,9 @@ function amap:follow(direction, is_team_follow)
     -- `direction' - passed direction, either from key or team follow
     -- `is_team_follow' true if called from team follow
 
+    -- immediately clear next dir bind
+    amap.next_dir_bind = nil
+
     -- store current_id, can be necessary later
     local current_id = amap.curr.id
 
@@ -24,8 +27,12 @@ function amap:follow(direction, is_team_follow)
         amap.curr.area = getRoomAreaName(curr_area)
 
         amap.curr.x, amap.curr.y, amap.curr.z = getRoomCoordinates(amap.curr.id)
+        amap.curr.exits = {}
+        for en_long_dir, _ in pairs(getRoomExits(amap.curr.id)) do
+            amap.curr.exits[amap.long_to_short[en_long_dir]] = true
+        end
         amap.curr.y = -amap.curr.y
-
+        amap:may_prepare_next_go_dir()
         centerview(amap.curr.id)
         raiseEvent("amapNewLocation", amap.curr.id, direction)
         amap:copy_loc(amap.prev, amap.curr)
@@ -41,6 +48,9 @@ function amap:locate(noprint)
 
     local msg = nil
     local ret = false
+
+    -- immediately clear next dir bind
+    amap.next_dir_bind = nil
 
     if tmp_loc.x then
         local curr_id = amap:room_exist(tmp_loc.x, tmp_loc.y, tmp_loc.z, tmp_loc.area)
@@ -71,6 +81,9 @@ function amap:locate(noprint)
 end
 
 function amap:set_position(room_id, silent)
+    -- immediately clear next dir bind
+    amap.next_dir_bind = nil
+
     if getRoomExits(room_id) then
         amap.curr.id = room_id
         amap.curr.x, amap.curr.y, amap.curr.z = getRoomCoordinates(amap.curr.id)

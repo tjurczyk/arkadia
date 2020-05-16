@@ -2,6 +2,7 @@ scripts.character.combat_state = scripts.character.combat_state or {
     handlers = {},
     state = false,
     time_after_combat = 0,
+    trigger_blocked_actions_bind = true,
 }
 
 function scripts.character.combat_state:init()
@@ -27,7 +28,7 @@ function scripts.character.combat_state:end_combat()
         self.time_after_combat = 30
         self.timer = tempTimer(1, function() self:update() end, true)
         self.state = false
-        if not self.trigger then
+        if self.trigger_blocked_actions_bind and not self.trigger then
             self.trigger = tempRegexTrigger("^(Ochlon troche po walce!|Ochlon troche od walki\\.\\.\\.)$", function()
                 creplaceLine(matches[1] .. " <yellow>(" .. self:get_cooloff_timer() .. "s)<reset>")
                 self.command = command

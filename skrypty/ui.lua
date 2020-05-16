@@ -72,6 +72,22 @@ scripts.ui.cfg["footer_items"] = {
     "upicie",
 }
 
+scripts.ui.cfg.info_items = {
+    "weapon",
+    "combat",
+    "order",
+    "cover",
+    "killed",
+    "sneaky",
+    "hidden",
+    "attack",
+    "collect",
+    "mail",
+    "alert",
+    "lamp",
+    "compass"
+}
+
 -- control if using navbar or not
 scripts.ui.cfg["states_window_navbar"] = false
 

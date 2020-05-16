@@ -116,6 +116,11 @@ scripts.character.break_fatigue_level = 9
 --  itd..
 scripts.character.bind_hp_level = 1
 
+-- Bindowanie nieudanej akcji ze wzgledu na niedawne zakonczenie walki.
+-- Ochlon troche po walce!
+-- Dozwolone wartosci to true lub false
+scripts.character.combat_state.trigger_blocked_actions_bind = true
+
 ------------------------------------------
 
 -- Ustawienie jak maja dzialac bindowania przejsc specjalnych
@@ -531,6 +536,27 @@ scripts.ui.cfg["footer_items"] = {
 --"glod",
 --"forma",
 --"przeciazenie",
+}
+
+-- Ilosc wierszy w prawej, informacyjnej czesci belki
+scripts.ui.footer_info_row_count = 4
+
+-- info_items to elementy, jakie maja byc w prawej, informacyjnej czesci belki
+-- kolejnosc w tej tabeli jest taka jaka bedzie rowniez na belce
+scripts.ui.cfg.info_items = {
+    "combat",
+    "weapon",
+    "order",
+    "cover",
+    "killed",
+    "sneaky",
+    "hidden",
+    "attack",
+    "collect",
+    "mail",
+    "alert",
+    "lamp",
+    "compass"
 }
 
 scripts.ui.bind_color = "<LawnGreen>"

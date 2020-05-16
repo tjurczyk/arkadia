@@ -74,7 +74,6 @@ scripts.ui.cfg["footer_items"] = {
 
 scripts.ui.cfg.info_items = {
     "weapon",
-    "combat",
     "order",
     "cover",
     "killed",
@@ -85,7 +84,8 @@ scripts.ui.cfg.info_items = {
     "mail",
     "alert",
     "lamp",
-    "compass"
+    "compass",
+    "combat",
 }
 
 -- control if using navbar or not

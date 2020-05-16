@@ -544,7 +544,6 @@ scripts.ui.footer_info_row_count = 4
 -- info_items to elementy, jakie maja byc w prawej, informacyjnej czesci belki
 -- kolejnosc w tej tabeli jest taka jaka bedzie rowniez na belce
 scripts.ui.cfg.info_items = {
-    "combat",
     "weapon",
     "order",
     "cover",
@@ -557,6 +556,7 @@ scripts.ui.cfg.info_items = {
     "alert",
     "lamp",
     "compass"
+    "combat"
 }
 
 scripts.ui.bind_color = "<LawnGreen>"

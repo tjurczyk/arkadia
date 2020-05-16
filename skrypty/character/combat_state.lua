@@ -1,6 +1,7 @@
 scripts.character.combat_state = scripts.character.combat_state or {
     handlers = {},
     state = false,
+    time_after_combat = 0,
 }
 
 function scripts.character.combat_state:init()
@@ -18,7 +19,7 @@ function scripts.character.combat_state:start_combat()
     end
     self.command = false
     self.time_after_combat = 30
-    scripts.ui:info_combat_state_update()
+    self:update_ui()
 end
 
 function scripts.character.combat_state:end_combat()
@@ -26,13 +27,12 @@ function scripts.character.combat_state:end_combat()
         self.time_after_combat = 30
         self.timer = tempTimer(1, function() self:update() end, true)
         self.state = false
-        if self.trigger then
-            killTrigger(self.trigger)
+        if not self.trigger then
+            self.trigger = tempRegexTrigger("^(Ochlon troche po walce!|Ochlon troche od walki\\.\\.\\.)$", function()
+                creplaceLine(matches[1] .. " <yellow>(" .. self:get_cooloff_timer() .. "s)<reset>")
+                self.command = command
+            end)
         end
-        self.trigger = tempRegexTrigger("^(Ochlon troche po walce!|Ochlon troche od walki\\.\\.\\.)$", function()
-            creplaceLine(matches[1] .. " <yellow>(" .. self:get_cooloff_timer() .. "s)<reset>")
-            self.command = command
-        end)
     end
     scripts.character.combat_state:update_ui()
 end
@@ -47,6 +47,7 @@ function scripts.character.combat_state:update()
         raiseEvent("cooledAfterCombat")
         killTimer(self.timer)
         killTrigger(self.trigger)
+        self.trigger = nil
         if self.command then
             scripts.utils.bind_functional(self.command)
         end

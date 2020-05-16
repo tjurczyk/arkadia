@@ -218,7 +218,7 @@ function scripts.ui:info_killed_update()
 end
 
 function scripts.ui:info_combat_state_update(is_combat, cool_off, command)
-        resetLabelCursor(scripts.ui.footer_info_combat_state.name)
+    resetLabelCursor(scripts.ui.footer_info_combat_state.name)
     local color, text
     if is_combat then
         color = scripts.ui["footer_info_red"]

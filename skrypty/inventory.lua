@@ -1,4 +1,4 @@
-scripts["inv"] = scripts["inv"] or {
+scripts.inv = scripts.inv or {
     lamp = {
         working = false,
         lamp_seconds_val = 0,
@@ -19,6 +19,8 @@ scripts["inv"] = scripts["inv"] or {
     magic_keys_file_path = getMudletHomeDir() .. "/magic_keys_data",
     magics_trigger_ids = {},
     magic_keys_trigger_ids = {},
+    magics_data = {},
+    magic_keys_data = {}
 }
 
 scripts.inv["kamienie_rzeczowniki"] = {

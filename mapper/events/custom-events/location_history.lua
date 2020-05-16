@@ -12,6 +12,7 @@ function amap_step_back_perform()
         return
     end
 
+    amap.curr.next_dir_bind = nil
     amap.curr.id = plocation_id
     local curr_area = getRoomArea(amap.curr.id)
     amap.curr.area = getRoomAreaName(curr_area)
@@ -22,6 +23,7 @@ function amap_step_back_perform()
     centerview(amap.curr.id)
     amap:copy_loc(amap.prev, amap.curr)
     amap_ui_set_dirs_trigger(getRoomExits(amap.curr.id))
+    raiseEvent("amapLocationSteppedBack", location_id, plocation_id)
 end
 
 registerAnonymousEventHandler("amapNewLocation", "amap_add_location_history")

@@ -1581,8 +1581,8 @@
 							<colorTriggerBgColor>#000000</colorTriggerBgColor>
 							<regexCodeList>
 								<string>.*(rypa|ratwa|rom|arka) przybija do brzegu\.$</string>
-								<string>^Tratwa\.$</string>
-								<string>^Rzeczna tratwa\.$</string>
+								<string>^Tratwa(\.|,| i)</string>
+								<string>^Rzeczna tratwa(\.|,| i)</string>
 							</regexCodeList>
 							<regexCodePropertyList>
 								<integer>1</integer>
@@ -1625,8 +1625,8 @@
 							<colorTriggerBgColor>#000000</colorTriggerBgColor>
 							<regexCodeList>
 								<string>^[a-zA-Z]+ [a-z]+ prom[^a-z]$</string>
-								<string>^Prom\.$</string>
-								<string>^Barka\.$</string>
+								<string>^Prom(\.|,| i)</string>
+								<string>^Barka(\.|,| i)</string>
 							</regexCodeList>
 							<regexCodePropertyList>
 								<integer>1</integer>
@@ -1648,10 +1648,10 @@
 							<colorTriggerFgColor>#000000</colorTriggerFgColor>
 							<colorTriggerBgColor>#000000</colorTriggerBgColor>
 							<regexCodeList>
-								<string>^([A-Za-z]+) (statek|knara)\.$</string>
-								<string>^([A-Za-z]+) ([a-z]+) statek\.$</string>
+								<string>^([A-Za-z]+) (statek|knara)(\.|,| i)</string>
+								<string>^([A-Za-z]+) ([a-z]+) statek(\.|,| i)</string>
 								<string>Tajemniczy okret</string>
-								<string>Wielki trojmasztowy galeon\.$</string>
+								<string>Wielki trojmasztowy galeon(\.|,| i)</string>
 								<string>Stara niewielka szkuta</string>
 								<string>Smukly drakkar</string>
 								<string>Szeroka knara</string>
@@ -24941,6 +24941,13 @@
 				<command></command>
 				<packageName></packageName>
 				<regex>^/zaznaczaj$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>idz</name>
+				<script>amap:execute_next_go_dir()</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^/idz$</regex>
 			</Alias>
 		</AliasGroup>
 	</AliasPackage>

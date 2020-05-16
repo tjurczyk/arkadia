@@ -218,6 +218,7 @@ function scripts.ui:info_killed_update()
 end
 
 function scripts.ui:info_combat_state_update(is_combat, cool_off, command)
+        resetLabelCursor(scripts.ui.footer_info_combat_state.name)
     local color, text
     if is_combat then
         color = scripts.ui["footer_info_red"]
@@ -228,6 +229,7 @@ function scripts.ui:info_combat_state_update(is_combat, cool_off, command)
     end
     if command then
         text = text .. " (" .. command .. ")"
+        setLabelCursor(scripts.ui.footer_info_combat_state.name, "PointingHand")
     end
     scripts.ui.footer_info_combat_state:echo("<font color='" .. scripts.ui["footer_info_normal"] .. "'>Walka:</font> <font color='" .. color .. "'>" .. text .. "</font>")
 end

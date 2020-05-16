@@ -24,8 +24,6 @@ function scripts.ui:setup_footer_info()
     scripts.ui:setup_footer_info_core2()
     scripts.ui:setup_footer_info_core3()
     scripts.ui:setup_footer_info_core4()
-
-
 end
 
 function scripts.ui:setup_info_column(index)
@@ -150,6 +148,7 @@ function scripts.ui:setup_footer_info_core4()
     }, scripts.ui.info_columns[4])
     scripts.ui.footer_info_combat_state:setStyleSheet(scripts.ui.footer_info_core_base_css:getCSS())
     scripts.ui.footer_info_combat_state:echo("<font color='" .. scripts.ui["footer_info_normal"] .. "'>Walka:</font> <font color='" .. scripts.ui["footer_info_green"] .. "'>off</font>")
+    scripts.ui.footer_info_combat_state:setClickCallback(function () scripts.character.combat_state:run_command() end)
 
     scripts.ui.col4_placeholders = {}
     for i = 1, 3 do

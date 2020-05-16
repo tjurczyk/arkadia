@@ -17,7 +17,8 @@ function scripts.character.combat_state:start_combat()
         killTimer(self.timer)
     end
     self.command = false
-    scripts.ui:info_combat_state_update(true)
+    self.time_after_combat = 30
+    scripts.ui:info_combat_state_update()
 end
 
 function scripts.character.combat_state:end_combat()
@@ -33,7 +34,7 @@ function scripts.character.combat_state:end_combat()
             self.command = command
         end)
     end
-    scripts.ui:info_combat_state_update(false, 30)
+    scripts.character.combat_state:update_ui()
 end
 
 function scripts.character.combat_state:get_cooloff_timer()
@@ -49,9 +50,20 @@ function scripts.character.combat_state:update()
         if self.command then
             scripts.utils.bind_functional(self.command)
         end
-        self.command = false
     end
-    scripts.ui:info_combat_state_update(false, self.time_after_combat, self.command)
+    scripts.character.combat_state:update_ui()
+end
+
+function scripts.character.combat_state:run_command()
+    if self.command then
+        expandAlias(self.command)
+        self.command = false
+        scripts.character.combat_state:update_ui()
+    end
+end
+
+function scripts.character.combat_state:update_ui()
+    scripts.ui:info_combat_state_update(self.state, self.time_after_combat, self.command)
 end
 
 scripts.character.combat_state:init()

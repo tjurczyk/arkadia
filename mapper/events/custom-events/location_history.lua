@@ -22,6 +22,7 @@ function amap_step_back_perform()
     centerview(amap.curr.id)
     amap:copy_loc(amap.prev, amap.curr)
     amap_ui_set_dirs_trigger(getRoomExits(amap.curr.id))
+    raiseEvent("amapLocationSteppedBack", location_id, plocation_id)
 end
 
 registerAnonymousEventHandler("amapNewLocation", "amap_add_location_history")

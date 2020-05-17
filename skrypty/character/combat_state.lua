@@ -50,6 +50,10 @@ function scripts.character.combat_state:update()
         killTrigger(self.trigger)
         self.trigger = nil
         if self.command then
+            self.timer = tempTimer(60, function()
+                self.command = false
+                scripts.character.combat_state:update_ui()
+            end)
             scripts.utils.bind_functional(self.command)
         end
     end

@@ -5,6 +5,13 @@ Dostepne eventy w skryptach:
 
   Event podeniesiony tuz po zaladowaniu wszystkich plikow skryptow
 
+- "beforeLoadModules"
+
+  Event podniesiony przed ladowaniem wszystkich skryptow z plikow .lua
+  Moze byc uzyty do ladowania plikow przez moduly zalaczane przed skrypytami
+  Argumenty:
+    arg1: tablica modulow do zaladowania
+
 - "profileLoaded"
 
   Event podniesiony po zaladowaniu pliku imie.txt

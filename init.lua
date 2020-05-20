@@ -14,8 +14,8 @@ function load_scripts(force)
     package.loaded.scriptsList = nil
 
     local mudlet_modules = require("scriptsList")
-
     append_plugins(mudlet_modules)
+    raiseEvent("beforeLoadModules", mudlet_modules)
 
     for k, v in pairs(mudlet_modules) do
         package.loaded[v] = nil

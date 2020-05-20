@@ -46,7 +46,7 @@ function append_plugins(mudlet_modules)
                 local modulePath = file_path .. "/" .. module_name .. ".xml"
                 if io.exists(modulePath) then
                     uninstallPackage(module_name)
-                    installPackage(module_name)
+                    installPackage(modulePath)
                 end
             end
         end

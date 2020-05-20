@@ -34,7 +34,11 @@ function scripts.ui:setup_footer_info()
     }
 
     for _, info_creator in pairs(scripts.ui.cfg.info_items) do
-        self.footer_info_elements_creators[info_creator](self)
+        if self.footer_info_elements_creators[info_creator] then
+            self.footer_info_elements_creators[info_creator](self)
+        else
+            scripts:print_log("Nieprawidlowy klucz w konfiguracji scripts.ui.cfg.info_items - " .. info_creator)
+        end
     end
     
     self.info_placeholders = {}

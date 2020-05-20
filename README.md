@@ -321,16 +321,16 @@ Baza jest budowana następująco:
 ---
 
 
-### ROZSZERZNIE SKRYPTOW
+### ROZSZERZNIE SKRYPTÓW
 
-W latwy sposob mozna roowniez dodac dodatkowe skrypty ladowane razem ze niniejsza paczke skryptow.
-W katalog profilu skrypty tworza katalog `plugins`, nalezy w nim umiescic plik z paczka zawierajacy plik `init.lua` z lista plikow do zaladowania.
+W łatwy sposób można również dodać dodatkowe skrypty ładowane razem ze niniejszą paczką.
+W katalog profilu, skrypty tworzą katalog `plugins`, należy w nim umieścić plik z paczka zawierającą plik `init.lua` z listą plików do załadowania.
 
-Dodatkowo mozna zalaczyc (opcjonalnie) plik mudletowy .xml o nazwie odpowiadajacej katalogowi wtyczki
+Dodatkowo opcjonalnie można załączyc plik mudletowy .xml o nazwie odpowiadającej nazwie katalogu wtyczki
 
-*Poprawna* paczka, *poprawnie* umieszczona zostanie automatycznie zaladowana po plikach skryptow z podstawowej paczki.
+*Poprawna* paczka, *poprawnie* umieszczona zostanie automatycznie załadowana tuż po plikach skryptóww z podstawowej paczki.
 
-Przyklad struktury
+##### Przykład struktury
 ```
  .
  |____ katalog profilu
@@ -342,7 +342,7 @@ Przyklad struktury
         |____ skrypty.lua
 ```
 
-_init.lua_
+##### _init.lua_
 ```
     return {
         "dodatkowe",

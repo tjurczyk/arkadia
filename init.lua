@@ -33,8 +33,6 @@ function append_plugins(mudlet_modules)
     local luaDirectory = string.format("%s/%s", homeDirectory, [[?.lua]])
     package.path = string.format("%s;%s", luaDirectory, path)
 
-
-
     local plugins_dir = getMudletHomeDir() .. "/plugins"
     if not io.exists(plugins_dir) then
         lfs.mkdir(plugins_dir)
@@ -48,10 +46,17 @@ function append_plugins(mudlet_modules)
             if io.exists(file_path .. "/init.lua") then
                 table.insert(valid_plugins, module_name)
             end
-            local modulePath = file_path .. "/" .. module_name .. ".xml"
-            if io.exists(modulePath) then
+            local module_path = file_path .. "/" .. module_name .. ".xml"
+            local is_git_repo = io.exists(file_path .. "/.git")
+            if io.exists(module_path) and not is_git_repo then
                 uninstallPackage(module_name)
-                installPackage(modulePath)
+                installPackage(module_path)
+            elseif io.exists(module_path) and is_git_repo then
+                if not getModulePriority(module_name) then
+                    installModule(module_path)
+                    enableModuleSync(module_name)
+                    setModulePriority(module_name, getModulePriority("Arkadia") + table.size(valid_plugins))
+                end
             end
         end
     end

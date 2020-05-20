@@ -320,8 +320,39 @@ Baza jest budowana następująco:
 
 ---
 
+
+### ROZSZERZNIE SKRYPTOW
+
+W latwy sposob mozna roowniez dodac dodatkowe skrypty ladowane razem ze niniejsza paczke skryptow.
+W katalog profilu skrypty tworza katalog `plugins`, nalezy w nim umiescic plik z paczka zawierajacy plik `init.lua` z lista plikow do zaladowania.
+
+Dodatkowo mozna zalaczyc (opcjonalnie) plik mudletowy .xml o nazwie odpowiadajacej katalogowi wtyczki
+
+*Poprawna* paczka, *poprawnie* umieszczona zostanie automatycznie zaladowana po plikach skryptow z podstawowej paczki.
+
+Przyklad struktury
+```
+ .
+ |____ katalog profilu
+   |____ plugins
+      |____ nasz_plugin
+        |____ init.lua
+        |____ nasz_plugin.xml
+        |____ dodatkowe.lua
+        |____ skrypty.lua
+```
+
+_init.lua_
+```
+    return {
+        "dodatkowe",
+        "skrypty"
+    }
+```
+
 ## KONTAKT
 
 1. Na IRCNet: Kanał \#arkadia, nick @dzordzyk
 2. Na forum: [@Adremen](http://arkadia.rpg.pl/forum/memberlist.php?mode=viewprofile&u=1084)
-3. [Temat](http://arkadia.rpg.pl/forum/viewtopic.php?f=15&t=752), w którym można uzyskać pomoc na forum
+3. [Temat](https://arkadia.rpg.pl/forum/viewtopic.php?f=15&t=1023), w którym można uzyskać pomoc na forum
+4. [Discord](https://discord.gg/76yaZnw)

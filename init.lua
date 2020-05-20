@@ -33,21 +33,25 @@ function append_plugins(mudlet_modules)
     local luaDirectory = string.format("%s/%s", homeDirectory, [[?.lua]])
     package.path = string.format("%s;%s", luaDirectory, path)
 
+
+
     local plugins_dir = getMudletHomeDir() .. "/plugins"
+    if not io.exists(plugins_dir) then
+        lfs.mkdir(plugins_dir)
+    end
+
     local valid_plugins = {}
 
-    if io.exists(plugins_dir) then
-        for module_name in lfs.dir(plugins_dir) do
-            local file_path = plugins_dir .. '/' .. module_name
-            if module_name ~= "." and module_name ~= ".." and lfs.attributes(file_path, 'mode') == 'directory' then
-                if io.exists(file_path .. "/init.lua") then
-                    table.insert(valid_plugins, module_name)
-                end
-                local modulePath = file_path .. "/" .. module_name .. ".xml"
-                if io.exists(modulePath) then
-                    uninstallPackage(module_name)
-                    installPackage(modulePath)
-                end
+    for module_name in lfs.dir(plugins_dir) do
+        local file_path = plugins_dir .. '/' .. module_name
+        if module_name ~= "." and module_name ~= ".." and lfs.attributes(file_path, 'mode') == 'directory' then
+            if io.exists(file_path .. "/init.lua") then
+                table.insert(valid_plugins, module_name)
+            end
+            local modulePath = file_path .. "/" .. module_name .. ".xml"
+            if io.exists(modulePath) then
+                uninstallPackage(module_name)
+                installPackage(modulePath)
             end
         end
     end

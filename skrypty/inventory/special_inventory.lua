@@ -1,5 +1,6 @@
 scripts.inv.get_magics_to_put_down_exempts = {
     ["plytach twojego starozytnego pancerza"] = "starozytna runiczna zbroje plytowa",
+    ["mosiezna duza broszka w ksztalcie liscia debu"] = "mosiezna duza broszke w ksztalcie liscia debu",
     ["krasnoludzka starozytna korone"] = false,
     ["kruczoczarny misterny miecz"] = false
 }

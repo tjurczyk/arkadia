@@ -11,17 +11,53 @@ function load_scripts(force)
 
     cecho("\n<CadetBlue>(skrypty)<tomato>: Laduje pliki skryptow\n")
 
-    mudletModules = {}
     package.loaded.scriptsList = nil
-    require("scriptsList")
 
-    for k, v in pairs(mudletModules) do
+    local mudlet_modules = require("scriptsList")
+
+    append_plugins(mudlet_modules)
+
+    for k, v in pairs(mudlet_modules) do
         package.loaded[v] = nil
         require(v)
     end
 
     scripts_loaded = true
     raiseEvent("scriptsLoaded")
+end
+
+function append_plugins(mudlet_modules)
+    local path = package.path
+    local homeDirectory = getMudletHomeDir():gsub("\\", "/") .. "/plugins/"
+
+    local luaDirectory = string.format("%s/%s", homeDirectory, [[?.lua]])
+    package.path = string.format("%s;%s", luaDirectory, path)
+
+    local plugins_dir = getMudletHomeDir() .. "/plugins"
+    local valid_plugins = {}
+
+    if io.exists(plugins_dir) then
+        for module_name in lfs.dir(plugins_dir) do
+            local file_path = plugins_dir .. '/' .. module_name
+            if module_name ~= "." and module_name ~= ".." and lfs.attributes(file_path, 'mode') == 'directory' then
+                if io.exists(file_path .. "/init.lua") then
+                    table.insert(valid_plugins, module_name)
+                end
+                local modulePath = file_path .. "/" .. module_name .. ".xml"
+                if io.exists(modulePath) then
+                    uninstallPackage(module_name)
+                    installPackage(modulePath)
+                end
+            end
+        end
+    end
+
+    for _, plugin_name in pairs(valid_plugins) do
+        local plugin_modules = require(plugin_name .. ".init")
+        for _, packages in pairs(plugin_modules) do
+            table.insert(mudlet_modules, plugin_name .. "." .. packages)
+        end
+    end
 end
 
 function reload_single_script(path)

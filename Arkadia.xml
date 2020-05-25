@@ -24050,6 +24050,13 @@
 				<packageName></packageName>
 				<regex>/init (\w+) (\w+)</regex>
 			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>install plugin</name>
+				<script>alias_func_install_plugin()</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^/zainstaluj_plugin (.*)</regex>
+			</Alias>
 		</AliasGroup>
 		<AliasGroup isActive="yes" isFolder="yes">
 			<name>mapper</name>

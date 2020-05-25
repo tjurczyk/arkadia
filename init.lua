@@ -1,4 +1,5 @@
 scripts_loaded = scripts_loaded or false
+local plugins_dir = getMudletHomeDir() .. "/plugins"
 
 function load_scripts(force)
     if not force and scripts_loaded then
@@ -14,7 +15,6 @@ function load_scripts(force)
     package.loaded.scriptsList = nil
 
     local mudlet_modules = require("scriptsList")
-    append_plugins(mudlet_modules)
     raiseEvent("beforeLoadModules", mudlet_modules)
 
     for k, v in pairs(mudlet_modules) do
@@ -22,49 +22,59 @@ function load_scripts(force)
         require(v)
     end
 
+    append_plugins()
+
     scripts_loaded = true
     raiseEvent("scriptsLoaded")
 end
 
-function append_plugins(mudlet_modules)
+function append_plugins()
     local path = package.path
     local homeDirectory = getMudletHomeDir():gsub("\\", "/") .. "/plugins/"
 
     local luaDirectory = string.format("%s/%s", homeDirectory, [[?.lua]])
     package.path = string.format("%s;%s", luaDirectory, path)
 
-    local plugins_dir = getMudletHomeDir() .. "/plugins"
     if not io.exists(plugins_dir) then
         lfs.mkdir(plugins_dir)
     end
 
-    local valid_plugins = {}
-
-    for module_name in lfs.dir(plugins_dir) do
-        local file_path = plugins_dir .. '/' .. module_name
-        if module_name ~= "." and module_name ~= ".." and lfs.attributes(file_path, 'mode') == 'directory' then
-            if io.exists(file_path .. "/init.lua") then
-                table.insert(valid_plugins, module_name)
-            end
-            local module_path = file_path .. "/" .. module_name .. ".xml"
-            local is_git_repo = io.exists(file_path .. "/.git")
-            if io.exists(module_path) and not is_git_repo then
-                uninstallPackage(module_name)
-                installPackage(module_path)
-            elseif io.exists(module_path) and is_git_repo then
-                if not getModulePriority(module_name) then
-                    installModule(module_path)
-                    enableModuleSync(module_name)
-                    setModulePriority(module_name, getModulePriority("Arkadia") + table.size(valid_plugins))
-                end
-            end
-        end
+    for plugin_name in lfs.dir(plugins_dir) do
+        load_plugin(plugin_name)
     end
+end
 
-    for _, plugin_name in pairs(valid_plugins) do
-        local plugin_modules = require(plugin_name .. ".init")
-        for _, packages in pairs(plugin_modules) do
-            table.insert(mudlet_modules, plugin_name .. "." .. packages)
+function load_plugin(plugin_name)
+    local file_path = plugins_dir .. '/' .. plugin_name
+    if plugin_name ~= "." and plugin_name ~= ".." and lfs.attributes(file_path, 'mode') == 'directory' then
+        local plugin_loaded = false
+        if io.exists(file_path .. "/init.lua") then
+            local plugin_modules = require(plugin_name .. ".init")
+            for _, packages in pairs(plugin_modules) do
+                local full_package_name = plugin_name .. "." .. packages
+                package.loaded[full_package_name] = nil
+                require(full_package_name)
+            end
+            plugin_loaded = true
+        end
+        local module_path = file_path .. "/" .. plugin_name .. ".xml"
+        local is_git_repo = io.exists(file_path .. "/.git")
+        if io.exists(module_path) and not is_git_repo then
+            uninstallPackage(plugin_name)
+            installPackage(module_path)
+            plugin_loaded = true
+        elseif io.exists(module_path) and is_git_repo then
+            if not getModulePriority(plugin_name) then
+                installModule(module_path)
+                enableModuleSync(plugin_name)
+                setModulePriority(plugin_name, getModulePriority("Arkadia") + table.size(valid_plugins))
+            end
+            plugin_loaded = true
+        end
+        if plugin_loaded then
+            cecho("\n<CadetBlue>(skrypty)<tomato>: Plugin " .. plugin_name .. " zaladowany\n")
+        else
+            cecho("\n<CadetBlue>(skrypty)<tomato>: Plugin " .. plugin_name .. " nie zostal zaladowany. Brak pliku init.lua lub " .. plugin_name .."\n")
         end
     end
 end

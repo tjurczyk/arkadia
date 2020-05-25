@@ -173,6 +173,7 @@ return {
     "skrypty/ui/footer_elements",
     "skrypty/ui/special_exits_follow",
     "skrypty/ui/binds",
+    "skrypty/ui/profile-icon",
     "skrypty/herbs/herb_bag_collect_condition",
     "mapper/team/follow_team_family",
     "mapper/follow-texts/druchii",

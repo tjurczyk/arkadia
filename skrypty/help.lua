@@ -68,6 +68,9 @@ function scripts:print_help()
     cecho("| <light_slate_blue>/depozyt<grey> - bedac w banku odswieza zawartosc depozytu w bazie tego bank.        |\n")
     cecho("| <light_slate_blue>/depozyty<grey> - Pokazuje zawartosc depozytow.                                      |\n")
     cecho("|                                                                                |\n")
+    cecho("| <light_slate_blue>/ikona [imie] <grey> - Ustawia Arkadiowa ikone profilu z imieniem postaci.           |\n")
+    cecho("| np. <light_slate_blue>/ikona Geralt <grey>                                                             |\n")
+    cecho("|                                                                                |\n")
     cecho("+--------------------------------------------------------------------------------+\n")
 end
 

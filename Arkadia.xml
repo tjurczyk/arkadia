@@ -24014,6 +24014,13 @@
 					<packageName></packageName>
 					<regex>^/kondycje$</regex>
 				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>set icon</name>
+					<script>alias_func_set_profile_icon()</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/ikona (.*)</regex>
+				</Alias>
 			</AliasGroup>
 			<Alias isActive="yes" isFolder="no">
 				<name>laduj_config</name>
@@ -24049,13 +24056,6 @@
 				<command></command>
 				<packageName></packageName>
 				<regex>/init (\w+) (\w+)</regex>
-			</Alias>
-			<Alias isActive="yes" isFolder="no">
-				<name>install plugin</name>
-				<script>alias_func_install_plugin()</script>
-				<command></command>
-				<packageName></packageName>
-				<regex>^/zainstaluj_plugin (.*)</regex>
 			</Alias>
 		</AliasGroup>
 		<AliasGroup isActive="yes" isFolder="yes">

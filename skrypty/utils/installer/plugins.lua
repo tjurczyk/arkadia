@@ -23,7 +23,6 @@ function scripts.plugins_installer:handle_download(_, filename, plugin_name)
     end
 
     scripts.event_register:kill_event_handler(self.plugin_download_handler)
-    scripts:print_log("Plugin pobrany. Rozpakowuje")
     scripts.event_register:register_event_handler("sysUnzipDone", function(event, ...) self:handle_unzip(event, plugin_name,  ...) end, true)
     scripts.event_register:register_event_handler("sysUnzipError", function(event, ...) self:handle_unzip(event, plugin_name,  ...) end, true)
     unzipAsync(self.plugin_zip, self.plugin_directory .. plugin_name)

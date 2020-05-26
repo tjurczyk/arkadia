@@ -328,7 +328,7 @@ W katalog profilu, skrypty tworzą katalog `plugins`, należy w nim umieścić p
 
 Dodatkowo opcjonalnie można załączyc plik mudletowy .xml o nazwie odpowiadającej nazwie katalogu wtyczki
 
-*Poprawna* paczka, *poprawnie* umieszczona zostanie automatycznie załadowana tuż po plikach skryptóww z podstawowej paczki.
+*Poprawna* paczka, *poprawnie* umieszczona zostanie automatycznie załadowana tuż po plikach skryptów z podstawowej paczki.
 
 ##### Przykład struktury
 ```

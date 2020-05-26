@@ -3,6 +3,7 @@ scripts.character.combat_state = scripts.character.combat_state or {
     state = false,
     time_after_combat = 0,
     trigger_blocked_actions_bind = true,
+    cooloff_time = 32,
 }
 
 function scripts.character.combat_state:init()
@@ -19,13 +20,13 @@ function scripts.character.combat_state:start_combat()
         killTimer(self.timer)
     end
     self.command = false
-    self.time_after_combat = 30
+    self.time_after_combat = self.cooloff_time
     self:update_ui()
 end
 
 function scripts.character.combat_state:end_combat()
     if self.state then
-        self.time_after_combat = 30
+        self.time_after_combat = self.cooloff_time
         self.timer = tempTimer(1, function() self:update() end, true)
         self.state = false
         if self.trigger_blocked_actions_bind and not self.trigger then

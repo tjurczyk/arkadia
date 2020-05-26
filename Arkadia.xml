@@ -24050,13 +24050,6 @@
 				<packageName></packageName>
 				<regex>^/reload ?(.*)$</regex>
 			</Alias>
-            <Alias isActive="yes" isFolder="no">
-                <name>install plugin</name>
-                <script>alias_func_install_plugin()</script>
-                <command></command>
-                <packageName></packageName>
-                <regex>^/zainstaluj_plugin (.*)</regex>
-            </Alias>
 			<Alias isActive="yes" isFolder="no">
 				<name>init_config</name>
 				<script>alias_func_init_config(matches[2], matches[3])</script>

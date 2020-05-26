@@ -23,6 +23,10 @@ function scripts_ui_info_hidden_click()
 end
 
 function scripts.ui:info_hidden_update(val)
+    if not scripts.ui.footer_info_hidden then
+        return
+    end
+
     if val == "" then
         scripts.ui.footer_info_hidden:echo("<font color='" .. scripts.ui["footer_info_normal"] .. "'>Ukryty:&nbsp;&nbsp;&nbsp;</font>")
     else
@@ -62,6 +66,10 @@ function scripts_ui_info_compass_click()
 end
 
 function scripts.ui:info_compass_update(working)
+    if not scripts.ui.footer_info_compass then
+        return
+    end
+
     if working == 1 then
         scripts.ui.footer_info_compass:echo("<font color='yellow'>PRZED: </font><font color='" .. scripts.ui["footer_info_green"] .. "'>" .. amap.using_pre_walk_cmd .. "</font>")
     elseif working == 2 then
@@ -81,6 +89,10 @@ function scripts_ui_info_cover_ready_click()
 end
 
 function scripts.ui:info_cover_ready_update(val)
+    if not scripts.ui.footer_info_cover_ready then
+        return
+    end
+
     if val == "5" then
         scripts.ui.footer_info_cover_ready:echo("<font color='" .. scripts.ui["footer_info_normal"] .. "'>Zaslona:</font> <font color='" .. scripts.ui["footer_info_red"] .. "'>5</font>")
         scripts.ui.footer_info_cover_ready_enable_click = nil
@@ -96,6 +108,10 @@ end
 -- order
 --
 function scripts.ui:info_order_ready_update(val)
+    if not scripts.ui.footer_info_order_ready then
+        return
+    end
+
     if val == "0" or val == "ok" then
         scripts.ui.footer_info_order_ready:echo("<font color='" .. scripts.ui["footer_info_normal"] .. "'>Rozkaz:&nbsp;</font> <font color='" .. scripts.ui["footer_info_green"] .. "'>ok</font>")
     else
@@ -116,6 +132,9 @@ function scripts_ui_info_lamp_click()
 end
 
 function scripts.ui:info_lamp_update(val)
+    if not scripts.ui.footer_info_lamp then
+        return
+    end
     if val == "" then
         scripts.ui.footer_info_lamp:echo("<font color='" .. scripts.ui["footer_info_normal"] .. "'>Lampa:</font> <font color='" .. scripts.ui["footer_info_green"] .. "'></font>")
     elseif val == "zapalona" then
@@ -128,7 +147,9 @@ end
 --
 function scripts_ui_info_attack_mode_click()
     ateam.attack_mode = ateam.attack_mode % 3 + 1
-    scripts.ui.footer_info_attack_mode:echo("<font color='" .. scripts.ui["footer_info_normal"] .. "'>Atak:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font> <font color='" .. scripts.ui["footer_info_neutral"] .. "'>" .. ateam["footer_info_attack_mode_to_text"][ateam.attack_mode] .. "</font>")
+    if scripts.ui.footer_info_attack_mode then
+        scripts.ui.footer_info_attack_mode:echo("<font color='" .. scripts.ui["footer_info_normal"] .. "'>Atak:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font> <font color='" .. scripts.ui["footer_info_neutral"] .. "'>" .. ateam["footer_info_attack_mode_to_text"][ateam.attack_mode] .. "</font>")
+    end
 end
 
 --
@@ -137,7 +158,9 @@ end
 function scripts_ui_info_collect_mode()
     scripts.inv.collect.current_mode = scripts.inv.collect.current_mode % 7 + 1
     scripts.inv.collect:set_mode(scripts.inv.collect.current_mode)
-    scripts.ui.footer_info_collect_mode:echo("<font color='" .. scripts.ui["footer_info_normal"] .. "'>Zbieranie: </font> <font color='" .. scripts.ui["footer_info_neutral"] .. "'>" .. scripts.inv.collect["footer_info_collect_to_text"][scripts.inv.collect.current_mode] .. "</font>")
+    if scripts.ui.footer_info_collect_mode then
+        scripts.ui.footer_info_collect_mode:echo("<font color='" .. scripts.ui["footer_info_normal"] .. "'>Zbieranie: </font> <font color='" .. scripts.ui["footer_info_neutral"] .. "'>" .. scripts.inv.collect["footer_info_collect_to_text"][scripts.inv.collect.current_mode] .. "</font>")
+    end
 end
 
 --
@@ -145,11 +168,16 @@ end
 --
 
 function scripts.ui:info_mail_update(str)
+    if not scripts.ui.footer_info_mail then
+        return
+    end
     scripts.ui.footer_info_mail:echo("<font color='" .. scripts.ui["footer_info_normal"] .. "'>Mail:&nbsp;</font> <font color='" .. scripts.ui["footer_info_yellow"] .. "'>" .. str .. "</font>")
 end
 
 function scripts.ui:info_mail_clear()
-    scripts.ui.footer_info_mail:echo("<font color='" .. scripts.ui["footer_info_normal"] .. "'>Mail:&nbsp;</font> <font color='" .. scripts.ui["footer_info_yellow"] .. "'></font>")
+    if scripts.ui.footer_info_mail then
+        scripts.ui.footer_info_mail:echo("<font color='" .. scripts.ui["footer_info_normal"] .. "'>Mail:&nbsp;</font> <font color='" .. scripts.ui["footer_info_yellow"] .. "'></font>")
+    end
 end
 
 function scripts_ui_info_mail_click()
@@ -163,11 +191,15 @@ end
 --
 
 function scripts.ui:info_action_update(str)
-    scripts.ui.footer_info_alert:echo("<font color='" .. scripts.ui["footer_info_normal"] .. "'>Alert:</font> <font color='" .. scripts.ui["footer_info_yellow"] .. "'>" .. str .. "</font>")
+    if scripts.ui.footer_info_collect_mode then
+        scripts.ui.footer_info_alert:echo("<font color='" .. scripts.ui["footer_info_normal"] .. "'>Alert:</font> <font color='" .. scripts.ui["footer_info_yellow"] .. "'>" .. str .. "</font>")
+    end
 end
 
 function scripts.ui:info_action_clear()
-    scripts.ui.footer_info_alert:echo("<font color='" .. scripts.ui["footer_info_normal"] .. "'>Alert:</font> <font color='" .. scripts.ui["footer_info_yellow"] .. "'></font>")
+    if scripts.ui.footer_info_collect_mode then
+        scripts.ui.footer_info_alert:echo("<font color='" .. scripts.ui["footer_info_normal"] .. "'>Alert:</font> <font color='" .. scripts.ui["footer_info_yellow"] .. "'></font>")
+    end
 end
 
 function scripts_ui_info_action_click()
@@ -197,6 +229,9 @@ function scripts_ui_info_weapon_update(str)
 end
 
 function scripts.ui:info_weapon_update(state)
+    if not scripts.ui.footer_info_weapon then
+        return
+    end
     if state then
         scripts.ui.footer_info_weapon:echo("<font color='" .. scripts.ui["footer_info_normal"] .. "'>Bron:&nbsp;&nbsp;&nbsp;</font> <font color='" .. scripts.ui["footer_info_green"] .. "'>on</font>")
         scripts.ui:info_action_clear()
@@ -210,6 +245,9 @@ end
 --
 
 function scripts.ui:info_killed_update()
+    if not scripts.ui.footer_info_killed then
+        return
+    end
     if misc.counter.all_kills > 0 then
         scripts.ui.footer_info_killed:echo("<font color='" .. scripts.ui["footer_info_normal"] .. "'>Zabici:&nbsp;</font> <font color='" .. scripts.ui["footer_info_neutral"] .. "'>" .. tostring(misc.counter.killed_amount.JA) .. "/" .. tostring(misc.counter.all_kills) .. "</font>")
     else
@@ -218,6 +256,9 @@ function scripts.ui:info_killed_update()
 end
 
 function scripts.ui:info_combat_state_update(is_combat, cool_off, command)
+    if not scripts.ui.footer_info_combat_state then
+        return
+    end
     resetLabelCursor(scripts.ui.footer_info_combat_state.name)
     local color, text
     if is_combat then

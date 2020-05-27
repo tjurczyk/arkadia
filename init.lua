@@ -39,6 +39,8 @@ function append_plugins()
         lfs.mkdir(plugins_dir)
     end
 
+    scripts.plugins = {}
+
     for plugin_name in lfs.dir(plugins_dir) do
         load_plugin(plugin_name)
     end
@@ -64,14 +66,13 @@ function load_plugin(plugin_name)
             installPackage(module_path)
             plugin_loaded = true
         elseif io.exists(module_path) and is_git_repo then
-            if not getModulePriority(plugin_name) then
-                installModule(module_path)
-                enableModuleSync(plugin_name)
-                setModulePriority(plugin_name, getModulePriority("Arkadia") + table.size(valid_plugins))
-            end
+            installModule(module_path)
+            enableModuleSync(plugin_name)
+            setModulePriority(plugin_name, getModulePriority("Arkadia") + table.size(scripts.plugins) + 1)
             plugin_loaded = true
         end
         if plugin_loaded then
+            table.insert(scripts.plugins, plugin_name)
             cecho("\n<CadetBlue>(skrypty)<tomato>: Plugin " .. plugin_name .. " zaladowany\n")
         else
             cecho("\n<CadetBlue>(skrypty)<tomato>: Plugin " .. plugin_name .. " nie zostal zaladowany. Brak pliku init.lua lub " .. plugin_name .."\n")

@@ -66,9 +66,11 @@ function load_plugin(plugin_name)
             installPackage(module_path)
             plugin_loaded = true
         elseif io.exists(module_path) and is_git_repo then
-            installModule(module_path)
-            enableModuleSync(plugin_name)
-            setModulePriority(plugin_name, getModulePriority("Arkadia") + table.size(scripts.plugins) + 1)
+            if not pcall(getModulePriority, plugin_name) then
+                installModule(module_path)
+                enableModuleSync(plugin_name)
+                setModulePriority(plugin_name, getModulePriority("Arkadia") + table.size(scripts.plugins))
+            end
             plugin_loaded = true
         end
         if plugin_loaded then

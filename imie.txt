@@ -571,7 +571,7 @@ scripts.ui.cfg.info_items = {
     "mail",
     "alert",
     "lamp",
-    "compass"
+    "compass",
     "combat"
 }
 

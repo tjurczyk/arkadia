@@ -71,6 +71,11 @@ function scripts:print_help()
     cecho("| <light_slate_blue>/ikona [imie] <grey> - Ustawia Arkadiowa ikone profilu z imieniem postaci.           |\n")
     cecho("| np. <light_slate_blue>/ikona Geralt <grey>                                                             |\n")
     cecho("|                                                                                |\n")
+    cecho("|                                                                                |\n")
+    cecho("| <yellow>PLUGINY:<grey>                                                                       |\n")
+    cecho("|                                                                                |\n")
+    cecho("| <light_slate_blue>/plugins - <grey> Pomoc dotyczaca pluginow.                                          |\n")
+    cecho("|                                                                                |\n")
     cecho("+--------------------------------------------------------------------------------+\n")
 end
 

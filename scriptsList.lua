@@ -91,6 +91,7 @@ return {
     "skrypty/people/color_people",
     "skrypty/people/trigger_people",
     "skrypty/people/build_bind_table",
+    "skrypty/plugins/help",
     "skrypty/box/core",
     "skrypty/misc/improve",
     "skrypty/misc/counter",

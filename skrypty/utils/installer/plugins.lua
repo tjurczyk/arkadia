@@ -14,12 +14,12 @@ function scripts.plugins_installer:install_from_url(url)
         file_name = url:match("\/([^\/]+)$")
     end
 
-    plugin_name, extension = file_name:gmatch("(.+)(%..+)$")()
+    plugin_name, extension = file_name:gmatch("(.+)%.(.+)$")()
 
     if extension == nil then
-        extension = ".zip"
+        extension = "zip"
         plugin_name = file_name
-        file_name = file_name .. extension
+        file_name = file_name .. "." .. extension
     end
 
     if lfs.chdir(self.plugin_directory .. plugin_name .. "/.git/") then

@@ -611,7 +611,7 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^Nagle (?:\w+ )+(\w+) rozpruwa sie\.</string>
+							<string>^Nagle (?:\w+ )+(\w+) rozpruwa sie\.(?:.*)</string>
 							<string>^Niestety zbyt mocnym ruchem rozrywasz (?:\w+ )+(\w+), drac go na bezwartosciowe pasy materialu\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>

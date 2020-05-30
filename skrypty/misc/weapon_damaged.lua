@@ -1,5 +1,5 @@
 misc["weapon_damaged_desc"] = {
-    ["w znakomitym stanie."] = "[max]",
+    ["w znakomitym stanie."] = "",
     ["w dobrym stanie."] = "[6/7]",
     ["liczne walki wyryly na niej swoje pietno."] = "[5/7]",
     ["liczne walki wyryly na nim swoje pietno."] = "[5/7]",

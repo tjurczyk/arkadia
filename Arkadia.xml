@@ -23689,7 +23689,14 @@
 						<script>alias_func_skrypty_misc_postepy_postepy2_minus()</script>
 						<command></command>
 						<packageName></packageName>
-						<regex>^/postepy2- (.*)$</regex>
+						<regex>^/postepy2- (\d+)$</regex>
+					</Alias>
+					<Alias isActive="yes" isFolder="no">
+						<name>postepy2- val</name>
+						<script>alias_func_skrypty_misc_postepy_postepy2_minus_val()</script>
+						<command></command>
+						<packageName></packageName>
+						<regex>^/postepy2- (\d+) (\d+)$</regex>
 					</Alias>
 					<Alias isActive="yes" isFolder="no">
 						<name>postepy2_off</name>

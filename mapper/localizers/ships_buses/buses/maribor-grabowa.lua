@@ -5,7 +5,7 @@ end
 
 function trigger_func_mapper_localizers_ships_buses_buses_maribor_grabowa_gps_osada()
     amap:print_log("GPS: Zajazd przy Osadzie", true)
-    amap:set_position(256, true)
+    amap:set_position(3343, true)
 end
 
 function trigger_func_mapper_localizers_ships_buses_buses_maribor_grabowa_gps_kocie_pole()

@@ -348,11 +348,6 @@ function trigger_func_mapper_idziesz()
         registerAnonymousEventHandler("gmcp.room.info", function() amap:locate(true) end, true)
 end
 
-function amap:get_opposite_dir(dir)
-    local en_opposite_long = amap.opposite_dir[dir]
-    return amap.english_to_polish[amap.short_to_long[en_opposite_long]]
-end
-
 function alias_func_mapper_print_options()
     amap:print_options_values()
 end

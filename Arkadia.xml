@@ -24050,13 +24050,6 @@
 				<packageName></packageName>
 				<regex>^/reload ?(.*)$</regex>
 			</Alias>
-            <Alias isActive="yes" isFolder="no">
-                <name>install plugin</name>
-                <script>alias_func_install_plugin()</script>
-                <command></command>
-                <packageName></packageName>
-                <regex>^/zainstaluj_plugin (.*)</regex>
-            </Alias>
 			<Alias isActive="yes" isFolder="no">
 				<name>init_config</name>
 				<script>alias_func_init_config(matches[2], matches[3])</script>
@@ -24064,6 +24057,34 @@
 				<packageName></packageName>
 				<regex>/init (\w+) (\w+)</regex>
 			</Alias>
+			<AliasGroup isActive="yes" isFolder="yes">
+				<name>plugins</name>
+				<script></script>
+				<command></command>
+				<packageName></packageName>
+				<regex></regex>
+				<Alias isActive="yes" isFolder="no">
+					<name>install plugin</name>
+					<script>alias_func_install_plugin()</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/zainstaluj_plugin (.*)</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>uninstall plugin</name>
+					<script>alias_func_uninstall_plugin()</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/odinstaluj_plugin (.*)</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>plugin help</name>
+					<script>alias_func_plugin_help()</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/plugins$</regex>
+				</Alias>
+			</AliasGroup>
 		</AliasGroup>
 		<AliasGroup isActive="yes" isFolder="yes">
 			<name>mapper</name>

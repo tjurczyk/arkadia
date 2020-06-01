@@ -82,10 +82,6 @@ function trigger_func_skrypty_inventory_equipment_ekwipunek_poziom_zniszczenia()
     misc:item_damaged_replace(matches[3])
 end
 
-function trigger_func_skrypty_inventory_equipment_ekwipunek_poziom_zniszczenia_gz()
-    misc:weapon_damaged_replace(multimatches[2][3])
-end
-
 function trigger_func_skrypty_inventory_equipment_bron_poziom_zniszczenia()
     misc:weapon_damaged_replace(matches[3])
 end

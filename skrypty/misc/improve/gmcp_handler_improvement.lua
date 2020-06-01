@@ -45,6 +45,7 @@ function gmcp_handler_improvement()
 
     local seconds_passed = snapshot["timestamp"] - misc.improve["improve_start_timestamp"]
     misc.improve["improve_start_timestamp"] = getEpoch()
+    snapshot["seconds_passed"] = seconds_passed
     snapshot["time_passed"] = misc.improve:seconds_to_formatted_string(seconds_passed)
 
     table.insert(misc.improve["level_snapshots"], snapshot)

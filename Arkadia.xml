@@ -5591,7 +5591,7 @@
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>obijajac</string>
+											<string>kaleczac</string>
 											<string>ledwo muskajac</string>
 										</regexCodeList>
 										<regexCodePropertyList>
@@ -5613,7 +5613,7 @@
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>tlukac</string>
+											<string>obijajac</string>
 											<string>lekko raniac</string>
 										</regexCodeList>
 										<regexCodePropertyList>
@@ -5635,7 +5635,7 @@
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>kaleczac</string>
+											<string>tlukac</string>
 											<string>, raniac</string>
 										</regexCodeList>
 										<regexCodePropertyList>
@@ -9305,7 +9305,7 @@
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>obijajac</string>
+											<string>kaleczac</string>
 										</regexCodeList>
 										<regexCodePropertyList>
 											<integer>0</integer>
@@ -9325,7 +9325,7 @@
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>tlukac</string>
+											<string>obijajac</string>
 										</regexCodeList>
 										<regexCodePropertyList>
 											<integer>0</integer>
@@ -9345,7 +9345,7 @@
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>kaleczac</string>
+											<string>tlukac</string>
 										</regexCodeList>
 										<regexCodePropertyList>
 											<integer>0</integer>

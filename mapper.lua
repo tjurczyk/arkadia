@@ -1,6 +1,7 @@
 mudlet = mudlet or {}; mudlet.mapper_script = true
 if not amap then
     amap = {
+        handlers = {},
         db = { show_notes = true, show_binds = true },
         ver = scripts.ver,
         shortcuts = {},

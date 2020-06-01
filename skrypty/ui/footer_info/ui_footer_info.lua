@@ -33,11 +33,18 @@ function scripts.ui:setup_footer_info()
         ["placeholder"] = self.setup_placeholder
     }
 
-    for _, info_creator in pairs(scripts.ui.cfg.info_items) do
-        self.footer_info_elements_creators[info_creator](self)
-    end
-    
+    raiseEvent("footerInfoCreators", self.footer_info_elements_creators)
+
     self.info_placeholders = {}
+
+    for _, info_creator in pairs(scripts.ui.cfg.info_items) do
+        if self.footer_info_elements_creators[info_creator] then
+            self.footer_info_elements_creators[info_creator](self)
+        else
+            scripts:print_log("Nieprawidlowy klucz w konfiguracji scripts.ui.cfg.info_items - " .. info_creator)
+        end
+    end
+
     local placeholders_count = (table.size(self.info_columns) * self.footer_info_row_count) - table.size(self.info_elements)
     for i=1,placeholders_count do
         self:setup_placeholder()

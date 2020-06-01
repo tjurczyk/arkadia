@@ -21848,6 +21848,7 @@
 						<string>Podaj tytul notki:</string>
 						<string>adefFhHmnpqrsRux.!?</string>
 						<string>Zaczynasz szukac</string>
+						<string>^Zaczynasz rytmicznie ciagnac za dojki\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>0</integer>
@@ -21864,6 +21865,7 @@
 						<integer>0</integer>
 						<integer>0</integer>
 						<integer>0</integer>
+						<integer>1</integer>
 					</regexCodePropertyList>
 				</Trigger>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -22039,6 +22041,7 @@
 						<string>Przy ciele znajdujesz </string>
 						<string>Twoje palce trafiaja na cos sypkiego i miekkiego. Gdy wyciagasz dlon jest ona pelna blyszczacego piasku.</string>
 						<string>Posrod pajeczyn dostrzegasz tajemniczy symbol wyrysowany kreda.</string>
+						<string>^Przestajesz doic krowe\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -22082,6 +22085,7 @@
 						<integer>0</integer>
 						<integer>0</integer>
 						<integer>0</integer>
+						<integer>1</integer>
 					</regexCodePropertyList>
 				</Trigger>
 				<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -24010,6 +24014,13 @@
 					<packageName></packageName>
 					<regex>^/kondycje$</regex>
 				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>set icon</name>
+					<script>alias_func_set_profile_icon()</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/ikona (.*)</regex>
+				</Alias>
 			</AliasGroup>
 			<Alias isActive="yes" isFolder="no">
 				<name>laduj_config</name>
@@ -24039,6 +24050,13 @@
 				<packageName></packageName>
 				<regex>^/reload ?(.*)$</regex>
 			</Alias>
+            <Alias isActive="yes" isFolder="no">
+                <name>install plugin</name>
+                <script>alias_func_install_plugin()</script>
+                <command></command>
+                <packageName></packageName>
+                <regex>^/zainstaluj_plugin (.*)</regex>
+            </Alias>
 			<Alias isActive="yes" isFolder="no">
 				<name>init_config</name>
 				<script>alias_func_init_config(matches[2], matches[3])</script>

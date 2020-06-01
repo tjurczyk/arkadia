@@ -26,6 +26,10 @@ function alias_func_skrypty_misc_postepy_postepy2_minus()
     misc.improve:remove_improvee2(tonumber(matches[2]))
 end
 
+function alias_func_skrypty_misc_postepy_postepy2_minus_val()
+    misc.improve:remove_improvee2_val(tonumber(matches[2]), tonumber(matches[3]))
+end
+
 function alias_func_skrypty_misc_postepy_postepy2_off()
     misc.improve["improve2_enabled"] = false
     scripts:print_log("Ok, nie bede dodawal do globalnego licznika postepow")

@@ -1279,6 +1279,7 @@
 							<string>^(W pore zaslaniasz sie).*</string>
 							<string>^(Skutecznie oslaniasz).*</string>
 							<string>^(Bez trudu zbijasz).*</string>
+							<string>Szkarlatne luski dzwiecza cicho, gdy oslaniasz sie swoja rogata tarcza przed uderzeniem</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -1289,6 +1290,7 @@
 							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
+							<integer>0</integer>
 						</regexCodePropertyList>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">

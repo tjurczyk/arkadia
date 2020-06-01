@@ -1,8 +1,14 @@
 function misc.improve:print_improve()
     local time = getTime(true, "dd/MM hh:mm:ss")
+    local average = self:calculate_average()
+    local average_str = "             "
+    if average > 0 then
+        average_str = " : sred " .. misc.improve:seconds_to_formatted_string(average)
+    end
+
     cecho("+-------------------------------- <green>Postepy<grey> -------------------------------+\n")
     cecho("|                                                                        |\n")
-    cecho("| <yellow>Aktualny czas   : " .. time .. "<grey>                                       |\n")
+    cecho("| <yellow>Aktualny czas   : " .. time .. "<grey>   " .. average_str .. "                       |\n")
     cecho("|                                                                        |\n")
 
     local sum_me_killed = 0
@@ -52,6 +58,17 @@ function misc.improve:print_improve()
     cecho("|                                                                        |\n")
     cecho("+------------------------------------------------------------------------+\n")
 
+end
+
+function misc.improve:calculate_average()
+    local sum_of_time = 0
+    for k, v in pairs(misc.improve["level_snapshots"]) do
+        if v.seconds_passed == nil then
+            return 0
+        end
+        sum_of_time = sum_of_time + v.seconds_passed
+    end
+    return math_round(sum_of_time / table.size(misc.improve["level_snapshots"]))
 end
 
 function misc.improve:improve_reset()

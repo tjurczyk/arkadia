@@ -1,7 +1,7 @@
 scripts["ui"] = scripts["ui"] or { cfg = {} }
 
 scripts.ui.map_loaded = false
-scripts.ui.states_windows_loaded = false
+scripts.ui.states_windows_loaded = {}
 
 -- width for wrapping the states window
 scripts.ui.states_window_p_width = 95

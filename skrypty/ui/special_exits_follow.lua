@@ -359,7 +359,7 @@ function trigger_func_skrypty_ui_special_exits_follow_wejdz_do_alkierza()
 end
 
 function trigger_func_skrypty_ui_special_exits_follow_unies_krate()
-    scripts.utils.bind_functional_team_follow(matches[2], "unies krate", 15)
+    scripts.utils.bind_functional_team_follow(matches[2], "unies " .. matches[3], 15)
 end
 
 function trigger_func_skrypty_ui_special_exits_follow_wejdz_do_namiotu()

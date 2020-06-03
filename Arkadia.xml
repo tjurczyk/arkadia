@@ -18367,8 +18367,10 @@
 						<string>((Tunel) (ciagnie) (sie)) na (.*)\.</string>
 						<string>((Jaskinie) (ciagna) (sie)) na (.*)\.</string>
 						<string>((Tunele) (ciagna) (sie)) na (.*)\.</string>
+						<string>((Rozpadlina) (ciagnie) (sie)) na (.*)\.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
+						<integer>1</integer>
 						<integer>1</integer>
 						<integer>1</integer>
 						<integer>1</integer>

@@ -1,9 +1,3 @@
-function load_my_settings()
-
----------------------------------------------------------------------------------
-------------     OD TEGO MIEJSCA W DOL MOZNA ZMIENIAC ZAWARTOSC    --------------
----------------------------------------------------------------------------------
-
 -- Wszystkie linie zaczynajace sie od '--' to komentarze i nie maja zadnego
 -- znaczenia w kontekscie ustawien.
 
@@ -880,28 +874,3 @@ amap.locating["loc_id"] = 1
 
 -- Podstawowy beep
 scripts.sounds.beep = getMudletHomeDir() .. "/arkadia/sounds/beep.wav"
-
-
----------------------------------------------------------------------------------
-------------       OD TEGO MIEJSCA PONIZEJ NIC NIE ZMIENIAJ       ---------------
----------------------------------------------------------------------------------
-
-local current_name = scripts.character_name or ""
-scripts:print_log("Ok, profil " .. current_name .. " zaladowany")
-
-end
-
-tempTimer(0.3, function () load_my_settings() end)
-tempTimer(0.4, function () misc_load_dump() end)
-tempTimer(0.4, function () scripts.people:enemy_people_starter() end)
-tempTimer(0.4, function () ateam:set_ateam_options() end)
-tempTimer(0.47, function () scripts.keybind:init() end)
-tempTimer(0.55, function () scripts.people:color_people_starter() end)
-tempTimer(0.7, function () scripts.people:trigger_people_starter() end)
-tempTimer(1, function () expandAlias("/ui_restart", false) end)
-tempTimer(1.1, function() amap:check_room_gps_options() end)
-tempTimer(1.5, function () scripts.ui:set_gag_options() end)
-tempTimer(1.7, function () misc.lang:init() end)
-tempTimer(1.8, function () scripts.people:build_bind_table() end)
-tempTimer(1.9, function () herbs:init_herbs() end)
-tempTimer(2.0, function () scripts.inv:set_all_magic() end)

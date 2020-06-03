@@ -157,17 +157,17 @@ function misc.lvl_calc:cechy()
     self.trigger2 = tempRegexTrigger("^Tw.* osiagn.* (nadludzki poziom)\.$", function() self:cechy_replace(matches[2]) end, 5)
     self.trigger3 = tempRegexTrigger("^Obecnie do waznych cech zaliczasz", function() 
         misc.lvl_calc:calculate_lvl()
-        disableTrigger(self.trigger1) 
-        disableTrigger(self.trigger2) 
+        killTrigger(self.trigger1) 
+        killTrigger(self.trigger2) 
         self.is_running = false
     end, 1)
 
     send('cechy', false)
 
     tempTimer(3, function() 
-        disableTrigger(self.trigger1) 
-        disableTrigger(self.trigger2) 
-        disableTrigger(self.trigger3)
+        killTrigger(self.trigger1) 
+        killTrigger(self.trigger2) 
+        killTrigger(self.trigger3)
         self.is_running = false
     end)
  

@@ -250,9 +250,9 @@ Są dostępne statystyki parowań, otrzymamych ciosów itp., Statystyki dostępn
 <br>
 `/postepy2_reset` - resetuje globalny licznik postepow. 
 <br><br>
-**Licznik poziomu** (w miejscu, gdzie można medytować)
+**Licznik poziomu** 
 <br>
-`/licz_poziom`
+`/cechy` - wyswietla cechy i poziom postaci (minilevele)
 
 ---
 

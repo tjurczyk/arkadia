@@ -226,15 +226,6 @@ function trigger_func_skrypty_misc_porownanie_wszystkich()
     end
 end
 
-function alias_func_skrypty_misc_licz_poziom()
-    misc.lvl_calc.current_stats = {}
-    misc.lvl_calc.current_val_to_next = {}
-    enableTrigger("lvl_calc")
-    tempTimer(0.1, function() send("cechy", false) end)
-    tempTimer(0.5, function() misc.lvl_calc:calculate_lvl() end)
-    tempTimer(1, [[ disableTrigger("lvl_calc") ]])
-end
-
 function alias_func_skrypty_misc_zdenominuj()
     scripts.inv:get_from_bag({ "monety" }, "money", 1)
     sendAll("zdenominuj", false)

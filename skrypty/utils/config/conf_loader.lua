@@ -72,6 +72,7 @@ end
 function after_profile_load()
     tempTimer(0.4, function () misc_load_dump() end)
     tempTimer(0.4, function () scripts.people:enemy_people_starter() end)
+    tempTimer(0.4, function () ateam:set_ateam_options() end)
     tempTimer(0.47, function () scripts.keybind:init() end)
     tempTimer(0.55, function () scripts.people:color_people_starter() end)
     tempTimer(0.7, function () scripts.people:trigger_people_starter() end)
@@ -79,6 +80,9 @@ function after_profile_load()
     tempTimer(1.1, function() amap:check_room_gps_options() end)
     tempTimer(1.5, function () scripts.ui:set_gag_options() end)
     tempTimer(1.7, function () misc.lang:init() end)
+    tempTimer(1.8, function () scripts.people:build_bind_table() end)
+    tempTimer(1.9, function () herbs:init_herbs() end)
+    tempTimer(2.0, function () scripts.inv:set_all_magic() end)
 end
 
 function alias_func_init_config(name, wolacz)

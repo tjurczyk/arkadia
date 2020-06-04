@@ -55,6 +55,8 @@ function scripts_load_config(name)
             if not load_my_settings then
                 after_profile_load()
                 scripts:print_log("Ok, profil " .. name .. " zaladowany")
+            else
+                scripts:print_log("Masz stary plik imie.txt. Zalecana aktualizacja.")
             end
         end)
     else

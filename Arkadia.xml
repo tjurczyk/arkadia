@@ -16389,7 +16389,7 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>(.* zapiera sie nogami o grunt i probuje uniesc.*)</string>
+							<string>(.*) zapiera sie nogami o grunt i probuje uniesc ([\w-]+ [\w-]+ \w+)</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>

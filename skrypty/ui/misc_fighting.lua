@@ -47,7 +47,7 @@ function trigger_func_skrypty_ui_misc_fighting_ledwo_lekko_cie()
 end
 
 function trigger_func_skrypty_ui_misc_fighting_rani_powaga_cie()
-    if matches[4] == "lekko" then
+    if matches[4] == "lekko" or matches[4] == "smiertelnie" then
         return
     end
 
@@ -63,7 +63,7 @@ function trigger_func_skrypty_ui_misc_fighting_rani_powaga_cie()
 end
 
 function trigger_func_skrypty_ui_misc_fighting_bciezko_masakruje_ciebie()
-    selectString(matches[5], 1)
+    selectString(matches[4], 1)
     setFgColor(255, 153, 51)
     resetFormat()
 end

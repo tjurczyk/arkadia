@@ -7750,8 +7750,10 @@
 								<colorTriggerBgColor>#000000</colorTriggerBgColor>
 								<regexCodeList>
 									<string>^[ &gt;]*(.+) masakruje (?!cie )</string>
+									<string>^[ &gt;]*(.+) smiertelnie rani (?!cie )</string>
 								</regexCodeList>
 								<regexCodePropertyList>
+									<integer>1</integer>
 									<integer>1</integer>
 								</regexCodePropertyList>
 							</Trigger>
@@ -8084,8 +8086,10 @@
 								<colorTriggerBgColor>#000000</colorTriggerBgColor>
 								<regexCodeList>
 									<string>^[ &gt;]*[a-zA-Z (),!]+ masakruje cie </string>
+									<string>^[ &gt;]*[a-zA-Z (),!]+ niemal smiertelnie rani cie </string>
 								</regexCodeList>
 								<regexCodePropertyList>
+									<integer>1</integer>
 									<integer>1</integer>
 								</regexCodePropertyList>
 							</Trigger>
@@ -13279,8 +13283,10 @@
 						<regexCodeList>
 							<string>(^[ &gt;]*([a-zA-Z (),!]+) (bardzo ciezko rani cie ).*\.$)</string>
 							<string>(^[ &gt;]*([a-zA-Z (),!]+) (masakruje cie ).*\.$)</string>
+							<string>(^[ &gt;]*([a-zA-Z (),!]+) (niemal smiertelnie rani cie ).*\.$)</string>
 						</regexCodeList>
 						<regexCodePropertyList>
+							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
 						</regexCodePropertyList>
@@ -23585,7 +23591,7 @@
 					<packageName></packageName>
 					<regex>^/med(|ytuj)$</regex>
 				</Alias>
-					<AliasGroup isActive="yes" isFolder="yes">
+				<AliasGroup isActive="yes" isFolder="yes">
 					<name>lvl_calc</name>
 					<script></script>
 					<command></command>

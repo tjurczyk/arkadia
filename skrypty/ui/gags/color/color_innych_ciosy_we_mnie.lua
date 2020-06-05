@@ -17,7 +17,14 @@ function trigger_func_skrypty_ui_gags_color_color_innych_ciosy_we_mnie_ktos_lekk
 end
 
 function trigger_func_skrypty_ui_gags_color_color_innych_ciosy_we_mnie_ktos_rani_cie()
-    if matches[2] == "lekko" or matches[2] == "powaznie" or matches[2] == "ciezko" or matches[2] == "paskudnie" then
+    local exempts = {
+        "lekko",
+        "powaznie",
+        "ciezko",
+        "paskudnie",
+        "smiertelnie"
+    }
+    if table.contains(exempts, matches[2]) then
         return
     end
 

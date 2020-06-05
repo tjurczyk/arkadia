@@ -32,7 +32,8 @@ function trigger_func_skrypty_ui_gags_color_color_innych_ciosy_ktos_rani()
         ["paskudnie"] = true,
         ["i"] = true,
         ["mocno"] = true,
-        ["krwawo"] = true
+        ["krwawo"] = true,
+        ["smiertelnie"] = true,
     }
 
     if ignore_list[matches[3]] then

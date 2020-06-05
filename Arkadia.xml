@@ -5315,8 +5315,10 @@
 									<colorTriggerBgColor>#000000</colorTriggerBgColor>
 									<regexCodeList>
 										<string>Stajesz pewnie na szeroko rozstawionych nogach i wyprowadzasz potezne uderzenie .* Bezlitosny, okrutny cios trafia .* zaglebiajac bron w.*</string>
+										<string>Wykrzykujac glosno imie \w+ stajesz pewnie na szeroko rozstawionych nogach i wyprowadzasz potezne uderzenie</string>
 									</regexCodeList>
 									<regexCodePropertyList>
+										<integer>1</integer>
 										<integer>1</integer>
 									</regexCodePropertyList>
 								</Trigger>
@@ -8889,8 +8891,10 @@
 									<colorTriggerBgColor>#000000</colorTriggerBgColor>
 									<regexCodeList>
 										<string>dostrzegajac luke w obronie (przeciwnika|przeciwniczki) rzuca sie do ataku</string>
+										<string>dostrzegajac luke w twojej obronie rzuca sie do ataku</string>
 									</regexCodeList>
 									<regexCodePropertyList>
+										<integer>1</integer>
 										<integer>1</integer>
 									</regexCodePropertyList>
 									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -9015,8 +9019,8 @@
 									</Trigger>
 								</Trigger>
 								<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-									<name>ktos_spec_7</name>
-									<script>trigger_func_skrypty_ui_gags_color_color_innych_spece_fan_ktos_spec_7()</script>
+									<name>ktos_spec_fin</name>
+									<script>trigger_func_skrypty_ui_gags_color_color_innych_spece_fan_ktos_spec_fin()</script>
 									<triggerType>0</triggerType>
 									<conditonLineDelta>0</conditonLineDelta>
 									<mStayOpen>0</mStayOpen>
@@ -9028,7 +9032,7 @@
 									<colorTriggerFgColor>#000000</colorTriggerFgColor>
 									<colorTriggerBgColor>#000000</colorTriggerBgColor>
 									<regexCodeList>
-										<string>staje pewnie .* uderzenie .*. Bezlitosny, okrutny cios trafia .* zaglebiajac bron w twoim ciele.</string>
+										<string>staje pewnie .* uderzenie .*. Bezlitosny, okrutny cios trafia .* zaglebiajac bron</string>
 									</regexCodeList>
 									<regexCodePropertyList>
 										<integer>1</integer>
@@ -9049,26 +9053,6 @@
 									<colorTriggerBgColor>#000000</colorTriggerBgColor>
 									<regexCodeList>
 										<string>bierze potezny zamach i wyprowadza.*ktory ma zmasakrowac.*Jednak [a-z]+ bron jakims cudem mija cel, nie czyniac</string>
-									</regexCodeList>
-									<regexCodePropertyList>
-										<integer>1</integer>
-									</regexCodePropertyList>
-								</Trigger>
-								<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-									<name>ktos_spec_fin</name>
-									<script>trigger_func_skrypty_ui_gags_color_color_innych_spece_fan_ktos_spec_fin()</script>
-									<triggerType>0</triggerType>
-									<conditonLineDelta>0</conditonLineDelta>
-									<mStayOpen>0</mStayOpen>
-									<mCommand></mCommand>
-									<packageName></packageName>
-									<mFgColor>#ff0000</mFgColor>
-									<mBgColor>#ffff00</mBgColor>
-									<mSoundFile></mSoundFile>
-									<colorTriggerFgColor>#000000</colorTriggerFgColor>
-									<colorTriggerBgColor>#000000</colorTriggerBgColor>
-									<regexCodeList>
-										<string>^[ &gt;]*.* staje pewnie na szeroko rozstawionych nogach.*</string>
 									</regexCodeList>
 									<regexCodePropertyList>
 										<integer>1</integer>

@@ -74,8 +74,7 @@ function amap_ui_set_dirs_trigger(dirs, leave_as_is)
     local id = 1
     for k, v in pairs(exits) do
         special_dirs[k] = true
-        amap.ui.compass["special_exit" .. id] = k
-        amap.ui.compass["button_special" .. id]:echo("<center>" .. k .. "<center>")
+        amap.ui:set_special_dir(id, k)
         id = id + 1
         if id == 4 then
             break
@@ -83,6 +82,20 @@ function amap_ui_set_dirs_trigger(dirs, leave_as_is)
     end
 
     raiseEvent("amapCompassDrawingDone", regular_dirs, special_dirs)
+end
+
+function amap.ui:set_special_dir(id, dir)
+    amap.ui.compass["special_exit" .. id] = dir
+    amap.ui.compass["button_special" .. id]:echo("<center>" .. dir .. "<center>")
+end
+
+function amap.ui:add_special_dir_if_possible(dir)
+    for id = 1,3 do
+        if amap.ui.compass["special_exit" .. id] == nil then
+            amap.ui:set_special_dir(id, dir)
+            return
+        end
+    end
 end
 
 function amap.ui:mapper_mode(enabled)

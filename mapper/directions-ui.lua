@@ -77,3 +77,7 @@ function trigger_func_mapper_directions_ui_oboz()
     amap:locate_on_next_location()
 end
 
+function trigger_func_mapper_directions_add_special_camp()
+    registerAnonymousEventHandler("amapCompassDrawingDone", function() amap.ui:add_special_dir_if_possible("wejdz do obozu") end, true)
+end
+

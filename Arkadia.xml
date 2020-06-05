@@ -7686,7 +7686,7 @@
 								<colorTriggerBgColor>#000000</colorTriggerBgColor>
 								<regexCodeList>
 									<string>^[ &gt;]*(.+) ([a-z]+) rani (?!cie )</string>
-									<string>^[ &gt;]*(.+)rani (?!cie )</string>
+									<string>^[ &gt;]*(.+) rani (?!cie )</string>
 								</regexCodeList>
 								<regexCodePropertyList>
 									<integer>1</integer>

@@ -80,6 +80,10 @@ function amap:locate(noprint)
     return ret
 end
 
+function amap:locate_on_next_location()
+    registerAnonymousEventHandler("gmcp.room.info", function() amap:locate(true) end, true)
+end
+
 function amap:set_position(room_id, silent)
     -- immediately clear next dir bind
     amap.next_dir_bind = nil

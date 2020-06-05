@@ -1,6 +1,6 @@
-function trigger_func_mapper_directions_ui_wyjscia()
-    local dirs = amap:parse_trigger_exits(matches[6])
+amap.directions_ui = amap.directions_ui or {}
 
+function amap.directions_ui:handle_exits(dirs, any_direction)
     if amap.shorten_exits then
         selectCurrentLine()
         deleteLine()
@@ -10,31 +10,22 @@ function trigger_func_mapper_directions_ui_wyjscia()
             str = str .. " " .. string.upper(dir)
         end
         str = str .. "\n"
-
-        cecho("<orange>" .. str)
+        local color = any_direction and "LawnGreen" or "orange"
+        cecho("<" .. color .. ">" .. str)
     end
 
 
     amap_ui_set_dirs_trigger(dirs)
 end
 
+function trigger_func_mapper_directions_ui_wyjscia()
+    local dirs = amap:parse_trigger_exits(matches[6])
+    amap.directions_ui:handle_exits(dirs)
+end
+
 function trigger_func_mapper_directions_ui_wyjscia_all()
     local dirs = { ["n"] = true, ["nw"] = true, ["w"] = true, ["sw"] = true, ["s"] = true, ["se"] = true, ["e"] = true, ["ne"] = true }
-
-    if amap.shorten_exits then
-        selectCurrentLine()
-        deleteLine()
-        local str = "\n-----:"
-
-        for dir, i in pairs(dirs) do
-            str = str .. " " .. string.upper(dir)
-        end
-        str = str .. "\n"
-
-        cecho("<LawnGreen>" .. str)
-    end
-
-    amap_ui_set_dirs_trigger(dirs)
+    amap.directions_ui:handle_exits(dirs)
 end
 
 function trigger_func_mapper_directions_ui_wyjscia_2()
@@ -43,20 +34,7 @@ function trigger_func_mapper_directions_ui_wyjscia_2()
 
     for dir, _ in pairs(dirs2) do dirs[dir] = true end
 
-    if amap.shorten_exits then
-        selectCurrentLine()
-        deleteLine()
-        local str = "\n-----:"
-
-        for dir, _ in pairs(dirs) do
-            str = str .. " " .. string.upper(dir)
-        end
-        str = str .. "\n"
-
-        cecho("<orange>" .. str)
-    end
-
-    amap_ui_set_dirs_trigger(dirs)
+    amap.directions_ui:handle_exits(dirs)
 end
 
 function trigger_func_mapper_directions_ui_wyjscia_2_1()
@@ -67,20 +45,7 @@ function trigger_func_mapper_directions_ui_wyjscia_2_1()
     for dir, _ in pairs(dirs2) do dirs[dir] = true end
     for dir, _ in pairs(dirs3) do dirs[dir] = true end
 
-    if amap.shorten_exits then
-        selectCurrentLine()
-        deleteLine()
-        local str = "\n-----:"
-
-        for dir, _ in pairs(dirs) do
-            str = str .. " " .. string.upper(dir)
-        end
-        str = str .. "\n"
-
-        cecho("<orange>" .. str)
-    end
-
-    amap_ui_set_dirs_trigger(dirs)
+    amap.directions_ui:handle_exits(dirs)
 end
 
 function trigger_func_mapper_directions_ui_neg_wyjscia_2()
@@ -103,6 +68,16 @@ function trigger_func_mapper_directions_ui_neg_wyjscia_2()
         end
     end
 
-    amap_ui_set_dirs_trigger(dirs)
+    amap.directions_ui:handle_exits(dirs)
+end
+
+function trigger_func_mapper_directions_ui_oboz()
+    local dirs = {["sw"] = true, ["se"] = true, ["n"] = true, ["wyjscie"] = true}
+    amap.directions_ui:handle_exits(dirs)
+    amap:locate_on_next_location()
+end
+
+function trigger_func_mapper_directions_add_special_camp()
+    registerAnonymousEventHandler("amapCompassDrawingDone", function() amap.ui:add_special_dir_if_possible("wejdz do obozu") end, true)
 end
 

@@ -16333,9 +16333,11 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>(.*) zapiera sie nogami o grunt i probuje uniesc ([\w-]+ [\w-]+ \w+)</string>
+							<string>(.*) zapiera sie nogami o grunt i probuje uniesc ((?:[\w-]+ )?[\w-]+ \w+)\.</string>
+							<string>(.*) zapiera sie nogami o grunt i probuje uniesc ((?:[\w-]+ )?[\w-]+ \w+) w podlodze\.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
+							<integer>1</integer>
 							<integer>1</integer>
 						</regexCodePropertyList>
 					</Trigger>
@@ -17404,26 +17406,6 @@
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
 							<string>(.* podchodzi do waskiej dziury pod jednym drzew i po chwili w nim znika.*)</string>
-						</regexCodeList>
-						<regexCodePropertyList>
-							<integer>1</integer>
-						</regexCodePropertyList>
-					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-						<name>podnies-klape</name>
-						<script>trigger_func_skrypty_ui_special_exits_follow_podnies_klape()</script>
-						<triggerType>0</triggerType>
-						<conditonLineDelta>0</conditonLineDelta>
-						<mStayOpen>0</mStayOpen>
-						<mCommand></mCommand>
-						<packageName></packageName>
-						<mFgColor>#ff0000</mFgColor>
-						<mBgColor>#ffff00</mBgColor>
-						<mSoundFile></mSoundFile>
-						<colorTriggerFgColor>#000000</colorTriggerFgColor>
-						<colorTriggerBgColor>#000000</colorTriggerBgColor>
-						<regexCodeList>
-							<string>(.* zapiera sie nogami o grunt i probuje uniesc .* klape w podlodze.*)</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>

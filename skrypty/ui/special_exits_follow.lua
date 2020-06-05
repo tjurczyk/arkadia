@@ -575,10 +575,6 @@ function trigger_func_skrypty_ui_special_exits_follow_wejdz_do_dziury()
     scripts.utils.bind_functional_team_follow(matches[2], "wejdz do dziury", 15)
 end
 
-function trigger_func_skrypty_ui_special_exits_follow_podnies_klape()
-    scripts.utils.bind_functional_team_follow(matches[2], "podnies klape", 15)
-end
-
 function trigger_func_skrypty_ui_special_exits_follow_przeczolgaj_sie_pod_pniem()
     scripts.utils.bind_functional_team_follow(matches[2], "przeczolgaj sie pod pniem", 15)
 end

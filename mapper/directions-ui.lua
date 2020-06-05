@@ -74,5 +74,6 @@ end
 function trigger_func_mapper_directions_ui_oboz()
     local dirs = {["sw"] = true, ["se"] = true, ["n"] = true, ["wyjscie"] = true}
     amap.directions_ui:handle_exits(dirs)
+    amap:locate_on_next_location()
 end
 

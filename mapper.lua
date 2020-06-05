@@ -317,11 +317,12 @@ function trigger_func_mapper_jedziesz_wozem()
 end
 
 function trigger_func_mapper_idziesz()
+        registerAnonymousEventHandler("gmcp.room.info", function() amap:locate(true) end, true)
         local exits = {}
         if table.size(gmcp.room.info.exits) ~= 2 then
             -- in rare cases if go command was executed and gmcp does not have 2 exits we have to
             -- use mapper exits
-            for dirs,_ in pairs(getRoomExits(amap.curr.id)) do
+            for dir,_ in pairs(getRoomExits(amap.curr.id)) do
                 table.insert(exits, amap.english_to_polish[dir])
             end
         else
@@ -345,7 +346,6 @@ function trigger_func_mapper_idziesz()
 
         amap.dir_from_key = amap.polish_to_english[amap.last_go_dir]
         amap:follow(amap.dir_from_key, false)
-        registerAnonymousEventHandler("gmcp.room.info", function() amap:locate(true) end, true)
 end
 
 function alias_func_mapper_print_options()

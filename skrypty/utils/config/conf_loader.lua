@@ -46,8 +46,45 @@ end
 
 function scripts_load_config(name)
     scripts.config_loader.last_config = name
-    dofile(scripts.config_loader:get_config_path(name))
-    raiseEvent("profileLoaded")
+    load_my_settings = nil
+    local ok, result, err = pcall(loadfile, scripts.config_loader:get_config_path(name))
+    if result then
+        raiseEvent("profileLoaded")
+        tempTimer(0.3, function ()
+            result()
+            if not load_my_settings then
+                after_profile_load()
+                scripts:print_log("Ok, profil " .. name .. " zaladowany")
+            else
+                scripts:print_log("Masz stary plik imie.txt. Zalecana aktualizacja.")
+            end
+        end)
+    else
+        scripts:print_log([[Blad podczas ladowania pliku ustawien.
+            - przecinki
+            - cudzyslowia
+            - apostrofy
+            - nawiasy]])
+        scripts:print_log("Szczegoly bledu:")
+        scripts:print_log("<slate_grey> " .. err)
+        resetFormat()
+    end
+end
+
+function after_profile_load()
+    tempTimer(0.4, function () misc_load_dump() end)
+    tempTimer(0.4, function () scripts.people:enemy_people_starter() end)
+    tempTimer(0.4, function () ateam:set_ateam_options() end)
+    tempTimer(0.47, function () scripts.keybind:init() end)
+    tempTimer(0.55, function () scripts.people:color_people_starter() end)
+    tempTimer(0.7, function () scripts.people:trigger_people_starter() end)
+    tempTimer(1, function () scripts.ui:setup() end)
+    tempTimer(1.1, function() amap:check_room_gps_options() end)
+    tempTimer(1.5, function () scripts.ui:set_gag_options() end)
+    tempTimer(1.7, function () misc.lang:init() end)
+    tempTimer(1.8, function () scripts.people:build_bind_table() end)
+    tempTimer(1.9, function () herbs:init_herbs() end)
+    tempTimer(2.0, function () scripts.inv:set_all_magic() end)
 end
 
 function alias_func_init_config(name, wolacz)

@@ -111,6 +111,7 @@ return {
     "skrypty/misc/skill",
     "skrypty/misc/knowledge",
     "skrypty/misc/progress",
+    "skrypty/misc/prompt_check",
     "skrypty/misc/cutting",
     "skrypty/misc/kowal",
     "skrypty/misc/escape-dirs",

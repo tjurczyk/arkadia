@@ -20,6 +20,10 @@ Dostepne eventy w skryptach:
 
   Event podniesiony po zaladowaniu calego UI
 
+- "loginSuccessful"
+
+  Event podniesiony po zalogowaniu postaci
+
 --------------------------------------
 
 - "amapNewLocation", argumenty: amap.curr.id, direction

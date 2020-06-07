@@ -109,7 +109,7 @@ function alias_func_skrypty_people_usun_gildie()
 end
 
 function alias_func_skrypty_people_zgildiowani()
-    scripts.people:print_guilded(matches[2])
+    scripts.people:print_guilded(string.upper(matches[2]))
 end
 
 function alias_func_skrypty_people_gildie()

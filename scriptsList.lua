@@ -175,6 +175,7 @@ return {
     "skrypty/ui/special_exits_follow",
     "skrypty/ui/binds",
     "skrypty/ui/profile-icon",
+    "skrypty/ui/results_window",
     "skrypty/herbs/herb_bag_collect_condition",
     "mapper/team/follow_team_family",
     "mapper/follow-texts/druchii",

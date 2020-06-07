@@ -390,6 +390,19 @@ misc.cutting_post = {}
 --
 
 --
+-- Ustawienie czy ma byc osobny panel dla  wyszukiwania
+--
+-- Domyslnie jest to 'false', czyli wylaczone, wyniki w glownym oknie
+-- Po ustawieniu 'true', bedzie to sidebar po prawej stronie z wynikami wyszukiwania
+--
+scripts.ui.results_window.enabled = false
+
+--
+-- Szerokosc panelu wyszukiwania
+--
+scripts.ui.results_window.width = 510
+
+--
 -- Ustawienie czy ma byc osobne okno rozmow
 --
 -- Domyslnie jest to 'false', czyli wylaczone (wszystkie rozmowy w glownym oknie)

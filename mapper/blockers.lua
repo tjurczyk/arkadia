@@ -12,6 +12,7 @@ function amap.blockers:block()
         return
     end
 
+    self:set_blockable(false)
     raiseEvent("amapBlockerFired")
     amap:move_backward()
     amap:terminate_walker()
@@ -28,14 +29,8 @@ end
 function trigger_func_mapper_blockers_blocker_team_dependent()
     -- they only work if no team or team and I'm the leader
 
-    if amap.mode == "off" then
-        return
-    end
-
-    if ateam.objs[ateam.my_id]["team_leader"] or not ateam.objs[ateam.my_id]["team"] or self.is_blockable then
-        raiseEvent("amapBlockerFired")
-        amap:move_backward()
-        amap:terminate_walker()
+    if amap.blockers.is_blockable then
+        amap.blockers:block()
     end
 end
 
@@ -62,6 +57,10 @@ function trigger_func_mapper_blockers_gargoyles()
     if amap.blockers.is_blockable then
         amap.blockers:block()
     end
+end
+
+function trigger_func_blockers_unblockable()
+    amap.blockers:set_blockable(false)
 end
 
 amap.blockers:init()

@@ -22322,7 +22322,7 @@
 				</Trigger>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>blockers2</name>
-					<script>trigger_func_mapper_blockers_blockers2()</script>
+					<script>trigger_func_mapper_blockers_blockers()</script>
 					<triggerType>0</triggerType>
 					<conditonLineDelta>0</conditonLineDelta>
 					<mStayOpen>0</mStayOpen>
@@ -22436,7 +22436,7 @@
 				</Trigger>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>blockers3</name>
-					<script>trigger_func_mapper_blockers_blockers3()</script>
+					<script>trigger_func_mapper_blockers_blockers()</script>
 					<triggerType>0</triggerType>
 					<conditonLineDelta>0</conditonLineDelta>
 					<mStayOpen>0</mStayOpen>
@@ -22469,7 +22469,6 @@
 						<string>.*Probujesz przecisnac sie przez otwor na dach, ale ze wzgledu na brak miejsca, zmuszon.*</string>
 						<string>Drabina w tej chwili jest zajmowana przez kogos innego, musisz chwile poczekac, az sie zwolni.</string>
 						<string>Nie dasz rady otworzyc posrebrzanej kraty, musisz sprobowac ja uniesc.</string>
-						<string>Probujesz sie ruszyc na .*, jednak pajecze sieci, w ktore sie w miedzyczasie zaplatal.s.*</string>
 						<string>Straznik zastawia ci droge, tlumaczac, ze o tej porze nie ma odwiedzin.</string>
 						<string>By plynac musisz miec wolne rece.</string>
 						<string>.*do ciebie: Nikt z bronia nie wejdzie na teren palacu. Prosze zostawic ja na stojaku.</string>
@@ -22503,7 +22502,6 @@
 						<integer>1</integer>
 						<integer>0</integer>
 						<integer>0</integer>
-						<integer>1</integer>
 						<integer>0</integer>
 						<integer>0</integer>
 						<integer>1</integer>
@@ -22531,10 +22529,8 @@
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
 						<string>^[ &gt;]*Probujesz sie ruszyc na .*, jednak pajecze sieci, w ktore sie w miedzy czasie zaplatal.s, uniemozliwiaja ci to\.$</string>
-						<string>^[ &gt;]*Probujesz sie ruszyc na .*, jednak pajecze sieci, w ktore sie w miedzyczasiezaplatal.s, uniemozliwiaja ci to\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
-						<integer>1</integer>
 						<integer>1</integer>
 					</regexCodePropertyList>
 				</Trigger>
@@ -22556,6 +22552,26 @@
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
+					</regexCodePropertyList>
+				</Trigger>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>gargulce</name>
+					<script>trigger_func_mapper_blockers_gargoyles()</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>Ogromne stwory przysiadaja przed brama, blokujac do niej dostepu.</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>0</integer>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>

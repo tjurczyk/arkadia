@@ -60,6 +60,8 @@ function amap:keybind_pressed(dir, force)
         return
     end
 
+    raiseEvent("amapWalking", dir, force)
+
     amap.dir_from_key = dir
 
     if amap.walk_mode ~= 1 then

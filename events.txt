@@ -71,6 +71,13 @@ Dostepne eventy w skryptach:
     arg1: lokacja z ktorej mapper sie cofa
     arg2: lokacja na ktora mapper sie cofa
 
+- "amapWalking"
+
+  Event podniesiony gdy gracz wykonuje ruch przez niego zainicjowany
+  Argumenty:
+    arg1: kierunek
+    arg2: czy wymuszone (true/false)
+
 --------------------------------------
 
 

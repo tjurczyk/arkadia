@@ -27,8 +27,6 @@ function trigger_func_mapper_blockers_blockers()
 end
 
 function trigger_func_mapper_blockers_blocker_team_dependent()
-    -- they only work if no team or team and I'm the leader
-
     if amap.blockers.is_blockable then
         amap.blockers:block()
     end
@@ -46,17 +44,6 @@ function trigger_func_mapper_blockers_blockers_block()
     raiseEvent("amapBlockerFired")
     amap:move_backward()
     amap:terminate_walker()
-end
-
-function trigger_func_mapper_blockers_gargoyles()
-    --if table.contains({17153, 171642}, amap.curr.id) then
-    --    return
-    --end
-    --
-    --amap.blockers:block()
-    if amap.blockers.is_blockable then
-        amap.blockers:block()
-    end
 end
 
 function trigger_func_blockers_unblockable()

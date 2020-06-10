@@ -496,45 +496,45 @@ function ateam:print_obj_normal(id, obj)
             str_id = " " .. print_id
         end
 
-        cecho(scripts.ui.states_window_name, "<white:team_console_bg>  ")
+        cecho(scripts.ui.enemy_states_window_name, "<white:team_console_bg>  ")
 
-        moveCursorEnd(scripts.ui.states_window_name)
-        local a = selectString(scripts.ui.states_window_name, "  ", 1)
+        moveCursorEnd(scripts.ui.enemy_states_window_name)
+        local a = selectString(scripts.ui.enemy_states_window_name, "  ", 1)
 
-        setLink(scripts.ui.states_window_name, [[ateam:por_func("ob_]] .. id .. [[")]], "porownaj sie z " .. obj["desc"])
-        deselect(scripts.ui.states_window_name)
+        setLink(scripts.ui.enemy_states_window_name, [[ateam:por_func("ob_]] .. id .. [[")]], "porownaj sie z " .. obj["desc"])
+        deselect(scripts.ui.enemy_states_window_name)
 
         -- id section
-        cecho(scripts.ui.states_window_name, "<white:team_console_bg>[" .. str_id .. "<white:team_console_bg>]")
+        cecho(scripts.ui.enemy_states_window_name, "<white:team_console_bg>[" .. str_id .. "<white:team_console_bg>]")
 
         -- sneaky id section
         if ateam.sneaky_attack > 0 then
             if ateam.sneaky_attack == 2 or ateam:can_perform_sneaky_attack() then
-                cecho(scripts.ui.states_window_name, "<white:team_console_bg>[<sky_blue:team_console_bg>xx<white:team_console_bg>]")
-                selectString(scripts.ui.states_window_name, "xx", 1)
-                setLink(scripts.ui.states_window_name, [[ ateam:sneaky_zab_func("]] .. id .. [[") ]], "zaskocz " .. obj["desc"])
-                deselect(scripts.ui.states_window_name)
+                cecho(scripts.ui.enemy_states_window_name, "<white:team_console_bg>[<sky_blue:team_console_bg>xx<white:team_console_bg>]")
+                selectString(scripts.ui.enemy_states_window_name, "xx", 1)
+                setLink(scripts.ui.enemy_states_window_name, [[ ateam:sneaky_zab_func("]] .. id .. [[") ]], "zaskocz " .. obj["desc"])
+                deselect(scripts.ui.enemy_states_window_name)
             end
         end
 
         -- hp section
-        cecho(scripts.ui.states_window_name, "<white:team_console_bg>[" .. states[obj["hp"]] .. "<white:team_console_bg>] ")
+        cecho(scripts.ui.enemy_states_window_name, "<white:team_console_bg>[" .. states[obj["hp"]] .. "<white:team_console_bg>] ")
 
         -- name section
         local str_name = obj["desc"]
 
         -- set color for desc
-        cecho(scripts.ui.states_window_name, "<white:team_console_bg>" .. str_name)
+        cecho(scripts.ui.enemy_states_window_name, "<white:team_console_bg>" .. str_name)
 
         -- if print_id not nil (numbering normals) then set zab function on it
         if print_id then
-            selectString(scripts.ui.states_window_name, print_id, 1)
-            setLink(scripts.ui.states_window_name, [[ ateam:zab_func(" ]] .. ateam.normal_ids[id] .. [[") ]], "zabij " .. ateam.normal_ids[id])
-            deselect(scripts.ui.states_window_name)
+            selectString(scripts.ui.enemy_states_window_name, print_id, 1)
+            setLink(scripts.ui.enemy_states_window_name, [[ ateam:zab_func(" ]] .. ateam.normal_ids[id] .. [[") ]], "zabij " .. ateam.normal_ids[id])
+            deselect(scripts.ui.enemy_states_window_name)
         end
 
-        cecho(scripts.ui.states_window_name, "\n")
-        moveCursorEnd(scripts.ui.states_window_name)
+        cecho(scripts.ui.enemy_states_window_name, "\n")
+        moveCursorEnd(scripts.ui.enemy_states_window_name)
     end
 end
 

@@ -392,10 +392,10 @@ misc.cutting_post = {}
 --
 -- Ustawienie czy ma byc osobny panel dla  wyszukiwania
 --
--- Domyslnie jest to 'false', czyli wylaczone, wyniki w glownym oknie
--- Po ustawieniu 'true', bedzie to sidebar po prawej stronie z wynikami wyszukiwania
+-- Domyslnie jest to 'true', czyli sidebar po prawej stronie z wynikami wyszukiwania
+-- Po ustawieniu 'false', wyniki beda pokazywane w glownym oknie
 --
-scripts.ui.results_window.enabled = false
+scripts.ui.results_window.enabled = true
 
 --
 -- Szerokosc panelu wyszukiwania

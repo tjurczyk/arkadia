@@ -1,4 +1,5 @@
 scripts.ui.results_window = scripts.ui.results_window or {
+    enabled = true,
     width = 510
 }
 

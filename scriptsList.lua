@@ -2,6 +2,7 @@ return {
     "skrypty",
     "mapper",
     "skrypty/event_register",
+    "skrypty/state_store",
     "skrypty/db_fix",
     "skrypty/team",
     "skrypty/character",

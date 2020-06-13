@@ -78,6 +78,6 @@ function trigger_func_mapper_directions_ui_oboz()
 end
 
 function trigger_func_mapper_directions_add_special_camp()
-    amap.ui:add_special_dir_if_possible("obozu")
+    amap.ui:add_special_dir_if_possible("oboz")
 end
 

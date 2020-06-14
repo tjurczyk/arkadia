@@ -1,3 +1,11 @@
+function scripts.people:print(results)
+    if scripts.ui.results_window.enabled then
+        scripts.ui.results_window:print(results)
+    else
+        scripts:print_log(results)
+    end
+end
+
 function scripts.people:process_someone(short, name)
     if not name or not short then
         error("Wrong input")
@@ -79,7 +87,7 @@ function scripts.people:print_id_details(id)
     end
     person = person[1]
 
-    scripts:print_log(scripts.people:print_person(person, true))
+    self:print(scripts.people:print_person(person, true))
 end
 
 function scripts.people:search(short)
@@ -90,11 +98,11 @@ function scripts.people:search(short)
     local results = db:fetch(scripts.people.db.people, db:like(scripts.people.db.people.short, "%" .. short .. "%"))
 
     if table.size(results) > 0 then
-        local str_print = "Znalazlem:"
+        local str_print = "Znalazlem:\n"
         for k, v in pairs(results) do
             str_print = str_print .. scripts.people:print_person(v)
         end
-        scripts:print_log(str_print)
+        self:print(str_print)
     else
         scripts:print_log("Nic nie znalazlem")
     end
@@ -117,11 +125,11 @@ function scripts.people:print_guilded(guild_name)
     local results = db:fetch(scripts.people.db.people, db:eq(scripts.people.db.people.guild, guild_code))
 
     if table.size(results) > 0 then
-        local str_print = "Znalazlem:"
+        local str_print = "Znalazlem:\n"
         for k, v in pairs(results) do
             str_print = str_print .. scripts.people:print_person(v)
         end
-        scripts:print_log(str_print)
+        self:print(str_print)
     else
         scripts:print_log("Nie ma osob przypisanych do tej gildii")
     end
@@ -168,11 +176,11 @@ function scripts.people:search_hard(phrase)
     local results = db:fetch(scripts.people.db.people, db:like(scripts.people.db.people.title, "%" .. phrase .. "%"))
 
     if table.size(results) > 0 then
-        local str_print = "Znalazlem:"
+        local str_print = "Znalazlem:\n"
         for k, v in pairs(results) do
             str_print = str_print .. scripts.people:print_person(v)
         end
-        scripts:print_log(str_print)
+        self:print(str_print)
     else
         scripts:print_log("Nic nie znalazlem")
     end
@@ -187,11 +195,11 @@ function scripts.people:search_name(name)
     local results = db:fetch(scripts.people.db.people, db:eq(scripts.people.db.people.name, search_name))
 
     if table.size(results) > 0 then
-        local str_print = "Znalazlem:"
+        local str_print = "Znalazlem:\n"
         for k, v in pairs(results) do
             str_print = str_print .. scripts.people:print_person(v, true)
         end
-        scripts:print_log(str_print)
+        self:print(str_print)
     else
         scripts:print_log("Nic nie znalazlem")
     end

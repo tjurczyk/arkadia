@@ -76,7 +76,6 @@ Dostepne eventy w skryptach:
   Event podniesiony gdy gracz wykonuje ruch przez niego zainicjowany
   Argumenty:
     arg1: kierunek
-    arg2: czy wymuszone (true/false)
 
 --------------------------------------
 

@@ -34,6 +34,9 @@ function amap:follow(direction, is_team_follow)
         amap.curr.y = -amap.curr.y
         amap:may_prepare_next_go_dir()
         centerview(amap.curr.id)
+        if not is_team_follow then
+            raiseEvent("amapWalking", direction)
+        end
         raiseEvent("amapNewLocation", amap.curr.id, direction)
         amap:copy_loc(amap.prev, amap.curr)
         return true

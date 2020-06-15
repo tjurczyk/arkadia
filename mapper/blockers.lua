@@ -3,8 +3,8 @@ amap.blockers = amap.blockers or {
 }
 
 function amap.blockers:init()
-    scripts.event_register:register_event_handler("amapWalking", function() self:set_blockable(true) end)
-    scripts.event_register:register_event_handler("gmcp.room.info", function() self:set_blockable(false) end)
+    scripts.event_register:register_singleton_event_handler("blocker1", "amapWalking", function() self:set_blockable(true) end)
+    scripts.event_register:register_singleton_event_handler("blocker2", "gmcp.room.info", function() self:set_blockable(false) end)
 end
 
 function amap.blockers:block()

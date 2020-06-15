@@ -1,5 +1,5 @@
 misc["weapon_damaged_desc"] = {
-    ["w znakomitym stanie."] = "",
+    ["w znakomitym stanie."] = "[max]",
     ["w dobrym stanie."] = "[6/7]",
     ["liczne walki wyryly na niej swoje pietno."] = "[5/7]",
     ["liczne walki wyryly na nim swoje pietno."] = "[5/7]",
@@ -34,5 +34,10 @@ function misc:weapon_damaged_replace(text)
     replace(text .. add_text)
     selectString(misc.weapon_damaged_desc[text], 1)
     resetFormat()
+end
+
+function misc:weapon_damaged_wyryly(text, weapon)
+    selectCaptureGroup(1)
+    creplace("Wyglada na to, ze na " .. weapon .. " <yellow>liczne walki wyryly swoje pietno. [5/7]<reset>")
 end
 

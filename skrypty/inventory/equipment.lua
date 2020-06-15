@@ -86,6 +86,10 @@ function trigger_func_skrypty_inventory_equipment_bron_poziom_zniszczenia()
     misc:weapon_damaged_replace(matches[3])
 end
 
+function trigger_func_skrypty_inventory_equipment_bron_wyryly()
+    misc:weapon_damaged_wyryly(matches[1], matches[2])
+end
+
 function trigger_func_skrypty_inventory_equipment_ubranie_zbiorcze()
     misc:wear_process_item(multimatches[1][2], multimatches[2][2])
 end

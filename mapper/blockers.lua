@@ -22,10 +22,6 @@ function amap.blockers:set_blockable(state)
     self.is_blockable = state
 end
 
-function trigger_func_mapper_blockers_blockers()
-    amap.blockers:block()
-end
-
 function trigger_func_mapper_blockers_blocker_team_dependent()
     if amap.blockers.is_blockable then
         amap.blockers:block()

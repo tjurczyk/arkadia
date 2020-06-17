@@ -82,6 +82,7 @@ end
 
 function ateam:print_status()
     clearUserWindow(scripts.ui.states_window_name)
+    clearUserWindow(scripts.ui.enemy_states_window_name)
 
     if scripts.ui.cfg.states_window_navbar then
         cecho(scripts.ui.states_window_name, "\n  <white>" .. scripts.ui.states_window_navbar_str)
@@ -387,40 +388,40 @@ function ateam:print_obj_enemy(id, obj)
 
         -- special section
         if obj["attack_target"] == true then
-            cecho(scripts.ui.states_window_name, "<red:team_console_bg>>>")
+            cecho(scripts.ui.enemy_states_window_name, "<red:team_console_bg>>>")
 
-            moveCursorEnd(scripts.ui.states_window_name)
-            local a = selectString(scripts.ui.states_window_name, ">>", 1)
+            moveCursorEnd(scripts.ui.enemy_states_window_name)
+            local a = selectString(scripts.ui.enemy_states_window_name, ">>", 1)
 
-            setLink(scripts.ui.states_window_name, [[ateam:ra_func("]] .. ateam.enemy_op_ids[id] .. [[")]], "rozkaz zaatakowac " .. ateam.enemy_op_ids[id])
-            deselect(scripts.ui.states_window_name)
+            setLink(scripts.ui.enemy_states_window_name, [[ateam:ra_func("]] .. ateam.enemy_op_ids[id] .. [[")]], "rozkaz zaatakowac " .. ateam.enemy_op_ids[id])
+            deselect(scripts.ui.enemy_states_window_name)
         else
-            cecho(scripts.ui.states_window_name, "<white:team_console_bg>  ")
+            cecho(scripts.ui.enemy_states_window_name, "<white:team_console_bg>  ")
 
-            moveCursorEnd(scripts.ui.states_window_name)
-            local a = selectString(scripts.ui.states_window_name, "  ", 1)
+            moveCursorEnd(scripts.ui.enemy_states_window_name)
+            local a = selectString(scripts.ui.enemy_states_window_name, "  ", 1)
 
-            setLink(scripts.ui.states_window_name, [[ateam:wa_func("]] .. ateam.enemy_op_ids[id] .. [[")]], "wskaz " .. ateam.enemy_op_ids[id] .. " jako cel ataku")
-            deselect(scripts.ui.states_window_name)
+            setLink(scripts.ui.enemy_states_window_name, [[ateam:wa_func("]] .. ateam.enemy_op_ids[id] .. [[")]], "wskaz " .. ateam.enemy_op_ids[id] .. " jako cel ataku")
+            deselect(scripts.ui.enemy_states_window_name)
         end
 
         -- id section
-        cecho(scripts.ui.states_window_name, "<white:team_console_bg>[" .. str_id .. "]")
+        cecho(scripts.ui.enemy_states_window_name, "<white:team_console_bg>[" .. str_id .. "]")
 
         -- sneaky id section
         if ateam.sneaky_attack > 0 then
             if ateam.sneaky_attack == 2 or ateam:can_perform_sneaky_attack() then
-                cecho(scripts.ui.states_window_name, "<white:team_console_bg>[  ]")
+                cecho(scripts.ui.enemy_states_window_name, "<white:team_console_bg>[  ]")
             end
         end
 
         -- hp section
-        cecho(scripts.ui.states_window_name, "<white:team_console_bg>[" .. states[obj["hp"]] .. "<grey:team_console_bg>] ")
+        cecho(scripts.ui.enemy_states_window_name, "<white:team_console_bg>[" .. states[obj["hp"]] .. "<grey:team_console_bg>] ")
 
         if print_id then
-            selectString(scripts.ui.states_window_name, states_no_color[obj["hp"]], 1)
-            setLink(scripts.ui.states_window_name, [[ ateam:prze_func("]] .. ateam.enemy_op_ids[id] .. [[", true) ]], "przelam obrone " .. ateam.enemy_op_ids[id])
-            deselect(scripts.ui.states_window_name)
+            selectString(scripts.ui.enemy_states_window_name, states_no_color[obj["hp"]], 1)
+            setLink(scripts.ui.enemy_states_window_name, [[ ateam:prze_func("]] .. ateam.enemy_op_ids[id] .. [[", true) ]], "przelam obrone " .. ateam.enemy_op_ids[id])
+            deselect(scripts.ui.enemy_states_window_name)
         end
 
         -- name section
@@ -430,50 +431,50 @@ function ateam:print_obj_enemy(id, obj)
         local is_enemy = false
         if ateam.objs[ateam.my_id]["attack_num"] == id then
             if ateam.paralyzed_names[obj["desc"]] then
-                cecho(scripts.ui.states_window_name, "<" .. ateam.options.enemy_stun_fg_color .. ":" .. ateam.options.enemy_stun_bg_color .. ">" .. str_name)
+                cecho(scripts.ui.enemy_states_window_name, "<" .. ateam.options.enemy_stun_fg_color .. ":" .. ateam.options.enemy_stun_bg_color .. ">" .. str_name)
             else
-                cecho(scripts.ui.states_window_name, "<red:team_console_bg>" .. str_name)
+                cecho(scripts.ui.enemy_states_window_name, "<red:team_console_bg>" .. str_name)
             end
 
             is_enemy = true
         elseif obj["enemy"] == true or ateam.team[obj["attack_num"]] then
             if ateam.paralyzed_names[obj["desc"]] then
-                cecho(scripts.ui.states_window_name, "<" .. ateam.options.enemy_stun_fg_color .. ":" .. ateam.options.enemy_stun_bg_color .. ">" .. str_name)
+                cecho(scripts.ui.enemy_states_window_name, "<" .. ateam.options.enemy_stun_fg_color .. ":" .. ateam.options.enemy_stun_bg_color .. ">" .. str_name)
             else
-                cecho(scripts.ui.states_window_name, "<dark_violet:team_console_bg>" .. str_name)
+                cecho(scripts.ui.enemy_states_window_name, "<dark_violet:team_console_bg>" .. str_name)
             end
 
             is_enemy = true
         else
             if ateam.paralyzed_names[obj["desc"]] then
-                cecho(scripts.ui.states_window_name, "<" .. ateam.options.enemy_stun_fg_color .. ":" .. ateam.options.enemy_stun_bg_color .. ">" .. str_name)
+                cecho(scripts.ui.enemy_states_window_name, "<" .. ateam.options.enemy_stun_fg_color .. ":" .. ateam.options.enemy_stun_bg_color .. ">" .. str_name)
             else
-                cecho(scripts.ui.states_window_name, "<white:team_console_bg>" .. str_name)
+                cecho(scripts.ui.enemy_states_window_name, "<white:team_console_bg>" .. str_name)
             end
         end
 
         -- if is the part of the fight then set zas2 link
         if is_enemy then
-            selectString(scripts.ui.states_window_name, str_name, 1)
-            setLink(scripts.ui.states_window_name, [[ ateam:zas_func("]] .. ateam.enemy_op_ids[id] .. [[") ]], "zaslon przed " .. ateam.enemy_op_ids[id])
-            deselect(scripts.ui.states_window_name)
+            selectString(scripts.ui.enemy_states_window_name, str_name, 1)
+            setLink(scripts.ui.enemy_states_window_name, [[ ateam:zas_func("]] .. ateam.enemy_op_ids[id] .. [[") ]], "zaslon przed " .. ateam.enemy_op_ids[id])
+            deselect(scripts.ui.enemy_states_window_name)
         end
 
         -- attacking by whom section
         if table.size(ateam.attacking_by_team[id]) > 0 then
             by_whom_str = "  -> [" .. table.concat(ateam.attacking_by_team[id], ",") .. "]   "
-            cecho(scripts.ui.states_window_name, "<white:team_console_bg>" .. by_whom_str)
+            cecho(scripts.ui.enemy_states_window_name, "<white:team_console_bg>" .. by_whom_str)
         end
 
         -- if is the part of the fight then set zab link
         if print_id then
-            selectString(scripts.ui.states_window_name, print_id, 1)
-            setLink(scripts.ui.states_window_name, [[ ateam:zab_func(" ]] .. ateam.enemy_op_ids[id] .. [[") ]], "zabij " .. ateam.enemy_op_ids[id])
-            deselect(scripts.ui.states_window_name)
+            selectString(scripts.ui.enemy_states_window_name, print_id, 1)
+            setLink(scripts.ui.enemy_states_window_name, [[ ateam:zab_func(" ]] .. ateam.enemy_op_ids[id] .. [[") ]], "zabij " .. ateam.enemy_op_ids[id])
+            deselect(scripts.ui.enemy_states_window_name)
         end
 
-        cecho(scripts.ui.states_window_name, "\n")
-        moveCursorEnd(scripts.ui.states_window_name)
+        cecho(scripts.ui.enemy_states_window_name, "\n")
+        moveCursorEnd(scripts.ui.enemy_states_window_name)
     end
 end
 
@@ -495,45 +496,45 @@ function ateam:print_obj_normal(id, obj)
             str_id = " " .. print_id
         end
 
-        cecho(scripts.ui.states_window_name, "<white:team_console_bg>  ")
+        cecho(scripts.ui.enemy_states_window_name, "<white:team_console_bg>  ")
 
-        moveCursorEnd(scripts.ui.states_window_name)
-        local a = selectString(scripts.ui.states_window_name, "  ", 1)
+        moveCursorEnd(scripts.ui.enemy_states_window_name)
+        local a = selectString(scripts.ui.enemy_states_window_name, "  ", 1)
 
-        setLink(scripts.ui.states_window_name, [[ateam:por_func("ob_]] .. id .. [[")]], "porownaj sie z " .. obj["desc"])
-        deselect(scripts.ui.states_window_name)
+        setLink(scripts.ui.enemy_states_window_name, [[ateam:por_func("ob_]] .. id .. [[")]], "porownaj sie z " .. obj["desc"])
+        deselect(scripts.ui.enemy_states_window_name)
 
         -- id section
-        cecho(scripts.ui.states_window_name, "<white:team_console_bg>[" .. str_id .. "<white:team_console_bg>]")
+        cecho(scripts.ui.enemy_states_window_name, "<white:team_console_bg>[" .. str_id .. "<white:team_console_bg>]")
 
         -- sneaky id section
         if ateam.sneaky_attack > 0 then
             if ateam.sneaky_attack == 2 or ateam:can_perform_sneaky_attack() then
-                cecho(scripts.ui.states_window_name, "<white:team_console_bg>[<sky_blue:team_console_bg>xx<white:team_console_bg>]")
-                selectString(scripts.ui.states_window_name, "xx", 1)
-                setLink(scripts.ui.states_window_name, [[ ateam:sneaky_zab_func("]] .. id .. [[") ]], "zaskocz " .. obj["desc"])
-                deselect(scripts.ui.states_window_name)
+                cecho(scripts.ui.enemy_states_window_name, "<white:team_console_bg>[<sky_blue:team_console_bg>xx<white:team_console_bg>]")
+                selectString(scripts.ui.enemy_states_window_name, "xx", 1)
+                setLink(scripts.ui.enemy_states_window_name, [[ ateam:sneaky_zab_func("]] .. id .. [[") ]], "zaskocz " .. obj["desc"])
+                deselect(scripts.ui.enemy_states_window_name)
             end
         end
 
         -- hp section
-        cecho(scripts.ui.states_window_name, "<white:team_console_bg>[" .. states[obj["hp"]] .. "<white:team_console_bg>] ")
+        cecho(scripts.ui.enemy_states_window_name, "<white:team_console_bg>[" .. states[obj["hp"]] .. "<white:team_console_bg>] ")
 
         -- name section
         local str_name = obj["desc"]
 
         -- set color for desc
-        cecho(scripts.ui.states_window_name, "<white:team_console_bg>" .. str_name)
+        cecho(scripts.ui.enemy_states_window_name, "<white:team_console_bg>" .. str_name)
 
         -- if print_id not nil (numbering normals) then set zab function on it
         if print_id then
-            selectString(scripts.ui.states_window_name, print_id, 1)
-            setLink(scripts.ui.states_window_name, [[ ateam:zab_func(" ]] .. ateam.normal_ids[id] .. [[") ]], "zabij " .. ateam.normal_ids[id])
-            deselect(scripts.ui.states_window_name)
+            selectString(scripts.ui.enemy_states_window_name, print_id, 1)
+            setLink(scripts.ui.enemy_states_window_name, [[ ateam:zab_func(" ]] .. ateam.normal_ids[id] .. [[") ]], "zabij " .. ateam.normal_ids[id])
+            deselect(scripts.ui.enemy_states_window_name)
         end
 
-        cecho(scripts.ui.states_window_name, "\n")
-        moveCursorEnd(scripts.ui.states_window_name)
+        cecho(scripts.ui.enemy_states_window_name, "\n")
+        moveCursorEnd(scripts.ui.enemy_states_window_name)
     end
 end
 

@@ -356,8 +356,8 @@
 						</regexCodePropertyList>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-						<name>ekwipunek_poziom_zniszczenia</name>
-						<script>trigger_func_skrypty_inventory_equipment_ekwipunek_poziom_zniszczenia()</script>
+						<name>poziom_zniszczenia</name>
+						<script>trigger_func_skrypty_inventory_equipment_poziom_zniszczenia()</script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
 						<mStayOpen>0</mStayOpen>
@@ -369,27 +369,7 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^Wyglada na to, ze (sa|jest) ([a-z .]+)$</string>
-						</regexCodeList>
-						<regexCodePropertyList>
-							<integer>1</integer>
-						</regexCodePropertyList>
-					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-						<name>bron_poziom_zniszczenia</name>
-						<script>trigger_func_skrypty_inventory_equipment_bron_poziom_zniszczenia()</script>
-						<triggerType>0</triggerType>
-						<conditonLineDelta>0</conditonLineDelta>
-						<mStayOpen>0</mStayOpen>
-						<mCommand></mCommand>
-						<packageName></packageName>
-						<mFgColor>#ff0000</mFgColor>
-						<mBgColor>#ffff00</mBgColor>
-						<mSoundFile></mSoundFile>
-						<colorTriggerFgColor>#000000</colorTriggerFgColor>
-						<colorTriggerBgColor>#000000</colorTriggerBgColor>
-						<regexCodeList>
-							<string>^Wyglada na to, ze (jest |)([a-z .]+)$</string>
+							<string>^Wyglada na to, ze (|sa|jest) ([a-z .]+)$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -624,7 +604,7 @@
 						</regexCodePropertyList>
 						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 							<name>bronie poziom zniszczenia</name>
-							<script>trigger_func_skrypty_inventory_equipment_bron_poziom_zniszczenia()</script>
+							<script>trigger_func_skrypty_inventory_equipment_poziom_zniszczenia()</script>
 							<triggerType>0</triggerType>
 							<conditonLineDelta>1</conditonLineDelta>
 							<mStayOpen>0</mStayOpen>
@@ -637,16 +617,18 @@
 							<colorTriggerBgColor>#000000</colorTriggerBgColor>
 							<regexCodeList>
 								<string>^(.*) jest (.*)$</string>
+								<string>Wyglada na to, ze (sa|jest) ([a-z .]+)$</string>
 							</regexCodeList>
 							<regexCodePropertyList>
+								<integer>1</integer>
 								<integer>1</integer>
 							</regexCodePropertyList>
 						</Trigger>
 						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-							<name>ekwipunek poziom zniszczenia</name>
-							<script>trigger_func_skrypty_inventory_equipment_ekwipunek_poziom_zniszczenia()</script>
+							<name>wyryly swoje pietno</name>
+							<script>trigger_func_skrypty_inventory_equipment_bron_wyryly()</script>
 							<triggerType>0</triggerType>
-							<conditonLineDelta>1</conditonLineDelta>
+							<conditonLineDelta>0</conditonLineDelta>
 							<mStayOpen>0</mStayOpen>
 							<mCommand></mCommand>
 							<packageName></packageName>
@@ -656,7 +638,7 @@
 							<colorTriggerFgColor>#000000</colorTriggerFgColor>
 							<colorTriggerBgColor>#000000</colorTriggerBgColor>
 							<regexCodeList>
-								<string>Wyglada na to, ze (sa|jest) ([a-z .]+)$</string>
+								<string>^Liczne slady walk wyryly na (.*) swoje pietno\.</string>
 							</regexCodeList>
 							<regexCodePropertyList>
 								<integer>1</integer>

@@ -105,7 +105,6 @@ return {
     "skrypty/misc/levels",
     "skrypty/misc/item_used",
     "skrypty/misc/item_damaged",
-    "skrypty/misc/weapon_damaged",
     "skrypty/misc/wear_used",
     "skrypty/misc/wear_collective",
     "skrypty/misc/weapon_item_collective",

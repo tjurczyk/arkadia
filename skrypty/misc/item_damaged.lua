@@ -1,4 +1,5 @@
 misc["item_damaged_desc"] = {
+    -- items
     ["w znakomitym stanie."] = "[max]",
     ["lekko podniszczona."] = "[4/5]",
     ["lekko podniszczone."] = "[4/5]",
@@ -8,9 +9,19 @@ misc["item_damaged_desc"] = {
     ["gotowy sie rozpasc w kazdej chwili."] = "[1/5]",
     ["gotowa sie rozpasc w kazdej chwili."] = "[1/5]",
     ["gotowe sie rozpasc w kazdej chwili."] = "[1/5]",
+    -- weapons
+    ["w znakomitym stanie."] = "[max]",
+    ["w dobrym stanie."] = "[6/7]",
+    ["liczne walki wyryly na niej swoje pietno."] = "[5/7]",
+    ["liczne walki wyryly na nim swoje pietno."] = "[5/7]",
+    ["w zlym stanie."] = "[4/7]",
+    ["w bardzo zlym stanie."] = "[3/7]",
+    ["wymaga natychmiastowej konserwacji."] = "[2/7]",
+    ["moze peknac w kazdej chwili."] = "[1/7]",
 }
 
 misc["item_damaged_color"] = {
+    -- items
     ["w znakomitym stanie."] = "green",
     ["lekko podniszczona."] = "yellow",
     ["lekko podniszczone."] = "yellow",
@@ -20,6 +31,15 @@ misc["item_damaged_color"] = {
     ["gotowy sie rozpasc w kazdej chwili."] = "red",
     ["gotowa sie rozpasc w kazdej chwili."] = "red",
     ["gotowe sie rozpasc w kazdej chwili."] = "red",
+    -- weapons
+    ["w znakomitym stanie."] = "green",
+    ["w dobrym stanie."] = "green",
+    ["liczne walki wyryly na niej swoje pietno."] = "yellow",
+    ["liczne walki wyryly na nim swoje pietno."] = "yellow",
+    ["w zlym stanie."] = "red",
+    ["w bardzo zlym stanie."] = "red",
+    ["wymaga natychmiastowej konserwacji."] = "red",
+    ["moze peknac w kazdej chwili."] = "red",
 }
 
 function misc:item_damaged_replace(text)
@@ -31,3 +51,7 @@ function misc:item_damaged_replace(text)
     resetFormat()
 end
 
+function misc:weapon_damaged_wyryly(text, weapon)
+    selectCaptureGroup(1)
+    creplace("Wyglada na to, ze na " .. weapon .. " <yellow>liczne walki wyryly swoje pietno. [5/7]<reset>")
+end

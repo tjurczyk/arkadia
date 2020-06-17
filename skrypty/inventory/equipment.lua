@@ -78,12 +78,12 @@ function trigger_func_skrypty_inventory_equipment_ekwipunek_poziom_zuzycia()
     misc:item_used_replace(matches[2])
 end
 
-function trigger_func_skrypty_inventory_equipment_ekwipunek_poziom_zniszczenia()
+function trigger_func_skrypty_inventory_equipment_poziom_zniszczenia()
     misc:item_damaged_replace(matches[3])
 end
 
-function trigger_func_skrypty_inventory_equipment_bron_poziom_zniszczenia()
-    misc:weapon_damaged_replace(matches[3])
+function trigger_func_skrypty_inventory_equipment_bron_wyryly()
+    misc:weapon_damaged_wyryly(matches[1], matches[2])
 end
 
 function trigger_func_skrypty_inventory_equipment_ubranie_zbiorcze()

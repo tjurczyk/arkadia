@@ -801,6 +801,11 @@ amap.using_room_gps = true
 amap.db.show_notes = true
 amap.db.show_binds = true
 
+-- Klucze do zapisywania i odtwarzania z bazy danych dla eventow 'amapMapKeysSave' i 'amapMapKeysSave'
+-- czyli zazwyczaj przed pobraniem mapy i po zainstalowaniu nowej mapy
+-- przykladowe wartosci { "bind", "bind_printable" }
+amap.db.personal_keys.backup_keys = {}
+
 ------------------------------------------
 
 -- Domyslna opcja startowa czy chodzik jest wlaczony czy nie

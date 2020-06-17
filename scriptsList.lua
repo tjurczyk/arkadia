@@ -150,6 +150,7 @@ return {
     "skrypty/ui/log_cmds_ui",
     "skrypty/ui/ui_mapper_loaded_event",
     "mapper/db/core",
+    "mapper/db/personal_keys",
     "mapper/db/utils",
     "mapper/db/help",
     "mapper/events/set_location_event",

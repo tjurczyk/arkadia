@@ -3,6 +3,7 @@ function herbs:init_herbs()
         herbs:delete_triggers()
         herbs:create_triggers()
     end
+    herbs:v2_init_data()
 end
 
 function herbs:check_single_bag(herbs_str)
@@ -67,6 +68,10 @@ function herbs:extract_herbs(herbs_arr)
                     item["amount"] = 1
                 end
             end
+        end
+        if item["name"] == nil then
+            scripts:print_log("nierozpnawalne ziolo: " .. tostring(v), true)
+            error("nierozpnawalne ziolo: " .. tostring(v))
         end
         extracted[item.name] = item
     end

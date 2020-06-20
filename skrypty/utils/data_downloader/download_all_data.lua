@@ -21,6 +21,7 @@ end
 
 function herbs_data_downloaded(resume_coroutine_id, decoded_data)
     herbs["data"] = decoded_data
+    herbs:v2_init_herbs()
     coroutine.resume(resume_coroutine_id)
     coroutine.resume(scripts.utils.download_all_data_coroutine_id)
 end

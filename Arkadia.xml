@@ -571,10 +571,8 @@
 						<regexCodeList>
 							<string>^Nagle (?:\w+ )+(\w+) rozpruwa sie\.(?:.*)</string>
 							<string>^Niestety zbyt mocnym ruchem rozrywasz (?:\w+ )+(\w+), drac go na bezwartosciowe pasy materialu\.$</string>
-							<string>^Czujesz, ze (?:\w+ )+(\w+) po prostu rozpada ci sie w rekach\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
-							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
 						</regexCodePropertyList>
@@ -597,8 +595,10 @@
 							<string>^Fachowym okiem spogladasz</string>
 							<string>^Dokladnie obracasz w dloniach</string>
 							<string>^Fachowym okiem osoby, ktora z doswiadczenia wie, jak wazna</string>
+							<string>^Przygladasz sie krytycznie .*, sprawdzajac palcem .* stan\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
+							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
@@ -620,8 +620,12 @@
 							<regexCodeList>
 								<string>^(.*) jest (.*)$</string>
 								<string>Wyglada na to, ze (sa|jest) ([a-z .]+)$</string>
+								<string>^(.*) (wymaga natychmiastowej konserwacji\.)</string>
+								<string>^(.*) (moze peknac w kazdej chwili\.)</string>
 							</regexCodeList>
 							<regexCodePropertyList>
+								<integer>1</integer>
+								<integer>1</integer>
 								<integer>1</integer>
 								<integer>1</integer>
 							</regexCodePropertyList>

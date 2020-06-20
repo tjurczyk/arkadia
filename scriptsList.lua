@@ -79,7 +79,6 @@ return {
     "skrypty/herbs/aliases_v2",
     "skrypty/herbs/db",
     "skrypty/herbs/help",
-    "skrypty/herbs/v1_data",
     "skrypty/people/core",
     "skrypty/people/tools",
     "skrypty/people/bind",

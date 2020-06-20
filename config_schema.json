@@ -1,0 +1,49 @@
+{
+  "macro_to_reload_elements": {
+    "_ateam": [
+      {
+        "macro_type": "func_call",
+        "func_name": "ateam.restart_ateam",
+        "func_args": [
+          true
+        ]
+      }
+    ],
+    "_all": [
+      {
+        "macro_type": "macro",
+        "macro_name": "_ateam"
+      }
+    ]
+  },
+  "fields": [
+    {
+      "name": "scripts.character_name",
+      "default_value": "Erkal",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "ateam.all_numbering",
+      "default_value": true,
+      "field_type": "boolean",
+      "macros_on_modify": [
+        "_ateam"
+      ]
+    },
+    {
+      "name": "ateam.attack_commands",
+      "default_value": ["zabij"],
+      "field_type": "list",
+      "macros_on_modify": [
+        "_ateam"
+      ]
+    },
+    {
+      "name": "scripts.people.colored_guilds",
+      "default_value": {},
+      "field_type": "map",
+      "macros_on_modify": []
+    }
+  ]
+}

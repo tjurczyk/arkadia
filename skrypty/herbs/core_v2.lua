@@ -1,3 +1,41 @@
+function herbs:v2_init_data()
+    herbs["herbs_long_to_short"] = {}
+    herbs["herbs_details"] = {}
+
+    if not io.exists(herbs.data_file_path) then
+        scripts:print_log("baza ziol niedostepna, skrypt do ziol nie bedzie dzialal")
+        return
+    end
+
+    local file_handle = assert(io.open(herbs.data_file_path, "r"))
+    local file_content = file_handle:read("*all")
+    herbs["data"] = yajl.to_value(file_content)
+    herbs:v2_init_herbs()
+end
+
+function herbs:v2_init_herbs()
+    for herb_name, herb_odmiana in pairs(herbs.data.herb_id_to_odmiana) do
+        for _, herb_odmiana_val in pairs(herb_odmiana) do
+            herbs.herbs_long_to_short[herb_odmiana_val] = herb_name
+        end
+    end
+    for herb_name, herb_actions in pairs(herbs.data.herb_id_to_use) do
+        local herb_action_str = ""
+        for idx, herb_action in pairs(herb_actions) do
+            if herb_action["effect"] ~= nil and herb_action["action"] then
+                herb_action_str = herb_action_str .. herb_action["action"] .. ": " .. herb_action["effect"]
+            end
+            if idx ~= #herb_actions then
+                herb_action_str = herb_action_str .. " | "
+            end
+        end
+        herbs.herbs_details[herb_name] = {}
+        herbs.herbs_details[herb_name]["desc"] = herbs.data.herb_id_to_odmiana[herb_name]["mianownik"]
+        herbs.herbs_details[herb_name]["acc"] = herbs.data.herb_id_to_odmiana[herb_name]["mianownik"]
+        herbs.herbs_details[herb_name]["details"] = herb_action_str
+    end
+end
+
 function herbs:v2_print_db()
     if not herbs["data"] then
         return

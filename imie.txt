@@ -839,6 +839,20 @@ amap.walker_delay = 2
 
 ------------------------------------------
 
+-- Domyslna opcja blockerow
+--
+-- Eksperymentalne blockery, z zalozenia dzialaja w szerzszej liczbie przypadkow
+-- unikajac cofniec bedac czlonkiem druzyny
+-- Jezeli po wlaczeniu zauwazysz problemy, wylacz je i zglos na Discord
+--
+-- Dozwolone wartosci
+-- true - wlaczone
+-- false - wylaczone
+--
+amap.blocker.is_experimental = false
+
+------------------------------------------
+
 -- Domyslna opcja startowa rozy wiatrow (czy ma byc wlaczona)
 --
 -- Dozwolone wartosci

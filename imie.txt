@@ -849,7 +849,7 @@ amap.walker_delay = 2
 -- true - wlaczone
 -- false - wylaczone
 --
-amap.blocker.is_experimental = false
+amap.blockers.is_experimental = false
 
 ------------------------------------------
 

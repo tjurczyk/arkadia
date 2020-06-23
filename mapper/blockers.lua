@@ -1,4 +1,5 @@
 amap.blockers = amap.blockers or {
+    is_experimental = false,
     is_blockable = false
 }
 
@@ -12,6 +13,10 @@ function amap.blockers:block()
         return
     end
 
+    if not self.is_blockable and self.is_experimental then
+        return
+    end
+
     self:set_blockable(false)
     raiseEvent("amapBlockerFired")
     amap:move_backward()
@@ -22,8 +27,12 @@ function amap.blockers:set_blockable(state)
     self.is_blockable = state
 end
 
+function trigger_func_mapper_blockers_blocker()
+    amap.blockers:block()
+end
+
 function trigger_func_mapper_blockers_blocker_team_dependent()
-    if amap.blockers.is_blockable then
+    if (ateam.objs[ateam.my_id]["team_leader"] or not ateam.objs[ateam.my_id]["team"]) or self.is_experimental then
         amap.blockers:block()
     end
 end

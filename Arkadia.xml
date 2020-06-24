@@ -22467,6 +22467,7 @@
 						<string>Nie mozesz sie tam udac, gdyz musisz najpierw zejsc z wozu</string>
 						<string>Ruszasz razno na [a-z]+, lecz po kilku krokach grzezniesz w krzakach.</string>
 						<string>^Nie mozesz tak po prostu wymknac sie z walki\.$</string>
+                        <string>^Ruszasz w dalsza droge ale nagle stajesz w pol kroku\. Masz dziwne odczucie, ze w tym miejscu grozi ci jakies niebezpieczenstwo\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -22498,6 +22499,7 @@
 						<integer>0</integer>
 						<integer>0</integer>
 						<integer>0</integer>
+						<integer>1</integer>
 						<integer>1</integer>
 						<integer>1</integer>
 					</regexCodePropertyList>

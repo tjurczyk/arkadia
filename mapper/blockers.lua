@@ -32,7 +32,7 @@ function trigger_func_mapper_blockers_blocker()
 end
 
 function trigger_func_mapper_blockers_blocker_team_dependent()
-    if (ateam.objs[ateam.my_id]["team_leader"] or not ateam.objs[ateam.my_id]["team"]) or self.is_experimental then
+    if (ateam.objs[ateam.my_id]["team_leader"] or not ateam.objs[ateam.my_id]["team"]) or amap.blockers.is_experimental then
         amap.blockers:block()
     end
 end

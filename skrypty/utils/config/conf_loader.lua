@@ -56,7 +56,7 @@ function scripts_load_config(name)
                 after_profile_load()
                 scripts:print_log("Ok, profil " .. name .. " zaladowany")
             else
-                scripts:print_log("Masz stary plik imie.txt. Zalecana aktualizacja.")
+                scripts:print_log("Masz stary plik imie.txt. Zalecana aktualizacja. Aktualny domyslny plik znajdziesz w " .. getMudletHomeDir() .. "/arkadia/imie.txt")
             end
         end)
     else

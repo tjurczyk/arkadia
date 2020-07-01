@@ -43,15 +43,21 @@ misc["item_damaged_color"] = {
 }
 
 function misc:item_damaged_replace(text)
+    if misc.item_damaged_desc[text] == nil then
+        setTriggerStayOpen("gzocen", 0)
+        return
+    end
     fg(misc.item_damaged_color[text])
     selectString(text, 1)
     local add_text = " " .. misc.item_damaged_desc[text]
     replace(text .. add_text)
     selectString(misc.item_damaged_desc[text], 1)
     resetFormat()
+    setTriggerStayOpen("gzocen", 1)
 end
 
 function misc:weapon_damaged_wyryly(text, weapon)
     selectCaptureGroup(1)
     creplace("Wyglada na to, ze na " .. weapon .. " <yellow>liczne walki wyryly swoje pietno. [5/7]<reset>")
+    setTriggerStayOpen("gzocen", 1)
 end

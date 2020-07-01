@@ -582,7 +582,7 @@
 						<script></script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
-						<mStayOpen>10</mStayOpen>
+						<mStayOpen>1</mStayOpen>
 						<mCommand></mCommand>
 						<packageName></packageName>
 						<mFgColor>#ff0000</mFgColor>

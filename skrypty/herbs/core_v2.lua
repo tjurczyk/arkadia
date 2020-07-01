@@ -31,7 +31,7 @@ function herbs:v2_init_herbs()
         end
         herbs.herbs_details[herb_name] = {}
         herbs.herbs_details[herb_name]["desc"] = herbs.data.herb_id_to_odmiana[herb_name]["mianownik"]
-        herbs.herbs_details[herb_name]["acc"] = herbs.data.herb_id_to_odmiana[herb_name]["mianownik"]
+        herbs.herbs_details[herb_name]["acc"] = herbs.data.herb_id_to_odmiana[herb_name]["biernik"]
         herbs.herbs_details[herb_name]["details"] = herb_action_str
     end
 end

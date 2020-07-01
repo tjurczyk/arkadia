@@ -22999,6 +22999,20 @@
 					<packageName></packageName>
 					<regex>^/puszczaj_zaslony$</regex>
 				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>add_next_attack_obj</name>
+					<script>ateam:add_next_attack_obj(tonumber(matches[2]))</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/q ([0-9]+)$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>execute_nn</name>
+					<script>ateam_execute_next_attack_obj()</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/nn$</regex>
+				</Alias>
 			</AliasGroup>
 			<AliasGroup isActive="yes" isFolder="yes">
 				<name>inventory</name>

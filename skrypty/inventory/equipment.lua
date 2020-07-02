@@ -79,7 +79,7 @@ function trigger_func_skrypty_inventory_equipment_ekwipunek_poziom_zuzycia()
 end
 
 function trigger_func_skrypty_inventory_equipment_poziom_zniszczenia()
-    misc:item_damaged_replace(matches[3])
+    misc:item_damaged_replace(matches[2])
 end
 
 function trigger_func_skrypty_inventory_equipment_bron_wyryly()

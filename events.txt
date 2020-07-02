@@ -90,7 +90,13 @@ Dostepne eventy w skryptach:
 
 - "ateamTeamFollowBind"
 
-  Event podniesiony gdy zostalo zbindowane przejscie specjalne za prowadzacym
+  Event podniesiony gdy zostalo zbindowane przejscie specjalne za prowadzacym.
+
+- "ateamEnemyKilled"
+
+  Event podniesiony gdy zostal pokonany przeciwnik na lokacji.
+  Argumenty:
+    arg1: ilosc pozostalych przeciwnikow
 
 
 --------------------------------------
@@ -149,6 +155,14 @@ Dostepne eventy w skryptach:
     arg1: id bindu
 
   Event podniesiony po wykonaniu bindu tymczasowego
+
+- "ateam_next_attack_obj_bind"
+  Argumenty:
+    arg1: id arkadiowe obiektu
+    arg2: id mudletowe obiektu
+    arg3: ateam.obj obiektu
+
+  Event podniesiony gdy zbindowany zostanie atak z kolejki pod /nn
 
 --------------------------------------
 

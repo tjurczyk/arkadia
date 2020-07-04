@@ -577,7 +577,7 @@
 							<integer>1</integer>
 						</regexCodePropertyList>
 					</Trigger>
-					<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="yes" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>gzocen</name>
 						<script></script>
 						<triggerType>0</triggerType>
@@ -606,7 +606,7 @@
 						</regexCodePropertyList>
 						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 							<name>bronie poziom zniszczenia</name>
-							<script>trigger_func_skrypty_inventory_equipment_poziom_zniszczenia()</script>
+							<script>trigger_func_skrypty_inventory_equipment_poziom_zniszczenia(true)</script>
 							<triggerType>0</triggerType>
 							<conditonLineDelta>1</conditonLineDelta>
 							<mStayOpen>0</mStayOpen>

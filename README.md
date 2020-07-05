@@ -280,25 +280,9 @@ Bindowany jest klawisz `[`.
 
 ## POJEMNIKI
 
-Jest wsparcie do pojemników. W ustawieniach są:
+[Instrukcja konfiguracji pojemników](http://arkadia.kamerdyner.net/pojemniki.html)
 
-```
--- Domyslna pojemniki do monet (money), kamieni (stones), jedzenia (food),
--- i wszystkiego innego (other)
---
--- Dozwolone wartosci:
--- - 1 (to jest "plecak")
--- - 2 (to jest "torba")
--- - 3 (to jest "worek")
--- - 4 (to jest "sakiewka")
--- - 5 (to jest "mieszek")
--- - 6 (to jest "sakwa")
--- - 7 (to jest "wor")
-scripts.inv["money_bag"] = 1
-scripts.inv["stones_bag"] = 1
-scripts.inv["food_bag"] = 1
-scripts.inv["other_bag"] = 1
-```
+Komenda `/pojemniki` pokaże aktualną konfigurację pojemników. 
 
 jak na razie dostępne bindy to `wem`/`/wlm` (branie/wkładanie monet) oraz `wep`/`wlp` (branie/wkładanie paczki).
 

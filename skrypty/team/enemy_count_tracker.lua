@@ -21,7 +21,14 @@ function enemy_count_gmcp_parsing_finished()
         return
     end
 
+    if table.size(current_enemies) > table.size(ateam.current_enemies) then
+        -- some enemy probably just appeared, rebuild
+        ateam.current_enemies = current_enemies
+        return
+    end
+
     if table.size(current_enemies) ~= table.size(ateam.current_enemies) - 1 then
+        -- no enemy died
         return
     end
 

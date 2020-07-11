@@ -30,7 +30,7 @@ function ateam_may_execute_next_attack_obj(...)
   ateam.next_attack_objs.next_attak_obj = ateam.next_attack_objs.queue[1]
   table.remove(ateam.next_attack_objs.queue, 1)
   raiseEvent("ateam_next_attack_obj_bind", ateam.next_attack_objs.next_attak_obj, id, ateam.objs[ateam.next_attack_objs.next_attak_obj])
-  cecho(" <orange>/nn zeby zaatakowac nastepny cel: " .. ateam.objs[ateam.next_attack_objs.next_attak_obj]["desc"])
+  cecho(" <orange>/nn zeby zaatakowac nastepny cel: " .. ateam.objs[ateam.next_attack_objs.next_attak_obj]["desc"] .. "\n")
 end
 
 function ateam_execute_next_attack_obj()

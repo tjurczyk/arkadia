@@ -42,7 +42,7 @@ misc["item_damaged_color"] = {
     ["moze peknac w kazdej chwili."] = "red",
 }
 
-function misc:item_damaged_replace(text)
+function misc:item_damaged_replace(text, filtered)
     if misc.item_damaged_desc[text] == nil then
         setTriggerStayOpen("gzocen", 0)
         return
@@ -53,7 +53,9 @@ function misc:item_damaged_replace(text)
     replace(text .. add_text)
     selectString(misc.item_damaged_desc[text], 1)
     resetFormat()
-    setTriggerStayOpen("gzocen", 1)
+    if filtered then
+        setTriggerStayOpen("gzocen", 1)
+    end
 end
 
 function misc:weapon_damaged_wyryly(text, weapon)

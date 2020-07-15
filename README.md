@@ -18,12 +18,13 @@ lua local a="https://api.github.com/repos/tjurczyk/arkadia/releases/latest"local
 ```
 
 #### Ręczna instalacja
-Po pobraniu paczki należy rozpakować ją bezpośrednio do katalogu z profilem, rozpakować i zmienić nazwę katalogu na `arkadia`
+Po pobraniu paczki należy rozpakować ją bezpośrednio do katalogu z profilem i zmienić nazwę rozpakowanego katalogu na `arkadia`
 Po czym wykonujemy jeszcze instalację samej paczki w mudlecie
 
 1. W Mudlecie w górnym pasku wybieramy `Package Manager`
 2. Wybieramy na dole `Install`
 3. Z katalogu z profilem wybieramy plik `arkadia/Arkadia.xml`
+4. Odinstalowujemy pakiet `generic_maper`
 4. Restartujemy Mudleta.
 
 Aktualizacja skryptów już po instalacji to: `/aktualizuj_skrypty`.
@@ -125,7 +126,7 @@ Tak to wygląda dla postaci `Adremen`.
 ![Konfiguracja triggera](http://kamerdyner.net/~george/img/trigger_config.png)
 
 ##### UWAGA: 
-Czasami jest tak, że tekst wyglżda lekko _rozjechany_. To znaczy, można to poznać po tym, że widać, że odstępy między tekstem są większe niż normalnie, wtedy podczas zaznaczania tekstu, tekst 'zsuwa' się ze sobą i odstępy są normalne. Jest to błąd Mudletowy. Wystarczy wtedy chwycić za tekst i zaznaczając go przeciagnac na sam dół aby najechać na dolny pasek - wtedy tekst _dosunie się_ i będzie już równo. Po wykonaniu `/ui_restart`, trzeba zawsze takie coś wykonać.
+Czasami jest tak, że tekst wygląda lekko _rozjechany_. To znaczy, można to poznać po tym, że widać, że odstępy między tekstem są większe niż normalnie, wtedy podczas zaznaczania tekstu, tekst 'zsuwa' się ze sobą i odstępy są normalne. Jest to błąd Mudletowy. Wystarczy wtedy chwycić za tekst i zaznaczając go przeciagnac na sam dół aby najechać na dolny pasek - wtedy tekst _dosunie się_ i będzie już równo. Po wykonaniu `/ui_restart`, trzeba zawsze takie coś wykonać.
 
 ---
 
@@ -279,25 +280,9 @@ Bindowany jest klawisz `[`.
 
 ## POJEMNIKI
 
-Jest wsparcie do pojemników. W ustawieniach są:
+[Instrukcja konfiguracji pojemników](http://arkadia.kamerdyner.net/pojemniki.html)
 
-```
--- Domyslna pojemniki do monet (money), kamieni (stones), jedzenia (food),
--- i wszystkiego innego (other)
---
--- Dozwolone wartosci:
--- - 1 (to jest "plecak")
--- - 2 (to jest "torba")
--- - 3 (to jest "worek")
--- - 4 (to jest "sakiewka")
--- - 5 (to jest "mieszek")
--- - 6 (to jest "sakwa")
--- - 7 (to jest "wor")
-scripts.inv["money_bag"] = 1
-scripts.inv["stones_bag"] = 1
-scripts.inv["food_bag"] = 1
-scripts.inv["other_bag"] = 1
-```
+Komenda `/pojemniki` pokaże aktualną konfigurację pojemników. 
 
 jak na razie dostępne bindy to `wem`/`/wlm` (branie/wkładanie monet) oraz `wep`/`wlp` (branie/wkładanie paczki).
 

@@ -17,6 +17,13 @@ function enemy_count_gmcp_parsing_finished()
     current_enemies = enemy_count_collect_enemies()
 
     if table.size(ateam.current_enemies) == 0 then
+        -- empty the array
+        ateam.current_enemies = current_enemies
+        return
+    end
+
+    if table.size(current_enemies) > table.size(ateam.current_enemies) then
+        -- there are new enemies on the location, set.
         ateam.current_enemies = current_enemies
         return
     end

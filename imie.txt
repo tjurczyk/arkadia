@@ -455,6 +455,13 @@ scripts.ui.states_window_p_width = 0.95
 scripts.ui.cfg["states_window_navbar"] = false
 
 --
+-- Czy przeciwnicy i neutralni maja byc w oddzielnym oknie kondycji
+-- false - jedno okno kondycji
+-- true - dwa okna kondycji
+--
+scripts.ui.separate_enemy_states = false
+
+--
 -- Jakie elementy maja znalezc sie w naglowku okna stanow.
 -- Dostepne to: "bron", "zaslona", "rozkaz", "ukryty"
 -- Kolejnosc bedzie taka, jak wymieniona ponizej.

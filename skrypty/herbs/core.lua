@@ -70,8 +70,8 @@ function herbs:extract_herbs(herbs_arr)
             end
         end
         if item["name"] == nil then
-            scripts:print_log("nierozpnawalne ziolo: " .. tostring(v), true)
-            error("nierozpnawalne ziolo: " .. tostring(v))
+            scripts:print_log("nierozpoznane ziolo: " .. tostring(v), true)
+            error("nierozpoznane ziolo: " .. tostring(v))
         end
         extracted[item.name] = item
     end

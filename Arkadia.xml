@@ -23015,6 +23015,13 @@
 					<packageName></packageName>
 					<regex>^/nn$</regex>
 				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>last hp</name>
+					<script>alias_func_last_seen_hp(matches[2])</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/hp (.*)</regex>
+				</Alias>
 			</AliasGroup>
 			<AliasGroup isActive="yes" isFolder="yes">
 				<name>inventory</name>

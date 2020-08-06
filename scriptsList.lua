@@ -58,6 +58,7 @@ return {
     "skrypty/team/data_processing",
     "skrypty/team/event_handlers",
     "skrypty/team/enemy_count_tracker",
+    "skrypty/team/last_seen_hp",
     "skrypty/team/next_attack_objs",
     "skrypty/character/core",
     "skrypty/character/character_gmcp_updater",

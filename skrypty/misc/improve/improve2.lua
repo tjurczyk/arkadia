@@ -74,16 +74,23 @@ function misc.improve:print_improvee2()
         local this_date = v["year"] .. "/" .. v["month"] .. "/" .. v["day"]
         local date = string.sub(v["year"] .. "/" .. v["month"] .. "/" .. v["day"] .. "     ", 1, 11)
         local val_str = ""
-        sum = sum + v["val"]
-        if v["val"] > 15 then
-            local full = math.floor(v["val"] / 15)
-            local extra = v["val"] % 15
-            val_str = string.sub(tostring(full) .. " niebotycznych + " .. tostring(misc.improve.levels[extra]) .. "<grey>                           ", 1, 41) .. "|"
-        else
-            val_str = string.sub(misc.improve.levels[v["val"]] .. "                                ", 1, 35) .. "|"
-        end
+        local value = v["val"]
 
-        cecho("| [<antique_white>" .. id .. "<grey>] <orange>" .. date .. "<grey> - <antique_white>" .. val_str .. "\n")
+        if value > 0 then
+        
+            sum = sum + value
+            if value > 15 then
+                local full = math.floor(value / 15)
+                local extra = value % 15
+                val_str = string.sub(tostring(full) .. " niebotycznych + " .. tostring(misc.improve.levels[extra]) .. "<grey>                           ", 1, 41) .. "|"
+            else
+                val_str = string.sub(misc.improve.levels[value] .. "                                ", 1, 35) .. "|"
+            end
+            
+            cecho("| [<antique_white>" .. id .. "<grey>] <orange>" .. date .. "<grey> - <antique_white>" .. val_str .. "\n")
+        else
+            debugc('BLAD - postepy mniejsze niz zero dla id =' .. id)
+        end
     end
 
     cecho("<grey>|                                                         |\n")

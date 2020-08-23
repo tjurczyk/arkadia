@@ -79,7 +79,7 @@ function trigger_func_staz_plus()
 end
 
 function trigger_func_show_reset_prompt()
-    cecho("<CadetBlue>(skrypty)<tomato>: Jezeli rozpoczynasz trenowanie nowego zawodu nacisnij ")
+    cecho("\n<CadetBlue>(skrypty)<tomato>: Jezeli rozpoczynasz trenowanie nowego zawodu nacisnij ")
     cechoLink("tutaj", [[reset_profession()]], "/staz 0")
     scripts:print_log("Jezeli znasz wartosc stazu (240 pelny staz, 10 punktow za tydzien, 1 punkt za +staz) wpisz /staz [liczba]", true)
 end

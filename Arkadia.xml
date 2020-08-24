@@ -24208,7 +24208,7 @@
 					<script>alias_func_staz(matches[2])</script>
 					<command></command>
 					<packageName></packageName>
-					<regex>^staz (.*)</regex>
+					<regex>^/staz ?(.*)</regex>
 				</Alias>
 			</AliasGroup>
 		</AliasGroup>

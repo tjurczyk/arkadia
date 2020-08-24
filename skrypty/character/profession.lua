@@ -32,7 +32,7 @@ end
 
 function scripts.character.profession:get_next_break_point(time)
     local date = os.date("*t", time)
-    local date_diff = (2 - date.wday) <= 0 and 2 - date.wday or 7 - date.wday
+    local date_diff = date.wday <= 2 and 2 - date.wday or 7 - date.wday
     date.day = date.day + date_diff
     date.hour = 2
     date.min = 0
@@ -75,6 +75,7 @@ function alias_func_staz(value)
 end
 
 function trigger_func_staz_plus()
+    print("\n")
     scripts.character.profession:add_plus_point()
 end
 

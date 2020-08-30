@@ -301,15 +301,10 @@ function herbs:collect_herb_bag_condition(do_post_actions)
 end
 
 function herbs:coroutine_collect_herb_bag_condition()
-    local bag_count = 0
     for i = 1, 200, 1 do
-        bag_count = bag_count + 1
         send("ocen " .. tostring(i) .. ". woreczek")
         coroutine.yield()
         herbs.herb_bag_collect_condition_data["current_bag_id"] = herbs.herb_bag_collect_condition_data["current_bag_id"] + 1
-    end
-    if not herbs.bags_amount then
-        herbs.bags_amount = bag_count - 1
     end
 end
 
@@ -334,18 +329,28 @@ function herbs:_coroutine_build_db()
 
     if not herbs.bags_amount then
         herbs.bags_amount = 200
-        herbs.break_herb_build_trigger = tempRegexTrigger("^Zajrzyj do czego\\?", function() herbs.break_build = true end)
+        herbs.break_herb_build_trigger = tempRegexTrigger("^Zajrzyj do czego\\?", function()
+            herbs.break_build = true
+            coroutine.resume(herbs["build_db_coroutine_id"])
+        end)
     end
 
     disableTrigger(count_trigg)
 
+    local bag_count = 0
+
     for i = 1, herb_bags, 1 do
         send("zajrzyj do " .. i .. ". woreczka", true)
+        coroutine.yield()
         if herbs.break_build then
             break;
         end
-        coroutine.yield()
+        bag_count = bag_count + 1
         herbs.current_bag_looking = herbs.current_bag_looking + 1
+    end
+
+    if not herbs.bags_amount then
+        herbs.bags_amount = bag_count - 1
     end
 
     herbs["build_db_coroutine_id"] = nil

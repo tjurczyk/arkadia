@@ -6,6 +6,9 @@ end
 
 function trigger_func_skrypty_herbs_herb_bag_collect_condition_no_more_herb_bags()
     herbs.herb_bag_collect_condition_data["coroutine_id"] = nil
+    if not herbs.bags_amount then
+        herbs.bags_amount = herbs.herb_bag_collect_condition_data["current_bag_id"] - 1
+    end
     herbs:print_herb_bag_conditions()
 end
 

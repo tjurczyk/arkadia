@@ -1,5 +1,5 @@
 function herbs:building_counted(counted)
-    herbs.bags_amount = scripts.counted_string_to_int[counted]
+    herbs.bags_amount = nil
     herbs.current_bag_looking = 1
     coroutine.resume(herbs["build_db_coroutine_id"])
 end

@@ -320,14 +320,23 @@ function herbs:_coroutine_build_db()
     herbs.db = {}
     herbs.index = {}
     herbs.counts = {}
+    herbs.break_build = false
     local count_trigg = tempRegexTrigger("^(Nie widzisz tu niczego takiego.|Doliczyl.s sie ([a-z ]+) sztuk(|i)\\.)$", [[ herbs:building_counted(matches[3]) ]])
     send("policz swoje woreczki")
     coroutine.yield()
 
+    if not herbs.bags_amount then
+        herbs.bags_amount = 200
+        herbs.break_herb_build_trigger = tempRegexTrigger("^Zajrzyj do czego\\?", function() herbs.break_build = true end)
+    end
+
     disableTrigger(count_trigg)
 
     for i = 1, herbs.bags_amount, 1 do
-        send("zajrzyj do " .. scripts.id_to_string_biernik[i] .. " woreczka", true)
+        send("zajrzyj do " .. i .. ". woreczka", true)
+        if herbs.break_build then
+            break;
+        end
         coroutine.yield()
         herbs.current_bag_looking = herbs.current_bag_looking + 1
     end

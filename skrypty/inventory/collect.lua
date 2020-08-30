@@ -55,7 +55,7 @@ function scripts.inv.collect:key_pressed(force, index, put_into_bag)
     put_into_bag = put_into_bag == nil and true or put_into_bag
     local from = "ciala"
     if index ~= nil then
-        from = scripts.id_to_string_biernik[index] .. " ciala"
+        from = index .. ". ciala"
     end
     if scripts.inv.collect.check_body or force == true then
         if scripts.inv.collect["current_mode"] == 1 or scripts.inv.collect["current_mode"] == 3

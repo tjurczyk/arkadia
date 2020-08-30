@@ -301,10 +301,15 @@ function herbs:collect_herb_bag_condition(do_post_actions)
 end
 
 function herbs:coroutine_collect_herb_bag_condition()
+    local bag_count = 0
     for i = 1, 200, 1 do
+        bag_count = bag_count + 1
         send("ocen " .. tostring(i) .. ". woreczek")
         coroutine.yield()
         herbs.herb_bag_collect_condition_data["current_bag_id"] = herbs.herb_bag_collect_condition_data["current_bag_id"] + 1
+    end
+    if not herbs.bags_amount then
+        herbs.bags_amount = bag_count - 1
     end
 end
 

@@ -273,8 +273,8 @@ end
 function herbs:print_herb_bag_conditions()
     cecho("\n    <green>Woreczki i ich stany:\n\n")
     for bag_id, condition in pairs(herbs.herb_bag_collect_condition_data.bag_id_to_condition) do
-        local string_bag_id = scripts.id_to_string[bag_id]
-        local bag_name_wrapped = string.sub("<LemonChiffon>" .. string_bag_id .. " woreczek<grey> .................................................", 0, 40)
+        local string_bag_id = scripts.id_to_string[bag_id] or bag_id .. "."
+        local bag_name_wrapped = string.sub("<LemonChiffon>" .. string_bag_id .. " woreczek<grey> ......................................................................", 0, 60)
         cecho("  " .. bag_name_wrapped .. " " .. condition .. "\n")
     end
 
@@ -325,6 +325,8 @@ function herbs:_coroutine_build_db()
     send("policz swoje woreczki")
     coroutine.yield()
 
+    local herb_bags = herbs.bags_amount
+
     if not herbs.bags_amount then
         herbs.bags_amount = 200
         herbs.break_herb_build_trigger = tempRegexTrigger("^Zajrzyj do czego\\?", function() herbs.break_build = true end)
@@ -332,7 +334,7 @@ function herbs:_coroutine_build_db()
 
     disableTrigger(count_trigg)
 
-    for i = 1, herbs.bags_amount, 1 do
+    for i = 1, herb_bags, 1 do
         send("zajrzyj do " .. i .. ". woreczka", true)
         if herbs.break_build then
             break;

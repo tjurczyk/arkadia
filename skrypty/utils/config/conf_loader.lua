@@ -49,9 +49,9 @@ function scripts_load_config(name)
     load_my_settings = nil
     local ok, result, err = pcall(loadfile, scripts.config_loader:get_config_path(name))
     if result then
-        raiseEvent("profileLoaded")
         tempTimer(0.3, function ()
             result()
+            raiseEvent("profileLoaded")
             if not load_my_settings then
                 after_profile_load()
                 scripts:print_log("Ok, profil " .. name .. " zaladowany")

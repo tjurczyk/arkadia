@@ -7,7 +7,8 @@ local plus_point = 1
 local one_week_in_seconds = 604800
 
 function scripts.character.profession:init()
-    self.state = scripts.state_store:get(state_store_key) or {}
+    self.state = scripts.state_store:get(self:get_char_key()) or {}
+    scripts.event_register:register_event_handler("profileLoaded", function() self:init() end, true)
 end
 
 function scripts.character.profession:init_training(plus_points)
@@ -15,7 +16,7 @@ function scripts.character.profession:init_training(plus_points)
         start_time = os.time(),
         plus_points = plus_points
     }
-    scripts.state_store:set(state_store_key, self.state)
+    scripts.state_store:set(self:get_char_key(), self.state)
     scripts:print_log("Rozpoczeto trening zawodu")
     self:show_percentage()
 end
@@ -46,7 +47,7 @@ end
 
 function scripts.character.profession:add_plus_point()
     self.state.plus_points = self.state.plus_points + plus_point
-    scripts.state_store:set(state_store_key, self.state)
+    scripts.state_store:set(self:get_char_key(), self.state)
     self:show_percentage()
 end
 
@@ -57,6 +58,10 @@ function scripts.character.profession:show_percentage()
     end
     local total = self:get_time_points(os.time()) + self.state.plus_points
     scripts:print_log(string.format("Zawod ukonczony w %02.2f%% (%d/%d)", (total / full_profession_points) * 100, total, full_profession_points))
+end
+
+function scripts.character.profession:get_char_key()
+    return scripts.character_name and state_store_key .. "." .. scripts.character_name or state_store_key
 end
 
 scripts.character.profession:init()

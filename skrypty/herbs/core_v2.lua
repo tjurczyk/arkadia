@@ -353,6 +353,8 @@ function herbs:_coroutine_build_db()
         herbs.bags_amount = bag_count - 1
     end
 
+    killTrigger(herbs.break_herb_build_trigger)
+
     herbs["build_db_coroutine_id"] = nil
     herbs:herbs_building_done()
     scripts:print_log("Ok, zbudowalem baze ziol", true)

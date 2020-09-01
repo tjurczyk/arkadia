@@ -94,9 +94,23 @@ function scripts.inv:get_magic_item_pattern(item)
     return "([" .. upper_first_letter .. first_letter .. "]" .. rest_of_string .. ")"
 end
 
+function scripts.inv:magic_worn_off(message, type)
+    selectCurrentLine()
+    deleteLine()
+    cecho("<tomato>\n\n\t[  MAGIK ZNIKA   ] " .. message .. "\n\n")
+    resetFormat()
+
+    raiseEvent("playBeep")
+    scripts.ui:info_action_update("ZNI. " .. type)
+end
+
 function alias_func_put_magics_down()
     scripts.inv.magic_put_down_coroutine = coroutine.create(function ()
         scripts.inv:get_magics_to_put_down(matches[3])
     end)
     coroutine.resume(scripts.inv.magic_put_down_coroutine)
+end
+
+function trigger_func_magic_dissapears(message, type)
+    scripts.inv:magic_worn_off(message, type)
 end

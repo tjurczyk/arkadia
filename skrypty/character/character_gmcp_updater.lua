@@ -7,7 +7,7 @@ function character_gmcp_updater()
         end
     end
 
-    if to_notify_event then
+    if update_event then
         raiseEvent("character_state_update")
     end
 

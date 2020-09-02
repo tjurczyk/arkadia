@@ -98,6 +98,9 @@ Dostepne eventy w skryptach:
   Argumenty:
     arg1: ilosc pozostalych przeciwnikow
 
+- "ateamFightingWithNoWeapon"
+
+  Event podniesiony gdy wykryte zostaje, ze postac walczy bez broni.
 
 --------------------------------------
 

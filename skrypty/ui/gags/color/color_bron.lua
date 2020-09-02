@@ -14,6 +14,7 @@ function trigger_func_skrypty_ui_gags_color_color_bron_walczysz_bez_broni()
     selectString(str_replace, 1)
     fg("tomato")
     resetFormat()
+    raiseEvent("ateamFightingWithNoWeapon")
 end
 
 function trigger_func_skrypty_ui_gags_color_color_bron_ktos_dobywa_broni()

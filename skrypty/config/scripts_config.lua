@@ -38,7 +38,19 @@ function ScriptsConfig:save_config(silent)
     io.output(file)
     io.write("{\n")
     for _, var in pairs(self._sorted_var_keys) do
-        io.write("    \"", tostring(var), "\": ", yajl.to_string(self._config[var]))
+        local str_to_write = nil
+        if self._config[var] ~= nil then
+            str_to_write = yajl.to_string(self._config[var])
+        else
+            if self._var_to_config[var].field_type == "string" then
+                str_to_write = "\"" .. self._var_to_config[var].default_value .. "\""
+            elseif self._var_to_config[var].field_type == "list" or self._var_to_config[var].field_type == "map" then
+                str_to_write = yajl.to_string(self._var_to_config[var].default_value)
+            else
+                str_to_write = self._var_to_config[var].default_value
+            end
+        end
+        io.write("    \"", tostring(var), "\": ", str_to_write)
         if _ < table.size(self._sorted_var_keys) then
             io.write(",")
         end

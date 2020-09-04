@@ -3,16 +3,107 @@
     "_ateam": [
       {
         "macro_type": "func_call",
+        "func_name": "ateam.set_ateam_options",
+        "func_args": []
+      },
+      {
+        "macro_type": "func_call",
         "func_name": "ateam.restart_ateam",
         "func_args": [
           true
         ]
       }
     ],
+    "_people": [
+      {
+        "macro_type": "func_call",
+        "func_name": "scripts.people.enemy_people_starter",
+        "func_args": []
+      },
+      {
+        "macro_type": "func_call",
+        "func_name": "scripts.people.color_people_starter",
+        "func_args": []
+      },
+      {
+        "macro_type": "func_call",
+        "func_name": "scripts.people.trigger_people_starter",
+        "func_args": []
+      },
+      {
+        "macro_type": "func_call",
+        "func_name": "scripts.people.build_bind_table",
+        "func_args": []
+      }
+    ],
+    "_keybind": [
+      {
+        "macro_type": "func_call",
+        "func_name": "scripts.keybind.init",
+        "func_args": []
+      }
+    ],
+    "_lang": [
+      {
+        "macro_type": "func_call",
+        "func_name": "misc.lang.init",
+        "func_args": []
+      }
+    ],
+    "_herbs": [
+      {
+        "macro_type": "func_call",
+        "func_name": "herbs.init_herbs",
+        "func_args": []
+      }
+    ],
+    "_magics": [
+      {
+        "macro_type": "func_call",
+        "func_name": "scripts.inv.set_all_magic",
+        "func_args": []
+      }
+    ],
+    "_ux": [
+      {
+        "macro_type": "func_call",
+        "func_name": "scripts.ui.setup",
+        "func_args": []
+      },
+      {
+        "macro_type": "func_call",
+        "func_name": "scripts.ui.set_gag_options",
+        "func_args": []
+      }
+    ],
     "_all": [
       {
         "macro_type": "macro",
         "macro_name": "_ateam"
+      },
+      {
+        "macro_type": "macro",
+        "macro_name": "_people"
+      },
+      {
+        "macro_type": "macro",
+        "macro_name": "_keybind"
+      },
+      {
+        "macro_type": "macro",
+        "macro_name": "_lang"
+      },
+      {
+        "macro_type": "macro",
+        "macro_name": "_herbs"
+      },
+      {
+        "macro_type": "macro",
+        "macro_name": "_magics"
+      },
+      {
+        "macro_type": "macro",
+        "macro_name": "_ux"
       }
     ]
   },
@@ -21,7 +112,9 @@
       "name": "scripts.character_name",
       "default_value": "Erkal",
       "field_type": "string",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_all"
+      ]
     },
     {
       "name": "ateam.attack_commands",
@@ -135,64 +228,50 @@
       "name": "scripts.character.break_fatigue_level",
       "default_value": 9,
       "field_type": "number",
-      "macros_on_modify": [
-        "_ateam"
-      ]
+      "macros_on_modify": []
     },
     {
       "name": "scripts.character.bind_hp_level",
       "default_value": 1,
       "field_type": "number",
-      "macros_on_modify": [
-        "_ateam"
-      ]
+      "macros_on_modify": []
     },
     {
       "name": "scripts.character.combat_state.trigger_blocked_actions_bind",
       "default_value": true,
       "field_type": "boolean",
-      "macros_on_modify": [
-        "_ateam"
-      ]
+      "macros_on_modify": []
     },
     {
       "name": "ateam.special_follow_bind_mode",
       "default_value": 1,
       "field_type": "number",
-      "macros_on_modify": [
-        "_ateam"
-      ]
+      "macros_on_modify": []
     },
     {
       "name": "misc.attack_beep.mode",
       "default_value": 1,
       "field_type": "number",
-      "macros_on_modify": [
-        "_ateam"
-      ]
+      "macros_on_modify": []
     },
     {
       "name": "scripts.inv.collect.current_mode",
       "default_value": 7,
       "field_type": "number",
-      "macros_on_modify": [
-        "_ateam"
-      ]
+      "macros_on_modify": []
     },
     {
       "name": "scripts.inv.collect.money_type",
       "default_value": 1,
       "field_type": "number",
-      "macros_on_modify": [
-        "_ateam"
-      ]
+      "macros_on_modify": []
     },
     {
       "name": "herbs.many_to_int",
       "default_value": 25,
       "field_type": "number",
       "macros_on_modify": [
-        "_ateam"
+        "_herbs"
       ]
     },
     {
@@ -200,7 +279,7 @@
       "default_value": 44,
       "field_type": "number",
       "macros_on_modify": [
-        "_ateam"
+        "_herbs"
       ]
     },
     {
@@ -208,7 +287,7 @@
       "default_value": false,
       "field_type": "boolean",
       "macros_on_modify": [
-        "_ateam"
+        "_herbs"
       ]
     },
     {
@@ -216,7 +295,7 @@
       "default_value": "",
       "field_type": "string",
       "macros_on_modify": [
-        "_ateam"
+        "_herbs"
       ]
     },
     {
@@ -224,7 +303,7 @@
       "default_value": "",
       "field_type": "string",
       "macros_on_modify": [
-        "_ateam"
+        "_herbs"
       ]
     },
     {
@@ -235,7 +314,7 @@
       ],
       "field_type": "list",
       "macros_on_modify": [
-        "_ateam"
+        "_herbs"
       ]
     },
     {
@@ -246,48 +325,38 @@
       ],
       "field_type": "list",
       "macros_on_modify": [
-        "_ateam"
+        "_herbs"
       ]
     },
     {
       "name": "scripts.inv.money_bag_1",
       "default_value": "plecak",
       "field_type": "string",
-      "macros_on_modify": [
-        "_ateam"
-      ]
+      "macros_on_modify": []
     },
     {
       "name": "scripts.inv.gems_bag_1",
       "default_value": "plecak",
       "field_type": "string",
-      "macros_on_modify": [
-        "_ateam"
-      ]
+      "macros_on_modify": []
     },
     {
       "name": "scripts.inv.food_bag_1",
       "default_value": "plecak",
       "field_type": "string",
-      "macros_on_modify": [
-        "_ateam"
-      ]
+      "macros_on_modify": []
     },
     {
       "name": "scripts.inv.other_bag_1",
       "default_value": "plecak",
       "field_type": "string",
-      "macros_on_modify": [
-        "_ateam"
-      ]
+      "macros_on_modify": []
     },
     {
       "name": "scripts.inv.lamp.lamp_seconds_default_start_val",
       "default_value": 300,
       "field_type": "number",
-      "macros_on_modify": [
-        "_ateam"
-      ]
+      "macros_on_modify": []
     },
     {
       "name": "scripts.inv.lamp.lamp_warning_times",
@@ -298,9 +367,7 @@
         10
       ],
       "field_type": "list",
-      "macros_on_modify": [
-        "_ateam"
-      ]
+      "macros_on_modify": []
     },
     {
       "name": "scripts.inv.lamp.lamp_beeps",
@@ -308,48 +375,38 @@
         10
       ],
       "field_type": "list",
-      "macros_on_modify": [
-        "_ateam"
-      ]
+      "macros_on_modify": []
     },
     {
       "name": "scripts.inv.lamp.lamp_yellow_seconds",
       "default_value": 60,
       "field_type": "number",
-      "macros_on_modify": [
-        "_ateam"
-      ]
+      "macros_on_modify": []
     },
     {
       "name": "scripts.inv.lamp.lamp_red_seconds",
       "default_value": 30,
       "field_type": "number",
-      "macros_on_modify": [
-        "_ateam"
-      ]
+      "macros_on_modify": []
     },
     {
       "name": "scripts.inv.lamp.lamp_empty_bottle_bind",
       "default_value": "odloz olej; wez butelke z plecaka; napelnij lampe olejem",
       "field_type": "string",
-      "macros_on_modify": [
-        "_ateam"
-      ]
+      "macros_on_modify": []
     },
     {
       "name": "scripts.inv.lamp.lamp_no_bottle_bind",
       "default_value": "wez butelke z plecaka",
       "field_type": "string",
-      "macros_on_modify": [
-        "_ateam"
-      ]
+      "macros_on_modify": []
     },
     {
       "name": "misc.lang.aliases",
       "default_value": {},
       "field_type": "map",
       "macros_on_modify": [
-        "_ateam"
+        "_lang"
       ]
     },
     {
@@ -357,7 +414,7 @@
       "default_value": {},
       "field_type": "map",
       "macros_on_modify": [
-        "_ateam"
+        "_lang"
       ]
     },
     {
@@ -365,55 +422,45 @@
       "default_value": false,
       "field_type": "boolean",
       "macros_on_modify": [
-        "_ateam"
+        "_lang"
       ]
     },
     {
       "name": "scripts.inv.weapons.cases",
       "default_value": [],
       "field_type": "list",
-      "macros_on_modify": [
-        "_ateam"
-      ]
+      "macros_on_modify": []
     },
     {
       "name": "scripts.inv.weapons.cases_dopelniacz",
       "default_value": [],
       "field_type": "list",
-      "macros_on_modify": [
-        "_ateam"
-      ]
+      "macros_on_modify": []
     },
     {
       "name": "scripts.inv.weapons.main_weapons_action",
       "default_value": [],
       "field_type": "list",
-      "macros_on_modify": [
-        "_ateam"
-      ]
+      "macros_on_modify": []
     },
     {
       "name": "scripts.inv.weapons.weapon_on_actions",
       "default_value": [],
       "field_type": "list",
-      "macros_on_modify": [
-        "_ateam"
-      ]
+      "macros_on_modify": []
     },
     {
       "name": "scripts.inv.weapons.weapon_off_actions",
       "default_value": [],
       "field_type": "list",
-      "macros_on_modify": [
-        "_ateam"
-      ]
+      "macros_on_modify": []
     },
     {
       "name": "scripts.people.showing_names",
       "default_value": true,
       "field_type": "boolean",
       "macros_on_modify": [
-        "_ateam"
+        "_people"
       ]
     },
     {
@@ -421,7 +468,7 @@
       "default_value": "yellow",
       "field_type": "string",
       "macros_on_modify": [
-        "_ateam"
+        "_people"
       ]
     },
     {
@@ -429,23 +476,21 @@
       "default_value": "dark_orange",
       "field_type": "string",
       "macros_on_modify": [
-        "_ateam"
+        "_people"
       ]
     },
     {
       "name": "scripts.people.updating_names",
       "default_value": false,
       "field_type": "boolean",
-      "macros_on_modify": [
-        "_ateam"
-      ]
+      "macros_on_modify": []
     },
     {
       "name": "scripts.people.enemy_guilds",
       "default_value": [],
       "field_type": "list",
       "macros_on_modify": [
-        "_ateam"
+        "_people"
       ]
     },
     {
@@ -453,7 +498,7 @@
       "default_value": [],
       "field_type": "map",
       "macros_on_modify": [
-        "_ateam"
+        "_people"
       ]
     },
     {
@@ -461,7 +506,7 @@
       "default_value": true,
       "field_type": "boolean",
       "macros_on_modify": [
-        "_ateam"
+        "_people"
       ]
     },
     {
@@ -469,20 +514,24 @@
       "default_value": 1,
       "field_type": "number",
       "macros_on_modify": [
-        "_ateam"
+        "_people"
       ]
     },
     {
       "name": "scripts.people.colored_guilds",
       "default_value": {},
       "field_type": "map",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_people"
+      ]
     },
     {
       "name": "scripts.people.colored_people",
       "default_value": {},
       "field_type": "map",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_people"
+      ]
     },
     {
       "name": "misc.cutting_pre",
@@ -500,73 +549,97 @@
       "name": "scripts.ui.results_window.enabled",
       "default_value": true,
       "field_type": "boolean",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_ux"
+      ]
     },
     {
       "name": "scripts.ui.results_window.width",
       "default_value": 510,
       "field_type": "number",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_ux"
+      ]
     },
     {
       "name": "scripts.ui.separate_talk_window",
       "default_value": false,
       "field_type": "boolean",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_ux"
+      ]
     },
     {
       "name": "scripts.ui.separate_talk_window_font_size",
       "default_value": 12,
       "field_type": "number",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_ux"
+      ]
     },
     {
       "name": "scripts.ui.separate_talk_window_p_width",
       "default_value": 0.8,
       "field_type": "number",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_ux"
+      ]
     },
     {
       "name": "scripts.ui.separate_talk_window_prefix",
       "default_value": "",
       "field_type": "string",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_ux"
+      ]
     },
     {
       "name": "scripts.ui.separate_talk_window_msg_types",
       "default_value": {},
       "field_type": "map",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_ux"
+      ]
     },
     {
       "name": "scripts.ui.states_window_height",
       "default_value": 45,
       "field_type": "number",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_ux"
+      ]
     },
     {
       "name": "scripts.ui.states_window_width",
       "default_value": 50,
       "field_type": "number",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_ux"
+      ]
     },
     {
       "name": "scripts.ui.states_window_p_width",
       "default_value": 0.95,
       "field_type": "number",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_ux"
+      ]
     },
     {
       "name": "scripts.ui.cfg.states_window_navbar",
       "default_value": false,
       "field_type": "boolean",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_ux"
+      ]
     },
     {
       "name": "scripts.ui.separate_enemy_states",
       "default_value": false,
       "field_type": "boolean",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_ux"
+      ]
     },
     {
       "name": "scripts.ui.cfg.states_window_nav_elements",
@@ -577,7 +650,9 @@
         "ukryty"
       ],
       "field_type": "list",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_ux"
+      ]
     },
     {
       "name": "scripts.ui.cfg.states_window_nav_elements",
@@ -588,7 +663,9 @@
         "ukryty"
       ],
       "field_type": "list",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_ux"
+      ]
     },
     {
       "name": "scripts.ui.cfg.states_window_nav_printable_key_map",
@@ -599,97 +676,129 @@
         "ukryty": "UKRYTY"
       },
       "field_type": "map",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_ux"
+      ]
     },
     {
       "name": "scripts.ui.footer_start",
       "default_value": 0,
       "field_type": "number",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_ux"
+      ]
     },
     {
       "name": "scripts.ui.footer_height",
       "default_value": 70,
       "field_type": "number",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_ux"
+      ]
     },
     {
       "name": "scripts.ui.footer_width",
       "default_value": 100,
       "field_type": "number",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_ux"
+      ]
     },
     {
       "name": "scripts.ui.footer_map_width_p",
       "default_value": 14,
       "field_type": "number",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_ux"
+      ]
     },
     {
       "name": "scripts.ui.footer_info_width_p",
       "default_value": 46,
       "field_type": "number",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_ux"
+      ]
     },
     {
       "name": "scripts.ui.footer_map_width_margin",
       "default_value": 0,
       "field_type": "number",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_ux"
+      ]
     },
     {
       "name": "scripts.ui.footer_map_height_margin",
       "default_value": 0,
       "field_type": "number",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_ux"
+      ]
     },
     {
       "name": "scripts.ui.footer_main_items_per_row",
       "default_value": 4,
       "field_type": "number",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_ux"
+      ]
     },
     {
       "name": "scripts.ui.footer_map_font_size",
       "default_value": 10,
       "field_type": "number",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_ux"
+      ]
     },
     {
       "name": "scripts.ui.footer_font_size",
       "default_value": 11,
       "field_type": "number",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_ux"
+      ]
     },
     {
       "name": "scripts.ui.states_font_size",
       "default_value": 12,
       "field_type": "number",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_ux"
+      ]
     },
     {
       "name": "scripts.ui.footer_r",
       "default_value": 0,
       "field_type": "number",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_ux"
+      ]
     },
     {
       "name": "scripts.ui.footer_g",
       "default_value": 0,
       "field_type": "number",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_ux"
+      ]
     },
     {
       "name": "scripts.ui.footer_b",
       "default_value": 47,
       "field_type": "number",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_ux"
+      ]
     },
     {
       "name": "scripts.ui.cfg.footer_mode",
       "default_value": "mode2",
       "field_type": "string",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_ux"
+      ]
     },
     {
       "name": "scripts.ui.cfg.footer_items",
@@ -700,13 +809,17 @@
         "upicie"
       ],
       "field_type": "list",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_ux"
+      ]
     },
     {
       "name": "scripts.ui.footer_info_row_count",
       "default_value": 4,
       "field_type": "number",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_ux"
+      ]
     },
     {
       "name": "scripts.ui.cfg.info_items",
@@ -726,11 +839,13 @@
         "combat"
       ],
       "field_type": "list",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_ux"
+      ]
     },
     {
       "name": "scripts.ui.bind_color",
-      "default_value": "<LawnGreen>",
+      "default_value": "LawnGreen",
       "field_type": "string",
       "macros_on_modify": []
     },
@@ -738,13 +853,17 @@
       "name": "scripts.inv.magics_color",
       "default_value": "tomato",
       "field_type": "string",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_magics"
+      ]
     },
     {
       "name": "scripts.inv.magic_keys_color",
       "default_value": "green_yellow",
       "field_type": "string",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_magics"
+      ]
     },
     {
       "name": "scripts.tcolor_color",
@@ -774,85 +893,113 @@
         "npc": 2
       },
       "field_type": "map",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_ux"
+      ]
     },
     {
       "name": "scripts.gag_colors.moje_ciosy",
       "default_value": "alice_blue",
       "field_type": "string",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_ux"
+      ]
     },
     {
       "name": "scripts.gag_colors.moje_spece",
       "default_value": "green_yellow",
       "field_type": "string",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_ux"
+      ]
     },
     {
       "name": "scripts.gag_colors.innych_ciosy",
       "default_value": "LightGrey",
       "field_type": "string",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_ux"
+      ]
     },
     {
       "name": "scripts.gag_colors.innych_ciosy_we_mnie",
       "default_value": "pink",
       "field_type": "string",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_ux"
+      ]
     },
     {
       "name": "scripts.gag_colors.innych_spece",
       "default_value": "slate_grey",
       "field_type": "string",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_ux"
+      ]
     },
     {
       "name": "scripts.gag_colors.moje_uniki",
       "default_value": "SteelBlue",
       "field_type": "string",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_ux"
+      ]
     },
     {
       "name": "scripts.gag_colors.innych_uniki",
       "default_value": "dark_slate_grey",
       "field_type": "string",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_ux"
+      ]
     },
     {
       "name": "scripts.gag_colors.moje_parowanie",
       "default_value": "SteelBlue",
       "field_type": "string",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_ux"
+      ]
     },
     {
       "name": "scripts.gag_colors.innych_parowanie",
       "default_value": "dark_slate_gray",
       "field_type": "string",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_ux"
+      ]
     },
     {
       "name": "scripts.gag_colors.zaslony_udane",
       "default_value": "deep_sky_blue",
       "field_type": "string",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_ux"
+      ]
     },
     {
       "name": "scripts.gag_colors.zaslony_nieudane",
       "default_value": "dark_slate_blue",
       "field_type": "string",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_ux"
+      ]
     },
     {
       "name": "scripts.gag_colors.bron",
       "default_value": "gold",
       "field_type": "string",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_ux"
+      ]
     },
     {
       "name": "scripts.gag_colors.npc",
       "default_value": "floral_white",
       "field_type": "string",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_ux"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.fight_support.modifier",
@@ -860,25 +1007,33 @@
         "Control"
       ],
       "field_type": "list",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.fight_support.key",
       "default_value": "W",
       "field_type": "string",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.fight_support.keys",
       "default_value": [],
       "field_type": "list",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.fight_support.active",
       "default_value": true,
       "field_type": "boolean",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.attack_target.modifier",
@@ -886,61 +1041,81 @@
         "Control"
       ],
       "field_type": "list",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.attack_target.key",
       "default_value": "1",
       "field_type": "string",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.attack_target.keys",
       "default_value": [],
       "field_type": "list",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.attack_target.active",
       "default_value": true,
       "field_type": "boolean",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.functional_key.modifier",
       "default_value": [],
       "field_type": "list",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.functional_key.key",
       "default_value": "BracketRight",
       "field_type": "string",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.functional_key.keys",
       "default_value": [],
       "field_type": "list",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.functional_key.active",
       "default_value": true,
       "field_type": "boolean",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.attack_bind_objs.modifier",
       "default_value": [],
       "field_type": "list",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.attack_bind_objs.key",
       "default_value": "",
       "field_type": "string",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.attack_bind_objs.keys",
@@ -950,61 +1125,81 @@
         "F5"
       ],
       "field_type": "list",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.attack_bind_objs.active",
       "default_value": true,
       "field_type": "boolean",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.break_attack_target.modifier",
       "default_value": [],
       "field_type": "list",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.break_attack_target.key",
       "default_value": "F2",
       "field_type": "string",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.break_attack_target.keys",
       "default_value": [],
       "field_type": "list",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.break_attack_target.active",
       "default_value": true,
       "field_type": "boolean",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.block_attack_target.modifier",
       "default_value": [],
       "field_type": "list",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.block_attack_target.key",
       "default_value": "F3",
       "field_type": "string",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.block_attack_target.keys",
       "default_value": [],
       "field_type": "list",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.block_attack_target.active",
       "default_value": true,
       "field_type": "boolean",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.collect_from_body.modifier",
@@ -1012,25 +1207,33 @@
         "Control"
       ],
       "field_type": "list",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.collect_from_body.key",
       "default_value": "3",
       "field_type": "string",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.collect_from_body.keys",
       "default_value": [],
       "field_type": "list",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.collect_from_body.active",
       "default_value": true,
       "field_type": "boolean",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.filling_lamp.modifier",
@@ -1038,73 +1241,97 @@
         "Control"
       ],
       "field_type": "list",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.filling_lamp.key",
       "default_value": "4",
       "field_type": "string",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.filling_lamp.keys",
       "default_value": [],
       "field_type": "list",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.filling_lamp.active",
       "default_value": true,
       "field_type": "boolean",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.empty_bottle.modifier",
       "default_value": [],
       "field_type": "list",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.empty_bottle.key",
       "default_value": "Backslash",
       "field_type": "string",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.empty_bottle.keys",
       "default_value": [],
       "field_type": "list",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.empty_bottle.active",
       "default_value": true,
       "field_type": "boolean",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.enter_ship.modifier",
       "default_value": [],
       "field_type": "list",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.enter_ship.key",
       "default_value": "BracketLeft",
       "field_type": "string",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.enter_ship.keys",
       "default_value": [],
       "field_type": "list",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.enter_ship.active",
       "default_value": true,
       "field_type": "boolean",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.temp1.modifier",
@@ -1112,25 +1339,33 @@
         "Control"
       ],
       "field_type": "list",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.temp1.key",
       "default_value": "Minus",
       "field_type": "string",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.temp1.keys",
       "default_value": [],
       "field_type": "list",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.temp1.active",
       "default_value": true,
       "field_type": "boolean",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.temp2.modifier",
@@ -1138,25 +1373,33 @@
         "Control"
       ],
       "field_type": "list",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.temp2.key",
       "default_value": "Equal",
       "field_type": "string",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.temp2.keys",
       "default_value": [],
       "field_type": "list",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.temp2.active",
       "default_value": true,
       "field_type": "boolean",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.temp3.modifier",
@@ -1164,25 +1407,33 @@
         "Alt"
       ],
       "field_type": "list",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.temp3.key",
       "default_value": "Minus",
       "field_type": "string",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.temp3.keys",
       "default_value": [],
       "field_type": "list",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.temp3.active",
       "default_value": true,
       "field_type": "boolean",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.temp4.modifier",
@@ -1190,169 +1441,225 @@
         "Alt"
       ],
       "field_type": "list",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.temp4.key",
       "default_value": "Equal",
       "field_type": "string",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.temp4.keys",
       "default_value": [],
       "field_type": "list",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.temp4.active",
       "default_value": true,
       "field_type": "boolean",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.temp5.modifier",
       "default_value": [],
       "field_type": "list",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.temp5.key",
       "default_value": "",
       "field_type": "string",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.temp5.keys",
       "default_value": [],
       "field_type": "list",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.temp5.active",
       "default_value": false,
       "field_type": "boolean",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.temp6.modifier",
       "default_value": [],
       "field_type": "list",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.temp6.key",
       "default_value": "",
       "field_type": "string",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.temp6.keys",
       "default_value": [],
       "field_type": "list",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.temp6.active",
       "default_value": false,
       "field_type": "boolean",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.temp7.modifier",
       "default_value": [],
       "field_type": "list",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.temp7.key",
       "default_value": "",
       "field_type": "string",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.temp7.keys",
       "default_value": [],
       "field_type": "list",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.temp7.active",
       "default_value": false,
       "field_type": "boolean",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.temp8.modifier",
       "default_value": [],
       "field_type": "list",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.temp8.key",
       "default_value": "",
       "field_type": "string",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.temp8.keys",
       "default_value": [],
       "field_type": "list",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.temp8.active",
       "default_value": false,
       "field_type": "boolean",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.temp9.modifier",
       "default_value": [],
       "field_type": "list",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.temp9.key",
       "default_value": "",
       "field_type": "string",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.temp9.keys",
       "default_value": [],
       "field_type": "list",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.temp9.active",
       "default_value": false,
       "field_type": "boolean",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.temp10.modifier",
       "default_value": [],
       "field_type": "list",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.temp10.key",
       "default_value": "",
       "field_type": "string",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.temp10.keys",
       "default_value": [],
       "field_type": "list",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.temp10.active",
       "default_value": false,
       "field_type": "boolean",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.opening_gate.modifier",
@@ -1360,25 +1667,33 @@
         "Control"
       ],
       "field_type": "list",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.opening_gate.key",
       "default_value": "2",
       "field_type": "string",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.opening_gate.keys",
       "default_value": [],
       "field_type": "list",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.opening_gate.active",
       "default_value": true,
       "field_type": "boolean",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.drinking.modifier",
@@ -1386,25 +1701,33 @@
         "Control"
       ],
       "field_type": "list",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.drinking.key",
       "default_value": "N",
       "field_type": "string",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.drinking.keys",
       "default_value": [],
       "field_type": "list",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.drinking.active",
       "default_value": true,
       "field_type": "boolean",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.special_exit.modifier",
@@ -1412,49 +1735,65 @@
         "Control"
       ],
       "field_type": "list",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.special_exit.key",
       "default_value": "P",
       "field_type": "string",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.special_exit.keys",
       "default_value": [],
       "field_type": "list",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.special_exit.active",
       "default_value": true,
       "field_type": "boolean",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.walk_mode.modifier",
       "default_value": [],
       "field_type": "list",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.walk_mode.key",
       "default_value": "QuoteLeft",
       "field_type": "string",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.walk_mode.keys",
       "default_value": [],
       "field_type": "list",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "scripts.keybind.configuration.walk_mode.active",
       "default_value": true,
       "field_type": "boolean",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_keybind"
+      ]
     },
     {
       "name": "amap.using_room_gps",
@@ -1508,7 +1847,9 @@
       "name": "amap.ui.active",
       "default_value": false,
       "field_type": "boolean",
-      "macros_on_modify": []
+      "macros_on_modify": [
+        "_ux"
+      ]
     },
     {
       "name": "amap.ui.use_simplified_compass",

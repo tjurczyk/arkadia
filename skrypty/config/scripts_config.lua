@@ -1,6 +1,6 @@
 ScriptsConfig = {}
 
-function ScriptsConfig:init(config_schema, file_name)
+function ScriptsConfig:init(config_schema, file_name, create_config_file)
     local o = {}
     setmetatable(o, self)
     self.__index = self
@@ -8,9 +8,13 @@ function ScriptsConfig:init(config_schema, file_name)
     self._lua_type_to_type_match = {"string", "boolean", "number"}
     self._config_name = file_name
     self._config_file_path = getMudletHomeDir() .. "/" .. file_name .. ".json"
-    if not io.exists(self._config_file_path) then
+    if not create_config_file and not io.exists(self._config_file_path) then
         scripts:print_log("plik konfiguracyjny ('" .. self._config_file_path .. "') nie istnieje, konfiguracja nie bedzie dzialala")
         return nil
+    elseif create_config_file and not io.exists(self._config_file_path) then
+        scripts:print_log("tworze plik konfiguracyjny: '" .. self._config_file_path .. "'")
+        local f = io.open(self._config_file_path, "w")
+        f:close()
     end
 
     self._var_to_config = {}
@@ -47,7 +51,7 @@ function ScriptsConfig:save_config(silent)
             elseif self._var_to_config[var].field_type == "list" or self._var_to_config[var].field_type == "map" then
                 str_to_write = yajl.to_string(self._var_to_config[var].default_value)
             else
-                str_to_write = self._var_to_config[var].default_value
+                str_to_write = tostring(self._var_to_config[var].default_value)
             end
         end
         io.write("    \"", tostring(var), "\": ", str_to_write)
@@ -187,6 +191,19 @@ function ScriptsConfig:_set_mudlet_var(var, value, run_macros)
     for k, macro_name in pairs(var_config.macros_on_modify) do
         self:_execute_macro(macro_name)
     end
+end
+
+function ScriptsConfig:_get_mudlet_var(var)
+    local var_partials = string.split(var, "%.")
+    local parent = _G[var_partials[1]]
+    table.remove(var_partials, 1)
+    for k, v in ipairs(var_partials) do
+        if k == #var_partials then
+            break
+        end
+        parent = parent[v]
+    end
+    return parent[var_partials[#var_partials]]
 end
 
 function ScriptsConfig:_execute_macro(macro_name)

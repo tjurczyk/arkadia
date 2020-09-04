@@ -51,12 +51,13 @@ function scripts_load_config(name)
     if result then
         tempTimer(0.3, function ()
             result()
-            raiseEvent("profileLoaded")
             if not load_my_settings then
                 after_profile_load()
                 scripts:print_log("Ok, profil " .. name .. " zaladowany")
+                raiseEvent("profileLoaded")
             else
                 scripts:print_log("Masz stary plik imie.txt. Zalecana aktualizacja. Aktualny domyslny plik znajdziesz w " .. getMudletHomeDir() .. "/arkadia/imie.txt")
+                tempTimer(2, function() raiseEvent("profileLoaded") end)
             end
         end)
     else

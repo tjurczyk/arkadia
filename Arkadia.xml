@@ -197,7 +197,7 @@
 							<integer>1</integer>
 						</regexCodePropertyList>
 					</Trigger>
-					<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="yes" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<TriggerGroup isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>ocena zbroi</name>
 						<script>trigger_func_skrypty_inventory_equipment_ocena_zbroi()</script>
 						<triggerType>0</triggerType>

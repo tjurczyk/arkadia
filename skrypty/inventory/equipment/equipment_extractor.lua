@@ -16,6 +16,11 @@ local extraction_triggers = {
 }
 
 function scripts.inv.equipment.evaluation_extractor:extract_weapon()
+    deleteLine()
+    moveCursor(0, getLineNumber() - 1)
+    deleteLine()
+    moveCursor(0, getLineNumber() - 1)
+    deleteLine()
     local equipment = {
         ["chwytanie"] = multimatches[1][3],
         ["obrazenia"] = multimatches[2][3],
@@ -32,18 +37,16 @@ function scripts.inv.equipment.evaluation_extractor:extract_armor()
         ["typSprzetu"] = matches[3] ~= "" and matches[3] or "tarcza"
     }
     for trigger, callback in pairs(extraction_triggers) do
-        local matches = { rex.find(matches[1], trigger) }
-        if not table.is_empty(matches) then
-            table.remove(matches, 1)
-            table.remove(matches, 1)
-            callback(equipment, matches)
+        local sub_matches = { rex.find(matches[7], trigger) }
+        if not table.is_empty(sub_matches) then
+            table.remove(sub_matches, 1)
+            callback(equipment, sub_matches)
         end
     end
     display(equipment)
 end
 
 function scripts.inv.equipment.evaluation_extractor:trzy_rozne(equipment, matches)
-
     if matches[3] == "klutymi" then
         equipment.klute = matches[2]
     elseif matches[3] == "cietymi" then

@@ -28,7 +28,7 @@ function scripts.inv.equipment.evaluation_extractor:extract_weapon()
         ["wywazenie"] = multimatches[3][5],
         ["parowanie"] = multimatches[3][7],
     }
-    display(equipment)
+    scripts.inv.equipment:replace(equipment)
 end
 
 function scripts.inv.equipment.evaluation_extractor:extract_armor()
@@ -43,7 +43,7 @@ function scripts.inv.equipment.evaluation_extractor:extract_armor()
             callback(equipment, sub_matches)
         end
     end
-    display(equipment)
+    scripts.inv.equipment:replace(equipment)
 end
 
 function scripts.inv.equipment.evaluation_extractor:trzy_rozne(equipment, matches)

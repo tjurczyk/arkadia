@@ -26,8 +26,8 @@ function scripts.inv.equipment.extended_evaluation:evaluate(equipment)
         end
     end
     echo("\n\n")
-    cecho("<light_slate_blue>" .. string.sub(" Suma: <grey>" .. sum .. "                                 ", 0, 40))
-    cecho("<light_slate_blue> " .. string.sub("Srednia: <grey>" .. sum / count .. "                                 ", 0, 50))
+    cecho("<light_slate_blue>" .. string.sub(" Suma: <grey>" .. sum .. "                                            ", 0, 50))
+    cecho("<light_slate_blue> " .. string.sub("Srednia: <grey>" .. sum / count .. "                                 ", 0, 40))
 end
 
 scripts.inv.equipment.extended_evaluation:init()

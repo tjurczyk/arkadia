@@ -192,7 +192,7 @@ return {
     "skrypty/misc/licznik",
     "skrypty/misc/ocenianie_osob_sprzet",
     "skrypty/team/event_handlers/sneaky_disabler",
-    "skrypty/inventory/equipment/ocena sprzetu",
+    "skrypty/inventory/equipment/equipment_extractor",
     "skrypty/inventory/weapons/core",
     "skrypty/inventory/weapons/help",
     "skrypty/inventory/bags/core",

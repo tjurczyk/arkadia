@@ -25,11 +25,11 @@ function scripts.inv.equipment:podmien()
 
     if is_armor then
         cecho("<light_slate_blue>\n " .. string.sub("Typ zbroi: <grey>" .. scripts.inv.equipment.TypSprzetu .. "                                 ", 0, 50))
-        cecho("<light_slate_blue>" .. string.sub("Klute: <grey>" .. scripts.inv.equipment.klute .. "                                 ", 0, 46))
-        cecho("<light_slate_blue>\n " .. string.sub("Ciete: <grey>" .. scripts.inv.equipment.ciete .. "                                 ", 0, 50))
-        cecho("<light_slate_blue>" .. string.sub("Obuchowe: <grey>" .. scripts.inv.equipment.obuchowe .. "                                 ", 0, 46))
+        cecho("<light_slate_blue>" .. string.sub("Klute: <grey>" .. scripts.inv.equipment.klute.label .. "                                 ", 0, 46))
+        cecho("<light_slate_blue>\n " .. string.sub("Ciete: <grey>" .. scripts.inv.equipment.ciete.label .. "                                 ", 0, 50))
+        cecho("<light_slate_blue>" .. string.sub("Obuchowe: <grey>" .. scripts.inv.equipment.obuchowe.label .. "                                 ", 0, 46))
         if scripts.inv.equipment.TypSprzetu == "tarcza" then
-            cecho("<light_slate_blue>\n " .. string.sub("Parowanie: <grey>" .. scripts.inv.equipment.parowanie .. "                                 ", 0, 50))
+            cecho("<light_slate_blue>\n " .. string.sub("Parowanie: <grey>" .. scripts.inv.equipment.parowanie.label .. "                                 ", 0, 50))
         end
     else
         if scripts.inv.equipment.TypSprzetu == "dwureczny miecz" then
@@ -39,9 +39,11 @@ function scripts.inv.equipment:podmien()
         cecho("<light_slate_blue>" .. string.sub("Chwyt: <grey>" .. scripts.inv.equipment.chwytanie .. "                                 ", 0, 40))
         cecho("<light_slate_blue>\n " .. string.sub("Obrazenia: <grey>" .. scripts.inv.equipment.obrazenia .. "                                 ", 0, 50))
 
-        cecho("<light_slate_blue>\n " .. string.sub("Wywazenie: <grey>" .. scripts.inv.equipment.wywazenie .. "                                 ", 0, 40))
-        cecho("<light_slate_blue>" .. string.sub("Skutecznosc: <grey>" .. scripts.inv.equipment.parowanie .. "                                 ", 0, 56))
+        cecho("<light_slate_blue>\n " .. string.sub("Wywazenie: <grey>" .. scripts.inv.equipment.wywazenie.label .. "                                 ", 0, 40))
+        cecho("<light_slate_blue>" .. string.sub("Skutecznosc: <grey>" .. scripts.inv.equipment.parowanie.label .. "                                 ", 0, 56))
     end
-    --scripts.inv.equipment.dodatkowe = nil
+
+    raiseEvent("equipmentEvaluation", scripts.inv.equipment)
+
 end
 

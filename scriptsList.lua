@@ -245,7 +245,6 @@ return {
     "mapper/events/custom-events/binds",
     "mapper/events/custom-events/location_history",
     "mapper/events/custom-events/pre_post_binds",
-    "skrypty/inventory/equipment/ocena zbroi",
     "skrypty/inventory/equipment/damaged",
     "skrypty/misc/ships/ships",
     "skrypty/misc/ships/buses",

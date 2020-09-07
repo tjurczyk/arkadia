@@ -22580,7 +22580,7 @@
 					<regexCodeList>
 						<string>^[ &gt;]*Probujesz sie ruszyc na .*, jednak pajecze sieci, w ktore sie w miedzyczasie zaplatal.s, uniemozliwiaja ci to\.$</string>
 						<string>Ogromne stwory przysiadaja przed brama, blokujac do niej dostepu.</string>
-                        <string>^Ruszasz w dalsza droge ale nagle stajesz w pol kroku\. Masz dziwne odczucie, ze w tym miejscu grozi ci jakies niebezpieczenstwo\.$</string>
+						<string>^Ruszasz w dalsza droge ale nagle stajesz w pol kroku\. Masz dziwne odczucie, ze w tym miejscu grozi ci jakies niebezpieczenstwo\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -22777,6 +22777,45 @@
 			<command></command>
 			<packageName></packageName>
 			<regex></regex>
+			<AliasGroup isActive="yes" isFolder="yes">
+				<name>config</name>
+				<script></script>
+				<command></command>
+				<packageName></packageName>
+				<regex></regex>
+				<Alias isActive="yes" isFolder="no">
+					<name>show_vars</name>
+					<script>scripts.config:print_var(matches[2])</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/cget ([a-zA-Z0-9\.]+)$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>set_var</name>
+					<script>echo("set_var\n")
+display(matches)
+</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/cset ([a-zA-Z0-9\.]+)=(true|false|[0-9\.]+)$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>set_var_str</name>
+					<script>echo("set_var_str\n")
+display(matches)
+</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/cset ([a-zA-Z0-9\.]+)=".*"$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>set_var_table</name>
+					<script></script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/cdel ([a-zA-Z0-9\.]+)\[\]</regex>
+				</Alias>
+			</AliasGroup>
 			<AliasGroup isActive="yes" isFolder="yes">
 				<name>team</name>
 				<script></script>

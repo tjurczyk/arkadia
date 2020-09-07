@@ -64,6 +64,8 @@ return {
     "skrypty/character/character_gmcp_updater",
     "skrypty/character/combat_state",
     "skrypty/character/profession",
+    "skrypty/config/alias",
+    "skrypty/config/migrate",
     "skrypty/config/scripts_config",
     "skrypty/keybind/core",
     "skrypty/keybind/callback",

@@ -496,7 +496,7 @@
     {
       "name": "scripts.people.enemy_people",
       "default_value": [],
-      "field_type": "map",
+      "field_type": "list",
       "macros_on_modify": [
         "_people"
       ]

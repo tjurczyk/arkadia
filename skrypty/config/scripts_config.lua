@@ -85,7 +85,7 @@ function ScriptsConfig:print_var(var_pattern)
     cecho("\n")
 end
 
-function ScriptsConfig:remove_from_var(var, value, skip_var_existence_check, silent)
+function ScriptsConfig:remove_indexed_var(var, value_key, value_value, skip_var_existence_check, silent)
     if not skip_var_existence_check and self._config[var] == nil then
         scripts:print_log("zmienna '" .. var .. "' nie istnieje")
         return false
@@ -98,27 +98,64 @@ function ScriptsConfig:remove_from_var(var, value, skip_var_existence_check, sil
     end
 
     local removed = false
-    for k, v in pairs(self._config[var]) do
-        if var_config.field_type == "list" and tostring(v) == tostring(value) then
-            table.remove(self._config[var], v)
-            removed = true
-            break
-        elseif var_config.field_type == "map" and tostring(k) == tostring(value) then
-            self._config[var][k] = nil
-            removed = true
-            break
+    local success = true
+    local message = ""
+    if var_config.field_type == "list" then
+        if value_key ~= nil and type(value_key) == 'number' then
+            -- removing by key
+            if not (value_key > 0 and value_key <= table.size(self._config[var])) then
+                message = "lista nie ma indeksu " .. tostring(value_key)
+                success = false
+            else
+                local removed_value = table.remove(self._config[var], value_key)
+                message = "ok, usunalem '" .. removed_value .. "' (" .. type(removed_value) .. ") z listy"
+            end
+        elseif value_value ~= nil then
+            -- removing by value
+            local removed_value = nil
+            for k, v in pairs(self._config[var]) do
+                if tostring(v) == tostring(value_value) then
+                    removed_value = table.remove(self._config[var], k)
+                    break
+                end
+            end
+            if removed_value then
+                message = "ok, usunalem '" .. removed_value .. "' (" .. type(removed_value) .. ") z listy"
+            else
+                message = "nie usunalem '" .. value_value .. "' (" .. type(value_value) .. ") z listy, bo tego tam nie znalazlem"
+                success = false
+            end
+        else
+            message = "nieprawidlowy klucz/wartosc w usuwaniu z listy"
+            success = false
+        end
+    else
+        if value_key ~= nil then
+            -- removing by key
+            local old_value = self._config[var][value_key]
+            self._config[var][value_key] = nil
+
+            if old_value ~= nil then
+                message = "ok, usunalem klucz '" .. value_key .. "' (" .. type(value_key) .. ") z mapy (mial wartosc '" .. tostring(old_value) .. "' (" .. type(old_value) .. "))"
+            else
+                message = "nie usunalem nic, bo mapa nie ma klucza '" .. tostring(value_key) .. "' (" .. type(value_key) .. ")"
+                success = false
+            end
+        else
+            message = "usuwanie z mapy po wartosci nie jest wspierane"
         end
     end
 
-    if removed then
-        self:_set_mudlet_var(var, self._config[var])
+    if success then
+        self:_set_mudlet_var(var, self._config[var], run_macros)
     end
     if not silent then
-        scripts:print_log("ok, usuniete, obecna konfiguracja: ")
+        scripts:print_log(message)
     end
+    return success
 end
 
-function ScriptsConfig:add_to_var(var, value_key, value_value, skip_var_existence_check, silent)
+function ScriptsConfig:set_indexed_var(var, value_key, value_value, run_macros, skip_var_existence_check, silent)
     if not skip_var_existence_check and self._config[var] == nil then
         scripts:print_log("zmienna '" .. var .. "' nie istnieje")
         return false
@@ -126,29 +163,49 @@ function ScriptsConfig:add_to_var(var, value_key, value_value, skip_var_existenc
 
     local var_config = self._var_to_config[var]
     if var_config.field_type ~= "list" and var_config.field_type ~= "map" then
-        scripts:print_log("dodac mozna tylko do listy lub do mapy, nie do '" .. tostring(var_config.field_type))
+        scripts:print_log("indeksowane dodanie dziala tylko dla typow 'list' i 'map', nie do '" .. tostring(var_config.field_type) .. "'")
         return
     end
 
+    local message = ""
+    local success = true
     if var_config.field_type == "list" then
-        table.insert(self._config[var], value_value)
+        if value_key == nil then
+            table.insert(self._config[var], value_value)
+            message = "ok, dodalem '" .. value_value .. "' (" .. type(value_value) .. ") do listy"
+        elseif value_key > table.size(self._config[var]) + 1 then
+            message = "probujesz ustawic " .. value_key ..  " element listy, kiedy lista ma ich tylko " .. tostring(table.size(self._config[var]))
+            success = false
+        elseif value_key <= 0 then
+            message = "probujesz negatywny badz zerowy element listy, taki nie istnieje, lista indeksowana od 1"
+            success = false
+        else
+            self._config[var][value_key] = value_value
+            message = "ok, ustawilem '" .. tostring(value_value) .. "' ("  .. type(value_value) .. ") jako " .. tostring(value_key) .. " element listy"
+        end
+
     else
-        old_value = self._config[var][value_key]
-        self._config[var][value_key] = value_value
-        if not old_value then
-            old_value = "<brak>"
+        if value_key == nil then
+            message = "brak indeksu dla mapy"
+            success = false
+        else
+            old_value = self._config[var][value_key]
+            self._config[var][value_key] = value_value
+            message = "ok, ustawilem '" .. tostring(value_value) .. "' ("  .. type(value_value) .. ") jako klucz '" .. tostring(value_key) .. "' ("  .. type(value_key) .. ")"
+            if old_value then
+                message = message .. ", poprzednio bylo '" .. old_value .. "' (" .. type(old_value) .. ")"
+            else
+                message = message .. ", poprzednio pusty indeks"
+            end
         end
     end
-    self:_set_mudlet_var(var, self._config[var])
+    if success then
+        self:_set_mudlet_var(var, self._config[var], run_macros)
+    end
     if not silent then
-        local message = "ok, dodane"
-        if var_config.field_type == "list" then
-            message = message .. " do listy"
-        else
-            message = message .. " do mapy (poprzednio: " .. old_value .. ")"
-        end
         scripts:print_log(message)
     end
+    return success
 end
 
 function ScriptsConfig:set_var(var, value, run_macros, skip_var_existence_check, silent)

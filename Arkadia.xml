@@ -22784,36 +22784,67 @@
 				<packageName></packageName>
 				<regex></regex>
 				<Alias isActive="yes" isFolder="no">
-					<name>show_vars</name>
-					<script>scripts.config:print_var(matches[2])</script>
+					<name>get_var_all</name>
+					<script>alias_config_get_var()</script>
 					<command></command>
 					<packageName></packageName>
-					<regex>^/cget ([a-zA-Z0-9\.]+)$</regex>
+					<regex>^/cget$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>get_var</name>
+					<script>alias_config_get_var()</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/cget (.*)$</regex>
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
 					<name>set_var</name>
-					<script>echo("set_var\n")
-display(matches)
-</script>
+					<script>alias_config_set_var()</script>
 					<command></command>
 					<packageName></packageName>
-					<regex>^/cset ([a-zA-Z0-9\.]+)=(true|false|[0-9\.]+)$</regex>
+					<regex>^/cset(|\!) ([a-zA-Z0-9\._]+)=(true|false|[0-9\.]+)$</regex>
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
 					<name>set_var_str</name>
-					<script>echo("set_var_str\n")
-display(matches)
-</script>
+					<script>alias_config_set_var()</script>
 					<command></command>
 					<packageName></packageName>
-					<regex>^/cset ([a-zA-Z0-9\.]+)=".*"$</regex>
+					<regex>^/cset(|\!) ([a-zA-Z0-9\._]+)=(".*")$</regex>
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
-					<name>set_var_table</name>
-					<script></script>
+					<name>set_var_index</name>
+					<script>alias_config_set_var_index()</script>
 					<command></command>
 					<packageName></packageName>
-					<regex>^/cdel ([a-zA-Z0-9\.]+)\[\]</regex>
+					<regex>^/cset(|\!) ([a-zA-Z0-9\._]+)[\[\{]{1}(["0-9a-zA-Z]+)[\]\}]{1}=(true|false|[0-9\.]+)$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>set_var_index_str</name>
+					<script>alias_config_set_var_index()</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/cset(|\!) ([a-zA-Z0-9\._]+)[\[\{]{1}(["0-9a-zA-Z]+)[\]\}]{1}=(".*")$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>del_var_index_key</name>
+					<script>alias_config_del_var_index_key()</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/cdel(|\!) ([a-zA-Z0-9\._]+)[\[\{]{1}(["0-9a-zA-Z]+)[\]\}]{1}$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>del_var_index_value</name>
+					<script>alias_config_del_var_index_value()</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/cdel(|\!) ([a-zA-Z0-9\._]+) (true|false|[0-9\.]+)$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>del_var_index_value_str</name>
+					<script>alias_config_del_var_index_value()</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/cdel(|\!) ([a-zA-Z0-9\._]+) (".*")$</regex>
 				</Alias>
 			</AliasGroup>
 			<AliasGroup isActive="yes" isFolder="yes">

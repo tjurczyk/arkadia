@@ -24,8 +24,13 @@ function ateam:check_team_here()
 end
 
 function ateam:can_perform_sneaky_attack()
-    if scripts.ui.info_hidden_value == "ok" or
-            (tonumber(scripts.ui.info_hidden_value) and tonumber(ateam.sneaky_attack_cond) and tonumber(scripts.ui.info_hidden_value) >= tonumber(ateam.sneaky_attack_cond)) then
+    local hidden_count_number = tonumber(scripts.ui.states_window_nav_states.hidden_state)
+    if not hidden_count_number then
+        return false
+    end
+
+    local sneaky_attack_cond_number = tonumber(ateam.sneaky_attack_cond)
+    if hidden_count_number >= 15 or (sneaky_attack_cond_number and hidden_count_number >= sneaky_attack_cond_number) then
         return true
     end
     return false

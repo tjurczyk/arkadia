@@ -1,3 +1,34 @@
+function alias_config_help()
+
+    cecho("+------------------------ <green>Arkadia skrypty, ver " .. string.sub(scripts.ver .. "   ", 0, 4) .. "<grey> -------------------------+\n")
+    cecho("|                                                                            |\n")
+    cecho("| <yellow>Aby zobaczyc pomoc ")
+    scripts:print_url("<deep_sky_blue>kliknij tutaj", "alias_config_open_help_url", "klik")
+    cecho("                                           |\n")
+    cecho("|                                                                            |\n")
+    cecho("+----------------------------------------------------------------------------+\n")
+end
+
+function alias_config_open_help_url()
+    openUrl("http://arkadia.kamerdyner.net/config.html")
+end
+
+function alias_config_load()
+    scripts_load_v2_config(matches[2])
+end
+
+function alias_config_save()
+    if not scripts.config then
+        scripts:print_log("config niezainicjowany")
+        return
+    end
+    scripts.config:save_config(false)
+end
+
+function alias_config_migrate()
+    migrate_config_to_config_v2(matches[2])
+end
+
 function alias_config_get_var()
     if matches[2] == nil then
         scripts.config:print_var(".*")

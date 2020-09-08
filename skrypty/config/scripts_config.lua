@@ -1,6 +1,12 @@
 ScriptsConfig = {}
 
-function ScriptsConfig:init(config_schema, file_name, create_config_file)
+function ScriptsConfig:init(file_name, create_config_file)
+    if scripts.config_schema == nil then
+        error("config schema isn't loaded in ScriptsConfig:init")
+        scripts:print_log("config nie zostal zainicjowany prawidlowo, to nie powinno sie zdarzyc, zglos na discordzie")
+        return nil
+    end
+
     local o = {}
     setmetatable(o, self)
     self.__index = self
@@ -9,7 +15,7 @@ function ScriptsConfig:init(config_schema, file_name, create_config_file)
     self._config_name = file_name
     self._config_file_path = getMudletHomeDir() .. "/" .. file_name .. ".json"
     if not create_config_file and not io.exists(self._config_file_path) then
-        scripts:print_log("plik konfiguracyjny ('" .. self._config_file_path .. "') nie istnieje, konfiguracja nie bedzie dzialala")
+        scripts:print_log("plik konfiguracyjny ('" .. self._config_file_path .. "') nie istnieje")
         return nil
     elseif create_config_file and not io.exists(self._config_file_path) then
         scripts:print_log("tworze plik konfiguracyjny: '" .. self._config_file_path .. "'")
@@ -18,29 +24,41 @@ function ScriptsConfig:init(config_schema, file_name, create_config_file)
     end
 
     self._var_to_config = {}
-    for k, field in pairs(config_schema.fields) do
+    for k, field in pairs(scripts.config_schema.fields) do
         self._var_to_config[field.name] = field
     end
     self._sorted_var_keys = table.keys(self._var_to_config)
     table.sort(self._sorted_var_keys)
-    self._macro_to_reload_elements = config_schema.macro_to_reload_elements
+    self._macro_to_reload_elements = scripts.config_schema.macro_to_reload_elements
     self._config = {}
+    if create_config_file then
+        self:save_config(true)
+    end
     return self
 end
 
-function ScriptsConfig:load_config()
+function ScriptsConfig:load_config(silent)
     file = io.open(self._config_file_path)
     local config = yajl.to_value(file:read("*a"))
     for var, value in pairs(config) do
         self:set_var(var, value, false, true, true)
     end
-    scripts:print_log("zaladowalem config dla profilu '" .. self._config_name .. "'")
+    if not silent then
+        scripts:print_log("zaladowalem config dla profilu '" .. self._config_name .. "'")
+    end
 end
 
 function ScriptsConfig:save_config(silent)
     file = io.open(self._config_file_path, "w")
     io.output(file)
     io.write("{\n")
+    local user_var_names = {}
+    for var, value in pairs(self._config) do
+        if not table.contains(self._sorted_var_keys, var) then
+            user_var_names[var] = value
+        end
+    end
+    -- copy var keys from the config
     for _, var in pairs(self._sorted_var_keys) do
         local str_to_write = nil
         if self._config[var] ~= nil then
@@ -55,10 +73,28 @@ function ScriptsConfig:save_config(silent)
             end
         end
         io.write("    \"", tostring(var), "\": ", str_to_write)
-        if _ < table.size(self._sorted_var_keys) then
+        if _ < table.size(self._sorted_var_keys) or table.size(user_var_names) > 0 then
             io.write(",")
         end
         io.write("\n")
+    end
+    -- copy any extras that user can have
+    local idx = 1
+    for var, value in pairs(user_var_names) do
+        local str_to_write = nil
+        if type(value) == "string" then
+            str_to_write = "\"" .. value .. "\""
+        elseif type(value) == "table" then
+            str_to_write = yajl.to_string(value)
+        else
+            str_to_write = tostring(value)
+        end
+        io.write("    \"", tostring(var), "\": ", str_to_write)
+        if idx < table.size(user_var_names) then
+            io.write(",")
+        end
+        io.write("\n")
+        idx = idx + 1
     end
     io.write("}")
     io.close(file)
@@ -227,6 +263,10 @@ function ScriptsConfig:set_var(var, value, run_macros, skip_var_existence_check,
     return true
 end
 
+function ScriptsConfig:run_macro(macro_name)
+    self:_execute_macro(macro_name)
+end
+
 function ScriptsConfig:_set_mudlet_var(var, value, run_macros)
     local var_partials = string.split(var, "%.")
     local parent = _G[var_partials[1]]
@@ -275,14 +315,16 @@ function ScriptsConfig:_execute_macro(macro_name)
         elseif item.macro_type == "func_call" then
             local func_name = item.func_name
             local func_args = item.func_args
-
             local func_partials = string.split(func_name, "%.")
             local parent = _G[func_partials[1]]
+            if item.func_module_call then
+                table.insert(func_args, 1, parent)
+            end
             table.remove(func_partials, 1)
             for k, v in ipairs(func_partials) do
                 parent = parent[v]
             end
-            parent(func_args)
+            parent(unpack(func_args))
         end
     end
 end

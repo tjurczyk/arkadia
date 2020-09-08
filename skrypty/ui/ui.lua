@@ -1,3 +1,13 @@
+scripts.ui.bind_color = "LawnGreen"
+
+function scripts.ui:get_bind_color_backward_compatible()
+    local color = scripts.ui.bind_color
+    if string.sub(color, 1, 1) == "<" then
+        color = string.sub(color, 2, #color-1)
+    end
+    return color
+end
+
 function scripts.ui:setup()
     setBorderBottom(scripts.ui.footer_height)
     --scripts.ui.main_width, scripts.ui.main_height = getMainWindowSize()

@@ -9,6 +9,7 @@
       {
         "macro_type": "func_call",
         "func_name": "ateam.restart_ateam",
+        "func_module_call": true,
         "func_args": [
           true
         ]
@@ -78,8 +79,49 @@
     ],
     "_all": [
       {
+        "macro_type": "func_call",
+        "func_name": "amap.check_room_gps_options",
+        "func_args": []
+      },
+      {
         "macro_type": "macro",
         "macro_name": "_ateam"
+      },
+      {
+        "macro_type": "macro",
+        "macro_name": "_people"
+      },
+      {
+        "macro_type": "macro",
+        "macro_name": "_keybind"
+      },
+      {
+        "macro_type": "macro",
+        "macro_name": "_lang"
+      },
+      {
+        "macro_type": "macro",
+        "macro_name": "_herbs"
+      },
+      {
+        "macro_type": "macro",
+        "macro_name": "_magics"
+      },
+      {
+        "macro_type": "macro",
+        "macro_name": "_ux"
+      }
+    ],
+    "_profile_loaded": [
+      {
+        "macro_type": "func_call",
+        "func_name": "misc_load_dump",
+        "func_args": []
+      },
+      {
+        "macro_type": "func_call",
+        "func_name": "amap.check_room_gps_options",
+        "func_args": []
       },
       {
         "macro_type": "macro",
@@ -218,8 +260,8 @@
     },
     {
       "name": "ateam.sneaky_attack_cond",
-      "default_value": "ok",
-      "field_type": "string",
+      "default_value": 15,
+      "field_type": "number",
       "macros_on_modify": [
         "_ateam"
       ]

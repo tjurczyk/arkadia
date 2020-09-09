@@ -34,8 +34,8 @@ function ateam_may_execute_next_attack_obj(...)
 end
 
 function ateam_execute_next_attack_obj()
-  -- attack only if attacking not this one
-  if ateam.next_attack_objs.next_attak_obj and ateam.objs[ateam.my_id]["attack_num"] ~= ateam.next_attack_objs.next_attak_obj then
+  -- attack only if attacking not this one or if team leader to show target and order if applicable
+  if ateam.objs[ateam.my_id]["team_leader"] or (ateam.next_attack_objs.next_attak_obj and ateam.objs[ateam.my_id]["attack_num"] ~= ateam.next_attack_objs.next_attak_obj) then
     ateam:zab_func(ateam.next_attack_objs.next_attak_obj)
   end
   ateam.next_attack_objs.next_attak_obj = nil

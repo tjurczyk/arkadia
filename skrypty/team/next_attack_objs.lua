@@ -33,9 +33,12 @@ function ateam_may_execute_next_attack_obj(...)
   cecho(" <orange>/nn zeby zaatakowac nastepny cel: " .. ateam.objs[ateam.next_attack_objs.next_attak_obj]["desc"] .. "\n")
 end
 
-function ateam_execute_next_attack_obj()
+function ateam_execute_next_attack_obj(force)
   -- attack only if attacking not this one
-  if ateam.next_attack_objs.next_attak_obj and ateam.objs[ateam.my_id]["attack_num"] ~= ateam.next_attack_objs.next_attak_obj then
+  if not ateam.next_attack_objs.next_attak_obj then
+    return
+  end
+  if force or ateam.objs[ateam.my_id]["attack_num"] ~= ateam.next_attack_objs.next_attak_obj then
     ateam:zab_func(ateam.next_attack_objs.next_attak_obj)
   end
   ateam.next_attack_objs.next_attak_obj = nil

@@ -1,7 +1,7 @@
 function scripts.utils.bind_ship(command, if_locate, silent)
     scripts.utils.ship_key = command
 
-    cecho("\n\n" .. scripts.ui.bind_color .. "bind <yellow>" .. scripts.keybind:keybind_tostring("enter_ship") .. scripts.ui.bind_color .. ": " .. command .. "\n\n")
+    cecho("\n\n<" .. scripts.ui:get_bind_color_backward_compatible() .. ">bind <yellow>" .. scripts.keybind:keybind_tostring("enter_ship") .. "<" .. scripts.ui:get_bind_color_backward_compatible() .. ">: " .. command .. "\n\n")
 
     if not silent then
         raiseEvent("playBeep")

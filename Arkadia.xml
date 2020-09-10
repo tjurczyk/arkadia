@@ -12749,7 +12749,7 @@
 								<colorTriggerFgColor>#000000</colorTriggerFgColor>
 								<colorTriggerBgColor>#000000</colorTriggerBgColor>
 								<regexCodeList>
-									<string>.* silnym ciosem .* oglusza ([a-zA-Z]+)\.$</string>
+									<string>.* silnym ciosem .* oglusza ([ a-zA-Z]+)\.$</string>
 								</regexCodeList>
 								<regexCodePropertyList>
 									<integer>1</integer>
@@ -22730,6 +22730,34 @@
 					<packageName></packageName>
 					<regex>^/cdel(|\!) ([a-zA-Z0-9\._]+) (".*")$</regex>
 				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>config_help</name>
+					<script>alias_config_help()</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/cfg$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>config_load</name>
+					<script>alias_config_load()</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/cload (.*)$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>config_migrate</name>
+					<script>alias_config_migrate()</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/cmigrate (.*)$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>config_save</name>
+					<script>alias_config_save()</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/csave$</regex>
+				</Alias>
 			</AliasGroup>
 			<AliasGroup isActive="yes" isFolder="yes">
 				<name>team</name>
@@ -23026,7 +23054,7 @@
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
 					<name>execute_nn</name>
-					<script>ateam_execute_next_attack_obj()</script>
+					<script>ateam_execute_next_attack_obj(false)</script>
 					<command></command>
 					<packageName></packageName>
 					<regex>^/nn$</regex>

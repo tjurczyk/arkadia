@@ -2,7 +2,7 @@ function scripts.utils.bind_functional(command, silent, remove_on_new_location)
     scripts.utils.functional_key = command
 
     if not silent then
-        cecho("\n\n" .. scripts.ui.bind_color .. "bind <yellow>" .. scripts.keybind:keybind_tostring("functional_key") .. scripts.ui.bind_color .. ": " .. command .. "\n\n")
+        cecho("\n\n<" .. scripts.ui:get_bind_color_backward_compatible() .. ">bind <yellow>" .. scripts.keybind:keybind_tostring("functional_key") .. "<" .. scripts.ui:get_bind_color_backward_compatible() .. ">: " .. command .. "\n\n")
     end
 
     if remove_on_new_location then

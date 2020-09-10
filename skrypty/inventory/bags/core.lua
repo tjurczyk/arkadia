@@ -111,6 +111,7 @@ function scripts.inv:decorate_command_with_proper_bag_forms(command)
                 replaced_bag_macro = replaced_bag_macro .. " "
             end
 
+
             if this_form == "desc" then
                 replaced_bag_macro = replaced_bag_macro .. this_bag_name
             elseif this_form == "dopelniacz" then

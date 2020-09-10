@@ -5,7 +5,7 @@ function scripts.keybind:init()
     for bind, b_dict in pairs(scripts.keybind.configuration) do
         -- backward compatibility for attack_binds
         if bind ~= "attack_bind_obj" then
-            scripts.keybind:create_temp_keybind(bind, b_dict["active"], b_dict["description"], "core", b_dict["modifier"], b_dict["key"], b_dict["callback"])
+            scripts.keybind:create_temp_keybind(bind, b_dict["active"], b_dict["description"], "core", b_dict["modifier"], b_dict["key"], b_dict["keys"], b_dict["callback"])
         end
     end
 
@@ -49,7 +49,7 @@ function scripts.utils.enable_keybinds(silent)
     end
 end
 
-function scripts.keybind:create_temp_keybind(name, is_active, desc, group, modifier, key, callback)
+function scripts.keybind:create_temp_keybind(name, is_active, desc, group, modifier, key, keys, callback)
     if is_active ~= true then
         -- if bind is not active, don't initiate.
         return
@@ -69,11 +69,11 @@ function scripts.keybind:create_temp_keybind(name, is_active, desc, group, modif
         modifier_value = modifier_value + mudlet.keymodifier[id]
     end
 
-    if type(key) == "string" then
+    if key ~= "" then
         scripts.keybind:_build_single_key(name, desc, group, modifier, modifier_value, key, callback, nil)
         key = { key }
-    elseif type(key) == "table" then
-        for idx, single_key in pairs(key) do
+    elseif table.size(keys) > 0 then
+        for idx, single_key in pairs(keys) do
             scripts.keybind:_build_single_key(name .. "_" .. idx, desc, group, modifier, modifier_value, single_key, callback, idx)
         end
     else

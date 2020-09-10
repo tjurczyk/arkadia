@@ -12907,7 +12907,7 @@
 								<colorTriggerFgColor>#000000</colorTriggerFgColor>
 								<colorTriggerBgColor>#000000</colorTriggerBgColor>
 								<regexCodeList>
-									<string>(^[ &gt;]*Rzucasz sie na .* przebijajac sie przez [a-z]+ ochrone\.$)</string>
+									<string>(^[ &gt;]*Rzucasz sie na (.*) przebijajac sie przez [a-z]+ ochrone\.$)</string>
 								</regexCodeList>
 								<regexCodePropertyList>
 									<integer>1</integer>

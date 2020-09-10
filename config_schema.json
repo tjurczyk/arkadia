@@ -217,6 +217,18 @@
       ]
     },
     {
+      "name": "ateam.options.broken_defense_bg_color",
+      "default_value": "LightPink",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "ateam.options.broken_defense_fg_color",
+      "default_value": "black",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
       "name": "ateam.attack_mode",
       "default_value": 3,
       "field_type": "number",

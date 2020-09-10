@@ -21,13 +21,17 @@ ateam = ateam or {
     sneaky_attack = 0,
     sneaky_attack_cond = "ok",
     paralyzed_names = {},
+    broken_defense_names = {},
     paralyzed_name_to_safety_timer = {},
+    broken_defense_name_to_safety_timer = {},
     options = {
         team_numbering_mode = "mode1",
         team_mate_stun_bg_color = "goldenrod",
         team_mate_stun_fg_color = "black",
         enemy_stun_bg_color = "orchid",
         enemy_stun_fg_color = "black",
+        broken_defense_bg_color = "LightPink",
+        broken_defense_fg_color = "black",
     }
 }
 

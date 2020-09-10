@@ -60,6 +60,7 @@ function trigger_func_skrypty_ui_gags_color_color_other_przelamanie()
     local team_break = ateam.team_names[matches[3]] or ateam.team_names[string.lower(matches[3])]
     local color = team_break and "green" or "red"
     cecho("<".. color ..">\n\n[ KTOS LAMIE ] " .. matches[2] .. "\n\n")
+    ateam:may_setup_broken_defense(matches[4])
     resetFormat()
 
     if team_break then
@@ -70,6 +71,7 @@ end
 function trigger_func_skrypty_ui_gags_color_color_other_przelamanie_ty()
     deleteLine()
     cecho("<green>\n\n[ TY LAMIESZ ] " .. matches[2] .. "\n\n")
+    ateam:may_setup_broken_defense(matches[3])
     resetFormat()
 end
 

@@ -311,7 +311,11 @@ function ateam:print_obj_team(id, obj)
         end
 
         -- id section
-        cecho(scripts.ui.states_window_name, "<white:team_console_bg>[" .. str_id .. "<white:team_console_bg>]")
+        if ateam.broken_defense_names[obj["desc"]] then
+            cecho(scripts.ui.states_window_name, "<" .. ateam.options.broken_defense_fg_color .. ":" .. ateam.options.broken_defense_bg_color .. ">[" .. str_id .. "]")
+        else
+            cecho(scripts.ui.states_window_name, "<white:team_console_bg>[" .. str_id .. "<white:team_console_bg>]")
+        end
 
         -- sneaky id section
         if ateam.sneaky_attack > 0 then
@@ -404,7 +408,11 @@ function ateam:print_obj_enemy(id, obj)
         end
 
         -- id section
-        cecho(scripts.ui.enemy_states_window_name, "<white:team_console_bg>[" .. str_id .. "]")
+        if ateam.broken_defense_names[obj["desc"]] then
+            cecho(scripts.ui.states_window_name, "<" .. ateam.options.broken_defense_fg_color .. ":" .. ateam.options.broken_defense_bg_color .. ">[" .. str_id .. "]")
+        else
+            cecho(scripts.ui.enemy_states_window_name, "<white:team_console_bg>[" .. str_id .. "]")
+        end
 
         -- sneaky id section
         if ateam.sneaky_attack > 0 then

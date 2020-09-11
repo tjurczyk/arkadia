@@ -197,7 +197,7 @@
 							<integer>1</integer>
 						</regexCodePropertyList>
 					</Trigger>
-					<TriggerGroup isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>ocena zbroi</name>
 						<script>trigger_func_skrypty_inventory_equipment_ocena_zbroi()</script>
 						<triggerType>0</triggerType>
@@ -216,7 +216,7 @@
 						<regexCodePropertyList>
 							<integer>1</integer>
 						</regexCodePropertyList>
-					</TriggerGroup>
+					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>ekwipunek_poziom_zuzycia</name>
 						<script>trigger_func_skrypty_inventory_equipment_ekwipunek_poziom_zuzycia()</script>
@@ -1042,7 +1042,7 @@
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^Bialy, zimny plomien ogarnia (.*), w kilka chwil spopielajac ja calkowicie\.</string>
+						<string>^Bialy, zimny plomien ogarnia (.*), w kilka chwil spopielajac .* calkowicie\.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>

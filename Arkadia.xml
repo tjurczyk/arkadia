@@ -1044,7 +1044,7 @@
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^Bialy, zimny plomien ogarnia (.*), w kilka chwil spopielajac ja calkowicie\.</string>
+						<string>^Bialy, zimny plomien ogarnia (.*), w kilka chwil spopielajac .* calkowicie\.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>

@@ -69,11 +69,13 @@
 						<string>^.*Stracil(es|as) kontakt z Arkadia na mniej niz dziesiec minut ...$</string>
 						<string>^.*Stracil(es|as) polaczenie na .*</string>
 						<string>^.*Byl(es|as) zaangazowan(a|y) w walke, gdy stracil(es|as) kontakt z Arkadia.$</string>
+						<string>Trwa ladowanie danych postaci.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
 						<integer>1</integer>
 						<integer>1</integer>
+						<integer>0</integer>
 					</regexCodePropertyList>
 				</Trigger>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -197,7 +199,7 @@
 							<integer>1</integer>
 						</regexCodePropertyList>
 					</Trigger>
-					<TriggerGroup isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>ocena zbroi</name>
 						<script>trigger_func_skrypty_inventory_equipment_ocena_zbroi()</script>
 						<triggerType>0</triggerType>
@@ -216,7 +218,7 @@
 						<regexCodePropertyList>
 							<integer>1</integer>
 						</regexCodePropertyList>
-					</TriggerGroup>
+					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>ekwipunek_poziom_zuzycia</name>
 						<script>trigger_func_skrypty_inventory_equipment_ekwipunek_poziom_zuzycia()</script>

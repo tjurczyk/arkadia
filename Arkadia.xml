@@ -69,11 +69,13 @@
 						<string>^.*Stracil(es|as) kontakt z Arkadia na mniej niz dziesiec minut ...$</string>
 						<string>^.*Stracil(es|as) polaczenie na .*</string>
 						<string>^.*Byl(es|as) zaangazowan(a|y) w walke, gdy stracil(es|as) kontakt z Arkadia.$</string>
+						<string>Trwa ladowanie danych postaci.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
 						<integer>1</integer>
 						<integer>1</integer>
+						<integer>0</integer>
 					</regexCodePropertyList>
 				</Trigger>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -173,11 +175,11 @@
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList />
 					<regexCodePropertyList />
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>ocena broni</name>
 						<script>trigger_func_skrypty_inventory_equipment_ocena_broni()</script>
 						<triggerType>0</triggerType>
-						<conditonLineDelta>0</conditonLineDelta>
+						<conditonLineDelta>3</conditonLineDelta>
 						<mStayOpen>0</mStayOpen>
 						<mCommand></mCommand>
 						<packageName></packageName>
@@ -187,13 +189,17 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
+							<string>Zauwazasz, iz (.*) jest przystosowan[ya] do chwytania (w dowolnej rece|oburacz|w lewej rece|w prawej rece).</string>
+							<string>Za (jego|jej|ich) pomoca mozna zadawac rany (.*).</string>
 							<string>Twoje doswiadczenie i umiejetnosci podpowiadaja ci, ze jak na (.*) (jest|sa) (on|one|ono|ona) (.*) (wywazony|wywazona|wywazone) i (.*).</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
+							<integer>1</integer>
+							<integer>1</integer>
 						</regexCodePropertyList>
 					</Trigger>
-					<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="yes" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>ocena zbroi</name>
 						<script>trigger_func_skrypty_inventory_equipment_ocena_zbroi()</script>
 						<triggerType>0</triggerType>
@@ -208,126 +214,6 @@
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
 							<string>Twoje doswiadczenie i umiejetnosci podpowiadaja ci, ze (jak na (lekka|srednia|ciezka) zbroje (chroni|chronia)|(chroni|chronia)) (on|ona|one) (.*)</string>
-						</regexCodeList>
-						<regexCodePropertyList>
-							<integer>1</integer>
-						</regexCodePropertyList>
-						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-							<name>trzy rozne</name>
-							<script>trigger_func_skrypty_inventory_equipment_ocena_zbroi_trzy_rozne()</script>
-							<triggerType>0</triggerType>
-							<conditonLineDelta>0</conditonLineDelta>
-							<mStayOpen>0</mStayOpen>
-							<mCommand></mCommand>
-							<packageName></packageName>
-							<mFgColor>#ff0000</mFgColor>
-							<mBgColor>#ffff00</mBgColor>
-							<mSoundFile></mSoundFile>
-							<colorTriggerFgColor>#000000</colorTriggerFgColor>
-							<colorTriggerBgColor>#000000</colorTriggerBgColor>
-							<regexCodeList>
-								<string>(.*) przed obrazeniami (klutymi|cietymi|obuchowymi), (.*) przed (klutymi|cietymi|obuchowymi) i (.*) przed (klutymi|cietymi|obuchowymi).</string>
-							</regexCodeList>
-							<regexCodePropertyList>
-								<integer>1</integer>
-							</regexCodePropertyList>
-						</Trigger>
-						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-							<name>trzy na raz</name>
-							<script>trigger_func_skrypty_inventory_equipment_ocena_zbroi_trzy_na_raz()</script>
-							<triggerType>0</triggerType>
-							<conditonLineDelta>0</conditonLineDelta>
-							<mStayOpen>0</mStayOpen>
-							<mCommand></mCommand>
-							<packageName></packageName>
-							<mFgColor>#ff0000</mFgColor>
-							<mBgColor>#ffff00</mBgColor>
-							<mSoundFile></mSoundFile>
-							<colorTriggerFgColor>#000000</colorTriggerFgColor>
-							<colorTriggerBgColor>#000000</colorTriggerBgColor>
-							<regexCodeList>
-								<string>(.*) przed obrazeniami (klutymi|cietymi|obuchowymi), (klutymi|cietymi|obuchowymi) i (klutymi|cietymi|obuchowymi).</string>
-							</regexCodeList>
-							<regexCodePropertyList>
-								<integer>1</integer>
-							</regexCodePropertyList>
-						</Trigger>
-						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-							<name>2+1</name>
-							<script>trigger_func_skrypty_inventory_equipment_ocena_zbroi_2_1()</script>
-							<triggerType>0</triggerType>
-							<conditonLineDelta>0</conditonLineDelta>
-							<mStayOpen>0</mStayOpen>
-							<mCommand></mCommand>
-							<packageName></packageName>
-							<mFgColor>#ff0000</mFgColor>
-							<mBgColor>#ffff00</mBgColor>
-							<mSoundFile></mSoundFile>
-							<colorTriggerFgColor>#000000</colorTriggerFgColor>
-							<colorTriggerBgColor>#000000</colorTriggerBgColor>
-							<regexCodeList>
-								<string>(.*) przed obrazeniami (cietymi|klutymi|obuchowymi) i (.*) oraz (.*) przed (klutymi|cietymi|obuchowymi).</string>
-							</regexCodeList>
-							<regexCodePropertyList>
-								<integer>1</integer>
-							</regexCodePropertyList>
-						</Trigger>
-						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-							<name>tarcza</name>
-							<script>trigger_func_skrypty_inventory_equipment_ocena_zbroi_tarcza()</script>
-							<triggerType>0</triggerType>
-							<conditonLineDelta>0</conditonLineDelta>
-							<mStayOpen>0</mStayOpen>
-							<mCommand></mCommand>
-							<packageName></packageName>
-							<mFgColor>#ff0000</mFgColor>
-							<mBgColor>#ffff00</mBgColor>
-							<mSoundFile></mSoundFile>
-							<colorTriggerFgColor>#000000</colorTriggerFgColor>
-							<colorTriggerBgColor>#000000</colorTriggerBgColor>
-							<regexCodeList>
-								<string>(.*)Ponadto jest (.*) w parowaniu ciosow.</string>
-							</regexCodeList>
-							<regexCodePropertyList>
-								<integer>1</integer>
-							</regexCodePropertyList>
-						</Trigger>
-					</TriggerGroup>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-						<name>obrazenia</name>
-						<script>trigger_func_skrypty_inventory_equipment_obrazenia()</script>
-						<triggerType>0</triggerType>
-						<conditonLineDelta>0</conditonLineDelta>
-						<mStayOpen>0</mStayOpen>
-						<mCommand></mCommand>
-						<packageName></packageName>
-						<mFgColor>#ff0000</mFgColor>
-						<mBgColor>#ffff00</mBgColor>
-						<mSoundFile></mSoundFile>
-						<colorTriggerFgColor>#000000</colorTriggerFgColor>
-						<colorTriggerBgColor>#000000</colorTriggerBgColor>
-						<regexCodeList>
-							<string>Za (jego|jej|ich) pomoca mozna zadawac rany (.*).</string>
-						</regexCodeList>
-						<regexCodePropertyList>
-							<integer>1</integer>
-						</regexCodePropertyList>
-					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-						<name>chwytanie</name>
-						<script>trigger_func_skrypty_inventory_equipment_chwytanie()</script>
-						<triggerType>0</triggerType>
-						<conditonLineDelta>0</conditonLineDelta>
-						<mStayOpen>0</mStayOpen>
-						<mCommand></mCommand>
-						<packageName></packageName>
-						<mFgColor>#ff0000</mFgColor>
-						<mBgColor>#ffff00</mBgColor>
-						<mSoundFile></mSoundFile>
-						<colorTriggerFgColor>#000000</colorTriggerFgColor>
-						<colorTriggerBgColor>#000000</colorTriggerBgColor>
-						<regexCodeList>
-							<string>Zauwazasz, iz (.*) jest przystosowan[ya] do chwytania (w dowolnej rece|oburacz|w lewej rece|w prawej rece).</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -1158,7 +1044,7 @@
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^Bialy, zimny plomien ogarnia (.*), w kilka chwil spopielajac ja calkowicie\.</string>
+						<string>^Bialy, zimny plomien ogarnia (.*), w kilka chwil spopielajac .* calkowicie\.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -12865,7 +12751,7 @@
 								<colorTriggerFgColor>#000000</colorTriggerFgColor>
 								<colorTriggerBgColor>#000000</colorTriggerBgColor>
 								<regexCodeList>
-									<string>.* silnym ciosem .* oglusza ([a-zA-Z]+)\.$</string>
+									<string>.* silnym ciosem .* oglusza ([ a-zA-Z]+)\.$</string>
 								</regexCodeList>
 								<regexCodePropertyList>
 									<integer>1</integer>
@@ -13003,7 +12889,7 @@
 								<colorTriggerFgColor>#000000</colorTriggerFgColor>
 								<colorTriggerBgColor>#000000</colorTriggerBgColor>
 								<regexCodeList>
-									<string>(^[ &gt;]*(.*) rzuca sie na .* przebijajac sie przez [a-z]+ ochrone\.$)</string>
+									<string>(^[ &gt;]*(.*) rzuca sie na (.*) przebijajac sie przez [a-z]+ ochrone\.$)</string>
 								</regexCodeList>
 								<regexCodePropertyList>
 									<integer>1</integer>
@@ -13023,7 +12909,7 @@
 								<colorTriggerFgColor>#000000</colorTriggerFgColor>
 								<colorTriggerBgColor>#000000</colorTriggerBgColor>
 								<regexCodeList>
-									<string>(^[ &gt;]*Rzucasz sie na .* przebijajac sie przez [a-z]+ ochrone\.$)</string>
+									<string>(^[ &gt;]*Rzucasz sie na (.*) przebijajac sie przez [a-z]+ ochrone\.$)</string>
 								</regexCodeList>
 								<regexCodePropertyList>
 									<integer>1</integer>
@@ -22580,7 +22466,7 @@
 					<regexCodeList>
 						<string>^[ &gt;]*Probujesz sie ruszyc na .*, jednak pajecze sieci, w ktore sie w miedzyczasie zaplatal.s, uniemozliwiaja ci to\.$</string>
 						<string>Ogromne stwory przysiadaja przed brama, blokujac do niej dostepu.</string>
-                        <string>^Ruszasz w dalsza droge ale nagle stajesz w pol kroku\. Masz dziwne odczucie, ze w tym miejscu grozi ci jakies niebezpieczenstwo\.$</string>
+						<string>^Ruszasz w dalsza droge ale nagle stajesz w pol kroku\. Masz dziwne odczucie, ze w tym miejscu grozi ci jakies niebezpieczenstwo\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -22777,6 +22663,104 @@
 			<command></command>
 			<packageName></packageName>
 			<regex></regex>
+			<AliasGroup isActive="yes" isFolder="yes">
+				<name>config</name>
+				<script></script>
+				<command></command>
+				<packageName></packageName>
+				<regex></regex>
+				<Alias isActive="yes" isFolder="no">
+					<name>get_var_all</name>
+					<script>alias_config_get_var()</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/cget$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>get_var</name>
+					<script>alias_config_get_var()</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/cget (.*)$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>set_var</name>
+					<script>alias_config_set_var()</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/cset(|\!) ([a-zA-Z0-9\._]+)=(true|false|[0-9\.]+)$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>set_var_str</name>
+					<script>alias_config_set_var()</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/cset(|\!) ([a-zA-Z0-9\._]+)=(".*")$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>set_var_index</name>
+					<script>alias_config_set_var_index()</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/cset(|\!) ([a-zA-Z0-9\._]+)[\[\{]{1}(["0-9a-zA-Z]+)[\]\}]{1}=(true|false|[0-9\.]+)$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>set_var_index_str</name>
+					<script>alias_config_set_var_index()</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/cset(|\!) ([a-zA-Z0-9\._]+)[\[\{]{1}(["0-9a-zA-Z]+)[\]\}]{1}=(".*")$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>del_var_index_key</name>
+					<script>alias_config_del_var_index_key()</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/cdel(|\!) ([a-zA-Z0-9\._]+)[\[\{]{1}(["0-9a-zA-Z]+)[\]\}]{1}$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>del_var_index_value</name>
+					<script>alias_config_del_var_index_value()</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/cdel(|\!) ([a-zA-Z0-9\._]+) (true|false|[0-9\.]+)$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>del_var_index_value_str</name>
+					<script>alias_config_del_var_index_value()</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/cdel(|\!) ([a-zA-Z0-9\._]+) (".*")$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>config_help</name>
+					<script>alias_config_help()</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/cfg$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>config_load</name>
+					<script>alias_config_load()</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/cload (.*)$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>config_migrate</name>
+					<script>alias_config_migrate()</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/cmigrate (.*)$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>config_save</name>
+					<script>alias_config_save()</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/csave$</regex>
+				</Alias>
+			</AliasGroup>
 			<AliasGroup isActive="yes" isFolder="yes">
 				<name>team</name>
 				<script></script>
@@ -23072,7 +23056,7 @@
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
 					<name>execute_nn</name>
-					<script>ateam_execute_next_attack_obj()</script>
+					<script>ateam_execute_next_attack_obj(false)</script>
 					<command></command>
 					<packageName></packageName>
 					<regex>^/nn$</regex>

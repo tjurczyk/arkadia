@@ -57,23 +57,27 @@ end
 
 function trigger_func_skrypty_ui_gags_color_color_other_przelamanie()
     deleteLine()
-    cecho("<green>\n\n[ KTOS LAMIE ] " .. matches[2] .. "\n\n")
+    local team_break = ateam.team_names[matches[3]] or ateam.team_names[string.lower(matches[3])]
+    local color = team_break and "green" or "red"
+    cecho("<".. color ..">\n\n[ KTOS LAMIE ] " .. matches[2] .. "\n\n")
+    ateam:may_setup_broken_defense(matches[4])
     resetFormat()
 
-    if ateam.team_names[matches[3]] or ateam.team_names[string.lower(matches[3])] then
-        cecho(scripts.ui.bind_color .. "  " .. scripts.keybind:keybind_tostring("opening_gate") .. scripts.ui.bind_color .. "] zabij cel ataku\n")
+    if team_break then
+        cecho("<" .. scripts.ui:get_bind_color_backward_compatible() .. ">  [" .. scripts.keybind:keybind_tostring("opening_gate") .. "<" .. scripts.ui:get_bind_color_backward_compatible() .. ">] zabij cel ataku\n")
     end
 end
 
 function trigger_func_skrypty_ui_gags_color_color_other_przelamanie_ty()
     deleteLine()
     cecho("<green>\n\n[ TY LAMIESZ ] " .. matches[2] .. "\n\n")
+    ateam:may_setup_broken_defense(matches[3])
     resetFormat()
 end
 
 function trigger_func_skrypty_ui_gags_color_color_other_nie_przelamanie_ty()
     deleteLine()
-    cecho("<tomato>\n\n[ NIE LAMIESZ] " .. matches[2] .. "\n\n")
+    cecho("<tomato>\n\n[ NIE LAMIESZ ] " .. matches[2] .. "\n\n")
     resetFormat()
 end
 

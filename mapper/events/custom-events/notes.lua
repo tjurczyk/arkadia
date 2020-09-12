@@ -13,7 +13,7 @@ function amap_db_check_note()
     if amap.curr.id then
         if getRoomUserData(amap.curr.id, "note") ~= "" and amap.db.show_notes then
             --amap:print_log("<light_slate_blue>" .. getRoomUserData(amap.curr.id, "note"))
-            cecho(scripts.ui.bind_color .. "info: " .. scripts.ui.bind_color .. getRoomUserData(amap.curr.id, "note") .. "\n")
+            cecho("<" .. scripts.ui:get_bind_color_backward_compatible() .. ">info: <" .. scripts.ui:get_bind_color_backward_compatible() .. ">" .. getRoomUserData(amap.curr.id, "note") .. "\n")
         end
     end
 end

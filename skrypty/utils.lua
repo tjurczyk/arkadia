@@ -176,9 +176,11 @@ scripts.string_to_liczebnik = {
 
 scripts["tcolor_color"] = "orange"
 
-function scripts:check_gmcp()
+function scripts:check_gmcp(silent)
     if not next(gmcp) then
-        scripts:print_log("Wyglada na to, ze GMCP nie jest wlaczone. Skrypty nie beda dzialac")
+        if not silent then
+            scripts:print_log("Wyglada na to, ze GMCP nie jest wlaczone. Skrypty nie beda dzialac")
+        end
         return false
     end
     return true

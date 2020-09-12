@@ -1,5 +1,5 @@
 function ateam:start_ateam()
-    if not scripts:check_gmcp() then
+    if not scripts:check_gmcp(false) then
         return
     end
 
@@ -20,7 +20,7 @@ function ateam:set_base64()
 end
 
 function ateam:restart_ateam(silent)
-    if not scripts:check_gmcp() then
+    if not scripts:check_gmcp(silent) then
         return
     end
 
@@ -311,13 +311,15 @@ function ateam:print_obj_team(id, obj)
         end
 
         -- id section
-        cecho(scripts.ui.states_window_name, "<white:team_console_bg>[" .. str_id .. "<white:team_console_bg>]")
+        if ateam.broken_defense_names[obj["desc"]] then
+            cecho(scripts.ui.states_window_name, "<" .. ateam.options.broken_defense_fg_color .. ":" .. ateam.options.broken_defense_bg_color .. ">[" .. str_id .. "]")
+        else
+            cecho(scripts.ui.states_window_name, "<white:team_console_bg>[" .. str_id .. "<white:team_console_bg>]")
+        end
 
         -- sneaky id section
         if ateam.sneaky_attack > 0 then
-            if ateam.sneaky_attack == 2 or ateam:can_perform_sneaky_attack() then
-                cecho(scripts.ui.states_window_name, "<white:team_console_bg>[  ]")
-            end
+            cecho(scripts.ui.states_window_name, "<white:team_console_bg>[  ]")
         end
 
         -- hp section
@@ -406,13 +408,15 @@ function ateam:print_obj_enemy(id, obj)
         end
 
         -- id section
-        cecho(scripts.ui.enemy_states_window_name, "<white:team_console_bg>[" .. str_id .. "]")
+        if ateam.broken_defense_names[obj["desc"]] then
+            cecho(scripts.ui.states_window_name, "<" .. ateam.options.broken_defense_fg_color .. ":" .. ateam.options.broken_defense_bg_color .. ">[" .. str_id .. "]")
+        else
+            cecho(scripts.ui.enemy_states_window_name, "<white:team_console_bg>[" .. str_id .. "]")
+        end
 
         -- sneaky id section
         if ateam.sneaky_attack > 0 then
-            if ateam.sneaky_attack == 2 or ateam:can_perform_sneaky_attack() then
-                cecho(scripts.ui.enemy_states_window_name, "<white:team_console_bg>[  ]")
-            end
+            cecho(scripts.ui.enemy_states_window_name, "<white:team_console_bg>[  ]")
         end
 
         -- hp section
@@ -509,11 +513,13 @@ function ateam:print_obj_normal(id, obj)
 
         -- sneaky id section
         if ateam.sneaky_attack > 0 then
-            if ateam.sneaky_attack == 2 or ateam:can_perform_sneaky_attack() then
+            if ateam.sneaky_attack > 1 or ateam:can_perform_sneaky_attack() then
                 cecho(scripts.ui.enemy_states_window_name, "<white:team_console_bg>[<sky_blue:team_console_bg>xx<white:team_console_bg>]")
                 selectString(scripts.ui.enemy_states_window_name, "xx", 1)
                 setLink(scripts.ui.enemy_states_window_name, [[ ateam:sneaky_zab_func("]] .. id .. [[") ]], "zaskocz " .. obj["desc"])
                 deselect(scripts.ui.enemy_states_window_name)
+            else
+                cecho(scripts.ui.enemy_states_window_name, "<white:team_console_bg>[  ]")
             end
         end
 

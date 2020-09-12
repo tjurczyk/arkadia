@@ -16,7 +16,8 @@ scripts.inv.collect["type_modes"] = {
 scripts.inv.collect["money_type"] = 1
 scripts.inv.collect["current_mode"] = 3
 scripts.inv.collect["footer_info_collect_to_text"] = { "M", "K", "MK", "M+", "K+", "M+K+", "" }
-scripts.ui.bind_color = "<LawnGreen>"
+
+
 
 function scripts.inv.collect:set_mode(mode)
     if not scripts.inv.collect:check_option(mode) then
@@ -93,7 +94,7 @@ end
 
 function scripts.inv.collect:killed_action()
     if scripts.inv.collect["current_mode"] ~= 7 or table.size(scripts.inv.collect.extra) > 0 then
-        cecho("\n" .. scripts.ui.bind_color .. "[bind <yellow>" .. scripts.keybind:keybind_tostring("collect_from_body") .. scripts.ui.bind_color .. " wez z ciala\n")
+        cecho("\n<" .. scripts.ui:get_bind_color_backward_compatible() .. ">[bind <yellow>" .. scripts.keybind:keybind_tostring("collect_from_body") .. "<" .. scripts.ui:get_bind_color_backward_compatible() .. "> wez z ciala\n")
         scripts.inv.collect.check_body = true
     end
 end
@@ -105,7 +106,7 @@ function scripts.inv.collect:team_killed_action(name)
     end
 
     if ateam.team_names[name] then
-        cecho("\n" .. scripts.ui.bind_color .. "[bind <yellow>ctrl+3]" .. scripts.ui.bind_color .. " wez z ciala\n")
+        cecho("\n<" .. scripts.ui:get_bind_color_backward_compatible() .. ">[bind <yellow>ctrl+3]<" .. scripts.ui:get_bind_color_backward_compatible() .. "> wez z ciala\n")
         scripts.inv.collect.check_body = true
     end
 end

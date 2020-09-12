@@ -4,7 +4,7 @@ function amap_check_drinkable_room_event(...)
     end
 
     if getRoomUserData(arg[2], "drinkable") == "true" then
-        cecho(scripts.ui.bind_color .. "\nbind <yellow>" .. scripts.keybind:keybind_tostring("drinking") .. ":" .. scripts.ui.bind_color .. " napij sie do syta wody\n")
+        cecho("<" .. scripts.ui:get_bind_color_backward_compatible() .. ">\nbind <yellow>" .. scripts.keybind:keybind_tostring("drinking") .. ":<" .. scripts.ui:get_bind_color_backward_compatible() .. "> napij sie do syta wody\n")
     end
 end
 

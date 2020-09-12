@@ -1,4 +1,4 @@
-scripts = scripts or { ver = "4.8" }
+scripts = scripts or { ver = "4.9" }
 scripts.event_handlers = scripts.event_handlers or {}
 
 function alias_func_skrypty_help()
@@ -11,10 +11,6 @@ end
 
 function alias_func_skrypty_bindy_help()
     scripts.keybind:print_help()
-end
-
-function alias_func_skrypty_laduj_config()
-    scripts_load_config(matches[2])
 end
 
 function alias_func_skrypty_fake()
@@ -38,12 +34,13 @@ end
 function timer_func_skrypty_hidden_timer()
     if scripts.ui.info_hidden_value == 14 then
         scripts.ui.info_hidden_value = "ok"
-        scripts.ui.states_window_nav_states["hidden_state"] = "ok"
+        scripts.ui.states_window_nav_states.hidden_state = 15
         disableTimer("hidden_timer")
     else
         scripts.ui.info_hidden_value = scripts.ui.info_hidden_value + 1
-        scripts.ui.states_window_nav_states["hidden_state"] = scripts.ui.states_window_nav_states["hidden_state"] + 1
+        scripts.ui.states_window_nav_states.hidden_state = scripts.ui.states_window_nav_states.hidden_state + 1
     end
+    ateam:print_status()
     raiseEvent("hidden_state", scripts.ui.info_hidden_value)
 end
 

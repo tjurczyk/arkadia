@@ -11,7 +11,7 @@ function scripts_load_v2_config(name)
     scripts.config = ScriptsConfig:init(name, false)
     if scripts.config then
         scripts:print_log("laduje config dla profilu '" .. name .. "'", true)
-        scripts.config:load_config()
+        scripts.config:load_config{silent=false}
         misc_load_dump()
         scripts.config:run_macro('_profile_loaded')
         tempTimer(4.0, function ()
@@ -30,10 +30,18 @@ function scripts_init_v2_config(name, wolacz)
             scripts:print_log("config nie zostal zainicjowany prawidlowo, to nie powinno sie zdarzyc, zglos na discordzie")
             error("scripts.config is nil in scripts_init_v2_config()")
         end
-        self:load_config(true)
-        scripts.config:set_var("scripts.character_name", name, false, false, true)
-        scripts.config:set_var("amap.locating.name", wolacz, false, false, true)
-        scripts.config:save_config(true)
+        self:load_config{silent=true}
+        scripts.config:set_var{
+            var="scripts.character_name",
+            value=name,
+            silent=true
+        }
+        scripts.config:set_var{
+            var="amap.locating.name",
+            value=wolacz,
+            silent=true
+        }
+        scripts.config:save_config{silent=true}
 
         local trigger_name = name .. "-login"
         if exists(trigger_name, "trigger") == 0 then
@@ -58,8 +66,24 @@ function migrate_config_to_config_v2(name)
         local value = scripts.config:_get_mudlet_var(var)
         scripts.config._config[var] = value
     end
+    local attack_bind_objs_key_value = scripts.config:_get_mudlet_var("scripts.keybind.configuration.attack_bind_objs.key")
+    scripts.config:set_var{
+        var="scripts.keybind.configuration.attack_bind_objs.key",
+        value="",
+        silent=true
+    }
+    scripts.config:set_var{
+        var="scripts.keybind.configuration.attack_bind_objs.keys",
+        value=attack_bind_objs_key_value,
+        silent=true
+    }
+    scripts.config:set_var{
+        var="ateam.sneaky_attack_cond",
+        value=15,
+        silent=true
+    }
     scripts:print_log("ok, zapisuje aktualna konfiguracje...")
-    scripts.config:save_config(true)
+    scripts.config:save_config{silent=true}
     scripts:print_log("UWAGA: teraz wymagane sa nastepujace kroki:\n\n (1) wejdz w 'Triggers' w gornym pasku\n (2) odnajdz trigger, ktory laduje twoj config, prawdopodobnie bedzie mial w nazwie '<twoje imie>-login', lub cos podobnego\n (3) zamien jego tresc z czegos w stylu 'scripts_load_config(\"<twoje_imie>\")' na 'scripts_load_v2_config(\"<twoje_imie>\")'\n (4) po restarcie mudleta powinien zaladowac sie nowy config, stary plik imie.txt mozna wyrzucic\n\n", true)
 end
 

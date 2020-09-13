@@ -407,6 +407,482 @@
       "macros_on_modify": []
     },
     {
+      "name": "scripts.inv.money_bag_2",
+      "implicit": true,
+      "default_value": "plecak",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.money_bag_3",
+      "implicit": true,
+      "default_value": "plecak",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.desc_money_bag_1",
+      "implicit": true,
+      "default_value": "",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.desc_money_bag_2",
+      "implicit": true,
+      "default_value": "",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.desc_money_bag_3",
+      "implicit": true,
+      "default_value": "",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.dopelniacz_money_bag_1",
+      "implicit": true,
+      "default_value": "",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.dopelniacz_money_bag_2",
+      "implicit": true,
+      "default_value": "",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.dopelniacz_money_bag_3",
+      "implicit": true,
+      "default_value": "",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.biernik_money_bag_1",
+      "implicit": true,
+      "default_value": "",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.biernik_money_bag_2",
+      "implicit": true,
+      "default_value": "",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.biernik_money_bag_3",
+      "implicit": true,
+      "default_value": "",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.pre_money_bag_1",
+      "implicit": true,
+      "default_value": "",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.pre_money_bag_2",
+      "implicit": true,
+      "default_value": "",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.pre_money_bag_3",
+      "implicit": true,
+      "default_value": "",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.post_money_bag_1",
+      "implicit": true,
+      "default_value": "",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.post_money_bag_2",
+      "implicit": true,
+      "default_value": "",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.post_money_bag_3",
+      "implicit": true,
+      "default_value": "",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.gems_bag_2",
+      "implicit": true,
+      "default_value": "plecak",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.gems_bag_3",
+      "implicit": true,
+      "default_value": "plecak",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.desc_gems_bag_1",
+      "implicit": true,
+      "default_value": "",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.desc_gems_bag_2",
+      "implicit": true,
+      "default_value": "",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.desc_gems_bag_3",
+      "implicit": true,
+      "default_value": "",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.dopelniacz_gems_bag_1",
+      "implicit": true,
+      "default_value": "",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.dopelniacz_gems_bag_2",
+      "implicit": true,
+      "default_value": "",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.dopelniacz_gems_bag_3",
+      "implicit": true,
+      "default_value": "",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.biernik_gems_bag_1",
+      "implicit": true,
+      "default_value": "",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.biernik_gems_bag_2",
+      "implicit": true,
+      "default_value": "",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.biernik_gems_bag_3",
+      "implicit": true,
+      "default_value": "",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.pre_gems_bag_1",
+      "implicit": true,
+      "default_value": "",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.pre_gems_bag_2",
+      "implicit": true,
+      "default_value": "",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.pre_gems_bag_3",
+      "implicit": true,
+      "default_value": "",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.post_gems_bag_1",
+      "implicit": true,
+      "default_value": "",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.post_gems_bag_2",
+      "implicit": true,
+      "default_value": "",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.post_gems_bag_3",
+      "implicit": true,
+      "default_value": "",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.food_bag_2",
+      "implicit": true,
+      "default_value": "plecak",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.food_bag_3",
+      "implicit": true,
+      "default_value": "plecak",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.desc_food_bag_1",
+      "implicit": true,
+      "default_value": "",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.desc_food_bag_2",
+      "implicit": true,
+      "default_value": "",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.desc_food_bag_3",
+      "implicit": true,
+      "default_value": "",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.dopelniacz_food_bag_1",
+      "implicit": true,
+      "default_value": "",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.dopelniacz_food_bag_2",
+      "implicit": true,
+      "default_value": "",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.dopelniacz_food_bag_3",
+      "implicit": true,
+      "default_value": "",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.biernik_food_bag_1",
+      "implicit": true,
+      "default_value": "",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.biernik_food_bag_2",
+      "implicit": true,
+      "default_value": "",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.biernik_food_bag_3",
+      "implicit": true,
+      "default_value": "",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.pre_food_bag_1",
+      "implicit": true,
+      "default_value": "",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.pre_food_bag_2",
+      "implicit": true,
+      "default_value": "",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.pre_food_bag_3",
+      "implicit": true,
+      "default_value": "",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.post_food_bag_1",
+      "implicit": true,
+      "default_value": "",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.post_food_bag_2",
+      "implicit": true,
+      "default_value": "",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.post_food_bag_3",
+      "implicit": true,
+      "default_value": "",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.other_bag_2",
+      "implicit": true,
+      "default_value": "plecak",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.other_bag_3",
+      "implicit": true,
+      "default_value": "plecak",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.desc_other_bag_1",
+      "implicit": true,
+      "default_value": "",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.desc_other_bag_2",
+      "implicit": true,
+      "default_value": "",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.desc_other_bag_3",
+      "implicit": true,
+      "default_value": "",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.dopelniacz_other_bag_1",
+      "implicit": true,
+      "default_value": "",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.dopelniacz_other_bag_2",
+      "implicit": true,
+      "default_value": "",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.dopelniacz_other_bag_3",
+      "implicit": true,
+      "default_value": "",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.biernik_other_bag_1",
+      "implicit": true,
+      "default_value": "",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.biernik_other_bag_2",
+      "implicit": true,
+      "default_value": "",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.biernik_other_bag_3",
+      "implicit": true,
+      "default_value": "",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.pre_other_bag_1",
+      "implicit": true,
+      "default_value": "",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.pre_other_bag_2",
+      "implicit": true,
+      "default_value": "",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.pre_other_bag_3",
+      "implicit": true,
+      "default_value": "",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.post_other_bag_1",
+      "implicit": true,
+      "default_value": "",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.post_other_bag_2",
+      "implicit": true,
+      "default_value": "",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.post_other_bag_3",
+      "implicit": true,
+      "default_value": "",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
       "name": "scripts.inv.lamp.lamp_seconds_default_start_val",
       "default_value": 300,
       "field_type": "number",

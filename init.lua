@@ -99,7 +99,7 @@ function alias_func_reload()
         require("init")
         load_scripts(true)
         if scripts.config then
-            scripts.config:load_config(true)
+            scripts.config:load_config{silent=true}
         end
     else
         reload_single_script(matches[2])

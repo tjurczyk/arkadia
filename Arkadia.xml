@@ -22020,6 +22020,10 @@
 						<string>Twoje palce trafiaja na cos sypkiego i miekkiego. Gdy wyciagasz dlon jest ona pelna blyszczacego piasku.</string>
 						<string>Posrod pajeczyn dostrzegasz tajemniczy symbol wyrysowany kreda.</string>
 						<string>^Przestajesz doic krowe\.$</string>
+						<string>Niestety nic takiego tu nie ma.</string>
+						<string>Przeszukujesz [a-z ]+ znajdujac tam</string>
+						<string>Miedzy obsydianowymi soplami zauwazasz ukryte drzwi.</string>
+						<string>Na bocznej sciance biurka dostrzegasz dobrze zamaskowany kwadratowy przycisk.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -22064,6 +22068,10 @@
 						<integer>0</integer>
 						<integer>0</integer>
 						<integer>1</integer>
+						<integer>0</integer>
+						<integer>1</integer>
+						<integer>0</integer>
+						<integer>0</integer>
 					</regexCodePropertyList>
 				</Trigger>
 				<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -22299,9 +22307,7 @@
 						<string>^[ &gt;]*Schodzisz na dol po drabince, lecz w polowie drogi pomieszczenie okazuje sie byc zalane ciemna woda i jestes zmuszon. zawrocic na gore.*</string>
 						<string>^[ &gt;]*Smok zagradza ci przejscie do pieczary\.$</string>
 						<string>^[ &gt;]*Szarpiesz energicznie za klamke, lecz drzwi stawiaja opor\.$</string>
-						<string>^[ &gt;]*Troll zagradza ci droge\.$</string>
 						<string>^[ &gt;]*Troll zastawia Ci wejscie\.$</string>
-						<string>^[ &gt;]*Tyczkowaty chudy straznik zagradza ci droge\.$</string>
 						<string>^[ &gt;]*Tylko czlonkowie Stowarzyszenia Polelfow moga tam wejsc\.$</string>
 						<string>^[ &gt;]*Uhhh, nie odwazysz sie przeskoczyc tak szerokiej przepasci!$</string>
 						<string>^[ &gt;]*Uuups\.\.\. droga sie skonczyla\.\.\. Najlepiej bedzie jak zawrocisz!$</string>
@@ -22320,8 +22326,6 @@
 						<string>Nie ma takiej komendy\. Wpisz</string>
 					</regexCodeList>
 					<regexCodePropertyList>
-						<integer>1</integer>
-						<integer>1</integer>
 						<integer>1</integer>
 						<integer>1</integer>
 						<integer>1</integer>
@@ -22415,6 +22419,7 @@
 						<string>Nie mozesz sie tam udac, gdyz musisz najpierw zejsc z wozu</string>
 						<string>Ruszasz razno na [a-z]+, lecz po kilku krokach grzezniesz w krzakach.</string>
 						<string>^Nie mozesz tak po prostu wymknac sie z walki\.$</string>
+						<string>^[ &gt;]*(\w+\s+){1,4}zagradza ci droge\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -22446,6 +22451,7 @@
 						<integer>0</integer>
 						<integer>0</integer>
 						<integer>0</integer>
+						<integer>1</integer>
 						<integer>1</integer>
 						<integer>1</integer>
 					</regexCodePropertyList>

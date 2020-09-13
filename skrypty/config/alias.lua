@@ -22,7 +22,7 @@ function alias_config_save()
         scripts:print_log("config niezainicjowany")
         return
     end
-    scripts.config:save_config(false)
+    scripts.config:save_config{silent=false}
 end
 
 function alias_config_migrate()
@@ -31,16 +31,26 @@ end
 
 function alias_config_get_var()
     if matches[2] == nil then
-        scripts.config:print_var(".*")
+        scripts.config:print_var{var_pattern=".*"}
     else
         local var_pattern = matches[2]
-        scripts.config:print_var(var_pattern)
+        scripts.config:print_var{var_pattern=var_pattern}
+    end
+end
+
+function alias_config_add_var()
+    local success = scripts.config:add_custom_var{var_name=matches[2], var_type=matches[3]}
+    if success then
+        scripts.config:save_config{silent=true}
     end
 end
 
 function alias_config_set_var()
     local run_macros = false
-    if matches[2] == '!' then
+    local skip_validation_test = false
+    if matches[2] == '!!' then
+        skip_validation_test = true
+    elseif matches[2] == '!' then
         run_macros = true
     end
 
@@ -51,15 +61,23 @@ function alias_config_set_var()
         scripts:print_log("problem ze sparsowaniem wartosci: '" .. matches[4] .. "'")
         error("value parsing error in alias_config_set_var()")
     end
-    local success = scripts.config:set_var(var, value, run_macros, false, false)
+    local success = scripts.config:set_var{
+        var=var,
+        value=value,
+        run_macros=run_macros,
+        skip_validation_test=skip_validation_test
+    }
     if success then
-        scripts.config:save_config(true)
+        scripts.config:save_config{silent=true}
     end
 end
 
 function alias_config_set_var_index()
     local run_macros = false
-    if matches[2] == '!' then
+    local skip_validation_test = false
+    if matches[2] == '!!' then
+        skip_validation_test = true
+    elseif matches[2] == '!' then
         run_macros = true
     end
 
@@ -77,15 +95,24 @@ function alias_config_set_var_index()
         error("index parsing error in alias_config_set_var_index()")
     end
 
-    local success = scripts.config:set_indexed_var(var, index, value, run_macros, false, false)
+    local success = scripts.config:set_indexed_var{
+        var=var,
+        value_key=index,
+        value_value=value,
+        run_macros=run_macros,
+        skip_validation_test=skip_validation_test,
+    }
     if success then
-        scripts.config:save_config(true)
+        scripts.config:save_config{silent=true}
     end
 end
 
 function alias_config_del_var_index_key()
     local run_macros = false
-    if matches[2] == '!' then
+    local skip_validation_test = false
+    if matches[2] == '!!' then
+        skip_validation_test = true
+    elseif matches[2] == '!' then
         run_macros = true
     end
 
@@ -97,15 +124,23 @@ function alias_config_del_var_index_key()
         error("index parsing error in alias_config_del_var_index_key()")
     end
 
-    local success = scripts.config:remove_indexed_var(var, key, nil, run_macros, false, false)
+    local success = scripts.config:remove_indexed_var{
+        var=var,
+        value_key=key,
+        run_macros=run_macros,
+        skip_validation_test=skip_validation_test,
+    }
     if success then
-        scripts.config:save_config(true)
+        scripts.config:save_config{silent=true}
     end
 end
 
 function alias_config_del_var_index_value()
     local run_macros = false
-    if matches[2] == '!' then
+    local skip_validation_test = false
+    if matches[2] == '!!' then
+        skip_validation_test = true
+    elseif matches[2] == '!' then
         run_macros = true
     end
 
@@ -117,9 +152,14 @@ function alias_config_del_var_index_value()
         error("index parsing error in alias_config_del_var_index_value()")
     end
 
-    local success = scripts.config:remove_indexed_var(var, nil, value, run_macros, false, false)
+    local success = scripts.config:remove_indexed_var{
+        var=var,
+        value_value=value,
+        run_macros=run_macros,
+        skip_validation_test=skip_validation_test,
+    }
     if success then
-        scripts.config:save_config(true)
+        scripts.config:save_config{silent=true}
     end
 end
 

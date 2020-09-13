@@ -16,6 +16,7 @@ function scripts_load_config(name)
                 result()
                 if not load_my_settings then
                     scripts:print_log("Ok, profil " .. name .. " zaladowany, ale nie zaaplikowany. Dokonaj migracji na nowy system")
+                    scripts:print_url("<deep_sky_blue>kliknij tutaj po pomoc do nowego systemu", "alias_config_open_help_url", "klik")
                 else
                     scripts:print_log("Masz stary plik imie.txt. Zalecana aktualizacja. Aktualny domyslny plik znajdziesz w " .. getMudletHomeDir() .. "/arkadia/imie.txt")
                 end

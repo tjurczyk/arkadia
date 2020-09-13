@@ -22688,49 +22688,56 @@
 					<script>alias_config_set_var()</script>
 					<command></command>
 					<packageName></packageName>
-					<regex>^/cset(|\!) ([a-zA-Z0-9\._]+)=(true|false|[0-9\.]+)$</regex>
+					<regex>^/cset(|\!|\!\!) ([a-zA-Z0-9\._]+)=(true|false|[0-9\.]+)$</regex>
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
 					<name>set_var_str</name>
 					<script>alias_config_set_var()</script>
 					<command></command>
 					<packageName></packageName>
-					<regex>^/cset(|\!) ([a-zA-Z0-9\._]+)=(".*")$</regex>
+					<regex>^/cset(|\!|\!\!) ([a-zA-Z0-9\._]+)=(".*")$</regex>
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
 					<name>set_var_index</name>
 					<script>alias_config_set_var_index()</script>
 					<command></command>
 					<packageName></packageName>
-					<regex>^/cset(|\!) ([a-zA-Z0-9\._]+)[\[\{]{1}(["0-9a-zA-Z]+)[\]\}]{1}=(true|false|[0-9\.]+)$</regex>
+					<regex>^/cset(|\!|\!\!) ([a-zA-Z0-9\._]+)[\[\{]{1}(["0-9a-zA-Z]+)[\]\}]{1}=(true|false|[0-9\.]+)$</regex>
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
 					<name>set_var_index_str</name>
 					<script>alias_config_set_var_index()</script>
 					<command></command>
 					<packageName></packageName>
-					<regex>^/cset(|\!) ([a-zA-Z0-9\._]+)[\[\{]{1}(["0-9a-zA-Z]+)[\]\}]{1}=(".*")$</regex>
+					<regex>^/cset(|\!|\!\!) ([a-zA-Z0-9\._]+)[\[\{]{1}(["0-9a-zA-Z]+)[\]\}]{1}=(".*")$</regex>
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
 					<name>del_var_index_key</name>
 					<script>alias_config_del_var_index_key()</script>
 					<command></command>
 					<packageName></packageName>
-					<regex>^/cdel(|\!) ([a-zA-Z0-9\._]+)[\[\{]{1}(["0-9a-zA-Z]+)[\]\}]{1}$</regex>
+					<regex>^/cdel(|\!|\!\!) ([a-zA-Z0-9\._]+)[\[\{]{1}(["0-9a-zA-Z]+)[\]\}]{1}$</regex>
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
 					<name>del_var_index_value</name>
 					<script>alias_config_del_var_index_value()</script>
 					<command></command>
 					<packageName></packageName>
-					<regex>^/cdel(|\!) ([a-zA-Z0-9\._]+) (true|false|[0-9\.]+)$</regex>
+					<regex>^/cdel(|\!|\!\!) ([a-zA-Z0-9\._]+) (true|false|[0-9\.]+)$</regex>
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
 					<name>del_var_index_value_str</name>
 					<script>alias_config_del_var_index_value()</script>
 					<command></command>
 					<packageName></packageName>
-					<regex>^/cdel(|\!) ([a-zA-Z0-9\._]+) (".*")$</regex>
+					<regex>^/cdel(|\!|\!\!) ([a-zA-Z0-9\._]+) (".*")$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>add_custom_var</name>
+					<script>alias_config_add_var()</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/cadd ([a-zA-Z\.-_]+) (string|number|boolean|map|list)$</regex>
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
 					<name>config_help</name>

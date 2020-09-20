@@ -12106,8 +12106,10 @@
 									<string>Szlachetna stal dzierzonego przez ^(ciebie) zdobionego dlugiego lewaka spiewa dzwiecznie, gdy udaje.*</string>
 									<string>.* wprawnie przyjmuje cios .* na szeroki jelec swojego zdobionego dlugiego lewaka\.$</string>
 									<string>.* sklada wprawnie zastawe by sparowac cios .* swym zdobionym dlugim lewakiem\.$</string>
+									<string>^Wykonujesz zamaszyste ciecie .* mierzac w .*, lecz ono oslania sie .*\.$</string>
 								</regexCodeList>
 								<regexCodePropertyList>
+									<integer>1</integer>
 									<integer>1</integer>
 									<integer>1</integer>
 									<integer>1</integer>
@@ -22423,6 +22425,7 @@
 						<string>Nie mozesz sie tam udac, gdyz musisz najpierw zejsc z wozu</string>
 						<string>Ruszasz razno na [a-z]+, lecz po kilku krokach grzezniesz w krzakach.</string>
 						<string>^Nie mozesz tak po prostu wymknac sie z walki\.$</string>
+						<string>Wstep tylko dla czlonkow Zgromadzenia.</string>
 						<string>^[ &gt;]*(\w+\s+){1,4}zagradza ci droge\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
@@ -22457,6 +22460,7 @@
 						<integer>0</integer>
 						<integer>1</integer>
 						<integer>1</integer>
+						<integer>0</integer>
 						<integer>1</integer>
 					</regexCodePropertyList>
 				</Trigger>

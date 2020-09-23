@@ -2422,6 +2422,18 @@
       "default_value": "",
       "field_type": "string",
       "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.containers.disable_grouped_containers",
+      "default_value": "false",
+      "field_type": "boolean",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.containers.column_count",
+      "default_value": 1,
+      "field_type": "number",
+      "macros_on_modify": []
     }
   ]
 }

@@ -200,3 +200,14 @@ function scripts.utils:deserialize_dir_bind(s)
     return ret_dict
 end
 
+function scripts.utils.real_len(str)
+    str = str:gsub("<[^<]*>", "")
+    return string.len(str)
+end
+
+function scripts.utils.str_pad(str, length, align)
+    local total_pad = length - scripts.utils.real_len(str:gsub("\<[%a_]+\>", ""))
+    local prepad = align == "center" and math.floor(total_pad / 2) or (align == "right" and total_pad or 0)
+    local postpad = total_pad - prepad
+    return string.rep(" ", prepad) .. str .. string.rep(" ", postpad)
+end

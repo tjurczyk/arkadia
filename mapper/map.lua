@@ -364,7 +364,6 @@ end
 
 function amap:gate_keybind_pressed()
     send(amap.gate_bind, true)
-    amap.gate_bind = nil
 end
 
 function amap:show_path(dst)

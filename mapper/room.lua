@@ -337,6 +337,23 @@ function amap:set_drinkable_room(room_id)
     end
 end
 
+function amap:set_gate_room(room_id, command)
+    if not room_id then
+        return nil
+    end
+
+    local gate_str = command ~= "" and command or "uderz w brame"
+
+    if getRoomUserData(room_id, "gate") ~= "" then
+        clearRoomUserDataItem(room_id, "gate")
+        amap:print_log("Ok, usunieto ozaczenie jako brama")
+    elseif not setRoomUserData(room_id, "gate", gate_str) then
+        amap:print_log("Cos poszlo nie tak...")
+    else
+        amap:print_log("Ok, dodano komendy dla bramy: " .. gate_str)
+    end
+end
+
 function amap:set_room_weight(weight, room_id)
     local room_to_change = nil
     if room_id then
@@ -415,6 +432,11 @@ end
 function alias_func_mapper_room_set_drinkable_room()
     amap:set_drinkable_room(amap.curr.id)
 end
+
+function alias_func_mapper_room_set_gate_room()
+    amap:set_gate_room(amap.curr.id, matches[2])
+end
+
 
 function alias_func_mapper_room_set_weight()
     amap:set_room_weight(tonumber(matches[2]), nil)

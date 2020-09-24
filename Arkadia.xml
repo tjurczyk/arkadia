@@ -22028,6 +22028,7 @@
 						<string>Przeszukujesz [a-z ]+ znajdujac tam</string>
 						<string>Miedzy obsydianowymi soplami zauwazasz ukryte drzwi.</string>
 						<string>Na bocznej sciance biurka dostrzegasz dobrze zamaskowany kwadratowy przycisk.</string>
+						<string>^Podnosisz sie</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -22076,6 +22077,7 @@
 						<integer>1</integer>
 						<integer>0</integer>
 						<integer>0</integer>
+                        <integer>1</integer>
 					</regexCodePropertyList>
 				</Trigger>
 				<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">

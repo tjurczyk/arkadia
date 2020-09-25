@@ -4,7 +4,7 @@ function amap_check_is_gate_room(...)
     end
 
     local gate = getRoomUserData(arg[2], "gate")
-    if gate then
+    if gate and gate ~= "" then
         amap.gate_bind = gate
         cecho("\n<" .. scripts.ui:get_bind_color_backward_compatible() .. ">[bind <yellow>" .. scripts.keybind:keybind_tostring("opening_gate") .. "<" .. scripts.ui:get_bind_color_backward_compatible() .. ">] Otworz brame\n")
     end

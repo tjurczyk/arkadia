@@ -49,7 +49,7 @@ function gmcp_handler_improvement()
     snapshot["time_passed"] = misc.improve:seconds_to_formatted_string(seconds_passed)
 
     table.insert(misc.improve["level_snapshots"], snapshot)
-    scripts:print_log("[" .. snapshot["time"] .. "] Wlasnie wbiles postepy: " .. misc.improve.levels[improve_level])
+    scripts:print_log("[" .. snapshot["time"] .. "] Wlasnie wbiles postepy: " .. misc.improve.levels[improve_level] .. " (czas: " .. snapshot["time_passed"] .. ")")
     misc_on_exit_dump()
 end
 

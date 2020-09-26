@@ -163,18 +163,29 @@ function ScriptsConfig:print_var(options)
             table.insert(user_var_matching_pattern, var)
         end
     end
+
     if table.size(var_matching_pattern) == 0 and table.size(user_var_matching_pattern) == 0 then
         scripts:print_log("brak jakiejkolwiek zmiennej")
     else
         scripts:print_log("konfiguracja: \n")
         for _, var in pairs(var_matching_pattern) do
-            cecho("  <CornflowerBlue>" .. var .. "<grey>: <gold>" .. yajl.to_string(self._config[var]) .. "<grey>\n")
+            self:print_single_var(var, "CornflowerBlue")
         end
         for _, var in pairs(user_var_matching_pattern) do
-            cecho("  <MediumSeaGreen>" .. var .. "<grey>: <gold>" .. yajl.to_string(self._config[var]) .. "<grey>\n")
+            self:print_single_var(var, "MediumSeaGreen")
         end
     end
     cecho("\n")
+end
+
+function ScriptsConfig:print_single_var(var, color)
+    local value = yajl.to_string(self._config[var])
+    if not string.find(value, ",") then
+        local cset = string.format("printCmdLine(\"/cset %s=%s\")", var, value:gsub("\"", "\\\""))
+        cechoLink("  <".. color ..">" .. var .. "<grey>: <gold>" .. value .. "<grey>\n", cset, "Ustaw " .. var, true)
+    else
+        cecho("  <".. color ..">" .. var .. "<grey>: <gold>" .. value .. "<grey>\n")
+    end
 end
 
 function ScriptsConfig:remove_indexed_var(options)

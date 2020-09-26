@@ -2401,7 +2401,7 @@
     },
     {
       "name": "amap.shorten_exits",
-      "default_value": "false",
+      "default_value": false,
       "field_type": "boolean",
       "macros_on_modify": []
     },
@@ -2425,7 +2425,7 @@
     },
     {
       "name": "scripts.inv.containers.disable_grouped_containers",
-      "default_value": "false",
+      "default_value": false,
       "field_type": "boolean",
       "macros_on_modify": []
     },

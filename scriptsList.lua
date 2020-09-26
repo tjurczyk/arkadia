@@ -247,6 +247,7 @@ return {
     "skrypty/ui/states_window/ui_states_window",
     "skrypty/ui/states_window/ui_states_window_navbar",
     "mapper/events/custom-events/water",
+    "mapper/events/custom-events/gates",
     "mapper/events/custom-events/notes",
     "mapper/events/custom-events/binds",
     "mapper/events/custom-events/location_history",

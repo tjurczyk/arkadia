@@ -24359,6 +24359,13 @@
 					<packageName></packageName>
 					<regex>^/kbind_reset$</regex>
 				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>brama</name>
+					<script>alias_func_mapper_room_set_gate_room()</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/brama ?(.*)$</regex>
+				</Alias>
 			</AliasGroup>
 			<AliasGroup isActive="yes" isFolder="yes">
 				<name>map</name>

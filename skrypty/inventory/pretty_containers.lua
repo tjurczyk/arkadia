@@ -23,7 +23,6 @@ local function keys_filter(item)
     return table.contains(scripts.inv.magic_keys_data.magic_keys, item.name)
 end
 
-
 local weapons = { "darda", "dardy", "multon", "kord", "puginal", "gladius", "topor", "berdysz", "siekier", "czekan", "oskard", "kilof", "tasak", "tabar", "nadziak", "miecz", "sihill", "drannach", "szabl", "szabel", "rapier", "scimitar", "katzbalger", "stilett", "pal", "sztylet", "halabard", "falchion", "mlot", "obusz", "wloczni", "pik[ei]", "noz", "maczug", "morgenstern", "kordelas", "mizerykordi", "buzdygan", "korbacz", "gal[ae]z", "bulaw", "drag", "kiscien", "nog[ai] stolow", "dag[ai]", "wloczni[aei]", "floret", "wekier", "walek", "kostur", "kos[aye]", "szponton", "partyzan", "glewi", "gizarm", "dzid", "naginat", "rohatyn", "korsek", "cep", "trojz[ea]b", "ronkon", "runk", "flamberg", "poltorak", "bulat", "nimsz", "szamszir", "lami", "spis[ay]", "schiavon", "lewak", "sierp", "lask", "wid[el]", "saif", "koncerz", "kij", "espadon", "claymor", "cinquend", "szpad", "karabel", "jatagan", "baselard", "katar", "bastard", "kafar", "kindzal", "harpun", "kotwic" }
 local shields = { "tarcz", "puklerze", "pawez" }
 local torso = { "brygantyn", "napiersnik", "kirys", "kolczug", "karacen", "kaftan", "tunik", "zbroj", "bajdan[ay]", "anim[eay]", "kozus", "kurt", "kamizel", "becht", "pancerz", "zbro. plytow", "polpancerz", "nabrzusznik" }
@@ -32,7 +31,7 @@ local legs = { "nagolennik", "spoden", "nogawic", "buty", "butow", "trzewik", "s
 local hands = { "nareczak", "naramiennik", "rekawic", "karwasz" }
 local wear = { "futro", "kubraczek", "koszula", "sukni", "plaszcz", "peleryn", "tog", "szat", "bloniaste skrzydl", "chust", "pas", "gemm", "obroz", "szat", "kolnierz" }
 local jewelery = { "pierscien", "naszyjnik", "bransolet", "spink", "talizman", "amulet", "kolczyk", "lancuszki", "koral", "wisior", "medalion", "lancusz", "brosz", "szarf" }
-local stones = { "obsydia(ny|now|n)", "labrado(ry|row|r)", "oliwi(ny|now|n)", "gaga(ty|tow|t)", "fluory(ty|tow|t)", "burszty(ny|now|n)", "ametys(ty|tow|t)", "kwar(ce|cow|c)", "rubi(ny|now|n)", "piry(ty|tow|t)", "serpenty(ny|now|n)", "per(ly|le|la|el)", "serpenty(ny|now|n)", "malachi(ty|tow|t)", "karneo(le|low|l)", "lazury(ty|tow|t)", "nefry(ty|tow|t)", "aleksandry(ty|tow|t)", "celesty(ny|now|n)", "monacy(ty|tow|t)", "azury(ty|tow|t)", "jaspi(sy|sow|s)", "onyk(sy|sow|s)", "turmali(ny|now|n)", "awentury(ny|now|n)", "turku(sy|sow|s)", "opa(li|le|l)", "kryszta(ly|low|l)", "hematy(ty|tow|t)", "rodoli(ty|tow|t)", "aga(ty|tow|t)", "cytry(ny|now|n)", "apaty(ty|tow|t)", "kyani(ty|tow|t)", "akwamary(ny|now|n)", "ioli(ty|tow|t)", "diopsy(dy|dow|d)", "cyrko(ny|now|n)", "zoisy(ty|tow|t)", "grana(ty|tow|t)", "almandy(ny|now|n)", "ortokla(zy|zow|z)", "topa(zy|zow|z)", "tytani(ty|tow|t)", "diamen(ty|tow|t)", "szafi(ry|row|r)", "szmaragd" }
+local gems = { "obsydia(ny|now|n)", "labrado(ry|row|r)", "oliwi(ny|now|n)", "gaga(ty|tow|t)", "fluory(ty|tow|t)", "burszty(ny|now|n)", "ametys(ty|tow|t)", "kwar(ce|cow|c)", "rubi(ny|now|n)", "piry(ty|tow|t)", "serpenty(ny|now|n)", "per(ly|le|la|el)", "serpenty(ny|now|n)", "malachi(ty|tow|t)", "karneo(le|low|l)", "lazury(ty|tow|t)", "nefry(ty|tow|t)", "aleksandry(ty|tow|t)", "celesty(ny|now|n)", "monacy(ty|tow|t)", "azury(ty|tow|t)", "jaspi(sy|sow|s)", "onyk(sy|sow|s)", "turmali(ny|now|n)", "awentury(ny|now|n)", "turku(sy|sow|s)", "opa(li|le|l)", "kryszta(ly|low|l)", "hematy(ty|tow|t)", "rodoli(ty|tow|t)", "aga(ty|tow|t)", "cytry(ny|now|n)", "apaty(ty|tow|t)", "kyani(ty|tow|t)", "akwamary(ny|now|n)", "ioli(ty|tow|t)", "diopsy(dy|dow|d)", "cyrko(ny|now|n)", "zoisy(ty|tow|t)", "grana(ty|tow|t)", "almandy(ny|now|n)", "ortokla(zy|zow|z)", "topa(zy|zow|z)", "tytani(ty|tow|t)", "diamen(ty|tow|t)", "szafi(ry|row|r)", "szmaragd" }
 
 local group_definitions = {
     { name = "magiki", filter = magics_filter},
@@ -45,7 +44,7 @@ local group_definitions = {
     { name = "nogi", filter = create_regexp_filter(legs) },
     { name = "ubrania", filter = create_regexp_filter(wear) },
     { name = "bizuteria", filter = create_regexp_filter(jewelery) },
-    { name = "kamienie", filter = create_regexp_filter(stones, true) },
+    { name = "kamienie", filter = create_regexp_filter(gems, true) },
     { name = "inne", filter = function(item) return true end },
 }
 
@@ -82,8 +81,6 @@ function scripts.inv.pretty_containers:print(content, columns_count, filter)
     if filter then
         container_elements = filter(container_elements)
     end
-
-
 
     local result = {}
     for _, group in ipairs(group_definitions) do

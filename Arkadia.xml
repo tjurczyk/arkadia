@@ -12554,8 +12554,10 @@
 								<colorTriggerBgColor>#000000</colorTriggerBgColor>
 								<regexCodeList>
 									<string>golem w mgnieniu oka uderza w [A-Za-z]+, a on.? wyrwan. z oslupienia, probuje ratowac sie krokiem w tyl\. Jednak wiele to nie pomaga i sila uderzenia odrzuca</string>
+									<string>^Niespodziewanie kamienny golem wyciaga reke i uderza w glowe .*</string>
 								</regexCodeList>
 								<regexCodePropertyList>
+									<integer>1</integer>
 									<integer>1</integer>
 								</regexCodePropertyList>
 							</Trigger>

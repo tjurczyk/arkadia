@@ -23,17 +23,17 @@ local function keys_filter(item)
     return table.contains(scripts.inv.magic_keys_data.magic_keys, item.name)
 end
 
-local weapons = { "darda", "dardy", "multon", "kord", "puginal", "gladius", "topor", "berdysz", "siekier", "czekan", "oskard", "kilof", "tasak", "tabar", "nadziak", "miecz", "sihill", "drannach", "szabl", "szabel", "rapier", "scimitar", "katzbalger", "stilett", "pal", "sztylet", "halabard", "falchion", "mlot", "obusz", "wloczni", "pik[ei]", "noz", "maczug", "morgenstern", "kordelas", "mizerykordi", "buzdygan", "korbacz", "gal[ae]z", "bulaw", "drag", "kiscien", "nog[ai] stolow", "dag[ai]", "wloczni[aei]", "floret", "wekier", "walek", "kostur", "kos[aye]", "szponton", "partyzan", "glewi", "gizarm", "dzid", "naginat", "rohatyn", "korsek", "cep", "trojz[ea]b", "ronkon", "runk", "flamberg", "poltorak", "bulat", "nimsz", "szamszir", "lami", "spis[ay]", "schiavon", "lewak", "sierp", "lask", "wid[el]", "saif", "koncerz", "kij", "espadon", "claymor", "cinquend", "szpad", "karabel", "jatagan", "baselard", "katar", "bastard", "kafar", "kindzal", "harpun", "kotwic" }
-local shields = { "tarcz", "puklerze", "pawez" }
+local weapons = { "darda", "dardy", "multon", "kord", "puginal", "gladius", "topor", "berdysz", "siekier", "czekan", "oskard", "kilof", "tasak", "tabar", "nadziak", "miecz", "sihill", "drannach", "szabl", "szabel", "rapier", "scimitar", "katzbalger", "stilett", "pal", "sztylet", "halabard", "falchion", "mlot", "obusz", "wloczni", "pik[ei]", "noz", "maczug", "morgenstern", "kordelas", "mizerykordi", "buzdygan", "korbacz", "gal[ae]z", "bulaw", "drag", "kiscien", "nog[ai] stolow", "dag[ai]", "wloczni[aei]", "floret", "wekier", "walek", "kostur", "kos[aye]", "szponton", "partyzan", "glewi", "gizarm", "dzid", "naginat", "rohatyn", "korsek", "cep", "trojz[ea]b", "ronkon", "runk", "flamberg", "poltorak", "bulat", "nimsz", "szamszir", "lami", "spis[ay]", "schiavon", "lewak", "sierp", "lask", "wid[el]", "saif", "koncerz", "kij", "espadon", "claymor", "cinquend", "szpad", "karabel", "jatagan", "baselard", "katar", "bastard", "kafar", "kindzal", "harpun", "kotwic", "kadzielnic", "lancet", "ostrz" }
+local shields = { "tarcz", "puklerz", "pawez" }
 local torso = { "brygantyn", "napiersnik", "kirys", "kolczug", "karacen", "kaftan", "tunik", "zbroj", "bajdan[ay]", "anim[eay]", "kozus", "kurt", "kamizel", "becht", "pancerz", "zbro. plytow", "polpancerz", "nabrzusznik" }
 local head = { "helm", "burgonet", "misiurk", "kaptur", "morion", "basinet", "salad", "przylbic", "diadem", "szyszak", "narbut[ay]", "armet", "casquett", "czapk", "beret", "turban", "gigantyczn. wzmacnian. czaszk", "barbut", "kapalin", "koron" }
 local legs = { "nagolennik", "spoden", "nogawic", "buty", "butow", "trzewik", "spodni", "spodnic", "naudziak", "sandal", "nakolannik", "nabiodr" }
 local hands = { "nareczak", "naramiennik", "rekawic", "karwasz" }
-local wear = { "futro", "kubraczek", "koszula", "sukni", "plaszcz", "peleryn", "tog", "szat", "bloniaste skrzydl", "chust", "pas( |$|y)", "gemm", "obroz", "szat", "kolnierz" }
+local wear = { "futro", "kubraczek", "koszula", "sukni", "plaszcz", "peleryn", "tog", "szat", "bloniaste skrzydl", "chust", "pas( |$|y)", "gemm", "obroz", "szat", "kolnierz", "dublet", "kapelusz", "przepask", "wams" }
 local jewelery = { "pierscien", "naszyjnik", "bransolet", "spink", "talizman", "amulet", "kolczyk", "lancuszki", "koral", "wisior", "medalion", "lancusz", "brosz", "szarf" }
-local gems = { "obsydia(ny|now|n)", "labrado(ry|row|r)", "oliwi(ny|now|n)", "gaga(ty|tow|t)", "fluory(ty|tow|t)", "burszty(ny|now|n)", "ametys(ty|tow|t)", "kwar(ce|cow|c)", "rubi(ny|now|n)", "piry(ty|tow|t)", "serpenty(ny|now|n)", "per(ly|le|la|el)", "serpenty(ny|now|n)", "malachi(ty|tow|t)", "karneo(le|low|l)", "lazury(ty|tow|t)", "nefry(ty|tow|t)", "aleksandry(ty|tow|t)", "celesty(ny|now|n)", "monacy(ty|tow|t)", "azury(ty|tow|t)", "jaspi(sy|sow|s)", "onyk(sy|sow|s)", "turmali(ny|now|n)", "awentury(ny|now|n)", "turku(sy|sow|s)", "opa(li|le|l)", "kryszta(ly|low|l)", "hematy(ty|tow|t)", "rodoli(ty|tow|t)", "aga(ty|tow|t)", "cytry(ny|now|n)", "apaty(ty|tow|t)", "kyani(ty|tow|t)", "akwamary(ny|now|n)", "ioli(ty|tow|t)", "diopsy(dy|dow|d)", "cyrko(ny|now|n)", "zoisy(ty|tow|t)", "grana(ty|tow|t)", "almandy(ny|now|n)", "ortokla(zy|zow|z)", "topa(zy|zow|z)", "tytani(ty|tow|t)", "diamen(ty|tow|t)", "szafi(ry|row|r)", "szmaragd" }
+local gems = { "obsydia(ny|now|n)", "labrado(ry|row|r)", "oliwi(ny|now|n)", "gaga(ty|tow|t)", "fluory(ty|tow|t)", "burszty(ny|now|n)", "ametys(ty|tow|t)", "kwar(ce|cow|c)", "rubi(ny|now|n)", "piry(ty|tow|t)", "serpenty(ny|now|n)", "per(ly|le|la|el)", "serpenty(ny|now|n)", "malachi(ty|tow|t)", "karneo(le|low|l)", "lazury(ty|tow|t)", "nefry(ty|tow|t)", "aleksandry(ty|tow|t)", "celesty(ny|now|n)", "monacy(ty|tow|t)", "azury(ty|tow|t)", "jaspi(sy|sow|s)", "onyk(sy|sow|s)", "turmali(ny|now|n)", "awentury(ny|now|n)", "turku(sy|sow|s)", "opa(li|le|l)", "kryszta(ly|low|l)", "hematy(ty|tow|t)", "rodoli(ty|tow|t)", "aga(ty|tow|t)", "cytry(ny|now|n)", "apaty(ty|tow|t)", "kyani(ty|tow|t)", "akwamary(ny|now|n)", "ioli(ty|tow|t)", "diopsy(dy|dow|d)", "cyrko(ny|now|n)", "zoisy(ty|tow|t)", "grana(ty|tow|t)", "almandy(ny|now|n)", "ortokla(zy|zow|z)", "topa(zy|zow|z)", "tytani(ty|tow|t)", "diamen(ty|tow|t)", "szafi(ry|row|r)", "szmaragd", "chryzoberyl", "spinel", "chryzopraz", "rodochrozyt"}
 
-local group_definitions = {
+scripts.inv.pretty_containers.group_definitions = {
     { name = "magiki", filter = magics_filter},
     { name = "klucze", filter = keys_filter},
     { name = "bronie", filter = create_regexp_filter(weapons) },
@@ -48,7 +48,7 @@ local group_definitions = {
     { name = "inne", filter = function(item) return true end },
 }
 
-local name_transformers = {
+scripts.inv.pretty_containers.name_transformers = {
     ["magic"] = {check = function(name) return table.contains(scripts.inv.magics_data.magics, string.lower(name)) end, transform = function(name) return "<" .. scripts.inv.magics_color .. ">" .. name end},
     ["keys"] = {check = function(name) return table.contains(scripts.inv.magic_keys_data.magic_keys, string.lower(name)) end, transform = function(name) return "<" .. scripts.inv.magic_keys_color .. ">" .. name end},
     ["mithryl"] = {check = function(name) return rex.find(name, "mithryl\\w* monet") end, transform = AutomaticTable.color_transformer("pale_turquoise")},
@@ -57,12 +57,10 @@ local name_transformers = {
     ["copper"] = {check = function(name) return rex.find(name, "miedzian\\w* monet") end, transform = AutomaticTable.color_transformer("SaddleBrown")},
 }
 
-scripts.inv.pretty_containers = scripts.inv.pretty_containers or {}
-
 local default_transformer = function(item)
     local ret_str = scripts.utils.str_pad(tostring(item.amount), 4, "right") .. " | "
     local transformed = false
-    for key, properties in pairs(name_transformers) do
+    for key, properties in pairs(scripts.inv.pretty_containers.name_transformers) do
         if properties.check(item.name) then
             ret_str = ret_str .. properties.transform(item.name)
             transformed = true
@@ -83,12 +81,12 @@ function scripts.inv.pretty_containers:print(content, columns_count, filter)
     end
 
     local result = {}
-    for _, group in ipairs(group_definitions) do
+    for _, group in ipairs(scripts.inv.pretty_containers.group_definitions) do
             result[group.name] = result[group.name] or {}
     end
 
     for key, element in pairs(container_elements) do
-        for _, group in ipairs(group_definitions) do
+        for _, group in ipairs(scripts.inv.pretty_containers.group_definitions) do
             if group.filter(element) then
                 local transformer = group.transformer or function(item) return item end
                 table.insert(result[group.name], default_transformer(element))
@@ -98,7 +96,7 @@ function scripts.inv.pretty_containers:print(content, columns_count, filter)
     end
 
     local not_empty_result = {}
-    for k,v in pairs(group_definitions) do
+    for k,v in pairs(scripts.inv.pretty_containers.group_definitions) do
         if result[v.name] and not table.is_empty(result[v.name]) then
             table.insert(not_empty_result, {name = v.name, values = result[v.name]})
         end

@@ -11687,7 +11687,7 @@
 								<colorTriggerFgColor>#000000</colorTriggerFgColor>
 								<colorTriggerBgColor>#000000</colorTriggerBgColor>
 								<regexCodeList>
-									<string>[ &gt;]*Unosisz swoja .*tarcze i szybko przesuwasz sie za .*, kryjac sie przed atakami</string>
+									<string>[ &gt;]*Unosisz swoja .* i szybko przesuwasz sie za .*, kryjac sie przed atakami</string>
 								</regexCodeList>
 								<regexCodePropertyList>
 									<integer>1</integer>
@@ -11765,7 +11765,7 @@
 								<colorTriggerFgColor>#000000</colorTriggerFgColor>
 								<colorTriggerBgColor>#000000</colorTriggerBgColor>
 								<regexCodeList>
-									<string>[ &gt;]*Unosisz swoja .* tarcze i przesuwasz sie w strone .*, bezskutecznie probujac</string>
+									<string>[ &gt;]*Unosisz swoja .* i przesuwasz sie w strone .*, bezskutecznie probujac</string>
 								</regexCodeList>
 								<regexCodePropertyList>
 									<integer>1</integer>
@@ -14017,6 +14017,7 @@
 							<string>Ostroznie chwytasz oburacz trzonek koscianego kilofa</string>
 							<string>Pelnym pewnosci siebie ruchem dobywasz</string>
 							<string>Plynnymi, pelnymi pewnosci ruchami dobywasz</string>
+							<string>Dobywasz waskiego kunsztownego sihilla, a runa smierci na jego klindze ozywa na chwile.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -14036,6 +14037,7 @@
 							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
+							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>

@@ -11,7 +11,7 @@ function scripts_load_v2_config(name)
     scripts.config = ScriptsConfig:init(name, false)
     if scripts.config then
         scripts:print_log("laduje config dla profilu '" .. name .. "'", true)
-        scripts.config:load_config{silent=false}
+        scripts.config:load_config{silent=false, migration=true}
         misc_load_dump()
         scripts.config:run_macro('_profile_loaded')
         tempTimer(4.0, function ()

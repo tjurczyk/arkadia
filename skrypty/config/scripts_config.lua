@@ -11,6 +11,8 @@ function ScriptsConfig:init(file_name, create_config_file)
     setmetatable(o, self)
     self.__index = self
 
+    self._schema_var_config_color = "CornflowerBlue"
+    self._user_var_config_color = "MediumSeaGreen"
     self._lua_type_to_type_match = {"string", "boolean", "number"}
     self._config_name = file_name
     self._config_file_path = getMudletHomeDir() .. "/" .. file_name .. ".json"
@@ -38,8 +40,9 @@ function ScriptsConfig:init(file_name, create_config_file)
 end
 
 function ScriptsConfig:load_config(options)
-    silent = options.silent
-    file = io.open(self._config_file_path)
+    local silent = options.silent
+    local migration = options.migration
+    local file = io.open(self._config_file_path)
     local config = yajl.to_value(file:read("*a"))
     for var, value in pairs(config) do
         self:set_var{
@@ -49,8 +52,35 @@ function ScriptsConfig:load_config(options)
             silent=true
         }
     end
+
+    local new_vars_from_migration = {}
+    if migration then
+        for var_name, var_schema_config in pairs(self._var_to_config) do
+            if self._config[var_name] == nil and not var_schema_config.implicit then
+                new_vars_from_migration[var_name] = true
+                self:set_var{
+                    var=var_name,
+                    value=var_schema_config.default_value,
+                    skip_var_existence_check=true,
+                    silent=true
+                }
+            end
+        end
+    end
+
+    if table.size(new_vars_from_migration) > 0 then
+        scripts.config:save_config{silent=true}
+    end
     if not silent then
         scripts:print_log("zaladowalem config dla profilu '" .. self._config_name .. "'")
+        if table.size(new_vars_from_migration) > 0 then
+            scripts:print_log("migracja konfiguracji, nowe zmienne:")
+            for _, var in pairs(self._sorted_var_keys) do
+                if new_vars_from_migration[var] then
+                    ScriptsConfig:print_single_var(var, self._schema_var_config_color)
+                end
+            end
+        end
     end
 end
 
@@ -132,7 +162,7 @@ function ScriptsConfig:add_custom_var(options)
     elseif var_type == "boolean" then
         self._config[var_name] = false
     elseif var_type == "map" or var_type == "list" then
-        extra_msg = "\nUWAGA: dodales liste badz mape. Aby wszystko dzialalo poprawnie, dokonaj wstepnej inicjalizacji tej zmeinnej w pliku " .. self._config_file_path .. ". Przed dodawaniem/usuwaniem kluczy/elementow, lista badz mapa musi miec swa pierwotna wartosc."
+        extra_msg = "\nUWAGA: dodales liste badz mape. Aby wszystko dzialalo poprawnie, dokonaj wstepnej inicjalizacji tej zmiennej w pliku " .. self._config_file_path .. ". Przed dodawaniem/usuwaniem kluczy/elementow, lista badz mapa musi miec swa pierwotna wartosc."
         self._config[var_name] = {}
         if var_type == "map" then
             var_printable = "{}"
@@ -145,7 +175,7 @@ function ScriptsConfig:add_custom_var(options)
         var_printable = yajl.to_string(self._config[var_name])
     end
 
-    scripts:print_log("(user) dodalem zmienna <CornflowerBlue>" .. var_name .. "<tomato> o wartosci: <gold>" .. yajl.to_string(self._config[var_name]) .. "<grey>" .. extra_msg)
+    scripts:print_log("(user) dodalem zmienna <" .. self._user_var_config_color .. ">" .. var_name .. "<tomato> o wartosci: <gold>" .. yajl.to_string(self._config[var_name]) .. "<grey>" .. extra_msg)
     return true
 end
 
@@ -154,7 +184,7 @@ function ScriptsConfig:print_var(options)
     local var_matching_pattern = {}
     local user_var_matching_pattern = {}
     for _, var in pairs(self._sorted_var_keys) do
-        if string.find(var, var_pattern) then
+        if string.find(var, var_pattern) and self._config[var] ~= nil then
             table.insert(var_matching_pattern, var)
         end
     end
@@ -169,10 +199,10 @@ function ScriptsConfig:print_var(options)
     else
         scripts:print_log("konfiguracja: \n")
         for _, var in pairs(var_matching_pattern) do
-            self:print_single_var(var, "CornflowerBlue")
+            self:print_single_var(var, self._schema_var_config_color)
         end
         for _, var in pairs(user_var_matching_pattern) do
-            self:print_single_var(var, "MediumSeaGreen")
+            self:print_single_var(var, self._user_var_config_color)
         end
     end
     cecho("\n")
@@ -180,9 +210,16 @@ end
 
 function ScriptsConfig:print_single_var(var, color)
     local value = yajl.to_string(self._config[var])
-    if not string.find(value, ",") then
+    -- special case when empty map
+    if self._var_to_config[var] and self._var_to_config[var].field_type == "map" and table.size(self._config[var]) == 0 then
+        value = "{}"
+    end
+    if not string.find(value, ",") and value ~= "{}" and value ~= "[]" then
         local cset = string.format("printCmdLine(\"/cset %s=%s\")", var, value:gsub("\"", "\\\""))
-        cechoLink("  <".. color ..">" .. var .. "<grey>: <gold>" .. value .. "<grey>\n", cset, "Ustaw " .. var, true)
+        cecho("  ")
+        cechoLink("<".. color ..">" .. var .. "<grey>: <gold>" .. value .. "<grey>", cset, "Ustaw " .. var, true)
+        resetFormat()
+        cecho(" \n")
     else
         cecho("  <".. color ..">" .. var .. "<grey>: <gold>" .. value .. "<grey>\n")
     end

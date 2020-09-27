@@ -1,3 +1,5 @@
+scripts.inv.pretty_containers = scripts.inv.pretty_containers or {}
+
 local function create_pattern(tab, endline)
     local start_line_patterns = table.deepcopy(tab)
     for k,v in pairs(start_line_patterns or {}) do
@@ -56,6 +58,8 @@ scripts.inv.pretty_containers.name_transformers = {
     ["silver"] = {check = function(name) return rex.find(name, "srebrn\\w* monet") end, transform = AutomaticTable.color_transformer("white")},
     ["copper"] = {check = function(name) return rex.find(name, "miedzian\\w* monet") end, transform = AutomaticTable.color_transformer("SaddleBrown")},
 }
+
+
 
 local default_transformer = function(item)
     local ret_str = scripts.utils.str_pad(tostring(item.amount), 4, "right") .. " | "

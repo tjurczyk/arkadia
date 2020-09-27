@@ -1,0 +1,17 @@
+name: Notify Discord
+on:
+  release:
+    types: [published]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Discord Message Notify
+        uses: appleboy/discord-action@0.0.3
+        with:
+          username: Rafgart
+          avatar_url: https://arkadia.rpg.pl/forum/download/file.php?avatar=88_1235778613.jpg
+          webhook_id: ${{ secrets.WEBHOOK_ID }}
+          webhook_token: ${{ secrets.WEBHOOK_TOKEN }}
+          message: Nowa wersja skryptów [${{ github.event.release.tag_name }}] jest dostępna. Szczegóły - ${{ github.event.release.html_url }}

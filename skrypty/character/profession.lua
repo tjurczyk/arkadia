@@ -33,7 +33,7 @@ end
 
 function scripts.character.profession:get_next_break_point(time)
     local date = os.date("*t", time)
-    local date_diff = (7 - date.wday) % 7
+    local date_diff = date.wday + (- date.wday == 0 and -6 or 0)
     date.day = date.day + date_diff
     date.hour = 2
     date.min = 0

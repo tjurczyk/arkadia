@@ -54,6 +54,14 @@ scripts.inv.pretty_containers.group_definitions = {
     { name = "inne", filter = function(item) return true end },
 }
 
+local preferred_magics = function(name)
+    local key, properties = scripts.inv:find_magic(name.name)
+    local preferred_types = {"jednoreczny topor", "tarcza"}
+    local additional_magics = {"lsniacy krysztalowy wisior"}
+    return key and (not table.is_empty(table.n_intersection(properties.type, preferred_types)) or table.contains(additional_magics, key))
+end
+table.insert(scripts.inv.pretty_containers.group_definitions, 1,{name = "preferowane magiki", filter = preferred_magics})
+
 scripts.inv.pretty_containers.name_transformers = {
     ["magic"] = {check = function(name) return table.contains(scripts.inv.magics_data.magics, string.lower(name)) end, transform = function(name) return "<" .. scripts.inv.magics_color .. ">" .. name end},
     ["keys"] = {check = function(name) return table.contains(scripts.inv.magic_keys_data.magic_keys, string.lower(name)) end, transform = function(name) return "<" .. scripts.inv.magic_keys_color .. ">" .. name end},
@@ -62,7 +70,6 @@ scripts.inv.pretty_containers.name_transformers = {
     ["silver"] = {check = function(name) return rex.find(name, "srebrn\\w* monet") end, transform = AutomaticTable.color_transformer("white")},
     ["copper"] = {check = function(name) return rex.find(name, "miedzian\\w* monet") end, transform = AutomaticTable.color_transformer("SaddleBrown")},
 }
-
 
 
 local default_transformer = function(item)

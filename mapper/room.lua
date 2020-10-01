@@ -352,6 +352,8 @@ function amap:set_gate_room(room_id, command)
     else
         amap:print_log("Ok, dodano komendy dla bramy: " .. gate_str)
     end
+
+    setRoomEnv(room_id, 400)
 end
 
 function amap:set_room_weight(weight, room_id)

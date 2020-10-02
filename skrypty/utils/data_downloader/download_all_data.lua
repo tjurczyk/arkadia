@@ -27,7 +27,7 @@ function herbs_data_downloaded(resume_coroutine_id, decoded_data)
 end
 
 function magics_data_downloaded(resume_coroutine_id, decoded_data)
-    scripts.inv["magics_data"] = decoded_data
+    scripts.inv.magics_data = decoded_data
     scripts.inv:setup_magics_triggers()
     coroutine.resume(resume_coroutine_id)
     coroutine.resume(scripts.utils.download_all_data_coroutine_id)

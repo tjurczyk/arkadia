@@ -7,7 +7,7 @@ function Highlight:new(location_ids, color1_rgb_table, color2_rgb_table)
     o.location_ids = location_ids or {}
     o.color1_rgb_table = color1_rgb_table or {255, 255, 255}
     o.color2_rgb_table = color2_rgb_table or {10, 30, 150}
-    enabled = false
+    o.enabled = false
     return o
 end
 
@@ -23,11 +23,19 @@ function Highlight:highlight_location(location_id, color1_rgb_table, color2_rgb_
 end
 
 function Highlight:off()
-    for location_id, _ in pairs(self.location_ids) do
+    for _, location_id in pairs(self.location_ids) do
         unHighlightRoom( tonumber(location_id) )
     end
     self.enabled = false
 end
+
+function Highlight:toggle()
+    if self.enabled then
+        self:off()
+    else
+        self:on()
+    end
+    end
 
 function Highlight:add_location(location_id)
     self.location_ids[location_id] = location_id

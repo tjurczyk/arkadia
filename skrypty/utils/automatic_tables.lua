@@ -34,8 +34,17 @@ function AutomaticTable:add_row(elements, transform)
         if type(v) ~= "table" then
             elements[k] = { v }
         end
+
+        for key, el in pairs(elements[k]) do
+            local split = string.split(el, "\n")
+            if (not table.is_empty(split)) then
+                elements[k][key] = split
+            end
+        end
+        elements[k] = table.n_flatten(elements[k])
+
         if type(transform) == "function" then
-            for key,el in pairs(elements[k]) do
+            for key, el in pairs(elements[k]) do
                 elements[k][key] = transform(el)
             end
         end

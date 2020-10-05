@@ -6,6 +6,7 @@ ateam = ateam or {
     people_on_location = {},
     team = {},
     team_names = {},
+    team_alphabetical_ids = {},
     my_id = nil,
     next_team_id = "A",
     to_support = nil,
@@ -32,6 +33,7 @@ ateam = ateam or {
         enemy_stun_fg_color = "black",
         broken_defense_bg_color = "LightPink",
         broken_defense_fg_color = "black",
+        alphabetical_sort_team = true
     }
 }
 

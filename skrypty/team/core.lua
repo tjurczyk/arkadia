@@ -169,6 +169,7 @@ function ateam:print_status()
                 if self.killed_by_team_trigger == nil then
                     self.killed_by_team_trigger = tempRegexTrigger("^([a-zA-Z]+) zabil(|a) (.*)\.$", function() trigger_func_process_kill_for_teammate() end)
                 end
+                ateam:build_alphabetical_list()
             end
 
             -- if necessary create an entry for the enemy
@@ -228,9 +229,17 @@ function ateam:print_status()
     ateam:print_obj_team(ateam.my_id, ateam.objs[ateam.my_id])
 
     -- print the team
-    for k, v in pairs(gmcp.objects.nums) do
-        if v ~= ateam.my_id and ateam.objs[v] and ateam.objs[v]["team"] == true then
-            ateam:print_obj_team(v, ateam.objs[v])
+    if ateam.options.alphabetical_sort_team then
+        for _, v in pairs(ateam.team_alphabetical_ids) do
+            if v ~= ateam.my_id and table.contains(gmcp.objects.nums, v) then
+                ateam:print_obj_team(v, ateam.objs[v])
+            end
+        end
+    else
+        for k, v in pairs(gmcp.objects.nums) do
+            if v ~= ateam.my_id and ateam.objs[v] and ateam.objs[v]["team"] == true then
+                ateam:print_obj_team(v, ateam.objs[v])
+            end
         end
     end
 
@@ -585,3 +594,18 @@ function ateam:switch_releasing_guards()
     end
 end
 
+function ateam:build_alphabetical_list()
+    local ateam_local_ids = {}
+    ateam.team_alphabetical_ids = {}
+    -- assume the max id we can get in team is 99
+    for k in pairs(ateam.team) do
+        if type(k) == "string" or k < 100 then
+            table.insert(ateam_local_ids, k)
+        end
+    end
+
+    table.sort(ateam_local_ids)
+    for _, v in pairs(ateam_local_ids) do
+        table.insert(ateam.team_alphabetical_ids, ateam.team[v])
+    end
+end

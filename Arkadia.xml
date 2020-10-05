@@ -22429,6 +22429,8 @@
 						<string>^Nie mozesz tak po prostu wymknac sie z walki\.$</string>
 						<string>Wstep tylko dla czlonkow Zgromadzenia.</string>
 						<string>^[ &gt;]*(\w+\s+){1,4}zagradza ci droge\.$</string>
+						<string>Drzwi sa zamkniete, musisz sie wrocic.</string>
+						<string>^Nie mozesz sie tam udac, gdyz .* zagradza</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -22461,6 +22463,8 @@
 						<integer>0</integer>
 						<integer>0</integer>
 						<integer>1</integer>
+						<integer>1</integer>
+						<integer>0</integer>
 						<integer>1</integer>
 						<integer>0</integer>
 						<integer>1</integer>

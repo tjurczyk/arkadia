@@ -4,10 +4,15 @@ function Highlight:new(location_ids, color1_rgb_table, color2_rgb_table)
     local o = {}
     setmetatable(o, self)
     self.__index = self
-    o.location_ids = location_ids or {}
-    o.color1_rgb_table = color1_rgb_table or {255, 255, 255}
-    o.color2_rgb_table = color2_rgb_table or {10, 30, 150}
-    enabled = false
+    o.location_ids = {}
+    if location_ids then
+        for _, location_id in pairs(location_ids) do
+            location_ids[location_id] = location_id
+        end
+    end
+    o.color1_rgb_table = color1_rgb_table or { 255, 255, 255 }
+    o.color2_rgb_table = color2_rgb_table or { 10, 30, 150 }
+    o.enabled = false
     return o
 end
 
@@ -24,9 +29,17 @@ end
 
 function Highlight:off()
     for location_id, _ in pairs(self.location_ids) do
-        unHighlightRoom( tonumber(location_id) )
+        unHighlightRoom(tonumber(location_id))
     end
     self.enabled = false
+end
+
+function Highlight:toggle()
+    if self.enabled then
+        self:off()
+    else
+        self:on()
+    end
 end
 
 function Highlight:add_location(location_id)
@@ -36,7 +49,7 @@ end
 
 function Highlight:remove_location(location_id)
     self.location_ids[location_id] = nil
-    unHighlightRoom( tonumber(location_id) )
+    unHighlightRoom(tonumber(location_id))
 end
 
 function Highlight:clear()

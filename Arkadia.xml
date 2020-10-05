@@ -22787,6 +22787,20 @@
 					<packageName></packageName>
 					<regex>^/csave$</regex>
 				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>laduj_config</name>
+					<script>alias_config_load()</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/laduj ([a-zA-Z]+)$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>config_init</name>
+					<script>scripts_init_v2_config(matches[2], matches[3])</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/cinit ([a-zA-Z]+) ([a-zA-Z]+)$</regex>
+				</Alias>
 			</AliasGroup>
 			<AliasGroup isActive="yes" isFolder="yes">
 				<name>team</name>
@@ -24167,13 +24181,6 @@
 					<regex>^/ikona (.*)</regex>
 				</Alias>
 			</AliasGroup>
-			<Alias isActive="yes" isFolder="no">
-				<name>laduj_config</name>
-				<script>alias_func_skrypty_laduj_config()</script>
-				<command></command>
-				<packageName></packageName>
-				<regex>^/laduj ([a-zA-Z]+)$</regex>
-			</Alias>
 			<Alias isActive="yes" isFolder="no">
 				<name>fake</name>
 				<script>alias_func_skrypty_fake()</script>

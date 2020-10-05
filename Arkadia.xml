@@ -11637,7 +11637,7 @@
 								<colorTriggerFgColor>#000000</colorTriggerFgColor>
 								<colorTriggerBgColor>#000000</colorTriggerBgColor>
 								<regexCodeList>
-									<string>(^[ &gt;]*([a-zA-Z (),!]+) zrecznie zaslania ([a-zA-Z (),!]+) przed ciosami ([a-zA-Z (),!]+)\.$)</string>
+									<string>(^[ &gt;]*([a-zA-Z (),!]+)(?: zrecznie)? zaslania ([a-zA-Z (),!]+) przed ciosami ([a-zA-Z (),!]+)\.$)</string>
 									<string>(^[ &gt;]*([\[a-zA-Z (),!\]]+) z wprawa staje pomiedzy toba .*, przyjmujac na siebie nadchodzace ciosy\.$)</string>
 									<string>(^[ &gt;]*([a-zA-Z (),!]+) zrecznie zaslania ([a-zA-Z (),!]+) przed twoimi ciosami\.$)</string>
 									<string>(^[ &gt;]*([\[a-zA-Z (),!\]]+) staje u .*boku, gotow w kazdej chwili zaslonic .* przed nadchodzacym niebezpieczenstwem\.$)</string>

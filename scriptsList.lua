@@ -190,6 +190,7 @@ return {
     "mapper/follow-texts/druchii",
     "mapper/localizers/room-gps",
     "mapper/pausers/pauser_special",
+    "mapper/special/opal",
     "skrypty/inventory/collecting",
     "skrypty/inventory/wear",
     "skrypty/misc/postepy",

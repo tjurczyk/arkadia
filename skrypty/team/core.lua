@@ -27,6 +27,7 @@ function ateam:restart_ateam(silent)
     ateam.objs = {}
     ateam.team = {}
     ateam.team_names = {}
+    ateam.team_alphabetical_ids = {}
     ateam.my_id = nil
 
     if ateam.options.team_numbering_mode == "mode2" then

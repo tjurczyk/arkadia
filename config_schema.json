@@ -185,6 +185,12 @@
       ]
     },
     {
+      "name": "ateam.options.alphabetical_sort_team",
+      "default_value": true,
+      "field_type": "boolean",
+      "macros_on_modify": []
+    },
+    {
       "name": "ateam.options.team_mate_stun_bg_color",
       "default_value": "goldenrod",
       "field_type": "string",

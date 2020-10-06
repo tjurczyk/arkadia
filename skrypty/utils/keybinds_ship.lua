@@ -16,7 +16,7 @@ end
 
 function scripts.utils.execute_ship()
     if scripts.utils.ship_key then
-        local sep = string.split(scripts.utils.ship_key, ";")
+        local sep = string.split(scripts.utils.ship_key, "[;#]")
         for k, v in pairs(sep) do
             expandAlias(v, true)
         end

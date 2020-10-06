@@ -19,7 +19,7 @@ end
 
 function scripts.utils.execute_functional()
     if scripts.utils.functional_key then
-        local sep = string.split(scripts.utils.functional_key, ";")
+        local sep = string.split(scripts.utils.functional_key, "[;#]")
         for k, v in pairs(sep) do
             expandAlias(v, true)
         end

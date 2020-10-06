@@ -205,7 +205,7 @@ end
 function scripts_ui_info_action_click()
     scripts.ui:info_action_clear()
     if scripts.ui.info_action_bind then
-        local cmds = string.split(scripts.ui.info_action_bind, ";")
+        local cmds = string.split(scripts.ui.info_action_bind, "[;#]")
         for k, v in pairs(cmds) do
             expandAlias(v, false)
         end

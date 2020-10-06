@@ -34,7 +34,7 @@ function scripts.inv:_get_pre_post_commands(prefix, bag_id)
     action_id_bag = action_id_bag .. bag_id
 
     if scripts.inv[action_id_bag] then
-        return string.split(scripts.inv:decorate_command_with_proper_bag_forms(scripts.inv[action_id_bag]), ";")
+        return string.split(scripts.inv:decorate_command_with_proper_bag_forms(scripts.inv[action_id_bag]), "[#;]")
     end
 
     return {}

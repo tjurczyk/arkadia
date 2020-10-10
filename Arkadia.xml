@@ -191,7 +191,7 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>Zauwazasz, iz (.*) jest przystosowan[ya] do chwytania (w dowolnej rece|oburacz|w lewej rece|w prawej rece).</string>
+							<string>Zauwazasz, iz (.*) jest przystosowan[yae] do chwytania (w dowolnej rece|oburacz|w lewej rece|w prawej rece).</string>
 							<string>Za (jego|jej|ich) pomoca mozna zadawac rany (.*).</string>
 							<string>Twoje doswiadczenie i umiejetnosci podpowiadaja ci, ze jak na (.*) (jest|sa) (on|one|ono|ona) (.*) (wywazony|wywazona|wywazone) i (.*).</string>
 						</regexCodeList>

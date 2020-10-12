@@ -141,11 +141,15 @@ function trigger_func_skrypty_misc_ostatnie_logowanie_licznik()
 end
 
 function trigger_func_skrypty_misc_tropienie_pewny()
-    misc:enemy_escape_print_arrow(matches[2], "yellow")
+    misc:enemy_escape_print_arrow(matches[2], "blue")
 end
 
 function trigger_func_skrypty_misc_tropienie_niepewny()
-    misc:enemy_escape_print_arrow(matches[2], "blue")
+    misc:enemy_escape_print_arrow(matches[2], "yellow")
+end
+
+function trigger_func_skrypty_misc_tropienie_pewny_rasa()
+    misc:enemy_escape_print_arrow(matches[2], "green")
 end
 
 function trigger_func_skrypty_misc_porownanie_wszystkich()

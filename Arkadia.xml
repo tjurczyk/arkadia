@@ -12127,8 +12127,10 @@
 									<string>.* wprawnie przyjmuje cios .* na szeroki jelec swojego zdobionego dlugiego lewaka\.$</string>
 									<string>.* sklada wprawnie zastawe by sparowac cios .* swym zdobionym dlugim lewakiem\.$</string>
 									<string>^Wykonujesz zamaszyste ciecie .* mierzac w .*, lecz ono oslania sie .*\.$</string>
+									<string>^Wyprowadzasz szybkie pchniecie .* w .* lecz .* oslania sie .*\.$</string>
 								</regexCodeList>
 								<regexCodePropertyList>
+									<integer>1</integer>
 									<integer>1</integer>
 									<integer>1</integer>
 									<integer>1</integer>

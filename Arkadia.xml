@@ -12301,12 +12301,30 @@
 								<regexCodeList>
 									<string>^[ &gt;]*Na rozkaz .* zaslaniasz (.*) przed ciosami .*\.$</string>
 									<string>^[ &gt;]*Na rozkaz .* zaslania (.*) przed ciosami .*\.$</string>
-									<string>^[ &gt;]*Na twoj rozkaz .* rzuca sie do ataku na .*$</string>
-									<string>^[ &gt;]*Na rozkaz .* rzucasz sie do ataku na .*$</string>
 								</regexCodeList>
 								<regexCodePropertyList>
 									<integer>1</integer>
 									<integer>1</integer>
+								</regexCodePropertyList>
+							</Trigger>
+							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+								<name>rozkaz-atak-wykonanie</name>
+								<script>trigger_func_skrypty_ui_gags_color_color_rozkazy_rozkaz_atak_wykonanie()</script>
+								<triggerType>0</triggerType>
+								<conditonLineDelta>0</conditonLineDelta>
+								<mStayOpen>0</mStayOpen>
+								<mCommand></mCommand>
+								<packageName></packageName>
+								<mFgColor>#ff0000</mFgColor>
+								<mBgColor>#ffff00</mBgColor>
+								<mSoundFile></mSoundFile>
+								<colorTriggerFgColor>#000000</colorTriggerFgColor>
+								<colorTriggerBgColor>#000000</colorTriggerBgColor>
+								<regexCodeList>
+									<string>^[ &gt;]*Na twoj rozkaz .* rzuca sie do ataku na .*$</string>
+									<string>^[ &gt;]*Na rozkaz .* rzucasz sie do ataku na .*$</string>
+								</regexCodeList>
+								<regexCodePropertyList>
 									<integer>1</integer>
 									<integer>1</integer>
 								</regexCodePropertyList>

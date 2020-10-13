@@ -8,7 +8,7 @@ function trigger_func_skrypty_ui_gags_color_color_other_zabiles_color()
     local counter_str = "<tomato> (" .. tostring(counter) .. " / " .. tostring(misc.counter.all_kills) .. ")"
 
     deleteLine()
-    cecho("\n\n<tomato>[  ZABILES   ] <grey>" .. matches[2] .. counter_str .. "\n\n")
+    cecho("\n\n<tomato>[  ZABILES  ] <grey>" .. matches[2] .. counter_str .. "\n\n")
     scripts.inv.collect:killed_action()
     resetFormat()
 end
@@ -27,9 +27,9 @@ function trigger_func_skrypty_ui_gags_color_color_other_zabil_color()
 
     deleteLine()
     if counter_str then
-        cecho("\n\n<tomato>[   ZABIL    ] <grey>" .. matches[2] .. counter_str .. "\n\n")
+        cecho("\n\n<tomato>[   ZABIL   ] <grey>" .. matches[2] .. counter_str .. "\n\n")
     else
-        cecho("\n\n<tomato>[   ZABIL    ] <grey>" .. matches[2] .. "\n\n")
+        cecho("\n\n<tomato>[   ZABIL   ] <grey>" .. matches[2] .. "\n\n")
     end
     scripts.inv.collect:team_killed_action(matches[3])
     resetFormat()

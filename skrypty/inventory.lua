@@ -7,8 +7,6 @@ scripts.inv = scripts.inv or {
         lamp_beeps = { 10 },
         lamp_yellow_seconds = 60,
         lamp_red_seconds = 30,
-        lamp_empty_bottle_bind = "odloz olej;wez butelke z plecaka;napelnij lampe olejem",
-        lamp_no_bottle_bind = "wez butelke z plecaka"
     },
     equipment = {},
     magics_color = "tomato",

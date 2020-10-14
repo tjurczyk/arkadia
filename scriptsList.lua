@@ -77,7 +77,6 @@ return {
     "skrypty/inventory/equipment",
     "skrypty/inventory/weapons",
     "skrypty/inventory/bags",
-    "skrypty/inventory/lamp",
     "skrypty/inventory/help",
     "skrypty/inventory/collect",
     "skrypty/inventory/special_inventory",

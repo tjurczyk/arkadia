@@ -20,14 +20,14 @@ function trigger_func_skrypty_inventory_kowal_zaczyna_prace()
 end
 
 function alias_func_skrypty_inventory_kowal_napraw()
-    expandAlias("wem")
-    sendAll("naostrz wszystkie bronie;napraw wszystkie zbroje")
+    scripts.inv:get_from_bag({ "monety" }, "money", 1)
     scripts.inv.kowal_timet_set = false
+    sendAll("naostrz wszystkie bronie", "napraw wszystkie zbroje")
 end
 
 function alias_func_skrypty_inventory_kowal_napraw_ubrania()
-    expandAlias("wem")
-    sendAll("zdejmij wszystkie zbroje;napraw wszystkie ubrania;zaloz wszystkie ubrania;zaloz wszystkie zbroje")
-    expandAlias("wlm")
+    scripts.inv:get_from_bag({ "monety" }, "money", 1)
+    sendAll("zdejmij wszystkie zbroje", "napraw wszystkie ubrania", "zaloz wszystkie ubrania", "zaloz wszystkie zbroje")
+    scripts.inv:put_into_bag({ "monety" }, "money", 1)
 end
 

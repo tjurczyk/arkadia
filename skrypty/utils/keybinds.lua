@@ -10,6 +10,18 @@ function scripts.utils.bind_functional(command, silent, remove_on_new_location)
     end
 end
 
+function scripts.utils.bind_functional_call(func, text, remove_on_new_location)
+    scripts.utils.functional_key = func
+
+    if text then
+        cecho("\n\n<" .. scripts.ui:get_bind_color_backward_compatible() .. ">bind <yellow>" .. scripts.keybind:keybind_tostring("functional_key") .. "<" .. scripts.ui:get_bind_color_backward_compatible() .. ">: " .. text .. "\n\n")
+    end
+
+    if remove_on_new_location then
+        scripts.utils.requested_removal_functional_key = true
+    end
+end
+
 function scripts.utils.remove_functional_if_requested()
     if scripts.utils.requested_removal_functional_key then
         scripts.utils.functional_key = nil
@@ -19,11 +31,15 @@ end
 
 function scripts.utils.execute_functional()
     if scripts.utils.functional_key then
-        local sep = string.split(scripts.utils.functional_key, "[;#]")
-        for k, v in pairs(sep) do
-            expandAlias(v, true)
+        if type(scripts.utils.functional_key) == "function" then
+            scripts.utils.functional_key()
+        else
+            local sep = string.split(scripts.utils.functional_key, "[;#]")
+            for k, v in pairs(sep) do
+                expandAlias(v, true)
+            end
+            scripts.utils.functional_key = nil
         end
-        scripts.utils.functional_key = nil
     end
 end
 

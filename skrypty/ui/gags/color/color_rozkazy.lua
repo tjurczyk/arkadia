@@ -23,6 +23,12 @@ function trigger_func_skrypty_ui_gags_color_color_rozkazy_rozkaz_kogos_zaatakowa
 end
 
 function trigger_func_skrypty_ui_gags_color_color_rozkazy_rozkaz_zaslona_wykonanie()
+    local str_replace = "<sea_green>[ ROZKAZ WYK ] <".. scripts.gag_colors["zaslony_udane"] .. ">[ ZASLANIA ] " .. matches[1]
+    creplaceLine(str_replace)
+    resetFormat()
+end
+
+function trigger_func_skrypty_ui_gags_color_color_rozkazy_rozkaz_atak_wykonanie()
     selectCurrentLine()
     local str_replace = "[ ROZKAZ WYK ] "
     prefix(str_replace)

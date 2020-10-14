@@ -62,7 +62,7 @@ function callback_filling_lamp()
 end
 
 function callback_empty_bottle()
-    scripts.inv:take_bottle()
+    scripts.inv.lamp:take_bottle()
 end
 
 function callback_enter_ship()

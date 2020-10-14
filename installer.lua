@@ -51,6 +51,7 @@ function handleUnzipEvents(event, ...)
             os.rename(unzipDirectory, scriptsDirectory)
             installPackage(scriptsDirectory .. "Arkadia.xml")
             cecho("\n<CadetBlue>(skrypty)<tomato>: Skrypty zainstalowane\n")
+            check_scripts()
         end)
     elseif event == "sysUnzipError" then
         cecho("\n<CadetBlue>(skrypty)<tomato>: Blad podczas rozpakowywania skryptow\n")

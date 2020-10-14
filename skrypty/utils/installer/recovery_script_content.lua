@@ -1,6 +1,6 @@
 recovery_check_run_once = recovery_check_run_once or false
 
-local function check_scripts()
+function check_scripts()
     if not lfs.chdir(getMudletHomeDir() .. "/arkadia/") then
         function recover_scripts()
             local f = loadstring(recovery_code)

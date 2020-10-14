@@ -20,6 +20,7 @@ function scripts.recovery:ensure_recovery_script_existance()
         setScript(recovery_script_name, script_content)
     end
     enableScript(recovery_script_name)
+    saveProfile()
 end
 
 scripts.recovery:ensure_recovery_script_existance()

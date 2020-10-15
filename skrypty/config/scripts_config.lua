@@ -16,8 +16,12 @@ function ScriptsConfig:init(file_name, create_config_file)
     self._lua_type_to_type_match = {"string", "boolean", "number"}
     self._config_name = file_name
     self._config_file_path = getMudletHomeDir() .. "/" .. file_name .. ".json"
+    self._old_config_file_path = getMudletHomeDir() .. "/" .. file_name .. ".txt"
     if not create_config_file and not io.exists(self._config_file_path) then
         scripts:print_log("plik konfiguracyjny ('" .. self._config_file_path .. "') nie istnieje", true)
+        if io.exists(self._old_config_file_path) then
+            self:_suggestMigration()
+        end
         return nil
     elseif create_config_file and not io.exists(self._config_file_path) then
         scripts:print_log("tworze plik konfiguracyjny: '" .. self._config_file_path .. "'")
@@ -529,4 +533,9 @@ function ScriptsConfig:_get_value_type(value)
         if value[i] == nil then return "map" end
     end
     return "list"
+end
+
+function ScriptsConfig:_suggestMigration()
+    echo("\n")
+    scripts:print_log("Istnieje za to stary plik konfiguracyjny. Sugerowane wykonanie migracji. Za pomoca komendy: <slate_blue>/cmigrate " .. self._config_name, true)
 end

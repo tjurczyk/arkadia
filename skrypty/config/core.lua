@@ -61,6 +61,14 @@ function migrate_config_to_config_v2(name)
         error('scripts.config is nil in migrate_config_to_config_v2()')
     end
 
+    if io.exists(getMudletHomeDir() .. "/" .. name .. ".txt") then
+        scripts:print_log("Laduje stary config do migracji")
+        scripts_load_config(name, true)
+        if load_my_settings then
+            load_my_settings()
+        end
+    end
+
     scripts:print_log("kopiuje aktualna konfiguracje...")
     for _, var in pairs(scripts.config._sorted_var_keys) do
         local value = scripts.config:_get_mudlet_var(var)

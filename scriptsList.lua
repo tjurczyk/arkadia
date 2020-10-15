@@ -224,6 +224,7 @@ return {
     "skrypty/utils/installer/installer_map_dat_downloader",
     "skrypty/utils/installer/installer_people_db_downloader",
     "skrypty/utils/installer/plugins",
+    "skrypty/utils/installer/recovery",
     "skrypty/utils/config/conf_loader",
     "skrypty/utils/data_downloader/downloader",
     "skrypty/utils/data_downloader/downloaded_file_handler",

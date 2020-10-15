@@ -30,7 +30,7 @@ function scripts_init_v2_config(name, wolacz)
             scripts:print_log("config nie zostal zainicjowany prawidlowo, to nie powinno sie zdarzyc, zglos na discordzie")
             error("scripts.config is nil in scripts_init_v2_config()")
         end
-        self:load_config{silent=true}
+        scripts.config:load_config{silent=true}
         scripts.config:set_var{
             var="scripts.character_name",
             value=name,

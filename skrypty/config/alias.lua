@@ -174,3 +174,7 @@ function alias_config_parse_value_to_type_value(value_from_matches)
         return tonumber(value_from_matches)
     end
 end
+
+function alias_func_init_config(name, wolacz)
+    scripts_init_v2_config(name, wolacz)
+end

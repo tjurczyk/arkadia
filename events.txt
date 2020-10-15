@@ -102,6 +102,14 @@ Dostepne eventy w skryptach:
 
   Event podniesiony gdy wykryte zostaje, ze postac walczy bez broni.
 
+- "weaponKnockedOff"
+
+  Event podniesiony po wytraceniu broni.
+
+- "canWieldAfterKnockOff"
+
+  Event podniesiony, gdy mozna dobyc broni po wytraceniu.
+
 --------------------------------------
 
 

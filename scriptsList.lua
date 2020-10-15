@@ -178,6 +178,7 @@ return {
     "skrypty/misc/food",
     "skrypty/misc/enemies_eq",
     "skrypty/ui/misc_fighting",
+    "skrypty/ui/no_weapon_alert",
     "skrypty/ui/misc",
     "skrypty/ui/footer_elements",
     "skrypty/ui/special_exits_follow",

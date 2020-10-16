@@ -36,6 +36,26 @@ function misc.attack_beep:process_attack(who)
     end
 end
 
+function misc.attack_beep:process_player_attack(name, upper)
+    if misc.attack_beep["mode"] > 0 then
+        raiseEvent("playBeep")
+    end
+
+    if misc.attack_beep["mode"] == 1 then
+        raiseEvent("miscAttackBeepModeOne")
+    elseif misc.attack_beep["mode"] == 2 then
+        raiseEvent("miscAttackBeepModeTwo")
+    end
+
+    selectCurrentLine()
+    fg("red")
+
+    if upper then
+        selectString(upper, 1)
+        replace(upper:upper())
+    end
+end
+
 function alias_func_skrypty_misc_attack_beep_set_level()
     misc.attack_beep:set_attack_level(tonumber(matches[2]))
 end

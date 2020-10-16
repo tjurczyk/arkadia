@@ -54,6 +54,7 @@ function misc.attack_beep:process_player_attack(name, upper)
         selectString(upper, 1)
         replace(upper:upper())
     end
+    resetFormat()
 end
 
 function alias_func_skrypty_misc_attack_beep_set_level()

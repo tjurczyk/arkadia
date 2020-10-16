@@ -38,9 +38,9 @@ function scripts.latest:compare(version, false_callback, true_callback)
     local current_version_partials_list = split(scripts.installer:get_version_from_file() or scripts.ver, "\.")
     local repository_version_partial_list = split(version, "\.")
     for i = 1, math.max(table.size(current_version_partials_list), table.size(repository_version_partial_list)) do
-        if (current_version_partials_list[i] or "0") > (repository_version_partial_list[i] or "0") then
+        if tonumber(current_version_partials_list[i] or "0") > tonumber(repository_version_partial_list[i] or "0") then
             return true_callback()
-        elseif (current_version_partials_list[i] or "0") < (repository_version_partial_list[i] or "0") then
+        elseif tonumber(current_version_partials_list[i] or "0") < tonumber(repository_version_partial_list[i] or "0") then
             return false_callback()
         end
     end

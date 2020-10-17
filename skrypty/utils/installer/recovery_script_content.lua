@@ -1,7 +1,14 @@
 recovery_check_run_once = recovery_check_run_once or false
 
+function lfs.isdir(dir)
+    local current = lfs.currentdir()
+    local exists = lfs.chdir(dir)
+    lfs.chdir(current)
+    return exists
+end
+
 function check_scripts()
-    if not lfs.chdir(getMudletHomeDir() .. "/arkadia/") then
+    if not lfs.isdir(getMudletHomeDir() .. "/arkadia/") then
         function recover_scripts()
             local f = loadstring(recovery_code)
             f()

@@ -1,6 +1,7 @@
 return {
     "skrypty",
     "mapper",
+    "skrypty/lfs",
     "skrypty/event_register",
     "skrypty/state_store",
     "skrypty/db_fix",

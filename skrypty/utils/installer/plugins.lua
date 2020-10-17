@@ -22,7 +22,7 @@ function scripts.plugins_installer:install_from_url(url)
         file_name = file_name .. "." .. extension
     end
 
-    if lfs.chdir(self.plugin_directory .. plugin_name .. "/.git/") then
+    if lfs.isdir(self.plugin_directory .. plugin_name .. "/.git/") then
         scripts:print_log("Chyba nie chcesz aktualizowac w ten sposob repozytorium pluginu? :)")
         return
     end
@@ -70,7 +70,7 @@ function scripts.plugins_installer:handle_unzip(event, plugin_name, branch, ...)
 end
 
 function scripts.plugins_installer:uninstall(plugin_name)
-    if lfs.chdir(self.plugin_directory .. plugin_name .. "/.git/") then
+    if lfs.isdir(self.plugin_directory .. plugin_name .. "/.git/") then
         scripts:print_log("Chyba nie chcesz odinstalowac w ten sposob repozytorium pluginu? :)")
         return
     end

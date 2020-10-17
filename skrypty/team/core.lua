@@ -232,7 +232,7 @@ function ateam:print_status()
     -- print the team
     if ateam.options.alphabetical_sort_team then
         for _, v in pairs(ateam.team_alphabetical_ids) do
-            if v ~= ateam.my_id and table.contains(gmcp.objects.nums, v) then
+            if v ~= ateam.my_id and table.contains(gmcp.objects.nums, v) and ateam.objs[v]["team"] then
                 ateam:print_obj_team(v, ateam.objs[v])
             end
         end

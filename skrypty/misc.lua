@@ -136,6 +136,10 @@ function trigger_func_skrypty_misc_atakuje_cie_beep()
     misc.attack_beep:process_attack(matches[2])
 end
 
+function trigger_func_skrypty_misc_player_atakuje_cie_beep(name, upper)
+    misc.attack_beep:process_player_attack(name, upper)
+end
+
 function trigger_func_skrypty_misc_ostatnie_logowanie_licznik()
     misc.improve:improve_reset()
 end

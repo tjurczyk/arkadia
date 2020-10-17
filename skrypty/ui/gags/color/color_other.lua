@@ -37,6 +37,7 @@ end
 
 function trigger_func_skrypty_ui_gags_color_color_other_mozesz_dobywac()
     raiseEvent("playBeep")
+    raiseEvent("canWieldAfterKnockOff")
     selectCurrentLine()
     deleteLine()
     cecho("<green>\n\n[    BRON    ]<cornsilk> Mozesz dobyc broni klawiszem ']'\n\n")
@@ -48,6 +49,7 @@ end
 
 function trigger_func_skrypty_ui_gags_color_color_other_wytracenie_tobie()
     raiseEvent("playBeep")
+    raiseEvent("weaponKnockedOff")
     selectCurrentLine()
     deleteLine()
     cecho("\n\n<tomato>[    BRON    ] " .. matches[2] .. "\n\n")

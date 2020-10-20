@@ -73,11 +73,28 @@ function load_plugin(plugin_name)
             end
             plugin_loaded = true
         end
+
+        local plugin_config_schema = file_path .. "/" .. "config_schema.json"
+        if plugin_loaded and io.exists(plugin_config_schema) then
+            local file = io.open(plugin_config_schema, "rb")
+            if file then
+                local plugin_schema = yajl.to_value(file:read("*a"))
+                if plugin_schema.fields then
+                    scripts.config_schema.fields = table.n_union(scripts.config_schema.fields, plugin_schema.fields)
+                end
+                if plugin_schema.macro_to_reload_elements then
+                    scripts.config_schema.macro_to_reload_elements = table.update(scripts.config_schema.macro_to_reload_elements, plugin_schema.macro_to_reload_elements)
+                end
+            end
+            file:close()
+        else
+        end
+
         if plugin_loaded then
             table.insert(scripts.plugins, plugin_name)
             cecho("\n<CadetBlue>(skrypty)<tomato>: Plugin " .. plugin_name .. " zaladowany\n")
         else
-            cecho("\n<CadetBlue>(skrypty)<tomato>: Plugin " .. plugin_name .. " nie zostal zaladowany. Brak pliku init.lua lub " .. plugin_name .."\n")
+            cecho("\n<CadetBlue>(skrypty)<tomato>: Plugin " .. plugin_name .. " nie zostal zaladowany. Brak pliku init.lua lub " .. plugin_name .. "\n")
         end
     end
 end
@@ -99,7 +116,7 @@ function alias_func_reload()
         require("init")
         load_scripts(true)
         if scripts.config then
-            scripts.config:load_config{silent=true}
+            scripts.config:load_config { silent = true }
         end
     else
         reload_single_script(matches[2])

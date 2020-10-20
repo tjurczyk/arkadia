@@ -1,7 +1,7 @@
 ## Arkadia Skrypty
 
 Pomoc dostępna pod `/skrypty`<br>
-Pomoc do mappera znajduje się [tutaj](https://github.com/tjurczyk/arkadia-skrypty/blob/master/README_MAPPER.md)<br>
+Pomoc do mappera znajduje się [tutaj](https://github.com/tjurczyk/arkadia-skrypty/blob/master/README_MAPPER.md) \
 Wersja, której używasz: sprawdź nagłówek komendy `/skrypty`.
 
 ### INSTALACJA
@@ -96,34 +96,15 @@ Zobaczymy coś pokroju:
 Z racji różnic Windows, Linux i OS X, profile są w innych miejscach
 i trzeba sobie samemu sprawdzić gdzie dany profil się znajduje.
 
-#### Podstawowa konfiguracjia (nowy sposób)
+#### Podstawowa konfiguracjia
 Aby stworzyć podstawową konfigurację wystarczy wpisać `/init imie imie_w_wolaczu` np. 
 ```
 /init Adremen Adremenie
 ```
 Trigger do ładowania automatycznego podczas logowania zostanie automatycznie utworzony, a właściwy plik zostanie utworzony w katalogu profilu.
-Po utworzeniu pokaże się ścieżka do pliku, aby go dalej dostosować otwórz go w ulubionym edytorze.
 
-#### Ręczna konfiguracja (stary sposób)
-Aby zatem przygotować plik konfiguracyjny do jakiegoś imienia, wystarczy z paczki skopiować plik `imie.txt` do naszego katalogu profilu i zmienić mu nazwę na przykładowo `adremen.txt`.
-W katalogu profilu możemy mieć oczywiście wiele takich plików (najsensowniej jeden plik na jedną postać).
+Pomoc dotyczaca konfiguracji dostepna jest dostępna pod adresem: http://arkadia.kamerdyner.net/config.html 
 
-Wpisywanie `/laduj imie` za każdym razem kiedy włącza się Mudleta lub loguje może być dość uciążliwe, dlatego proponuję zrobić prosty trigger, który będzie nam ładowal ustawienia naszej postaci na konkretny tekst, czyli na przykład: "Witaj, Adremenie. Podaj swe haslo".
-
-Wchodzimy zatem w `Triggers` i robimy `Add Item`, następnie w polach wpisujemy (przykładowo dla mojej postaci *Adremen*)
-
-- *name*: `Adremen` (tutaj można dać cokolwiek, to po prostu nazwa triggera)
-- *0*: `Witaj, Adremenie. Podaj swe haslo`
-- W tym dużym białym polu dodajemy:
-
-`scripts_load_config("adremen")`
-
-
-I taki trigger sprawi, ze logując się i podając imię `adremen`, od razu zostanie załadowany plik `adremen.txt`. Zatem konfigurując to dla innych imion po prostu zamiast `adremen` użyc trzeba nazwy configu, który jest w waszym katalogu profilu. W `0` oczywiście daje się tekst, który widzi się po podaniu imienia przy logowaniu.
-
-Tak to wygląda dla postaci `Adremen`.
-
-![Konfiguracja triggera](http://kamerdyner.net/~george/img/trigger_config.png)
 
 ##### UWAGA: 
 Czasami jest tak, że tekst wygląda lekko _rozjechany_. To znaczy, można to poznać po tym, że widać, że odstępy między tekstem są większe niż normalnie, wtedy podczas zaznaczania tekstu, tekst 'zsuwa' się ze sobą i odstępy są normalne. Jest to błąd Mudletowy. Wystarczy wtedy chwycić za tekst i zaznaczając go przeciagnac na sam dół aby najechać na dolny pasek - wtedy tekst _dosunie się_ i będzie już równo. Po wykonaniu `/ui_restart`, trzeba zawsze takie coś wykonać.
@@ -313,6 +294,8 @@ W katalog profilu, skrypty tworzą katalog `plugins`, należy w nim umieścić p
 
 Dodatkowo opcjonalnie można załączyc plik mudletowy .xml o nazwie odpowiadającej nazwie katalogu wtyczki
 
+Rowniez opcjonalnie mozna zalaczy plik `config_schema.json`. Zaktualizuje on istniejaca scheme ustawien. Struktura powinna byc identyczna jak pliku z glownej paczki.
+
 *Poprawna* paczka, *poprawnie* umieszczona zostanie automatycznie załadowana tuż po plikach skryptów z podstawowej paczki.
 
 ##### Przykład struktury
@@ -325,6 +308,7 @@ Dodatkowo opcjonalnie można załączyc plik mudletowy .xml o nazwie odpowiadaj�
         |____ nasz_plugin.xml
         |____ dodatkowe.lua
         |____ skrypty.lua
+        |____ config_schema.json
 ```
 
 ##### _init.lua_

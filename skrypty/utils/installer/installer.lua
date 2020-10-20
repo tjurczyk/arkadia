@@ -25,7 +25,7 @@ function scripts.installer:update_scripts(branch, repo)
     scripts.installer.unzip_directory = getMudletHomeDir() .. "/".. short_repo_name .."-" .. tag .. "/"
     scripts.installer.scripts_directory = getMudletHomeDir() .. "/arkadia/"
 
-    if lfs.chdir(scripts.installer.scripts_directory .. "/.git/") then
+    if lfs.isdir(scripts.installer.scripts_directory .. "/.git/") then
         scripts:print_log("Chyba nie chcesz aktualizowac repozytorium w ten sposob? :)")
         return
     end

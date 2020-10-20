@@ -14080,6 +14080,8 @@
 							<string>Pelnym pewnosci siebie ruchem dobywasz</string>
 							<string>Plynnymi, pelnymi pewnosci ruchami dobywasz</string>
 							<string>Dobywasz waskiego kunsztownego sihilla, a runa smierci na jego klindze ozywa na chwile.</string>
+							<string>Czujesz w sobie niezwykla moc, gdy dobywasz adamantytowego mlota bojowego.</string>
+							<string>Gdy dobywasz foremnego iskrzacego mlota, pelzajace po broni wyladowania elektryczne przeskakuja na twa dlon i przedramie oplatajac je siateczka jasniejacych wici.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -14099,6 +14101,8 @@
 							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
+							<integer>0</integer>
+							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -14141,6 +14145,8 @@
 							<string>Szybkim ruchem opuszczasz jasniejacy zdobiony jatagan, a luna wokol broni nieznacznie przygasa.</string>
 							<string>Wraz z opuszczeniem zdobionego jasniejacego chepesza zanika wypelniajace do tej pory twe serce uczucie niezlomnosci i mestwa,</string>
 							<string>Czujesz nienaturalna tesknote, gdy tylko twoje palce zwalniaja chwyt na egzotycznym jadeitowym palaszu.</string>
+							<string>Czujesz nieokreslona pustke, gdy opuszczasz adamantytowy mlot bojowy.</string>
+							<string>Rozluzniasz chwyt na rezonujacym krysztalowym mlocie i przez chwile zmagasz sie ze zdretwialymi palcami.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -14148,6 +14154,8 @@
 							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
+							<integer>0</integer>
+							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>

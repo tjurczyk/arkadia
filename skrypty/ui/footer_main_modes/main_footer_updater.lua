@@ -24,10 +24,12 @@ function scripts.ui:update_bars_mode(mode, redraw)
         end
 
         local label = scripts.ui.state_key_to_label_pre[k]
-        local max_value = scripts.ui.footer_bar[k].max
-        local color = scripts.ui.footer_bar[k].background[v]
         
         if scripts.ui.footer_bar[k] and scripts.ui[k_index] then
+
+            local max_value = scripts.ui.footer_bar[k].max
+            local color = scripts.ui.footer_bar[k].background[v]
+
             if mode == "gauge" then
                 -- change color and set the right value
                 scripts.ui[k_index]:setValue(v, max_value)

@@ -1,4 +1,4 @@
-name: Notify Discord
+name: Notify Discord & Bump Version
 on:
   release:
     types: [published]
@@ -23,3 +23,16 @@ jobs:
           webhook_id: ${{ secrets.SKRYPTY_WEBHOOK_ID }}
           webhook_token: ${{ secrets.SKRYPTY_WEBHOOK_TOKEN }}
           message: Nowa wersja skryptów [${{ github.event.release.tag_name }}] jest dostępna. Szczegóły - ${{ github.event.release.html_url }}
+      - name: Checkout repo
+        uses: actions/checkout@v2
+      - name: Bump Version
+        run: python ./.github/workflows/bump_version.py
+      - name: Commit
+        uses: EndBug/add-and-commit@v5
+        with:
+          author_name: ${{ github.event.release.author.login }}
+          author_email: nomail@arkadia.skrypty
+          branch: "master"
+          message: 'version bump'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

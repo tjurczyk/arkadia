@@ -14182,7 +14182,7 @@
 							<string>^.*Zrecznie zaslaniasz .*</string>
 							<string>^.*Z wprawa stajesz pomiedzy.*, przyjmujac na siebie nadchodzace ciosy\.$</string>
 							<string>^.*Stajesz u boku .*, gotow w kazdej chwili zaslonic .*\.$</string>
-							<string>[ &gt;]*Unosisz swoja .* tarcze i szybko przesuwasz sie za .*, kryjac sie przed atakami</string>
+							<string>[ &gt;]*Unosisz swoja .*i szybko przesuwasz sie za .*, kryjac sie przed atakami</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -14209,7 +14209,7 @@
 							<string>^.*Bezskutecznie rzucasz sie na .*, probujac przebic sie przez .*\.$</string>
 							<string>^.*Rzucasz sie na .* przebijajac sie przez .*\.$</string>
 							<string>^.*unosi .* i szybko przesuwa sie (za ciebie|w twoja strone).*</string>
-							<string>[ &gt;]*Unosisz swoja .*tarcze i przesuwasz sie w strone .*, bezskutecznie probujac</string>
+							<string>[ &gt;]*Unosisz swoja .* i przesuwasz sie w strone .*, bezskutecznie probujac</string>
 							<string>[ &gt;]*Na rozkaz .* probujesz zaslonic .* przed ciosami .*, jednak nie jestes w stanie tego uczynic.</string>
 							<string>[ &gt;]*Na rozkaz .* zaslaniasz .* przed ciosami .*.</string>
 						</regexCodeList>

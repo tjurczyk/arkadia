@@ -14087,6 +14087,8 @@
 							<string>Poprawiasz uchwyt na polyskliwym smuklym espadonie i wywijasz nim kilka mlyncow, sprawdzajac wywazenie broni.</string>
 							<string>^Dobywasz .* pewnym chwytem, szykujac sie do walki\.$</string>
 							<string>^Poprawiasz uchwyt na .* i wywijasz \w kilka mlyncow, sprawdzajac wywazenie broni\.$</string>
+							<string>Czujesz w sobie niezwykla moc, gdy dobywasz adamantytowego mlota bojowego.</string>
+							<string>Gdy dobywasz foremnego iskrzacego mlota, pelzajace po broni wyladowania elektryczne przeskakuja na twa dlon i przedramie oplatajac je siateczka jasniejacych wici.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -14125,6 +14127,8 @@
 							<integer>0</integer>
 							<integer>1</integer>
 							<integer>1</integer>
+							<integer>0</integer>
+							<integer>0</integer>
 						</regexCodePropertyList>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -14154,6 +14158,7 @@
 							<string>Wraz z opuszczeniem zdobionego jasniejacego chepesza zanika wypelniajace do tej pory twe serce uczucie niezlomnosci i mestwa,</string>
 							<string>Czujesz nienaturalna tesknote, gdy tylko twoje palce zwalniaja chwyt na egzotycznym jadeitowym palaszu.</string>
 							<string>Rozluzniasz swoj uchwyt na opalizujacym runicznym toporze obosiecznym. Przez chwile czujesz ogromna, nieokreslona pustke. Swiecace runy na ostrzu topora przygasaja.</string>
+							<string>Czujesz nieokreslona pustke, gdy opuszczasz adamantytowy mlot bojowy.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -14161,6 +14166,7 @@
 							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
+							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>

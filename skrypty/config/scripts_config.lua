@@ -218,7 +218,7 @@ function ScriptsConfig:print_single_var(var, color)
     if self._var_to_config[var] and self._var_to_config[var].field_type == "map" and table.size(self._config[var]) == 0 then
         value = "{}"
     end
-    if not string.find(value, ",") and value ~= "{}" and value ~= "[]" then
+    if not string.find(value, ",") and string.sub(value, 1, 1) ~= "{" and string.sub(value, 1, 1) ~= "[" then
         local cset = string.format("printCmdLine(\"/cset %s=%s\")", var, value:gsub("\"", "\\\""))
         cecho("  ")
         cechoLink("<".. color ..">" .. var .. "<grey>: <gold>" .. value .. "<grey>", cset, "Ustaw " .. var, true)

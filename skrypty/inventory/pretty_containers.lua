@@ -56,8 +56,8 @@ scripts.inv.pretty_containers.group_definitions = {
 
 local preferred_magics = function(name)
     local key, properties = scripts.inv:find_magic(name.name)
-    local preferred_types = {"jednoreczny topor", "tarcza", "plaszcz", "pas", "bransoleta", "opaska"}
-    local additional_magics = {"lsniacy krysztalowy wisior"}
+    local preferred_types = scripts.inv.containers.preferred_magic_types
+    local additional_magics = scripts.inv.containers.preferred_magics
     return key and (not table.is_empty(table.n_intersection(properties.type, preferred_types)) or table.contains(additional_magics, key))
 end
 table.insert(scripts.inv.pretty_containers.group_definitions, 1,{name = "preferowane magiki", filter = preferred_magics})

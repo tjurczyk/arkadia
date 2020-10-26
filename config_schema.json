@@ -2440,6 +2440,18 @@
       "default_value": 1,
       "field_type": "number",
       "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.containers.preferred_magic_types",
+      "default_value": [],
+      "field_type": "list",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.inv.containers.preferred_magics",
+      "default_value": [],
+      "field_type": "list",
+      "macros_on_modify": []
     }
   ]
 }

@@ -1207,7 +1207,7 @@
       "name": "scripts.ui.cfg.states_window_nav_printable_key_map",
       "default_value": {
         "bron": "BRON",
-        "zaslon": "ZASLONA",
+        "zaslona": "ZASLONA",
         "rozkaz": "ROZKAZ",
         "ukryty": "UKRYTY"
       },

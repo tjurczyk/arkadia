@@ -1,0 +1,33 @@
+{
+    "Lua.diagnostics.globals": [
+        "raiseEvent",
+        "getMudletHomeDir",
+        "uninstallPackage",
+        "installPackage",
+        "getModulePriority",
+        "enableModuleSync",
+        "installModule",
+        "setModulePriority",
+        "cecho",
+        "matches",
+        "gmcp",
+        "tempTimer",
+        "showWindow",
+        "send",
+        "sendAll",
+        "enableTrigger",
+        "disableTrigger",
+        "unpack",
+        "setCustomEnvColor",
+        "getRoomExits",
+        "registerAnonymousEventHandler",
+        "getRoomArea",
+        "getRoomAreaName",
+        "getRoomCoordinates",
+        "centerview",
+        "expandAlias"
+    ],
+    "Lua.diagnostics.disable": [
+        "lowercase-global"
+    ]
+}

@@ -55,15 +55,15 @@ scripts.inv.pretty_containers.group_definitions = {
 }
 
 local preferred_magics = function(name)
-    local key, properties = scripts.inv:find_magic(name.name)
+    local key, properties = scripts.inv:find_magic(name)
     local preferred_types = scripts.inv.containers.preferred_magic_types
     local additional_magics = scripts.inv.containers.preferred_magics
     return key and (not table.is_empty(table.n_intersection(properties.type, preferred_types)) or table.contains(additional_magics, key))
 end
-table.insert(scripts.inv.pretty_containers.group_definitions, 1,{name = "preferowane magiki", filter = preferred_magics})
 
 scripts.inv.pretty_containers.name_transformers = {
     ["magic"] = {check = function(name) return table.contains(scripts.inv.magics_data.magics, string.lower(name)) end, transform = function(name) return "<" .. scripts.inv.magics_color .. ">" .. name end},
+    ["preferred_magic"] = {check = preferred_magics, transform = function(name) return string.format("<spring_green>***<reset> <%s>%s <spring_green>***", scripts.inv.magics_color, name) end},
     ["keys"] = {check = function(name) return table.contains(scripts.inv.magic_keys_data.magic_keys, string.lower(name)) end, transform = function(name) return "<" .. scripts.inv.magic_keys_color .. ">" .. name end},
     ["mithryl"] = {check = function(name) return rex.find(name, "mithryl\\w* monet") end, transform = AutomaticTable.color_transformer("pale_turquoise")},
     ["gold"] = {check = function(name) return rex.find(name, "zlot\\w* monet") end, transform = AutomaticTable.color_transformer("gold")},
@@ -71,12 +71,11 @@ scripts.inv.pretty_containers.name_transformers = {
     ["copper"] = {check = function(name) return rex.find(name, "miedzian\\w* monet") end, transform = AutomaticTable.color_transformer("SaddleBrown")},
 }
 
-
 local count_name_transformer = function(item)
     local count_prefix = scripts.utils.str_pad(tostring(item.amount), 4, "right") .. " | "
     local name = item.name
     for key, properties in pairs(scripts.inv.pretty_containers.name_transformers) do
-        if properties.check(name) then
+        if properties.check(item.name) then
             name = properties.transform(name)
         end
     end

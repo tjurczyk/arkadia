@@ -1,3 +1,6 @@
+![Version](https://img.shields.io/github/v/release/tjurczyk/arkadia?label=version&color=%23438f57)
+![Verify config.md](https://github.com/tjurczyk/arkadia/workflows/Verify%20config.md/badge.svg)
+
 ## Arkadia Skrypty
 
 Pomoc dostępna pod `/skrypty`<br>
@@ -105,7 +108,7 @@ Trigger do ładowania automatycznego podczas logowania zostanie automatycznie ut
 
 Pomoc dotyczaca konfiguracji dostepna jest dostępna pod adresem: http://arkadia.kamerdyner.net/config.html 
 
-Dodatkowo opis kluczy configuracyjnych dostępny [tutaj](config.md)
+Dodatkowo opis kluczy konfiguracyjnych dostępny [tutaj](config.md)
 
 ##### UWAGA: 
 Czasami jest tak, że tekst wygląda lekko _rozjechany_. To znaczy, można to poznać po tym, że widać, że odstępy między tekstem są większe niż normalnie, wtedy podczas zaznaczania tekstu, tekst 'zsuwa' się ze sobą i odstępy są normalne. Jest to błąd Mudletowy. Wystarczy wtedy chwycić za tekst i zaznaczając go przeciagnac na sam dół aby najechać na dolny pasek - wtedy tekst _dosunie się_ i będzie już równo. Po wykonaniu `/ui_restart`, trzeba zawsze takie coś wykonać.

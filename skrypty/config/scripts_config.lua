@@ -393,7 +393,7 @@ function ScriptsConfig:set_var(options)
     local var = options.var
     local value = options.value
 
-    if not options.skip_var_existence_check and self._config[var] == nil then
+    if not options.skip_var_existence_check and self._config[var] == nil and self._var_to_config[var] == nil then
         scripts:print_log("zmienna '" .. var .. "' nie istnieje")
         return false
     end

@@ -1,4 +1,4 @@
-![Version](https://img.shields.io/github/v/release/tjurczyk/arkadia?label=version&color=%23438f57)
+[![Version](https://img.shields.io/github/v/release/tjurczyk/arkadia?label=version&color=%23438f57)](https://github.com/tjurczyk/arkadia/releases)
 ![Verify config.md](https://github.com/tjurczyk/arkadia/workflows/Verify%20config.md/badge.svg)
 
 ## Arkadia Skrypty

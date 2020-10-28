@@ -7,4 +7,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run verification
-        run: python ./.github/workflows/check_config.py
+        run: python .github/workflows/check_config.py

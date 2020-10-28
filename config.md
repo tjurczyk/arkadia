@@ -199,7 +199,7 @@ Komenda do zmiany w trakcie gry: '/zbieranie [wartosc_ustawienia]'
 
 ---
 
-## `scripts.inv.containers.disable_grouped_containers`
+## scripts.inv.containers.disable_grouped_containers`
 
 Wyłączenie grupowania przedmiotów w pojemnikach.
 * `true` - wyłączone

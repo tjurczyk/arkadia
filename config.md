@@ -38,6 +38,8 @@ Sortowanie alfabetyczne druzyny w oknie kondycji.
 
 Kolor oznaczenia na przelamana obrone.  'fg' to czcionka, 'bg' to tlo.
 
+Kolory, ktore mozna wybrac sa dostepne w `/kolory`
+
 ---
 
 
@@ -46,12 +48,16 @@ Kolor oznaczenia na przelamana obrone.  'fg' to czcionka, 'bg' to tlo.
 
 Opcja definiujaca kolory ogluszonych czlonkow druzyny. 'fg' to czcionka, 'bg' to tlo.
 
+Kolory, ktore mozna wybrac sa dostepne w `/kolory`
+
 ---
 
 ## `ateam.options.enemy_stun_bg_color`
 ## `ateam.options.enemy_stun_fg_color`
 
 Opcja definiujaca kolory ogluszonych wrogow. 'fg' to czcionka, 'bg' to tlo.
+
+Kolory, ktore mozna wybrac sa dostepne w `/kolory`
 
 ---
 
@@ -865,11 +871,15 @@ Mozliwe opcje to:
 
 Kolor informacji o zbindowaniu
 
+Kolory, ktore mozna wybrac sa dostepne w `/kolory`
+
 ---
 
 ## `scripts.inv.magics_color`
 
 Kolor podswietlania magicznych broni/zbroi.
+
+Kolory, ktore mozna wybrac sa dostepne w `/kolory`
 
 ---
 
@@ -877,11 +887,15 @@ Kolor podswietlania magicznych broni/zbroi.
 
 Kolor podswietlania specjalnych kluczy.
 
+Kolory, ktore mozna wybrac sa dostepne w `/kolory`
+
 ---
 
 ## `scripts.tcolor_color`
 
 Kolor uzywany przy /tcolor (pomoc w '/bindy')
+
+Kolory, ktore mozna wybrac sa dostepne w `/kolory`
 
 ---
 
@@ -935,6 +949,8 @@ Ponizej jest opcja co ma byc robione:
 ## `scripts.gag_colors.npc`
 
 Opcja kolorow do tagow (czyli tylko kiedy scripts.gag_settings ustawione ne 2)
+
+Kolory, ktore mozna wybrac sa dostepne w `/kolory`
 
 ---
 

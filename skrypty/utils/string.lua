@@ -6,6 +6,10 @@ function trim_string(str)
     return str:match("^%s*(.-)%s*$")
 end
 
+function string.proper_case(str)
+    return str:sub(0, 1):upper() .. str:sub(2):lower()
+end
+
 function scripts.utils:separate_bind(bind_str)
     if not bind_str then
         error("Wrong input")

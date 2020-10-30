@@ -42,5 +42,6 @@ function herbs:herbs_building_done()
         end
     end
     herbs:do_post_actions()
+    self.window:print()
 end
 

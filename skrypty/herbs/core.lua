@@ -4,6 +4,7 @@ function herbs:init_herbs()
         herbs:create_triggers()
     end
     herbs:v2_init_data()
+    herbs.window:create()
 end
 
 function herbs:check_single_bag(herbs_str)

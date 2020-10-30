@@ -56,6 +56,7 @@ function herbs:get_herb_from_bag(name, amount, bag_id)
         end
         send("zamknij woreczki")
     end
+    herbs.window:print()
     return ret_val
 end
 
@@ -93,5 +94,7 @@ function herbs:pack_herb_with_herb(bag_number, herb)
     else
         scripts:print_log("Zapakowalem tylko " .. tostring(herbs["full_bag_amount"] - to_get) .. " ziol")
     end
+
+    herbs.window:print()
 end
 

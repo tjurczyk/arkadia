@@ -72,9 +72,13 @@ function ScriptsConfig:load_config(options)
         end
     end
 
-    if table.size(new_vars_from_migration) > 0 then
+
+    local fixers_applied = scripts.config:apply_fixers()
+
+    if table.size(new_vars_from_migration) > 0 or fixers_applied then
         scripts.config:save_config{silent=true}
     end
+
     if not silent then
         scripts:print_log("zaladowalem config dla profilu '" .. self._config_name .. "'")
         if table.size(new_vars_from_migration) > 0 then
@@ -147,6 +151,14 @@ function ScriptsConfig:save_config(options)
     if not silent then
         scripts:print_log("zapisalem config dla profilu '" .. self._config_name .. "'")
     end
+end
+
+function ScriptsConfig:apply_fixers()
+    local fixers_applied = false
+    for _, fixer in pairs(scripts.config_fixers) do
+        fixers_applied = fixers_applied or fixer(self)
+    end
+    return fixers_applied
 end
 
 function ScriptsConfig:add_custom_var(options)

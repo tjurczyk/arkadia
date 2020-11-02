@@ -27,14 +27,10 @@ function scripts.inv:_get_bag_in_form(form, bag_id)
         Fully formed bag with the extra form description if available.
       --]]
 
-    if not form or not bag_id or not scripts.inv[bag_id] then
-        error("Wrong input in scripts.inv:_get_bag_in_form")
-    end
-
     local this_bag_name = scripts.inv[bag_id]
 
     if not this_bag_name then
-        scripts:print_log("Brak zdefiniowanego pojemnika dla " .. bag_type .. " o numerze " .. tostring(bag_count))
+        scripts:print_log("Brak zdefiniowanego pojemnika " .. bag_id)
         error("this_bag_name is nil in _get_bag_in_form")
     end
 

@@ -1,6 +1,7 @@
 misc["item_damaged_desc"] = {
-    -- items
+    -- common
     ["w znakomitym stanie."] = "[max]",
+    -- items
     ["lekko podniszczona."] = "[4/5]",
     ["lekko podniszczone."] = "[4/5]",
     ["lekko podniszczony."] = "[4/5]",
@@ -10,7 +11,6 @@ misc["item_damaged_desc"] = {
     ["gotowa sie rozpasc w kazdej chwili."] = "[1/5]",
     ["gotowe sie rozpasc w kazdej chwili."] = "[1/5]",
     -- weapons
-    ["w znakomitym stanie."] = "[max]",
     ["w dobrym stanie."] = "[6/7]",
     ["liczne walki wyryly na niej swoje pietno."] = "[5/7]",
     ["liczne walki wyryly na nim swoje pietno."] = "[5/7]",
@@ -21,8 +21,9 @@ misc["item_damaged_desc"] = {
 }
 
 misc["item_damaged_color"] = {
-    -- items
+    -- common
     ["w znakomitym stanie."] = "green",
+    -- items
     ["lekko podniszczona."] = "yellow",
     ["lekko podniszczone."] = "yellow",
     ["lekko podniszczony."] = "yellow",
@@ -32,7 +33,6 @@ misc["item_damaged_color"] = {
     ["gotowa sie rozpasc w kazdej chwili."] = "red",
     ["gotowe sie rozpasc w kazdej chwili."] = "red",
     -- weapons
-    ["w znakomitym stanie."] = "green",
     ["w dobrym stanie."] = "green",
     ["liczne walki wyryly na niej swoje pietno."] = "yellow",
     ["liczne walki wyryly na nim swoje pietno."] = "yellow",

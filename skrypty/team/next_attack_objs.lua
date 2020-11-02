@@ -36,7 +36,7 @@ function ateam_may_execute_next_attack_obj(...)
     end
 
     if ateam.next_attack_objs.next_attak_obj then
-        raiseEvent("ateam_next_attack_obj_bind", ateam.next_attack_objs.next_attak_obj, id, ateam.objs[ateam.next_attack_objs.next_attak_obj])
+        raiseEvent("ateam_next_attack_obj_bind", ateam.next_attack_objs.next_attak_obj, ateam.next_attack_objs.next_attak_obj, ateam.objs[ateam.next_attack_objs.next_attak_obj])
         cecho(" <orange>/nn zeby zaatakowac nastepny cel: " .. ateam.objs[ateam.next_attack_objs.next_attak_obj]["desc"] .. "\n")
     end
 end

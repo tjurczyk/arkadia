@@ -277,6 +277,9 @@ function ateam:print_status()
     if ateam.my_id and ateam.objs[ateam.my_id] then
         ateam.prev_enemy = ateam.objs[ateam.my_id]["attack_num"]
     end
+
+    raiseEvent("printStatusDone")
+
 end
 
 function ateam:print_obj_team(id, obj)

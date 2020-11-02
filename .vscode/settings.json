@@ -1,0 +1,22 @@
+{
+    "Lua.diagnostics.disable": [
+        "lowercase-global"
+    ],
+    "Lua.diagnostics.globals": [
+        "matches",
+        "gmcp",
+        "color_table",
+        "lfs",
+        "yajl",
+        "db",
+        "speedWalkPath",
+        "speedWalkDir",
+        "multimatches",
+        "command",
+        "datetime",
+        "rex",
+        "Geyser",
+        "recovery_code"
+    ],
+    "Lua.runtime.version": "Lua 5.1"
+}

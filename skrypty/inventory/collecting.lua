@@ -41,7 +41,7 @@ function alias_func_skrypty_inventory_collecting_zbieraj_extra_off()
 end
 
 function alias_func_skrypty_inventory_collecting_zbierz_z_cial()
-    dead_bodies_trigg = tempRegexTrigger("^.*Doliczyl.s sie ([a-z]+) sztuk(|i)\.$", function() scripts.inv.after_counting_collect(matches[2]) end, 1)
+    dead_bodies_trigg = tempRegexTrigger("^.*Doliczyl.s sie ([a-z]+) sztuk(|i)\\.$", function() scripts.inv.after_counting_collect(matches[2]) end, 1)
     send("policz wszystkie ciala")
 end
 

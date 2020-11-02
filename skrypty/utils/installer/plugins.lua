@@ -4,14 +4,14 @@ scripts.plugins_installer = scripts.plugins_installer or {
 }
 
 function scripts.plugins_installer:install_from_url(url)
-    local repo_owner, repo, format, branch = url:match("https\:\/\/codeload%.github%.com\/(.*)\/(.*)\/(.*)\/(.*)")
+    local repo_owner, repo, format, branch = url:match("https://codeload%.github%.com/(.*)/(.*)/(.*)/(.*)")
 
     local plugin_name, file_name, extension
     if repo then
         file_name = repo .. "." .. format
         extension = "." .. format
     else
-        file_name = url:match("\/([^\/]+)$")
+        file_name = url:match("/([^/]+)$")
     end
 
     plugin_name, extension = file_name:gmatch("(.+)%.(.+)$")()

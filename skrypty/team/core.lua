@@ -168,7 +168,7 @@ function ateam:print_status()
                 ateam:increase_team_id_counter()
                 ateam.team_names[ateam.objs[v]["desc"]] = true
                 if self.killed_by_team_trigger == nil then
-                    self.killed_by_team_trigger = tempRegexTrigger("^([a-zA-Z]+) zabil(|a) (.*)\.$", function() trigger_func_process_kill_for_teammate() end)
+                    self.killed_by_team_trigger = tempRegexTrigger("^([a-zA-Z]+) zabil(|a) (.*)\\.$", function() trigger_func_process_kill_for_teammate() end)
                 end
                 ateam:build_alphabetical_list()
             end

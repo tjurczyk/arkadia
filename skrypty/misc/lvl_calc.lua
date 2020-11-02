@@ -153,20 +153,20 @@ function misc.lvl_calc:cechy()
     misc.lvl_calc.current_stats = {}
     misc.lvl_calc.current_val_to_next = {}
 
-    self.trigger1 = tempRegexTrigger("^Jestes ([a-z ]+) i ([a-z ]+) ci brakuje, zebys mogl(|a) wyzej ocenic sw(a|oj) ([a-z]+)\.$", function() self:cechy_replace(matches[2], matches[3]) end, 5)
-    self.trigger2 = tempRegexTrigger("^Tw.* osiagn.* (nadludzki poziom)\.$", function() self:cechy_replace(matches[2]) end, 5)
+    self.trigger1 = tempRegexTrigger("^Jestes ([a-z ]+) i ([a-z ]+) ci brakuje, zebys mogl(|a) wyzej ocenic sw(a|oj) ([a-z]+)\\.$", function() self:cechy_replace(matches[2], matches[3]) end, 5)
+    self.trigger2 = tempRegexTrigger("^Tw.* osiagn.* (nadludzki poziom)\\.$", function() self:cechy_replace(matches[2]) end, 5)
     self.trigger3 = tempRegexTrigger("^Obecnie do waznych cech zaliczasz", function() 
         misc.lvl_calc:calculate_lvl()
-        killTrigger(self.trigger1) 
-        killTrigger(self.trigger2) 
+        killTrigger(self.trigger1)
+        killTrigger(self.trigger2)
         self.is_running = false
     end, 1)
 
     send('cechy', false)
 
-    tempTimer(3, function() 
-        killTrigger(self.trigger1) 
-        killTrigger(self.trigger2) 
+    tempTimer(3, function()
+        killTrigger(self.trigger1)
+        killTrigger(self.trigger2)
         killTrigger(self.trigger3)
         self.is_running = false
     end)

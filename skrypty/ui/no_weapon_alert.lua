@@ -16,9 +16,24 @@ function scripts.ui.no_weapon_alert:show_alert()
         cecho("<red>           Bijesz bez broni\n")
         cecho("<red>***************************************\n")
         scripts.utils.bind_functional("dobadz wszystkich broni")
+        if scripts.ui.cfg.states_window_navbar and table.contains(scripts.ui.cfg.states_window_nav_elements, "bron") then
+            self:blink()
+        end
         self.can_dispatch_alert = false
         tempTimer(3, function() self.can_dispatch_alert = true end)
     end
+end
+
+function scripts.ui.no_weapon_alert:blink()
+    if self.blinKillFunction then
+        self.blinKillFunction()
+    end
+    self.blinKillFunction = scripts.ui.window_modifiers.blink(scripts.ui.states_window_name, "BRON:", 0.2, 30, 255, 0, 0)
+    scripts.event_register:register_event_handler("weapon_state", function(_, state)
+        if state then
+            self.blinKillFunction()
+        end
+    end, true)
 end
 
 scripts.ui.no_weapon_alert:init()

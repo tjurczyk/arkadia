@@ -15,6 +15,8 @@ function scripts.ui:create_state_window(name)
         scripts.ui.states_windows_loaded[name] = true
     end
 
+    setFont(name, getFont())
+
     clearUserWindow(name)
     setFontSize(name, scripts.ui.states_font_size)
     cecho(name, "<yellow:team_console_bg>Minikonsola, <cyan:team_console_bg>do kondycji <green:team_console_bg>zainicjowana poprawnie\n")

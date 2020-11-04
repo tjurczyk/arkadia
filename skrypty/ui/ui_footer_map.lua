@@ -7,6 +7,9 @@ function scripts.ui:setup_footer_map()
     font-family:]].. getFont() ..[[,Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New, monospace;
   ]] .. amap.ui.normal_button)
 
+    scripts.ui.footer_map:setStyleSheet(scripts.ui.footer_map_core_base_css:getCSS())
+
+  
     amap.ui.mapper_container = Geyser.Container:new({
         name = "amap.ui.mapper_container",
         x = scripts.ui.footer_map_width_margin,

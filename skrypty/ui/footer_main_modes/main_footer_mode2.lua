@@ -13,7 +13,7 @@ function scripts.ui:setup_gauge_mode2()
 
         scripts.ui[scripts.ui["bar_to_id1"][v]]:setStyleSheet([[
       background-color: rgba(]] .. scripts.ui.footer_r .. [[,]] .. scripts.ui.footer_g .. [[,]] .. scripts.ui.footer_b .. [[,0);
-      font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New, monospace;
+      font-family:]].. getFont() ..[[,Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New, monospace;
     ]])
 
         if k ~= 1 and k % scripts.ui.footer_main_items_per_row == 0 then

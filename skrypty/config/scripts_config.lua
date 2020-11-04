@@ -437,7 +437,7 @@ function ScriptsConfig:_set_mudlet_var(options)
     local value = options.value
 
     local var_partials = string.split(var, "%.")
-    local parent = _G[var_partials[1]]
+    local parent = _G[var_partials[1]] or {}
     table.remove(var_partials, 1)
     for k, v in ipairs(var_partials) do
         if k == #var_partials then
@@ -445,6 +445,11 @@ function ScriptsConfig:_set_mudlet_var(options)
         end
         parent = parent[v]
     end
+
+    if not parent then
+        return
+    end
+
     parent[var_partials[#var_partials]] = value
 
     if not options.run_macros then

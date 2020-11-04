@@ -28,7 +28,8 @@ function scripts.ui.no_weapon_alert:blink()
     if self.blinKillFunction then
         self.blinKillFunction()
     end
-    self.blinKillFunction = scripts.ui.window_modifiers.blink(scripts.ui.states_window_name, "BRON:", 0.2, 30, 255, 0, 0)
+    local text = scripts.ui.cfg.states_window_nav_printable_key_map["bron"]
+    self.blinKillFunction = scripts.ui.window_modifiers.blink(scripts.ui.states_window_name, text, 0.2, 30, 255, 0, 0)
     scripts.event_register:register_event_handler("weapon_state", function(_, state)
         if state then
             self.blinKillFunction()

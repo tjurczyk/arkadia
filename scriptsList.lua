@@ -188,7 +188,7 @@ return {
     "skrypty/ui/results_window",
     "skrypty/herbs/herb_bag_collect_condition",
     "mapper/team/follow_team_family",
-    "mapper/follow-texts/druchii",
+    "mapper/follow-texts/non_standard",
     "mapper/localizers/room-gps",
     "mapper/pausers/pauser_special",
     "mapper/special/opal",

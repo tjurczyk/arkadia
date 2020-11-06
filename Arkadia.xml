@@ -22172,6 +22172,7 @@
 						<string>Na bocznej sciance biurka dostrzegasz dobrze zamaskowany kwadratowy przycisk.</string>
 						<string>^Podnosisz sie</string>
 						<string>^Mozesz skierowac lodz</string>
+						<string>Zeskakujesz z rozwieszonego plociennego szerokiego hamaka.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -22222,6 +22223,7 @@
 						<integer>0</integer>
 						<integer>1</integer>
 						<integer>1</integer>
+						<integer>0</integer>
 					</regexCodePropertyList>
 				</Trigger>
 				<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -22573,6 +22575,7 @@
 						<string>^[ &gt;]*(\w+\s+){1,4}zagradza ci droge\.$</string>
 						<string>Drzwi sa zamkniete, musisz sie wrocic.</string>
 						<string>^Nie mozesz sie tam udac, gdyz .* zagradza</string>
+						<string>Mimo wlozenia wszystkich sil w wioslowanie nie jestes w stanie pokonac niezwykle silnego pradu wody.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -22610,6 +22613,7 @@
 						<integer>1</integer>
 						<integer>0</integer>
 						<integer>1</integer>
+						<integer>0</integer>
 					</regexCodePropertyList>
 				</Trigger>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">

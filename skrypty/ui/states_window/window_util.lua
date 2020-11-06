@@ -38,6 +38,12 @@ function scripts.ui.window_modifiers.fg(r, g, b)
     end
 end
 
+function scripts.ui.window_modifiers.underline()
+    return function(windowName, position, text)
+        setUnderline(windowName, true)
+    end
+end
+
 function scripts.ui.window_modifiers.blink(windowName, text, interval, time, r, g, b)
     local key = os.time()
     scripts.ui.window_modifiers[key] = true

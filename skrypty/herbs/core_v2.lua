@@ -41,17 +41,22 @@ function herbs:v2_print_db()
         return
     end
 
+    herbs:v2_do_print("main")
+    herbs.window:print()
+end
+
+function herbs:v2_do_print(window)
     if not herbs.db or table.size(herbs.db) == 0 then
-        cecho("\n <orange>Brak zbudowanej bazy ziol, ")
-        cechoPopup("<deep_sky_blue>kliknij tutaj aby zrobic '/ziola_buduj'", { [[expandAlias("/ziola_buduj")]] }, { [[/ziola_buduj]] }, true)
-        cecho(" \n\n")
+        cecho(window, "\n <orange>Brak zbudowanej bazy ziol, ")
+        cechoPopup(window, "<deep_sky_blue>kliknij tutaj aby zrobic '/ziola_buduj'", { [[expandAlias("/ziola_buduj")]] }, { [[/ziola_buduj]] }, true)
+        cecho(window, " \n\n")
         return
     end
 
-    cecho("\n")
-    cecho("------+-------------------------+----------------------------------------------")
-    cecho("\n  <light_slate_blue>ile <grey>|        <light_slate_blue>nazwa <grey>           | <light_slate_blue>             dzialanie <grey>                      ")
-    cecho("\n------+-------------------------+----------------------------------------------")
+    cecho(window, "\n")
+    cecho(window, " ------+-------------------------+-----------------------------------------------")
+    cecho(window, "\n   <light_slate_blue>ile <grey>|        <light_slate_blue>nazwa <grey>           | <light_slate_blue>             dzialanie <grey>                      ")
+    cecho(window, "\n ------+-------------------------+-----------------------------------------------")
 
     for _, herb_id in pairs(herbs.sorted_herb_ids) do
         local v = herbs.index[herb_id]
@@ -63,41 +68,41 @@ function herbs:v2_print_db()
             local amount_tmp = "    " .. tostring(amount)
             local name_str = string.sub(herb_id .. "                     ", 0, 23)
             local usage_str = string.sub(herbs.herbs_details[herb_id]["details"] .. "                                                                 ", 0, 64)
-            cecho("\n<grey>  " .. string.sub(amount_tmp, #amount_tmp - 2, #amount_tmp) .. " | ")
+            cecho(window,"\n <grey>  " .. string.sub(amount_tmp, #amount_tmp - 2, #amount_tmp) .. " | ")
             local clickable_herb_data = herbs:get_clickable_herb_data(herb_id)
-            cechoPopup(name_str, clickable_herb_data["herb_actions"], clickable_herb_data["herb_hints"], true)
-            cecho(" | ")
+            cechoPopup(window, name_str, clickable_herb_data["herb_actions"], clickable_herb_data["herb_hints"], true)
+            cecho(window, " | ")
             for iii, use_element in pairs(clickable_herb_data["use_elements"]) do
                 if use_element["actions"] then
-                    cechoPopup(use_element["text"], use_element["actions"], use_element["hints"], true)
+                    cechoPopup(window, use_element["text"], use_element["actions"], use_element["hints"], true)
                 else
-                    cecho(use_element["text"])
+                    cecho(window, use_element["text"])
                 end
                 if iii < #clickable_herb_data["use_elements"] then
-                    cecho(" || ")
+                    cecho(window, " || ")
                 end
                 -- add a single space so we don't make the rest of the line clickable
                 -- I don't know how to solve it any other way.
             end
-            cecho(" ")
+            cecho(window, " ")
         end
     end
-    cecho("\n--------------------------------------------------------------------------------\n")
+    cecho(window, "\n --------------------------------------------------------------------------------\n")
 
     if table.size(ateam.team_names) > 0 then
-        cecho("\n <yellow>Daj ziola<grey>:<pale_green>")
+        cecho(window, "\n  <yellow>Daj ziola<grey>:<pale_green>")
     end
     local idx = 1
     for teammate_name, v in pairs(ateam.team_names) do
         local teammate_clickable_data = herbs:get_clickable_teammate_data(teammate_name)
-        cecho(" ")
-        cechoPopup("<pale_green>" .. teammate_name, teammate_clickable_data["teammate_actions"], teammate_clickable_data["teammate_hints"], true)
+        cecho(window, " ")
+        cechoPopup(window ,"<pale_green>" .. teammate_name, teammate_clickable_data["teammate_actions"], teammate_clickable_data["teammate_hints"], true)
         if idx ~= table.size(ateam.team_names) then
-            cecho(" <grey>||")
+            cecho(window," <grey>||")
         end
         idx = idx + 1
     end
-    cecho("\n\n")
+    cecho(window, "\n\n")
 end
 
 function herbs:v2_print_db_per_bag(full)

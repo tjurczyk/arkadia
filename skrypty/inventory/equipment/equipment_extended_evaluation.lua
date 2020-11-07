@@ -18,6 +18,9 @@ function scripts.inv.equipment.extended_evaluation:init()
 end
 
 function scripts.inv.equipment.extended_evaluation:evaluate(equipment)
+    if equipment.typSprzetu == "puklerz" then
+        return
+    end
     local sum, count = 0, 0
     for _, value_key in pairs(value_keys) do
         if equipment[value_key] and equipment[value_key].value then

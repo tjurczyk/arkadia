@@ -46,6 +46,15 @@ function scripts.inv.equipment.evaluation_extractor:extract_armor()
     scripts.inv.equipment:replace(equipment)
 end
 
+function scripts.inv.equipment.evaluation_extractor:extract_puklerz()
+    deleteLine()
+    local equipment = {
+        ["typSprzetu"] = "puklerz",
+        ["parowanie"] = matches[2]
+    }
+    scripts.inv.equipment:replace(equipment)
+end
+
 function scripts.inv.equipment.evaluation_extractor:trzy_rozne(equipment, matches)
     if matches[3] == "klutymi" then
         equipment.klute = matches[2]
@@ -110,4 +119,8 @@ end
 
 function trigger_func_skrypty_inventory_equipment_ocena_broni()
     scripts.inv.equipment.evaluation_extractor:extract_weapon()
+end
+
+function trigger_func_skrypty_inventory_equipment_ocena_puklerz()
+    scripts.inv.equipment.evaluation_extractor:extract_puklerz()
 end

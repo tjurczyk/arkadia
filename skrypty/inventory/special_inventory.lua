@@ -33,7 +33,7 @@ function scripts.inv:setup_magics_triggers()
 
     scripts.inv.magics_trigger_ids = {}
 
-    if scripts.inv.magics_data.magics then
+    if scripts.inv.magics_data then
         for magic, properties in pairs(scripts.inv.magics_data.magics) do
             for _, regexp in pairs(properties.regexps) do
                 table.insert(scripts.inv.magics_trigger_ids, scripts.inv:setup_special_inventory_highlight(regexp, scripts.inv.magics_color))

@@ -4,6 +4,8 @@ function scripts.ui:setup_talk_window()
         setFontSize("talk_window", scripts.ui.separate_talk_window_font_size)
         tempTimer(0.3, function() scripts.ui:setup_wrap_talk_window() end)
     end
+
+    setFont("talk_window", getFont())
 end
 
 function scripts.ui:setup_wrap_talk_window()

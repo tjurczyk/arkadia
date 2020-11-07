@@ -249,6 +249,7 @@ return {
     "skrypty/ui/footer_info/info_updates",
     "skrypty/ui/states_window/ui_states_window",
     "skrypty/ui/states_window/ui_states_window_navbar",
+    "skrypty/ui/states_window/window_util",
     "mapper/events/custom-events/water",
     "mapper/events/custom-events/gates",
     "mapper/events/custom-events/notes",

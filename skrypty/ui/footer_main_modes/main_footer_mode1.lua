@@ -12,7 +12,7 @@ function scripts.ui:setup_gauge_mode1()
     margin-left: 5px;
     margin-top: 5px;
     margin-down: 5px;
-    font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New, monospace;
+    font-family:]].. getFont() ..[[,Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New, monospace;
   ]])
 
     scripts.ui.gauge_front = CSSMan.new([[
@@ -25,7 +25,7 @@ function scripts.ui:setup_gauge_mode1()
     margin-left: 5px;
     margin-top: 5px;
     margin-down: 5px;
-    font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New, monospace;
+    font-family:]].. getFont() ..[[,Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New, monospace;
   ]])
 
     for k, v in pairs(scripts.ui.cfg["footer_items"]) do

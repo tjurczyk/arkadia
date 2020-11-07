@@ -21,8 +21,8 @@ end
 
 function trigger_func_skrypty_ui_gags_color_color_bloki_zajmujesz_pozycje()
     selectCurrentLine()
-    local str_replace = "[    BLOK    ] " ..
-            prefix(str_replace)
+    local str_replace = "[    BLOK    ] "
+    prefix(str_replace)
     selectString(str_replace, 1)
     fg("sea_green")
     resetFormat()

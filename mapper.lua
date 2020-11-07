@@ -31,7 +31,7 @@ if not amap then
         team_follow = false,
         locating = {},
         walk_mode = 1,
-        using_room_gps == true,
+        using_room_gps = true,
         can_bind_enemies = true,
         next_dir_bind = nil
     }

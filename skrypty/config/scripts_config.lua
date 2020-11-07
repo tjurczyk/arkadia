@@ -247,7 +247,7 @@ function ScriptsConfig:remove_indexed_var(options)
     end
 
     if field_type ~= "list" and field_type ~= "map" then
-        scripts:print_log("usuwac mozna tylko z listy lub z mapy, nie z '" .. tostring(var_config.field_type))
+        scripts:print_log("usuwac mozna tylko z listy lub z mapy, nie z '" .. tostring(field_type))
         return
     end
 
@@ -337,7 +337,7 @@ function ScriptsConfig:set_indexed_var(options)
     end
 
     if field_type ~= "list" and field_type ~= "map" then
-        scripts:print_log("indeksowane dodanie dziala tylko dla typow 'list' i 'map', nie do '" .. tostring(var_config.field_type) .. "'")
+        scripts:print_log("indeksowane dodanie dziala tylko dla typow 'list' i 'map', nie do '" .. tostring(field_type) .. "'")
         return
     end
 

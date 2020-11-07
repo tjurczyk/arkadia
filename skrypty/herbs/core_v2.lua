@@ -315,7 +315,7 @@ function herbs:_coroutine_build_db()
     herbs.db = {}
     herbs.index = {}
     herbs.counts = {}
-    local count_trigg = tempRegexTrigger("^(Nie widzisz tu niczego takiego.|Doliczyl.s sie ([a-z ]+) sztuk(|i)\.)$", [[ herbs:building_counted(matches[3]) ]])
+    local count_trigg = tempRegexTrigger("^(Nie widzisz tu niczego takiego.|Doliczyl.s sie ([a-z ]+) sztuk(|i)\\.)$", [[ herbs:building_counted(matches[3]) ]])
     send("policz swoje woreczki")
     coroutine.yield()
 

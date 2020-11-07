@@ -161,7 +161,7 @@ function ateam:prze_func(id, check_fatigue)
 end
 
 function ateam:def_func_clicked(id)
-    if not clicked_second_defense then
+    if not ateam.clicked_second_defense then
         ateam.clicked_second_defense = true
         tempTimer(1.5, function() ateam.clicked_second_defense = false end)
 

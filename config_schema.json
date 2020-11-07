@@ -2361,12 +2361,6 @@
       "macros_on_modify": []
     },
     {
-      "name": "amap.db.personal_keys.backup_keys",
-      "default_value": [],
-      "field_type": "list",
-      "macros_on_modify": []
-    },
-    {
       "name": "amap.walker_disable",
       "default_value": false,
       "field_type": "boolean",

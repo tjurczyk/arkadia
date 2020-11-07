@@ -1,0 +1,12 @@
+name: Verify config.md
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+      - name: Run verification
+        run: python ./.github/workflows/check_config.py

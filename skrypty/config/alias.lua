@@ -6,7 +6,15 @@ function alias_config_help()
     scripts:print_url("<deep_sky_blue>kliknij tutaj", "alias_config_open_help_url", "klik")
     cecho("                                           |\n")
     cecho("|                                                                            |\n")
+    cecho("| <yellow>Aby zobaczyc opisy kluczy konfiguracyjnych ")
+    scripts:print_url("<deep_sky_blue>kliknij tutaj", "open_cfg_keys", "klik")
+    cecho("                   |\n")
+    cecho("|                                                                            |\n")
     cecho("+----------------------------------------------------------------------------+\n")
+end
+
+function open_cfg_keys()
+    openUrl("https://github.com/tjurczyk/arkadia/blob/master/config.md")
 end
 
 function alias_config_open_help_url()

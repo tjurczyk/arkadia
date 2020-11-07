@@ -1139,7 +1139,10 @@
     },
     {
       "name": "scripts.ui.separate_talk_window_msg_types",
-      "default_value": {},
+      "default_value": {
+        "comm": true,
+        "emotes": true
+      },
       "field_type": "map",
       "macros_on_modify": [
         "_ux"

@@ -46,7 +46,7 @@ function scripts_init_v2_config(name, wolacz)
         local trigger_name = name .. "-login"
         if exists(trigger_name, "trigger") == 0 then
             local code = "scripts_load_v2_config(\"" .. name .. "\")"
-            permRegexTrigger(trigger_name, "", { "Witaj, " .. wolacz .. ". Podaj swe haslo" }, code)
+            permRegexTrigger(trigger_name, "", { "Witaj, " .. wolacz:proper_case() .. ". Podaj swe haslo" }, code)
         else
             scripts:print_log("nie tworze triggera ladujacego config, bo taki juz istnieje.\n\n (1) wejdz w 'Triggers' w gornym pasku\n (2) odnajdz trigger, ktory laduje twoj config, prawdopodobnie bedzie mial w nazwie '<twoje imie>-login', lub cos podobnego\n (3) zamien jego tresc z czegos w stylu 'scripts_load_config(\"<twoje_imie>\")' na 'scripts_load_v2_config(\"<twoje_imie>\")'\n (4) po restarcie mudleta powinien zaladowac sie nowy config, stary plik imie.txt mozna wyrzucic\n\n")
         end

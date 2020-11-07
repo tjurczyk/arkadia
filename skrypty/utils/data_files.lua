@@ -1,8 +1,8 @@
 function scripts.utils:load_data_from_files()
     herbs["data"] = self:read_json(herbs.data_file_path)
 
-    scripts.inv["magics_data"] = self:read_json(scripts.inv.magics_file_path)
-    if scripts.inv["magics_data"] then
+    scripts.inv.magics_data = self:read_json(scripts.inv.magics_file_path)
+    if scripts.inv.magics_data then
         scripts.inv:setup_magics_triggers()
     end
     scripts.inv["magic_keys_data"] = self:read_json(scripts.inv.magic_keys_file_path)

@@ -54,8 +54,16 @@ scripts.inv.pretty_containers.group_definitions = {
     { name = "inne", filter = function(item) return true end },
 }
 
+local preferred_magics = function(name)
+    local key, properties = scripts.inv:find_magic(name)
+    local preferred_types = scripts.inv.containers.preferred_magic_types
+    local additional_magics = scripts.inv.containers.preferred_magics
+    return key and (not table.is_empty(table.n_intersection(properties.type, preferred_types)) or table.contains(additional_magics, key))
+end
+
 scripts.inv.pretty_containers.name_transformers = {
     ["magic"] = {check = function(name) return table.contains(scripts.inv.magics_data.magics, string.lower(name)) end, transform = function(name) return "<" .. scripts.inv.magics_color .. ">" .. name end},
+    ["preferred_magic"] = {check = preferred_magics, transform = function(name) return string.format("<spring_green>***<reset> <%s>%s <spring_green>***", scripts.inv.magics_color, name) end},
     ["keys"] = {check = function(name) return table.contains(scripts.inv.magic_keys_data.magic_keys, string.lower(name)) end, transform = function(name) return "<" .. scripts.inv.magic_keys_color .. ">" .. name end},
     ["mithryl"] = {check = function(name) return rex.find(name, "mithryl\\w* monet") end, transform = AutomaticTable.color_transformer("pale_turquoise")},
     ["gold"] = {check = function(name) return rex.find(name, "zlot\\w* monet") end, transform = AutomaticTable.color_transformer("gold")},
@@ -63,23 +71,16 @@ scripts.inv.pretty_containers.name_transformers = {
     ["copper"] = {check = function(name) return rex.find(name, "miedzian\\w* monet") end, transform = AutomaticTable.color_transformer("SaddleBrown")},
 }
 
-
-
-local default_transformer = function(item)
-    local ret_str = scripts.utils.str_pad(tostring(item.amount), 4, "right") .. " | "
-    local transformed = false
+local count_name_transformer = function(item)
+    local count_prefix = scripts.utils.str_pad(tostring(item.amount), 4, "right") .. " | "
+    local name = item.name
     for key, properties in pairs(scripts.inv.pretty_containers.name_transformers) do
         if properties.check(item.name) then
-            ret_str = ret_str .. properties.transform(item.name)
-            transformed = true
+            name = properties.transform(name)
         end
     end
 
-    if not transformed then
-        ret_str = ret_str .. item.name
-    end
-
-    return ret_str .. "<reset>"
+    return string.format("%s%s<reset>", count_prefix, name,  "<reset>")
 end
 
 function scripts.inv.pretty_containers:print(content, columns_count, filter)
@@ -97,14 +98,14 @@ function scripts.inv.pretty_containers:print(content, columns_count, filter)
         local in_fixed_group = false
         for pattern, fixed_group in pairs(self.fixed_groups) do
             if rex.find(element.name, pattern) then
-                table.insert(result[fixed_group], default_transformer(element))
+                table.insert(result[fixed_group], count_name_transformer(element))
                 in_fixed_group = true
             end
         end
         if not in_fixed_group then
             for _, group in ipairs(scripts.inv.pretty_containers.group_definitions) do
                 if group.filter(element) then
-                    table.insert(result[group.name], default_transformer(element))
+                    table.insert(result[group.name], count_name_transformer(element))
                     break
                 end
             end

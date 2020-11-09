@@ -740,7 +740,7 @@ Kolejnosc bedzie taka, jak wymieniona ponizej.
 ## `scripts.ui.cfg.states_window_nav_printable_key_map`
 
 Jakie przedrostki maja byc uzywane do poszczegolnego elementu Jesli do "bron" uzyte jest "BRON", to w naglowku pojawi sie: `BRON: on` lub `BRON: off`
---
+
 ```json
 "scripts.ui.cfg.states_window_nav_printable_key_map" : {
   "bron" : "BRON",
@@ -981,6 +981,7 @@ Kolory, ktore mozna wybrac sa dostepne w `/kolory`
 
 ---
 
+## Keybindy
 
 Ponizej znajduje sie konfiguracja keybindow w skryptach.
 Lista `modifier` sluzy do zdefiniowana jaki klawisz ma byc trzymany podczas binda. Najwazniejsze to: `"Shift"`, `"Control"`, `"Alt"`

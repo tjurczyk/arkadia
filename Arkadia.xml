@@ -235,7 +235,7 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^Twoje doswiadczenie i umiejetnosci podpowiadaja ci, ze jest on (.*) w parowaniu ciosow\.$</string>
+							<string>^Twoje doswiadczenie i umiejetnosci podpowiadaja ci, ze jest ona? (.*) w parowaniu ciosow\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>

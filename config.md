@@ -213,6 +213,28 @@ Wyłączenie grupowania przedmiotów w pojemnikach.
 
 ---
 
+## `scripts.inv.containers.preferred_magic_types`
+
+Oznacza w grupowanych pojemnikach preferowane typy magików.
+
+```json
+  "script.inv.containers.preferred_magic_types" : ["jednoreczny topor", "jednoreczna maczuga", "tarcza"]
+```
+
+W razie wątpliwości co do typów, należy przeszukać `type` w tym [pliku](https://github.com/tjurczyk/arkadia-data/blob/master/magics_data.json)
+
+---
+
+## `scripts.inv.containers.preferred_magics`
+
+Oznacza w grupowanych pojemnikach konkretne magiki.
+
+```json
+  "scripts.inv.containers.preferred_magics" : ["lsniacy krysztalowy wisior", "misterny obosieczny topor"]
+```
+
+---
+
 ## `scripts.inv.containers.column_count`
 
 Ilość kolumn w grupowanych pojmenikach.
@@ -263,6 +285,11 @@ Opcja do ustalenia jakie maja byc bindowane ilosci ziol branych (get) oraz zazyw
 "herbs.settings.get_herb_counts" : [1, 3],
 "herbs.settings.use_herb_counts" : [1, 3]
 ```
+
+---
+
+## `herbs.window.enabled`
+Włącza oddzielne okno pokazujące zioła. Aktualizowany przez `/pokaz_ziola` oraz aliasy na wkladanie i wyciąganie ziół.
 
 ---
 
@@ -713,7 +740,7 @@ Kolejnosc bedzie taka, jak wymieniona ponizej.
 ## `scripts.ui.cfg.states_window_nav_printable_key_map`
 
 Jakie przedrostki maja byc uzywane do poszczegolnego elementu Jesli do "bron" uzyte jest "BRON", to w naglowku pojawi sie: `BRON: on` lub `BRON: off`
---
+
 ```json
 "scripts.ui.cfg.states_window_nav_printable_key_map" : {
   "bron" : "BRON",
@@ -954,6 +981,7 @@ Kolory, ktore mozna wybrac sa dostepne w `/kolory`
 
 ---
 
+## Keybindy
 
 Ponizej znajduje sie konfiguracja keybindow w skryptach.
 Lista `modifier` sluzy do zdefiniowana jaki klawisz ma byc trzymany podczas binda. Najwazniejsze to: `"Shift"`, `"Control"`, `"Alt"`

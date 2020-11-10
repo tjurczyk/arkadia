@@ -194,6 +194,7 @@
       "name": "ateam.options.team_mate_stun_bg_color",
       "default_value": "goldenrod",
       "field_type": "string",
+      "content_type" : "mudlet_color",
       "macros_on_modify": [
         "_ateam"
       ]
@@ -202,6 +203,7 @@
       "name": "ateam.options.team_mate_stun_fg_color",
       "default_value": "black",
       "field_type": "string",
+      "content_type" : "mudlet_color",
       "macros_on_modify": [
         "_ateam"
       ]
@@ -210,6 +212,7 @@
       "name": "ateam.options.enemy_stun_bg_color",
       "default_value": "orchid",
       "field_type": "string",
+      "content_type" : "mudlet_color",
       "macros_on_modify": [
         "_ateam"
       ]
@@ -218,6 +221,7 @@
       "name": "ateam.options.enemy_stun_fg_color",
       "default_value": "black",
       "field_type": "string",
+      "content_type" : "mudlet_color",
       "macros_on_modify": [
         "_ateam"
       ]
@@ -226,12 +230,14 @@
       "name": "ateam.options.broken_defense_bg_color",
       "default_value": "LightPink",
       "field_type": "string",
+      "content_type" : "mudlet_color",
       "macros_on_modify": []
     },
     {
       "name": "ateam.options.broken_defense_fg_color",
       "default_value": "black",
       "field_type": "string",
+      "content_type" : "mudlet_color",
       "macros_on_modify": []
     },
     {
@@ -1011,6 +1017,7 @@
       "name": "scripts.people.name_color",
       "default_value": "yellow",
       "field_type": "string",
+      "content_type" : "mudlet_color",
       "macros_on_modify": [
         "_people"
       ]
@@ -1019,6 +1026,7 @@
       "name": "scripts.people.guild_color",
       "default_value": "dark_orange",
       "field_type": "string",
+      "content_type" : "mudlet_color",
       "macros_on_modify": [
         "_people"
       ]
@@ -1394,12 +1402,14 @@
       "name": "scripts.ui.bind_color",
       "default_value": "LawnGreen",
       "field_type": "string",
+      "content_type" : "mudlet_color",
       "macros_on_modify": []
     },
     {
       "name": "scripts.inv.magics_color",
       "default_value": "tomato",
       "field_type": "string",
+      "content_type" : "mudlet_color",
       "macros_on_modify": [
         "_magics"
       ]
@@ -1408,6 +1418,7 @@
       "name": "scripts.inv.magic_keys_color",
       "default_value": "green_yellow",
       "field_type": "string",
+      "content_type" : "mudlet_color",
       "macros_on_modify": [
         "_magics"
       ]
@@ -1416,6 +1427,7 @@
       "name": "scripts.tcolor_color",
       "default_value": "orange",
       "field_type": "string",
+      "content_type" : "mudlet_color",
       "macros_on_modify": []
     },
     {
@@ -1448,6 +1460,7 @@
       "name": "scripts.gag_colors.moje_ciosy",
       "default_value": "alice_blue",
       "field_type": "string",
+      "content_type" : "mudlet_color",
       "macros_on_modify": [
         "_ux"
       ]
@@ -1456,6 +1469,7 @@
       "name": "scripts.gag_colors.moje_spece",
       "default_value": "green_yellow",
       "field_type": "string",
+      "content_type" : "mudlet_color",
       "macros_on_modify": [
         "_ux"
       ]
@@ -1464,6 +1478,7 @@
       "name": "scripts.gag_colors.innych_ciosy",
       "default_value": "LightGrey",
       "field_type": "string",
+      "content_type" : "mudlet_color",
       "macros_on_modify": [
         "_ux"
       ]
@@ -1472,6 +1487,7 @@
       "name": "scripts.gag_colors.innych_ciosy_we_mnie",
       "default_value": "pink",
       "field_type": "string",
+      "content_type" : "mudlet_color",
       "macros_on_modify": [
         "_ux"
       ]
@@ -1480,6 +1496,7 @@
       "name": "scripts.gag_colors.innych_spece",
       "default_value": "slate_grey",
       "field_type": "string",
+      "content_type" : "mudlet_color",
       "macros_on_modify": [
         "_ux"
       ]
@@ -1488,6 +1505,7 @@
       "name": "scripts.gag_colors.moje_uniki",
       "default_value": "SteelBlue",
       "field_type": "string",
+      "content_type" : "mudlet_color",
       "macros_on_modify": [
         "_ux"
       ]
@@ -1496,6 +1514,7 @@
       "name": "scripts.gag_colors.innych_uniki",
       "default_value": "dark_slate_grey",
       "field_type": "string",
+      "content_type" : "mudlet_color",
       "macros_on_modify": [
         "_ux"
       ]
@@ -1504,6 +1523,7 @@
       "name": "scripts.gag_colors.moje_parowanie",
       "default_value": "SteelBlue",
       "field_type": "string",
+      "content_type" : "mudlet_color",
       "macros_on_modify": [
         "_ux"
       ]
@@ -1512,6 +1532,7 @@
       "name": "scripts.gag_colors.innych_parowanie",
       "default_value": "dark_slate_gray",
       "field_type": "string",
+      "content_type" : "mudlet_color",
       "macros_on_modify": [
         "_ux"
       ]
@@ -1520,6 +1541,7 @@
       "name": "scripts.gag_colors.zaslony_udane",
       "default_value": "deep_sky_blue",
       "field_type": "string",
+      "content_type" : "mudlet_color",
       "macros_on_modify": [
         "_ux"
       ]
@@ -1528,6 +1550,7 @@
       "name": "scripts.gag_colors.zaslony_nieudane",
       "default_value": "dark_slate_blue",
       "field_type": "string",
+      "content_type" : "mudlet_color",
       "macros_on_modify": [
         "_ux"
       ]
@@ -1536,6 +1559,7 @@
       "name": "scripts.gag_colors.bron",
       "default_value": "gold",
       "field_type": "string",
+      "content_type" : "mudlet_color",
       "macros_on_modify": [
         "_ux"
       ]
@@ -1544,6 +1568,7 @@
       "name": "scripts.gag_colors.npc",
       "default_value": "floral_white",
       "field_type": "string",
+      "content_type" : "mudlet_color",
       "macros_on_modify": [
         "_ux"
       ]
@@ -2402,12 +2427,14 @@
       "name": "amap.ui.location_marker.color",
       "default_value": "pale_violet_red",
       "field_type": "string",
+      "content_type" : "mudlet_color",
       "macros_on_modify": []
     },
     {
       "name": "amap.ui.location_marker.color2",
       "default_value": "alice_blue",
       "field_type": "string",
+      "content_type" : "mudlet_color",
       "macros_on_modify": []
     },
     {
@@ -2432,6 +2459,7 @@
       "name": "scripts.sounds.beep",
       "default_value": "",
       "field_type": "string",
+      "content_type" : "file_path",
       "macros_on_modify": []
     },
     {

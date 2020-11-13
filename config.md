@@ -237,7 +237,7 @@ Oznacza w grupowanych pojemnikach konkretne magiki.
 
 ## `scripts.inv.containers.column_count`
 
-Ilość kolumn w grupowanych pojmenikach.
+Ilość kolumn w grupowanych pojemnikach.
 
 ---
 
@@ -1257,7 +1257,7 @@ Domyslna opcja startowa czy chodzik jest wyłączony
 
 Wartości: 
 * `true` - wyłączony
-* `false` - wyłączony
+* `false` - włączony
 
 Komenda do zmiany w trakcie gry: `/chodzik wlacz` lub `/chodzik wylacz`
 

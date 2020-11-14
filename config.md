@@ -38,7 +38,7 @@ Sortowanie alfabetyczne druzyny w oknie kondycji.
 
 Kolor oznaczenia na przelamana obrone.  'fg' to czcionka, 'bg' to tlo.
 
-Kolory, ktore mozna wybrac sa dostepne w `/kolory`
+Kolory, ktore mozna wybrac sa dostepne w `/kolory` lub [tutaj](https://forums.mudlet.org/download/file.php?id=129&sid=be964a7a97580514727bfcb7cfcb5aec&mode=view)
 
 ---
 
@@ -48,7 +48,7 @@ Kolory, ktore mozna wybrac sa dostepne w `/kolory`
 
 Opcja definiujaca kolory ogluszonych czlonkow druzyny. 'fg' to czcionka, 'bg' to tlo.
 
-Kolory, ktore mozna wybrac sa dostepne w `/kolory`
+Kolory, ktore mozna wybrac sa dostepne w `/kolory` lub [tutaj](https://forums.mudlet.org/download/file.php?id=129&sid=be964a7a97580514727bfcb7cfcb5aec&mode=view)
 
 ---
 
@@ -57,7 +57,7 @@ Kolory, ktore mozna wybrac sa dostepne w `/kolory`
 
 Opcja definiujaca kolory ogluszonych wrogow. 'fg' to czcionka, 'bg' to tlo.
 
-Kolory, ktore mozna wybrac sa dostepne w `/kolory`
+Kolory, ktore mozna wybrac sa dostepne w `/kolory` lub [tutaj](https://forums.mudlet.org/download/file.php?id=129&sid=be964a7a97580514727bfcb7cfcb5aec&mode=view)
 
 ---
 
@@ -186,7 +186,16 @@ Dodatkowo, mozliwe opcje:
 Domyslna opcja zbierania z ciał.
 
 Dozwolone wartosci:
-uzyj komendy `/zbieranie` aby zobaczyc wszystkie dozwolone wartosci
+
+* `1` - monety
+* `2` - kamienie
+* `3` - monety i kamienie
+* `4` - druzynowe monety
+* `5` - druzynowe kamienie
+* `6` - druzynowe monety i kamienie
+* `7` - nic
+
+Uzyj komendy `/zbieranie` aby zobaczyc wszystkie dozwolone wartosci
 
 Komenda do zmiany w trakcie gry: `/zbieranie [wartosc_ustawienia]`
 
@@ -201,7 +210,7 @@ Dozwolone wartosci:
 * `2` - srebro i zloto
 * `3` - zloto
 
-Komenda do zmiany w trakcie gry: '/zbieranie [wartosc_ustawienia]'
+Komenda do zmiany w trakcie gry: `/zbieranie_monet [wartosc_ustawienia]`
 
 ---
 
@@ -300,7 +309,7 @@ Włącza oddzielne okno pokazujące zioła. Aktualizowany przez `/pokaz_ziola` o
 
 Domyslne pojemniki do monet (money), kamieni (gems), jedzenia (food), i wszystkiego innego (other)
 
-Opis konfiguracji: http://arkadia.kamerdyner.net/pojemniki.html
+Opis konfiguracji: <http://arkadia.kamerdyner.net/pojemniki.html>
 
 ### Przykład
 ```json
@@ -327,7 +336,7 @@ Analogiczne ustawienia:
 ## `scripts.inv.desc_food_bag_1`
 ## `scripts.inv.desc_other_bag_1`
 
-Opis konfiguracji: http://arkadia.kamerdyner.net/pojemniki.html
+Opis konfiguracji: <http://arkadia.kamerdyner.net/pojemniki.html>
 
 Analogiczne ustawienia: 
 ### `scripts.inv.desc_gems_bag_2`
@@ -346,7 +355,7 @@ Analogiczne ustawienia:
 ## `scripts.inv.dopelniacz_food_bag_1`
 ## `scripts.inv.dopelniacz_other_bag_1`
 
-Opis konfiguracji: http://arkadia.kamerdyner.net/pojemniki.html
+Opis konfiguracji: <http://arkadia.kamerdyner.net/pojemniki.html>
 
 Analogiczne ustawienia: 
 ### `scripts.inv.dopelniacz_money_bag_2`
@@ -365,7 +374,7 @@ Analogiczne ustawienia:
 ## `scripts.inv.biernik_food_bag_1`
 ## `scripts.inv.biernik_other_bag_1`
 
-Opis konfiguracji: http://arkadia.kamerdyner.net/pojemniki.html
+Opis konfiguracji: <http://arkadia.kamerdyner.net/pojemniki.html>
 
 Analogiczne ustawienia: 
 ### `scripts.inv.biernik_money_bag_2`
@@ -384,7 +393,7 @@ Analogiczne ustawienia:
 ## `scripts.inv.pre_food_bag_1`
 ## `scripts.inv.pre_other_bag_1`
 
-Opis konfiguracji: http://arkadia.kamerdyner.net/pojemniki.html
+Opis konfiguracji: <http://arkadia.kamerdyner.net/pojemniki.html>
 
 Analogiczne ustawienia: 
 ## `scripts.inv.pre_money_bag_2`
@@ -403,7 +412,7 @@ Analogiczne ustawienia:
 ## `scripts.inv.post_food_bag_1`
 ## `scripts.inv.post_other_bag_1`
 
-Opis konfiguracji: http://arkadia.kamerdyner.net/pojemniki.html
+Opis konfiguracji: <http://arkadia.kamerdyner.net/pojemniki.html>
 
 Analogiczne ustawienia: 
 ### `scripts.inv.post_money_bag_2`
@@ -545,7 +554,7 @@ Dozwolone wartosci:
 ## `scripts.people.guild_color`
 Wybor kolorow do imion i gildii.
 
-Kolory, ktore mozna wybrac sa dostepne w `/kolory`
+Kolory, ktore mozna wybrac sa dostepne w `/kolory` lub [tutaj](https://forums.mudlet.org/download/file.php?id=129&sid=be964a7a97580514727bfcb7cfcb5aec&mode=view)
 
 ---
 
@@ -603,7 +612,7 @@ Kolorowanie wszystkich czlonkow gildii w bazie (po imionach i shortach). Wystarc
   "MC" : "gold"
 }
 ```
-Sprawdz `/kolory` aby zobaczyc dostepne kolory w Mudlecie.
+Kolory, ktore mozna wybrac sa dostepne w `/kolory` lub [tutaj](https://forums.mudlet.org/download/file.php?id=129&sid=be964a7a97580514727bfcb7cfcb5aec&mode=view)
 
 ---
 
@@ -616,7 +625,7 @@ Kolorowanie poszczegolnych ludzi z bazy. Wystarczy dac klucz = wartosc jako osob
   "piekny dostojny rurek" : "red"
 }
 ```
-Sprawdz `/kolory` aby zobaczyc dostepne kolory w Mudlecie.
+Kolory, ktore mozna wybrac sa dostepne w `/kolory` lub [tutaj](https://forums.mudlet.org/download/file.php?id=129&sid=be964a7a97580514727bfcb7cfcb5aec&mode=view)
 
 ---
 
@@ -676,7 +685,7 @@ Jesli ustawi sie "> ", przed kazdym wierszem bedzie sie pojawialo "> "
 ---
 
 ## `scripts.ui.separate_talk_window_msg_types`
-Typy komunikatow, ktore maja sie pojawiac w oknie rozmow. Domyslnie sa to rozmowy i emocje. Wszystkie typy wysylane przez arkadie sa tutaj: http://arkadia.rpg.pl/forum/viewtopic.php?f=15&t=740
+Typy komunikatow, ktore maja sie pojawiac w oknie rozmow. Domyslnie sa to rozmowy i emocje. Wszystkie typy wysylane przez arkadie sa tutaj: <http://arkadia.rpg.pl/forum/viewtopic.php?f=15&t=740>
 
 Format ma zostac taki jak ponizej: `"typ_komunikatu" : true`
 
@@ -726,12 +735,13 @@ Wartości:
 Lista elementów maja znalezc sie w naglowku okna stanow. Dostepne to: `bron`, `zaslona`, `rozkaz`, `ukryty`
 
 Kolejnosc bedzie taka, jak wymieniona ponizej.
-```json 
+
+```json
 "scripts.ui.cfg.states_window_nav_elements" : [
   "bron",
   "zaslona",
   "rozkaz",
-  "ukryty",
+  "ukryty"
 ]
 ```
 
@@ -834,7 +844,7 @@ Dozwolone wartosci:
 * `mode4` - pasek z wartosciami tekstowymi (inversionz, dostarczony przez Kazura)
 * `mode5` - pasek z wartosciami tekstowymi i belkami (dostarczony przez Zendrina)
 
-`mode4` wymaga wgrania czcionek inversionz. Trzeba pobrac z https://www.dafont.com/search.php?q=inversionz i wrzucic do katalogu "fonts" w mudlet-data.
+`mode4` wymaga wgrania czcionek inversionz. Trzeba pobrac z <https://www.dafont.com/search.php?q=inversionz> i wrzucic do katalogu "fonts" w mudlet-data.
 
 ---
 
@@ -898,7 +908,7 @@ Mozliwe opcje to:
 
 Kolor informacji o zbindowaniu
 
-Kolory, ktore mozna wybrac sa dostepne w `/kolory`
+Kolory, ktore mozna wybrac sa dostepne w `/kolory` lub [tutaj](https://forums.mudlet.org/download/file.php?id=129&sid=be964a7a97580514727bfcb7cfcb5aec&mode=view)
 
 ---
 
@@ -906,7 +916,7 @@ Kolory, ktore mozna wybrac sa dostepne w `/kolory`
 
 Kolor podswietlania magicznych broni/zbroi.
 
-Kolory, ktore mozna wybrac sa dostepne w `/kolory`
+Kolory, ktore mozna wybrac sa dostepne w `/kolory` lub [tutaj](https://forums.mudlet.org/download/file.php?id=129&sid=be964a7a97580514727bfcb7cfcb5aec&mode=view)
 
 ---
 
@@ -914,7 +924,7 @@ Kolory, ktore mozna wybrac sa dostepne w `/kolory`
 
 Kolor podswietlania specjalnych kluczy.
 
-Kolory, ktore mozna wybrac sa dostepne w `/kolory`
+Kolory, ktore mozna wybrac sa dostepne w `/kolory` lub [tutaj](https://forums.mudlet.org/download/file.php?id=129&sid=be964a7a97580514727bfcb7cfcb5aec&mode=view)
 
 ---
 
@@ -922,7 +932,7 @@ Kolory, ktore mozna wybrac sa dostepne w `/kolory`
 
 Kolor uzywany przy /tcolor (pomoc w '/bindy')
 
-Kolory, ktore mozna wybrac sa dostepne w `/kolory`
+Kolory, ktore mozna wybrac sa dostepne w `/kolory` lub [tutaj](https://forums.mudlet.org/download/file.php?id=129&sid=be964a7a97580514727bfcb7cfcb5aec&mode=view)
 
 ---
 
@@ -977,7 +987,7 @@ Ponizej jest opcja co ma byc robione:
 
 Opcja kolorow do tagow (czyli tylko kiedy scripts.gag_settings ustawione ne 2)
 
-Kolory, ktore mozna wybrac sa dostepne w `/kolory`
+Kolory, ktore mozna wybrac sa dostepne w `/kolory` lub [tutaj](https://forums.mudlet.org/download/file.php?id=129&sid=be964a7a97580514727bfcb7cfcb5aec&mode=view)
 
 ---
 
@@ -989,7 +999,7 @@ Mozna nie ustawiac zadnego - wtedy bindem bedzie pojedynczy klawisz
 Jesli ustawi sie `"Shift"` i `"Control"`, trzeba bedzie trzymac te dwa klawisze podczas binda.
 Zmienna `key` sluzy do zdefiniowania konkretnego klawisza. Moze to byc dowolny klawisz znaku alfanumerycznego.
 Lista `keys` sluzy do zdefiniowania list klawiszy.
-Dokladna lista znajduje sie tutaj: https://github.com/Mudlet/Mudlet/blob/development/src/mudlet-lua/lua/KeyCodes.lua#L2
+Dokladna lista znajduje sie tutaj: <https://github.com/Mudlet/Mudlet/blob/development/src/mudlet-lua/lua/KeyCodes.lua#L2>
 
 ---
 
@@ -1322,7 +1332,9 @@ Dozwolne wartosci
 ## `amap.ui.location_marker.color`
 ## `amap.ui.location_marker.color2`
 
-Kolory do oznaczania lokacji w `/zaznaczaj` dostepne kolory mozna zobaczyc w `/kolory`
+Kolory do oznaczania lokacji w `/zaznaczaj` 
+
+Dostepne kolory mozna zobaczyc w `/kolory` lub [tutaj](https://forums.mudlet.org/download/file.php?id=129&sid=be964a7a97580514727bfcb7cfcb5aec&mode=view)
 
 
 ---

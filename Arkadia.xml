@@ -14111,6 +14111,7 @@
 							<string>^Poprawiasz uchwyt na .* i wywijasz \w kilka mlyncow, sprawdzajac wywazenie broni\.$</string>
 							<string>Czujesz w sobie niezwykla moc, gdy dobywasz adamantytowego mlota bojowego.</string>
 							<string>Gdy dobywasz foremnego iskrzacego mlota, pelzajace po broni wyladowania elektryczne przeskakuja na twa dlon i przedramie oplatajac je siateczka jasniejacych wici.</string>
+							<string>Pod wplywem twego pewnego chwytu zdobiony jasniejacy mlot rozblyskuje jasnym swiatlem, </string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -14149,6 +14150,7 @@
 							<integer>0</integer>
 							<integer>1</integer>
 							<integer>1</integer>
+							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
 						</regexCodePropertyList>
@@ -14181,6 +14183,7 @@
 							<string>Czujesz nienaturalna tesknote, gdy tylko twoje palce zwalniaja chwyt na egzotycznym jadeitowym palaszu.</string>
 							<string>Rozluzniasz swoj uchwyt na opalizujacym runicznym toporze obosiecznym. Przez chwile czujesz ogromna, nieokreslona pustke. Swiecace runy na ostrzu topora przygasaja.</string>
 							<string>Czujesz nieokreslona pustke, gdy opuszczasz adamantytowy mlot bojowy.</string>
+							<string>Wraz z opuszczeniem zdobionego jasniejacego mlota zanika wypelniajace do tej pory twe serce uczucie niezlomnosci</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -14188,6 +14191,7 @@
 							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
+							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>

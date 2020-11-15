@@ -1,4 +1,9 @@
-scripts["people"] = scripts["people"] or { db = {}, mail = {}, enemies = {} }
+scripts["people"] = scripts["people"] or { 
+    db = {},
+    mail = {},
+    enemies = {},
+    color_triggers = {}
+}
 
 scripts.people.db = db:create("people", {
     people = {

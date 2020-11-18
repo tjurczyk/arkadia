@@ -17634,8 +17634,8 @@
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^[&gt; ]*Uwaznie ogladasz zawartosc[a-zA-Z ]*woreczka[a-z ]*. W jego srodku nic jednak nie ma\.$</string>
-						<string>^[&gt; ]*Rozwiazujesz na chwile rzemyk, sprawdzajac zawartosc swojego[a-zA-Z ]*woreczka[a-z ]*. W jego srodku nic jednak nie ma\.$</string>
+						<string>^[&gt; ]*Uwaznie ogladasz zawartosc[a-zA-Z -]*woreczka[a-z ]*. W jego srodku nic jednak nie ma\.$</string>
+						<string>^[&gt; ]*Rozwiazujesz na chwile rzemyk, sprawdzajac zawartosc swojego[a-zA-Z -]*woreczka[a-z ]*. W jego srodku nic jednak nie ma\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>

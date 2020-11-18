@@ -64,8 +64,8 @@ function scripts.people:color_person_build(item, color)
         regex = "(^|\\W)((" .. string.sub(item["short"], 0, 1) .. "|" .. first_capitalized .. ")" .. rest_string .. ")(?! chaosu)(\\W|$)"
     end
 
-    local id = tempRegexTrigger(regex, "scripts.people:process_person_color(" .. item["_row_id"] .. ", matches[3])")
-    scripts.people.color_items[item["_row_id"]] = { ["trigger_id"] = id, ["person"] = item }
+    table.insert(self.color_triggers, tempRegexTrigger(regex, function() scripts.people:process_person_color( item["_row_id"], matches[3] ) end))
+    scripts.people.color_items[item["_row_id"]] = { ["person"] = item }
 end
 
 function scripts.people:color_people_guild(guild_name, color)
@@ -85,10 +85,11 @@ function scripts.people:color_people_guild(guild_name, color)
 end
 
 function scripts.people:color_people_starter()
-    for k, v in pairs(scripts.people.color_items) do
-        killTrigger(v["trigger_id"])
+    for _, id in pairs(scripts.people.color_triggers) do
+        killTrigger(id)
     end
 
+    scripts.people.color_triggers = {}
     scripts.people.color_items = {}
     scripts.people.color_table = {}
     scripts.people.color_people = {}
@@ -96,11 +97,18 @@ function scripts.people:color_people_starter()
 
     for k, v in pairs(scripts.people.colored_people) do
         local results = db:fetch(scripts.people.db.people, db:eq(scripts.people.db.people.name, k))
-
-        for id, item in pairs(results) do
-            if not scripts.people.enemy_table[item["_row_id"]] then
-                scripts.people:color_person_build(item, v)
+        if not table.is_empty(results) then
+            for id, item in pairs(results) do
+                if not scripts.people.enemy_table[item["_row_id"]] then
+                    scripts.people:color_person_build(item, v)
+                end
             end
+        else 
+            table.insert(scripts.people.color_triggers, tempRegexTrigger("(?i)(" .. k .. ")", function()
+                selectCaptureGroup(2)
+                fg(v)
+                resetFormat()
+            end ))
         end
     end
 

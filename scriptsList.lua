@@ -150,6 +150,7 @@ return {
     "skrypty/ui/footer_info",
     "skrypty/ui/states_window",
     "skrypty/ui/help",
+    "skrypty/ui/messages",
     "skrypty/ui/ui_gags_settings",
     "skrypty/ui/ui",
     "skrypty/ui/ui_footer",

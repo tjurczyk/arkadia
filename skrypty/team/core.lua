@@ -562,9 +562,7 @@ function ateam:msg_support(v)
     if ateam.can_msg then
         ateam.can_msg = false
         ateam.to_support = v
-        cecho("<red>***************************************\n")
-        cecho("<red>        Bijesz innego: " .. scripts.keybind:keybind_tostring("fight_support") .. "          \n")
-        cecho("<red>***************************************\n")
+        scripts.messages:warning("Bijesz innego: " .. scripts.keybind:keybind_tostring("fight_support"))
         tempTimer(3, [[ ateam.can_msg = true ]])
     end
 end
@@ -573,18 +571,14 @@ function ateam:msg_attack_target()
     raiseEvent("ateamToAttackTarget")
     if ateam.can_msg then
         ateam.can_msg = false
-        cecho("<red>***************************************\n")
-        cecho("<red>     Zaatakuj wskazany cel: " .. scripts.keybind:keybind_tostring("attack_target") .. "     \n")
-        cecho("<red>***************************************\n")
+        scripts.messages:warning("Zaatakuj wskazany cel: " .. scripts.keybind:keybind_tostring("attack_target"))
         tempTimer(3, [[ ateam.can_msg = true ]])
     end
 end
 
 function ateam:msg_break_defense(to_break_enemy)
     ateam.can_msg = false
-    cecho("<red>***************************************\n")
-    cecho("<red>         PRZELAM obrone: " .. scripts.keybind:keybind_tostring("attack_bind_obj") .. "              \n")
-    cecho("<red>***************************************\n")
+    scripts.messages:warning("PRZELAM obrone: " .. scripts.keybind:keybind_tostring("attack_bind_obj"))
     ateam.break_enemy_defense_id = to_break_enemy
 end
 

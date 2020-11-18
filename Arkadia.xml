@@ -22575,7 +22575,6 @@
 						<string>^[ &gt;]*Wrota stajni sa zamkniete na noc\.$</string>
 						<string>^[ &gt;]*Wszystkie stragany sa juz uprzatniete\.$</string>
 						<string>Nie masz na to sily.</string>
-						<string>^[ &gt;]*Chcesz wpasc do rozpadliny\? Taka decyzje musisz potwierdzic\.$</string>
 						<string>^[ &gt;]*Droge na .* blokuje nieprzebyty masyw skalny\.$</string>
 						<string>^[ &gt;]*Czujny gladkolicy mezczyzna staje na drodze blokujac przejscie\.</string>
 						<string>^[ &gt;]*.* zjawa.* swym niematerialnym cialem blokuje ci dalsza droge w glab swiatyni\.$</string>
@@ -22613,7 +22612,6 @@
 						<integer>1</integer>
 						<integer>1</integer>
 						<integer>0</integer>
-						<integer>1</integer>
 						<integer>1</integer>
 						<integer>1</integer>
 						<integer>1</integer>

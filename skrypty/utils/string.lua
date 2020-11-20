@@ -68,6 +68,15 @@ function string:split_people(str)
     display(sep1)
 end
 
+function string:count_people(str)
+    local split = scripts.utils:extract_string_list(str)
+    local sum = 0
+    for _, obj in pairs(split) do
+        sum = sum + (tonumber(obj.amount) or 0)
+    end
+    return sum
+end
+
 function scripts.utils:extract_string_list(list_str)
     local items = {}
 

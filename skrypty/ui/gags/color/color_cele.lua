@@ -1,4 +1,8 @@
 function trigger_func_skrypty_ui_gags_color_color_cele_cel_obrony_ktos()
+    if scripts.gags:delete_line("cele") then
+        return
+    end
+
     selectCurrentLine()
     deleteLine()
     if matches[3] == "ciebie" then
@@ -10,6 +14,10 @@ function trigger_func_skrypty_ui_gags_color_color_cele_cel_obrony_ktos()
 end
 
 function trigger_func_skrypty_ui_gags_color_color_cele_cel_ataku_ktos()
+    if scripts.gags:delete_line("cele") then
+        return
+    end
+    
     selectCurrentLine()
     deleteLine()
 

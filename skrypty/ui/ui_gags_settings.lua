@@ -42,10 +42,7 @@ scripts.gag_settings = {
 function scripts.ui:set_gag_options()
     for k, v in pairs(scripts.gag_settings) do
         disableTrigger("color_" .. k)
-        disableTrigger("delete_" .. k)
-        if v == 1 then
-            enableTrigger("delete_" .. k)
-        elseif v == 2 then
+        if v > 0 then
             enableTrigger("color_" .. k)
         end
     end

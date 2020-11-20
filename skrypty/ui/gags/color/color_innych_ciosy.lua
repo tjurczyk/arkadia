@@ -3,12 +3,7 @@ function trigger_func_skrypty_ui_gags_color_color_innych_ciosy_ktos_ledwo_muska(
         return
     end
 
-    selectCurrentLine()
-    local str_replace = "[1/6] "
-    prefix(str_replace)
-    selectString(str_replace, 1)
-    fg(scripts.gag_colors["innych_ciosy"])
-    resetFormat()
+    scripts.gags:gag(1, 6, "innych_ciosy")
 end
 
 function trigger_func_skrypty_ui_gags_color_color_innych_ciosy_ktos_lekko_rani()
@@ -16,12 +11,7 @@ function trigger_func_skrypty_ui_gags_color_color_innych_ciosy_ktos_lekko_rani()
         return
     end
 
-    selectCurrentLine()
-    local str_replace = "[2/6] "
-    prefix(str_replace)
-    selectString(str_replace, 1)
-    fg(scripts.gag_colors["innych_ciosy"])
-    resetFormat()
+    scripts.gags:gag(2, 6, "innych_ciosy")
 end
 
 function trigger_func_skrypty_ui_gags_color_color_innych_ciosy_ktos_rani()
@@ -44,12 +34,7 @@ function trigger_func_skrypty_ui_gags_color_color_innych_ciosy_ktos_rani()
         return
     end
 
-    selectCurrentLine()
-    local str_replace = "[3/6] "
-    prefix(str_replace)
-    selectString(str_replace, 1)
-    fg(scripts.gag_colors["innych_ciosy"])
-    resetFormat()
+    scripts.gags:gag(3, 6, "innych_ciosy")
 end
 
 function trigger_func_skrypty_ui_gags_color_color_innych_ciosy_ktos_powaznie_rani()
@@ -69,12 +54,7 @@ function trigger_func_skrypty_ui_gags_color_color_innych_ciosy_ktos_powaznie_ran
         end
     end
 
-    selectCurrentLine()
-    local str_replace = "[4/6] "
-    prefix(str_replace)
-    selectString(str_replace, 1)
-    fg(scripts.gag_colors["innych_ciosy"])
-    resetFormat()
+    scripts.gags:gag(4, 6, "innych_ciosy")
 end
 
 function trigger_func_skrypty_ui_gags_color_color_innych_ciosy_ktos_bardzo_ciezko_rani()
@@ -94,12 +74,7 @@ function trigger_func_skrypty_ui_gags_color_color_innych_ciosy_ktos_bardzo_ciezk
         end
     end
 
-    selectCurrentLine()
-    local str_replace = "[5/6] "
-    prefix(str_replace)
-    selectString(str_replace, 1)
-    fg(scripts.gag_colors["innych_ciosy"])
-    resetFormat()
+    scripts.gags:gag(5, 6, "innych_ciosy")
 end
 
 function trigger_func_skrypty_ui_gags_color_color_innych_ciosy_ktos_masakruje()
@@ -119,11 +94,6 @@ function trigger_func_skrypty_ui_gags_color_color_innych_ciosy_ktos_masakruje()
         end
     end
 
-    selectCurrentLine()
-    local str_replace = "[6/6] "
-    prefix(str_replace)
-    selectString(str_replace, 1)
-    fg(scripts.gag_colors["innych_ciosy"])
-    resetFormat()
+    scripts.gags:gag(6, 6, "innych_ciosy")
 end
 

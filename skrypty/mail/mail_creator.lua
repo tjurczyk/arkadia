@@ -47,7 +47,7 @@ function scripts.mail_creator:start()
     local x = 1
     resizeWindow(self.window_name, x, 680)
     while getColumnCount(self.window_name) - 40 < self.width do
-        x = x + 1
+        x = x + 50
         resizeWindow(self.window_name, x, 680)
     end
 

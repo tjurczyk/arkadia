@@ -68,9 +68,10 @@ function load_plugin(plugin_name)
         elseif io.exists(module_path) and is_git_repo then
             if not pcall(getModulePriority, plugin_name) then
                 installModule(module_path)
-                enableModuleSync(plugin_name)
                 setModulePriority(plugin_name, getModulePriority("Arkadia") + table.size(scripts.plugins))
             end
+            enableModuleSync(plugin_name)
+            registerAnonymousEventHandler("sysExitEvent", function() disableModuleSync(plugin_name) end)
             plugin_loaded = true
         end
 

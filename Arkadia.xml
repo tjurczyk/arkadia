@@ -20192,8 +20192,10 @@
 								<colorTriggerBgColor>#000000</colorTriggerBgColor>
 								<regexCodeList>
 									<string>Doplynelismy do przystani na polnocnym brzegu Averu! Mozna wysiadac!</string>
+									<string>Doplynelismy do przystani w Krainie Zgromadzenia! Mozna wysiadac!</string>
 								</regexCodeList>
 								<regexCodePropertyList>
+									<integer>0</integer>
 									<integer>0</integer>
 								</regexCodePropertyList>
 							</Trigger>

@@ -1,4 +1,8 @@
 function trigger_func_skrypty_ui_gags_color_color_ogluchy_ogluch()
+    if scripts.gags:delete_line("ogluchy") then
+        return
+    end
+
     raiseEvent("playBeep")
     tempTimer(0.3, [[ raiseEvent("playBeep") ]])
     tempTimer(0.6, [[ raiseEvent("playBeep") ]])
@@ -12,6 +16,10 @@ function trigger_func_skrypty_ui_gags_color_color_ogluchy_ogluch()
 end
 
 function trigger_func_skrypty_ui_gags_color_color_ogluchy_powrot_z_oglucha()
+    if scripts.gags:delete_line("ogluchy") then
+        return
+    end
+
     raiseEvent("playBeep")
     selectCurrentLine()
     deleteLine()

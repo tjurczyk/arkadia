@@ -18280,6 +18280,28 @@
 						</regexCodePropertyList>
 					</Trigger>
 				</Trigger>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>non standard follows</name>
+					<script>trigger_func_mapper_non_standard_follows(matches[2])</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>^Wraz z .* pomagacie .* przeniesc .* na (.*)\.$</string>
+						<string>^Pomagasz .* przeniesc .* na (.*)\.$</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>1</integer>
+						<integer>1</integer>
+					</regexCodePropertyList>
+				</Trigger>
 			</TriggerGroup>
 			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>directions-ui</name>
@@ -22000,6 +22022,9 @@
 						<string>Zaczynasz szukac</string>
 						<string>^Zaczynasz rytmicznie ciagnac za dojki\.$</string>
 						<string>Zaczynasz wioslowac.</string>
+						<string>Chwytasz za line i bez wiekszego wysilku, razno zaczynasz wspinac sie</string>
+						<string>Podchodzisz do cedru rosnacego na skraju urwiska i chwytajac liny, ktora zostala przywiazana do jego pnia, zaczynasz schodzic na dol.</string>
+						<string>Klekasz powoli przed posagiem przedstawiajacym Mercopia.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>0</integer>
@@ -22017,6 +22042,9 @@
 						<integer>0</integer>
 						<integer>0</integer>
 						<integer>1</integer>
+						<integer>0</integer>
+						<integer>0</integer>
+						<integer>0</integer>
 						<integer>0</integer>
 					</regexCodePropertyList>
 				</Trigger>
@@ -22201,6 +22229,7 @@
 						<string>^Podnosisz sie</string>
 						<string>^Mozesz skierowac lodz</string>
 						<string>Zeskakujesz z rozwieszonego plociennego szerokiego hamaka.</string>
+						<string>Powoli podnosisz sie z kleczek.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -22251,6 +22280,7 @@
 						<integer>0</integer>
 						<integer>1</integer>
 						<integer>1</integer>
+						<integer>0</integer>
 						<integer>0</integer>
 					</regexCodePropertyList>
 				</Trigger>
@@ -22603,6 +22633,8 @@
 						<string>Drzwi sa zamkniete, musisz sie wrocic.</string>
 						<string>^Nie mozesz sie tam udac, gdyz .* zagradza</string>
 						<string>Mimo wlozenia wszystkich sil w wioslowanie nie jestes w stanie pokonac niezwykle silnego pradu wody.</string>
+						<string>Probujesz wejsc w zakryte pajeczynami przejscie, lecz duzy szarawy golem odpycha cie brutalnie.</string>
+						<string>Przeciez lezysz na lozku! Moze lepiej najpierw z niego wstac?</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -22639,6 +22671,8 @@
 						<integer>1</integer>
 						<integer>0</integer>
 						<integer>1</integer>
+						<integer>0</integer>
+						<integer>0</integer>
 						<integer>0</integer>
 					</regexCodePropertyList>
 				</Trigger>
@@ -22702,13 +22736,9 @@
 				<colorTriggerBgColor>#000000</colorTriggerBgColor>
 				<regexCodeList>
 					<string>jedziesz .* wozem na .*</string>
-					<string>Pomagasz .* przeniesc .* klatke na .*</string>
-					<string>Wraz z .* pomagacie .* przeniesc .* klatke na .*</string>
 					<string>jedziesz .* bryczka na .*</string>
 				</regexCodeList>
 				<regexCodePropertyList>
-					<integer>1</integer>
-					<integer>1</integer>
 					<integer>1</integer>
 					<integer>1</integer>
 				</regexCodePropertyList>

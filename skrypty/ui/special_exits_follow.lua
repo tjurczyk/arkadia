@@ -65,6 +65,7 @@ end
 function trigger_func_skrypty_ui_special_exits_follow_przecisnij_przez_otwor()
     if amap and amap.curr.id == 6134 then
         scripts.utils.bind_functional_team_follow(matches[2], "wejdz do dziupli", 15)
+        return
     end
     scripts.utils.bind_functional_team_follow(matches[2], "przecisnij sie przez otwor", 15)
 end

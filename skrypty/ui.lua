@@ -213,7 +213,7 @@ scripts.ui.cfg["footer_mode5_settings"] = {
        ["color"]= "#fb00ff",
     },
     ["headache"] = {
-       ["color"]= "#777777",
+       ["color"]= "#b8b8b8",
     },
     ["panic"] = {
        ["color"]= "#ffd504",

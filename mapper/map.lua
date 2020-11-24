@@ -191,6 +191,12 @@ function get_next_room_from_dirs(room_id, dir, spe, is_team_follow)
 
     if is_team_follow and not new_id then
         --amap:print_log("mapper zgubiony, przeslij dzordzykowi: last curr.id: " .. tostring(amap.curr.id) .. ", spe: `" .. spe .. "`", true)
+        amap:locate(true)
+        amap.locate_handler = scripts.event_register:register_singleton_event_handler(amap.locate_handler, "gmcp.room.info", function ()
+            if amap:locate(true) then
+                scripts.event_register:kill_event_handler(amap.locate_handler)
+            end
+        end)
         amap:log_failed_follow("[" .. getTime(true, "yyyy/MM/dd HH:mm:ss") .. "]: mapper zgubiony. last curr.id: " .. tostring(amap.curr.id) .. ", spe: `" .. spe .. "`\n")
     end
 

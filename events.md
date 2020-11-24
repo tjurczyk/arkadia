@@ -22,6 +22,12 @@ Event podniesiony po zaladowaniu konfiguracji
 
 ---
 
+## `loginSuccessful`
+
+Event podniesiony po poprawnym zalogowaniu.
+
+---
+
 ## `uiReady`
 
 Event podniesiony po zaladowaniu calego UI

@@ -109,6 +109,7 @@ return {
     "skrypty/misc/counter",
     "skrypty/misc/stats",
     "skrypty/misc/lvl_calc",
+    "skrypty/misc/login",
     "skrypty/misc/lang",
     "skrypty/misc/value",
     "skrypty/misc/test_commands",

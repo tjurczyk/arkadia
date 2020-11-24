@@ -50,6 +50,7 @@ end
 function trigger_func_skrypty_ui_gags_color_color_other_wytracenie_tobie()
     raiseEvent("playBeep")
     raiseEvent("weaponKnockedOff")
+    raiseEvent("weapon_state", false)
     selectCurrentLine()
     deleteLine()
     cecho("\n\n<tomato>[    BRON    ] " .. matches[2] .. "\n\n")

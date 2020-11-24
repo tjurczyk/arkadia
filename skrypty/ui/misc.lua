@@ -88,14 +88,13 @@ end
 
 function trigger_func_skrypty_ui_misc_przybywaja_count()
     selectCurrentLine()
-    local size = string:split_people(matches[2])
-    prefix("[" .. tostring(#size) .. "] ")
+    local count = string:count_people(matches[2])
+    prefix("[" .. tostring(count).. "] ")
     resetFormat()
 end
 
 function trigger_func_skrypty_ui_misc_przebywa_count()
     selectCurrentLine()
-    local size = string:split_people(matches[2])
     prefix("[1] ")
     resetFormat()
 end
@@ -140,12 +139,12 @@ function trigger_func_skrypty_ui_misc_podaza_na()
 end
 
 function trigger_func_skrypty_ui_misc_podazaja_na()
-    local size = string:split_people(matches[2])
+    local count = string:count_people(matches[2])
     selectString(matches[3], 1)
     setFgColor(170, 128, 255)
     resetFormat()
     selectCurrentLine()
-    prefix("[" .. #size .. "] ")
+    prefix("[" .. count .. "] ")
     resetFormat()
 end
 

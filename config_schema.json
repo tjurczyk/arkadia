@@ -2485,6 +2485,12 @@
       "default_value": [],
       "field_type": "list",
       "macros_on_modify": []
+    },
+    {
+      "name": "scripts.mail_creator.template",
+      "default_value": "plain",
+      "field_type": "string",
+      "macros_on_modify": []
     }
   ]
 }

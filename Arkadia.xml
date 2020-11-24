@@ -24447,6 +24447,20 @@
 					<regex>^/staz ?(.*)</regex>
 				</Alias>
 			</AliasGroup>
+			<AliasGroup isActive="yes" isFolder="yes">
+				<name>mail</name>
+				<script></script>
+				<command></command>
+				<packageName></packageName>
+				<regex></regex>
+				<Alias isActive="yes" isFolder="no">
+					<name>/list</name>
+					<script>alias_func_list()</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/list$</regex>
+				</Alias>
+			</AliasGroup>
 		</AliasGroup>
 		<AliasGroup isActive="yes" isFolder="yes">
 			<name>mapper</name>

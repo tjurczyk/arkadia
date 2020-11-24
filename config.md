@@ -1359,3 +1359,15 @@ Ustawienie startowe na konkretnej lokacji po zalogowaniu w 'name' powinna znalez
 
 Ścieżka do pliku dla dźwięku beep
 UWAGA! Sciezki powinny zawierac `/`, a nie `\`
+
+---
+
+## `scripts.mail_creator.template`
+
+Szablon do użycia przez kreator poczty wywoływany za pomocą `/list`
+
+Dostępne wartości:
+* `plain` - bez szablonu
+* `parchment` - pergamin
+
+Dla zaawansowanych - dodatkowe szablony można stworzyć na podstawie dodając je do tablicy `scripts.mail_creator.templates` analogicznie jak już te istniejące.

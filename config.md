@@ -678,6 +678,15 @@ Procentowa wartosc. `0.8` (domyslnie) to `80%` `0.5` bedzie `50%`, itp.
 
 ---
 
+## `scripts.ui.separate_talk_window_no_wrap`
+Wyłącza dzielenie linii w oknie rozmowy.
+
+Wartości:
+* `true` - wyłączone dzielenie linii
+* `false` - włączone dzielenie linii
+
+---
+
 ## `scripts.ui.separate_talk_window_prefix`
 Prefix do kazdego wiersza w oknie rozmow.
 Jesli ustawi sie "> ", przed kazdym wierszem bedzie sie pojawialo "> "
@@ -712,6 +721,16 @@ Wysokosc procentowa okna glownego okna kondycji height to wysokosc procentowa, w
 Zawijanie wierszy w oknie kondycji. Procentowa wartosc. `0.95` (domyslnie) to 95%, `0.8` bedzie 80%, itp.
 
 ---
+
+## `scripts.ui.states_window_no_wrap`
+Wyłącza dzielenie linii w oknie kondycji.
+
+Wartości:
+* `true` - wyłączone dzielenie linii
+* `false` - włączone dzielenie linii
+
+---
+
 
 ## `scripts.ui.cfg.states_window_navbar`
 

@@ -19,13 +19,17 @@ function scripts.ui:create_state_window(name)
 
     clearUserWindow(name)
     setFontSize(name, scripts.ui.states_font_size)
-    cecho(name, "<yellow:team_console_bg>Minikonsola, <cyan:team_console_bg>do kondycji <green:team_console_bg>zainicjowana poprawnie\n")
+    
+    scripts.ui:setup_wrap_states_window(name)
 
-    tempTimer(0.3, function() scripts.ui:setup_wrap_states_window(name) end)
+    cecho(name, "<yellow:team_console_bg>Minikonsola, <cyan:team_console_bg>do kondycji <green:team_console_bg>zainicjowana poprawnie\n")
 end
 
 function scripts.ui:setup_wrap_states_window(name)
     local col = round(scripts.ui.states_window_p_width * getColumnCount(name))
+    if scripts.ui.states_window_no_wrap then
+        col = 1000
+    end
     setWindowWrap(name, col)
 end
 

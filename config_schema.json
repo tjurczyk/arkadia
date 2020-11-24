@@ -1138,6 +1138,14 @@
       ]
     },
     {
+      "name": "scripts.ui.separate_talk_window_no_wrap",
+      "default_value": false,
+      "field_type": "boolean",
+      "macros_on_modify": [
+        "_ux"
+      ]
+    },
+    {
       "name": "scripts.ui.separate_talk_window_prefix",
       "default_value": "",
       "field_type": "string",
@@ -1176,6 +1184,14 @@
       "name": "scripts.ui.states_window_p_width",
       "default_value": 0.95,
       "field_type": "number",
+      "macros_on_modify": [
+        "_ux"
+      ]
+    },
+    {
+      "name": "scripts.ui.states_window_no_wrap",
+      "default_value": false,
+      "field_type": "boolean",
       "macros_on_modify": [
         "_ux"
       ]

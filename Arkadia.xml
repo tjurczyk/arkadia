@@ -22667,7 +22667,7 @@
 						<string>.*do ciebie: Nikt z zakryta twarza nie wejdzie na teren .*\.$</string>
 						<string>.*Probujesz przecisnac sie przez otwor na dach, ale ze wzgledu na brak miejsca, zmuszon.*</string>
 						<string>Drabina w tej chwili jest zajmowana przez kogos innego, musisz chwile poczekac, az sie zwolni.</string>
-						<string>Nie dasz rady otworzyc .*  kraty, musisz sprobowac ja uniesc.</string>
+						<string>^Nie dasz rady otworzyc .*  kraty, musisz sprobowac ja uniesc\.$</string>
 						<string>Straznik zastawia ci droge, tlumaczac, ze o tej porze nie ma odwiedzin.</string>
 						<string>By plynac musisz miec wolne rece.</string>
 						<string>.*do ciebie: Nikt z bronia nie wejdzie na teren palacu. Prosze zostawic ja na stojaku.</string>

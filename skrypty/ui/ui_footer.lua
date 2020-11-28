@@ -2,7 +2,7 @@ function scripts.ui:setup_footer_closed()
     scripts.ui.bottom_closed = Geyser.Label:new({
         name = "scripts.ui.bottom_closed",
         x = "50%",
-        y = scripts.ui.main_height - 12,
+        y = -12,
         width = 12,
         height = 12,
         fontSize = 11,
@@ -28,9 +28,9 @@ function scripts.ui:setup_footer()
     scripts.ui.bottom = Geyser.Label:new({
         name = "scripts.ui.bottom",
         x = tostring(scripts.ui.footer_start) .. "%",
-        y = scripts.ui.main_height - scripts.ui.real_footer_height,
-        width = scripts.ui.real_footer_width,
-        height = scripts.ui.real_footer_height,
+        y = -scripts.ui.footer_height,
+        width = scripts.ui.footer_width .. "%",
+        height = scripts.ui.footer_height,
     })
 
     scripts.ui.bottom:setColor(scripts.ui.footer_r, scripts.ui.footer_g, scripts.ui.footer_b)
@@ -45,14 +45,16 @@ function scripts.ui:setup_footer()
 
     scripts.ui.footer_map = Geyser.Label:new({
         name = "scripts.ui.footer_map",
-        width = tostring(scripts.ui.footer_map_width_p) .. "%",
-        h_policy = Geyser.Fixed,
+        h_stretch_factor = scripts.ui.footer_map_width_p,
     }, scripts.ui.footer)
-
+    scripts.ui.footer_map:setStyleSheet([[
+        margin: ]] .. scripts.ui.footer_map_height_margin ..[[ ]] .. scripts.ui.footer_map_width_margin .. [[;
+    ]])
     scripts.ui.footer_map:setColor(scripts.ui.footer_r, scripts.ui.footer_g, scripts.ui.footer_b)
 
     scripts.ui.footer_main = Geyser.Label:new({
         name = "scripts.ui.footer_main",
+        h_stretch_factor = 100 - scripts.ui.footer_map_width_p - scripts.ui.footer_info_width_p,
     }, scripts.ui.footer)
 
     scripts.ui.footer_main:setColor(scripts.ui.footer_r, scripts.ui.footer_g, scripts.ui.footer_b)
@@ -61,8 +63,7 @@ function scripts.ui:setup_footer()
 
     scripts.ui.footer_info = Geyser.Label:new({
         name = "scripts.ui.footer_info",
-        width = tostring(scripts.ui.footer_info_width_p) .. "%",
-        h_policy = Geyser.Fixed,
+        h_stretch_factor = scripts.ui.footer_info_width_p
     }, scripts.ui.footer)
 
     scripts.ui.footer_info:setColor(scripts.ui.footer_r, scripts.ui.footer_g, scripts.ui.footer_b)

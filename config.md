@@ -1390,3 +1390,13 @@ Dostępne wartości:
 * `parchment` - pergamin
 
 Dla zaawansowanych - dodatkowe szablony można stworzyć na podstawie dodając je do tablicy `scripts.mail_creator.templates` analogicznie jak już te istniejące.
+
+---
+
+## `scripts.ui.notification_center.enabled`
+
+Określa czy notyfikacje na różne wydarzenia (np. pocztę) w prawym górnym rogu maja być włączone.
+
+Dostępne wartości:
+* `true` - włączone
+* `false` - wyłączone

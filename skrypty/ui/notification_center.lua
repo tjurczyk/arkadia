@@ -10,6 +10,17 @@ scripts.ui.notification_center = scripts.ui.notification_center or {
     notifications = {}
 }
 
+
+--- Add notification with optional duration
+---
+--- Args:
+--- * `text` - notificaiton text, can contain html tags
+--- * `duration` - duration in seconds of notification, 0 for never dissapearing
+---
+--- Example:
+--- ```lua
+--- scripts.ui.notification_center:add_notification([[<p style="color: red">Warning!</p>]])
+--- ```
 function scripts.ui.notification_center:add_notification(text, duration)
     if not self.enabled then
         return

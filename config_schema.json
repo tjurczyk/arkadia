@@ -18,17 +18,7 @@
     "_people": [
       {
         "macro_type": "func_call",
-        "func_name": "scripts.people.enemy_people_starter",
-        "func_args": []
-      },
-      {
-        "macro_type": "func_call",
-        "func_name": "scripts.people.color_people_starter",
-        "func_args": []
-      },
-      {
-        "macro_type": "func_call",
-        "func_name": "scripts.people.trigger_people_starter",
+        "func_name": "scripts.people.starter",
         "func_args": []
       },
       {

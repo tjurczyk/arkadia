@@ -94,6 +94,9 @@ function scripts.people:starter()
 end
 
 function scripts.people:enemy_people_starter()
+
+    scripts.people.bind_enemies = {}
+
     for _, v in pairs(scripts.people.enemy_people) do
         local results = db:fetch(scripts.people.db.people, db:like(scripts.people.db.people.name, v))
 
@@ -108,6 +111,12 @@ function scripts.people:enemy_people_starter()
 end
 
 function scripts.people:enemy_person_build(item)
+    if item.name then
+        scripts.people.bind_enemies[item.name] = true
+    end
+    if item.short then
+        scripts.people.bind_enemies[item.short] = true
+    end
     scripts.people:color_person_build(item, "red")
 end
 
@@ -121,7 +130,7 @@ function scripts.people:enemy_people_guild(guild_name)
     local results = db:fetch(scripts.people.db.people, db:eq(scripts.people.db.people.guild, guild_code))
 
     for k, item in pairs(results) do
-        scripts.people:color_person_build(item, "red")
+        scripts.people:enemy_person_build(item)
     end
 end
 

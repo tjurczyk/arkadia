@@ -26,7 +26,7 @@ function bind_attack_gmcp()
     end
 
     for k, v in pairs(gmcp.objects.data) do
-        if v["desc"] and (scripts.people.enemy_suffix[v["desc"]] or scripts.people.enemy_suffix[string.lower(v["desc"])]) then
+        if v["desc"] and (scripts.people.bind_enemies[v["desc"]] or scripts.people.bind_enemies[string.lower(v["desc"])]) then
             if scripts.people.bind_attack_objs and id <= table.size(scripts.people.bind_attack_objs) and already_seen[tonumber(k)] ~= true then
                 scripts.people.bind_attack_objs[id] = tonumber(k)
                 if scripts.people.show_binds_setting > 0 then

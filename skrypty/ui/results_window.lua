@@ -4,12 +4,13 @@ scripts.ui.results_window = scripts.ui.results_window or {
 }
 
 function scripts.ui.results_window:show()
-    local base_height = scripts.ui.main_height - scripts.ui.footer_height
+    local main_window_width, main_window_height = getMainWindowSize()
+    local base_height = main_window_height - scripts.ui.footer_height
 
     self.container = Geyser.Container:new({
         name = "search_container",
         x = -self.width, y = 0,
-        width = self.width - 10, height = base_height,
+        width = self.width - 10, height = base_height
     })
     setBorderRight(self.width)
 

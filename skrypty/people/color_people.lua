@@ -1,15 +1,18 @@
 function scripts.people:process_person_color(name, text, suffix, color, suffix_only)
     if name ~= text and suffix then
-        local replacement = string.format("%s <%s>(" .. suffix .. ")<reset>", text, color)
+        local full_sufix = "(" .. suffix .. ")"
+        local replacement = string.format("%s %s", text, full_sufix)
         selectString(text, 1)
-        creplace(replacement)
+        replace(replacement, true)
+        selectString(full_sufix, 1)
+        fg(color)
     end
 
     if not suffix_only then
         selectString(text, 1)
         fg(color)
-        resetFormat()
     end
+    resetFormat()
 end
 
 function scripts.people:color_person_build(item, color, suffix_only)

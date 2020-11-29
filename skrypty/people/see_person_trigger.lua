@@ -7,8 +7,7 @@ function see_person_trigger()
         if v["desc"] then
             if table.size(string.split(v["desc"], " ")) > 1 then
                 -- only if desc is not a name
-                if not scripts.people.people_triggers[v["desc"]] and not scripts.people.enemy_suffix[v["desc"]] and
-                        not scripts.people.color_suffix[v["desc"]] and not scripts.people.trigger_suffix[v["desc"]] then
+                if not scripts.people.already_processed_desc[v["desc"]] then
                     -- create a trigger iff the one with this desc doesn't exist
                     local results = db:fetch(scripts.people.db.people, db:like(scripts.people.db.people.short, "%" .. v["desc"] .. "%"))
 

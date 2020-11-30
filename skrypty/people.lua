@@ -2,7 +2,10 @@ scripts["people"] = scripts["people"] or {
     db = {},
     mail = {},
     enemies = {},
-    color_triggers = {}
+    color_triggers = {},
+    already_processed = {},
+    already_processed_desc = {},
+    bind_enemies = {}
 }
 
 scripts.people.db = db:create("people", {

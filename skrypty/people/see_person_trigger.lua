@@ -14,6 +14,8 @@ function see_person_trigger()
                     if table.size(results) == 1 then
                         -- only if the return list was a single item
 
+                        scripts.people.already_processed_desc[v["desc"]] = true
+
                         local item = results[1]
 
                         -- it gets the first letter from the short

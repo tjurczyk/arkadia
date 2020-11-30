@@ -101,3 +101,9 @@ function trigger_func_skrypty_ui_gags_color_color_other_nekro_tilea()
     scripts.ui.info_action_bind = "dobadz wszystkich broni"
 end
 
+function trigger_func_team_leadership()
+    fg("DarkGoldenrod")
+    prefix("[   DRUZYNA   ]  ")
+    echo("\n\n")
+    resetFormat()
+end

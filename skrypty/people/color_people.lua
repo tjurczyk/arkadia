@@ -1,5 +1,5 @@
-function scripts.people:process_person_color(name, text, suffix, color, suffix_only)
-    if name ~= text and suffix then
+function scripts.people:process_person_color(item, text, suffix, color, guild_color)
+    if item.name ~= text and suffix then
         local full_sufix = "(" .. suffix .. ")"
         local replacement = string.format("%s %s", text, full_sufix)
         selectString(text, 1)
@@ -8,9 +8,15 @@ function scripts.people:process_person_color(name, text, suffix, color, suffix_o
         fg(color)
     end
 
-    if not suffix_only then
+    if not guild_color then
         selectString(text, 1)
         fg(color)
+    else
+        local i = 1
+        while selectString(scripts.people:get_guild_name(item.guild), i) > -1 do
+            fg(guild_color)
+            i = i + 1
+        end
     end
     resetFormat()
 end
@@ -57,7 +63,7 @@ function scripts.people:color_person_build(item, color, suffix_only)
         regex = "(^|\\W)((" .. string.sub(item["short"], 0, 1) .. "|" .. first_capitalized .. ")" .. rest_string .. ")(?! chaosu)(\\W|$)"
     end
 
-    table.insert(self.color_triggers, tempRegexTrigger(regex, function() scripts.people:process_person_color(item.name, matches[3], suffix, color, suffix_only) end))
+    table.insert(self.color_triggers, tempRegexTrigger(regex, function() scripts.people:process_person_color(item, matches[3], suffix, color, suffix_only) end))
     scripts.people.already_processed[item["_row_id"]] = true
     scripts.people.already_processed_desc[item.short] = true
 end
@@ -167,7 +173,7 @@ function scripts.people:trigger_people_guild(guild_name)
     local results = db:fetch(scripts.people.db.people, db:eq(scripts.people.db.people.guild, guild_code))
 
     for k, item in pairs(results) do
-        scripts.people:color_person_build(item, scripts.people.name_color, true)
+        scripts.people:color_person_build(item, scripts.people.name_color, scripts.people.guild_color)
     end
 end
 

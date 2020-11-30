@@ -1,4 +1,4 @@
-scripts.people["guilds"] = {
+scripts.people.guilds = {
     ["CKN"] = 1,
     ["ES"] = 2,
     ["SC"] = 3,

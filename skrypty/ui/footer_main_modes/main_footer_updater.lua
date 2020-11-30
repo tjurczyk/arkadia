@@ -1,5 +1,14 @@
 local refresh_timer = nil
 
+function scripts.ui:update_footer_main()
+    if scripts.ui.cfg["footer_mode"] == "mode1" then
+        scripts.ui:update_bars_mode("gauge")
+    elseif scripts.ui.cfg["footer_mode"] == "mode2" or scripts.ui.cfg["footer_mode"] == "mode3" or
+            scripts.ui.cfg["footer_mode"] == "mode4" or scripts.ui.cfg["footer_mode"] == "mode5" then
+        scripts.ui:update_bars_mode("label")
+    end
+end
+
 function scripts.ui:update_bars_mode(mode, redraw)
     if not mode and mode ~= "gauge" and mode ~= "label" then
         error("Invalid input")
@@ -7,7 +16,7 @@ function scripts.ui:update_bars_mode(mode, redraw)
 
     -- if redraw == true -> refresh all stats
     -- if redraw == false -> refresh just changes from gmcp
-    local source = gmcp.char.state 
+    local source = gmcp.char.state
     if redraw == true then 
         source = scripts.character.state
     end

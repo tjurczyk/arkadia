@@ -22,12 +22,13 @@ function scripts.ui:process_label_text_mode5(key, prefix, val, max_value, color)
   --debugc(prefix, 'timediff ', (timestamp - settings.last_changed) < change_indicator_duration)
   --debugc(prefix, 'valdiff ', val, settings.last_value)
   
-  settings.last_changed = timestamp
-  settings.last_value = val;
-  
   local bar_color = settings.color
   local label = string.upper(prefix)
   if was_changed then
+
+    settings.last_changed = timestamp
+    settings.last_value = val;
+
      if increased then 
       label = label .. '↑' 
      else

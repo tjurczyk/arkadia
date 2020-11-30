@@ -1,7 +1,5 @@
 function scripts.ui:setup_footer_map()
-    scripts.ui.footer_map_width = scripts.ui.footer_map_width_p / 100 * scripts.ui.real_footer_width
-    scripts.ui.footer_map_height = scripts.ui.footer_height
-
+    
     scripts.ui.footer_map_core_base_css = CSSMan.new([[
     background-color: rgba(]] .. scripts.ui.footer_r .. [[,]] .. scripts.ui.footer_g .. [[,]] .. scripts.ui.footer_b .. [[,0);
     font-family:]].. getFont() ..[[,Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New, monospace;
@@ -10,78 +8,30 @@ function scripts.ui:setup_footer_map()
     scripts.ui.footer_map:setStyleSheet(scripts.ui.footer_map_core_base_css:getCSS())
 
   
-    amap.ui.mapper_container = Geyser.Container:new({
+    amap.ui.mapper_container = Geyser.HBox:new({
         name = "amap.ui.mapper_container",
-        x = scripts.ui.footer_map_width_margin,
-        y = scripts.ui.footer_map_height_margin,
-        width = scripts.ui.footer_map_width - scripts.ui.footer_map_width_margin,
-        height = scripts.ui.real_footer_height - scripts.ui.footer_map_height_margin,
-    }, scripts.ui.footer_map)
-
-    local real_container_width = scripts.ui.footer_map_width - 3 * scripts.ui.footer_map_width_margin
-    local real_container_height = scripts.ui.footer_map_height - 3 * scripts.ui.footer_map_width_margin
-
-    amap.ui.right_middle = Geyser.Label:new({
-        name = "amap.ui.right-middle",
         x = 0,
         y = 0,
-        width = (real_container_width - scripts.ui.footer_map_width_margin) * 2 / 7,
-        height = real_container_height,
-    }, amap.ui.mapper_container)
+        width = "100%",
+        height = "100%",
+    }, scripts.ui.footer_map)
 
-    amap.ui.right_middle:setStyleSheet([[
-    background-color: rgba(]] .. scripts.ui.footer_r .. [[,]] .. scripts.ui.footer_g .. [[,]] .. scripts.ui.footer_b .. [[,0);
-  ]])
-
-    amap.ui.right_middle_ud = Geyser.Label:new({
-        name = "amap.ui.right_middle_ud",
-        x = (real_container_width - scripts.ui.footer_map_width_margin) * 2 / 7 + scripts.ui.footer_map_width_margin,
-        y = 0,
-        fgColor = "white",
-        width = (real_container_width - scripts.ui.footer_map_width_margin) / 7,
-        height = real_container_height,
-    }, amap.ui.mapper_container)
-
-    amap.ui.right_middle_ud:setStyleSheet([[
-    background-color: rgba(]] .. scripts.ui.footer_r .. [[,]] .. scripts.ui.footer_g .. [[,]] .. scripts.ui.footer_b .. [[,0);
-  ]])
-
-    amap.ui.right_special = Geyser.Label:new({
-        name = "amap.ui.right_special",
-        x = (real_container_width - scripts.ui.footer_map_width_margin) * 3 / 7 + scripts.ui.footer_map_width_margin,
-        y = 0,
-        fgColor = "white",
-        width = (real_container_width - scripts.ui.footer_map_width_margin) * 4 / 7,
-        height = real_container_height,
-    }, amap.ui.mapper_container)
-
-    amap.ui.right_special:setStyleSheet([[
-    background-color: rgba(]] .. scripts.ui.footer_r .. [[,]] .. scripts.ui.footer_g .. [[,]] .. scripts.ui.footer_b .. [[,0);
-  ]])
 
     amap.ui.compass.box = Geyser.HBox:new({
         name = "amap.ui.compass.box",
-        x = 0,
-        y = 0,
-        width = (real_container_width - scripts.ui.footer_map_width_margin) * 2 / 7,
-        height = real_container_height,
-    }, amap.ui.right_middle)
+        width = "100%",
+        h_stretch_factor = 3,
+    }, amap.ui.mapper_container)
 
     amap.ui.compass.right_box = Geyser.HBox:new({
         name = "amap.ui.compass.right_box",
-        x = 0,
-        y = 0,
-        width = (real_container_width - scripts.ui.footer_map_width_margin) / 7,
-        height = real_container_height,
-    }, amap.ui.right_middle_ud)
+        h_stretch_factor = 1,
+    }, amap.ui.mapper_container)
 
     amap.ui.compass.right_special_box = Geyser.VBox:new({
         name = "amap.ui.compass.right_special_box",
-        x = 0,
-        y = 0,
-        width = (real_container_width - scripts.ui.footer_map_width_margin) * 4 / 7,
-        height = real_container_height,
-    }, amap.ui.right_special)
+        h_stretch_factor = 4,
+    }, amap.ui.mapper_container)
 
     amap.ui.compass.row1 = Geyser.VBox:new({
         name = "amap.ui.compass.row1",

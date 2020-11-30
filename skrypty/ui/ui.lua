@@ -8,6 +8,12 @@ function scripts.ui:get_bind_color_backward_compatible()
     return color
 end
 
+function scripts.ui:run_setup()
+    tempTimer(0.5, function()
+        scripts.ui:setup()
+    end)
+end
+
 function scripts.ui:setup()
     setBorderBottom(scripts.ui.footer_height)
     --scripts.ui.main_width, scripts.ui.main_height = getMainWindowSize()
@@ -29,19 +35,12 @@ function scripts.ui:setup()
     --scripts.ui.real_footer_height = scripts.ui.footer_height
     --scripts.ui.real_footer_width = scripts.ui.footer_width/100 * scripts.ui.main_width
 
-    tempTimer(0.1, function() scripts.ui:setup_states_window() end)
-    tempTimer(0.2, function() scripts.ui:setup_talk_window() end)
-    tempTimer(2, function() scripts.ui:setup_proportions() end)
-    tempTimer(2.1, function() scripts.ui:setup_footer() end)
-    tempTimer(2.2, function() scripts.ui:setup_footer_closed() end)
-    tempTimer(3, function() raiseEvent("uiReady") end)
+    scripts.ui:setup_states_window()
+    scripts.ui:setup_talk_window()
+    
+    scripts.ui:setup_footer()
+    scripts.ui:setup_footer_closed()
+    raiseEvent("uiReady")
 end
 
-function scripts.ui:setup_proportions()
-    scripts.ui.main_width, scripts.ui.main_height = getMainWindowSize()
-    scripts.ui.real_footer_height = scripts.ui.footer_height
-    scripts.ui.real_footer_width = scripts.ui.footer_width / 100 * scripts.ui.main_width
-end
-
-tempTimer(0.5, function() scripts.ui:setup() end)
-
+scripts.ui:run_setup()

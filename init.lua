@@ -18,8 +18,18 @@ function load_scripts(force)
     raiseEvent("beforeLoadModules", mudlet_modules)
 
     for k, v in pairs(mudlet_modules) do
-        package.loaded[v] = nil
-        require(v)
+        local status, err = pcall(function()
+            package.loaded[v] = nil
+            require(v)
+        end)
+        if not status then
+            cecho("\n\n")
+            cecho("<red>" .. err)
+            cecho("\n")
+            cecho("\n<CadetBlue>(skrypty)<red>: Jezeli widzisz ten blad to cos poszlo nie tak z ladowaniem skryptow.")
+            cecho("\n<CadetBlue>(skrypty)<red>: Przeinstaluj skrypty. Jezeli to nie pomoze to zglos problem zalaczajac powyzszy komunikat bledu.")
+            cecho("\n\n")
+        end
     end
 
     append_plugins()
@@ -42,7 +52,16 @@ function append_plugins()
     scripts.plugins = {}
 
     for plugin_name in lfs.dir(plugins_dir) do
-        load_plugin(plugin_name)
+        local status, err = pcall(function()
+            load_plugin(plugin_name)
+        end)
+        if not status then
+            cecho("\n\n")
+            cecho("<red>" .. err)
+            cecho("\n")
+            cecho("\n<CadetBlue>(skrypty)<red>: Jezeli widzisz ten blad to cos poszlo nie tak z ladowaniem pluginu " .. plugin_name)
+            cecho("\n\n")
+        end
     end
 end
 

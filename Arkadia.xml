@@ -14401,7 +14401,7 @@
 								<string>List jest gotowy do wyslania.</string>
 							</regexCodeList>
 							<regexCodePropertyList>
-								<integer>3</integer>
+								<integer>0</integer>
 							</regexCodePropertyList>
 						</Trigger>
 						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -22451,7 +22451,6 @@
 						<string>^[ &gt;]*Musisz stanac w kolejce i poczekac na audiencje\.$</string>
 						<string>^[ &gt;]*Najpierw wejdz do kabiny i sie rozbierz!$</string>
 						<string>^[ &gt;]*Najpierw wejdz do kabiny i sie ubierz!$</string>
-						<string>^[ &gt;]*Nie dasz rady otworzyc stalowej kraty, musisz sprobowac ja uniesc\.$</string>
 						<string>^[ &gt;]*Nie jestes pewn(y|a) swojej umiejetnosci plywania w tej brudnej rzece\.\.\.$</string>
 						<string>^[ &gt;]*Nie jestes w stanie wymknac sie stad niezauwazenie\.$</string>
 						<string>^[ &gt;]*Nie jestes zbyt pewn(y|a) swojej umiejetnosci latania\.\.\.$</string>
@@ -22474,7 +22473,6 @@
 						<string>Probujesz isc w glab korytarza, lecz zwalisty szarawy golem zastepuje ci droge.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
-						<integer>1</integer>
 						<integer>1</integer>
 						<integer>1</integer>
 						<integer>1</integer>
@@ -22669,7 +22667,7 @@
 						<string>.*do ciebie: Nikt z zakryta twarza nie wejdzie na teren .*\.$</string>
 						<string>.*Probujesz przecisnac sie przez otwor na dach, ale ze wzgledu na brak miejsca, zmuszon.*</string>
 						<string>Drabina w tej chwili jest zajmowana przez kogos innego, musisz chwile poczekac, az sie zwolni.</string>
-						<string>Nie dasz rady otworzyc posrebrzanej kraty, musisz sprobowac ja uniesc.</string>
+						<string>^Nie dasz rady otworzyc .*  kraty, musisz sprobowac ja uniesc\.$</string>
 						<string>Straznik zastawia ci droge, tlumaczac, ze o tej porze nie ma odwiedzin.</string>
 						<string>By plynac musisz miec wolne rece.</string>
 						<string>.*do ciebie: Nikt z bronia nie wejdzie na teren palacu. Prosze zostawic ja na stojaku.</string>
@@ -22709,7 +22707,7 @@
 						<integer>1</integer>
 						<integer>1</integer>
 						<integer>0</integer>
-						<integer>0</integer>
+						<integer>1</integer>
 						<integer>0</integer>
 						<integer>0</integer>
 						<integer>1</integer>

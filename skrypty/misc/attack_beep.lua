@@ -26,7 +26,7 @@ function misc.attack_beep:process_attack(who)
     end
 
     if misc.attack_beep["mode"] == 1 then
-        if scripts.people.enemy_suffix[lowered_who] == "" or scripts.people.enemy_suffix[lowered_who] then
+        if scripts.people.bind_enemies[lowered_who] == "" or scripts.people.bind_enemies[lowered_who] then
             raiseEvent("playBeep")
             raiseEvent("miscAttackBeepModeOne")
         end

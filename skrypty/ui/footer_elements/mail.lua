@@ -9,6 +9,8 @@ function trigger_func_skrypty_ui_footer_elements_mail_masz_poczte_login()
         end
 
         scripts.ui.footer_info_mail_click_bind = "wyslij zwierze"
+
+        scripts.ui.notification_center:add_notification("Masz nowa poczte.")
     end
 
     tempTimer(2, function() unread_mail_trigger() end)
@@ -31,6 +33,8 @@ function trigger_func_skrypty_ui_footer_elements_mail_masz_poczte()
         scripts.ui:info_mail_update("NEW+")
         scripts.ui.footer_info_mail_mode = "new+"
     end
+
+    scripts.ui.notification_center:add_notification(matches[2])
 
     scripts.ui.footer_info_mail_click_bind = "wyslij zwierze"
 end

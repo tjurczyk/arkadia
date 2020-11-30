@@ -158,6 +158,7 @@ return {
     "skrypty/ui/ui_footer_map",
     "skrypty/ui/ui_footer_main",
     "skrypty/ui/ui_new_location_event",
+    "skrypty/ui/notification_center",
     "skrypty/ui/log_cmds_ui",
     "skrypty/ui/ui_mapper_loaded_event",
     "mapper/db/core",

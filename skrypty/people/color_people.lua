@@ -1,32 +1,32 @@
-function scripts.people:process_person_color(id, text)
-    if not scripts.people.color_table[id] then
-        return
-    end
-
-    local to_select_string = text
-
-    if scripts.people.color_suffix[string.lower(text)] then
-        to_select_string = to_select_string .. " (" .. scripts.people.color_suffix[string.lower(text)] .. ")"
+function scripts.people:process_person_color(item, text, suffix, color, guild_color)
+    if item.name ~= text and suffix then
+        local full_sufix = "(" .. suffix .. ")"
+        local replacement = string.format("%s %s", text, full_sufix)
         selectString(text, 1)
-        replace(to_select_string)
+        replace(replacement, true)
+        selectString(full_sufix, 1)
+        fg(color)
     end
 
-    selectString(to_select_string, 1)
-    fg(scripts.people.color_table[id])
+    if not guild_color then
+        selectString(text, 1)
+        fg(color)
+    else
+        local i = 1
+        while selectString(scripts.people:get_guild_name(item.guild), i) > -1 do
+            fg(guild_color)
+            i = i + 1
+        end
+    end
     resetFormat()
 end
 
-function scripts.people:color_person_build(item, color)
-    if item["short"] == "" then
+function scripts.people:color_person_build(item, color, suffix_only)
+    if item["short"] == "" or scripts.people.already_processed[item["_row_id"]] then
         return
     end
 
-    local short_to_check = item["short"]
-    if scripts.people.color_people[short_to_check] then
-        return
-    end
-
-    scripts.people.color_people[short_to_check] = true
+    local suffix
 
     local first_capitalized = string.upper(string.sub(item["short"], 0, 1))
     local guild_str = scripts.people:get_guild_name(item["guild"])
@@ -36,26 +36,25 @@ function scripts.people:color_person_build(item, color)
 
     -- finally, it constructs the regex
     local regex
-    scripts.people.color_table[item["_row_id"]] = color
-
+    
     local norm_short = string.lower(item["short"])
 
     regex = "(^|\\W)((" .. string.sub(item["short"], 0, 1) .. "|" .. first_capitalized .. ")" .. rest_string .. ")(?! chaosu)(\\W|$)"
 
     if norm_short ~= "" then
         if item["name"] ~= "" then
-            scripts.people.color_suffix[norm_short] = item["name"]
+            suffix = item["name"]
         end
 
         if guild_str then
-            if scripts.people.color_suffix[norm_short] then
-                scripts.people.color_suffix[norm_short] = scripts.people.color_suffix[norm_short] .. " " .. guild_str
+            if suffix then
+                suffix = suffix .. " " .. guild_str
             end
         end
     end
 
     if item["name"] ~= "" then
-        if not scripts.people.color_suffix[string.lower(item["name"])] then
+        if suffix ~= string.lower(item["name"]) then
             regex = "(^|\\W)((" .. string.sub(item["short"], 0, 1) .. "|" .. first_capitalized .. ")" .. rest_string .. "|" .. item["name"] .. ")(?! chaosu)(\\W|$)"
         else
             regex = "(^|\\W)((" .. string.sub(item["short"], 0, 1) .. "|" .. first_capitalized .. ")" .. rest_string .. ")(?! chaosu)(\\W|$)"
@@ -64,8 +63,9 @@ function scripts.people:color_person_build(item, color)
         regex = "(^|\\W)((" .. string.sub(item["short"], 0, 1) .. "|" .. first_capitalized .. ")" .. rest_string .. ")(?! chaosu)(\\W|$)"
     end
 
-    table.insert(self.color_triggers, tempRegexTrigger(regex, function() scripts.people:process_person_color( item["_row_id"], matches[3] ) end))
-    scripts.people.color_items[item["_row_id"]] = { ["person"] = item }
+    table.insert(self.color_triggers, tempRegexTrigger(regex, function() scripts.people:process_person_color(item, matches[3], suffix, color, suffix_only) end))
+    scripts.people.already_processed[item["_row_id"]] = true
+    scripts.people.already_processed_desc[item.short] = true
 end
 
 function scripts.people:color_people_guild(guild_name, color)
@@ -84,17 +84,64 @@ function scripts.people:color_people_guild(guild_name, color)
     end
 end
 
-function scripts.people:color_people_starter()
+function scripts.people:starter()
     for _, id in pairs(scripts.people.color_triggers) do
         killTrigger(id)
     end
 
     scripts.people.color_triggers = {}
-    scripts.people.color_items = {}
-    scripts.people.color_table = {}
-    scripts.people.color_people = {}
-    scripts.people.color_suffix = {}
+    scripts.people.already_processed = {}
+    scripts.people.already_processed_desc = {}
 
+    scripts.people:enemy_people_starter()
+    scripts.people:color_people_starter()
+    scripts.people:trigger_people_starter()
+
+    raiseEvent("colorPeopleBuild")
+end
+
+function scripts.people:enemy_people_starter()
+
+    scripts.people.bind_enemies = {}
+
+    for _, v in pairs(scripts.people.enemy_people) do
+        local results = db:fetch(scripts.people.db.people, db:like(scripts.people.db.people.name, v))
+
+        for _, item in pairs(results) do
+            scripts.people:enemy_person_build(item)
+        end
+    end
+
+    for _, v in pairs(scripts.people.enemy_guilds) do
+        scripts.people:enemy_people_guild(v)
+    end    
+end
+
+function scripts.people:enemy_person_build(item)
+    if item.name then
+        scripts.people.bind_enemies[item.name] = true
+    end
+    if item.short then
+        scripts.people.bind_enemies[item.short] = true
+    end
+    scripts.people:color_person_build(item, "red")
+end
+
+function scripts.people:enemy_people_guild(guild_name)
+    if not scripts.people.guilds[guild_name] then
+        scripts:print_log("Nie ma takiej gildii: " .. guild_name .. ", sprawdz /gildie")
+        return
+    end
+
+    local guild_code = scripts.people.guilds[guild_name]
+    local results = db:fetch(scripts.people.db.people, db:eq(scripts.people.db.people.guild, guild_code))
+
+    for k, item in pairs(results) do
+        scripts.people:enemy_person_build(item)
+    end
+end
+
+function scripts.people:color_people_starter()
     for k, v in pairs(scripts.people.colored_people) do
         local results = db:fetch(scripts.people.db.people, db:eq(scripts.people.db.people.name, k))
         if not table.is_empty(results) then
@@ -103,7 +150,7 @@ function scripts.people:color_people_starter()
                     scripts.people:color_person_build(item, v)
                 end
             end
-        else 
+        else
             table.insert(scripts.people.color_triggers, tempRegexTrigger("(?i)(" .. k .. ")", function()
                 selectCaptureGroup(2)
                 fg(v)
@@ -114,6 +161,25 @@ function scripts.people:color_people_starter()
 
     for k, v in pairs(scripts.people.colored_guilds) do
         scripts.people:color_people_guild(k, v)
+    end
+end
+
+function scripts.people:trigger_people_guild(guild_name)
+    if not scripts.people.guilds[guild_name] then
+        return
+    end
+
+    local guild_code = scripts.people.guilds[guild_name]
+    local results = db:fetch(scripts.people.db.people, db:eq(scripts.people.db.people.guild, guild_code))
+
+    for k, item in pairs(results) do
+        scripts.people:color_person_build(item, scripts.people.name_color, scripts.people.guild_color)
+    end
+end
+
+function scripts.people:trigger_people_starter()
+    for k, v in pairs(scripts.people.trigger_guilds) do
+        scripts.people:trigger_people_guild(v)
     end
 end
 

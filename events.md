@@ -34,6 +34,12 @@ Event podniesiony po zaladowaniu calego UI
 
 ---
 
+## `colorPeopleBuild`
+
+Event podniesiony po zbudowaniu triggerów na kolorwanie postaci.
+
+---
+
 ## `amapNewLocation`
 
 Argumenty:

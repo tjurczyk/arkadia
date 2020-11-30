@@ -161,6 +161,8 @@ _drugi_ woreczek jest pusty.
 Po każdej zmianie liczebników woreczków (przykładowo po wzieciu któregoś z plecaka/kupieniu jakiegoś/odłożeniu któregoś) skrypt ma w bazie nieprawidłowe przypisania liczebników woreczków (pierwszy, drugi...) do ziół. Dlatego, przy 
 każdej takiej zmianie trzeba po prostu uruchomić `/ziola_buduj` - wtedy skrypt pozbiera i zbuduje mapę ziół na nowo.
 
+Do poprawnego działania polecenie `/ziola_buduj` istotne jest też aby na Arkadii ustawić opcję szerokości tekstu na 0: `opcje szerokosc 0`.
+
 Skrypt wspiera sytuacje, kiedy mamy przykladowo 10 woreczków, ale tylko 6 z nich przy sobie, czyli przy pasie/w rece (reszta w plecaku), baze zbuduje tylko z tych 6.
 
 Przy ziołach są dwa ważne ustawienia w pliku z ustawieniami. Pierwsza to:

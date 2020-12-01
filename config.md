@@ -698,7 +698,7 @@ Każda wiadomość w oknie rozmów będzie zawierała znacznik czasu.
 Pusta wartość - brak znacznika.
 Wartości zgodnie z <https://www.lua.org/pil/22.1.html>
 
-Proponowanan wartość `%X` - godzina z minutami i sekundami.
+Proponowana wartość `%X` - godzina z minutami i sekundami.
 
 ```
 %a	abbreviated weekday name (e.g., Wed)

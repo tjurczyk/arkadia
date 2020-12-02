@@ -15,7 +15,6 @@ end
 
 function trigger_func_skrypty_ui_footer_elements_weapon_on()
     scripts.inv.weapon_grip = true
-    scripts.ui.states_window_nav_states["weapon_state"] = true
     raiseEvent("weapon_state", true)
 end
 
@@ -24,7 +23,6 @@ function trigger_func_skrypty_ui_footer_elements_weapon_off()
         return
     end
     scripts.inv.weapon_grip = false
-    scripts.ui.states_window_nav_states["weapon_state"] = false
     raiseEvent("weapon_state", false)
 end
 

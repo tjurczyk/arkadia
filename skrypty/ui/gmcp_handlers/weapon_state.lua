@@ -1,4 +1,5 @@
 function weapon_state(name, weapon_state)
+    scripts.ui.states_window_nav_states["weapon_state"] = weapon_state
     scripts.ui:info_weapon_update(weapon_state)
     scripts.ui:navbar_updates(name)
 end

@@ -161,7 +161,7 @@ return {
     "skrypty/ui/notification_center",
     "skrypty/ui/log_cmds_ui",
     "skrypty/ui/ui_mapper_loaded_event",
-    "skrupty/ui/auto_wrap",
+    "skrypty/ui/auto_wrap",
     "mapper/db/core",
     "mapper/db/personal_keys",
     "mapper/db/utils",

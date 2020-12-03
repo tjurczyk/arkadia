@@ -240,8 +240,6 @@ end
 
 scripts.ui.states_window_navbar_str = ""
 
-tempTimer(2.348, function() scripts.ui:init_states_window_navbar() end)
-
 function alias_func_skrypty_ui_restart_ui()
     scripts.ui:setup()
 end

@@ -103,7 +103,7 @@ end
 
 function trigger_func_team_leadership()
     fg("DarkGoldenrod")
-    prefix("[   DRUZYNA   ]  ")
+    prefix("\n[   DRUZYNA   ]  ")
     echo("\n\n")
     resetFormat()
 end

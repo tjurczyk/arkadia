@@ -6,10 +6,10 @@ function misc.improve:print_improve()
         average_str = " : sred " .. misc.improve:seconds_to_formatted_string(average)
     end
 
-    cecho("+-------------------------------- <green>Postepy<grey> -------------------------------+\n")
-    cecho("|                                                                        |\n")
-    cecho("| <yellow>Aktualny czas   : " .. time .. "<grey>   " .. average_str .. "                       |\n")
-    cecho("|                                                                        |\n")
+    cecho("+---------------------------------- <green>Postepy<grey> ---------------------------------+\n")
+    cecho("|                                                                            |\n")
+    cecho("| <yellow>Aktualny czas   : " .. time .. "<grey>   " .. average_str .. "                           |\n")
+    cecho("|                                                                            |\n")
 
     local sum_me_killed = 0
     local sum_all_killed = 0
@@ -40,7 +40,7 @@ function misc.improve:print_improve()
         local details_time = string.sub("czas " .. time_str .. "                ", 1, 14)
         local details_killed = string.sub(" zabici " .. killed_str .. "                ", 1, 14)
 
-        cecho("| " .. name .. sep .. when_got .. sep .. details_time .. sep .. details_killed .. "   |\n")
+        cecho("| " .. scripts.utils.str_pad(tostring(k), 2, "right") .. ". " .. name .. sep .. when_got .. sep .. details_time .. sep .. details_killed .. "   |\n")
     end
 
     local seconds_since_last = getEpoch() - last_time_stamp
@@ -49,14 +49,14 @@ function misc.improve:print_improve()
             tostring(misc.counter.killed_amount["JA"] - sum_me_killed),
             tostring(misc.counter.all_kills - sum_all_killed))
 
-    cecho("|                                                                        |\n")
-    cecho("| <orange>ZABITYCH<grey>                                                               |\n")
-    cecho("| <LawnGreen>JA<grey> ... : <orange>" .. string.sub(tostring(sum_me_killed) .. "      ", 1, 6) .. "<grey>                                                        |\n")
-    cecho("| <LawnGreen>WSZYSCY<grey>: <orange>" .. string.sub(tostring(sum_all_killed) .. "      ", 1, 6) .. "<grey>                                                        |\n")
-    cecho("|                                                                        |\n")
-    cecho("| <SlateBlue>".. string.sub(since_last_str .."                            ", 1, 70) .. " <reset>|\n")
-    cecho("|                                                                        |\n")
-    cecho("+------------------------------------------------------------------------+\n")
+    cecho("|                                                                            |\n")
+    cecho("| <orange>ZABITYCH<grey>                                                                   |\n")
+    cecho("| <LawnGreen>JA<grey> ... : <orange>" .. string.sub(tostring(sum_me_killed) .. "      ", 1, 6) .. "<grey>                                                            |\n")
+    cecho("| <LawnGreen>WSZYSCY<grey>: <orange>" .. string.sub(tostring(sum_all_killed) .. "      ", 1, 6) .. "<grey>                                                            |\n")
+    cecho("|                                                                            |\n")
+    cecho("| <SlateBlue>".. string.sub(since_last_str .."                                ", 1, 74) .. " <reset>|\n")
+    cecho("|                                                                            |\n")
+    cecho("+----------------------------------------------------------------------------+\n")
 
 end
 

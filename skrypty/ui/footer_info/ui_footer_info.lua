@@ -79,6 +79,7 @@ function scripts.ui:setup_footer_info_weapon()
     self.footer_info_weapon:echo("<font color='" .. self["footer_info_normal"] .. "'>Bron:&nbsp;&nbsp;&nbsp;</font> <font color='" .. self["footer_info_neutral"] .. "'>off</font>")
     self.footer_info_weapon:setClickCallback("scripts_ui_info_weapon_update")
     self:add_footer_element(self.footer_info_weapon)
+    setLabelCursor(self.footer_info_weapon.name, "PointingHand")
 end
 
 function scripts.ui:setup_footer_info_cover_ready()
@@ -121,6 +122,7 @@ function scripts.ui:setup_footer_info_sneaky()
     self.footer_info_sneaky:echo("<font color='" .. self["footer_info_normal"] .. "'>Przemykam:</font> <font color='" .. self["footer_info_green"] .. "'></font>")
     self.footer_info_sneaky:setClickCallback("scripts_ui_info_sneaky_click")
     self:add_footer_element(self.footer_info_sneaky)
+    setLabelCursor(self.footer_info_sneaky.name, "PointingHand")
 end
 
 function scripts.ui:setup_footer_info_hidden()
@@ -132,6 +134,7 @@ function scripts.ui:setup_footer_info_hidden()
     self.footer_info_hidden:echo("<font color='" .. self["footer_info_normal"] .. "'>Ukryty:</font> <font color='" .. self["footer_info_green"] .. "'></font>")
     self.footer_info_hidden:setClickCallback("scripts_ui_info_hidden_click")
     self:add_footer_element(self.footer_info_hidden)
+    setLabelCursor(self.footer_info_hidden.name, "PointingHand")
 end
 
 function scripts.ui:setup_footer_info_attack_mode()
@@ -143,6 +146,7 @@ function scripts.ui:setup_footer_info_attack_mode()
     self.footer_info_attack_mode:echo("<font color='" .. self["footer_info_normal"] .. "'>Atak:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font> <font color='" .. self["footer_info_neutral"] .. "'>" .. ateam["footer_info_attack_mode_to_text"][ateam.attack_mode] .. "</font>")
     self.footer_info_attack_mode:setClickCallback("scripts_ui_info_attack_mode_click")
     self:add_footer_element(self.footer_info_attack_mode)
+    setLabelCursor(self.footer_info_attack_mode.name, "PointingHand")
 end
 
 function scripts.ui:setup_footer_info_collect_mode()
@@ -154,6 +158,7 @@ function scripts.ui:setup_footer_info_collect_mode()
     self.footer_info_collect_mode:echo("<font color='" .. self["footer_info_normal"] .. "'>Zbieranie:</font> <font color='" .. self["footer_info_neutral"] .. "'>" .. scripts.inv.collect["footer_info_collect_to_text"][scripts.inv.collect.current_mode] .. "</font>")
     self.footer_info_collect_mode:setClickCallback("scripts_ui_info_collect_mode")
     self:add_footer_element(self.footer_info_collect_mode)
+    setLabelCursor(self.footer_info_collect_mode.name, "PointingHand")
 end
 
 function scripts.ui:setup_footer_info_mail()
@@ -167,6 +172,7 @@ function scripts.ui:setup_footer_info_mail()
     self.footer_info_mail_click_bind = nil
     self.footer_info_mail:setClickCallback("scripts_ui_info_mail_click")
     self:add_footer_element(self.footer_info_mail)
+    setLabelCursor(self.footer_info_mail.name, "PointingHand")
 end
 
 function scripts.ui:setup_footer_info_alert()
@@ -178,6 +184,7 @@ function scripts.ui:setup_footer_info_alert()
     self.footer_info_alert:echo("<font color='" .. self["footer_info_normal"] .. "'>Alert:</font> <font color='" .. self["footer_info_yellow"] .. "'></font>")
     self.footer_info_alert:setClickCallback("scripts_ui_info_action_click")
     self:add_footer_element(self.footer_info_alert)
+    setLabelCursor(self.footer_info_alert.name, "PointingHand")
 end
 
 function scripts.ui:setup_footer_info_lamp()
@@ -189,6 +196,7 @@ function scripts.ui:setup_footer_info_lamp()
     self.footer_info_lamp:echo("<font color='" .. self["footer_info_normal"] .. "'>Lampa:</font> <font color='" .. self["footer_info_green"] .. "'></font>")
     self.footer_info_lamp:setClickCallback("scripts_ui_info_lamp_click")
     self:add_footer_element(self.footer_info_lamp)
+    setLabelCursor(self.footer_info_lamp.name, "PointingHand")
 end
 
 function scripts.ui:setup_footer_info_compass()
@@ -200,6 +208,7 @@ function scripts.ui:setup_footer_info_compass()
     self.footer_info_compass:echo("<font color='" .. self["footer_info_normal"] .. "'>Komenda</font>")
     self.footer_info_compass:setClickCallback("scripts_ui_info_compass_click")
     self:add_footer_element(self.footer_info_compass)
+    setLabelCursor(self.footer_info_compass.name, "PointingHand")
 end
 
 function scripts.ui:setup_footer_info_combat_state()

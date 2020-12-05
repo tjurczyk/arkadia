@@ -3,6 +3,7 @@ function scripts.ui:setup_talk_window()
         openUserWindow("talk_window")
         setFontSize("talk_window", scripts.ui.separate_talk_window_font_size)
         setFont("talk_window", getFont())
+        setUserWindowTitle("talk_window", "Okno rozmow")
         scripts.ui:setup_wrap_talk_window()
     end
 end

@@ -1,12 +1,12 @@
 function gmcp_msgs()
     feedTriggers(dec(gmcp.gmcp_msgs.text))
     if scripts.ui.separate_talk_window and scripts.ui.separate_talk_window_msg_types[gmcp.gmcp_msgs.type] then
-        --feedTriggers(dec(gmcp.gmcp_msgs.text))
-        decho("talk_window", scripts.ui.separate_talk_window_prefix .. ansi2decho(dec(gmcp.gmcp_msgs.text)))
-        --selectString(line, 1)
-        --copy()
-        --appendBuffer("talk_window")
-        --deleteLine()
+        local timestamp = ""
+        if scripts.ui.separate_talk_window_timestamp and string.trim(scripts.ui.separate_talk_window_timestamp) ~= "" then
+            timestamp = string.format("[%s] ", os.date(scripts.ui.separate_talk_window_timestamp))
+        end
+        
+        decho("talk_window", timestamp .. scripts.ui.separate_talk_window_prefix .. ansi2decho(dec(gmcp.gmcp_msgs.text)))
     end
 end
 

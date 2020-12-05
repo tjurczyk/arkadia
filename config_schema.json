@@ -1144,6 +1144,14 @@
       ]
     },
     {
+      "name": "scripts.ui.separate_talk_window_timestamp",
+      "default_value": "",
+      "field_type": "string",
+      "macros_on_modify": [
+        "_ux"
+      ]
+    },
+    {
       "name": "scripts.ui.separate_talk_window_msg_types",
       "default_value": {
         "comm": true,

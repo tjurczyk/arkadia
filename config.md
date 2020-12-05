@@ -1401,3 +1401,16 @@ Określa czy notyfikacje na różne wydarzenia (np. pocztę) w prawym górnym ro
 Dostępne wartości:
 * `true` - włączone
 * `false` - wyłączone
+
+
+---
+
+## `scripts.ui.auto_wrap_main_window.enabled`
+
+Długość linii (miejsce jej łamania dokładniej mówiąc) w głównym oknie będzie zależna od jego szerokości.
+Ustawienie szczególnie użyteczne dla osób przerzucających okno na rózne wielkościowo monitory. 
+Ustawienie nie działa na linie już wcześniej wyświetlone.
+
+Dostępne wartości:
+* `true` - włączone
+* `false` - wyłączone

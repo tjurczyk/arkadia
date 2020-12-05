@@ -1387,6 +1387,7 @@ Szablon do użycia przez kreator poczty wywoływany za pomocą `/list`
 
 Dostępne wartości:
 * `plain` - bez szablonu
+* `plain_border` - zwykla, prostokatna ramka
 * `parchment` - pergamin
 
 Dla zaawansowanych - dodatkowe szablony można stworzyć na podstawie dodając je do tablicy `scripts.mail_creator.templates` analogicznie jak już te istniejące.

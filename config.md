@@ -1376,7 +1376,15 @@ Ustawienie startowe na konkretnej lokacji po zalogowaniu w 'name' powinna znalez
 
 ## `scripts.sounds.beep`
 
-Ścieżka do pliku dla dźwięku beep
+Ścieżka do pliku dla dźwięku beep.
+
+Ścieżka może być bezwględna (pełna) np.
+* Windows - musi zaczynać się od litery dysku np. `D:/SoundLibrary/souds/beep.wav`
+* Linux/Mac - musi zaczynać się od `/` np. `/home/user/sounds/beep.wav`
+
+Dopuszczalna jest ścięzką względna do katalogu profilu np.
+* `arkadia/sounds.beep`
+
 UWAGA! Sciezki powinny zawierac `/`, a nie `\`
 
 ---

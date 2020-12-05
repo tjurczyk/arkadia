@@ -479,8 +479,12 @@
 						<regexCodeList>
 							<string>^Nagle (?:\w+ )+(\w+) rozpruwa sie\.(?:.*)</string>
 							<string>^Niestety zbyt mocnym ruchem rozrywasz (?:\w+ )+(\w+), drac go na bezwartosciowe pasy materialu\.$</string>
+							<string>^Probujesz zalozyc (?:\w+ )+(line)(?: z hakiem)?, ale ta peka ci w rekach ze starosci\.$</string>
+							<string>^Czujesz, ze (?:\w+ )+(\w+) po prostu rozpada ci sie w rekach\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
+							<integer>1</integer>
+							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
 						</regexCodePropertyList>
@@ -22706,6 +22710,8 @@
 						<string>Probujesz wejsc w zakryte pajeczynami przejscie, lecz duzy szarawy golem odpycha cie brutalnie.</string>
 						<string>Przeciez lezysz na lozku! Moze lepiej najpierw z niego wstac?</string>
 						<string>Rezygnujesz z przeplyniecia</string>
+						<string>.* mowi do ciebie: Nikt z zakryta twarza nie stanie przed obliczem ksiecia\.$</string>
+						<string>Nie dasz rady otworzyc .*, musisz sprobowac ja uniesc\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -22746,6 +22752,8 @@
 						<integer>0</integer>
 						<integer>0</integer>
 						<integer>0</integer>
+						<integer>1</integer>
+						<integer>1</integer>
 					</regexCodePropertyList>
 				</Trigger>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">

@@ -1875,7 +1875,7 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^Jest w przyblizeniu .* miesiaca ([a-zA-Z]+) wedlug Kalendarza Imperialnego\.$</string>
+							<string>^Jest w przyblizeniu .*(?: miesiaca)? ([a-zA-Z]+) wedlug Kalendarza Imperialnego\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>

@@ -325,8 +325,6 @@ function herbs:_coroutine_build_db()
     send("policz swoje woreczki")
     coroutine.yield()
 
-    local herb_bags = herbs.bags_amount
-
     if not herbs.bags_amount then
         herbs.bags_amount = 200
         herbs.break_herb_build_trigger = tempRegexTrigger("^Zajrzyj do czego\\?", function()
@@ -335,7 +333,9 @@ function herbs:_coroutine_build_db()
         end)
     end
 
-    disableTrigger(count_trigg)
+    local herb_bags = herbs.bags_amount
+
+    killTrigger(count_trigg)
 
     local bag_count = 0
 

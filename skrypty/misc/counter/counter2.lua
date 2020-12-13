@@ -123,10 +123,10 @@ function misc.counter2:show_short()
     local sum = 0
 
     for k, v in pairs(count_dict) do
-        local name = string.sub(k .. "<grey> .................", 1, 24)
+        local name = string.sub(k .. "<grey> ......................", 1, 29)
         local amount = string.sub(tostring(v) .. "       ", 1, 7)
         sum = sum + tonumber(v)
-        local line = "<grey>|  <LawnGreen>" .. name .. " <grey>" .. amount .. "                             |\n"
+        local line = "<grey>|  <LawnGreen>" .. name .. " <grey>" .. amount .. "                        |\n"
         cecho(line)
     end
 

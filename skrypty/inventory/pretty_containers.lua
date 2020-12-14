@@ -11,7 +11,7 @@ local function create_pattern(tab, endline)
     return "(" .. table.concat(start_line_patterns, "|") .. ")"
 end
 
-local function create_regexp_filter(tab, endline)
+function scripts.inv.pretty_containers:create_regexp_filter(tab, endline)
     return function(item)
         return rex.find(item.name, create_pattern(tab, endline))
     end
@@ -41,17 +41,16 @@ scripts.inv.pretty_containers.fixed_groups = {
 }
 
 scripts.inv.pretty_containers.group_definitions = {
-    { name = "bronie", filter = create_regexp_filter(weapons) },
-    { name = "korpus", filter = create_regexp_filter(torso) },
-    { name = "tarcze", filter = create_regexp_filter(shields) },
-    { name = "glowa", filter = create_regexp_filter(head) },
-    { name = "rece", filter = create_regexp_filter(hands) },
-    { name = "nogi", filter = create_regexp_filter(legs) },
-    { name = "ubrania", filter = create_regexp_filter(wear) },
-    { name = "bizuteria", filter = create_regexp_filter(jewelery) },
-    { name = "kamienie", filter = create_regexp_filter(gems, true) },
-    { name = "klucze", filter = keys_filter},
-    { name = "inne", filter = function(item) return true end },
+    { name = "bronie", filter = scripts.inv.pretty_containers:create_regexp_filter(weapons) },
+    { name = "korpus", filter = scripts.inv.pretty_containers:create_regexp_filter(torso) },
+    { name = "tarcze", filter = scripts.inv.pretty_containers:create_regexp_filter(shields) },
+    { name = "glowa", filter = scripts.inv.pretty_containers:create_regexp_filter(head) },
+    { name = "rece", filter = scripts.inv.pretty_containers:create_regexp_filter(hands) },
+    { name = "nogi", filter = scripts.inv.pretty_containers:create_regexp_filter(legs) },
+    { name = "ubrania", filter = scripts.inv.pretty_containers:create_regexp_filter(wear) },
+    { name = "bizuteria", filter = scripts.inv.pretty_containers:create_regexp_filter(jewelery) },
+    { name = "kamienie", filter = scripts.inv.pretty_containers:create_regexp_filter(gems, true) },
+    { name = "klucze", filter = keys_filter}
 }
 
 local preferred_magics = function(name)
@@ -93,6 +92,7 @@ function scripts.inv.pretty_containers:print(content, columns_count, filter)
     for _, group in ipairs(scripts.inv.pretty_containers.group_definitions) do
             result[group.name] = result[group.name] or {}
     end
+    result["inne"] = {}
 
     for key, element in pairs(container_elements) do
         local in_fixed_group = false
@@ -103,11 +103,17 @@ function scripts.inv.pretty_containers:print(content, columns_count, filter)
             end
         end
         if not in_fixed_group then
+            local added
             for _, group in ipairs(scripts.inv.pretty_containers.group_definitions) do
+                added = false
                 if group.filter(element) then
                     table.insert(result[group.name], count_name_transformer(element))
+                    added = true
                     break
                 end
+            end
+            if not added then
+                table.insert(result["inne"], count_name_transformer(element))
             end
         end
     end
@@ -118,6 +124,7 @@ function scripts.inv.pretty_containers:print(content, columns_count, filter)
             table.insert(not_empty_result, {name = v.name, values = result[v.name]})
         end
     end
+    table.insert(not_empty_result, {name = "inne", values = result["inne"]})
 
     local content_table = AutomaticTable:new(false)
     content_table:set_title("P O J E M N I K")

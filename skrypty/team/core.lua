@@ -365,6 +365,8 @@ function ateam:print_obj_team(id, obj)
         if ateam.team_enemies[id] then
             zas_str = "  <- [" .. table.concat(ateam.team_enemies[id], ",") .. "]"
             cecho(scripts.ui.states_window_name, "<white:team_console_bg>" .. zas_str)
+        elseif not table.is_empty(ateam.team_enemies) and not obj.attack_num then
+            cecho(scripts.ui.states_window_name, "  <red:team_console_bg>X<reset>")
         end
 
         if str_name ~= "JA" and ateam.team[id] then

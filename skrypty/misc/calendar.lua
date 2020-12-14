@@ -22,6 +22,12 @@ misc["imperium_calendar"] = {
     ["Kaltezeit"] = "Kaltezeit (wczesna zima)",
     ["Ulrichszeit"] = "Ulrichszeit (zima)",
     ["Vorhexen"] = "Vorhexen (pozna zima)",
+    ["Hexentag"] = "Hexentag (Nowy Rok)",
+    ["Mitterfruhl"] = "Mitterfruhl (rownonoc wiosenna)",
+    ["Sonnenstill"] = "Sonnenstill (przesilenie letnie)",
+    ["Geheimnisnacht"] = "Geheimnisnacht (Noc Tajemnicy)",
+    ["Mitterherbst"] = "Mitterherbst (rownonoc jesienna)",
+    ["Mondstill"] = "Mondstill (przesilenie zimowe)"
 }
 
 function misc:replace_string_calendar_ishtar(str)

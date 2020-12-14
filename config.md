@@ -1413,7 +1413,7 @@ Ustawienie startowe na konkretnej lokacji po zalogowaniu w 'name' powinna znalez
 * Linux/Mac - musi zaczynać się od `/` np. `/home/user/sounds/beep.wav`
 
 Dopuszczalna jest ścięzką względna do katalogu profilu np.
-* `arkadia/sounds.beep`
+* `arkadia/sounds/beep.wav`
 
 UWAGA! Sciezki powinny zawierac `/`, a nie `\`
 

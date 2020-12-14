@@ -12617,6 +12617,7 @@
 									<string>Uderzenie w glowe oglusza cie i powala na ziemie.</string>
 									<string>znienacka kopie cie w noge i kiedy tracisz rytm walki, przywala ci piescia prosto w nos.</string>
 									<string>Ktos bez zastanowienia uderza cie piescia w szczeke, robiac to z taka sila, ze niemal powala cie na ziemie.</string>
+									<string>silnym ciosem .* oglusza cie</string>
 								</regexCodeList>
 								<regexCodePropertyList>
 									<integer>0</integer>
@@ -12629,6 +12630,7 @@
 									<integer>0</integer>
 									<integer>0</integer>
 									<integer>0</integer>
+									<integer>1</integer>
 								</regexCodePropertyList>
 							</Trigger>
 							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -12871,7 +12873,7 @@
 								<colorTriggerFgColor>#000000</colorTriggerFgColor>
 								<colorTriggerBgColor>#000000</colorTriggerBgColor>
 								<regexCodeList>
-									<string>.* silnym ciosem .* oglusza ([ a-zA-Z]+)\.$</string>
+									<string>.* silnym ciosem .* oglusza (?!cie)([ a-zA-Z]+)\.$</string>
 									<string>.* pochyla kosmaty leb i rzuca sie do przodu, z pelnym impetem trafiajac w ([ a-zA-Z]+). Uderzenie oglusza i powala ofiare\.$</string>
 									<string>.* znienacka kopie ([ a-zA-Z]+) w noge i kiedy ten traci rytm walki, przywala mu piescia prosto w nos\.$</string>
 								</regexCodeList>

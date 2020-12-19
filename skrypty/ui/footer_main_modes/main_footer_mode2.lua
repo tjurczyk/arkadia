@@ -8,7 +8,7 @@ function scripts.ui:setup_gauge_mode2()
             fontSize = scripts.ui.footer_font_size,
             width = tostring(100 / scripts.ui.footer_main_items_per_row) .. "%",
             h_policy = Geyser.Fixed,
-            message = [[<center><font style="color: ]]..scripts.ui["footer_info_normal"]..[[">]] .. scripts.ui["state_key_to_label_pre"][scripts.ui["bar_to_eng"][v]] .. [[: <font color="green">[0/0]</font></center>]]
+            message = [[<center><font color="]]..scripts.ui["footer_info_normal"]..[[">]] .. scripts.ui["state_key_to_label_pre"][scripts.ui["bar_to_eng"][v]] .. [[: <font color="green">[0/0]</font></center>]]
         }, curr_row)
 
         scripts.ui[scripts.ui["bar_to_id1"][v]]:setStyleSheet([[

@@ -996,6 +996,19 @@
       "macros_on_modify": []
     },
     {
+      "name": "scripts.people.trigger_guilds",
+      "default_value": [
+        "CKN", "ES", "SC", "KS", "KM", "OS",
+        "OHM", "SGW", "PE", "WKS", "LE", "KG",
+        "KGKS", "MC", "OK", "RA", "GL", "ZT",
+        "ZS", "ZH", "GP"
+      ],
+      "field_type": "list",
+      "macros_on_modify": [
+        "_people"
+      ]
+    },
+    {
       "name": "scripts.people.showing_names",
       "default_value": true,
       "field_type": "boolean",

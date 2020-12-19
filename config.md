@@ -540,6 +540,30 @@ Konfiguracja jakie maja byc komendy opuszczania/zdejmowania broni/zbroi.
 
 ---
 
+## `scripts.people.trigger_guilds`
+Ładowanie triggerów bazy postaci dla wybranych gildii (`scripts.people.colored_guilds`, `scripts.people.enemy_guild` zawsze będą ładowanie niezależnie od tego ustawienia).
+
+Komenda `/gildie` wyświetli wspierane gildie.
+
+Postacie spoza tej listy spotkane raz, mają dodawany trigger na daną sesję.
+
+### Przykładowo:
+```json
+scripts.people.trigger_guilds = [
+  "CKN", "ES", "SC", "KS", "KM", "OS",
+  "OHM", "SGW", "PE", "WKS", "LE", "KG",
+  "KGKS", "MC", "OK", "RA", "GL", "ZT",
+  "ZS", "ZH", "GP"
+]
+```
+
+### Przykład domyślnego ładowania tylko NPC:
+```json
+scripts.people.trigger_guilds = [ "NPC" ]
+```
+
+---
+
 ## `scripts.people.showing_names`
 
 Domyslna opcja do BAZY POSTACI czy ma pokazywac imiona/gildie przy nieznajomych (nie dotyczy wrogow, wrogowie sa zawsze pokazywani)

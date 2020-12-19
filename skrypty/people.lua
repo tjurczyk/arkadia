@@ -49,7 +49,6 @@ scripts.people.trigger_guilds = {
     "KGKS", "MC", "OK", "RA", "GL", "ZT",
     "ZS", "ZH", "GP"
 }
---scripts.people.trigger_guilds = {}
 
 function trigger_func_skrypty_people_przedstawienie()
     scripts.people:process_someone(multimatches[1][3], multimatches[2][1])

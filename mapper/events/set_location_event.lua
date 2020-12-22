@@ -1,11 +1,2 @@
-function set_location_event(...)
-    -- arg[3] is a marked room number
-    amap:set_position(arg[3])
-end
-
-if scripts.event_handlers["mapper/events/set_location_event.setThisLocation.set_location_event"] then
-    killAnonymousEventHandler(scripts.event_handlers["mapper/events/set_location_event.setThisLocation.set_location_event"])
-end
-
-scripts.event_handlers["mapper/events/set_location_event.setThisLocation.set_location_event"] = registerAnonymousEventHandler("setThisLocation", set_location_event)
-
+scripts.event_handlers.set_this_location = scripts.event_register:force_register_event_handler(scripts.event_handlers.set_this_location, "setThisLocation", function(...) amap:set_position(arg[3]) end)
+scripts.event_handlers.sys_manual_location_set_event = scripts.event_register:force_register_event_handler(scripts.event_handlers.sys_manual_location_set_event, "sysManualLocationSetEvent", function(...) amap:set_position(arg[2]) end)

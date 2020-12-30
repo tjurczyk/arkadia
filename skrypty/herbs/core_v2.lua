@@ -19,9 +19,13 @@ function herbs:v2_init_herbs()
             herbs.herbs_long_to_short[herb_odmiana_val] = herb_name
         end
     end
+    local actions = {}
     for herb_name, herb_actions in pairs(herbs.data.herb_id_to_use) do
         local herb_action_str = ""
         for idx, herb_action in pairs(herb_actions) do
+            if not table.contains({".", "brak"}, herb_action["action"]) then
+                actions[herb_action["action"]] = true
+            end
             if herb_action["effect"] ~= nil and herb_action["action"] then
                 herb_action_str = herb_action_str .. herb_action["action"] .. ": " .. herb_action["effect"]
             end
@@ -34,6 +38,11 @@ function herbs:v2_init_herbs()
         herbs.herbs_details[herb_name]["acc"] = herbs.data.herb_id_to_odmiana[herb_name]["biernik"]
         herbs.herbs_details[herb_name]["details"] = herb_action_str
     end
+
+    if herbs.use_alias then
+        killAlias(herbs.use_alias)
+    end
+    herbs.use_alias = tempAlias(string.format("^/z_(%s) ([a-z_]+)(?: ([0-9]+))?$", table.concat(table.keys(actions), "|")), "alias_func_skrypty_herbs_zazyj_ziolo()")
 end
 
 function herbs:v2_print_db()

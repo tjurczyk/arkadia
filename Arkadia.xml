@@ -23838,20 +23838,6 @@
 					<regex>^/przeszukaj_ziola (.*)$</regex>
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
-					<name>zazyj_ziolo_single</name>
-					<script>alias_func_skrypty_herbs_zazyj_ziolo_single()</script>
-					<command></command>
-					<packageName></packageName>
-					<regex>^/z_(zjedz|rozgryz|spal|powachaj|przezuj|wdychnij|rozetrzyj|przyloz|polknij|sproszkuj) ([a-z_]+)$</regex>
-				</Alias>
-				<Alias isActive="yes" isFolder="no">
-					<name>zazyj_ziolo</name>
-					<script>alias_func_skrypty_herbs_zazyj_ziolo()</script>
-					<command></command>
-					<packageName></packageName>
-					<regex>^/z_(zjedz|rozgryz|spal|powachaj|przezuj|wdychnij|rozetrzyj|przyloz|polknij|sproszkuj) ([a-z_]+) ([0-9]+)$</regex>
-				</Alias>
-				<Alias isActive="yes" isFolder="no">
 					<name>move_from_to_bag</name>
 					<script>alias_func_skrypty_herbs_move_from_to_bag()</script>
 					<command></command>

@@ -2430,7 +2430,7 @@
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>Jestes w stanie wyroznic kilka sladow na ziemi. Najswiezsze zostaly pozostawione prawdopodobnie przez .* i prowadza na (.*)\.$</string>
+						<string>Jestes w stanie wyroznic kilka sladow na ziemi\. Najswiezsze zostaly pozostawione(?: prawdopodobnie)? przez .* i prowadza na (.*)\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>

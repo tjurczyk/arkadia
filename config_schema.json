@@ -142,7 +142,7 @@
   "fields": [
     {
       "name": "scripts.character_name",
-      "default_value": "Erkal",
+      "default_value": "",
       "field_type": "string",
       "macros_on_modify": [
         "_all"

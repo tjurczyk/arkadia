@@ -63,9 +63,10 @@ function scripts.people:color_person_build(item, color, suffix_only)
         regex = "(^|\\W)((" .. string.sub(item["short"], 0, 1) .. "|" .. first_capitalized .. ")" .. rest_string .. ")(?! chaosu)(\\W|$)"
     end
 
-    table.insert(self.color_triggers, tempRegexTrigger(regex, function() scripts.people:process_person_color(item, matches[3], suffix, color, suffix_only) end))
-    scripts.people.already_processed[item["_row_id"]] = true
-    scripts.people.already_processed_desc[item.short] = true
+    local triggerId = tempRegexTrigger(regex, function() scripts.people:process_person_color(item, matches[3], suffix, color, suffix_only) end)
+    table.insert(self.color_triggers, triggerId)
+    scripts.people.already_processed[item["_row_id"]] = triggerId
+    scripts.people.already_processed_desc[item.short] = triggerId
 end
 
 function scripts.people:color_people_guild(guild_name, color)

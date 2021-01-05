@@ -20,6 +20,18 @@ Wystarczy wkleić poniższą komendę:
 local a="https://raw.githubusercontent.com/tjurczyk/arkadia/master/ArkadiaScriptsInstaller.xml"local b=getMudletHomeDir().."ArkadiaScriptsInstaller.xml"downloadFile(b,a)cecho("\n<CadetBlue>(skrypty)<tomato>: Rozpoczynam instalacje skryptow\n")registerAnonymousEventHandler("sysDownloadDone",function(c,d)if d~=b then return true end;installPackage(b)end,true)clearCmdLine()
 ```
 
+#### Alternatywny sposób instalacji
+
+Należy pobrać plik:
+[https://github.com/tjurczyk/arkadia/releases/latest/download/ArkadiaScriptsInstaller.xml](https://github.com/tjurczyk/arkadia/releases/latest/download/ArkadiaScriptsInstaller.xml)
+Po jego pobraniu przeciągamy go na otwarte okno Mudleta.
+
+Lub 
+1. W Mudlecie w górnym pasku wybieramy `Package Manager`
+2. Wybieramy na dole `Install`
+3. Wybieramy pobrany plik
+
+
 #### Ręczna instalacja
 Po pobraniu paczki należy rozpakować ją bezpośrednio do katalogu z profilem i zmienić nazwę rozpakowanego katalogu na `arkadia`
 Po czym wykonujemy jeszcze instalację samej paczki w mudlecie

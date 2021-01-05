@@ -163,6 +163,7 @@ return {
     "skrypty/ui/log_cmds_ui",
     "skrypty/ui/ui_mapper_loaded_event",
     "skrypty/ui/auto_wrap",
+    "skrypty/ui/page_window",
     "mapper/db/core",
     "mapper/db/personal_keys",
     "mapper/db/utils",
@@ -364,4 +365,5 @@ return {
     "skrypty/ui/gags/color/color_innych_spece/par/ktos_spec_g1",
     "skrypty/ui/gags/color/color_innych_spece/par/scatak",
     "skrypty/ui/gags/color/color_innych_spece/gp/ktos_spec",
+    "skrypty/first_config"
 }

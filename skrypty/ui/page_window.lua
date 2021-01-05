@@ -15,10 +15,10 @@ function PageWindow:new(name, title, restoreLayout, autoDock, dockingArea)
 end
 
 function PageWindow:open()
-    local width, height, padding = 700, 480, 30
+    local width, height, padding = 900, 530, 30
     openUserWindow(self.windowName, self.restoreLayout, self.autoDock, self.dockingArea)
-    setUserWindowTitle(self.windowName .. "_window", self.title)
-    moveWindow(self.windowName, -10, width)
+    setUserWindowTitle(self.windowName, self.title)
+    moveWindow(self.windowName, 30, 30)
     resizeWindow(self.windowName, width, height)
     createMiniConsole(self.windowName, self.name, padding, padding, width - padding * 2, height - padding * 2)
     setWindowWrap(self.name, getColumnCount(self.name))
@@ -33,7 +33,6 @@ end
 function PageWindow:displayPage(index)
     clearUserWindow(self.name)
     self:displayHeader(index)
-    display(self.pagesConntentGenerators)
     if self.pagesConntentGenerators[index] then
         self.pagesConntentGenerators[index](self, index)
     else
@@ -44,16 +43,23 @@ end
 function PageWindow:displayHeader(index)
     local charColunCount = getColumnCount(self.name) -- TODO: replace with getWindowWrap when available
     local columnWidth = math.floor((charColunCount - 2) / 3)
+    local pageCount = table.size(self.pagesConntentGenerators)
     if index ~= 1 then
-        cecho(self.name, scripts.utils.str_pad("<-", columnWidth, "left"))
+        function PageWindowPrevPage()
+            self:displayPage(index - 1)
+        end
+        cechoLink(self.name, scripts.utils.str_pad("<-", columnWidth, "left"), [[PageWindowPrevPage()]], "Nastepna strona", true)
     else
-        cecho(self.name, scripts.utils.str_pad("", columnWidth, "left"))
+        cecho(self.name, scripts.utils.str_pad(" ", columnWidth, "left"))
     end
-    cecho(self.name, scripts.utils.str_pad(string.format("=== Strona %s ===", index), columnWidth, "center"))
-    if index < table.size(self.pagesConntentGenerators) then
-        cecho(self.name, scripts.utils.str_pad("->", columnWidth, "right"))
+    cecho(self.name, scripts.utils.str_pad(string.format("=== Strona %d/%d ===", index, pageCount), columnWidth, "center"))
+    if index < pageCount then
+        function PageWindowNextPage()
+            self:displayPage(index + 1)
+        end
+        cechoLink(self.name, scripts.utils.str_pad("->", columnWidth, "right"), [[PageWindowNextPage()]], "Nastepna strona", true)
     else 
-        cecho(self.name, scripts.utils.str_pad("", columnWidth, "left"))
+        cecho(self.name, scripts.utils.str_pad(" ", columnWidth, "left"))
     end
     echo(self.name, "\n\n")
 end

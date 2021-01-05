@@ -13,7 +13,7 @@ Wersja, której używasz: sprawdź nagłówek komendy `/skrypty`.
 Przed instalacją koniecznie włącz opcję _Enable GMCP_ w ustawieniach (Settings) Mudleta i zrestartuj go.**
 
 #### Mudlet 4.6+ i moduł LUA
-
+---
 Wystarczy wkleić poniższą komendę:
 
 ```lua
@@ -21,9 +21,11 @@ local a="https://raw.githubusercontent.com/tjurczyk/arkadia/master/ArkadiaScript
 ```
 
 #### Alternatywny sposób instalacji
-
+---
 Należy pobrać plik:
+
 [https://github.com/tjurczyk/arkadia/releases/latest/download/ArkadiaScriptsInstaller.xml](https://github.com/tjurczyk/arkadia/releases/latest/download/ArkadiaScriptsInstaller.xml)
+
 Po jego pobraniu przeciągamy go na otwarte okno Mudleta.
 
 Lub 
@@ -31,8 +33,8 @@ Lub
 2. Wybieramy na dole `Install`
 3. Wybieramy pobrany plik
 
-
 #### Ręczna instalacja
+---
 Po pobraniu paczki należy rozpakować ją bezpośrednio do katalogu z profilem i zmienić nazwę rozpakowanego katalogu na `arkadia`
 Po czym wykonujemy jeszcze instalację samej paczki w mudlecie
 
@@ -305,7 +307,7 @@ Baza jest budowana następująco:
 ---
 
 
-### ROZSZERZNIE SKRYPTÓW
+## ROZSZERZNIE SKRYPTÓW
 
 W łatwy sposób można również dodać dodatkowe skrypty ładowane razem ze niniejszą paczką.
 W katalog profilu, skrypty tworzą katalog `plugins`, należy w nim umieścić plik z paczka zawierającą plik `init.lua` z listą plików do załadowania.

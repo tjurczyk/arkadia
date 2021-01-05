@@ -16,6 +16,7 @@ local latest_release = "https://api.github.com/repos/tjurczyk/arkadia/releases/l
 local latest_file = getMudletHomeDir() .. "/latest.json"
 local url = "https://codeload.github.com/tjurczyk/arkadia/zip/"
 local scriptsZip = getMudletHomeDir() .. "/scripts.zip"
+local installerXML = getMudletHomeDir() .. "/ArkadiaScriptsInstaller.xml"
 local unzipDirectory = ""
 local scriptsDirectory = getMudletHomeDir() .. "/arkadia/"
 
@@ -64,6 +65,7 @@ end
 function handleUnzipEvents(event, ...)
     if event == "sysUnzipDone" then
         os.remove(scriptsZip)
+        os.remove(installerXML)
         uninstallPackage("Arkadia")
         uninstallPackage("generic_mapper")
         uninstallPackage("skrypty_master3")

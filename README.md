@@ -17,7 +17,7 @@ Przed instalacją koniecznie włącz opcję _Enable GMCP_ w ustawieniach (Settin
 Wystarczy wkleić poniższą komendę:
 
 ```lua
-local a="https://github.com/tjurczyk/arkadia/releases/latest/download/ArkadiaScriptsInstaller.xml"local b=getMudletHomeDir().."ArkadiaScriptsInstaller.xml"downloadFile(b,a)cecho("\n<CadetBlue>(skrypty)<tomato>: Rozpoczynam instalacje skryptow\n")registerAnonymousEventHandler("sysDownloadDone",function(c,d)if d~=b then return true end;installPackage(b)end,true)clearCmdLine()
+local a="lua https://github.com/tjurczyk/arkadia/releases/latest/download/ArkadiaScriptsInstaller.xml"local b=getMudletHomeDir().."ArkadiaScriptsInstaller.xml"downloadFile(b,a)cecho("\n<CadetBlue>(skrypty)<tomato>: Rozpoczynam instalacje skryptow\n")registerAnonymousEventHandler("sysDownloadDone",function(c,d)if d~=b then return true end;installPackage(b)end,true)clearCmdLine()
 ```
 
 #### Alternatywny sposób instalacji

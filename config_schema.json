@@ -2530,6 +2530,12 @@
       "default_value": false,
       "field_type": "boolean",
       "macros_on_modify": []
+    },
+    {
+      "name": "scripts.ui.inline_compass_rose.enabled",
+      "default_value": false,
+      "field_type": "boolean",
+      "macros_on_modify": []
     }
   ]
 }

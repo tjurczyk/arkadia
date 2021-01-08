@@ -437,6 +437,7 @@ function ScriptsConfig:set_var(options)
         end
         scripts:print_log(msg .. "ustawilem " .. var .. "=" .. yajl.to_string(value))
     end
+    raiseEvent("setVar", var, value)
     return true
 end
 

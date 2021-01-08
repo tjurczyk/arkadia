@@ -47,10 +47,11 @@ function trigger_func_skrypty_team_start_ateam()
     tempTimer(5, function() scripts.ui:setup_talk_window() end)
 end
 
-function trigger_func_skrypty_team_restart_ateam()
-    tempTimer(3, [[ ateam:restart_ateam() ]])
-    tempTimer(3.5, function() scripts.ui:setup_talk_window() end)
-end
+
+ateam.loginHandler = scripts.event_register:register_singleton_event_handler(ateam.loginHandler, "loginSuccessful", function()
+    ateam:restart_ateam();
+    scripts.ui:setup_talk_window()
+end)
 
 function trigger_func_skrypty_team_left_team()
     tempTimer(0.4, function() ateam:restart_ateam(true) end)

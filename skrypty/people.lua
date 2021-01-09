@@ -8,20 +8,23 @@ scripts["people"] = scripts["people"] or {
     bind_enemies = {}
 }
 
-scripts.people.db = db:create("people", {
-    people = {
-        name = "",
-        short = "",
-        title = "",
-        updated = "",
-        note = "",
-        enemy = 0,
-        guild = 0,
-        room_id = -1,
-        changed = db:Timestamp("CURRENT_TIMESTAMP"),
-        _index = { "name", "short" }
-    }
-})
+function scripts.people:load_db()
+    scripts.people.db = db:create("people", {
+        people = {
+            name = "",
+            short = "",
+            title = "",
+            updated = "",
+            note = "",
+            enemy = 0,
+            guild = 0,
+            room_id = -1,
+            changed = db:Timestamp("CURRENT_TIMESTAMP"),
+            _index = { "name", "short" }
+        }
+    }) 
+end
+scripts.people:load_db()
 
 scripts.people["showing_names"] = true
 scripts.people["updating_names"] = false

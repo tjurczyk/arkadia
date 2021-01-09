@@ -1,6 +1,6 @@
 PageWindow = PageWindow or {}
 
-function PageWindow:new(name, title, restoreLayout, autoDock, dockingArea)
+function PageWindow:new(name, title, restoreLayout, autoDock, dockingArea, properties)
     local o = {}
     setmetatable(o, self)
     self.__index = self
@@ -11,18 +11,26 @@ function PageWindow:new(name, title, restoreLayout, autoDock, dockingArea)
     o.autoDock = autoDock
     o.dockingArea = dockingArea
     o.pagesConntentGenerators = {}
+    o.properties = properties or {
+        ["width"] = 900,
+        ["height"] = 530,
+        ["padding"] = 15,
+        ["x"] = 30,
+        ["y"] = 30
+    }
     return o
 end
 
 function PageWindow:open()
-    local width, height, padding = 900, 530, 30
+    local width, height, padding = self.properties.width, self.properties.height, self.properties.padding
     openUserWindow(self.windowName, self.restoreLayout, self.autoDock, self.dockingArea)
     setUserWindowTitle(self.windowName, self.title)
-    moveWindow(self.windowName, 30, 30)
+    moveWindow(self.windowName, self.properties.x, self.properties.y)
     resizeWindow(self.windowName, width, height)
     createMiniConsole(self.windowName, self.name, padding, padding, width - padding * 2, height - padding * 2)
-    setWindowWrap(self.name, getColumnCount(self.name))
     setFont(self.name, getFont())
+    setWindowWrap(self.name, getColumnCount(self.name))
+    showWindow(self.windowName)
     self:displayPage(1)
 end
 
@@ -31,6 +39,7 @@ function PageWindow:addPage(contentGeneratorFunction)
 end
 
 function PageWindow:displayPage(index)
+    self.currentPage = index
     clearUserWindow(self.name)
     self:displayHeader(index)
     if self.pagesConntentGenerators[index] then
@@ -62,4 +71,8 @@ function PageWindow:displayHeader(index)
         cecho(self.name, scripts.utils.str_pad(" ", columnWidth, "left"))
     end
     echo(self.name, "\n\n")
+end
+
+function PageWindow:reloadPage()
+    self:displayPage(self.currentPage)
 end

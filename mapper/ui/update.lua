@@ -4,8 +4,10 @@ function amap.ui:reset_dirs()
     amap.ui.compass.special_exit2 = nil
     amap.ui.compass.special_exit3 = nil
     for k, v in pairs(amap.ui.compass.dirs) do
-        amap.ui.compass["button_" .. v]:echo("")
-        amap.ui.compass["button_" .. v]:setStyleSheet(amap.ui["normal_button"])
+        if  amap.ui.compass["button_" .. v] then
+            amap.ui.compass["button_" .. v]:echo("")
+            amap.ui.compass["button_" .. v]:setStyleSheet(amap.ui["normal_button"])
+        end
     end
 end
 

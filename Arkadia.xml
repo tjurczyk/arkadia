@@ -24087,6 +24087,13 @@
 						<regex>^/postepy2$</regex>
 					</Alias>
 					<Alias isActive="yes" isFolder="no">
+						<name>postepy3</name>
+						<script>alias_func_skrypty_misc_postepy_postepy3()</script>
+						<command></command>
+						<packageName></packageName>
+						<regex>^/postepy3$</regex>
+					</Alias>
+ 					<Alias isActive="yes" isFolder="no">
 						<name>postepy_reset</name>
 						<script>alias_func_skrypty_misc_postepy_postepy_reset()</script>
 						<command></command>

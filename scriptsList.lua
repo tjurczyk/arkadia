@@ -122,7 +122,7 @@ return {
     "skrypty/misc/wear_collective",
     "skrypty/misc/weapon_item_collective",
     "skrypty/misc/skill",
-    "skrypty/misc/knowledge",
+    "skrypty/misc/knowledge/knowledge",
     "skrypty/misc/progress",
     "skrypty/misc/cutting",
     "skrypty/misc/kowal",
@@ -269,6 +269,7 @@ return {
     "skrypty/ui/misc/gryf",
     "skrypty/ui/misc/lilith",
     "skrypty/ui/misc/tilea-nekromanta",
+    
     "skrypty/ui/footer_elements/mail",
     "mapper/localizers/ships_buses/urbimo-novigrad",
     "mapper/localizers/ships_buses/piana-temeria",

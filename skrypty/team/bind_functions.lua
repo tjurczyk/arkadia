@@ -68,7 +68,7 @@ end
 function ateam:zab_func(id)
     local id_retrieved = nil
 
-    if not id == nil and tonumber(id) > 100 then
+    if id ~= nil and tonumber(id) > 100 then
         -- TODO: Maybe find a better way to check whether the number is raw?
         id_retrieved = "ob_" .. id
     elseif ateam.enemy_op_ids[tonumber(id)] then

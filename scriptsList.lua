@@ -123,6 +123,7 @@ return {
     "skrypty/misc/weapon_item_collective",
     "skrypty/misc/skill",
     "skrypty/misc/knowledge/knowledge",
+    "skrypty/misc/knowledge/books",
     "skrypty/misc/progress",
     "skrypty/misc/cutting",
     "skrypty/misc/kowal",

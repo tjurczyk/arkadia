@@ -6,6 +6,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - name: Discord Message Notify Arkadia
         uses: appleboy/discord-action@0.0.3
@@ -37,3 +39,11 @@ jobs:
           body: 'version bump'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Upload Arkadia installer xml to release
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: ArkadiaScriptsInstaller.xml
+          asset_name: ArkadiaScriptsInstaller.xml
+          tag: ${{ github.ref }}
+          overwrite: true

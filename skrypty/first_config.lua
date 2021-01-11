@@ -2,6 +2,22 @@ scripts.first_time_config = scripts.first_time_config or {
     package_installed = {}
 }
 
+function scripts.first_time_config:show_hint()
+    if scripts.first_time_config:is_first_run() then
+        cecho("\n<yellow>==============================================================================================")
+        echo("\n\n")
+        cecho("<yellow>    Wyglada na to, ze to twoje pierwsze uruchomienie skryptow.\n")
+        cecho("<yellow>    Jezeli tak nie jest, zignoruj ta wiadomosc, nie pojawi sie ona wiecej.\n")
+        local init_code = [[alias_func_first_time_config()]]
+        cechoLink("<yellow>    Kliknij <light_slate_blue>tutaj<yellow> aby uruchomic konfigurator.", init_code, "Uruchom konfigurator", true)
+        cecho("\n\n<yellow>==============================================================================================\n\n")
+    end
+end
+
+function scripts.first_time_config:is_first_run()
+    return not (io.exists(getMudletHomeDir() .. "/map_master3.dat") or #db:fetch(scripts.people.db.people) == 0)
+end
+
 function scripts.first_time_config:init()
     if not self.window then
         uninstallPackage("generic_mapper")
@@ -109,8 +125,6 @@ function scripts.first_time_config.plugins(window_page, index)
     cechoLink(window_page.name, "Zainstaluj: <light_slate_blue>kliknj<reset>", [[scripts.plugins_installer.install_from_url(scripts.plugins_installer, "https://codeload.github.com/Delwing/arkadia-cfg-editor/zip/master")]], "", true)
 end
 
-scripts.first_time_config:init()
-
-function alias_func_first_config_reopen()
+function alias_func_first_time_config()
     scripts.first_time_config:init()
 end

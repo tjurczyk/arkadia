@@ -134,22 +134,6 @@ scripts.character.state_reporting = scripts.character.state_reporting or {
     },
 }
 
-function scripts.character.state_reporting:init()
-    -- self.cfg_handler = scripts.event_register:force_register_event_handler(self.cfg_handler, "setVar", function (_, var, val)
-    --     if var == "scripts.character.state_reporting" then
-    --         if val then
-    --             self.handler = scripts.event_register:register_event_handler("gmcp.gmcp_msgs", function()
-    --                 if gmcp.gmcp_msgs.type == "room.exits" then
-    --                     self:show_compass_rose()
-    --                 end
-    --             end)
-    --         else
-    --             scripts.event_register:kill_event_handler(self.handler)
-    --         end
-    --     end
-    -- end)
-end
-
 function scripts.character.state_reporting.say_state(property)
 
     local config = scripts.character.state_reporting[property];

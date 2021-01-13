@@ -462,7 +462,9 @@ function ScriptsConfig:_set_mudlet_var(options)
         return
     end
 
-    parent[var_partials[#var_partials]] = value
+    if var_partials[#var_partials] then
+        parent[var_partials[#var_partials]] = value
+    end
 
     if not options.run_macros then
         return

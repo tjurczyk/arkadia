@@ -1476,3 +1476,15 @@ Ustawienie nie działa na linie już wcześniej wyświetlone.
 Dostępne wartości:
 * `true` - włączone
 * `false` - wyłączone
+
+---
+
+## `amap.legacy_locate`
+
+Włączony sprawia, że `/zlok` działa na mapach sprzed aktualizacji systemu koordynatów.
+Jeżeli `/zlok` nie działa to albo wystarczy włączyć tą opcję albo zaktualizować mapę komendą: 
+```/lua amap.area_verifier:convert_map()```
+
+Dostępne wartości:
+* `true` - włączone
+* `false` - wyłączone

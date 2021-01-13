@@ -1,6 +1,8 @@
 
 scripts.misc = scripts.misc or {}
-scripts.misc.books = {
+scripts.misc.knowdlege = scripts.misc.knowdlege or {} 
+scripts.misc.knowdlege.books = scripts.misc.knowdlege.books or {}
+scripts.misc.knowdlege.books.patterns = {
     ["ciezka czerwona ksiege"] = "zglebiaj wiedze o wampirach z ciezkiej czerwonej ksiegi",
     ["ciezka solidna ksiege"] = "zglebiaj wiedze o stworach pokoniunkcyjnych z ciezkiej solidnej ksiegi",
     ["czarna gruba ksiege"] = "zglebiaj wiedze o chaosie i jego tworach z czarnej grubej ksiegi",
@@ -37,9 +39,10 @@ scripts.misc.books = {
     ["niewielka pachnaca ksiege"] = "zglebiaj wiedze o chaosie i jego tworach z niewielkiej pachnacej ksiegi",
     ["pek koralowych tabliczek"] = "zglebiaj wiedze o ryboludziach z peku koralowych tabliczek",
     ["skorzana makabryczna ksiege"] = "zglebiaj wiedze o nieumarlych z skorzanej makabrycznej ksiegi",
+    ["pogryziona brazowa ksiege"] = "zglebiaj wiedze o goblinoidach z pogryzionej brazowej ksiegi",
 }
 
-scripts.misc.books_alt = {
+scripts.misc.knowdlege.books.patterns_alt = {
     ["wielkiej opaslej ksiegi"] = {
        ["smokach i smokowatych"] = "zglebiaj wiedze o stworach pokoniunkcyjnych z wielkiej opaslej ksiega",
        ["stworach pokoniunkcyjnych"] = "zglebiaj wiedze o wampirach z wielkiej opaslej ksiega"
@@ -49,23 +52,46 @@ scripts.misc.books_alt = {
     },
     ["czarnej grubej ksiegi"] = {
         ["chaosie i jego tworach"] = "zglebiaj wiedze o istotach demonicznych z czarnej grubej ksiegi",
-    }
+    },
 }
 
-function trigger_func_skrypty_misc_book_open(book_name)
+function scripts.misc.knowdlege.books:open_book(command)
+    if self.trigger1 then disableTrigger(self.trigger1) end
+    if self.trigger2 then disableTrigger(self.trigger2) end
+
+    self.trigger1 = tempRegexTrigger("^Otwierasz (.*?) na stronie pierwszej\\.$", function() 
+        trigger_func_scripts_misc_book_open(matches[2]) 
+    end, 1)
+    self.trigger2 = tempRegexTrigger("^Masz wrazenie, ze z (.*?) nie dowiesz sie juz niczego wiecej o (.*?)\\.$", function()
+        trigger_func_scripts_misc_book_continue(matches[2], matches[3])
+    end, 1)
+    send(command, false)
+    tempTimer(10, function() disableTrigger(self.trigger1) end)
+    tempTimer(20, function() disableTrigger(self.trigger2) end)
+end
+
+function alias_func_scripts_misc_book_open(command)
+    scripts.misc.knowdlege.books:open_book(command)
+end
+
+
+function trigger_func_scripts_misc_book_open(book_name)
     book_name = string.lower(book_name)
-    if scripts.misc.books[book_name] then
-        scripts.utils.bind_functional(scripts.misc.books[book_name])
+    local patterns = scripts.misc.knowdlege.books.patterns
+    if patterns[book_name] then
+        scripts.utils.bind_functional(patterns[book_name])
     else
         debugc("Ksiega nie odnaleziona " .. book_name)
     end
 end
 
-function trigger_func_skrypty_misc_book_continue(book_name, knowledge)
+function trigger_func_scripts_misc_book_continue(book_name, knowledge)
     book_name = string.lower(book_name)
     knowledge = string.lower(knowledge)
-    if scripts.misc.books_alt[book_name] and scripts.misc.books_alt[book_name][knowledge] then
-        scripts.utils.bind_functional(scripts.misc.books_alt[book_name][knowledge])
+
+    local patterns_alt = scripts.misc.knowdlege.books.patterns_alt;
+    if patterns_alt[book_name] and patterns_alt[book_name][knowledge] then
+        scripts.utils.bind_functional(patterns_alt[book_name][knowledge])
     end
 end
 

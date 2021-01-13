@@ -24266,7 +24266,14 @@
 						<script>alias_func_skrypty_misc_zglebiaj_wiedze()</script>
 						<command></command>
 						<packageName></packageName>
-						<regex>^zglebiaj(?:\s+wiedze\s+)?\s*(\d*)$</regex>
+						<regex>^(?:zglebiaj$)|(?:zglebiaj wiedze$)|(:?zglebiaj wiedze (\d+)$)</regex>
+					</Alias>
+					<Alias isActive="yes" isFolder="no">
+						<name>otworz ksiazke</name>
+						<script>alias_func_scripts_misc_book_open(matches[2])</script>
+						<command></command>
+						<packageName></packageName>
+						<regex>^(otworz.*?(ksiege|ksiazke|ksiazeczke|tomiszcze|notatnik|dziennik|teke|tabliczek))</regex>
 					</Alias>
 				</AliasGroup>
 				<Alias isActive="yes" isFolder="no">

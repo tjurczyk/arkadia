@@ -22,9 +22,11 @@ function misc.knowledge:knowledge_replace(text)
 end
 
 function misc.knowledge:initial_zglebiaj()
+    if self.trigger then killTrigger(self.trigger) end;
+
     self.trigger = tempRegexTrigger("Wiedze o czym chcesz zglebiac\\? (.*)", function() self:zglebiaj_replace(matches[2]) end, 1)
     send("zglebiaj")
-    tempTimer(5, function() disableTrigger(self.trigger) end)
+    tempTimer(5, function() killTrigger(self.trigger) end)
 end
 
 -- rozbija output dostepnych do zglebiania wiedzy na linie
@@ -59,7 +61,7 @@ function misc.knowledge:zglebiaj_wiedze(index)
 end
 
 function alias_func_skrypty_misc_zglebiaj_wiedze()
-    local number = string.trim(matches[2])
+    local number = string.trim(matches[3])
     if (number == nil or number == '') then
         misc.knowledge:initial_zglebiaj()
     else

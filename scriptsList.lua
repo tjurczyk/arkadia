@@ -364,4 +364,5 @@ return {
     "skrypty/ui/gags/color/color_innych_spece/par/ktos_spec_g1",
     "skrypty/ui/gags/color/color_innych_spece/par/scatak",
     "skrypty/ui/gags/color/color_innych_spece/gp/ktos_spec",
+    "skrypty/places/ptakopodobny"
 }

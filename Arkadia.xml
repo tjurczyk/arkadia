@@ -17788,7 +17788,7 @@
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^(|&gt; )(.*) przedstawia sie jako:$</string>
+						<string>^(|&gt; )(.*) przedstawia(?: ci)? sie jako:$</string>
 						<string>^(.*)\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
@@ -24543,6 +24543,13 @@
 					<regex>^/list$</regex>
 				</Alias>
 			</AliasGroup>
+			<Alias isActive="yes" isFolder="no">
+				<name>^/konfiguracja$</name>
+				<script>alias_func_first_time_config()</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^/konfiguracja$</regex>
+			</Alias>
 		</AliasGroup>
 		<AliasGroup isActive="yes" isFolder="yes">
 			<name>mapper</name>

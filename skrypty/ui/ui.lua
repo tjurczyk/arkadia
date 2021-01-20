@@ -9,8 +9,6 @@ function scripts.ui:get_bind_color_backward_compatible()
 end
 
 function scripts.ui:setup()
-    setBorderBottom(scripts.ui.footer_height)
-
     if not scripts.ui.map_loaded then
         if amap and amap.curr and amap.curr.id then
             centerview(amap.curr.id)
@@ -25,6 +23,7 @@ function scripts.ui:setup()
     scripts.ui:setup_footer_closed()
 
     scripts.ui:init_states_window_navbar()
+    setBorderBottom(scripts.ui.footer_height)
 
     raiseEvent("uiReady")
 end

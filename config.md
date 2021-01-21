@@ -1410,7 +1410,6 @@ Kolory do oznaczania lokacji w `/zaznaczaj`
 
 Dostepne kolory mozna zobaczyc w `/kolory` lub [tutaj](https://forums.mudlet.org/download/file.php?id=129&sid=be964a7a97580514727bfcb7cfcb5aec&mode=view)
 
-
 ---
 
 ## `amap.shorten_exits`
@@ -1479,6 +1478,18 @@ Dostępne wartości:
 
 ---
 
+## `amap.legacy_locate`
+
+Włączony sprawia, że `/zlok` działa na mapach sprzed aktualizacji systemu koordynatów.
+Jeżeli `/zlok` nie działa to albo wystarczy włączyć tą opcję albo zaktualizować mapę komendą: 
+```/lua amap.area_verifier:convert_map()```
+
+Dostępne wartości:
+* `true` - włączone
+* `false` - wyłączone
+
+--
+
 ## `ateam.next_attack_objs.mark_in_state`
 
 Oznaczanie na pomarańczowo cyferki celu oznaczonego jako następny cel ataku (przy użyciu aliasów `/q [id]`).
@@ -1502,6 +1513,8 @@ Dostępne wartości:
 ## `ateam.next_attack_objs.window.font_size`
 
 Ustawia wielkość czcionka dla okna kolejki mobów (jeśli używane).
+
+--
 
 ## `scripts.ui.inline_compass_rose.enabled`
 

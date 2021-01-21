@@ -19,6 +19,7 @@ return {
     "skrypty/logger",
     "skrypty/base64-helper",
     "skrypty/help",
+    "mapper/area_verifier",
     "mapper/areas",
     "mapper/core",
     "mapper/room",

@@ -33,7 +33,8 @@ if not amap then
         walk_mode = 1,
         using_room_gps = true,
         can_bind_enemies = true,
-        next_dir_bind = nil
+        next_dir_bind = nil,
+        legacy_locate = false,
     }
 end
 

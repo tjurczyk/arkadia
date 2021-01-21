@@ -56,7 +56,7 @@ function amap:locate(noprint)
     amap.next_dir_bind = nil
 
     if tmp_loc.x then
-        local curr_id = amap:room_exist(tmp_loc.x, tmp_loc.y, tmp_loc.z, tmp_loc.area)
+        local curr_id = not amap.legacy_locate and amap:get_room_by_hash(tmp_loc.x, tmp_loc.y, tmp_loc.z, tmp_loc.area) or amap:room_exist(tmp_loc.x, tmp_loc.y, tmp_loc.z, tmp_loc.area)
         if curr_id and curr_id > 0 then
             amap.curr.id = curr_id
             amap.curr.x = tmp_loc.x
@@ -117,6 +117,10 @@ function amap:set_position(room_id, silent)
             amap:print_log("Lokacja z tym ID nie istnieje")
         end
     end
+end
+
+function amap:generate_hash(x, y, z, area_name)
+    return string.format("%s:%s:%s:%s", x, y, z, area_name)
 end
 
 function get_next_room_from_dirs(room_id, dir, spe, is_team_follow)

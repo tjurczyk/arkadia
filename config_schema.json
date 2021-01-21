@@ -2557,6 +2557,12 @@
       "default_value": false,
       "field_type": "boolean",
       "macros_on_modify": []
+    },
+    {
+      "name": "amap.legacy_locate",
+      "default_value": false,
+      "field_type": "boolean",
+      "macros_on_modify": []
     }
   ]
 }

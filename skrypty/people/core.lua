@@ -15,14 +15,19 @@ function scripts.people:process_someone(short, name)
         tempTimer(math.random() * 0.4, function() scripts.people:process_someone_delay(short, name) end)
     end
 
-    local name_short = short
-    name_short = name_short:gsub(" ", "_")
 
     local title = name
     title = title:gsub(" ", "_")
+    
+    name = scripts.people:strip_ranks(name)
+
+    local name_short = short
+    name_short = name_short:gsub(" ", "_")
+
 
     downloadFile(getMudletHomeDir() .. "/empty", "http://158.69.205.60/cgi-bin/people_listener.py?people_string=" .. name_short .. "!" .. title)
 end
+
 
 function scripts.people:process_someone_delay(short, title)
     local name = nil

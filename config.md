@@ -958,6 +958,7 @@ Mozliwe opcje to:
 * `weapon`         - stan dobycia broni
 * `order`          - stan rozkazu
 * `cover`          - stan zaslony
+* `guard_release`  - czy zasłony są puszczane
 * `killed`         - licznik zabitych
 * `sneaky`         - tryb przemykania
 * `hidden`         - stan ukrycia

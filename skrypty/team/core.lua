@@ -592,6 +592,7 @@ function ateam:switch_releasing_guards()
         ateam.release_guards = true
         scripts:print_log("Ok, bede puszczal zaslony")
     end
+    raiseEvent("switchReleasigGuards", ateam.release_guards)
 end
 
 function ateam:build_alphabetical_list()

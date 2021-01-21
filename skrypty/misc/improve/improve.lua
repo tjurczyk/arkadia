@@ -43,19 +43,25 @@ function misc.improve:print_improve()
         cecho("| " .. scripts.utils.str_pad(tostring(k), 2, "right") .. ". " .. name .. sep .. when_got .. sep .. details_time .. sep .. details_killed .. "   |\n")
     end
 
-    local seconds_since_last = getEpoch() - last_time_stamp
-    local since_last_str = string.format("Od ostatniego postepu: %s : zabici: %s/%s",
-            misc.improve:seconds_to_formatted_string(seconds_since_last),
-            tostring(misc.counter.killed_amount["JA"] - sum_me_killed),
-            tostring(misc.counter.all_kills - sum_all_killed))
+    local since_last_str = nil;
+    if last_time_stamp then
+        local seconds_since_last = getEpoch() - last_time_stamp
+        since_last_str = string.format("Od ostatniego postepu: %s : zabici: %s/%s",
+                misc.improve:seconds_to_formatted_string(seconds_since_last),
+                tostring(misc.counter.killed_amount["JA"] - sum_me_killed),
+                tostring(misc.counter.all_kills - sum_all_killed))
+    end
 
     cecho("|                                                                            |\n")
     cecho("| <orange>ZABITYCH<grey>                                                                   |\n")
     cecho("| <LawnGreen>JA<grey> ... : <orange>" .. string.sub(tostring(sum_me_killed) .. "      ", 1, 6) .. "<grey>                                                            |\n")
     cecho("| <LawnGreen>WSZYSCY<grey>: <orange>" .. string.sub(tostring(sum_all_killed) .. "      ", 1, 6) .. "<grey>                                                            |\n")
     cecho("|                                                                            |\n")
-    cecho("| <SlateBlue>".. string.sub(since_last_str .."                                ", 1, 74) .. " <reset>|\n")
-    cecho("|                                                                            |\n")
+
+    if since_last_str then
+        cecho("| <SlateBlue>".. string.sub(since_last_str .."                                ", 1, 74) .. " <reset>|\n")
+        cecho("|                                                                            |\n")
+    end
     cecho("+----------------------------------------------------------------------------+\n")
 
 end

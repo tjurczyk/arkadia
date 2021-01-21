@@ -99,10 +99,12 @@ function amap.ui:add_special_dir_if_possible(dir)
 end
 
 function amap.ui:mapper_mode(enabled)
-    if not enabled then
-        amap.ui.compass.button_dummy:setStyleSheet(amap.ui.inactive_mapper)
-    else
-        amap.ui.compass.button_dummy:setStyleSheet(amap.ui.normal_button)
+    if amap.ui.compass and amap.ui.compass.button_dummy then
+        if not enabled then
+            amap.ui.compass.button_dummy:setStyleSheet(amap.ui.inactive_mapper)
+        else
+            amap.ui.compass.button_dummy:setStyleSheet(amap.ui.normal_button)
+        end
     end
 end
 

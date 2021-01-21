@@ -39,7 +39,7 @@ function scripts.people:color_person_build(item, color, suffix_only)
     
     local norm_short = string.lower(item["short"])
 
-    regex = "(^|\\W)((" .. string.sub(item["short"], 0, 1) .. "|" .. first_capitalized .. ")" .. rest_string .. ")(?! chaosu)(\\W|$)"
+    regex = "(^|\\W)((" .. string.sub(item["short"], 0, 1) .. "|" .. first_capitalized .. ")" .. rest_string .. ")(?! chaosu| \\(to chyba)(\\W|$)"
 
     if norm_short ~= "" then
         if item["name"] ~= "" then
@@ -55,12 +55,12 @@ function scripts.people:color_person_build(item, color, suffix_only)
 
     if item["name"] ~= "" then
         if suffix ~= string.lower(item["name"]) then
-            regex = "(^|\\W)((" .. string.sub(item["short"], 0, 1) .. "|" .. first_capitalized .. ")" .. rest_string .. "|" .. item["name"] .. ")(?! chaosu)(\\W|$)"
+            regex = "(^|\\W)((" .. string.sub(item["short"], 0, 1) .. "|" .. first_capitalized .. ")" .. rest_string .. "|" .. item["name"] .. ")(?! chaosu| \\(to chyba)(\\W|$)"
         else
-            regex = "(^|\\W)((" .. string.sub(item["short"], 0, 1) .. "|" .. first_capitalized .. ")" .. rest_string .. ")(?! chaosu)(\\W|$)"
+            regex = "(^|\\W)((" .. string.sub(item["short"], 0, 1) .. "|" .. first_capitalized .. ")" .. rest_string .. ")(?! chaosu| \\(to chyba)(\\W|$)"
         end
     else
-        regex = "(^|\\W)((" .. string.sub(item["short"], 0, 1) .. "|" .. first_capitalized .. ")" .. rest_string .. ")(?! chaosu)(\\W|$)"
+        regex = "(^|\\W)((" .. string.sub(item["short"], 0, 1) .. "|" .. first_capitalized .. ")" .. rest_string .. ")(?! chaosu| \\(to chyba)(\\W|$)"
     end
 
     local triggerId = tempRegexTrigger(regex, function() scripts.people:process_person_color(item, matches[3], suffix, color, suffix_only) end)

@@ -274,3 +274,11 @@ function scripts.ui:info_combat_state_update(is_combat, cool_off, command)
     end
     scripts.ui.footer_info_combat_state:echo("<font color='" .. scripts.ui["footer_info_normal"] .. "'>Walka:</font> <font color='" .. color .. "'>" .. text .. "</font>")
 end
+
+function scripts.ui:info_release_guards_update(status)
+    self.footer_info_guard_release:echo("<font color='" .. self["footer_info_normal"] .. "'>Zas. pusc:</font> <font color='" .. self["footer_info_yellow"] .. "'>" .. (status and "on" or "off") .. "</font>")
+end
+
+function scripts_ui_info_release_guards_click()
+    ateam:switch_releasing_guards()
+end

@@ -424,7 +424,7 @@ function ateam:print_obj_enemy(id, obj)
 
         -- id section
         if ateam.broken_defense_names[obj["desc"]] then
-            cecho(scripts.ui.states_window_name, "<" .. ateam.options.broken_defense_fg_color .. ":" .. ateam.options.broken_defense_bg_color .. ">[" .. str_id .. "]")
+            cecho(scripts.ui.enemy_states_window_name, "<" .. ateam.options.broken_defense_fg_color .. ":" .. ateam.options.broken_defense_bg_color .. ">[" .. str_id .. "]")
         else
             cecho(scripts.ui.enemy_states_window_name, "<white:team_console_bg>[" .. str_id .. "]")
         end

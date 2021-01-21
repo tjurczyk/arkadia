@@ -406,7 +406,7 @@
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
 							<string>^W skrzyniach zauwazasz miedzy innymi (.*)\.$</string>
-							<string>^W .* (skrzyni|kufrze) zauwazasz miedzy innymi (.*)\.$</string>
+							<string>^W .* (skrzyni|kufrze|skrzynce) zauwazasz miedzy innymi (.*)\.$</string>
 							<string>^Otwarty.* kosz zawiera (.*)\.$</string>
 							<string>^Na stojakach zauwazasz miedzy innymi (.*)\.$</string>
 							<string>Debowy wysoki sekretarzyk zawiera (.*)\.$</string>
@@ -433,7 +433,7 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>.* (skrzynia|kufer|komoda|stojak|biblioteczka|kuferek)( | z okuciami )zawiera (.*)\.$</string>
+							<string>.* (skrzynia|kufer|komoda|stojak|biblioteczka|kuferek|skrzynka)( | z okuciami )zawiera (.*)\.$</string>
 							<string>(Wsrod) (pedantycznego) porzadku w szafie zauwazasz miedzy innymi (.*)\.$</string>
 							<string>Otwart(a|y) [a-z ]+ (koszyk|szafa|sejf) zawiera (.*)\.$</string>
 						</regexCodeList>

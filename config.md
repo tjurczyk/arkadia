@@ -1502,6 +1502,7 @@ Dostępne wartości:
 ## `ateam.next_attack_objs.window.font_size`
 
 Ustawia wielkość czcionka dla okna kolejki mobów (jeśli używane).
+
 ## `scripts.ui.inline_compass_rose.enabled`
 
 Włącza lub wyłącza róże wiatrów pokazywaną pod wyjściami z lokacji.

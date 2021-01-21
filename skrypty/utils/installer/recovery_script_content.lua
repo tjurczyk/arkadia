@@ -1,5 +1,3 @@
-recovery_check_run_once = recovery_check_run_once or false
-
 function lfs.isdir(dir)
     local current = lfs.currentdir()
     local exists = lfs.chdir(dir)
@@ -23,10 +21,4 @@ function check_scripts()
     end
 end
 
-if not recovery_check_run_once then
-    recovery_check_run_once = true
-    tempTimer(3, function()
-        check_scripts()
-        recovery_check_run_once = false
-    end)
-end
+registerAnonymousEventHandler("sysLoadEvent", function() tempTimer(1, function() check_scripts() end) end, true)

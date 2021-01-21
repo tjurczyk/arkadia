@@ -424,7 +424,7 @@ function ateam:print_obj_enemy(id, obj)
 
         -- id section
         if ateam.broken_defense_names[obj["desc"]] then
-            cecho(scripts.ui.states_window_name, "<" .. ateam.options.broken_defense_fg_color .. ":" .. ateam.options.broken_defense_bg_color .. ">[" .. str_id .. "]")
+            cecho(scripts.ui.enemy_states_window_name, "<" .. ateam.options.broken_defense_fg_color .. ":" .. ateam.options.broken_defense_bg_color .. ">[" .. str_id .. "]")
         else
             local color = "white"
             if id == ateam.next_attack_objs.next_attak_obj and ateam.next_attack_objs.mark_in_state then
@@ -600,6 +600,7 @@ function ateam:switch_releasing_guards()
         ateam.release_guards = true
         scripts:print_log("Ok, bede puszczal zaslony")
     end
+    raiseEvent("switchReleasigGuards", ateam.release_guards)
 end
 
 function ateam:build_alphabetical_list()

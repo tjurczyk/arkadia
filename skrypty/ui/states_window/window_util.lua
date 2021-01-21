@@ -1,4 +1,3 @@
-
 function scripts.ui.window_modify(windowName, text, ...)
     for i = 1, getLineNumber(windowName), 1 do
         moveCursor(windowName, 1, i)

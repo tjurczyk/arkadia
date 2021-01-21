@@ -958,6 +958,7 @@ Mozliwe opcje to:
 * `weapon`         - stan dobycia broni
 * `order`          - stan rozkazu
 * `cover`          - stan zaslony
+* `guard_release`  - czy zasłony są puszczane
 * `killed`         - licznik zabitych
 * `sneaky`         - tryb przemykania
 * `hidden`         - stan ukrycia
@@ -1501,3 +1502,11 @@ Dostępne wartości:
 ## `ateam.next_attack_objs.window.font_size`
 
 Ustawia wielkość czcionka dla okna kolejki mobów (jeśli używane).
+## `scripts.ui.inline_compass_rose.enabled`
+
+Włącza lub wyłącza róże wiatrów pokazywaną pod wyjściami z lokacji.
+Wyjścia brane są z GMCP (z komunikatu z Arkadii), a nie z mappera.
+
+Dostępne wartości:
+* `true` - włączone
+* `false` - wyłączone

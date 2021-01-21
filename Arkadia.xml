@@ -33,52 +33,6 @@
 				<regexCodeList />
 				<regexCodePropertyList />
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-					<name>start_ateam</name>
-					<script>trigger_func_skrypty_team_start_ateam()</script>
-					<triggerType>0</triggerType>
-					<conditonLineDelta>0</conditonLineDelta>
-					<mStayOpen>0</mStayOpen>
-					<mCommand></mCommand>
-					<packageName></packageName>
-					<mFgColor>#ff0000</mFgColor>
-					<mBgColor>#ffff00</mBgColor>
-					<mSoundFile></mSoundFile>
-					<colorTriggerFgColor>#000000</colorTriggerFgColor>
-					<colorTriggerBgColor>#000000</colorTriggerBgColor>
-					<regexCodeList>
-						<string>^.*Ostatnie logowanie:.*$</string>
-					</regexCodeList>
-					<regexCodePropertyList>
-						<integer>1</integer>
-					</regexCodePropertyList>
-				</Trigger>
-				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-					<name>restart_ateam</name>
-					<script>trigger_func_skrypty_team_restart_ateam()</script>
-					<triggerType>0</triggerType>
-					<conditonLineDelta>0</conditonLineDelta>
-					<mStayOpen>0</mStayOpen>
-					<mCommand></mCommand>
-					<packageName></packageName>
-					<mFgColor>#ff0000</mFgColor>
-					<mBgColor>#ffff00</mBgColor>
-					<mSoundFile></mSoundFile>
-					<colorTriggerFgColor>#000000</colorTriggerFgColor>
-					<colorTriggerBgColor>#000000</colorTriggerBgColor>
-					<regexCodeList>
-						<string>^.*Stracil(es|as) kontakt z Arkadia na mniej niz dziesiec minut ...$</string>
-						<string>^.*Stracil(es|as) polaczenie na .*</string>
-						<string>^.*Byl(es|as) zaangazowan(a|y) w walke, gdy stracil(es|as) kontakt z Arkadia.$</string>
-						<string>Trwa ladowanie danych postaci.</string>
-					</regexCodeList>
-					<regexCodePropertyList>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>0</integer>
-					</regexCodePropertyList>
-				</Trigger>
-				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>left_team</name>
 					<script>trigger_func_skrypty_team_left_team()</script>
 					<triggerType>0</triggerType>
@@ -2353,28 +2307,6 @@
 						<string>Ostatnie logowanie:</string>
 					</regexCodeList>
 					<regexCodePropertyList>
-						<integer>0</integer>
-					</regexCodePropertyList>
-				</Trigger>
-				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-					<name>login success</name>
-					<script>trigger_func_skrypty_misc_login_done()</script>
-					<triggerType>0</triggerType>
-					<conditonLineDelta>0</conditonLineDelta>
-					<mStayOpen>0</mStayOpen>
-					<mCommand></mCommand>
-					<packageName></packageName>
-					<mFgColor>#ff0000</mFgColor>
-					<mBgColor>#ffff00</mBgColor>
-					<mSoundFile></mSoundFile>
-					<colorTriggerFgColor>#000000</colorTriggerFgColor>
-					<colorTriggerBgColor>#000000</colorTriggerBgColor>
-					<regexCodeList>
-						<string>Ostatnie logowanie:</string>
-						<string>przywracam polaczenie</string>
-					</regexCodeList>
-					<regexCodePropertyList>
-						<integer>0</integer>
 						<integer>0</integer>
 					</regexCodePropertyList>
 				</Trigger>
@@ -18239,8 +18171,8 @@
 					</regexCodePropertyList>
 				</Trigger>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-					<name>collect-name</name>
-					<script>trigger_func_mapper_starters_collect_name()</script>
+					<name>capture login</name>
+					<script>trigger_func_mapper_starters_capture_login()</script>
 					<triggerType>0</triggerType>
 					<conditonLineDelta>5</conditonLineDelta>
 					<mStayOpen>0</mStayOpen>

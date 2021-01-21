@@ -268,6 +268,7 @@ return {
     "skrypty/misc/ships/buses",
     "skrypty/ui/misc/gryf",
     "skrypty/ui/misc/lilith",
+    "skrypty/ui/misc/ptakopodobny",
     "skrypty/ui/misc/tilea-nekromanta",
     "skrypty/ui/footer_elements/mail",
     "mapper/localizers/ships_buses/urbimo-novigrad",
@@ -363,6 +364,5 @@ return {
     "skrypty/ui/gags/color/color_innych_spece/bar/ktos_spec",
     "skrypty/ui/gags/color/color_innych_spece/par/ktos_spec_g1",
     "skrypty/ui/gags/color/color_innych_spece/par/scatak",
-    "skrypty/ui/gags/color/color_innych_spece/gp/ktos_spec",
-    "skrypty/places/ptakopodobny"
+    "skrypty/ui/gags/color/color_innych_spece/gp/ktos_spec"
 }

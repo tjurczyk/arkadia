@@ -1465,7 +1465,6 @@ Dostępne wartości:
 * `true` - włączone
 * `false` - wyłączone
 
-
 ---
 
 ## `scripts.ui.auto_wrap_main_window.enabled`
@@ -1479,6 +1478,30 @@ Dostępne wartości:
 * `false` - wyłączone
 
 ---
+
+## `ateam.next_attack_objs.mark_in_state`
+
+Oznaczanie na pomarańczowo cyferki celu oznaczonego jako następny cel ataku (przy użyciu aliasów `/q [id]`).
+
+Dostępne wartości:
+* `true` - włączone
+* `false` - wyłączone
+
+---
+
+## `ateam.next_attack_objs.window.enabled`
+
+Pokazuje okno kolejki mobów do bicia (utworzonej za pomocą aliasów `/q [id]`)
+
+Dostępne wartości:
+* `true` - włączone
+* `false` - wyłączone
+
+---
+
+## `ateam.next_attack_objs.window.font_size`
+
+Ustawia wielkość czcionka dla okna kolejki mobów (jeśli używane).
 
 ## `scripts.ui.inline_compass_rose.enabled`
 

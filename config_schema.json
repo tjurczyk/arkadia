@@ -2535,6 +2535,24 @@
       "macros_on_modify": []
     },
     {
+      "name": "ateam.next_attack_objs.mark_in_state",
+      "default_value": false,
+      "field_type": "boolean",
+      "macros_on_modify": []
+    },
+    {
+      "name": "ateam.next_attack_objs.window.enabled",
+      "default_value": false,
+      "field_type": "boolean",
+      "macros_on_modify": []
+    },
+    {
+      "name": "ateam.next_attack_objs.window.font_size",
+      "default_value": 10,
+      "field_type": "number",
+      "macros_on_modify": []
+    },
+    {
       "name": "scripts.ui.inline_compass_rose.enabled",
       "default_value": false,
       "field_type": "boolean",

@@ -426,7 +426,11 @@ function ateam:print_obj_enemy(id, obj)
         if ateam.broken_defense_names[obj["desc"]] then
             cecho(scripts.ui.enemy_states_window_name, "<" .. ateam.options.broken_defense_fg_color .. ":" .. ateam.options.broken_defense_bg_color .. ">[" .. str_id .. "]")
         else
-            cecho(scripts.ui.enemy_states_window_name, "<white:team_console_bg>[" .. str_id .. "]")
+            local color = "white"
+            if id == ateam.next_attack_objs.next_attak_obj and ateam.next_attack_objs.mark_in_state then
+                color = "orange"
+            end
+            cecho(scripts.ui.enemy_states_window_name, string.format("<white:team_console_bg>[<%s>%s<white>]<reset>", color, str_id))
         end
 
         -- sneaky id section
@@ -524,7 +528,11 @@ function ateam:print_obj_normal(id, obj)
         deselect(scripts.ui.enemy_states_window_name)
 
         -- id section
-        cecho(scripts.ui.enemy_states_window_name, "<white:team_console_bg>[" .. str_id .. "<white:team_console_bg>]")
+        local color = "white"
+        if id == ateam.next_attack_objs.next_attak_obj and ateam.next_attack_objs.mark_in_state then
+            color = "orange"
+        end
+        cecho(scripts.ui.enemy_states_window_name, string.format("<white:team_console_bg>[<%s>%s<white>]<reset>", color, str_id))
 
         -- sneaky id section
         if ateam.sneaky_attack > 0 then

@@ -4,7 +4,7 @@ function scripts.ui.inline_compass_rose:init()
     self.cfg_handler = scripts.event_register:force_register_event_handler(self.cfg_handler, "setVar", function (_, var, val)
         if var == "scripts.ui.inline_compass_rose.enabled" then
             if val then
-                self.handler = scripts.event_register:register_event_handler("gmcp.gmcp_msgs", function()
+                self.handler = scripts.event_register:force_register_event_handler(self.handler, "gmcp.gmcp_msgs", function()
                     if gmcp.gmcp_msgs.type == "room.exits" then
                         self:show_compass_rose()
                     end

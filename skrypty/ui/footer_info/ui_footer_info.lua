@@ -39,7 +39,6 @@ function scripts.ui:setup_footer_info()
     self.info_placeholders = {}
 
     for _, info_creator in pairs(scripts.ui.cfg.info_items) do
-        display(info_creator)
         if self.footer_info_elements_creators[info_creator] then
             self.footer_info_elements_creators[info_creator](self)
         else

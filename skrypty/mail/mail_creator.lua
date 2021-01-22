@@ -40,6 +40,26 @@ local function wrap(str, limit)
     return t
 end
 
+local function justify(line, limit)
+    limit = limit or scripts.mail_creator.width
+    local words = string.split(line, " ")
+    local n_words = table.size(words) * 2 - 1
+    local space = limit - line:len()
+    local current_index = 2
+    for i = 2, n_words, 2 do
+      table.insert(words, i, " ")
+    end
+    while space > 0 do
+      space = space - 1
+      words[current_index] = words[current_index] .. " "
+      current_index = current_index + 2
+      if current_index > n_words then
+        current_index = 2
+      end
+    end
+    return table.concat(words)
+end
+
 function scripts.mail_creator:start()
     openUserWindow(self.window_name, false, false)
     setFont(self.window_name, getFont())
@@ -135,6 +155,9 @@ function mailCreatorAddLine(line)
     end
 
     local lines = wrap(line)
+    for k, line in pairs(lines) do
+        lines[k] = justify(line)
+    end
     for _, wrapped in pairs(lines) do
         scripts.mail_creator:append_input(wrapped)
     end

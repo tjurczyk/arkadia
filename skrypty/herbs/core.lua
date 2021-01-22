@@ -100,8 +100,8 @@ end
 
 function herbs:create_triggers()
     for herb_long, herb_name in pairs(herbs.herbs_long_to_short) do
-        local regex = "(^|\\W)(?i)".. herb_name .. ")(\\W|$)(?!\\()"
-        herbs.herb_trigg_ids[herb_long] = tempRegexTrigger(regex, [[herbs:process_trigger(matches[3], "]] .. herb_name .. [[")]])
+        local regex = "(?:^|\\W)(?i)(".. herb_long .. ")(?:\\W|$)(?!\\(" .. herb_name ..")"
+        herbs.herb_trigg_ids[herb_long] = tempRegexTrigger(regex, [[herbs:process_trigger(matches[2], "]] .. herb_name .. [[")]])
     end
 end
 

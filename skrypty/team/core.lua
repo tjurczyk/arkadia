@@ -1,12 +1,13 @@
+function ateam:init_gmcp()
+    sendGMCP('Core.Supports.Set ["Char", "Room", "Objects", "Gmcp_msgs"]')
+    ateam:set_base64()
+end
+
 function ateam:start_ateam()
     if not scripts:check_gmcp(false) then
         return
     end
-
-    --sendGMCP('Core.Supports.Set ["Char", "Room", "Objects"]')
-    send("gmcp wlacz modul objects", false)
-    ateam:set_base64()
-    send("gmcp wlacz modul gmcp_msgs", false)
+    self:init_gmcp()
     scripts:print_log("Skrypty druzynowe wystartowane")
 end
 
@@ -37,10 +38,9 @@ function ateam:restart_ateam(silent)
     end
     ateam.to_support = nil
 
-    tempTimer(0.2, function() send("gmcp wlacz modul objects", false) end)
-    tempTimer(0.3, function() ateam:set_base64() end)
-    tempTimer(0.4, function() send("gmcp wlacz modul gmcp_msgs", false) end)
-    tempTimer(0.5, function() sendGMCP("objects.data") end)
+    
+    self:init_gmcp()
+    sendGMCP("objects.data")
 
     if not silent then
         scripts:print_log("Skrypty druzynowe zrestartowane")

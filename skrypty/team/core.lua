@@ -1,5 +1,5 @@
 function ateam:init_gmcp()
-    sendGMCP('Core.Supports.Set ["Char", "Room", "Objects", "Gmcp_msgs"]')
+    sendGMCP('Core.Supports.Add ["Objects", "Gmcp_msgs"]')
     ateam:set_base64()
 end
 

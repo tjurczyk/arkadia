@@ -27,9 +27,6 @@ end
 
 function scripts.ui.window_modifiers.bg(r, g, b)
     return function(windowName, position, text)
-        if not windowName then
-            debugc("Nie mam nazwy okna?")
-        end
         setBgColor(windowName, r,g,b)
     end
 end

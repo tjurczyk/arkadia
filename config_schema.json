@@ -1204,6 +1204,14 @@
       ]
     },
     {
+      "name": "scripts.ui.states_fancy",
+      "default_value": false,
+      "field_type": "bool",
+      "macros_on_modify": [
+        "_ux"
+      ]
+    },
+    {
       "name": "scripts.ui.states_window_height",
       "default_value": 45,
       "field_type": "number",

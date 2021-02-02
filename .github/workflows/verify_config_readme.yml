@@ -1,6 +1,6 @@
 name: Verify config.md
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   build:

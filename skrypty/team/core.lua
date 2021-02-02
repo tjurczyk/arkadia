@@ -439,10 +439,10 @@ function ateam:print_obj_enemy(id, obj)
         end
 
         -- hp section
-        cecho(scripts.ui.enemy_states_window_name, "<white:team_console_bg>[" .. states[obj["hp"]] .. "<grey:team_console_bg>] ")
+        cecho(scripts.ui.enemy_states_window_name, "<white:team_console_bg>[" .. states_enemy[obj["hp"]] .. "<grey:team_console_bg>] ")
 
         if print_id then
-            selectString(scripts.ui.enemy_states_window_name, states_no_color[obj["hp"]], 1)
+            selectString(scripts.ui.enemy_states_window_name, states_enemy_no_color[obj["hp"]], 1)
             setLink(scripts.ui.enemy_states_window_name, [[ ateam:prze_func("]] .. ateam.enemy_op_ids[id] .. [[", true) ]], "przelam obrone " .. ateam.enemy_op_ids[id])
             deselect(scripts.ui.enemy_states_window_name)
         end
@@ -547,7 +547,7 @@ function ateam:print_obj_normal(id, obj)
         end
 
         -- hp section
-        cecho(scripts.ui.enemy_states_window_name, "<white:team_console_bg>[" .. states[obj["hp"]] .. "<white:team_console_bg>] ")
+        cecho(scripts.ui.enemy_states_window_name, "<white:team_console_bg>[" .. states_normal[obj["hp"]] .. "<white:team_console_bg>] ")
 
         -- name section
         local str_name = obj["desc"]

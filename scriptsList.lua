@@ -269,6 +269,7 @@ return {
     "skrypty/misc/ships/buses",
     "skrypty/ui/misc/gryf",
     "skrypty/ui/misc/lilith",
+    "skrypty/ui/misc/ptakopodobny",
     "skrypty/ui/misc/tilea-nekromanta",
     "skrypty/ui/footer_elements/mail",
     "mapper/localizers/ships_buses/urbimo-novigrad",

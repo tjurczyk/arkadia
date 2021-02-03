@@ -6,6 +6,10 @@ function alias_func_skrypty_misc_postepy_postepy2()
     misc.improve:print_improvee2()
 end
 
+function alias_func_skrypty_misc_postepy_postepy3()
+    misc.improve:print_improvee3()
+end
+
 function alias_func_skrypty_misc_postepy_postepy_reset()
     misc.improve:improve_reset()
 end

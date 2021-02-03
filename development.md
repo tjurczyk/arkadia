@@ -24,7 +24,7 @@ git clone https://github.com/Delwing/arkadia.git
 
 Następnie warto przygotować sobię również "połączenie" z głównym repozytorium.
 ```
-git remote add upstream https://github.com/tjuryczk/arkadia.git
+git remote add upstream https://github.com/tjurczyk/arkadia.git
 ```
 
 Otwieramy Mudlet i następnie zamiast z Package Manager, klikamy Module Manager (strzałka obok Package Managera) i wybieramy `Install Module`, wskazujemy ścieżkę kodu (`[katalog_profilu]/arkadia`).

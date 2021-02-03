@@ -66,6 +66,7 @@ function amap:add_location_located_on(dir, located_on)
 
         centerview(amap.curr.id)
         amap:print_log("Lokacja stworzona i zlinkowana")
+        return created_room_id
     else
         amap:print_log("Dostepne tylko w opcji rysowania")
     end
@@ -231,6 +232,44 @@ function amap:room_exist(x, y, z, area)
         else
             return 0
         end
+    end
+end
+
+function amap:get_room_by_hash(x, y, z, area)
+    if x and y and z and area then
+        local area_id = amap:get_area_id(area)
+        if not area_id then
+            area_id = amap:add_area(area)
+        end
+
+        local room = getRoomIDbyHash(amap:generate_hash(x, y, z, area))
+        return room ~= -1 and room or 0
+    end
+end
+
+function amap:get_current_location_hash()
+    local tmp_loc = amap:extract_gmcp()
+    if not (tmp_loc.x or tmp_loc.y or tmp_loc.z) then
+        return false
+    end
+    local hash = amap:generate_hash(tmp_loc.x, tmp_loc.y, tmp_loc.z, tmp_loc.area)
+    return hash
+end
+
+function amap:set_room_hash()
+    if not amap.curr.id then
+        amap:print_log("Ustaw lokacje, zeby ustawiac hash lokacji")
+    end
+    local tmp_loc = amap:extract_gmcp()
+    local hash = amap:generate_hash(tmp_loc.x, tmp_loc.y, tmp_loc.z, tmp_loc.area)
+    local room = getRoomIDbyHash(hash)
+    if room ~= -1 and amap.curr.id ~= room then
+        amap:print_log(string.format("Lokacja na ktorej stoisz jest juz na mapie (x:%s, y:%s, z: %s, area: %s) - lokacja ID: %s", tmp_loc.x, tmp_loc.y, tmp_loc.z, tmp_loc.area, room))
+    elseif amap.curr.id == room then
+        amap:print_log("Dla tej lokacji jest ustawiony juz prawidlowy hash.")
+    else
+        setRoomIDbyHash(amap.curr.id, hash)
+        amap:print_log(string.format("Hash dla lokacji ID: %s zostal ustawiony na: %s", amap.curr.id, hash))
     end
 end
 

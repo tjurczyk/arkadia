@@ -4,7 +4,10 @@ scripts.inv.get_magics_to_put_down_exempts = {
     ["zielonym luskowatym plaszczem"] = "zielony luskowaty plaszcz",
     ["szmaragdowozielonym misternym plaszczem"] = "szmaragdowozielony misterny plaszcz",
     ["krasnoludzka starozytna korone"] = false,
-    ["kruczoczarny misterny miecz"] = false
+    ["kruczoczarny misterny miecz"] = false,
+    ["zamkniety ozdobny skorzany plecak"] = false,
+    ["otwarty ozdobny skorzany plecak"] = false,
+    ["ozdobny skorzany plecak"] = false,
 }
 
 function scripts.inv:special_inventory_highlight(text, color)
@@ -94,7 +97,9 @@ function scripts.inv:get_magics_to_put_down(container)
                 command = command .. "wloz " .. item .. " do ".. chosen_container .. ";"
             end
         end
-        scripts.utils.bind_functional(command, false, true)
+        if command ~= "" then
+            scripts.utils.bind_functional(command, false, true)
+        end
     end
     self.magic_items_in_inventory = nil
 end

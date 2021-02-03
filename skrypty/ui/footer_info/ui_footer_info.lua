@@ -20,6 +20,7 @@ function scripts.ui:setup_footer_info()
         ["weapon"] = self.setup_footer_info_weapon,
         ["order"] = self.setup_footer_info_order_ready,
         ["cover"] = self.setup_footer_info_cover_ready,
+        ["guard_release"] = self.setup_footer_info_guard_release,
         ["killed"] = self.setup_footer_info_killed,
         ["sneaky"] = self.setup_footer_info_sneaky,
         ["hidden"] = self.setup_footer_info_hidden,
@@ -220,6 +221,19 @@ function scripts.ui:setup_footer_info_combat_state()
     self.footer_info_combat_state:echo("<font color='" .. self["footer_info_normal"] .. "'>Walka:</font> <font color='" .. self["footer_info_green"] .. "'>off</font>")
     self.footer_info_combat_state:setClickCallback(function () scripts.character.combat_state:run_command() end)
     self:add_footer_element(self.footer_info_combat_state)
+end
+
+function scripts.ui:setup_footer_info_guard_release()
+    self.footer_info_guard_release = Geyser.Label:new({
+        name = "scripts.ui.footer_info_guard_release",
+        fontSize = self.footer_font_size,
+    })
+    self.footer_info_guard_release:setStyleSheet(self.footer_info_core_base_css:getCSS())
+    self.footer_info_guard_release:setClickCallback("scripts_ui_info_release_guards_click")
+    setLabelCursor(self.footer_info_guard_release.name, "PointingHand")
+    self.releaseingGuardsUpdateHandler = scripts.event_register:register_singleton_event_handler(self.releaseingGuardsUpdateHandler, "switchReleasigGuards", function(_, state) scripts.ui:info_release_guards_update(state) end)
+    scripts.ui:info_release_guards_update(ateam.release_guards)
+    self:add_footer_element(self.footer_info_guard_release)
 end
 
 function scripts.ui:setup_placeholder()

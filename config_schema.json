@@ -1206,7 +1206,7 @@
     {
       "name": "scripts.ui.states_fancy",
       "default_value": false,
-      "field_type": "bool",
+      "field_type": "boolean",
       "macros_on_modify": [
         "_ux"
       ]

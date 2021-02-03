@@ -74,16 +74,23 @@ function misc.improve:print_improvee2()
         local this_date = v["year"] .. "/" .. v["month"] .. "/" .. v["day"]
         local date = string.sub(v["year"] .. "/" .. v["month"] .. "/" .. v["day"] .. "     ", 1, 11)
         local val_str = ""
-        sum = sum + v["val"]
-        if v["val"] > 15 then
-            local full = math.floor(v["val"] / 15)
-            local extra = v["val"] % 15
-            val_str = string.sub(tostring(full) .. " niebotycznych + " .. tostring(misc.improve.levels[extra]) .. "<grey>                           ", 1, 41) .. "|"
-        else
-            val_str = string.sub(misc.improve.levels[v["val"]] .. "                                ", 1, 35) .. "|"
-        end
+        local value = v["val"]
 
-        cecho("| [<antique_white>" .. id .. "<grey>] <orange>" .. date .. "<grey> - <antique_white>" .. val_str .. "\n")
+        if value > 0 then
+        
+            sum = sum + value
+            if value > 15 then
+                local full = math.floor(value / 15)
+                local extra = value % 15
+                val_str = string.sub(tostring(full) .. " niebotycznych + " .. tostring(misc.improve.levels[extra]) .. "<grey>                           ", 1, 41) .. "|"
+            else
+                val_str = string.sub(misc.improve.levels[value] .. "                                ", 1, 35) .. "|"
+            end
+            
+            cecho("| [<antique_white>" .. id .. "<grey>] <orange>" .. date .. "<grey> - <antique_white>" .. val_str .. "\n")
+        else
+            debugc('BLAD - postepy mniejsze niz zero dla id =' .. id)
+        end
     end
 
     cecho("<grey>|                                                         |\n")
@@ -112,6 +119,20 @@ function misc.improve:remove_improvee2(id)
         scripts:print_log("Ok")
     else
         scripts:print_log("Problem z baza")
+    end
+end
+
+function misc.improve:remove_improvee2_val(id, val)
+    local sql_query = "SELECT * FROM improvee WHERE character=\"" .. scripts.character_name .. "\" AND _row_id=\"" .. id .. "\" ORDER BY _row_id desc LIMIT 1"
+    local retrieved = db:fetch_sql(misc.improve.db_improvee.improvee, sql_query)
+    if table.getn(retrieved) == 1 then
+        retrieved = retrieved[1]
+        retrieved.val = math.max(0, retrieved.val - val)
+        if not db:update(misc.improve.db_improvee.improvee, retrieved) then
+            scripts:print_log("Cos poszlo nie tak z zapisem do globalnych postepow")
+        else
+            scripts:print_log("Ok, usunięte z globalnego licznika")
+        end
     end
 end
 

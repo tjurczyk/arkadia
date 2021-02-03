@@ -1,10 +1,5 @@
 function trigger_func_skrypty_ui_gags_color_color_innych_parowanie_ktos_paruje()
-    selectCurrentLine()
-    local str_replace = "[par] "
-    prefix(str_replace)
-    selectString(str_replace, 1)
-    fg(scripts.gag_colors["innych_parowanie"])
-    resetFormat()
+    scripts.gags:gag_prefix("par", "innych_parowanie")
 end
 
 function trigger_func_skrypty_ui_gags_color_color_innych_parowanie_ktos_zbroja_paruje()
@@ -12,11 +7,6 @@ function trigger_func_skrypty_ui_gags_color_color_innych_parowanie_ktos_zbroja_p
         return
     end
 
-    selectCurrentLine()
-    local str_replace = "[par] "
-    prefix(str_replace)
-    selectString(str_replace, 1)
-    fg(scripts.gag_colors["innych_parowanie"])
-    resetFormat()
+    scripts.gags:gag_prefix("par", "innych_parowanie")
 end
 

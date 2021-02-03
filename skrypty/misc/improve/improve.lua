@@ -1,9 +1,15 @@
 function misc.improve:print_improve()
     local time = getTime(true, "dd/MM hh:mm:ss")
-    cecho("+-------------------------------- <green>Postepy<grey> -------------------------------+\n")
-    cecho("|                                                                        |\n")
-    cecho("| <yellow>Aktualny czas   : " .. time .. "<grey>                                       |\n")
-    cecho("|                                                                        |\n")
+    local average = self:calculate_average()
+    local average_str = "             "
+    if average > 0 then
+        average_str = " : sred " .. misc.improve:seconds_to_formatted_string(average)
+    end
+
+    cecho("+---------------------------------- <green>Postepy<grey> ---------------------------------+\n")
+    cecho("|                                                                            |\n")
+    cecho("| <yellow>Aktualny czas   : " .. time .. "<grey>   " .. average_str .. "                           |\n")
+    cecho("|                                                                            |\n")
 
     local sum_me_killed = 0
     local sum_all_killed = 0
@@ -34,24 +40,41 @@ function misc.improve:print_improve()
         local details_time = string.sub("czas " .. time_str .. "                ", 1, 14)
         local details_killed = string.sub(" zabici " .. killed_str .. "                ", 1, 14)
 
-        cecho("| " .. name .. sep .. when_got .. sep .. details_time .. sep .. details_killed .. "   |\n")
+        cecho("| " .. scripts.utils.str_pad(tostring(k), 2, "right") .. ". " .. name .. sep .. when_got .. sep .. details_time .. sep .. details_killed .. "   |\n")
     end
 
-    local seconds_since_last = getEpoch() - last_time_stamp
-    local since_last_str = string.format("Od ostatniego postepu: %s : zabici: %s/%s",
-            misc.improve:seconds_to_formatted_string(seconds_since_last),
-            tostring(misc.counter.killed_amount["JA"] - sum_me_killed),
-            tostring(misc.counter.all_kills - sum_all_killed))
+    local since_last_str = nil;
+    if last_time_stamp then
+        local seconds_since_last = getEpoch() - last_time_stamp
+        since_last_str = string.format("Od ostatniego postepu: %s : zabici: %s/%s",
+                misc.improve:seconds_to_formatted_string(seconds_since_last),
+                tostring(misc.counter.killed_amount["JA"] - sum_me_killed),
+                tostring(misc.counter.all_kills - sum_all_killed))
+    end
 
-    cecho("|                                                                        |\n")
-    cecho("| <orange>ZABITYCH<grey>                                                               |\n")
-    cecho("| <LawnGreen>JA<grey> ... : <orange>" .. string.sub(tostring(sum_me_killed) .. "      ", 1, 6) .. "<grey>                                                        |\n")
-    cecho("| <LawnGreen>WSZYSCY<grey>: <orange>" .. string.sub(tostring(sum_all_killed) .. "      ", 1, 6) .. "<grey>                                                        |\n")
-    cecho("|                                                                        |\n")
-    cecho("| <SlateBlue>".. string.sub(since_last_str .."                            ", 1, 70) .. " <reset>|\n")
-    cecho("|                                                                        |\n")
-    cecho("+------------------------------------------------------------------------+\n")
+    cecho("|                                                                            |\n")
+    cecho("| <orange>ZABITYCH<grey>                                                                   |\n")
+    cecho("| <LawnGreen>JA<grey> ... : <orange>" .. string.sub(tostring(sum_me_killed) .. "      ", 1, 6) .. "<grey>                                                            |\n")
+    cecho("| <LawnGreen>WSZYSCY<grey>: <orange>" .. string.sub(tostring(sum_all_killed) .. "      ", 1, 6) .. "<grey>                                                            |\n")
+    cecho("|                                                                            |\n")
 
+    if since_last_str then
+        cecho("| <SlateBlue>".. string.sub(since_last_str .."                                ", 1, 74) .. " <reset>|\n")
+        cecho("|                                                                            |\n")
+    end
+    cecho("+----------------------------------------------------------------------------+\n")
+
+end
+
+function misc.improve:calculate_average()
+    local sum_of_time = 0
+    for k, v in pairs(misc.improve["level_snapshots"]) do
+        if v.seconds_passed == nil then
+            return 0
+        end
+        sum_of_time = sum_of_time + v.seconds_passed
+    end
+    return math_round(sum_of_time / table.size(misc.improve["level_snapshots"]))
 end
 
 function misc.improve:improve_reset()

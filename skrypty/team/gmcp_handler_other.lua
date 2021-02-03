@@ -1,5 +1,7 @@
 function gmcp_handler_other()
-    ateam:collect_people_on_location()
+    if gmcp.objects and gmcp.objects.nums then
+        ateam:collect_people_on_location()
+    end
     ateam:print_status()
 end
 

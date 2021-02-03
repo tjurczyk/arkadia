@@ -16,7 +16,8 @@ scripts.inv.collect["type_modes"] = {
 scripts.inv.collect["money_type"] = 1
 scripts.inv.collect["current_mode"] = 3
 scripts.inv.collect["footer_info_collect_to_text"] = { "M", "K", "MK", "M+", "K+", "M+K+", "" }
-scripts.ui.bind_color = "<LawnGreen>"
+
+
 
 function scripts.inv.collect:set_mode(mode)
     if not scripts.inv.collect:check_option(mode) then
@@ -50,7 +51,8 @@ function scripts.inv.collect:check_option(mode)
     end
 end
 
-function scripts.inv.collect:key_pressed(force, index)
+function scripts.inv.collect:key_pressed(force, index, put_into_bag)
+    put_into_bag = put_into_bag == nil and true or put_into_bag
     local from = "ciala"
     if index ~= nil then
         from = scripts.id_to_string_biernik[index] .. " ciala"
@@ -66,14 +68,19 @@ function scripts.inv.collect:key_pressed(force, index)
                 sendAll("wez zlote monety z " .. from, true)
             end
 
-            scripts.inv:put_into_bag({ "monety" }, "money", 1)
+            if put_into_bag then
+                scripts.inv:put_into_bag({ "monety" }, "money", 1)
+            end
         end
         if scripts.inv.collect["current_mode"] == 2 or scripts.inv.collect["current_mode"] == 3
                 or scripts.inv.collect["current_mode"] == 5 or scripts.inv.collect["current_mode"] == 6 then
             sendAll("wez kamienie z " .. from,
                 "ocen kamienie",
                 false)
-            scripts.inv:put_into_bag({ "kamienie" }, "gems", 1)
+
+            if put_into_bag then
+                scripts.inv:put_into_bag({ "kamienie" }, "gems", 1)
+            end
         end
         if table.size(scripts.inv.collect.extra) > 0 then
             for _, item in ipairs(scripts.inv.collect.extra) do
@@ -87,7 +94,7 @@ end
 
 function scripts.inv.collect:killed_action()
     if scripts.inv.collect["current_mode"] ~= 7 or table.size(scripts.inv.collect.extra) > 0 then
-        cecho("\n" .. scripts.ui.bind_color .. "[bind <yellow>" .. scripts.keybind:keybind_tostring("collect_from_body") .. scripts.ui.bind_color .. " wez z ciala\n")
+        cecho("\n<" .. scripts.ui:get_bind_color_backward_compatible() .. ">[bind <yellow>" .. scripts.keybind:keybind_tostring("collect_from_body") .. "<" .. scripts.ui:get_bind_color_backward_compatible() .. "> wez z ciala\n")
         scripts.inv.collect.check_body = true
     end
 end
@@ -99,7 +106,7 @@ function scripts.inv.collect:team_killed_action(name)
     end
 
     if ateam.team_names[name] then
-        cecho("\n" .. scripts.ui.bind_color .. "[bind <yellow>ctrl+3]" .. scripts.ui.bind_color .. " wez z ciala\n")
+        cecho("\n<" .. scripts.ui:get_bind_color_backward_compatible() .. ">[bind <yellow>ctrl+3]<" .. scripts.ui:get_bind_color_backward_compatible() .. "> wez z ciala\n")
         scripts.inv.collect.check_body = true
     end
 end
@@ -141,9 +148,9 @@ end
 
 function scripts.inv.after_counting_collect(bodies_count)
     local count = scripts.counted_string_to_int[bodies_count]
-    cecho(count .. "\n")
     for i = 1, count, 1 do
-        scripts.inv.collect:key_pressed(true, i)
+        local last = i == count
+        scripts.inv.collect:key_pressed(true, i, last)
     end
 end
 

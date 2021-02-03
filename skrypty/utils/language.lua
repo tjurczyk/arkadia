@@ -27,14 +27,14 @@ function scripts.utils:get_best_fuzzy_match(query, docs, min_ratio)
     local query_tokens = string.split(query, " ")
     for k, v in pairs(query_tokens) do
         local token_length_scaled = round(#v * min_ratio, 0)
-        query_tokens[k] = string.sub(v, 0, token_length_scaled)
+        query_tokens[k] = string.lower(string.sub(v, 0, token_length_scaled))
     end
     for k, v in pairs(docs) do
         local doc_tokens = string.split(v, " ")
         if table.size(doc_tokens) == table.size(query_tokens) then
             local match = true
             for var = 1, table.size(doc_tokens) do
-                if not string.starts(doc_tokens[var], query_tokens[var]) then
+                if not string.starts(string.lower(doc_tokens[var]), query_tokens[var]) then
                     match = false
                     break
                 end

@@ -1,7 +1,10 @@
+[![Version](https://img.shields.io/github/v/release/tjurczyk/arkadia?label=version&color=%23438f57)](https://github.com/tjurczyk/arkadia/releases)
+![Verify config.md](https://github.com/tjurczyk/arkadia/workflows/Verify%20config.md/badge.svg)
+
 ## Arkadia Skrypty
 
 Pomoc dostępna pod `/skrypty`<br>
-Pomoc do mappera znajduje się [tutaj](https://github.com/tjurczyk/arkadia-skrypty/blob/master/README_MAPPER.md)<br>
+Pomoc do mappera znajduje się [tutaj](README_MAPPER.md) \
 Wersja, której używasz: sprawdź nagłówek komendy `/skrypty`.
 
 ### INSTALACJA
@@ -10,20 +13,35 @@ Wersja, której używasz: sprawdź nagłówek komendy `/skrypty`.
 Przed instalacją koniecznie włącz opcję _Enable GMCP_ w ustawieniach (Settings) Mudleta i zrestartuj go.**
 
 #### Mudlet 4.6+ i moduł LUA
-
+---
 Wystarczy wkleić poniższą komendę:
 
-```
-lua local a="https://api.github.com/repos/tjurczyk/arkadia/releases/latest"local b=getMudletHomeDir().."/latest.json"local c="https://codeload.github.com/tjurczyk/arkadia/zip/"local d=getMudletHomeDir().."/scripts.zip"local e=""local f=getMudletHomeDir().."/arkadia/"function installScripts()downloadFile(b,a)registerAnonymousEventHandler("sysDownloadDone","handleVersionDownload",true)end function handleVersionDownload(g,h,i)if h~=b then return true end local j=io.open(b,"rb")if j then local k=yajl.to_value(j:read("*a"))j:close()os.remove(b)e=getMudletHomeDir().."/arkadia-"..k.name.."/"tempTimer(0.1,function()downloadScripts(k.name)end)end end function downloadScripts(l)pcall(deleteDir,f)registerAnonymousEventHandler("sysDownloadDone","handleDownload",true)downloadFile(d,c..l)cecho("\n<CadetBlue>(skrypty)<tomato>: Pobieram aktualna paczke skryptow ("..l..")\n")end function handleDownload(g,h)if h~=d then return true end registerAnonymousEventHandler("sysUnzipDone","handleUnzipEvents",true)registerAnonymousEventHandler("sysUnzipError","handleUnzipEvents",true)unzipAsync(d,getMudletHomeDir())end function handleUnzipEvents(m,...)if m=="sysUnzipDone"then os.remove(d)uninstallPackage("Arkadia")uninstallPackage("generic_mapper")uninstallPackage("skrypty_master3")tempTimer(1,function()os.rename(e,f)installPackage(f.."Arkadia.xml")cecho("\n<CadetBlue>(skrypty)<tomato>: Skrypty zainstalowane\n")end)elseif m=="sysUnzipError"then cecho("\n<CadetBlue>(skrypty)<tomato>: Blad podczas rozpakowywania skryptow\n")end end function deleteDir(n)for j in lfs.dir(n)do local o=n..'/'..j if j~="."and j~=".."then if lfs.attributes(o,'mode')=='file'then os.remove(o)elseif lfs.attributes(o,'mode')=='directory'then deleteDir(o)end end end lfs.rmdir(n)end installScripts()clearCmdLine()
+```lua
+lua local a="https://github.com/tjurczyk/arkadia/releases/latest/download/ArkadiaScriptsInstaller.xml"local b=getMudletHomeDir().."ArkadiaScriptsInstaller.xml"downloadFile(b,a)cecho("\n<CadetBlue>(skrypty)<tomato>: Rozpoczynam instalacje skryptow\n")registerAnonymousEventHandler("sysDownloadDone",function(c,d)if d~=b then return true end;installPackage(b)end,true)clearCmdLine()
 ```
 
+#### Alternatywny sposób instalacji
+---
+Należy pobrać plik:
+
+[https://github.com/tjurczyk/arkadia/releases/latest/download/ArkadiaScriptsInstaller.xml](https://github.com/tjurczyk/arkadia/releases/latest/download/ArkadiaScriptsInstaller.xml)
+
+Po jego pobraniu przeciągamy go na otwarte okno Mudleta.
+
+Lub 
+1. W Mudlecie w górnym pasku wybieramy `Package Manager`
+2. Wybieramy na dole `Install`
+3. Wybieramy pobrany plik
+
 #### Ręczna instalacja
-Po pobraniu paczki należy rozpakować ją bezpośrednio do katalogu z profilem, rozpakować i zmienić nazwę katalogu na `arkadia`
+---
+Po pobraniu paczki należy rozpakować ją bezpośrednio do katalogu z profilem i zmienić nazwę rozpakowanego katalogu na `arkadia`
 Po czym wykonujemy jeszcze instalację samej paczki w mudlecie
 
 1. W Mudlecie w górnym pasku wybieramy `Package Manager`
 2. Wybieramy na dole `Install`
 3. Z katalogu z profilem wybieramy plik `arkadia/Arkadia.xml`
+4. Odinstalowujemy pakiet `generic_maper`
 4. Restartujemy Mudleta.
 
 Aktualizacja skryptów już po instalacji to: `/aktualizuj_skrypty`.
@@ -95,37 +113,19 @@ Zobaczymy coś pokroju:
 Z racji różnic Windows, Linux i OS X, profile są w innych miejscach
 i trzeba sobie samemu sprawdzić gdzie dany profil się znajduje.
 
-#### Podstawowa konfiguracjia (nowy sposób)
+#### Podstawowa konfiguracjia
 Aby stworzyć podstawową konfigurację wystarczy wpisać `/init imie imie_w_wolaczu` np. 
 ```
 /init Adremen Adremenie
 ```
 Trigger do ładowania automatycznego podczas logowania zostanie automatycznie utworzony, a właściwy plik zostanie utworzony w katalogu profilu.
-Po utworzeniu pokaże się ścieżka do pliku, aby go dalej dostosować otwórz go w ulubionym edytorze.
 
-#### Ręczna konfiguracja (stary sposób)
-Aby zatem przygotować plik konfiguracyjny do jakiegoś imienia, wystarczy z paczki skopiować plik `imie.txt` do naszego katalogu profilu i zmienić mu nazwę na przykładowo `adremen.txt`.
-W katalogu profilu możemy mieć oczywiście wiele takich plików (najsensowniej jeden plik na jedną postać).
+Pomoc dotyczaca konfiguracji dostepna jest dostępna pod adresem: http://arkadia.kamerdyner.net/config.html 
 
-Wpisywanie `/laduj imie` za każdym razem kiedy włącza się Mudleta lub loguje może być dość uciążliwe, dlatego proponuję zrobić prosty trigger, który będzie nam ładowal ustawienia naszej postaci na konkretny tekst, czyli na przykład: "Witaj, Adremenie. Podaj swe haslo".
-
-Wchodzimy zatem w `Triggers` i robimy `Add Item`, następnie w polach wpisujemy (przykładowo dla mojej postaci *Adremen*)
-
-- *name*: `Adremen` (tutaj można dać cokolwiek, to po prostu nazwa triggera)
-- *0*: `Witaj, Adremenie. Podaj swe haslo`
-- W tym dużym białym polu dodajemy:
-
-`scripts_load_config("adremen")`
-
-
-I taki trigger sprawi, ze logując się i podając imię `adremen`, od razu zostanie załadowany plik `adremen.txt`. Zatem konfigurując to dla innych imion po prostu zamiast `adremen` użyc trzeba nazwy configu, który jest w waszym katalogu profilu. W `0` oczywiście daje się tekst, który widzi się po podaniu imienia przy logowaniu.
-
-Tak to wygląda dla postaci `Adremen`.
-
-![Konfiguracja triggera](http://kamerdyner.net/~george/img/trigger_config.png)
+Dodatkowo opis kluczy konfiguracyjnych dostępny [tutaj](config.md)
 
 ##### UWAGA: 
-Czasami jest tak, że tekst wyglżda lekko _rozjechany_. To znaczy, można to poznać po tym, że widać, że odstępy między tekstem są większe niż normalnie, wtedy podczas zaznaczania tekstu, tekst 'zsuwa' się ze sobą i odstępy są normalne. Jest to błąd Mudletowy. Wystarczy wtedy chwycić za tekst i zaznaczając go przeciagnac na sam dół aby najechać na dolny pasek - wtedy tekst _dosunie się_ i będzie już równo. Po wykonaniu `/ui_restart`, trzeba zawsze takie coś wykonać.
+Czasami jest tak, że tekst wygląda lekko _rozjechany_. To znaczy, można to poznać po tym, że widać, że odstępy między tekstem są większe niż normalnie, wtedy podczas zaznaczania tekstu, tekst 'zsuwa' się ze sobą i odstępy są normalne. Jest to błąd Mudletowy. Wystarczy wtedy chwycić za tekst i zaznaczając go przeciagnac na sam dół aby najechać na dolny pasek - wtedy tekst _dosunie się_ i będzie już równo. Po wykonaniu `/ui_restart`, trzeba zawsze takie coś wykonać.
 
 ---
 
@@ -174,6 +174,8 @@ _drugi_ woreczek jest pusty.
 #### UWAGA
 Po każdej zmianie liczebników woreczków (przykładowo po wzieciu któregoś z plecaka/kupieniu jakiegoś/odłożeniu któregoś) skrypt ma w bazie nieprawidłowe przypisania liczebników woreczków (pierwszy, drugi...) do ziół. Dlatego, przy 
 każdej takiej zmianie trzeba po prostu uruchomić `/ziola_buduj` - wtedy skrypt pozbiera i zbuduje mapę ziół na nowo.
+
+Do poprawnego działania polecenie `/ziola_buduj` istotne jest też aby na Arkadii ustawić opcję szerokości tekstu na 0: `opcje szerokosc 0`.
 
 Skrypt wspiera sytuacje, kiedy mamy przykladowo 10 woreczków, ale tylko 6 z nich przy sobie, czyli przy pasie/w rece (reszta w plecaku), baze zbuduje tylko z tych 6.
 
@@ -250,9 +252,9 @@ Są dostępne statystyki parowań, otrzymamych ciosów itp., Statystyki dostępn
 <br>
 `/postepy2_reset` - resetuje globalny licznik postepow. 
 <br><br>
-**Licznik poziomu** (w miejscu, gdzie można medytować)
+**Licznik poziomu** 
 <br>
-`/licz_poziom`
+`/cechy` - wyswietla cechy i poziom postaci (minilevele)
 
 ---
 
@@ -279,25 +281,9 @@ Bindowany jest klawisz `[`.
 
 ## POJEMNIKI
 
-Jest wsparcie do pojemników. W ustawieniach są:
+[Instrukcja konfiguracji pojemników](http://arkadia.kamerdyner.net/pojemniki.html)
 
-```
--- Domyslna pojemniki do monet (money), kamieni (stones), jedzenia (food),
--- i wszystkiego innego (other)
---
--- Dozwolone wartosci:
--- - 1 (to jest "plecak")
--- - 2 (to jest "torba")
--- - 3 (to jest "worek")
--- - 4 (to jest "sakiewka")
--- - 5 (to jest "mieszek")
--- - 6 (to jest "sakwa")
--- - 7 (to jest "wor")
-scripts.inv["money_bag"] = 1
-scripts.inv["stones_bag"] = 1
-scripts.inv["food_bag"] = 1
-scripts.inv["other_bag"] = 1
-```
+Komenda `/pojemniki` pokaże aktualną konfigurację pojemników. 
 
 jak na razie dostępne bindy to `wem`/`/wlm` (branie/wkładanie monet) oraz `wep`/`wlp` (branie/wkładanie paczki).
 
@@ -320,8 +306,42 @@ Baza jest budowana następująco:
 
 ---
 
+
+## ROZSZERZNIE SKRYPTÓW
+
+W łatwy sposób można również dodać dodatkowe skrypty ładowane razem ze niniejszą paczką.
+W katalog profilu, skrypty tworzą katalog `plugins`, należy w nim umieścić plik z paczka zawierającą plik `init.lua` z listą plików do załadowania.
+
+Dodatkowo opcjonalnie można załączyc plik mudletowy .xml o nazwie odpowiadającej nazwie katalogu wtyczki
+
+Rowniez opcjonalnie mozna zalaczy plik `config_schema.json`. Zaktualizuje on istniejaca scheme ustawien. Struktura powinna byc identyczna jak pliku z glownej paczki.
+
+*Poprawna* paczka, *poprawnie* umieszczona zostanie automatycznie załadowana tuż po plikach skryptów z podstawowej paczki.
+
+##### Przykład struktury
+```
+ .
+ |____ katalog profilu
+   |____ plugins
+      |____ nasz_plugin
+        |____ init.lua
+        |____ nasz_plugin.xml
+        |____ dodatkowe.lua
+        |____ skrypty.lua
+        |____ config_schema.json
+```
+
+##### _init.lua_
+```
+    return {
+        "dodatkowe",
+        "skrypty"
+    }
+```
+
 ## KONTAKT
 
 1. Na IRCNet: Kanał \#arkadia, nick @dzordzyk
 2. Na forum: [@Adremen](http://arkadia.rpg.pl/forum/memberlist.php?mode=viewprofile&u=1084)
-3. [Temat](http://arkadia.rpg.pl/forum/viewtopic.php?f=15&t=752), w którym można uzyskać pomoc na forum
+3. [Temat](https://arkadia.rpg.pl/forum/viewtopic.php?f=15&t=1023), w którym można uzyskać pomoc na forum
+4. [Discord](https://discord.gg/76yaZnw)

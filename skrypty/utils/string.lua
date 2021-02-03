@@ -6,6 +6,10 @@ function trim_string(str)
     return str:match("^%s*(.-)%s*$")
 end
 
+function string.proper_case(str)
+    return str:sub(0, 1):upper() .. str:sub(2):lower()
+end
+
 function scripts.utils:separate_bind(bind_str)
     if not bind_str then
         error("Wrong input")
@@ -62,6 +66,15 @@ function string:split_people(str)
 
     display(sep)
     display(sep1)
+end
+
+function string:count_people(str)
+    local split = scripts.utils:extract_string_list(str)
+    local sum = 0
+    for _, obj in pairs(split) do
+        sum = sum + (tonumber(obj.amount) or 0)
+    end
+    return sum
 end
 
 function scripts.utils:extract_string_list(list_str)
@@ -200,3 +213,14 @@ function scripts.utils:deserialize_dir_bind(s)
     return ret_dict
 end
 
+function scripts.utils.real_len(str)
+    str = str:gsub("<[^<]*>", "")
+    return string.len(str)
+end
+
+function scripts.utils.str_pad(str, length, align)
+    local total_pad = length - scripts.utils.real_len(str:gsub("<[%a_]+>", ""))
+    local prepad = align == "center" and math.floor(total_pad / 2) or (align == "right" and total_pad or 0)
+    local postpad = total_pad - prepad
+    return string.rep(" ", prepad) .. str .. string.rep(" ", postpad)
+end

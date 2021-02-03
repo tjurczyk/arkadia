@@ -15,13 +15,19 @@ misc["imperium_calendar"] = {
     ["Pflugzeit"] = "Pflugzeit (pozna wiosna)",
     ["Sigmarszeit"] = "Sigmarszeit (wczesne lato)",
     ["Sommerzeit"] = "Sommerzeit (lato)",
-    ["Vorgeheim"] = "Vorgenheim (pozne lato)",
+    ["Vorgeheim"] = "Vorgeheim (pozne lato)",
     ["Nachgeheim"] = "Nachgeheim (wczesna jesien)",
     ["Erntezeit"] = "Erntezeit (jesien)",
     ["Brauzeit"] = "Brauzeit (pozna jesien)",
     ["Kaltezeit"] = "Kaltezeit (wczesna zima)",
     ["Ulrichszeit"] = "Ulrichszeit (zima)",
     ["Vorhexen"] = "Vorhexen (pozna zima)",
+    ["Hexentag"] = "Hexentag (Nowy Rok)",
+    ["Mitterfruhl"] = "Mitterfruhl (rownonoc wiosenna)",
+    ["Sonnenstill"] = "Sonnenstill (przesilenie letnie)",
+    ["Geheimnisnacht"] = "Geheimnisnacht (Noc Tajemnicy)",
+    ["Mitterherbst"] = "Mitterherbst (rownonoc jesienna)",
+    ["Mondstill"] = "Mondstill (przesilenie zimowe)"
 }
 
 function misc:replace_string_calendar_ishtar(str)

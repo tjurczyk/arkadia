@@ -4,7 +4,9 @@ misc.counter.utils.two_word_mobs = {
     "czarnego orka",
     "krasnoluda chaosu",
     "rycerza chaosu",
-    "smoczego ogra"
+    "smoka chaosu",
+    "smoczego ogra",
+    "trolla jaskiniowego"
 }
 
 function misc.counter.utils:get_entry_key(key)

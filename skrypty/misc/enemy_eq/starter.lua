@@ -5,7 +5,6 @@ function misc:run_check_enemies(mode)
     misc["enemy_eq"] = {}
 
     misc:get_to_check_list(mode)
-    display(enemies_to_check)
     check_enemies_routine = coroutine.create(check_enemies_func)
     coroutine.resume(check_enemies_routine)
 end

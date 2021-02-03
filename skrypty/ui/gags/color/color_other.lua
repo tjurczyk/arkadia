@@ -8,7 +8,7 @@ function trigger_func_skrypty_ui_gags_color_color_other_zabiles_color()
     local counter_str = "<tomato> (" .. tostring(counter) .. " / " .. tostring(misc.counter.all_kills) .. ")"
 
     deleteLine()
-    cecho("\n\n<tomato>[  ZABILES   ] <grey>" .. matches[2] .. counter_str .. "\n\n")
+    cecho("\n\n<tomato>[  ZABILES  ] <grey>" .. matches[2] .. counter_str .. "\n\n")
     scripts.inv.collect:killed_action()
     resetFormat()
 end
@@ -27,9 +27,9 @@ function trigger_func_skrypty_ui_gags_color_color_other_zabil_color()
 
     deleteLine()
     if counter_str then
-        cecho("\n\n<tomato>[   ZABIL    ] <grey>" .. matches[2] .. counter_str .. "\n\n")
+        cecho("\n\n<tomato>[   ZABIL   ] <grey>" .. matches[2] .. counter_str .. "\n\n")
     else
-        cecho("\n\n<tomato>[   ZABIL    ] <grey>" .. matches[2] .. "\n\n")
+        cecho("\n\n<tomato>[   ZABIL   ] <grey>" .. matches[2] .. "\n\n")
     end
     scripts.inv.collect:team_killed_action(matches[3])
     resetFormat()
@@ -37,6 +37,7 @@ end
 
 function trigger_func_skrypty_ui_gags_color_color_other_mozesz_dobywac()
     raiseEvent("playBeep")
+    raiseEvent("canWieldAfterKnockOff")
     selectCurrentLine()
     deleteLine()
     cecho("<green>\n\n[    BRON    ]<cornsilk> Mozesz dobyc broni klawiszem ']'\n\n")
@@ -48,6 +49,8 @@ end
 
 function trigger_func_skrypty_ui_gags_color_color_other_wytracenie_tobie()
     raiseEvent("playBeep")
+    raiseEvent("weaponKnockedOff")
+    raiseEvent("weapon_state", false)
     selectCurrentLine()
     deleteLine()
     cecho("\n\n<tomato>[    BRON    ] " .. matches[2] .. "\n\n")
@@ -57,23 +60,27 @@ end
 
 function trigger_func_skrypty_ui_gags_color_color_other_przelamanie()
     deleteLine()
-    cecho("<green>\n\n[ KTOS LAMIE ] " .. matches[2] .. "\n\n")
+    local team_break = ateam.team_names[matches[3]] or ateam.team_names[string.lower(matches[3])]
+    local color = team_break and "green" or "red"
+    cecho("\n\n<".. color ..">[ KTOS LAMIE ] " .. matches[2] .. "\n\n")
+    ateam:may_setup_broken_defense(matches[4])
     resetFormat()
 
-    if ateam.team_names[matches[3]] or ateam.team_names[string.lower(matches[3])] then
-        cecho(scripts.ui.bind_color .. "  " .. scripts.keybind:keybind_tostring("opening_gate") .. scripts.ui.bind_color .. "] zabij cel ataku\n")
+    if team_break then
+        cecho("<" .. scripts.ui:get_bind_color_backward_compatible() .. ">  [" .. scripts.keybind:keybind_tostring("attack_target") .. "<" .. scripts.ui:get_bind_color_backward_compatible() .. ">] zabij cel ataku\n")
     end
 end
 
 function trigger_func_skrypty_ui_gags_color_color_other_przelamanie_ty()
     deleteLine()
     cecho("<green>\n\n[ TY LAMIESZ ] " .. matches[2] .. "\n\n")
+    ateam:may_setup_broken_defense(matches[3])
     resetFormat()
 end
 
 function trigger_func_skrypty_ui_gags_color_color_other_nie_przelamanie_ty()
     deleteLine()
-    cecho("<tomato>\n\n[ NIE LAMIESZ] " .. matches[2] .. "\n\n")
+    cecho("<tomato>\n\n[ NIE LAMIESZ ] " .. matches[2] .. "\n\n")
     resetFormat()
 end
 
@@ -94,3 +101,9 @@ function trigger_func_skrypty_ui_gags_color_color_other_nekro_tilea()
     scripts.ui.info_action_bind = "dobadz wszystkich broni"
 end
 
+function trigger_func_team_leadership()
+    fg("DarkGoldenrod")
+    prefix("\n[   DRUZYNA   ]  ")
+    echo("\n\n")
+    resetFormat()
+end

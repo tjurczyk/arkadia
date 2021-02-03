@@ -1,9 +1,30 @@
-function scripts.ui:update_bars_mode(mode)
+local refresh_timer = nil
+
+function scripts.ui:update_footer_main()
+    if scripts.ui.cfg["footer_mode"] == "mode1" then
+        scripts.ui:update_bars_mode("gauge")
+    elseif scripts.ui.cfg["footer_mode"] == "mode2" or scripts.ui.cfg["footer_mode"] == "mode3" or
+            scripts.ui.cfg["footer_mode"] == "mode4" or scripts.ui.cfg["footer_mode"] == "mode5" then
+        scripts.ui:update_bars_mode("label")
+    end
+end
+
+function scripts.ui:update_bars_mode(mode, redraw)
     if not mode and mode ~= "gauge" and mode ~= "label" then
         error("Invalid input")
     end
 
-    for k, v in pairs(gmcp.char.state) do
+    -- if redraw == true -> refresh all stats
+    -- if redraw == false -> refresh just changes from gmcp
+    local source = gmcp.char.state
+    if redraw == true then 
+        source = scripts.character.state
+    end
+
+    local any_changed = false;
+    local footer_mode = scripts.ui.cfg.footer_mode
+
+    for k, v in pairs(source) do
         -- k_index is the name of the ui item for this k (hp/fatigue etc)
         local k_index = k .. mode
 
@@ -11,23 +32,39 @@ function scripts.ui:update_bars_mode(mode)
             v = v + 1
         end
 
+        local label = scripts.ui.state_key_to_label_pre[k]
+        
         if scripts.ui.footer_bar[k] and scripts.ui[k_index] then
+
+            local max_value = scripts.ui.footer_bar[k].max
+            local color = scripts.ui.footer_bar[k].background[v]
+
             if mode == "gauge" then
                 -- change color and set the right value
-                scripts.ui[k_index]:setValue(v, scripts.ui.footer_bar[k].max)
-                scripts.ui.gauge_front:set("background-color", scripts.ui.footer_bar[k].background[v])
+                scripts.ui[k_index]:setValue(v, max_value)
+                scripts.ui.gauge_front:set("background-color", color)
                 scripts.ui[k_index].front:setStyleSheet(scripts.ui.gauge_front:getCSS())
-            elseif mode == "label" and scripts.ui.cfg.footer_mode == "mode2" then
-                local msg = scripts.ui:process_label_text_mode2(scripts.ui.state_key_to_label_pre[k], v, scripts.ui.footer_bar[k].max, scripts.ui.footer_bar[k].background[v])
+            elseif mode == "label" and footer_mode == "mode2" then
+                local msg = scripts.ui:process_label_text_mode2(label, v, max_value, color)
                 scripts.ui[k_index]:echo(msg)
-            elseif mode == "label" and scripts.ui.cfg.footer_mode == "mode3" then
-                local msg = scripts.ui:process_label_text_mode3(scripts.ui.state_key_to_label_pre[k], v, scripts.ui.footer_bar[k].max, scripts.ui.footer_bar[k].background[v])
+            elseif mode == "label" and footer_mode == "mode3" then
+                local msg = scripts.ui:process_label_text_mode3(label, v, max_value, color)
                 scripts.ui[k_index]:echo(msg)
-            elseif mode == "label" and scripts.ui.cfg.footer_mode == "mode4" then
-                local msg = scripts.ui:process_label_text_mode4(scripts.ui.state_key_to_label_pre[k], v, scripts.ui.footer_bar[k].max, scripts.ui.footer_bar[k].background[v])
+            elseif mode == "label" and footer_mode == "mode4" then
+                local msg = scripts.ui:process_label_text_mode4(label, v, max_value, color)
                 scripts.ui[k_index]:echo(msg)
+            elseif mode == "label" and footer_mode == "mode5" then
+                local msg, changed = scripts.ui:process_label_text_mode5(k, label, v, max_value, color)
+                any_changed = any_changed or changed 
+				scripts.ui[k_index]:echo(msg)        
             end
         end
+    end
+
+    if not redraw and any_changed and mode == "label" and footer_mode == "mode5" then
+        local change_indicator_duration = scripts.ui.cfg.change_indicator_duration
+        if refresh_timer then killTimer(refresh_timer) end
+        refresh_timer = tempTimer(change_indicator_duration + 1, [[ scripts.ui:update_bars_mode("label", true) ]])
     end
 end
 

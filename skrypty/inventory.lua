@@ -1,4 +1,4 @@
-scripts["inv"] = scripts["inv"] or {
+scripts.inv = scripts.inv or {
     lamp = {
         working = false,
         lamp_seconds_val = 0,
@@ -7,18 +7,18 @@ scripts["inv"] = scripts["inv"] or {
         lamp_beeps = { 10 },
         lamp_yellow_seconds = 60,
         lamp_red_seconds = 30,
-        lamp_empty_bottle_bind = "odloz olej;wez butelke z plecaka;napelnij lampe olejem",
-        lamp_no_bottle_bind = "wez butelke z plecaka"
     },
     equipment = {},
     magics_color = "tomato",
     magic_keys_color = "green_yellow",
-    magics_url = "http://arkadia.kamerdyner.net/data/magics.json",
-    magic_keys_url = "http://arkadia.kamerdyner.net/data/magic_keys.json",
-    magics_file_path = getMudletHomeDir() .. "/magics_data",
+    magics_url = "https://raw.githubusercontent.com/tjurczyk/arkadia-data/master/magics_data.json",
+    magic_keys_url = "https://raw.githubusercontent.com/tjurczyk/arkadia-data/master/magic_keys.json",
+    magics_file_path = getMudletHomeDir() .. "/magics_data_v2.json",
     magic_keys_file_path = getMudletHomeDir() .. "/magic_keys_data",
     magics_trigger_ids = {},
     magic_keys_trigger_ids = {},
+    magics_data = {},
+    magic_keys_data = {}
 }
 
 scripts.inv["kamienie_rzeczowniki"] = {

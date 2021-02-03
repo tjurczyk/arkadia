@@ -1,7 +1,8 @@
 scripts.installer = scripts.installer or {}
+scripts.installer.main_repo = "tjurczyk/arkadia"
 
 function scripts.installer:update_scripts_to_latest_release()
-    scripts.latest:get_latest_version(function(version) scripts.installer:on_scripts_version(version) end)
+    scripts.latest:get_latest_version(function(release_info) scripts.installer:on_scripts_version(release_info.tag_name) end)
 end
 
 function scripts.installer:on_scripts_version(version)
@@ -11,7 +12,7 @@ end
 function scripts.installer:update_scripts(branch, repo)
 
     local tag = branch ~= "" and branch and branch or "master"
-    local repo = repo ~= "" and repo and repo or "tjurczyk/arkadia"
+    local repo = repo ~= "" and repo and repo or scripts.installer.main_repo
     local short_repo_name = repo:gsub("(.*)/", "")
     local url = "https://codeload.github.com/" .. repo .. "/zip/" .. tag
 
@@ -24,9 +25,14 @@ function scripts.installer:update_scripts(branch, repo)
     scripts.installer.unzip_directory = getMudletHomeDir() .. "/".. short_repo_name .."-" .. tag .. "/"
     scripts.installer.scripts_directory = getMudletHomeDir() .. "/arkadia/"
 
-    if lfs.chdir(scripts.installer.scripts_directory .. "/.git/") then
+    if lfs.isdir(scripts.installer.scripts_directory .. "/.git/") then
         scripts:print_log("Chyba nie chcesz aktualizowac repozytorium w ten sposob? :)")
         return
+    end
+
+    scripts.installer.version_tag = nil
+    if repo == scripts.installer.main_repo and (tag:match("%d+%.%d+%.%d+") or tag:match("%d+%.%d+")) then
+        scripts.installer.version_tag = tag
     end
 
     scripts.installer.scripts_download_handler = scripts.event_register:force_register_event_handler(scripts.installer.scripts_download_handler, "sysDownloadDone", function(_, filename) scripts.installer:handle_scripts_download(_, filename) end)
@@ -51,6 +57,7 @@ function scripts.installer:handle_unzip_scripts(event, ...)
         pcall(scripts.installer.delete_dir, scripts.installer.scripts_directory)
         uninstallPackage("Arkadia")
         tempTimer(1, function()
+            scripts.installer:put_version_to_file()
             os.rename(scripts.installer.unzip_directory, scripts.installer.scripts_directory)
             installPackage(scripts.installer.scripts_directory .. "Arkadia.xml")
             scripts:print_log("Ok, zrestartuj Mudleta")
@@ -60,6 +67,23 @@ function scripts.installer:handle_unzip_scripts(event, ...)
     end
 end
 
+function scripts.installer:put_version_to_file()
+    if scripts.installer.version_tag then
+        local file = io.open(getMudletHomeDir() .. "/version_tag", 'w')
+        file:write(scripts.installer.version_tag)
+        file:close()
+        scripts.installer.version_tag = nil
+    end
+end
+
+function scripts.installer:get_version_from_file()
+    local file = io.open(getMudletHomeDir() .. "/version_tag", 'r')
+    if file then
+        local version = file:read("*a")
+        file:close()
+        return version
+    end
+end
 
 function scripts.installer:download_mapper(branch, key)
     scripts.installer.tree = "master3"
@@ -126,4 +150,3 @@ function scripts.installer.delete_dir(dir)
     end
     lfs.rmdir(dir)
 end
-

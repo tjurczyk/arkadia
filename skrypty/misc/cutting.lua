@@ -31,7 +31,7 @@ end
 function alias_func_skrypty_misc_cutting_wycinaj()
     misc.cutting_mode = 1
     misc:cutting_pre_action()
-    dead_bodies_trigg = tempRegexTrigger("^.*Doliczyl.s sie ([a-z]+) sztuk(|i)\.$", [[misc:cutting_after_trigger(matches[2]) ]])
+    dead_bodies_trigg = tempRegexTrigger("^.*Doliczyl.s sie ([a-z]+) sztuk(|i)\\.$", [[misc:cutting_after_trigger(matches[2]) ]])
     enableTrigger(dead_bodies_trigg)
     enableTrigger("wycinanie-triggers")
 
@@ -50,7 +50,7 @@ end
 function alias_func_skrypty_misc_cutting_wyrywaj()
     misc.cutting_mode = 2
     misc:cutting_pre_action()
-    dead_bodies_trigg = tempRegexTrigger("^.*Doliczyl.s sie ([a-z]+) sztuk(|i)\.$", [[misc:cutting_after_trigger(matches[2]) ]])
+    dead_bodies_trigg = tempRegexTrigger("^.*Doliczyl.s sie ([a-z]+) sztuk(|i)\\.$", [[misc:cutting_after_trigger(matches[2]) ]])
     enableTrigger(dead_bodies_trigg)
     enableTrigger("wycinanie-triggers")
 

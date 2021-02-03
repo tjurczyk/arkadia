@@ -1,4 +1,8 @@
 function trigger_func_skrypty_ui_gags_color_color_rozkazy_rozkaz_kogos_zaslony()
+    if scripts.gags:delete_line("rozkazy") then
+        return
+    end
+
     selectCurrentLine()
     deleteLine()
     if matches[3] == "ciebie" or matches[3] == "cie" then
@@ -11,6 +15,10 @@ function trigger_func_skrypty_ui_gags_color_color_rozkazy_rozkaz_kogos_zaslony()
 end
 
 function trigger_func_skrypty_ui_gags_color_color_rozkazy_rozkaz_kogos_zaatakowac()
+    if scripts.gags:delete_line("rozkazy") then
+        return
+    end
+
     selectCurrentLine()
     deleteLine()
     if matches[3] == "ciebie" or matches[3] == "cie" then
@@ -23,6 +31,16 @@ function trigger_func_skrypty_ui_gags_color_color_rozkazy_rozkaz_kogos_zaatakowa
 end
 
 function trigger_func_skrypty_ui_gags_color_color_rozkazy_rozkaz_zaslona_wykonanie()
+    local str_replace = "<sea_green>[ ROZKAZ WYK ] <".. scripts.gag_colors["zaslony_udane"] .. ">[ ZASLANIA ] " .. matches[1]
+    creplaceLine(str_replace)
+    resetFormat()
+end
+
+function trigger_func_skrypty_ui_gags_color_color_rozkazy_rozkaz_atak_wykonanie()
+    if scripts.gags:delete_line("rozkazy") then
+        return
+    end
+
     selectCurrentLine()
     local str_replace = "[ ROZKAZ WYK ] "
     prefix(str_replace)
@@ -32,6 +50,10 @@ function trigger_func_skrypty_ui_gags_color_color_rozkazy_rozkaz_zaslona_wykonan
 end
 
 function trigger_func_skrypty_ui_gags_color_color_rozkazy_rozkaz_kogos_zablokowac()
+    if scripts.gags:delete_line("rozkazy") then
+        return
+    end
+    
     selectCurrentLine()
     deleteLine()
     cecho("<salmon>\n\n[ ROZKAZ BLO ] " .. matches[2] .. matches[3] .. ".\n\n")

@@ -2,6 +2,9 @@ function amap:follow(direction, is_team_follow)
     -- `direction' - passed direction, either from key or team follow
     -- `is_team_follow' true if called from team follow
 
+    -- immediately clear next dir bind
+    amap.next_dir_bind = nil
+
     -- store current_id, can be necessary later
     local current_id = amap.curr.id
 
@@ -24,9 +27,16 @@ function amap:follow(direction, is_team_follow)
         amap.curr.area = getRoomAreaName(curr_area)
 
         amap.curr.x, amap.curr.y, amap.curr.z = getRoomCoordinates(amap.curr.id)
+        amap.curr.exits = {}
+        for en_long_dir, _ in pairs(getRoomExits(amap.curr.id)) do
+            amap.curr.exits[amap.long_to_short[en_long_dir]] = true
+        end
         amap.curr.y = -amap.curr.y
-
+        amap:may_prepare_next_go_dir()
         centerview(amap.curr.id)
+        if not is_team_follow then
+            raiseEvent("amapWalking", direction)
+        end
         raiseEvent("amapNewLocation", amap.curr.id, direction)
         amap:copy_loc(amap.prev, amap.curr)
         return true
@@ -42,8 +52,11 @@ function amap:locate(noprint)
     local msg = nil
     local ret = false
 
+    -- immediately clear next dir bind
+    amap.next_dir_bind = nil
+
     if tmp_loc.x then
-        local curr_id = amap:room_exist(tmp_loc.x, tmp_loc.y, tmp_loc.z, tmp_loc.area)
+        local curr_id = not amap.legacy_locate and amap:get_room_by_hash(tmp_loc.x, tmp_loc.y, tmp_loc.z, tmp_loc.area) or amap:room_exist(tmp_loc.x, tmp_loc.y, tmp_loc.z, tmp_loc.area)
         if curr_id and curr_id > 0 then
             amap.curr.id = curr_id
             amap.curr.x = tmp_loc.x
@@ -70,7 +83,14 @@ function amap:locate(noprint)
     return ret
 end
 
+function amap:locate_on_next_location()
+    registerAnonymousEventHandler("gmcp.room.info", function() amap:locate(true) end, true)
+end
+
 function amap:set_position(room_id, silent)
+    -- immediately clear next dir bind
+    amap.next_dir_bind = nil
+
     if getRoomExits(room_id) then
         amap.curr.id = room_id
         amap.curr.x, amap.curr.y, amap.curr.z = getRoomCoordinates(amap.curr.id)
@@ -97,6 +117,10 @@ function amap:set_position(room_id, silent)
             amap:print_log("Lokacja z tym ID nie istnieje")
         end
     end
+end
+
+function amap:generate_hash(x, y, z, area_name)
+    return string.format("%s:%s:%s:%s", x, y, z, area_name)
 end
 
 function get_next_room_from_dirs(room_id, dir, spe, is_team_follow)
@@ -171,6 +195,12 @@ function get_next_room_from_dirs(room_id, dir, spe, is_team_follow)
 
     if is_team_follow and not new_id then
         --amap:print_log("mapper zgubiony, przeslij dzordzykowi: last curr.id: " .. tostring(amap.curr.id) .. ", spe: `" .. spe .. "`", true)
+        amap:locate(true)
+        amap.locate_handler = scripts.event_register:register_singleton_event_handler(amap.locate_handler, "gmcp.room.info", function ()
+            if amap:locate(true) then
+                scripts.event_register:kill_event_handler(amap.locate_handler)
+            end
+        end)
         amap:log_failed_follow("[" .. getTime(true, "yyyy/MM/dd HH:mm:ss") .. "]: mapper zgubiony. last curr.id: " .. tostring(amap.curr.id) .. ", spe: `" .. spe .. "`\n")
     end
 
@@ -344,7 +374,6 @@ end
 
 function amap:gate_keybind_pressed()
     send(amap.gate_bind, true)
-    amap.gate_bind = nil
 end
 
 function amap:show_path(dst)

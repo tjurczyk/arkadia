@@ -63,6 +63,10 @@ function trigger_func_skrypty_ui_special_exits_follow_wejdz_do_studni_przecisnij
 end
 
 function trigger_func_skrypty_ui_special_exits_follow_przecisnij_przez_otwor()
+    if amap and amap.curr.id == 6134 then
+        scripts.utils.bind_functional_team_follow(matches[2], "wejdz do dziupli", 15)
+        return
+    end
     scripts.utils.bind_functional_team_follow(matches[2], "przecisnij sie przez otwor", 15)
 end
 
@@ -290,7 +294,11 @@ function trigger_func_skrypty_ui_special_exits_follow_zejdz_po_drabinie()
     scripts.utils.bind_functional_team_follow(matches[2], "opusc bronie;zejdz po drabinie;dobadz wszystkich broni", 15)
 end
 
-function trigger_func_skrypty_ui_special_exits_follow_wejdz_po_drabinie_2()
+function trigger_func_skrypty_ui_special_exits_follow_zejdz_po_drabinie_2()
+    scripts.utils.bind_functional_team_follow(matches[2], "zejdz po drabinie", 15)
+end
+
+function trigger_func_skrypty_ui_special_exits_follow_wejdz_po_drabinie()
     if amap and amap.curr and amap.curr.id == 17944 then
         scripts.utils.bind_functional_team_follow(matches[2], "wespnij sie na gore", 15)
         return
@@ -359,7 +367,7 @@ function trigger_func_skrypty_ui_special_exits_follow_wejdz_do_alkierza()
 end
 
 function trigger_func_skrypty_ui_special_exits_follow_unies_krate()
-    scripts.utils.bind_functional_team_follow(matches[2], "unies krate", 15)
+    scripts.utils.bind_functional_team_follow(matches[2], "unies " .. matches[3], 15)
 end
 
 function trigger_func_skrypty_ui_special_exits_follow_wejdz_do_namiotu()
@@ -573,10 +581,6 @@ end
 
 function trigger_func_skrypty_ui_special_exits_follow_wejdz_do_dziury()
     scripts.utils.bind_functional_team_follow(matches[2], "wejdz do dziury", 15)
-end
-
-function trigger_func_skrypty_ui_special_exits_follow_podnies_klape()
-    scripts.utils.bind_functional_team_follow(matches[2], "podnies klape", 15)
 end
 
 function trigger_func_skrypty_ui_special_exits_follow_przeczolgaj_sie_pod_pniem()

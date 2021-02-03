@@ -111,7 +111,6 @@ scripts.people.mail["known_people"] =
     ["nikolaus schmidt"] = "Ciesla",
     ["thomas schutz"] = "Operator Mostu Zwodzonego",
     ["asav"] = "Browar",
-    ["armand boulangier"] = "Piekarnia",
     ["euzebiusz"] = "Rybak, NW",
     ["adam fischhaendler"] = "Sprzedawca Ryb",
     ["athelstan shergison"] = "Szeryf",

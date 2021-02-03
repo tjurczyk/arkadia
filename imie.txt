@@ -1,9 +1,3 @@
-function load_my_settings()
-
----------------------------------------------------------------------------------
-------------     OD TEGO MIEJSCA W DOL MOZNA ZMIENIAC ZAWARTOSC    --------------
----------------------------------------------------------------------------------
-
 -- Wszystkie linie zaczynajace sie od '--' to komentarze i nie maja zadnego
 -- znaczenia w kontekscie ustawien.
 
@@ -24,6 +18,25 @@ scripts.character_name = nil
 -- Komenda do zmiany w trakcie gry: '/numeruj'
 ateam.all_numbering = false
 
+-- Opcja decydujaca jak oznaczac czlonkow swojej druzyny w pasku stanow.
+--
+-- Dozwolone wartosci
+-- "mode1"  - czlonkowie druzyny beda numerowanie literami: A, B, C...
+-- "mode2"  - czlonkowie druzyny beda numerowanie liczbami: 1, 2, 3...
+ateam.options.team_numbering_mode = "mode1"
+
+-- Opcja definiujaca kolory ogluszonych czlonkow druzyny. 'fg' to czcionka,
+-- 'bg' to tlo.
+--
+ateam.options.team_mate_stun_bg_color = "goldenrod"
+ateam.options.team_mate_stun_fg_color = "black"
+
+-- Opcja definiujaca kolory ogluszonych wrogow. 'fg' to czcionka,
+-- 'bg' to tlo.
+--
+ateam.options.enemy_stun_bg_color = "orchid"
+ateam.options.enemy_stun_fg_color = "black"
+
 ------------------------------------------
 
 -- Domyslna opcja do /z oraz /zz
@@ -38,16 +51,39 @@ ateam.attack_mode = 3
 -- Przykladowo: ateam.attack_commands = {"chzabij"}
 -- Jesli bedzie to wiecej niz jedna komenda (np: {"gpokrzyk", "chzabij"}),
 -- wtedy ostatni element musi byc elementem, ktory pobiera argument kogo zabic.
--- 
+--
 ateam.attack_commands = {"zabij"}
+
+-- Ustawienie komendy do wspierania, domyslnie jest "wesprzyj"
+ateam.support_command = "wesprzyj"
 
 -- Ustawianie puszczania zaslon
 -- w mudlecie do zmiany sluzy komenda '/puszczaj_zaslony'
--- 
+--
 -- Dozwolone wartosci:
 -- true - beda puszczane
 -- false - nie beda puszczane
 ateam.release_guards = false
+
+-- Ustawienie zaskakiwania w oknie stanow.
+-- Domyslnie na 0, czyli brak opcji zaskakiwania.
+--
+-- Jesli wybierze sie 1 to wiersz bedzie wygladal mniej wiecej:
+-- [ 1][xx][#######] ...
+-- po kliknieciu na [xx], postac zaskoczy 'xx'
+-- wiersz bedzie sie tylko pokazywal wtedy, kiedy postac moze zaskoczyc
+-- (warunek to czas od ukrycia, konfigurowalny ponizej)
+--
+-- Jesli wybierze sie 2 to czesc wiersza [xx] bedzie
+-- zawsze pokazywana
+ateam.sneaky_attack = 0
+
+-- Ustawienie jak dlugo (czas sekund badz "ok")
+-- ma minac od ukrycia sie, aby pokazala sie czesc wiersza [xx].
+-- Ta wartosc jest uzywana gdy w 'ateam.sneaky_attack' wybierze sie 1.
+--
+-- Dozwolone wartosci sa od 0 do 14 lub "ok".
+ateam.sneaky_attack_cond = "ok"
 
 ------------------------------------------
 
@@ -55,7 +91,7 @@ ateam.release_guards = false
 -- musi byc, aby lamac przy /prze (w przeciwnym razie nie zostanie wykonane).
 -- Warunek ten mozna ominac korzystajac z '/prze!' oraz '/prze! [id]',
 -- wtedy przelamanie zostanie wykonane bez wzgledu na zmeczenie
--- 
+--
 -- wartosci sa nastepujace:
 -- 9 (domyslne) - przelamanie wystapi zawsze
 -- 8 - przelamanie wystapi jesli jest sie "wycienczonym" i nizej
@@ -66,7 +102,7 @@ scripts.character.break_fatigue_level = 9
 -- Bindowanie dwukrotnego 'alt +' do uzycia +k.
 -- podana wartosc jest wartoscia, przy ktorej pokazana
 -- zostanie informacja o tym bindzie i dwukrotne wcisniecie jego zadziala.
--- 
+--
 -- wartosci sa nastepujace:
 -- -1  - wylaczone dzialanie tego binda
 --  0  - bind wyskoczy, gdy bedzie sie ledwo zywym
@@ -74,11 +110,16 @@ scripts.character.break_fatigue_level = 9
 --  itd..
 scripts.character.bind_hp_level = 1
 
+-- Bindowanie nieudanej akcji ze wzgledu na niedawne zakonczenie walki.
+-- Ochlon troche po walce!
+-- Dozwolone wartosci to true lub false
+scripts.character.combat_state.trigger_blocked_actions_bind = true
+
 ------------------------------------------
 
 -- Ustawienie jak maja dzialac bindowania przejsc specjalnych
 -- Znaczenie opcji:
--- 
+--
 -- 0 - nie bedzie w ogole bindowalo przejsc specjalnych na podstawie widzianych tekstow
 -- 1 - bedzie bindowalo przejscie tylko na podstawie osoby prowadzacej
 -- 2 - bedzie bindowalo na podstawie kogokolwiek
@@ -132,23 +173,72 @@ herbs["many_to_int"] = 25
 -- jakakolwiek liczba
 herbs["full_bag_amount"] = 44
 
+-- Czy uzywac triggerow dodawajacych nazwy ziol
+-- (zolty jasny kwiat -> zolty jasny kwiat (deliona))
+herbs["use_herb_triggers"] = false
+
 ------------------------------------------
 
--- Domyslne pojemniki do monet (money), kamieni (stones), jedzenia (food),
+-- Opcja do ustalania akcji "przed" i "po"
+--
+-- "pre" to przed, "post_" to po.
+--
+herbs["pre_actions"] = ""
+herbs["post_actions"] = ""
+
+
+------------------------------------------
+
+-- Opcja do ustalenia jakie maja byc bindowane ilosci ziol branych (get)
+-- oraz zazywanych (use) w klikalnych bindach.
+--
+herbs.settings["get_herb_counts"] = {1, 3}
+herbs.settings["use_herb_counts"] = {1, 3}
+
+------------------------------------------
+
+-- Domyslne pojemniki do monet (money), kamieni (gems), jedzenia (food),
 -- i wszystkiego innego (other)
 --
--- Dozwolone wartosci:
--- - 1 (to jest "plecak")
--- - 2 (to jest "torba")
--- - 3 (to jest "worek")
--- - 4 (to jest "sakiewka")
--- - 5 (to jest "mieszek")
--- - 6 (to jest "sakwa")
--- - 7 (to jest "wor")
-scripts.inv["money_bag"] = 1
-scripts.inv["stones_bag"] = 1
-scripts.inv["food_bag"] = 1
-scripts.inv["other_bag"] = 1
+-- Opis konfiguracji: http://arkadia.kamerdyner.net/pojemniki.html
+scripts.inv["money_bag_1"] = "plecak"
+scripts.inv["gems_bag_1"] = "plecak"
+scripts.inv["food_bag_1"] = "plecak"
+scripts.inv["other_bag_1"] = "plecak"
+
+------------------------------------------
+
+-- Ustawienia do skryptu lampy
+--
+-- Maksymalny (startowy) czas odliczania odnosnie lampy. Domyslnie 300 sekund = 5 minut.
+scripts.inv.lamp.lamp_seconds_default_start_val = 300
+
+-- W ktorych sekundach odliczania skrypt wydrukuje informacje w oknie glownym
+-- o pozostalym czasie lampy. Domyslnie jest to 120, 60, 30 i 10 sekund.
+-- Aby w ogole nic nie drukowac w oknie glownym, trzeba ustawic pusta tablice: {}
+scripts.inv.lamp.lamp_warning_times = {120, 60, 30, 10}
+
+-- W ktorych sekundach odliczania skrypt wykona beep poprzez zainicjowanie eventu
+-- "playBeep". Aby nie inicjowac zadnego eventu, nalezy ustawic pusta tablice: {}
+-- Mozna ustawienie wiecej niz jedna wartosc. Wartosci nie musza byc jednakowe
+-- z tymi z poprzedniej opcji.
+scripts.inv.lamp.lamp_beeps = {10}
+
+-- Ponizej ktorej sekundy odliczania skrypt zacznie drukowac w dolnym pasku
+-- zoltym kolorem czcionki. Aby nie uzywac zoltej czcionki, ustawic 0
+scripts.inv.lamp.lamp_yellow_seconds = 60
+
+-- Ponizej ktorej sekundy odliczania skrypt zacznie drukowac w dolnym pasku
+-- czerwonym kolorem czcionki. Aby nie uzywac czerwonej czcionki, ustawic 0
+scripts.inv.lamp.lamp_red_seconds = 30
+
+-- Bind, ktory ma sie bindowac gdy butelka oleju stanie sie pusta.
+-- Aby nie bindowac nic, ustawic pusty string: ""
+scripts.inv.lamp.lamp_empty_bottle_bind = "odloz olej; wez butelke z plecaka; napelnij lampe olejem"
+
+-- Bind, ktory ma sie bindowac gdy nie mamy butelki oleju w rece.
+-- Aby nie bindowac nic, ustawic pusty string: ""
+scripts.inv.lamp.lamp_no_bottle_bind = "wez butelke z plecaka"
 
 ------------------------------------------
 
@@ -175,56 +265,28 @@ misc.lang["aliases"] = {}
 -- Mozna miec rozne bindy do tych samych jezykow z roznymi przyslowkami.
 misc.lang["aliases_prefix"] = {}
 
+-- Ustawienie gnomiej mowy.
+-- Jesli ustawi sie true, bedzie uzywana.
+misc.lang["gnome_speech"] = false
+
 ------------------------------------------
 
 -- Konfiguracja pojemnikow na bron do /db[id], /ob[id] itp, pomoc w '/bronie'
--- 
--- Przykladowo:
--- scripts.inv.weapons.case = {"pochwy lyrijskiej", "zlocistej pochwy"}
--- w tym przypadku wszystko z '1', czyli /ob1, /db1 itp bedzie do 'pochwy lyrijskiej' itd.
--- Nazwy musza byc w dopelniaczu!
 --
-scripts.inv.weapons.case = {}
+scripts.inv.weapons.cases = {}
+scripts.inv.weapons.cases_dopelniacz = {}
 
--- Jesli chce sie miec pod odpowiednim id tarcze, trzeba tutaj ustawic jej id.
--- wtedy po ustawieniu np 2, bedzie mozna zrobic '/db2' i wyjmie i zalozy tarcze.
--- UWAGA: Jesli ustawia sie id tarczy, to wtedy w powyzszym w 'weapons.case' musi
--- byc ustawione cokolwiek jako to id, czyli na przyklad majac jako 2 bedzie to:
--- scripts.inv.weapons.case = {"pochwy lyrijskiej", "cos tam", "zlocistej pochwy"}
--- wtedy 1 i 3 to pochwy, 2 to cokolwiek (nieistotne, bo to id jest do tarczy).
-scripts.inv.weapons.shield_id = false
+-- Konfiguracja zachowania /db oraz /ob i do "Bron" na dolnym pasku.
+--
+scripts.inv.weapons.main_weapons_action = {}
 
--- Co robic przy akcji dotyczacej tarczy. Jesli 'mode' jest 1 to bedzie robilo
--- 'wloz tarcze do <pojemnika_other>', 'wez tarcze z <pojemnika_other>;zaloz ja'.
--- Jesli ustawi sie 2 to jest to 'gzzarzuc tarcze' oraz 'gzzdejmij' (plecy musza byc wtedy wolne).
-scripts.inv.weapons.shield_mode = 1
+-- Konfiguracja jakie maja byc komendy dobywania/zakladania broni/zbroi.
+--
+scripts.inv.weapons.weapon_on_actions = {}
 
--- Konfiguracja zachowania /db oraz /ob. Mozna sobie zdefiniowac ktore tarcze elementy
--- (1, 2, 3, ktores dwa albo wszystkie) maja byc dobywane/zakladane i opuszczane/chowane
--- przy /db i /ob.
--- jesli pozostawi sie tak jak jest (czyli {}) to bedzie 'dobadz wszystkich broni' i 
--- analogicznie dla opuszczania. Jesli ustawi sie:
--- scripts.inv.main_weapons_action = {1, 2}
--- to przy /db i /ob beda wykonywane akcje na pojemniku 1 i 2.
--- Jest wsparcie dla tarczy (jesli jest ustawiona jako slot powyzej)
-scripts.inv.main_weapons_action = {}
-
--- Konfiguracja jaka ma byc komenda dobywania.
--- Domyslnie jest to 'podobadz broni z ...' i  i taka komenda
--- pozostanie gdy pozostawi sie te opcje nieustawiona. Mozna na przyklad dla straznika zrobic:
--- scripts.inv.weapon1_action = "powyjmij bron z <pojemnika>;gzdobadz broni"
--- wtedy zamiast standardowego 'podobadz broni z ...' wykona zdefiniowane akcje.
--- Trzeba pamietac o <pojemnika>, ktore automatycznie bedzie zastapione odpowiednia
--- nazwa pojemnika.
-scripts.inv.weapon1_action_on = false
-scripts.inv.weapon2_action_on = false
-scripts.inv.weapon3_action_on = false
-
--- To samo co powyzej ale dla opuszczania broni.
--- Jesli nie jest zdefiniowane to jest wykonywane domyslne 'powsun bron ...'
-scripts.inv.weapon1_action_off = false
-scripts.inv.weapon2_action_off = false
-scripts.inv.weapon3_action_off = false
+-- To samo co powyzej ale dla opuszczania/zdejmowania broni/zbroi.
+--
+scripts.inv.weapons.weapon_off_actions = {}
 
 ------------------------------------------
 
@@ -235,6 +297,13 @@ scripts.inv.weapon3_action_off = false
 -- false - nie bedzie pokazywal
 -- true - bedzie pokazywal
 scripts.people["showing_names"] = true
+
+-- Wybor kolorow do imion i gildii.
+-- Kolory, ktore mozna wybrac sa dostepne w '/kolory'
+-- Imie
+scripts.people["name_color"] = "yellow"
+-- Gildia
+scripts.people["guild_color"] = "dark_orange"
 
 -- Domyslna opcja do BAZY POSTACI czy ma zapamietywac postacie przy przedstawianiu
 --
@@ -250,6 +319,33 @@ scripts.people["updating_names"] = false
 
 scripts.people.enemy_guilds = {}
 scripts.people.enemy_people = {}
+
+-- Czy utrzymywac bindy na stale po zbindowaniu.
+-- Czyli, jesli pojawi sie pieciu wrogow i trzech z nich zostanie
+-- zbindowanych pod F1, F4, F5, sa dwie mozliwosci:
+--
+-- jesli opcja ta jest ustawiona na true, wtedy dokladnie te postacie
+-- beda utrzymywane w tych bindach na stale. Mozna je bedzie zresetowac
+-- tylko poprzez '/nabindach-' lub poprzez reset klienta.
+--
+-- jesli opcja ta jest ustawiona na false, wtedy po wyjsciu z lokacji
+-- i po ponownym wejsciu na lokacje, wrogowie zostana przebindowani.
+-- Czyli moze sie zmienic ustawienie bindow do postaci, moga to byc zupelnie
+-- inne postacie lub te same.
+scripts.people.keep_binds_unchanged = true
+
+-- W jaki sposob pokazywac bindowanie wrogow.
+-- Ustawienie ma 3 mozliwosci:
+--
+-- 0 - nie pokaze bindowania w ogole. Wciaz mozna sprawdzi poprzed '/nabindach'
+-- 1 - bedzie pokazywalo bindy tylko wtedy, gdy beda bindowane
+-- po raz pierwszy. Jesli poprzednia opcja jest ustawiona na false,
+-- nie ma to znaczenia, poniewaz bindy sa zawsze przebindowywane.
+-- Jesli poprzednia opcja jest na true, wtedy pokaze bindy
+-- tylko za pierwszym razem.
+-- 2 - bedzie pokazywalo bindy zawsze. Nawet jesli ten sam wrog bedzie
+-- wchodzil na lokacje, komunikat bedzie sie pojawial zawsze.
+scripts.people.show_binds_setting = 1
 
 -- Kolorowanie wszystkich czlonkow gildii w bazie (po imionach i shortach).
 -- Wystarczy dac klucz = wartosc jako gildia i kolor, przykladowo:
@@ -280,7 +376,7 @@ scripts.people.colored_people = {}
 -- 'post' to po wycinaniu.
 
 -- Dozwolone wartosci:
--- [lista] komend do wykonania, np: 
+-- [lista] komend do wykonania, np:
 -- misc.cutting_pre = {"powsun bron do uprzezy", "powyjmij bron z pochwy", "dobadz sztyletu"}
 --misc.cutting_pre = {"powsun bron do uprzezy", "powyjmij bron z pochwy", "dobadz sztyletu"}
 --misc.cutting_post = {"powsun bron do pochwy", "powyjmij bron z uprzezy", "dobadz jej"}
@@ -292,6 +388,19 @@ misc.cutting_post = {}
 --
 -- Konfiguracja UI
 --
+
+--
+-- Ustawienie czy ma byc osobny panel dla  wyszukiwania
+--
+-- Domyslnie jest to 'true', czyli sidebar po prawej stronie z wynikami wyszukiwania
+-- Po ustawieniu 'false', wyniki beda pokazywane w glownym oknie
+--
+scripts.ui.results_window.enabled = true
+
+--
+-- Szerokosc panelu wyszukiwania
+--
+scripts.ui.results_window.width = 510
 
 --
 -- Ustawienie czy ma byc osobne okno rozmow
@@ -306,10 +415,75 @@ scripts.ui.separate_talk_window = false
 --
 scripts.ui.separate_talk_window_font_size = 12
 
+--
+-- Zawijanie wierszy w oknie rozmow (jeslo uzywane)
+-- Procentowa wartosc. 0.8 (domyslnie) to 80%
+-- 0.5 bedzie 50%, itp.
+--
+scripts.ui.separate_talk_window_p_width = 0.8
+
+--
+-- Prefix do kazdego wiersza w oknie rozmow.
+-- Jesli ustawi sie "> ", przed kazdym wierszem bedzie sie pojawialo "> "
+--
+scripts.ui.separate_talk_window_prefix = ""
+
+--
+-- Typy komunikatow, ktore maja sie pojawiac w oknie rozmow.
+-- Domyslnie sa to rozmowy i emocje. Wszystkie typy wysylane przez arkadie sa tutaj:
+-- http://arkadia.rpg.pl/forum/viewtopic.php?f=15&t=740
+--
+-- Format ma zostac taki jak ponizej: ["typ_komunikatu"] = true
+--
+scripts.ui.separate_talk_window_msg_types = {["comm"] = true, ["emotes"] = true}
+
 -- Wysokosc procentowa okna glownego okna kondycji
 -- height to wysokosc procentowa, width to szerokosc procentowa
 scripts.ui.states_window_height = 45
 scripts.ui.states_window_width = 50
+
+-- Zawijanie wierszy w oknie kondycji.
+-- Procentowa wartosc. 0.95 (domyslnie) to 95%
+-- 0.8 bedzie 80%, itp.
+scripts.ui.states_window_p_width = 0.95
+
+--
+-- Czy uzywac paska stanow jako naglowka w oknie stanow
+-- false - nieuzywany
+-- true - uzywany
+--
+scripts.ui.cfg["states_window_navbar"] = false
+
+--
+-- Czy przeciwnicy i neutralni maja byc w oddzielnym oknie kondycji
+-- false - jedno okno kondycji
+-- true - dwa okna kondycji
+--
+scripts.ui.separate_enemy_states = false
+
+--
+-- Jakie elementy maja znalezc sie w naglowku okna stanow.
+-- Dostepne to: "bron", "zaslona", "rozkaz", "ukryty"
+-- Kolejnosc bedzie taka, jak wymieniona ponizej.
+--
+scripts.ui.cfg["states_window_nav_elements"] = {
+  "bron",
+  "zaslona",
+  "rozkaz",
+  "ukryty",
+}
+
+--
+-- Jakie przedrostki maja byc uzywane do poszczegolnego elementu
+-- Jesli do "bron" uzyte jest "BRON", to w naglowku pojawi sie:
+-- "BRON: on" lub "BRON: off"
+--
+scripts.ui.cfg["states_window_nav_printable_key_map"] = {
+  ["bron"] = "BRON",
+  ["zaslona"] = "ZASLONA",
+  ["rozkaz"] = "ROZKAZ",
+  ["ukryty"] = "UKRYTY",
+}
 
 -- W ktorym miejscu (% okna) ma sie zaczac dolna belka
 scripts.ui.footer_start = 0
@@ -344,7 +518,7 @@ scripts.ui.footer_r = 0
 scripts.ui.footer_g = 0
 scripts.ui.footer_b = 47
 
--- 
+--
 -- Konfiguracja tego co i jak ma byc na srodkowym dolnym pasku
 --
 -- 'footer_mode' to styl belki.
@@ -352,6 +526,12 @@ scripts.ui.footer_b = 47
 -- mode0 - wylaczony
 -- mode1 - pasek z suwakami (bardziej graficznie)
 -- mode2 - pasek z wartosciami tekstowymi (bardziej minimalistyczny niz 1)
+-- mode3 - pasek z wartosciami tekstowymi (dostarczony przez Daracana)
+-- mode4 - pasek z wartosciami tekstowymi (inversionz, dostarczony przez Kazura)
+--
+-- mode4 wymaga wgrania czcionek inversionz. Trzeba pobrac z
+-- https://www.dafont.com/search.php?q=inversionz
+-- i wrzucic do katalogu "fonts" w mudlet-data.
 scripts.ui.cfg["footer_mode"] = "mode2"
 
 -- footer_items to elementy, jakie maja tam byc. Kolejnosc taka jak jest
@@ -370,12 +550,56 @@ scripts.ui.cfg["footer_items"] = {
 --"przeciazenie",
 }
 
+-- Ilosc wierszy w prawej, informacyjnej czesci belki
+scripts.ui.footer_info_row_count = 4
+
+-- info_items to elementy, jakie maja byc w prawej, informacyjnej czesci belki
+-- kolejnosc w tej tabeli jest taka jaka bedzie rowniez na belce
+-- mozliwe opcje to:
+-- "weapon"         - stan dobycia broni
+-- "order"          - stan rozkazu
+-- "cover"          - stan zaslony
+-- "killed"         - licznik zabitych
+-- "sneaky"         - tryb przemykania
+-- "hidden"         - stan ukrycia
+-- "attack"         - tryb atakowania
+-- "collect"        - tryb zbierania z cial
+-- "mail"           - alert poczty
+-- "alert"          - alerty ogolne
+-- "lamp"           - wskazania lampy
+-- "compass         - komendy pre i postwalk
+-- "combat"         - stan walki + ochloniecia po walce
+-- "placeholder"    - puste miejsce, mozna dac odstep pomiedzy konkretnymi elementami, element moze byc deklarowany pare razy
+
+scripts.ui.cfg.info_items = {
+    "weapon",
+    "order",
+    "cover",
+    "killed",
+    "sneaky",
+    "hidden",
+    "attack",
+    "collect",
+    "mail",
+    "alert",
+    "lamp",
+    "compass",
+    "combat"
+}
+
 scripts.ui.bind_color = "<LawnGreen>"
 
 --
--- Kolor podswietlania magicznych broni/zbroi
+-- Kolor podswietlania magicznych broni/zbroi.
 --
-scripts.magic_weapons_color = "tomato"
+scripts.inv.magics_color = "tomato"
+
+--
+-- Kolor podswietlania specjalnych kluczy.
+-- Aby nie podswietlac, ustaw:
+-- scripts.special_keys_color = nil
+--
+scripts.inv.magic_keys_color = "green_yellow"
 
 --
 -- Kolor uzywany przy /tcolor (pomoc w '/bindy')
@@ -387,10 +611,10 @@ scripts["tcolor_color"] = "orange"
 -- Konfiguracja gagow
 --
 -- Ponizej jest opcja co ma byc robione:
--- 
+--
 -- '0' - nic, wyswietlane beda taki tekst jak przychodzi z arkadii
 -- '1' - bedzie usuwana dana linia (nie bedzie w ogole informacji, ze przyszla)
--- '2' - bedzie gagowana z tagiem, np [bron] _oryginalna_linia_ 
+-- '2' - bedzie gagowana z tagiem, np [bron] _oryginalna_linia_
 --       (konfiguracja kolorow ponizej)
 --
 scripts.gag_settings = {
@@ -451,7 +675,7 @@ scripts.gag_colors["npc"] = "floral_white"
 --
 -- zmienna `key' sluzy do zdefiniowania konkretnego klawisza.
 -- moze to byc dowolny klawisz znaku alfanumerycznego.
--- dokladna lista znajduje sie tutaj: 
+-- dokladna lista znajduje sie tutaj:
 -- https://github.com/Mudlet/Mudlet/blob/development/src/mudlet-lua/lua/KeyCodes.lua#L2
 
 -- Wsparcie
@@ -471,8 +695,8 @@ scripts.keybind.configuration.functional_key.modifier = {}
 scripts.keybind.configuration.functional_key.key = "BracketRight"
 
 -- Atakowanie osoby z bindow
-scripts.keybind.configuration.attack_bind_obj.modifier = {}
-scripts.keybind.configuration.attack_bind_obj.key = "F1"
+scripts.keybind.configuration.attack_bind_objs.key = {"F1", "F4", "F5"}
+scripts.keybind.configuration.attack_bind_objs.modifier = {}
 
 -- Przelamywanie i atakowanie celu ataku
 scripts.keybind.configuration.break_attack_target.modifier = {}
@@ -514,6 +738,36 @@ scripts.keybind.configuration.temp3.key = "Minus"
 scripts.keybind.configuration.temp4.modifier = {"Alt"}
 scripts.keybind.configuration.temp4.key = "Equal"
 
+-- Tymczasowy keybind (5) (domyslnie nieaktywny)
+scripts.keybind.configuration.temp5.modifier = {}
+scripts.keybind.configuration.temp5.key = ""
+scripts.keybind.configuration.temp5.active = false
+
+-- Tymczasowy keybind (6) (domyslnie nieaktywny)
+scripts.keybind.configuration.temp6.modifier = {}
+scripts.keybind.configuration.temp6.key = ""
+scripts.keybind.configuration.temp6.active = false
+
+-- Tymczasowy keybind (7) (domyslnie nieaktywny)
+scripts.keybind.configuration.temp7.modifier = {}
+scripts.keybind.configuration.temp7.key = ""
+scripts.keybind.configuration.temp7.active = false
+
+-- Tymczasowy keybind (8) (domyslnie nieaktywny)
+scripts.keybind.configuration.temp8.modifier = {}
+scripts.keybind.configuration.temp8.key = ""
+scripts.keybind.configuration.temp8.active = false
+
+-- Tymczasowy keybind (9) (domyslnie nieaktywny)
+scripts.keybind.configuration.temp9.modifier = {}
+scripts.keybind.configuration.temp9.key = ""
+scripts.keybind.configuration.temp9.active = false
+
+-- Tymczasowy keybind (10) (domyslnie nieaktywny)
+scripts.keybind.configuration.temp10.modifier = {}
+scripts.keybind.configuration.temp10.key = ""
+scripts.keybind.configuration.temp10.active = false
+
 -- Otwieranie bram
 scripts.keybind.configuration.opening_gate.modifier = {"Control"}
 scripts.keybind.configuration.opening_gate.key = "2"
@@ -554,6 +808,31 @@ amap.using_room_gps = true
 amap.db.show_notes = true
 amap.db.show_binds = true
 
+-- Klucze do zapisywania i odtwarzania z bazy danych dla eventow 'amapMapKeysSave' i 'amapMapKeysLoad'
+-- czyli zazwyczaj przed pobraniem mapy i po zainstalowaniu nowej mapy
+-- przykladowe wartosci { "bind", "bind_printable" }
+-- UWAGA! Jezeli zmienia sie ID na mapie (przy przerysowywaniu mapy) to klucze nie zostana przywrocone
+amap.db.personal_keys.backup_keys = {}
+
+------------------------------------------
+
+-- Domyslna opcja startowa czy chodzik jest wlaczony czy nie
+--
+-- Dozwolone wartosci
+-- true/false
+--
+-- Komenda do zmiany w trakcie gry: '/chodzik wlacz' lub '/chodzik wylacz'
+amap.walker_disable = false
+
+------------------------------------------
+
+-- Domyslna opcja startowa czy chodzik ma uruchamiac sie po kliknieciu w mape
+--
+-- Dozwolone wartosci
+-- true/false
+--
+amap.walker_on_map_click = true
+
 ------------------------------------------
 
 -- Domyslna opcja startowa opoznienia chodzika
@@ -564,6 +843,20 @@ amap.db.show_binds = true
 --
 -- Komenda do zmiany w trakcie gry: '/opoz [wartosc]'
 amap.walker_delay = 2
+
+------------------------------------------
+
+-- Domyslna opcja blockerow
+--
+-- Eksperymentalne blockery, z zalozenia dzialaja w szerzszej liczbie przypadkow
+-- unikajac cofniec bedac czlonkiem druzyny
+-- Jezeli po wlaczeniu zauwazysz problemy, wylacz je i zglos na Discord
+--
+-- Dozwolone wartosci
+-- true - wlaczone
+-- false - wylaczone
+--
+amap.blockers.is_experimental = false
 
 ------------------------------------------
 
@@ -589,6 +882,13 @@ amap.ui.use_simplified_compass = false
 
 ------------------------------------------
 
+-- Kolory do oznaczania lokacji w /zaznaczaj
+-- dostepne kolory mozna zobaczyc w /kolory
+amap.ui.location_marker.color = "pale_violet_red"
+amap.ui.location_marker.color2 = "alice_blue"
+
+------------------------------------------
+
 -- Czy uzywac skroconego listowania kierunkow
 -- false to wylaczone, true to wlaczone
 amap.shorten_exits = false
@@ -601,8 +901,8 @@ amap.shorten_exits = false
 -- (czyli "Witaj Adremenie" dla mnie)
 -- 'loc_id' to numer lokacji na ktorej ma byc mapa ustawiona.
 
-amap.locating.name = "Adremenie"
-amap.locating.loc_id = 1
+amap.locating["name"] = "Adremenie"
+amap.locating["loc_id"] = 1
 
 ---------------------------------------------------------------------------------
 ------------------------       USTAWIENIA DZWIEKOW       ------------------------
@@ -614,23 +914,3 @@ amap.locating.loc_id = 1
 
 -- Podstawowy beep
 scripts.sounds.beep = getMudletHomeDir() .. "/arkadia/sounds/beep.wav"
-
----------------------------------------------------------------------------------
-------------       OD TEGO MIEJSCA PONIZEJ NIC NIE ZMIENIAJ       ---------------
----------------------------------------------------------------------------------
-
-local current_name = scripts.character_name or ""
-scripts:print_log("Ok, profil " .. current_name .. " zaladowany")
-
-end
-
-tempTimer(0.3, function () load_my_settings() end)
-tempTimer(0.4, function () misc_load_dump() end)
-tempTimer(0.4, function () scripts.people:enemy_people_starter() end)
-tempTimer(0.47, function () scripts.keybind:init() end)
-tempTimer(0.55, function () scripts.people:color_people_starter() end)
-tempTimer(0.7, function () scripts.people:trigger_people_starter() end)
-tempTimer(1, function () expandAlias("/ui_restart", false) end)
-tempTimer(1.1, function() amap:check_room_gps_options() end)
-tempTimer(1.5, function () scripts.ui:set_gag_options() end)
-tempTimer(1.7, function () misc.lang:init() end)

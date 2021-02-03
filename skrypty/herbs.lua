@@ -1,7 +1,7 @@
 herbs = herbs or {
     db = {},
     data_file_path = getMudletHomeDir() .. "/herbs_data",
-    data_url = "http://arkadia.kamerdyner.net/data/herbs_data.json",
+    data_url = "https://raw.githubusercontent.com/tjurczyk/arkadia-data/master/herbs_data.json",
     settings = { get_herb_counts = { 1, 3 }, use_herb_counts = { 1, 3 } },
     pre_actions = "",
     post_actions = ""
@@ -82,15 +82,9 @@ function alias_func_skrypty_herbs_przeszukaj_ziola()
     herbs:search_herbs(matches[2])
 end
 
-function alias_func_skrypty_herbs_zazyj_ziolo_single()
-    herbs:do_pre_actions()
-    herbs:use_herb(matches[3], matches[2], 1)
-    herbs:do_post_actions()
-end
-
 function alias_func_skrypty_herbs_zazyj_ziolo()
     herbs:do_pre_actions()
-    herbs:use_herb(matches[3], matches[2], tonumber(matches[4]))
+    herbs:use_herb(matches[3], matches[2], tonumber(matches[4]) or 1)
     herbs:do_post_actions()
 end
 

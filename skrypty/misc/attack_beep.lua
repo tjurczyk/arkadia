@@ -26,7 +26,7 @@ function misc.attack_beep:process_attack(who)
     end
 
     if misc.attack_beep["mode"] == 1 then
-        if scripts.people.enemy_suffix[lowered_who] == "" or scripts.people.enemy_suffix[lowered_who] then
+        if scripts.people.bind_enemies[lowered_who] == "" or scripts.people.bind_enemies[lowered_who] then
             raiseEvent("playBeep")
             raiseEvent("miscAttackBeepModeOne")
         end
@@ -34,6 +34,27 @@ function misc.attack_beep:process_attack(who)
         raiseEvent("playBeep")
         raiseEvent("miscAttackBeepModeTwo")
     end
+end
+
+function misc.attack_beep:process_player_attack(name, upper)
+    if misc.attack_beep["mode"] > 0 then
+        raiseEvent("playBeep")
+    end
+
+    if misc.attack_beep["mode"] == 1 then
+        raiseEvent("miscAttackBeepModeOne")
+    elseif misc.attack_beep["mode"] == 2 then
+        raiseEvent("miscAttackBeepModeTwo")
+    end
+
+    selectCurrentLine()
+    fg("red")
+
+    if upper then
+        selectString(upper, 1)
+        replace(upper:upper())
+    end
+    resetFormat()
 end
 
 function alias_func_skrypty_misc_attack_beep_set_level()

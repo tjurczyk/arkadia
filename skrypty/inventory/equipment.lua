@@ -1,93 +1,62 @@
 scripts.inv.equipment.JakoscZbroi = {
-    ["wyjatkowo zle"] = "wyjatkowo zle [1/12]",
-    ["bardzo zle"] = "bardzo zle [2/12]",
-    ["zle"] = "zle [3/12]",
-    ["bardzo kiepsko"] = "bardzo kiepsko [4/12]",
-    ["kiepsko"] = "kiepsko [5/12]",
-    ["przyzwoicie"] = "przyzwoicie [6/12]",
-    ["niezle"] = "niezle [7/12]",
-    ["dosc dobrze"] = "dosc dobrze [8/12]",
-    ["dobrze"] = "dobrze [9/12]",
-    ["bardzo dobrze"] = "bardzo dobrze [10/12]",
-    ["doskonale"] = "doskonale [11/12]",
-    ["perfekcyjnie"] = "perfekcyjnie [12/12]"
+    ["wyjatkowo zle"] = { value = 1, label = "wyjatkowo zle [1/12]" },
+    ["bardzo zle"] = { value = 2, label = "bardzo zle [2/12]" },
+    ["zle"] = { value = 3, label = "zle [3/12]" },
+    ["bardzo kiepsko"] = { value = 4, label = "bardzo kiepsko [4/12]" },
+    ["kiepsko"] = { value = 5, label = "kiepsko [5/12]" },
+    ["przyzwoicie"] = { value = 6, label = "przyzwoicie [6/12]" },
+    ["niezle"] = { value = 7, label = "niezle [7/12]" },
+    ["dosc dobrze"] = { value = 8, label = "dosc dobrze [8/12]" },
+    ["dobrze"] = { value = 9, label = "dobrze [9/12]" },
+    ["bardzo dobrze"] = { value = 10, label = "bardzo dobrze [10/12]" },
+    ["doskonale"] = { value = 11, label = "doskonale [11/12]" },
+    ["perfekcyjnie"] = { value = 12, label = "perfekcyjnie [12/12]" }
 }
 
 scripts.inv.equipment.SkutecznoscSprzetu = {
-    ["kompletnie nieskuteczn"] = "kompletnie nieskuteczne [1/14]",
-    ["strasznie nieskuteczn"] = "strasznie nieskuteczne [2/14]",
-    ["bardzo nieskuteczn"] = "bardzo nieskuteczne [3/14]",
-    ["raczej nieskuteczn"] = "raczej nieskuteczne [4/14]",
-    ["malo skuteczn"] = "malo skuteczne [5/14]",
-    ["niezbyt skuteczn"] = "niezbyt skuteczne [6/14]",
-    ["raczej skuteczn"] = "raczej skuteczne [7/14]",
-    ["dosyc skuteczn"] = "dosyc skuteczne [8/14]",
-    ["calkiem skuteczn"] = "calkiem skuteczne [9/14]",
-    ["bardzo skuteczn"] = "bardzo skuteczne [10/14]",
-    ["niezwykle skuteczn"] = "niezwykle skuteczne [11/14]",
-    ["wyjatkowo skuteczn"] = "wyjatkowo skuteczne [12/14]",
-    ["zabojczo skuteczn"] = "zabojczo skuteczne [13/14]",
-    ["fantastycznie skuteczn"] = "fantastycznie skuteczne [14/14]"
+    ["kompletnie nieskuteczn"] = { value = 1, label = "kompletnie nieskuteczne [1/14]" },
+    ["strasznie nieskuteczn"] = { value = 2, label = "strasznie nieskuteczne [2/14]" },
+    ["bardzo nieskuteczn"] = { value = 3, label = "bardzo nieskuteczne [3/14]" },
+    ["raczej nieskuteczn"] = { value = 4, label = "raczej nieskuteczne [4/14]" },
+    ["malo skuteczn"] = { value = 5, label = "malo skuteczne [5/14]" },
+    ["niezbyt skuteczn"] = { value = 6, label = "niezbyt skuteczne [6/14]" },
+    ["raczej skuteczn"] = { value = 7, label = "raczej skuteczne [7/14]" },
+    ["dosyc skuteczn"] = { value = 8, label = "dosyc skuteczne [8/14]" },
+    ["calkiem skuteczn"] = { value = 9, label = "calkiem skuteczne [9/14]" },
+    ["bardzo skuteczn"] = { value = 10, label = "bardzo skuteczne [10/14]" },
+    ["niezwykle skuteczn"] = { value = 11, label = "niezwykle skuteczne [11/14]" },
+    ["wyjatkowo skuteczn"] = { value = 12, label = "wyjatkowo skuteczne [12/14]" },
+    ["zabojczo skuteczn"] = { value = 13, label = "zabojczo skuteczne [13/14]" },
+    ["fantastycznie skuteczn"] = { value = 14, label = "fantastycznie skuteczne [14/14]" }
 }
 
 scripts.inv.equipment.WywazenieBroni = {
-    ["wyjatkowo zle"] = "wyjatkowo zle [1/14]",
-    ["bardzo zle"] = "bardzo zle [2/14]",
-    ["zle"] = "zle [3/14]",
-    ["bardzo kiepsko"] = "bardzo kiepsko [4/14]",
-    ["kiepsko"] = "kiepsko [5/14]",
-    ["przyzwoicie"] = "przyzwoicie [6/14]",
-    ["srednio"] = "srednio [7/14]",
-    ["niezle"] = "niezle [8/14]",
-    ["dosc dobrze"] = "dosc dobrze [9/14]",
-    ["dobrze"] = "dobrze [10/14]",
-    ["bardzo dobrze"] = "bardzo dobrze [11/14]",
-    ["doskonale"] = "doskonale [12/14]",
-    ["perfekcyjnie"] = "perfekcyjnie [13/14]",
-    ["genialnie"] = "genialnie [14/14]"
+    ["wyjatkowo zle"] = { value = 1, label = "wyjatkowo zle [1/14]" },
+    ["bardzo zle"] = { value = 2, label = "bardzo zle [2/14]" },
+    ["zle"] = { value = 3, label = "zle [3/14]" },
+    ["bardzo kiepsko"] = { value = 4, label = "bardzo kiepsko [4/14]" },
+    ["kiepsko"] = { value = 5, label = "kiepsko [5/14]" },
+    ["przyzwoicie"] = { value = 6, label = "przyzwoicie [6/14]" },
+    ["srednio"] = { value = 7, label = "srednio [7/14]" },
+    ["niezle"] = { value = 8, label = "niezle [8/14]" },
+    ["dosc dobrze"] = { value = 9, label = "dosc dobrze [9/14]" },
+    ["dobrze"] = { value = 10, label = "dobrze [10/14]" },
+    ["bardzo dobrze"] = { value = 11, label = "bardzo dobrze [11/14]" },
+    ["doskonale"] = { value = 12, label = "doskonale [12/14]" },
+    ["perfekcyjnie"] = { value = 13, label = "perfekcyjnie [13/14]" },
+    ["genialnie"] = { value = 14, label = "genialnie [14/14]" }
 }
-
-function trigger_func_skrypty_inventory_equipment_ocena_broni()
-    scripts.inv.equipment.TypSprzetu = matches[2]
-    scripts.inv.equipment.wywazenie = matches[5]
-    scripts.inv.equipment.parowanie = matches[7]
-    deleteLine()
-    scripts.inv.equipment.podmien()
-end
-
-function trigger_func_skrypty_inventory_equipment_ocena_zbroi()
-    deleteLine()
-    if matches[3] == "" then
-        scripts.inv.equipment.TypSprzetu = "tarcza"
-    else
-        scripts.inv.equipment.TypSprzetu = matches[3]
-    end
-end
-
-function trigger_func_skrypty_inventory_equipment_obrazenia()
-    deleteLine()
-    scripts.inv.equipment.obrazenia = matches[3]
-end
-
-function trigger_func_skrypty_inventory_equipment_chwytanie()
-    deleteLine()
-    scripts.inv.equipment.chwytanie = matches[3]
-end
 
 function trigger_func_skrypty_inventory_equipment_ekwipunek_poziom_zuzycia()
     misc:item_used_replace(matches[2])
 end
 
-function trigger_func_skrypty_inventory_equipment_ekwipunek_poziom_zniszczenia()
-    misc:item_damaged_replace(matches[3])
+function trigger_func_skrypty_inventory_equipment_poziom_zniszczenia(filtered)
+    misc:item_damaged_replace(matches[2], filtered)
 end
 
-function trigger_func_skrypty_inventory_equipment_ekwipunek_poziom_zniszczenia_gz()
-    misc:weapon_damaged_replace(multimatches[2][3])
-end
-
-function trigger_func_skrypty_inventory_equipment_bron_poziom_zniszczenia()
-    misc:weapon_damaged_replace(matches[3])
+function trigger_func_skrypty_inventory_equipment_bron_wyryly()
+    misc:weapon_damaged_wyryly(matches[1], matches[2])
 end
 
 function trigger_func_skrypty_inventory_equipment_ubranie_zbiorcze()

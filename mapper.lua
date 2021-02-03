@@ -1,8 +1,9 @@
 mudlet = mudlet or {}; mudlet.mapper_script = true
 if not amap then
     amap = {
+        handlers = {},
         db = { show_notes = true, show_binds = true },
-        ver = "4.3",
+        ver = scripts.ver,
         shortcuts = {},
         shorten_exits = false,
         dir_from_key = nil,
@@ -11,6 +12,12 @@ if not amap then
         backup_loc = {},
         mode = "follow",
         walker = false,
+        -- Flaga ustawiana przy uruchamianiu chodzika przy uzyciu komend. Chodzi
+        -- o to by rozroznic uruchomienie chodzika po klinieciu w mape (false)
+        -- od swiadomego przez gracza uruchomienia po wpisaniu komendy (true)
+        walker_set = false,
+        walker_disabled = false,
+        walker_on_map_click = true,
         set_walker_delay = 2,
         walker_delay = 2,
         walker_bind = nil,
@@ -24,9 +31,10 @@ if not amap then
         team_follow = false,
         locating = {},
         walk_mode = 1,
-        using_room_gps == true,
+        using_room_gps = true,
         can_bind_enemies = true,
-        next_dir_bind = nil
+        next_dir_bind = nil,
+        legacy_locate = false,
     }
 
 end
@@ -311,7 +319,35 @@ function trigger_func_mapper_jedziesz_wozem()
 end
 
 function trigger_func_mapper_idziesz()
-    tempTimer(0.07, function() amap:locate(true) end)
+        registerAnonymousEventHandler("gmcp.room.info", function() amap:locate(true) end, true)
+        local exits = {}
+        if table.size(gmcp.room.info.exits) ~= 2 then
+            -- in rare cases if go command was executed and gmcp does not have 2 exits we have to
+            -- use mapper exits
+            for dir,_ in pairs(getRoomExits(amap.curr.id)) do
+                table.insert(exits, amap.english_to_polish[dir])
+            end
+        else
+            exits = gmcp.room.info.exits
+        end
+
+        if table.size(exits) > 2 or table.size(exits) == 0 then
+            return
+        end
+
+        -- get direction that we came from (in polish)
+        local en_opposite_long = amap.opposite_dir[amap.dir_from_key]
+        local pl_long_dir = amap.english_to_polish[amap.short_to_long[en_opposite_long]]
+
+        -- get from determined exits other direction to one that we came from
+        if exits[1] == pl_long_dir then
+            amap.last_go_dir = exits[2]
+        else
+            amap.last_go_dir = exits[1]
+        end
+
+        amap.dir_from_key = amap.polish_to_english[amap.last_go_dir]
+        amap:follow(amap.dir_from_key, false)
 end
 
 function alias_func_mapper_print_options()

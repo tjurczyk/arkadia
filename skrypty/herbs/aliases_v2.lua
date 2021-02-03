@@ -65,7 +65,7 @@ function herbs:do_pre_post_actions(pre_post)
         actions = herbs.post_actions
     end
     if actions ~= "" then
-        local pre_elements = string.split(actions, ";")
+        local pre_elements = string.split(actions, "[;#]")
         for k, v in pairs(pre_elements) do
             expandAlias(v)
         end

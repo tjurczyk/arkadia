@@ -1,4 +1,12 @@
-scripts["people"] = scripts["people"] or { db = {}, mail = {}, enemies = {} }
+scripts["people"] = scripts["people"] or { 
+    db = {},
+    mail = {},
+    enemies = {},
+    color_triggers = {},
+    already_processed = {},
+    already_processed_desc = {},
+    bind_enemies = {}
+}
 
 scripts.people.db = db:create("people", {
     people = {
@@ -26,17 +34,14 @@ scripts.people["people_triggers_objects"] = scripts.people["people_triggers_obje
 
 scripts.people.enemy_guilds = {}
 scripts.people.enemy_people = {}
-scripts.people.enemy_table = {}
-scripts.people.enemy_suffix = {}
+scripts.people.enemy_table = scripts.people.enemy_table or {}
 
 scripts.people.keep_binds_unchanged = false
 scripts.people.show_binds_setting = 1
 
 scripts.people.colored_guilds = {}
 scripts.people.colored_people = {}
-scripts.people.color_table = {}
-scripts.people.color_suffix = {}
-scripts.people.color_items = {}
+
 
 scripts.people.trigger_guilds = {
     "CKN", "ES", "SC", "KS", "KM", "OS",
@@ -44,9 +49,6 @@ scripts.people.trigger_guilds = {
     "KGKS", "MC", "OK", "RA", "GL", "ZT",
     "ZS", "ZH", "GP"
 }
---scripts.people.trigger_guilds = {}
-scripts.people.trigger_items = {}
-scripts.people.trigger_suffix = {}
 
 function trigger_func_skrypty_people_przedstawienie()
     scripts.people:process_someone(multimatches[1][3], multimatches[2][1])
@@ -109,7 +111,7 @@ function alias_func_skrypty_people_usun_gildie()
 end
 
 function alias_func_skrypty_people_zgildiowani()
-    scripts.people:print_guilded(matches[2])
+    scripts.people:print_guilded(string.upper(matches[2]))
 end
 
 function alias_func_skrypty_people_gildie()

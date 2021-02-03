@@ -27,7 +27,7 @@ function scripts.inv.weapons:lower_weapon(id)
 end
 
 function scripts.inv.weapons:execute_weapon_actions(bag, bag_dopelniacz, actions)
-    local table_actions = string.split(actions, ";")
+    local table_actions = string.split(actions, "[;#]")
 
     for _, action in pairs(table_actions) do
         local bag_macro = string.match(action, "<[^>]+>")

@@ -136,16 +136,24 @@ function trigger_func_skrypty_misc_atakuje_cie_beep()
     misc.attack_beep:process_attack(matches[2])
 end
 
+function trigger_func_skrypty_misc_player_atakuje_cie_beep(name, upper)
+    misc.attack_beep:process_player_attack(name, upper)
+end
+
 function trigger_func_skrypty_misc_ostatnie_logowanie_licznik()
     misc.improve:improve_reset()
 end
 
 function trigger_func_skrypty_misc_tropienie_pewny()
-    misc:enemy_escape_print_arrow(matches[2], "yellow")
+    misc:enemy_escape_print_arrow(matches[2], "blue")
 end
 
 function trigger_func_skrypty_misc_tropienie_niepewny()
-    misc:enemy_escape_print_arrow(matches[2], "blue")
+    misc:enemy_escape_print_arrow(matches[2], "yellow")
+end
+
+function trigger_func_skrypty_misc_tropienie_pewny_rasa()
+    misc:enemy_escape_print_arrow(matches[2], "green")
 end
 
 function trigger_func_skrypty_misc_porownanie_wszystkich()
@@ -224,15 +232,6 @@ function trigger_func_skrypty_misc_porownanie_wszystkich()
         disableTrigger("porownanie-wszystkich")
         misc:comparing_after(scripts.comparing_all.current_compare_results)
     end
-end
-
-function alias_func_skrypty_misc_licz_poziom()
-    misc.lvl_calc.current_stats = {}
-    misc.lvl_calc.current_val_to_next = {}
-    enableTrigger("lvl_calc")
-    tempTimer(0.1, function() send("cechy", false) end)
-    tempTimer(0.5, function() misc.lvl_calc:calculate_lvl() end)
-    tempTimer(1, [[ disableTrigger("lvl_calc") ]])
 end
 
 function alias_func_skrypty_misc_zdenominuj()

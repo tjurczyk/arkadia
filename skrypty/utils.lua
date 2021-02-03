@@ -131,8 +131,17 @@ scripts.id_to_string_biernik = {
 scripts.string_to_liczebnik = {
     ["dwa"] = 2,
     ["dwie"] = 2,
+    ["dwoje"] = 2,
+    ["dwaj"] = 2,
+    ["dwoch"] = 2,
     ["trzy"] = 3,
+    ["troje"] = 3,
+    ["trzej"] = 3,
+    ["trzech"] = 3,
     ["cztery"] = 4,
+    ["czworo"] = 4,
+    ["czterech"] = 4,
+    ["czterej"] = 4,
     ["piec"] = 5,
     ["szesc"] = 6,
     ["siedem"] = 7,
@@ -173,9 +182,11 @@ scripts.string_to_liczebnik = {
 
 scripts["tcolor_color"] = "orange"
 
-function scripts:check_gmcp()
+function scripts:check_gmcp(silent)
     if not next(gmcp) then
-        scripts:print_log("Wyglada na to, ze GMCP nie jest wlaczone. Skrypty nie beda dzialac")
+        if not silent then
+            scripts:print_log("Wyglada na to, ze GMCP nie jest wlaczone. Skrypty nie beda dzialac")
+        end
         return false
     end
     return true

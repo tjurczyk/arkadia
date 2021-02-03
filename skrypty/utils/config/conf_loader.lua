@@ -1,54 +1,27 @@
+-- TODO(dzordzyk): to be deprecated
+
 scripts.config_loader = scripts.config_loader or {}
-
-function scripts.config_loader:init_name_file(name, wolacz)
-    if self:has_config_file(name) then
-        scripts:print_log("Konfiguracja dla " .. name .. " juz istnieje")
-    else
-        self:copy_initial_config(name, wolacz)
-        self:add_trigger(name, wolacz)
-        scripts:print_log("Utworzona konfiguracja dla " .. name .. " w pliku " .. self:get_config_path(name))
-    end
-end
-
-function scripts.config_loader:copy_initial_config(name, wolacz)
-    local config_path = self:get_config_path(name)
-    pcall(os.remove, config_path)
-    local source = io.open(getMudletHomeDir() .. "/arkadia/imie.txt", "r")
-    local content = source:read("*a")
-    content = content:gsub("scripts\.character_name = nil", "scripts.character_name = \"" .. name .. "\"")
-    content = content:gsub("amap\.locating\.name = \"Adremenie\"", "amap.locating.name = \"" .. wolacz .. "\"")
-    local destination = io.open(self:get_config_path(name), "w")
-    destination:write(content)
-    destination:close()
-end
-
-function scripts.config_loader:add_trigger(name, wolacz)
-    local trigger_name = name .. "-login"
-    if exists(trigger_name, "trigger") == 0 then
-        local code = "scripts_load_config(\"" .. name .. "\")"
-        permRegexTrigger(trigger_name, "", { "Witaj, " .. wolacz .. ". Podaj swe haslo" }, code)
-    end
-end
-
-function scripts.config_loader:has_config_file(name)
-    return io.exists(self:get_config_path(name))
-end
 
 function scripts.config_loader:get_config_path(name)
     return getMudletHomeDir() .. "/" .. name .. ".txt"
 end
 
-function scripts.config_loader:reload_last_config()
-    if self.last_config then
-        scripts_load_config(self.last_config)
+function scripts_load_config(name, silent)
+    if not silent then
+        scripts:print_log("Wyglada na to, ze uzywasz starego systemu konfiguracji. Dokonaj migracji do nowego systemu, skrypty moga dzialac niepoprawnie", true)
     end
-end
-
-function scripts_load_config(name)
     scripts.config_loader.last_config = name
-    dofile(scripts.config_loader:get_config_path(name))
-end
-
-function alias_func_init_config(name, wolacz)
-    scripts.config_loader:init_name_file(name, wolacz)
+    load_my_settings = nil
+    local ok, result, err = pcall(loadfile, scripts.config_loader:get_config_path(name))
+    if result then
+        result()
+        if not silent then
+            if not load_my_settings then
+                scripts:print_log("Ok, profil " .. name .. " zaladowany, ale nie zaaplikowany. Dokonaj migracji na nowy system")
+                scripts:print_url("<deep_sky_blue>kliknij tutaj po pomoc do nowego systemu", "alias_config_open_help_url", "klik")
+            else
+                scripts:print_log("Masz stary plik imie.txt. Zalecana aktualizacja. Aktualny domyslny plik znajdziesz w " .. getMudletHomeDir() .. "/arkadia/imie.txt")
+            end
+        end
+    end
 end

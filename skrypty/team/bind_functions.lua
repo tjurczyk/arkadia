@@ -68,7 +68,7 @@ end
 function ateam:zab_func(id)
     local id_retrieved = nil
 
-    if tonumber(id) > 100 then
+    if id ~= nil and tonumber(id) > 100 then
         -- TODO: Maybe find a better way to check whether the number is raw?
         id_retrieved = "ob_" .. id
     elseif ateam.enemy_op_ids[tonumber(id)] then
@@ -161,7 +161,7 @@ function ateam:prze_func(id, check_fatigue)
 end
 
 function ateam:def_func_clicked(id)
-    if not clicked_second_defense then
+    if not ateam.clicked_second_defense then
         ateam.clicked_second_defense = true
         tempTimer(1.5, function() ateam.clicked_second_defense = false end)
 

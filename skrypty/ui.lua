@@ -1,7 +1,7 @@
 scripts["ui"] = scripts["ui"] or { cfg = {} }
 
 scripts.ui.map_loaded = false
-scripts.ui.states_windows_loaded = false
+scripts.ui.states_windows_loaded = {}
 
 -- width for wrapping the states window
 scripts.ui.states_window_p_width = 95
@@ -38,6 +38,8 @@ scripts.ui.footer_width = 100
 scripts.ui.footer_map_width_p = 14
 -- Jaki % dolnej belki ma zajmowac prawa czesc belki (informacyjna z zaslonami itp)
 scripts.ui.footer_info_width_p = 46
+-- Ilosc wierszy w prawej, informacyjnej czesci belki
+scripts.ui.footer_info_row_count = 4
 
 -- Margines wysokosci (w pikselach) rozy wiatrow
 scripts.ui.footer_map_width_margin = 3
@@ -68,6 +70,22 @@ scripts.ui.cfg["footer_items"] = {
     "mana",
     "pragnienie",
     "upicie",
+}
+
+scripts.ui.cfg.info_items = {
+    "weapon",
+    "order",
+    "cover",
+    "killed",
+    "sneaky",
+    "hidden",
+    "attack",
+    "collect",
+    "mail",
+    "alert",
+    "lamp",
+    "compass",
+    "combat",
 }
 
 -- control if using navbar or not
@@ -164,6 +182,54 @@ scripts.ui["states_window_nav_printable_val_map"] = {
 -- to allow O(1)
 scripts.ui.cfg["states_window_nav_hash"] = {}
 
+-- po zmianie wartosci atrybutu jak hp po jakim czasie ma zniknac oznaczenie ze 
+-- atrybut ulegl zmianie
+scripts.ui.cfg["change_indicator_duration"] = 10
+
+scripts.ui.cfg["footer_mode5_settings"] = {
+  -- Dostepne wartosci to:
+  --   percent - wyswietli np. 10%
+  --   raw     - wyswietli np. 5/10
+  --   none    - nie wyswietli zadnej wartosci
+  ["display_value_mode"] = "raw",
+  
+  ["values"] = {
+    ["hp"] = {
+       ["color"]= "#e4190c",
+    },
+    ["fatigue"] = {
+       ["color"]= "#05b12f",
+    },
+    ["mana"] = {
+       ["color"]= "#308dff",
+    },
+    ["soaked"] = {
+       ["color"]= "#add8e6",
+    },
+    ["stuffed"] = {
+       ["color"]= "#8C482E",
+    },
+    ["intox"]= {
+       ["color"]= "#fb00ff",
+    },
+    ["headache"] = {
+       ["color"]= "#b8b8b8",
+    },
+    ["panic"] = {
+       ["color"]= "#ffd504",
+    },
+    ["encumbrance"] = {
+       ["color"]= "#e2ef27",
+    },
+    ["improve"] = {
+       ["color"]= "#522699",
+    },
+    ["form"] = {
+       ["color"]= "#ff8404",
+    },
+  }
+}
+
 function scripts.ui:decode_states_window_navbar_key(k)
     if not scripts.ui.states_window_elem_map[k] then
         error("wrong input: " .. k)
@@ -173,8 +239,6 @@ function scripts.ui:decode_states_window_navbar_key(k)
 end
 
 scripts.ui.states_window_navbar_str = ""
-
-tempTimer(2.348, function() scripts.ui:init_states_window_navbar() end)
 
 function alias_func_skrypty_ui_restart_ui()
     scripts.ui:setup()

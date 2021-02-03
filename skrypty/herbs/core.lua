@@ -3,6 +3,8 @@ function herbs:init_herbs()
         herbs:delete_triggers()
         herbs:create_triggers()
     end
+    herbs:v2_init_data()
+    herbs.window:create()
 end
 
 function herbs:check_single_bag(herbs_str)
@@ -68,6 +70,10 @@ function herbs:extract_herbs(herbs_arr)
                 end
             end
         end
+        if item["name"] == nil then
+            scripts:print_log("nierozpoznane ziolo: " .. tostring(v), true)
+            error("nierozpoznane ziolo: " .. tostring(v))
+        end
         extracted[item.name] = item
     end
 
@@ -94,10 +100,8 @@ end
 
 function herbs:create_triggers()
     for herb_long, herb_name in pairs(herbs.herbs_long_to_short) do
-        local first_capitalized = string.upper(string.sub(herb_long, 0, 1))
-        local rest_string = string.sub(herb_long, 2, #herb_long)
-        local regex = "(^|\\W)((" .. string.sub(herb_long, 0, 1) .. "|" .. first_capitalized .. ")" .. rest_string .. ")(\\W|$)"
-        herbs.herb_trigg_ids[herb_long] = tempRegexTrigger(regex, [[herbs:process_trigger(matches[3], "]] .. herb_name .. [[")]])
+        local regex = "(?:^|\\W)(?i)(".. herb_long .. ")(?:\\W|$)(?!\\(" .. herb_name ..")"
+        herbs.herb_trigg_ids[herb_long] = tempRegexTrigger(regex, [[herbs:process_trigger(matches[2], "]] .. herb_name .. [[")]])
     end
 end
 

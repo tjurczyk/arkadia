@@ -1,7 +1,13 @@
 scripts.inv.get_magics_to_put_down_exempts = {
     ["plytach twojego starozytnego pancerza"] = "starozytna runiczna zbroje plytowa",
+    ["mosiezna duza broszka w ksztalcie liscia debu"] = "mosiezna duza broszke w ksztalcie liscia debu",
+    ["zielonym luskowatym plaszczem"] = "zielony luskowaty plaszcz",
+    ["szmaragdowozielonym misternym plaszczem"] = "szmaragdowozielony misterny plaszcz",
     ["krasnoludzka starozytna korone"] = false,
-    ["kruczoczarny misterny miecz"] = false
+    ["kruczoczarny misterny miecz"] = false,
+    ["zamkniety ozdobny skorzany plecak"] = false,
+    ["otwarty ozdobny skorzany plecak"] = false,
+    ["ozdobny skorzany plecak"] = false,
 }
 
 function scripts.inv:special_inventory_highlight(text, color)
@@ -30,9 +36,11 @@ function scripts.inv:setup_magics_triggers()
 
     scripts.inv.magics_trigger_ids = {}
 
-    if scripts.inv["magics_data"]["magics"] then
-        for k, v in pairs(scripts.inv["magics_data"]["magics"]) do
-            table.insert(scripts.inv.magics_trigger_ids, scripts.inv:setup_special_inventory_highlight(v, scripts.inv.magics_color))
+    if scripts.inv.magics_data then
+        for magic, properties in pairs(scripts.inv.magics_data.magics) do
+            for _, regexp in pairs(properties.regexps) do
+                table.insert(scripts.inv.magics_trigger_ids, scripts.inv:setup_special_inventory_highlight(regexp, scripts.inv.magics_color))
+            end
         end
     end
 end
@@ -51,15 +59,26 @@ function scripts.inv:setup_magic_keys_triggers()
     end
 end
 
+function scripts.inv:find_magic(magic)
+    for key, properties in pairs(scripts.inv.magics_data.magics) do
+        if table.contains(properties.regexps, magic) then
+            return key, properties
+        end
+    end
+    return false
+end
+
 function scripts.inv:get_magics_to_put_down(container)
     local chosen_container = container or "skrzyni"
     self.magic_items_in_inventory = {
         triggers = {},
         items = {}
     }
-    for k, item  in pairs(scripts.inv["magics_data"]["magics"]) do
-        table.insert(self.magic_items_in_inventory.triggers, tempRegexTrigger(self:get_magic_item_pattern(item),
-                 function() self.magic_items_in_inventory.items[item] = item end))
+    for key, properties  in pairs(scripts.inv.magics_data.magics) do
+        for _, item in pairs(properties.regexps) do
+            table.insert(self.magic_items_in_inventory.triggers, tempRegexTrigger(self:get_magic_item_pattern(item),
+                    function() self.magic_items_in_inventory.items[item] = item end))
+        end
     end
     table.insert(self.magic_items_in_inventory.triggers, tempRegexTrigger("Masz przy sobie|Nie masz nic przy sobie", function() coroutine.resume(scripts.inv.magic_put_down_coroutine) end))
     send("i")
@@ -78,7 +97,9 @@ function scripts.inv:get_magics_to_put_down(container)
                 command = command .. "wloz " .. item .. " do ".. chosen_container .. ";"
             end
         end
-        scripts.utils.bind_functional(command, false, true)
+        if command ~= "" then
+            scripts.utils.bind_functional(command, false, true)
+        end
     end
     self.magic_items_in_inventory = nil
 end
@@ -91,9 +112,23 @@ function scripts.inv:get_magic_item_pattern(item)
     return "([" .. upper_first_letter .. first_letter .. "]" .. rest_of_string .. ")"
 end
 
+function scripts.inv:magic_worn_off(message, type)
+    selectCurrentLine()
+    deleteLine()
+    cecho("<tomato>\n\n\t[  MAGIK ZNIKA   ] " .. message .. "\n\n")
+    resetFormat()
+
+    raiseEvent("playBeep")
+    scripts.ui:info_action_update("ZNI. " .. type)
+end
+
 function alias_func_put_magics_down()
     scripts.inv.magic_put_down_coroutine = coroutine.create(function ()
         scripts.inv:get_magics_to_put_down(matches[3])
     end)
     coroutine.resume(scripts.inv.magic_put_down_coroutine)
+end
+
+function trigger_func_magic_dissapears(message, type)
+    scripts.inv:magic_worn_off(message, type)
 end

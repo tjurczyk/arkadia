@@ -31,9 +31,6 @@ function misc:weapon_item_show_results()
         if misc["item_damaged_desc"][v["state"]] then
             state = "<" .. misc["item_damaged_color"][v["state"]] .. ">" ..
                     misc["item_damaged_desc"][v["state"]] .. " " .. v["state"] .. "\n"
-        else
-            state = "<" .. misc["weapon_damaged_color"][v["state"]] .. ">" ..
-                    misc["weapon_damaged_desc"][v["state"]] .. " " .. v["state"] .. "\n"
         end
 
         cecho(" " .. name .. state)

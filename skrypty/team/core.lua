@@ -74,9 +74,11 @@ end
 
 function ateam:collect_people_on_location()
     ateam.people_on_location = {}
-    for k, v in pairs(gmcp.objects.nums) do
-        if ateam.objs[tonumber(v)] then
-            table.insert(ateam.people_on_location, ateam.objs[tonumber(v)]["desc"])
+    if not gmcp.objects then
+        for k, v in pairs(gmcp.objects.nums) do
+            if ateam.objs[tonumber(v)] then
+                table.insert(ateam.people_on_location, ateam.objs[tonumber(v)]["desc"])
+            end
         end
     end
 end

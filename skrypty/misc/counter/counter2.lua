@@ -123,11 +123,12 @@ function misc.counter2:show_short()
 
     local sum = 0
 
-    for k, v in scripts.utils.List.orderedPairs(count_dict) do
+    for k, v in spairs(count_dict) do
         local name = string.sub(k .. "<grey> ......................", 1, 29)
+        local color = misc.counter.utils:is_rare(name) and "<orange>" or "<LawnGreen>"
         local amount = string.sub(tostring(v) .. "       ", 1, 7)
         sum = sum + tonumber(v)
-        local line = "<grey>|  <LawnGreen>" .. name .. " <grey>" .. amount .. "                        |\n"
+        local line = "<grey>|  " .. color .. name .. " <grey>" .. amount .. "                        <grey>|\n"
         cecho(line)
     end
 
@@ -163,7 +164,8 @@ function misc.counter2:show_long()
         local this_date = v["year"] .. "/" .. v["month"] .. "/" .. v["day"]
 
         local date = string.sub(v["year"] .. "/" .. v["month"] .. "/" .. v["day"] .. "     ", 1, 11)
-        local type = string.sub(v["type"] .. " ...................................", 1, 23)
+        local name = string.sub(v["type"] .. " ...................................", 1, 23)
+        local color = misc.counter.utils:is_rare(name) and "<orange>" or "<LawnGreen>"
         local amount = string.sub(v["amount"] .. "       ", 1, 7)
 
         if current_date and current_date ~= this_date then
@@ -180,7 +182,7 @@ function misc.counter2:show_long()
             current_date = this_date
         end
 
-        cecho("<grey>|     - " .. type .. " <LawnGreen>" .. amount .. "                   <grey>|\n")
+        cecho("<grey>|     - " .. color .. name .. " " .. amount .. "                   <grey>|\n")
         sum = sum + tonumber(v["amount"])
         global_sum = global_sum + tonumber(v["amount"])
     end

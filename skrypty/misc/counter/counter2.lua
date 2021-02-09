@@ -95,6 +95,7 @@ function misc.counter2:add_sum(item, year, month, day, type)
     end
 end
 
+
 function misc.counter2:show_short()
     if not scripts.character_name then
         scripts:print_log("Korzystanie z bazy zabitych po ustawieniu 'scripts.character_name' w configu")
@@ -122,7 +123,7 @@ function misc.counter2:show_short()
 
     local sum = 0
 
-    for k, v in pairs(count_dict) do
+    for k, v in scripts.utils.List.orderedPairs(count_dict) do
         local name = string.sub(k .. "<grey> ......................", 1, 29)
         local amount = string.sub(tostring(v) .. "       ", 1, 7)
         sum = sum + tonumber(v)
@@ -202,36 +203,62 @@ function misc.counter2:show_logs(year, month, day)
         return
     end
 
+    if( (year == '' or year == nil) and (month == '' or month == nil) and (day == '' or day == nil)) then
+        misc.counter2:show_short()
+        return
+    end
+
+    local date = ""..year
     local sql_query = "SELECT * FROM counter2_log WHERE character=\"" .. scripts.character_name ..
-            "\" AND year=\"" .. year .. "\" AND month=\"" .. month ..
-            "\" AND day=\"" .. day .. "\" ORDER BY _row_id ASC"
+             "\" AND year=\"" .. year .. "\" "
+             
+    if month ~= nil then
+        date = date .. "/" .. month;
+        sql_query = sql_query .. " AND month=\"" .. month .. "\" "
+        if day ~= nil then
+            date = date .. "/" .. day;
+            sql_query = sql_query .. " AND day=\"" .. day .. "\" "
+        end
+    end
+    sql_query = sql_query .. " ORDER BY _row_id ASC"
+
     local retrieved = db:fetch_sql(misc.counter2.db_log.counter2_log, sql_query)
 
-    local date = string.sub(year .. "/" .. month .. "/" .. day .. "     ", 1, 11)
+    local date = string.sub(date .. "               ", 1, 11)
 
-    cecho("<grey>+---------------------------------------------------------+\n")
-    cecho("<grey>|                                                         |\n")
+    cecho("<grey>+---------------------------------------------------------------+\n")
+    cecho("<grey>|                                                               |\n")
     local name = string.sub(scripts.character_name .. "                    ", 1, 20)
-    cecho("<grey>|  POSTAC: <yellow>" .. name .. "<grey>                           |\n")
-    cecho("<grey>|                                                         |\n")
-    cecho("<grey>|  Logi z <LawnGreen>" .. date .. "<grey>                                     |\n")
-    cecho("<grey>|                                                         |\n")
+    cecho("<grey>|  POSTAC: <yellow>" .. name .. "<grey>                                 |\n")
+    cecho("<grey>|                                                               |\n")
+    cecho("<grey>|  Logi z <LawnGreen>" .. date .. "<grey>                                           |\n")
+    cecho("<grey>|                                                               |\n")
 
     local sum = 0
 
 
     for k, v in pairs(retrieved) do
         local text = string.sub(v["text"] .. "                                                       ", 1, 46)
-        local hour = string.sub(v["hour"] .. "          ", 1, 8)
-        cecho("<grey>|<orange>  " .. hour .. " <grey>" .. text .. "<grey>|\n")
+        
+        local kill_date = "";
+        if month == nil or day == nil then
+            kill_date = v["month"] .. "/" .. v["day"] .. " " .. v["hour"]
+        else
+            kill_date = v["hour"]
+        end
+
+        local kill_date_str = string.sub(kill_date .. "            ", 1, 14)
+
+        
+        cecho("<grey>|<orange>  " .. kill_date_str .. " <grey>" .. text .. "<grey>|\n")
         sum = sum + 1
     end
 
     local sum_str = string.sub(tostring(sum) .. " zabitych        ", 1, 17)
-    cecho("<grey>|                                                         |\n")
-    cecho("<grey>|  SUMA: <LawnGreen>" .. sum_str .. "<grey>                                |\n")
-    cecho("<grey>|                                                         |\n")
-    cecho("<grey>+---------------------------------------------------------+\n")
+    cecho("<grey>|                                                               |\n")
+    cecho("<grey>|  SUMA: <LawnGreen>" .. sum_str .. "<grey>                                      |\n")
+    cecho("<grey>|                                                               |\n")
+    cecho("<grey>+---------------------------------------------------------------+\n")
 end
 
 function misc.counter2:reset()

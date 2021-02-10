@@ -560,11 +560,12 @@ function ateam:print_obj_normal(id, obj)
         -- hp section
 
         local str_state = ""
-        if scripts.ui.states_fancy then
+        if scripts.ui.fancy.enabled then
+            debugc("FANCY ENABLED\n\n")
             str_state = states_normal[obj["hp"]]
             local name_or_type = string.split(obj["desc"], " ")
             name_or_type=name_or_type[#name_or_type]
-            local icon_symbol = scripts.ui.object_icons[name_or_type]
+            local icon_symbol = scripts.ui.fancy.object_icons[name_or_type]
 
             if icon_symbol ~= nil then
                 str_state = utf8.gsub(str_state, "👤", icon_symbol, 1)

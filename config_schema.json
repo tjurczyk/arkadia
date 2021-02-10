@@ -1204,7 +1204,7 @@
       ]
     },
     {
-      "name": "scripts.ui.states_fancy",
+      "name": "scripts.ui.fancy.enabled",
       "default_value": false,
       "field_type": "boolean",
       "macros_on_modify": [

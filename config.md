@@ -859,7 +859,7 @@ Symbol prawego nawiasu w oknie stanów, może być ciąg znaków
 
 ---
 
-## `scripts.ui.states_fancy`
+## `scripts.ui.fancy.enabled`
 
 Włacza/wyłącz bardziej graficzny pasek stanów
 

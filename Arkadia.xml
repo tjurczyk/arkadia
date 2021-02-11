@@ -33,52 +33,6 @@
 				<regexCodeList />
 				<regexCodePropertyList />
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-					<name>start_ateam</name>
-					<script>trigger_func_skrypty_team_start_ateam()</script>
-					<triggerType>0</triggerType>
-					<conditonLineDelta>0</conditonLineDelta>
-					<mStayOpen>0</mStayOpen>
-					<mCommand></mCommand>
-					<packageName></packageName>
-					<mFgColor>#ff0000</mFgColor>
-					<mBgColor>#ffff00</mBgColor>
-					<mSoundFile></mSoundFile>
-					<colorTriggerFgColor>#000000</colorTriggerFgColor>
-					<colorTriggerBgColor>#000000</colorTriggerBgColor>
-					<regexCodeList>
-						<string>^.*Ostatnie logowanie:.*$</string>
-					</regexCodeList>
-					<regexCodePropertyList>
-						<integer>1</integer>
-					</regexCodePropertyList>
-				</Trigger>
-				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-					<name>restart_ateam</name>
-					<script>trigger_func_skrypty_team_restart_ateam()</script>
-					<triggerType>0</triggerType>
-					<conditonLineDelta>0</conditonLineDelta>
-					<mStayOpen>0</mStayOpen>
-					<mCommand></mCommand>
-					<packageName></packageName>
-					<mFgColor>#ff0000</mFgColor>
-					<mBgColor>#ffff00</mBgColor>
-					<mSoundFile></mSoundFile>
-					<colorTriggerFgColor>#000000</colorTriggerFgColor>
-					<colorTriggerBgColor>#000000</colorTriggerBgColor>
-					<regexCodeList>
-						<string>^.*Stracil(es|as) kontakt z Arkadia na mniej niz dziesiec minut ...$</string>
-						<string>^.*Stracil(es|as) polaczenie na .*</string>
-						<string>^.*Byl(es|as) zaangazowan(a|y) w walke, gdy stracil(es|as) kontakt z Arkadia.$</string>
-						<string>Trwa ladowanie danych postaci.</string>
-					</regexCodeList>
-					<regexCodePropertyList>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>0</integer>
-					</regexCodePropertyList>
-				</Trigger>
-				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>left_team</name>
 					<script>trigger_func_skrypty_team_left_team()</script>
 					<triggerType>0</triggerType>
@@ -406,7 +360,7 @@
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
 							<string>^W skrzyniach zauwazasz miedzy innymi (.*)\.$</string>
-							<string>^W .* (skrzyni|kufrze) zauwazasz miedzy innymi (.*)\.$</string>
+							<string>^W .* (skrzyni|kufrze|skrzynce) zauwazasz miedzy innymi (.*)\.$</string>
 							<string>^Otwarty.* kosz zawiera (.*)\.$</string>
 							<string>^Na stojakach zauwazasz miedzy innymi (.*)\.$</string>
 							<string>Debowy wysoki sekretarzyk zawiera (.*)\.$</string>
@@ -433,7 +387,7 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>.* (skrzynia|kufer|komoda|stojak|biblioteczka|kuferek)( | z okuciami )zawiera (.*)\.$</string>
+							<string>.* (skrzynia|kufer|komoda|stojak|biblioteczka|kuferek|skrzynka)( | z okuciami )zawiera (.*)\.$</string>
 							<string>(Wsrod) (pedantycznego) porzadku w szafie zauwazasz miedzy innymi (.*)\.$</string>
 							<string>Otwart(a|y) [a-z ]+ (koszyk|szafa|sejf) zawiera (.*)\.$</string>
 						</regexCodeList>
@@ -1244,6 +1198,7 @@
 							<string>^(Skutecznie oslaniasz).*</string>
 							<string>^(Bez trudu zbijasz).*</string>
 							<string>Szkarlatne luski dzwiecza cicho, gdy oslaniasz sie swoja rogata tarcza przed uderzeniem</string>
+							<string>mierzac w ciebie, lecz widmowe pedy wyrastajace nagle z okraglego migotliwego puklerza zatrzymuja ten cios.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -1254,6 +1209,7 @@
 							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
+							<integer>0</integer>
 							<integer>0</integer>
 						</regexCodePropertyList>
 					</Trigger>
@@ -2351,28 +2307,6 @@
 						<string>Ostatnie logowanie:</string>
 					</regexCodeList>
 					<regexCodePropertyList>
-						<integer>0</integer>
-					</regexCodePropertyList>
-				</Trigger>
-				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-					<name>login success</name>
-					<script>trigger_func_skrypty_misc_login_done()</script>
-					<triggerType>0</triggerType>
-					<conditonLineDelta>0</conditonLineDelta>
-					<mStayOpen>0</mStayOpen>
-					<mCommand></mCommand>
-					<packageName></packageName>
-					<mFgColor>#ff0000</mFgColor>
-					<mBgColor>#ffff00</mBgColor>
-					<mSoundFile></mSoundFile>
-					<colorTriggerFgColor>#000000</colorTriggerFgColor>
-					<colorTriggerBgColor>#000000</colorTriggerBgColor>
-					<regexCodeList>
-						<string>Ostatnie logowanie:</string>
-						<string>przywracam polaczenie</string>
-					</regexCodeList>
-					<regexCodePropertyList>
-						<integer>0</integer>
 						<integer>0</integer>
 					</regexCodePropertyList>
 				</Trigger>
@@ -13925,6 +13859,44 @@
 							</regexCodePropertyList>
 						</Trigger>
 					</TriggerGroup>
+					<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">	
+						<name>Ptakopodobny kaplan</name>
+						<script></script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList />
+						<regexCodePropertyList />
+						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+							<name>Ptakopodobny (inkantacja)</name>
+							<script>
+								trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()
+							</script>
+							<triggerType>0</triggerType>
+							<conditonLineDelta>0</conditonLineDelta>
+							<mStayOpen>0</mStayOpen>
+							<mCommand></mCommand>
+							<packageName></packageName>
+							<mFgColor>#ff0000</mFgColor>
+							<mBgColor>#ffff00</mBgColor>
+							<mSoundFile></mSoundFile>
+							<colorTriggerFgColor>#000000</colorTriggerFgColor>
+							<colorTriggerBgColor>#000000</colorTriggerBgColor>
+							<regexCodeList>
+								<string>Zlowrogi ptakopodobny mezczyzna wykrzykuje skrzekliwie slowa inkantacji</string>
+							</regexCodeList>
+							<regexCodePropertyList>
+								<integer>2</integer>
+							</regexCodePropertyList>
+						</Trigger>
+					</TriggerGroup>
 					<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>tilea-nekromanta</name>
 						<script></script>
@@ -17973,22 +17945,6 @@
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-				<name>places</name>
-				<script></script>
-				<triggerType>0</triggerType>
-				<conditonLineDelta>0</conditonLineDelta>
-				<mStayOpen>0</mStayOpen>
-				<mCommand></mCommand>
-				<packageName></packageName>
-				<mFgColor>#ff0000</mFgColor>
-				<mBgColor>#ffff00</mBgColor>
-				<mSoundFile></mSoundFile>
-				<colorTriggerFgColor>#000000</colorTriggerFgColor>
-				<colorTriggerBgColor>#000000</colorTriggerBgColor>
-				<regexCodeList />
-				<regexCodePropertyList />
-			</TriggerGroup>
 			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>exploration</name>
 				<script></script>
@@ -18237,8 +18193,8 @@
 					</regexCodePropertyList>
 				</Trigger>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-					<name>collect-name</name>
-					<script>trigger_func_mapper_starters_collect_name()</script>
+					<name>capture login</name>
+					<script>trigger_func_mapper_starters_capture_login()</script>
 					<triggerType>0</triggerType>
 					<conditonLineDelta>5</conditonLineDelta>
 					<mStayOpen>0</mStayOpen>
@@ -24087,6 +24043,13 @@
 						<regex>^/postepy2$</regex>
 					</Alias>
 					<Alias isActive="yes" isFolder="no">
+						<name>postepy3</name>
+						<script>alias_func_skrypty_misc_postepy_postepy3()</script>
+						<command></command>
+						<packageName></packageName>
+						<regex>^/postepy3$</regex>
+					</Alias>
+ 					<Alias isActive="yes" isFolder="no">
 						<name>postepy_reset</name>
 						<script>alias_func_skrypty_misc_postepy_postepy_reset()</script>
 						<command></command>
@@ -24266,7 +24229,14 @@
 						<script>alias_func_skrypty_misc_zglebiaj_wiedze()</script>
 						<command></command>
 						<packageName></packageName>
-						<regex>^zglebiaj(?:\s+wiedze\s+)?\s*(\d*)$</regex>
+						<regex>^(?:zglebiaj$)|(?:zglebiaj wiedze$)|(:?zglebiaj wiedze (\d+)$)</regex>
+					</Alias>
+					<Alias isActive="yes" isFolder="no">
+						<name>otworz ksiazke</name>
+						<script>alias_func_scripts_misc_book_open(matches[2])</script>
+						<command></command>
+						<packageName></packageName>
+						<regex>^(otworz.*?(ksiege|ksiazke|ksiazeczke|tomiszcze|notatnik|dziennik|teke|tabliczek))</regex>
 					</Alias>
 				</AliasGroup>
 				<Alias isActive="yes" isFolder="no">

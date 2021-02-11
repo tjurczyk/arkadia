@@ -9,7 +9,7 @@ function scripts.config_init:init()
 end
 
 function scripts.config_init:suggest_init()
-    if not gmcp.char.info.name then
+    if not gmcp.char and not gmcp.char.info.name then
         tempTimer(5, function() self:suggest_init() end)
     end
     

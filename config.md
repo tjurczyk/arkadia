@@ -958,6 +958,7 @@ Mozliwe opcje to:
 * `weapon`         - stan dobycia broni
 * `order`          - stan rozkazu
 * `cover`          - stan zaslony
+* `guard_release`  - czy zasłony są puszczane
 * `killed`         - licznik zabitych
 * `sneaky`         - tryb przemykania
 * `hidden`         - stan ukrycia
@@ -1409,7 +1410,6 @@ Kolory do oznaczania lokacji w `/zaznaczaj`
 
 Dostepne kolory mozna zobaczyc w `/kolory` lub [tutaj](https://forums.mudlet.org/download/file.php?id=129&sid=be964a7a97580514727bfcb7cfcb5aec&mode=view)
 
-
 ---
 
 ## `amap.shorten_exits`
@@ -1464,7 +1464,6 @@ Dostępne wartości:
 * `true` - włączone
 * `false` - wyłączone
 
-
 ---
 
 ## `scripts.ui.auto_wrap_main_window.enabled`
@@ -1472,6 +1471,55 @@ Dostępne wartości:
 Długość linii (miejsce jej łamania dokładniej mówiąc) w głównym oknie będzie zależna od jego szerokości.
 Ustawienie szczególnie użyteczne dla osób przerzucających okno na rózne wielkościowo monitory. 
 Ustawienie nie działa na linie już wcześniej wyświetlone.
+
+Dostępne wartości:
+* `true` - włączone
+* `false` - wyłączone
+
+---
+
+## `amap.legacy_locate`
+
+Włączony sprawia, że `/zlok` działa na mapach sprzed aktualizacji systemu koordynatów.
+Jeżeli `/zlok` nie działa to albo wystarczy włączyć tą opcję albo zaktualizować mapę komendą: 
+```/lua amap.area_verifier:convert_map()```
+
+Dostępne wartości:
+* `true` - włączone
+* `false` - wyłączone
+
+--
+
+## `ateam.next_attack_objs.mark_in_state`
+
+Oznaczanie na pomarańczowo cyferki celu oznaczonego jako następny cel ataku (przy użyciu aliasów `/q [id]`).
+
+Dostępne wartości:
+* `true` - włączone
+* `false` - wyłączone
+
+---
+
+## `ateam.next_attack_objs.window.enabled`
+
+Pokazuje okno kolejki mobów do bicia (utworzonej za pomocą aliasów `/q [id]`)
+
+Dostępne wartości:
+* `true` - włączone
+* `false` - wyłączone
+
+---
+
+## `ateam.next_attack_objs.window.font_size`
+
+Ustawia wielkość czcionka dla okna kolejki mobów (jeśli używane).
+
+--
+
+## `scripts.ui.inline_compass_rose.enabled`
+
+Włącza lub wyłącza róże wiatrów pokazywaną pod wyjściami z lokacji.
+Wyjścia brane są z GMCP (z komunikatu z Arkadii), a nie z mappera.
 
 Dostępne wartości:
 * `true` - włączone

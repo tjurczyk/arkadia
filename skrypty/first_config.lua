@@ -12,10 +12,11 @@ function scripts.first_time_config:show_hint()
         cechoLink("<yellow>    Kliknij <light_slate_blue>tutaj<yellow> aby uruchomic konfigurator.", init_code, "Uruchom konfigurator", true)
         cecho("\n\n<yellow>==============================================================================================\n\n")
     end
+    scripts.state_store:set("notFirstRun", true)
 end
 
 function scripts.first_time_config:is_first_run()
-    return not (io.exists(getMudletHomeDir() .. "/map_master3.dat") or #db:fetch(scripts.people.db.people) == 0)
+    return not scripts.state_store:get("notFirstRun") and not (io.exists(getMudletHomeDir() .. "/map_master3.dat") or #db:fetch(scripts.people.db.people) == 0)
 end
 
 function scripts.first_time_config:init()
@@ -44,7 +45,7 @@ end
 function scripts.first_time_config.install_package(package)
     installPackage(getMudletHomeDir() .. "/arkadia/packages/".. package .. ".xml")
     scripts.first_time_config.package_installed[package] = true
-    tempTimer(1, function() self.config_window:reload_page() end )
+    tempTimer(1, function() scripts.first_time_config.config_window:reload_page() end )
 end
 
 function scripts.first_time_config.base_and_map(window_page, index)
@@ -105,7 +106,7 @@ function scripts.first_time_config.base_and_map(window_page, index)
     end
     echo(window_page.name, "\n")
     if not scripts.first_time_config.package_installed["alternative_keys"] then
-        cechoLink(window_page.name, "- <light_slate_blue>Zainstaluj<reset> poruszanie sie ctrl+alt+uiojklnm,<reset>", [[scripts.first_time_config.install_package("alternative_keys")]], "Instalacja poruszania sie bez klawiatury numerycznej", true)
+        cechoLink(window_page.name, "- <light_slate_blue>Zainstaluj<reset> poruszanie sie shift+alt+uiojklm,.<reset>", [[scripts.first_time_config.install_package("alternative_keys")]], "Instalacja poruszania sie bez klawiatury numerycznej", true)
     else 
         cecho(window_page.name, "<green>✓<reset> Poruszanie sie ctrl+alt+uiojklnm, zainstalowane.")
     end
@@ -128,3 +129,7 @@ end
 function alias_func_first_time_config()
     scripts.first_time_config:init()
 end
+
+registerAnonymousEventHandler("loginSuccessful", function()
+    scripts.first_time_config:show_hint()
+end, true)

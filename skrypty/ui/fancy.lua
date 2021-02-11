@@ -59,7 +59,7 @@ function scripts.ui.fancy:setup()
 		["mezczyzna"] = "🧑🏻",
 		["mysz"] = "🐭",
 		["niedzwiedz"] = "🐻",
-		["niedzwiedzica] = "🐻",
+		["niedzwiedzica"] = "🐻",
 		["niedzwiedzwiadek"] = "🐻",
 		["nietoperz"] = "🦇",
 		["niziolek"] = "👨🏻‍🍳",

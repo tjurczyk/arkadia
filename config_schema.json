@@ -2523,6 +2523,12 @@
       "macros_on_modify": []
     },
     {
+      "name": "scripts.mail_creator.justify",
+      "default_value": true,
+      "field_type": "boolean",
+      "macros_on_modify": []
+    },
+    {
       "name": "scripts.ui.notification_center.enabled",
       "default_value": true,
       "field_type": "boolean",

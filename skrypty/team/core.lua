@@ -447,7 +447,6 @@ function ateam:print_obj_enemy(id, obj)
         cecho(scripts.ui.enemy_states_window_name, "<"..ateam.options.bracket_hp_color..":team_console_bg>"..ateam.options.bracket_symbol_left.."<reset>" .. states_enemy[obj["hp"]] .. "<"..ateam.options.bracket_hp_color..":team_console_bg>"..ateam.options.bracket_symbol_right.." ")
 
         if print_id then
-            display( "states_enemy_no_color["..obj["hp"].."]="..states_enemy_no_color[obj["hp"]])
             selectString(scripts.ui.enemy_states_window_name, states_enemy_no_color[obj["hp"]], 1)
             setLink(scripts.ui.enemy_states_window_name, [[ ateam:prze_func("]] .. ateam.enemy_op_ids[id] .. [[", true) ]], "przelam obrone " .. ateam.enemy_op_ids[id])
             deselect(scripts.ui.enemy_states_window_name)

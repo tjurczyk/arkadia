@@ -252,7 +252,7 @@
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
 							<string>Oceniasz, ze (.*) waz.*</string>
-							<string>Ubranie to .* i wyglada na (.*)$</string>
+							<string>Ubranie to.* wyglada na (.*)$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -295,7 +295,7 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>Ubranie to .* i wyglada na (.*)$</string>
+							<string>Ubranie to.* wyglada na (.*)$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -13859,7 +13859,7 @@
 							</regexCodePropertyList>
 						</Trigger>
 					</TriggerGroup>
-					<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">	
+					<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>Ptakopodobny kaplan</name>
 						<script></script>
 						<triggerType>0</triggerType>
@@ -24049,7 +24049,7 @@
 						<packageName></packageName>
 						<regex>^/postepy3$</regex>
 					</Alias>
- 					<Alias isActive="yes" isFolder="no">
+					<Alias isActive="yes" isFolder="no">
 						<name>postepy_reset</name>
 						<script>alias_func_skrypty_misc_postepy_postepy_reset()</script>
 						<command></command>

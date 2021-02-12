@@ -197,10 +197,8 @@ function scripts.mail_creator:send()
     end
 
     sendAll("napisz list", self.mail.to, self.mail.subject, self.mail.cc:trim() ~= "" and self.mail.cc or " ")
-    tempTrigger("Wpisz ~?, zeby uzyskac pomoc, lub **, by zakonczyc edycje.", function() 
-        sendAll(unpack(self:crate_content()))
-        send("**")
-    end, 1)
+    sendAll(unpack(self:crate_content()))
+    send("**")
 end
 
 function alias_func_list()

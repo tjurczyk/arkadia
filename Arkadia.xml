@@ -22375,11 +22375,13 @@
 						<string>Wychodzisz z wody.</string>
 						<string>Wynurzasz sie z wody.</string>
 						<string>Rezygnujesz z przeplyniecia.</string>
+						<string>^Gdy przeszukujesz .*, twoja reka trafia niespodziewanie na jakis wystajacy element, ktory niechcacy wciskasz\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>0</integer>
 						<integer>0</integer>
 						<integer>0</integer>
+						<integer>1</integer>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>

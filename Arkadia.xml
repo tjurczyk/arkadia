@@ -13859,7 +13859,7 @@
 							</regexCodePropertyList>
 						</Trigger>
 					</TriggerGroup>
-					<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">	
+					<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>Ptakopodobny kaplan</name>
 						<script></script>
 						<triggerType>0</triggerType>
@@ -22246,7 +22246,6 @@
 						<string>^Mozesz skierowac lodz</string>
 						<string>Zeskakujesz z rozwieszonego plociennego szerokiego hamaka.</string>
 						<string>Powoli podnosisz sie z kleczek.</string>
-						<string>Udaje ci sie sprawnie przeplynac.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -22297,7 +22296,6 @@
 						<integer>0</integer>
 						<integer>1</integer>
 						<integer>1</integer>
-						<integer>0</integer>
 						<integer>0</integer>
 						<integer>0</integer>
 					</regexCodePropertyList>
@@ -22376,11 +22374,13 @@
 						<string>Wynurzasz sie z wody.</string>
 						<string>Rezygnujesz z przeplyniecia.</string>
 						<string>^Gdy przeszukujesz .*, twoja reka trafia niespodziewanie na jakis wystajacy element, ktory niechcacy wciskasz\.$</string>
+						<string>^Otwierasz szafke, a w srodku znajdujesz</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>0</integer>
 						<integer>0</integer>
 						<integer>0</integer>
+						<integer>1</integer>
 						<integer>1</integer>
 					</regexCodePropertyList>
 				</Trigger>
@@ -24053,7 +24053,7 @@
 						<packageName></packageName>
 						<regex>^/postepy3$</regex>
 					</Alias>
- 					<Alias isActive="yes" isFolder="no">
+					<Alias isActive="yes" isFolder="no">
 						<name>postepy_reset</name>
 						<script>alias_func_skrypty_misc_postepy_postepy_reset()</script>
 						<command></command>

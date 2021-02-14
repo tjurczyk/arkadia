@@ -111,6 +111,7 @@ function amap:set_position(room_id, silent)
         amap_add_location_history()
         amap_ui_set_dirs_trigger(getRoomExits(amap.curr.id))
 
+        raiseEvent("setPosition", amap.curr.id)
         raiseEvent("amapNewLocation", amap.curr.id)
     else
         if not silent then
@@ -196,15 +197,22 @@ function get_next_room_from_dirs(room_id, dir, spe, is_team_follow)
     if is_team_follow and not new_id then
         --amap:print_log("mapper zgubiony, przeslij dzordzykowi: last curr.id: " .. tostring(amap.curr.id) .. ", spe: `" .. spe .. "`", true)
         amap:locate(true)
-        amap.locate_handler = scripts.event_register:register_singleton_event_handler(amap.locate_handler, "gmcp.room.info", function ()
-            if amap:locate(true) then
-                scripts.event_register:kill_event_handler(amap.locate_handler)
-            end
-        end)
+        amap:locate_on_next()
         amap:log_failed_follow("[" .. getTime(true, "yyyy/MM/dd HH:mm:ss") .. "]: mapper zgubiony. last curr.id: " .. tostring(amap.curr.id) .. ", spe: `" .. spe .. "`\n")
     end
 
     return new_id
+end
+
+function amap:init_self_locating()
+    amap.locate_handler = scripts.event_register:register_singleton_event_handler(amap.locate_handler, "gmcp.room.info", function ()
+        if amap:locate(true) then
+            scripts.event_register:kill_event_handler(amap.locate_handler)
+        end
+    end)
+    amap.set_position_handler = scripts.event_register:register_event_handler(amap.set_position_handler, "setPosition", function()
+        scripts.event_register:kill_event_handler(amap.locate_handler)
+    end, true)
 end
 
 function amap:check_direction_coords_correctness(c_x, c_y, c_z, x, y, z, dir)
@@ -470,3 +478,6 @@ function alias_func_mapper_map_highlight_path()
     amap:do_highlight(tonumber(matches[2]))
 end
 
+function trigger_func_locate_on_next()
+    amap:init_self_locating()
+end

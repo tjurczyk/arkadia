@@ -153,3 +153,60 @@ function misc.improve:reset_improvee2()
     tempTimer(5, function() misc.improve.retried = nil end)
 end
 
+function misc.improve:print_improvee3()
+    if not scripts.character_name then
+        scripts:print_log("Korzystanie z bazy postepow po ustawieniu 'scripts.character_name' w configu")
+        return
+    end
+
+    local sql_query = "SELECT SUM (val) as val, year, month FROM improvee WHERE character=\"" .. scripts.character_name .. "\"  GROUP BY year, month ORDER BY year, month"
+    local retrieved = db:fetch_sql(misc.improve.db_improvee.improvee, sql_query)
+
+    cecho("<grey>+------------------------------+\n")
+    cecho("<grey>|                              |\n")
+    local name = string.sub(scripts.character_name .. "                    ", 1, 20)
+    cecho("<grey>|  POSTAC: <yellow>" .. name .. "<grey>|\n")
+    cecho("<grey>|                              |\n")
+
+    local sum = 0
+    local year_sum = 0;
+    local prev_year = nil;
+    for k, v in pairs(retrieved) do
+
+        local year = v['year'];
+        local date = year .. '/' .. v['month'];
+        local value = v["val"]
+
+        if prev_year ~= nil and year ~= prev_year then
+            local year_sum_value =  string.sub( "     " .. year_sum, -4);
+            cecho("<grey>| ---------------------------- |\n")
+            cecho("<grey>| <pink>Razem:     - <LawnGreen>".. year_sum_value.." postepow   <grey>|\n")
+            cecho("<grey>|                              |\n")
+            cecho("<grey>|                              |\n")
+            year_sum = 0;
+        end
+        prev_year = year
+
+        local date_str = string.sub(date .. "            ", 1, 11);
+
+        if value > 0 then
+            sum = sum + value
+            year_sum = year_sum + value
+            local val_str =  string.sub( "     " .. value, -4);
+
+            cecho("| <orange>" .. date_str .. "<grey>- <antique_white>" .. val_str .. " postepow   <grey>|\n")
+        end
+    end
+    local year_sum_value =  string.sub( "     " .. year_sum, -4);
+    cecho("<grey>| ---------------------------- |\n")
+    cecho("<grey>| <pink>Razem:     - <LawnGreen>".. year_sum_value.." postepow   <grey>|\n")
+    cecho("<grey>|                              |\n")
+    cecho("<grey>|        -------------         |\n")
+    cecho("<grey>|                              |\n")
+    local sum_global_str = string.sub(tostring(sum) .. " postepow" .. "           ", 1, 15)
+    cecho("<grey>| <pink>WSZYSTKICH - <LawnGreen>" .. sum_global_str .. "<grey> |\n")
+    local niebot_str = string.sub("~" .. string.format("%.2f", sum / 15) .. " niebot.             ", 1, 16)
+    cecho("<grey>|             <LawnGreen>" .. niebot_str .. "<grey> |\n")
+    cecho("<grey>|                              |\n")
+    cecho("<grey>+------------------------------+\n")
+end

@@ -43,7 +43,7 @@ end
 
 local function justify(line, limit)
     limit = limit or scripts.mail_creator.width
-    if line:len() < limit / 2 then
+    if line:len() < limit * 0.65 then
         return line
     end
     local words = string.split(line, " ")

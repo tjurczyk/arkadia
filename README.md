@@ -12,6 +12,11 @@ Wersja, której używasz: sprawdź nagłówek komendy `/skrypty`.
 **W celu poprawnego działania skryptów, w ustawieniach trzeba włączyć obsługę GMCP! Bez tego skrypty nie będą działać poprawnie.
 Przed instalacją koniecznie włącz opcję _Enable GMCP_ w ustawieniach (Settings) Mudleta i zrestartuj go.**
 
+#### Mudlet 4.11+
+---
+Przeciągnij poniższy link na okienko Mudleta.
+[https://github.com/tjurczyk/arkadia/releases/latest/download/ArkadiaScriptsInstaller.xml](https://github.com/tjurczyk/arkadia/releases/latest/download/ArkadiaScriptsInstaller.xml)
+
 #### Mudlet 4.6+ i moduł LUA
 ---
 Wystarczy wkleić poniższą komendę:
@@ -99,7 +104,10 @@ kolor wysoki poziom stanu 156
 ## USTAWIENIA
 
 Skrypty mają swoje ustawienia, które można załadować za pomocą `/laduj imie`
-Komenda `/laduj imie` ładuje plik o nazwie `imie.txt` z katalogu profilu Mudleta.
+Komenda `/laduj imie` ładuje plik o nazwie `imie.json` z katalogu profilu Mudleta.
+
+Pierwszej konfiguracji można również dokonań za pomocą kreatora, który w przypadku pierwszego uruchomienia pojawi się automatycznie.
+Konfigurator można przywołać komendą `/konfiguruj`.
 
 #### KATALOG PROFILU
 Aby dowiedzieć się gdzie siedzi katalog profilu, należy w linii komend w Mudlecie wykonać komendę:
@@ -341,7 +349,6 @@ Rowniez opcjonalnie mozna zalaczy plik `config_schema.json`. Zaktualizuje on ist
 
 ## KONTAKT
 
-1. Na IRCNet: Kanał \#arkadia, nick @dzordzyk
-2. Na forum: [@Adremen](http://arkadia.rpg.pl/forum/memberlist.php?mode=viewprofile&u=1084)
-3. [Temat](https://arkadia.rpg.pl/forum/viewtopic.php?f=15&t=1023), w którym można uzyskać pomoc na forum
-4. [Discord](https://discord.gg/76yaZnw)
+1. Na forum: [@Adremen](http://arkadia.rpg.pl/forum/memberlist.php?mode=viewprofile&u=1084)
+2. [Temat](https://arkadia.rpg.pl/forum/viewtopic.php?f=15&t=1023), w którym można uzyskać pomoc na forum
+3. [Discord](https://discord.gg/76yaZnw)

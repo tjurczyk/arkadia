@@ -3,9 +3,11 @@ scripts.config_init = scripts.config_init or {
 }
 
 function scripts.config_init:init()
-    self.handler = scripts.event_register:register_singleton_event_handler(self.handler, "loginSuccessful", function()
-        self:suggest_init()
-    end)
+    if not scripts.state_store:get("notFirstRun") then
+        self.handler = scripts.event_register:register_singleton_event_handler(self.handler, "loginSuccessful", function()
+            self:suggest_init()
+        end)
+    end
 end
 
 function scripts.config_init:suggest_init()

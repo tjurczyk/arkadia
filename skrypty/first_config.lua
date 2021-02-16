@@ -139,6 +139,6 @@ function alias_func_first_time_config()
     scripts.first_time_config:init()
 end
 
-registerAnonymousEventHandler("loginSuccessful", function()
+scripts.event_register:register_singleton_event_handler(self.handler, "loginSuccessful", function()
     scripts.first_time_config:show_hint()
 end, true)

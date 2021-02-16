@@ -16,7 +16,7 @@ function scripts.first_time_config:show_hint()
 end
 
 function scripts.first_time_config:is_first_run()
-    return not scripts.state_store:get("notFirstRun") and not (io.exists(getMudletHomeDir() .. "/map_master3.dat") or #db:fetch(scripts.people.db.people) == 0)
+    return not scripts.state_store:get("notFirstRun") and not (io.exists(getMudletHomeDir() .. "/map_master3.dat") or #db:fetch(scripts.people.db.people) ~= 0)
 end
 
 function scripts.first_time_config:init()
@@ -125,12 +125,12 @@ function scripts.first_time_config.plugins(window_page, index)
 end
 
 function scripts.first_time_config.download_map()
-    registerAnonymousEventHandler("sysDownloadDone", function() tempTimer(1, function() self.config_window:reload_page() end) end, true)
+    registerAnonymousEventHandler("sysDownloadDone", function() tempTimer(1, function() scripts.first_time_config:reload_page() end) end, true)
     alias_func_skrypty_installer_download_map()
 end
 
 function scripts.first_time_config.download_database()
-    registerAnonymousEventHandler("sysDownloadDone", function() tempTimer(1, function() self.config_window:reload_page() end) end, true)
+    registerAnonymousEventHandler("sysDownloadDone", function() tempTimer(1, function() scripts.first_time_config:reload_page() end) end, true)
     alias_func_skrypty_installer_download_people_db()
 end
 

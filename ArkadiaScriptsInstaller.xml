@@ -66,6 +66,7 @@ function handleUnzipEvents(event, ...)
     if event == "sysUnzipDone" then
         os.remove(scriptsZip)
         os.remove(installerXML)
+        disableScript("ArkadiaScriptsInstaller")
         uninstallPackage("Arkadia")
         uninstallPackage("generic_mapper")
         uninstallPackage("skrypty_master3")

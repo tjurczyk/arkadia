@@ -3977,14 +3977,14 @@
 								<colorTriggerFgColor>#000000</colorTriggerFgColor>
 								<colorTriggerBgColor>#000000</colorTriggerBgColor>
 								<regexCodeList>
-									<string>Jasniejaca luna znaczy powietrze, gdy dlugim cieciem jasniejacego zdobionego jatagana</string>
-									<string>Nagly blysk rozswietla cale otoczenie, gdy szybkim pchnieciem jasniejacego zdobionego jatagana</string>
-									<string>Swietlista smuga przecina powietrze, gdy szybkim pchnieciem jasniejacego zdobionego jatagana</string>
+									<string>^Jasniejaca luna znaczy powietrze, gdy (?:dlugim cieciem)|(?:szybkim pchnieciem) jasniejacego zdobionego jatagana</string>
+									<string>^Nagly blysk rozswietla cale otoczenie, gdy (?:dlugim cieciem)|(?:szybkim pchnieciem) jasniejacego zdobionego jatagana</string>
+									<string>^Swietlista smuga przecina powietrze, gdy (?:dlugim cieciem)|(?:szybkim pchnieciem) jasniejacego zdobionego jatagana</string>
 								</regexCodeList>
 								<regexCodePropertyList>
-									<integer>0</integer>
-									<integer>0</integer>
-									<integer>0</integer>
+									<integer>1</integer>
+									<integer>1</integer>
+									<integer>1</integer>
 								</regexCodePropertyList>
 								<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 									<name>ledwo-muskasz</name>

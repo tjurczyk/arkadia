@@ -125,12 +125,12 @@ function scripts.first_time_config.plugins(window_page, index)
 end
 
 function scripts.first_time_config.download_map()
-    registerAnonymousEventHandler("sysDownloadDone", function() tempTimer(1, function() scripts.first_time_config:reload_page() end) end, true)
+    registerAnonymousEventHandler("sysDownloadDone", function() tempTimer(1, function() self.config_window:open() scripts.first_time_config:reload_page() end) end, true)
     alias_func_skrypty_installer_download_map()
 end
 
 function scripts.first_time_config.download_database()
-    registerAnonymousEventHandler("sysDownloadDone", function() tempTimer(1, function() scripts.first_time_config:reload_page() end) end, true)
+    registerAnonymousEventHandler("sysDownloadDone", function() tempTimer(1, function() self.config_window:open() scripts.first_time_config:reload_page() end) end, true)
     alias_func_skrypty_installer_download_people_db()
 end
 

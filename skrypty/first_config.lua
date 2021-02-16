@@ -31,10 +31,8 @@ function scripts.first_time_config:init()
         self.config_window:add_page(scripts.first_time_config.base_and_map)
         self.config_window:add_page(scripts.first_time_config.plugins)
 
-        registerAnonymousEventHandler("loginSuccessful", function() self.config_window:reload_page() end, true)
-        registerAnonymousEventHandler("sysInstall", function() tempTimer(1, function() self.config_window:reload_page() end) end)
-        registerAnonymousEventHandler("sysDownloadDone", function() tempTimer(1, function() self.config_window:reload_page() showWindow(self.config_window.window_name) end) end)
-        registerAnonymousEventHandler("gmcp.char.options", function() self.screen_width = gmcp.char.options.screen_width self.config_window:reload_page() end)
+        self.loginHandler = registerAnonymousEventHandler("loginSuccessful", function() self.config_window:reload_page() end, true)
+        self.optionsHandler = registerAnonymousEventHandler("gmcp.char.options", function() self.screen_width = gmcp.char.options.screen_width self.config_window:reload_page() end, true)
 
         sendGMCP("Char.Options")
     end
@@ -81,7 +79,7 @@ function scripts.first_time_config.base_and_map(window_page, index)
     cecho(window_page.name, "-------------------\n")
     if #db:fetch(scripts.people.db.people) == 0 then
         cecho(window_page.name, "<red>X<reset> Nie masz pobranej bazy postaci.\n")
-        cechoLink(window_page.name, "Wpisz <tomato>/pobierz_baze<reset> lub kliknij <light_slate_blue>tutaj<reset>", [[alias_func_skrypty_installer_download_people_db()]], "Pobieranie bazy", true)
+        cechoLink(window_page.name, "Wpisz <tomato>/pobierz_baze<reset> lub kliknij <light_slate_blue>tutaj<reset>", [[scripts.first_time_config.download_database()]], "Pobieranie bazy", true)
     else
         cecho(window_page.name, "<green>✓<reset> Masz juz pobrana baze postaci.")
     end
@@ -90,7 +88,7 @@ function scripts.first_time_config.base_and_map(window_page, index)
     cecho(window_page.name, "-------------------\n")
     if not io.exists(getMudletHomeDir() .. "/map_master3.dat") then
         cecho(window_page.name, "<red>X<reset> Nie masz pobranej mapy.\n")
-        cechoLink(window_page.name, "Wpisz <tomato>/pobierz_mape<reset> lub kliknij <light_slate_blue>tutaj<reset>", [[alias_func_skrypty_installer_download_map()]], "Pobieranie mapy", true)
+        cechoLink(window_page.name, "Wpisz <tomato>/pobierz_mape<reset> lub kliknij <light_slate_blue>tutaj<reset>", [[scripts.first_time_config.download_map()]], "Pobieranie mapy", true)
     else
     
         cecho(window_page.name, "<green>✓<reset> Masz juz pobrana mape.")
@@ -125,6 +123,17 @@ function scripts.first_time_config.plugins(window_page, index)
     cechoLink(window_page.name, "Opis: <light_slate_blue>https://github.com/Delwing/arkadia-cfg-editor<reset>\n", [[openUrl("https://github.com/Delwing/arkadia-cfg-editor)]], "", true)
     cechoLink(window_page.name, "Zainstaluj: <light_slate_blue>kliknj<reset>", [[scripts.plugins_installer.install_from_url(scripts.plugins_installer, "https://codeload.github.com/Delwing/arkadia-cfg-editor/zip/master")]], "", true)
 end
+
+function scripts.first_time_config.download_map()
+    registerAnonymousEventHandler("sysDownloadDone", function() tempTimer(1, function() self.config_window:reload_page() end) end, true)
+    alias_func_skrypty_installer_download_map()
+end
+
+function scripts.first_time_config.download_database()
+    registerAnonymousEventHandler("sysDownloadDone", function() tempTimer(1, function() self.config_window:reload_page() end) end, true)
+    alias_func_skrypty_installer_download_people_db()
+end
+
 
 function alias_func_first_time_config()
     scripts.first_time_config:init()

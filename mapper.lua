@@ -36,7 +36,6 @@ if not amap then
         next_dir_bind = nil,
         legacy_locate = false,
     }
-
 end
 
 enableTrigger("room-gps")

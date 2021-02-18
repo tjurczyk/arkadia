@@ -1,3 +1,13 @@
+function amap:open_map()
+    openMapWidget()
+    if not scripts.config then
+        self.profile_loaded_handler = scripts.event_register:force_register_event_handler(self.profile_loaded_handler, "profileLoaded", function()
+            raiseEvent("mapOpenEvent")
+        end, true)
+    end
+end
+tempTimer(1, function() amap:open_map() end)
+
 function amap:draw_mode_manual()
     amap.mode = "draw"
     amap.ui:mapper_mode(false)

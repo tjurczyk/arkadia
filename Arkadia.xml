@@ -3010,7 +3010,7 @@
 									<string>^[ &gt;]*Pazury .* zeslizguja sie po .*\.$</string>
 									<string>^[ &gt;]*[a-zA-Z (),!]+ lecz uderzenie zatrzymuje sie na (twym|twych|twej) [a-z ]+\.$</string>
 									<string>^[ &gt;]*[a-zA-Z (),!]+ gdy jego uderzenie zeslizguje sie po (twym|twych|twej) [a-z ]+\.$</string>
-									<string>^[ &gt;]*[a-zA-Z (),!]+ by wyprowadzic cios zdolnyprzebic (twoj|twoja|twe) [a-z ]+\.$</string>
+									<string>^[ &gt;]*[a-zA-Z (),!]+ by wyprowadzic cios zdolny przebic (twoj|twoja|twe) [a-z ]+\.$</string>
 								</regexCodeList>
 								<regexCodePropertyList>
 									<integer>1</integer>
@@ -12212,7 +12212,7 @@
 								<colorTriggerBgColor>#000000</colorTriggerBgColor>
 								<regexCodeList>
 									<string>(^[ &gt;]*Wykonujesz zamaszyste ciecie [a-z ]+ mierzac w [a-zA-Z (),!]+, lecz [a-z]+ zbija .* linii ataku .*\.$)</string>
-									<string>(^[ &gt;]*Nagle .* wykonuje zamaszysty cios .* celujac w .*, lecz [a-z]+ sprawnie paruje go .*\.$)</string>
+									<string>(^[ &gt;]*Nagle .* wykonuje zamaszysty cios .* celujac w .*, lecz [a-z]+ (sprawnie |)paruje go .*\.$)</string>
 									<string>(^[ &gt;]*.* wykonuje zamaszyste ciecie .* mierzac w .*, lecz [a-z]+ zbija je z linii ataku .*\.)</string>
 									<string>(^[ &gt;]*Wyprowadzasz szybkie pchniecie .* w .*, lecz [a-z]+ zbija je z linii ataku .*\.$)</string>
 									<string>(^[ &gt;]*.* wykonuje zamaszyste ciecie .* mierzac w .*, lecz .* oslania sie .*\.$)</string>
@@ -12260,8 +12260,12 @@
 								<colorTriggerBgColor>#000000</colorTriggerBgColor>
 								<regexCodeList>
 									<string>^[ &gt;]*.* trafia ([a-z]+).* w .*, lecz caly impet uderzenia zostaje .*</string>
+									<string>^[ &gt;]*[a-zA-Z (),!]+ lecz uderzenie zatrzymuje sie na (jego|jej) [a-z ]+\.$</string>
+									<string>^[ &gt;]*[a-zA-Z (),!]+ (gdy jego uderzenie|lecz) zeslizguje sie po (jego|jej) [a-z ]+\.$</string>
 								</regexCodeList>
 								<regexCodePropertyList>
+									<integer>1</integer>
+									<integer>1</integer>
 									<integer>1</integer>
 								</regexCodePropertyList>
 							</Trigger>

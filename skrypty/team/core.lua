@@ -1,6 +1,10 @@
 function ateam:init_gmcp()
     sendGMCP('Core.Supports.Add ["Objects", "Gmcp_msgs"]')
     ateam:set_base64()
+
+    gmcp.objects = gmcp.objects or {
+        nums = {}
+    }
 end
 
 function ateam:start_ateam()
@@ -74,11 +78,9 @@ end
 
 function ateam:collect_people_on_location()
     ateam.people_on_location = {}
-    if not gmcp.objects then
-        for k, v in pairs(gmcp.objects.nums) do
-            if ateam.objs[tonumber(v)] then
-                table.insert(ateam.people_on_location, ateam.objs[tonumber(v)]["desc"])
-            end
+    for k, v in pairs(gmcp.objects.nums) do
+        if ateam.objs[tonumber(v)] then
+            table.insert(ateam.people_on_location, ateam.objs[tonumber(v)]["desc"])
         end
     end
 end

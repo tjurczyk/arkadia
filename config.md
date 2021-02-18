@@ -1491,6 +1491,16 @@ Dla zaawansowanych - dodatkowe szablony można stworzyć na podstawie dodając j
 
 ---
 
+## `scripts.mail_creator.justify`
+
+Flaga określa czy justować tekst pisanych listów za pomocą polecenia `/list`.
+
+Dostępne wartości:
+* `true` - justowanie włączone
+* `false` - justowanie wyłączone
+
+---
+
 ## `scripts.ui.notification_center.enabled`
 
 Określa czy notyfikacje na różne wydarzenia (np. pocztę) w prawym górnym rogu maja być włączone.

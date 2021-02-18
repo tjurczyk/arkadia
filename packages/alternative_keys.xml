@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MudletPackage>
+<MudletPackage version="1.001">
+	<TriggerPackage />
+	<TimerPackage />
+	<AliasPackage />
+	<ActionPackage />
+	<ScriptPackage />
+	<KeyPackage>
+		<Key isActive="yes" isFolder="no">
+			<name>sw</name>
+			<packageName></packageName>
+			<script>amap:keybind_pressed("southwest")</script>
+			<command></command>
+			<keyCode>77</keyCode>
+			<keyModifier>167772160</keyModifier>
+		</Key>
+		<Key isActive="yes" isFolder="no">
+			<name>se</name>
+			<packageName></packageName>
+			<script>amap:keybind_pressed("southeast")</script>
+			<command></command>
+			<keyCode>62</keyCode>
+			<keyModifier>167772160</keyModifier>
+		</Key>
+		<Key isActive="yes" isFolder="no">
+			<name>s</name>
+			<packageName></packageName>
+			<script>amap:keybind_pressed("south")</script>
+			<command></command>
+			<keyCode>60</keyCode>
+			<keyModifier>167772160</keyModifier>
+		</Key>
+		<Key isActive="yes" isFolder="no">
+			<name>n</name>
+			<packageName></packageName>
+			<script>amap:keybind_pressed("north")</script>
+			<command></command>
+			<keyCode>73</keyCode>
+			<keyModifier>167772160</keyModifier>
+		</Key>
+		<Key isActive="yes" isFolder="no">
+			<name>w</name>
+			<packageName></packageName>
+			<script>amap:keybind_pressed("west")</script>
+			<command></command>
+			<keyCode>74</keyCode>
+			<keyModifier>167772160</keyModifier>
+		</Key>
+		<Key isActive="yes" isFolder="no">
+			<name>e</name>
+			<packageName></packageName>
+			<script>amap:keybind_pressed("east")</script>
+			<command></command>
+			<keyCode>76</keyCode>
+			<keyModifier>167772160</keyModifier>
+		</Key>
+		<Key isActive="yes" isFolder="no">
+			<name>nw</name>
+			<packageName></packageName>
+			<script>amap:keybind_pressed("northwest")</script>
+			<command></command>
+			<keyCode>85</keyCode>
+			<keyModifier>167772160</keyModifier>
+		</Key>
+		<Key isActive="yes" isFolder="no">
+			<name>ne</name>
+			<packageName></packageName>
+			<script>amap:keybind_pressed("northeast")</script>
+			<command></command>
+			<keyCode>79</keyCode>
+			<keyModifier>167772160</keyModifier>
+		</Key>
+	</KeyPackage>
+	<VariablePackage>
+		<HiddenVariables />
+	</VariablePackage>
+</MudletPackage>

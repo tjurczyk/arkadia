@@ -2521,7 +2521,7 @@
     },
     {
       "name": "scripts.sounds.beep",
-      "default_value": "",
+      "default_value": "arkadia/sounds/beep.wav",
       "field_type": "string",
       "content_type" : "file_path",
       "macros_on_modify": []
@@ -2554,6 +2554,12 @@
       "name": "scripts.mail_creator.template",
       "default_value": "plain",
       "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.mail_creator.justify",
+      "default_value": true,
+      "field_type": "boolean",
       "macros_on_modify": []
     },
     {

@@ -197,7 +197,7 @@ function get_next_room_from_dirs(room_id, dir, spe, is_team_follow)
     if is_team_follow and not new_id then
         --amap:print_log("mapper zgubiony, przeslij dzordzykowi: last curr.id: " .. tostring(amap.curr.id) .. ", spe: `" .. spe .. "`", true)
         amap:locate(true)
-        amap:locate_on_next()
+        amap:locate_on_next_location()
         amap:log_failed_follow("[" .. getTime(true, "yyyy/MM/dd HH:mm:ss") .. "]: mapper zgubiony. last curr.id: " .. tostring(amap.curr.id) .. ", spe: `" .. spe .. "`\n")
     end
 

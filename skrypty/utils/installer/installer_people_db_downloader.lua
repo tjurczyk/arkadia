@@ -3,7 +3,9 @@ function installer_people_db_downloader()
         return
     end
 
-    scripts:print_log("Baza pobrana, zrestartuj Mudleta")
+    scripts:print_log("Baza pobrana. Triggery zostana przeladowane.")
+    scripts.people:load_db()
+    scripts.people:starter()
     scripts.installer.mode = nil
 end
 

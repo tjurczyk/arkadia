@@ -50,6 +50,15 @@ Argumenty:
 
 ---
 
+## `setPosition`
+
+Argumenty:
+  * `arg1`: ID ustawionej lokacji
+
+Event ten jest podnozszony gdy lokacja zostaje ustawiona (recznie lub automatycznie)
+
+---
+
 ## `amapGateStoppedWalker`
 
 Event podniesiony w momencie, kiedy chodzik zostal zatrzymany brama.

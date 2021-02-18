@@ -70,6 +70,7 @@ function load_plugin(plugin_name)
     if plugin_name ~= "." and plugin_name ~= ".." and lfs.attributes(file_path, 'mode') == 'directory' then
         local plugin_loaded = false
         if io.exists(file_path .. "/init.lua") then
+            package.loaded[plugin_name .. ".init"] = nil
             local plugin_modules = require(plugin_name .. ".init")
             for _, packages in pairs(plugin_modules) do
                 local full_package_name = plugin_name .. "." .. packages

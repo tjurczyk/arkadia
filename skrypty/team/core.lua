@@ -1,12 +1,17 @@
+function ateam:init_gmcp()
+    sendGMCP('Core.Supports.Add ["Objects", "Gmcp_msgs"]')
+    ateam:set_base64()
+
+    gmcp.objects = gmcp.objects or {
+        nums = {}
+    }
+end
+
 function ateam:start_ateam()
     if not scripts:check_gmcp(false) then
         return
     end
-
-    --sendGMCP('Core.Supports.Set ["Char", "Room", "Objects"]')
-    send("gmcp wlacz modul objects", false)
-    ateam:set_base64()
-    send("gmcp wlacz modul gmcp_msgs", false)
+    self:init_gmcp()
     scripts:print_log("Skrypty druzynowe wystartowane")
 end
 
@@ -37,10 +42,9 @@ function ateam:restart_ateam(silent)
     end
     ateam.to_support = nil
 
-    tempTimer(0.2, function() send("gmcp wlacz modul objects", false) end)
-    tempTimer(0.3, function() ateam:set_base64() end)
-    tempTimer(0.4, function() send("gmcp wlacz modul gmcp_msgs", false) end)
-    tempTimer(0.5, function() sendGMCP("objects.data") end)
+    
+    self:init_gmcp()
+    sendGMCP("objects.data")
 
     if not silent then
         scripts:print_log("Skrypty druzynowe zrestartowane")
@@ -325,9 +329,9 @@ function ateam:print_obj_team(id, obj)
 
         -- id section
         if ateam.broken_defense_names[obj["desc"]] then
-            cecho(scripts.ui.states_window_name, "<" .. ateam.options.broken_defense_fg_color .. ":" .. ateam.options.broken_defense_bg_color .. ">[" .. str_id .. "]")
+            cecho(scripts.ui.states_window_name, "<" .. ateam.options.broken_defense_fg_color .. ":" .. ateam.options.broken_defense_bg_color .. ">"..bracket_symbol_left .. str_id .. "]")
         else
-            cecho(scripts.ui.states_window_name, "<white:team_console_bg>[" .. str_id .. "<white:team_console_bg>]")
+            cecho(scripts.ui.states_window_name, "<"..ateam.options.bracket_color..":team_console_bg>"..ateam.options.bracket_symbol_left.."<reset>" .. str_id .. "<"..ateam.options.bracket_color..":team_console_bg>"..ateam.options.bracket_symbol_right)
         end
 
         -- sneaky id section
@@ -336,7 +340,7 @@ function ateam:print_obj_team(id, obj)
         end
 
         -- hp section
-        cecho(scripts.ui.states_window_name, "<white:team_console_bg>[" .. states[obj["hp"]] .. "<grey:team_console_bg><white:team_console_bg>] ")
+        cecho(scripts.ui.states_window_name, "<"..ateam.options.bracket_hp_color..":team_console_bg>"..ateam.options.bracket_symbol_left.."<reset>" .. states[obj["hp"]] .. "<"..ateam.options.bracket_hp_color..":team_console_bg>"..ateam.options.bracket_symbol_right.." ")
 
         if str_id ~= " @" then
             local hp_to_select = string.split(states[obj["hp"]], ">")[2]
@@ -424,13 +428,18 @@ function ateam:print_obj_enemy(id, obj)
 
         -- id section
         if ateam.broken_defense_names[obj["desc"]] then
-            cecho(scripts.ui.enemy_states_window_name, "<" .. ateam.options.broken_defense_fg_color .. ":" .. ateam.options.broken_defense_bg_color .. ">[" .. str_id .. "]")
+            cecho(scripts.ui.enemy_states_window_name, "<" .. ateam.options.broken_defense_fg_color .. ":" .. ateam.options.broken_defense_bg_color .. ">"..bracket_symbol_left..ateam.options.bracket_symbol_left .. str_id .. "]")
         else
             local color = "white"
             if id == ateam.next_attack_objs.next_attak_obj and ateam.next_attack_objs.mark_in_state then
                 color = "orange"
             end
-            cecho(scripts.ui.enemy_states_window_name, string.format("<white:team_console_bg>[<%s>%s<white>]<reset>", color, str_id))
+            cecho(scripts.ui.enemy_states_window_name, string.format("<%s:team_console_bg>%s<%s>%s<%s>%s<reset>", ateam.options.bracket_color,
+			ateam.options.bracket_symbol_left,
+			color,
+			str_id,
+			ateam.options.bracket_color,
+			ateam.options.bracket_symbol_right))
         end
 
         -- sneaky id section
@@ -439,10 +448,10 @@ function ateam:print_obj_enemy(id, obj)
         end
 
         -- hp section
-        cecho(scripts.ui.enemy_states_window_name, "<white:team_console_bg>[" .. states[obj["hp"]] .. "<grey:team_console_bg>] ")
+        cecho(scripts.ui.enemy_states_window_name, "<"..ateam.options.bracket_hp_color..":team_console_bg>"..ateam.options.bracket_symbol_left.."<reset>" .. states_enemy[obj["hp"]] .. "<"..ateam.options.bracket_hp_color..":team_console_bg>"..ateam.options.bracket_symbol_right.." ")
 
         if print_id then
-            selectString(scripts.ui.enemy_states_window_name, states_no_color[obj["hp"]], 1)
+            selectString(scripts.ui.enemy_states_window_name, states_enemy_no_color[obj["hp"]], 1)
             setLink(scripts.ui.enemy_states_window_name, [[ ateam:prze_func("]] .. ateam.enemy_op_ids[id] .. [[", true) ]], "przelam obrone " .. ateam.enemy_op_ids[id])
             deselect(scripts.ui.enemy_states_window_name)
         end
@@ -532,8 +541,14 @@ function ateam:print_obj_normal(id, obj)
         if id == ateam.next_attack_objs.next_attak_obj and ateam.next_attack_objs.mark_in_state then
             color = "orange"
         end
-        cecho(scripts.ui.enemy_states_window_name, string.format("<white:team_console_bg>[<%s>%s<white>]<reset>", color, str_id))
-
+		cecho(scripts.ui.enemy_states_window_name,
+		 string.format("<%s:team_console_bg>%s<%s>%s<%s>%s<reset>", ateam.options.bracket_color,
+			ateam.options.bracket_symbol_left,
+			color,
+			str_id,
+			ateam.options.bracket_color,
+			ateam.options.bracket_symbol_right))
+        
         -- sneaky id section
         if ateam.sneaky_attack > 0 then
             if ateam.sneaky_attack > 1 or ateam:can_perform_sneaky_attack() then
@@ -547,7 +562,19 @@ function ateam:print_obj_normal(id, obj)
         end
 
         -- hp section
-        cecho(scripts.ui.enemy_states_window_name, "<white:team_console_bg>[" .. states[obj["hp"]] .. "<white:team_console_bg>] ")
+
+        local str_state = states_normal[obj["hp"]]
+        if scripts.ui.fancy.enabled then
+            local name_or_type = string.split(obj["desc"], " ")
+            name_or_type=name_or_type[#name_or_type]
+            local icon_symbol = scripts.ui.fancy.object_icons[name_or_type]
+
+            if icon_symbol ~= nil then
+                str_state = utf8.gsub(str_state, "👤", icon_symbol, 1)
+            end
+        end
+
+        cecho(scripts.ui.enemy_states_window_name, "<"..ateam.options.bracket_hp_color..":team_console_bg>"..ateam.options.bracket_symbol_left.."<reset>" .. str_state .. "<" .. ateam.options.bracket_hp_color..":team_console_bg>"..ateam.options.bracket_symbol_right.." ")
 
         -- name section
         local str_name = obj["desc"]

@@ -833,6 +833,41 @@ Jakie przedrostki maja byc uzywane do poszczegolnego elementu Jesli do "bron" uz
 }
 ```
 
+---
+
+## `ateam.options.bracket_color`
+
+Kolor nawiasów w oknie stanów
+
+---
+
+## `ateam.options.bracket_hp_color`
+
+Kolor nawiasów przy pasku HP w oknie stanów
+
+---
+
+## `ateam.options.bracket_symbol_left`
+
+Symbol lewego nawiasu w oknie stanów, może być ciąg znaków
+
+---
+
+## `ateam.options.bracket_symbol_right`
+
+Symbol prawego nawiasu w oknie stanów, może być ciąg znaków
+
+---
+
+## `scripts.ui.fancy.enabled`
+
+Włacza/wyłącz bardziej graficzny pasek stanów
+
+* `true` - więcej kolorów i ikony postaci
+* `false` - po staremu [#######]
+
+Wartość bool
+
 ## `scripts.ui.footer_start`
 
 W ktorym miejscu (% okna) ma sie zaczac dolna belka
@@ -1453,6 +1488,16 @@ Dostępne wartości:
 * `parchment` - pergamin
 
 Dla zaawansowanych - dodatkowe szablony można stworzyć na podstawie dodając je do tablicy `scripts.mail_creator.templates` analogicznie jak już te istniejące.
+
+---
+
+## `scripts.mail_creator.justify`
+
+Flaga określa czy justować tekst pisanych listów za pomocą polecenia `/list`.
+
+Dostępne wartości:
+* `true` - justowanie włączone
+* `false` - justowanie wyłączone
 
 ---
 

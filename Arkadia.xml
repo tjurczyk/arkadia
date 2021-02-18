@@ -145,9 +145,9 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>Zauwazasz, iz (.*) jest przystosowan[yae] do chwytania (w dowolnej rece|oburacz|w lewej rece|w prawej rece|w dowolnej rece lub oburacz|w lewej rece lub oburacz|w prawej rece lub oburacz).</string>
-							<string>Za (jego|jej|ich) pomoca mozna zadawac rany (.*).</string>
-							<string>Twoje doswiadczenie i umiejetnosci podpowiadaja ci, ze jak na (.*) (jest|sa) (on|one|ono|ona) (.*) (wywazony|wywazona|wywazone) i (.*).</string>
+							<string>^Zauwazasz, iz (.*) jest przystosowan[yae] do chwytania (w dowolnej rece lub oburacz|w lewej rece lub oburacz|w prawej rece lub oburacz|w dowolnej rece|oburacz|w lewej rece|w prawej rece)\.$</string>
+							<string>^Za (jego|jej|ich) pomoca mozna zadawac rany (.*).$</string>
+							<string>^Twoje doswiadczenie i umiejetnosci podpowiadaja ci, ze jak na (.*) (jest|sa) (on|one|ono|ona) (.*) (wywazony|wywazona|wywazone) i (.*)\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -252,7 +252,7 @@
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
 							<string>Oceniasz, ze (.*) waz.*</string>
-							<string>Ubranie to .* i wyglada na (.*)$</string>
+							<string>Ubranie to.* wyglada na (.*)$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -295,7 +295,7 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>Ubranie to .* i wyglada na (.*)$</string>
+							<string>Ubranie to.* wyglada na (.*)$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -3010,7 +3010,7 @@
 									<string>^[ &gt;]*Pazury .* zeslizguja sie po .*\.$</string>
 									<string>^[ &gt;]*[a-zA-Z (),!]+ lecz uderzenie zatrzymuje sie na (twym|twych|twej) [a-z ]+\.$</string>
 									<string>^[ &gt;]*[a-zA-Z (),!]+ gdy jego uderzenie zeslizguje sie po (twym|twych|twej) [a-z ]+\.$</string>
-									<string>^[ &gt;]*[a-zA-Z (),!]+ by wyprowadzic cios zdolnyprzebic (twoj|twoja|twe) [a-z ]+\.$</string>
+									<string>^[ &gt;]*[a-zA-Z (),!]+ by wyprowadzic cios zdolny przebic (twoj|twoja|twe) [a-z ]+\.$</string>
 								</regexCodeList>
 								<regexCodePropertyList>
 									<integer>1</integer>
@@ -3977,14 +3977,14 @@
 								<colorTriggerFgColor>#000000</colorTriggerFgColor>
 								<colorTriggerBgColor>#000000</colorTriggerBgColor>
 								<regexCodeList>
-									<string>Jasniejaca luna znaczy powietrze, gdy dlugim cieciem jasniejacego zdobionego jatagana</string>
-									<string>Nagly blysk rozswietla cale otoczenie, gdy szybkim pchnieciem jasniejacego zdobionego jatagana</string>
-									<string>Swietlista smuga przecina powietrze, gdy szybkim pchnieciem jasniejacego zdobionego jatagana</string>
+									<string>^Jasniejaca luna znaczy powietrze, gdy (?:dlugim cieciem)|(?:szybkim pchnieciem) jasniejacego zdobionego jatagana</string>
+									<string>^Nagly blysk rozswietla cale otoczenie, gdy (?:dlugim cieciem)|(?:szybkim pchnieciem) jasniejacego zdobionego jatagana</string>
+									<string>^Swietlista smuga przecina powietrze, gdy (?:dlugim cieciem)|(?:szybkim pchnieciem) jasniejacego zdobionego jatagana</string>
 								</regexCodeList>
 								<regexCodePropertyList>
-									<integer>0</integer>
-									<integer>0</integer>
-									<integer>0</integer>
+									<integer>1</integer>
+									<integer>1</integer>
+									<integer>1</integer>
 								</regexCodePropertyList>
 								<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 									<name>ledwo-muskasz</name>
@@ -7531,6 +7531,82 @@
 									</Trigger>
 								</Trigger>
 							</TriggerGroup>
+							<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+								<name>zbroje</name>
+								<script></script>
+								<triggerType>0</triggerType>
+								<conditonLineDelta>0</conditonLineDelta>
+								<mStayOpen>0</mStayOpen>
+								<mCommand></mCommand>
+								<packageName></packageName>
+								<mFgColor>#ff0000</mFgColor>
+								<mBgColor>#ffff00</mBgColor>
+								<mSoundFile></mSoundFile>
+								<colorTriggerFgColor>#000000</colorTriggerFgColor>
+								<colorTriggerBgColor>#000000</colorTriggerBgColor>
+								<regexCodeList />
+								<regexCodePropertyList />
+								<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+									<name>blekitno-srebrna-trojkatna-tarcza</name>
+									<script>trigger_func_skrypty_ui_gags_color_color_moje_spece_zbroje_blekitno_srebrna_trojkatna_tarcza()</script>
+									<triggerType>0</triggerType>
+									<conditonLineDelta>0</conditonLineDelta>
+									<mStayOpen>0</mStayOpen>
+									<mCommand></mCommand>
+									<packageName></packageName>
+									<mFgColor>#ff0000</mFgColor>
+									<mBgColor>#ffff00</mBgColor>
+									<mSoundFile></mSoundFile>
+									<colorTriggerFgColor>#000000</colorTriggerFgColor>
+									<colorTriggerBgColor>#000000</colorTriggerBgColor>
+									<regexCodeList>
+										<string>^Blekitno-srebrna trojkatna tarcza rozblyskuje nagle bardzo ostrym blekitnym swiatlem, skierowanym w .*</string>
+									</regexCodeList>
+									<regexCodePropertyList>
+										<integer>1</integer>
+									</regexCodePropertyList>
+								</Trigger>
+								<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+									<name>ciemnogranatowy-smukly-helm</name>
+									<script>trigger_func_skrypty_ui_gags_color_color_moje_spece_zbroje_ciemnogranatowy_smukly_helm()</script>
+									<triggerType>0</triggerType>
+									<conditonLineDelta>0</conditonLineDelta>
+									<mStayOpen>0</mStayOpen>
+									<mCommand></mCommand>
+									<packageName></packageName>
+									<mFgColor>#ff0000</mFgColor>
+									<mBgColor>#ffff00</mBgColor>
+									<mSoundFile></mSoundFile>
+									<colorTriggerFgColor>#000000</colorTriggerFgColor>
+									<colorTriggerBgColor>#000000</colorTriggerBgColor>
+									<regexCodeList>
+										<string>zaczyna wpatrywac sie pustym wzrokiem w slepia weza wijacego sie u podstawy twojego ciemnogranatowego smuklego helmu.</string>
+									</regexCodeList>
+									<regexCodePropertyList>
+										<integer>0</integer>
+									</regexCodePropertyList>
+								</Trigger>
+								<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+									<name>lsniaca-plomienista-tarcza</name>
+									<script>trigger_func_skrypty_ui_gags_color_color_moje_spece_zbroje_lsniaca_plomienista_tarcza()</script>
+									<triggerType>0</triggerType>
+									<conditonLineDelta>0</conditonLineDelta>
+									<mStayOpen>0</mStayOpen>
+									<mCommand></mCommand>
+									<packageName></packageName>
+									<mFgColor>#ff0000</mFgColor>
+									<mBgColor>#ffff00</mBgColor>
+									<mSoundFile></mSoundFile>
+									<colorTriggerFgColor>#000000</colorTriggerFgColor>
+									<colorTriggerBgColor>#000000</colorTriggerBgColor>
+									<regexCodeList>
+										<string>^Nagle lustrzana powierzchnia lsniacej plomienistej tarczy rozblyskuje jasnoczerwonym, palacym swiatlem\.</string>
+									</regexCodeList>
+									<regexCodePropertyList>
+										<integer>1</integer>
+									</regexCodePropertyList>
+								</Trigger>
+							</TriggerGroup>
 						</TriggerGroup>
 						<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 							<name>color_innych_ciosy</name>
@@ -7808,64 +7884,6 @@
 									</regexCodeList>
 									<regexCodePropertyList>
 										<integer>0</integer>
-									</regexCodePropertyList>
-								</Trigger>
-							</TriggerGroup>
-							<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>zbroje</name>
-								<script></script>
-								<triggerType>0</triggerType>
-								<conditonLineDelta>0</conditonLineDelta>
-								<mStayOpen>0</mStayOpen>
-								<mCommand></mCommand>
-								<packageName></packageName>
-								<mFgColor>#ff0000</mFgColor>
-								<mBgColor>#ffff00</mBgColor>
-								<mSoundFile></mSoundFile>
-								<colorTriggerFgColor>#000000</colorTriggerFgColor>
-								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList />
-								<regexCodePropertyList />
-								<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-									<name>baron-tarcza</name>
-									<script>trigger_func_skrypty_ui_gags_color_color_innych_ciosy_zbroje_baron_tarcza()</script>
-									<triggerType>0</triggerType>
-									<conditonLineDelta>0</conditonLineDelta>
-									<mStayOpen>0</mStayOpen>
-									<mCommand></mCommand>
-									<packageName></packageName>
-									<mFgColor>#ff0000</mFgColor>
-									<mBgColor>#ffff00</mBgColor>
-									<mSoundFile></mSoundFile>
-									<colorTriggerFgColor>#000000</colorTriggerFgColor>
-									<colorTriggerBgColor>#000000</colorTriggerBgColor>
-									<regexCodeList>
-										<string>^Trzymana przez .* blekitno-srebrna tarcza rozblyskuje nagle niesamowicie ostrym blekitnym swiatlem, skierowanym w strone .*</string>
-										<string>^Blekitno-srebrna trojkatna tarcza rozblyskuje nagle bardzo ostrym blekitnym swiatlem, skierowanym w .*</string>
-									</regexCodeList>
-									<regexCodePropertyList>
-										<integer>1</integer>
-										<integer>1</integer>
-									</regexCodePropertyList>
-								</Trigger>
-								<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-									<name>lsniaca-tarcza</name>
-									<script>trigger_func_skrypty_ui_gags_color_color_innych_ciosy_zbroje_lsniaca_tarcza()</script>
-									<triggerType>0</triggerType>
-									<conditonLineDelta>0</conditonLineDelta>
-									<mStayOpen>0</mStayOpen>
-									<mCommand></mCommand>
-									<packageName></packageName>
-									<mFgColor>#ff0000</mFgColor>
-									<mBgColor>#ffff00</mBgColor>
-									<mSoundFile></mSoundFile>
-									<colorTriggerFgColor>#000000</colorTriggerFgColor>
-									<colorTriggerBgColor>#000000</colorTriggerBgColor>
-									<regexCodeList>
-										<string>Ta dziwna poswiata formuje sie w wirujaca kule przeplatajacych sie ze soba zoltych i pomaranczowych jezorow plynnego ognia, ktore wystrzeliwuja w kierunku</string>
-									</regexCodeList>
-									<regexCodePropertyList>
-										<integer>1</integer>
 									</regexCodePropertyList>
 								</Trigger>
 							</TriggerGroup>
@@ -11603,6 +11621,82 @@
 									</Trigger>
 								</Trigger>
 							</TriggerGroup>
+							<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+								<name>zbroje</name>
+								<script></script>
+								<triggerType>0</triggerType>
+								<conditonLineDelta>0</conditonLineDelta>
+								<mStayOpen>0</mStayOpen>
+								<mCommand></mCommand>
+								<packageName></packageName>
+								<mFgColor>#ff0000</mFgColor>
+								<mBgColor>#ffff00</mBgColor>
+								<mSoundFile></mSoundFile>
+								<colorTriggerFgColor>#000000</colorTriggerFgColor>
+								<colorTriggerBgColor>#000000</colorTriggerBgColor>
+								<regexCodeList />
+								<regexCodePropertyList />
+								<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+									<name>blekitno-srebrna-trojkatna-tarcza</name>
+									<script>trigger_func_skrypty_ui_gags_color_color_innych_spece_zbroje_blekitno_srebrna_trojkatna_tarcza()</script>
+									<triggerType>0</triggerType>
+									<conditonLineDelta>0</conditonLineDelta>
+									<mStayOpen>0</mStayOpen>
+									<mCommand></mCommand>
+									<packageName></packageName>
+									<mFgColor>#ff0000</mFgColor>
+									<mBgColor>#ffff00</mBgColor>
+									<mSoundFile></mSoundFile>
+									<colorTriggerFgColor>#000000</colorTriggerFgColor>
+									<colorTriggerBgColor>#000000</colorTriggerBgColor>
+									<regexCodeList>
+										<string>^Trzymana przez .* blekitno-srebrna tarcza rozblyskuje nagle niesamowicie ostrym blekitnym swiatlem, skierowanym w strone .*</string>
+									</regexCodeList>
+									<regexCodePropertyList>
+										<integer>1</integer>
+									</regexCodePropertyList>
+								</Trigger>
+								<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+									<name>ciemnogranatowy-smukly-helm</name>
+									<script>trigger_func_skrypty_ui_gags_color_color_innych_spece_zbroje_ciemnogranatowy_smukly_helm()</script>
+									<triggerType>0</triggerType>
+									<conditonLineDelta>0</conditonLineDelta>
+									<mStayOpen>0</mStayOpen>
+									<mCommand></mCommand>
+									<packageName></packageName>
+									<mFgColor>#ff0000</mFgColor>
+									<mBgColor>#ffff00</mBgColor>
+									<mSoundFile></mSoundFile>
+									<colorTriggerFgColor>#000000</colorTriggerFgColor>
+									<colorTriggerBgColor>#000000</colorTriggerBgColor>
+									<regexCodeList>
+										<string>zaczyna wpatrywac sie pustym wzrokiem w slepia weza wijacego sie u podstawy ciemnogranatowego smuklego helmu na glowie</string>
+									</regexCodeList>
+									<regexCodePropertyList>
+										<integer>1</integer>
+									</regexCodePropertyList>
+								</Trigger>
+								<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+									<name>lsniaca-plomienista-tarcza</name>
+									<script>trigger_func_skrypty_ui_gags_color_color_innych_spece_zbroje_lsniaca_plomienista_tarcza()</script>
+									<triggerType>0</triggerType>
+									<conditonLineDelta>0</conditonLineDelta>
+									<mStayOpen>0</mStayOpen>
+									<mCommand></mCommand>
+									<packageName></packageName>
+									<mFgColor>#ff0000</mFgColor>
+									<mBgColor>#ffff00</mBgColor>
+									<mSoundFile></mSoundFile>
+									<colorTriggerFgColor>#000000</colorTriggerFgColor>
+									<colorTriggerBgColor>#000000</colorTriggerBgColor>
+									<regexCodeList>
+										<string>^Nagle lustrzana powierzchnia lsniacej plomienistej tarczy .*? rozblyskuje jasnoczerwonym, palacym swiatlem\.</string>
+									</regexCodeList>
+									<regexCodePropertyList>
+										<integer>1</integer>
+									</regexCodePropertyList>
+								</Trigger>
+							</TriggerGroup>
 						</TriggerGroup>
 						<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 							<name>color_zaslony_udane</name>
@@ -12118,7 +12212,7 @@
 								<colorTriggerBgColor>#000000</colorTriggerBgColor>
 								<regexCodeList>
 									<string>(^[ &gt;]*Wykonujesz zamaszyste ciecie [a-z ]+ mierzac w [a-zA-Z (),!]+, lecz [a-z]+ zbija .* linii ataku .*\.$)</string>
-									<string>(^[ &gt;]*Nagle .* wykonuje zamaszysty cios .* celujac w .*, lecz [a-z]+ sprawnie paruje go .*\.$)</string>
+									<string>(^[ &gt;]*Nagle .* wykonuje zamaszysty cios .* celujac w .*, lecz [a-z]+ (sprawnie |)paruje go .*\.$)</string>
 									<string>(^[ &gt;]*.* wykonuje zamaszyste ciecie .* mierzac w .*, lecz [a-z]+ zbija je z linii ataku .*\.)</string>
 									<string>(^[ &gt;]*Wyprowadzasz szybkie pchniecie .* w .*, lecz [a-z]+ zbija je z linii ataku .*\.$)</string>
 									<string>(^[ &gt;]*.* wykonuje zamaszyste ciecie .* mierzac w .*, lecz .* oslania sie .*\.$)</string>
@@ -12166,8 +12260,12 @@
 								<colorTriggerBgColor>#000000</colorTriggerBgColor>
 								<regexCodeList>
 									<string>^[ &gt;]*.* trafia ([a-z]+).* w .*, lecz caly impet uderzenia zostaje .*</string>
+									<string>^[ &gt;]*[a-zA-Z (),!]+ lecz uderzenie zatrzymuje sie na (jego|jej) [a-z ]+\.$</string>
+									<string>^[ &gt;]*[a-zA-Z (),!]+ (gdy jego uderzenie|lecz) zeslizguje sie po (jego|jej) [a-z ]+\.$</string>
 								</regexCodeList>
 								<regexCodePropertyList>
+									<integer>1</integer>
+									<integer>1</integer>
 									<integer>1</integer>
 								</regexCodePropertyList>
 							</Trigger>
@@ -13856,6 +13954,44 @@
 							<regexCodePropertyList>
 								<integer>1</integer>
 								<integer>1</integer>
+							</regexCodePropertyList>
+						</Trigger>
+					</TriggerGroup>
+					<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>Ptakopodobny kaplan</name>
+						<script></script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList />
+						<regexCodePropertyList />
+						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+							<name>Ptakopodobny (inkantacja)</name>
+							<script>
+								trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()
+							</script>
+							<triggerType>0</triggerType>
+							<conditonLineDelta>0</conditonLineDelta>
+							<mStayOpen>0</mStayOpen>
+							<mCommand></mCommand>
+							<packageName></packageName>
+							<mFgColor>#ff0000</mFgColor>
+							<mBgColor>#ffff00</mBgColor>
+							<mSoundFile></mSoundFile>
+							<colorTriggerFgColor>#000000</colorTriggerFgColor>
+							<colorTriggerBgColor>#000000</colorTriggerBgColor>
+							<regexCodeList>
+								<string>Zlowrogi ptakopodobny mezczyzna wykrzykuje skrzekliwie slowa inkantacji</string>
+							</regexCodeList>
+							<regexCodePropertyList>
+								<integer>2</integer>
 							</regexCodePropertyList>
 						</Trigger>
 					</TriggerGroup>
@@ -17906,22 +18042,6 @@
 						<integer>1</integer>
 					</regexCodePropertyList>
 				</Trigger>
-			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-				<name>places</name>
-				<script></script>
-				<triggerType>0</triggerType>
-				<conditonLineDelta>0</conditonLineDelta>
-				<mStayOpen>0</mStayOpen>
-				<mCommand></mCommand>
-				<packageName></packageName>
-				<mFgColor>#ff0000</mFgColor>
-				<mBgColor>#ffff00</mBgColor>
-				<mSoundFile></mSoundFile>
-				<colorTriggerFgColor>#000000</colorTriggerFgColor>
-				<colorTriggerBgColor>#000000</colorTriggerBgColor>
-				<regexCodeList />
-				<regexCodePropertyList />
 			</TriggerGroup>
 			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>exploration</name>
@@ -22224,7 +22344,6 @@
 						<string>^Mozesz skierowac lodz</string>
 						<string>Zeskakujesz z rozwieszonego plociennego szerokiego hamaka.</string>
 						<string>Powoli podnosisz sie z kleczek.</string>
-						<string>Udaje ci sie sprawnie przeplynac.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -22275,7 +22394,6 @@
 						<integer>0</integer>
 						<integer>1</integer>
 						<integer>1</integer>
-						<integer>0</integer>
 						<integer>0</integer>
 						<integer>0</integer>
 					</regexCodePropertyList>
@@ -22353,11 +22471,15 @@
 						<string>Wychodzisz z wody.</string>
 						<string>Wynurzasz sie z wody.</string>
 						<string>Rezygnujesz z przeplyniecia.</string>
+						<string>^Gdy przeszukujesz .*, twoja reka trafia niespodziewanie na jakis wystajacy element, ktory niechcacy wciskasz\.$</string>
+						<string>^Otwierasz szafke, a w srodku znajdujesz</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>0</integer>
 						<integer>0</integer>
 						<integer>0</integer>
+						<integer>1</integer>
+						<integer>1</integer>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
@@ -22656,6 +22778,7 @@
 						<string>Rezygnujesz z przeplyniecia</string>
 						<string>.* mowi do ciebie: Nikt z zakryta twarza nie stanie przed obliczem ksiecia\.$</string>
 						<string>Nie dasz rady otworzyc .*, musisz sprobowac ja uniesc\.$</string>
+						<string>W chwili gdy ruszasz w strone zachodniej czesci pomieszczenia, zylki na zbrojach stojacych w niszach krasnoludow rozpalaja sie na zielono. Postaci jakby niepomne tego, ze zostaly wykonane z kamienia, wystepuja ze swoich wnek, blokujac ci przejscie dalej.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -22698,6 +22821,7 @@
 						<integer>0</integer>
 						<integer>1</integer>
 						<integer>1</integer>
+						<integer>0</integer>
 					</regexCodePropertyList>
 				</Trigger>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -24021,6 +24145,13 @@
 						<regex>^/postepy2$</regex>
 					</Alias>
 					<Alias isActive="yes" isFolder="no">
+						<name>postepy3</name>
+						<script>alias_func_skrypty_misc_postepy_postepy3()</script>
+						<command></command>
+						<packageName></packageName>
+						<regex>^/postepy3$</regex>
+					</Alias>
+					<Alias isActive="yes" isFolder="no">
 						<name>postepy_reset</name>
 						<script>alias_func_skrypty_misc_postepy_postepy_reset()</script>
 						<command></command>
@@ -24200,7 +24331,14 @@
 						<script>alias_func_skrypty_misc_zglebiaj_wiedze()</script>
 						<command></command>
 						<packageName></packageName>
-						<regex>^zglebiaj(?:\s+wiedze\s+)?\s*(\d*)$</regex>
+						<regex>^(?:zglebiaj$)|(?:zglebiaj wiedze$)|(:?zglebiaj wiedze (\d+)$)</regex>
+					</Alias>
+					<Alias isActive="yes" isFolder="no">
+						<name>otworz ksiazke</name>
+						<script>alias_func_scripts_misc_book_open(matches[2])</script>
+						<command></command>
+						<packageName></packageName>
+						<regex>^(otworz.*?(ksiege|ksiazke|ksiazeczke|tomiszcze|notatnik|dziennik|teke|tabliczek))</regex>
 					</Alias>
 				</AliasGroup>
 				<Alias isActive="yes" isFolder="no">
@@ -24478,7 +24616,7 @@
 				</Alias>
 			</AliasGroup>
 			<Alias isActive="yes" isFolder="no">
-				<name>^/konfiguracja$</name>
+				<name>/konfiguracja</name>
 				<script>alias_func_first_time_config()</script>
 				<command></command>
 				<packageName></packageName>

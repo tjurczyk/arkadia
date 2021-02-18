@@ -231,6 +231,32 @@
       "macros_on_modify": []
     },
     {
+      "name": "ateam.options.bracket_color",
+      "default_value": "white",
+      "field_type": "string",
+      "content_type" : "mudlet_color",
+      "macros_on_modify": []
+    },
+    {
+      "name": "ateam.options.bracket_hp_color",
+      "default_value": "white",
+      "field_type": "string",
+      "content_type" : "mudlet_color",
+      "macros_on_modify": []
+    },
+    {
+      "name": "ateam.options.bracket_symbol_left",
+      "default_value": "[",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
+      "name": "ateam.options.bracket_symbol_right",
+      "default_value": "]",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
       "name": "ateam.attack_mode",
       "default_value": 3,
       "field_type": "number",
@@ -1173,6 +1199,14 @@
         "emotes": true
       },
       "field_type": "map",
+      "macros_on_modify": [
+        "_ux"
+      ]
+    },
+    {
+      "name": "scripts.ui.fancy.enabled",
+      "default_value": false,
+      "field_type": "boolean",
       "macros_on_modify": [
         "_ux"
       ]

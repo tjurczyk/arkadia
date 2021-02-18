@@ -165,6 +165,7 @@ return {
     "skrypty/ui/log_cmds_ui",
     "skrypty/ui/ui_mapper_loaded_event",
     "skrypty/ui/auto_wrap",
+    "skrypty/ui/fancy",
     "skrypty/ui/page_window",
     "mapper/db/core",
     "mapper/db/personal_keys",

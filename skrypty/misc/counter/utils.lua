@@ -21,3 +21,8 @@ function misc.counter.utils:get_entry_key(key)
     end
     return l_key
 end
+
+function misc.counter.utils:is_rare(type)
+    local first_letter = type:sub(1, 1)
+    return string.upper(first_letter) == first_letter
+end

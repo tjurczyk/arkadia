@@ -26,4 +26,3 @@ function scripts.utils.List.pop(list)
     list.first = first + 1
     return value
 end
-

@@ -29,10 +29,12 @@ function misc.counter:print_killed()
         cecho("| <yellow>JA<grey>                                            |\n")
 
         local summed = 0
-        for k, v in pairs(misc.counter.killed["JA"]) do
-            local l_name = string.sub(k .. " ...............................", 0, 32)
-            local l_amount = tostring(v) .. " / " .. tostring(per_type_count[k])
-            cecho("| " .. l_name .. " " .. string.sub(l_amount .. "            ", 0, 12) .. " |\n")
+        for k, v in spairs(misc.counter.killed["JA"]) do
+            local name = string.sub(k .. " ...............................", 0, 32)
+            local color = misc.counter.utils:is_rare(name) and "<orange>" or ""
+
+            local amount = tostring(v) .. " / " .. tostring(per_type_count[k])
+            cecho("| " .. color .. name .. " " .. string.sub(amount .. "            ", 0, 12) .. " <grey>|\n")
             summed = summed + v
         end
         all_sum = all_sum + summed
@@ -48,10 +50,12 @@ function misc.counter:print_killed()
             cecho("| <yellow>" .. str_name .. "|\n")
 
             local summed = 0
-            for i, j in pairs(v) do
-                local l_name = string.sub(i .. " ..............................", 0, 32)
-                local l_amount = tostring(j) .. " / " .. tostring(per_type_count[i])
-                cecho("| " .. l_name .. " " .. string.sub(l_amount .. "            ", 0, 12) .. " |\n")
+            for i, j in spairs(v) do
+                local name = string.sub(i .. " ..............................", 0, 32)
+                local color = misc.counter.utils:is_rare(name) and "<orange>" or ""
+
+                local amount = tostring(j) .. " / " .. tostring(per_type_count[i])
+                cecho("| " .. color .. name .. " " .. string.sub(amount .. "            ", 0, 12) .. " <grey>|\n")
                 summed = summed + j
             end
             cecho("|                                               |\n")

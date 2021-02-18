@@ -29,8 +29,8 @@ scripts.misc.knowdlege.books = scripts.misc.knowdlege.books or {
         ["srebrna luskowata ksiege"] = "zglebiaj wiedze o smokach i smokowatych z srebrnej luskowatej ksiegi",
         ["srebrnoniebieski zdobiony folial"] = "zglebiaj wiedze o ryboludziach ze srebrnoniebieskiego zdobionego folialu",
         ["tega okuta ksiege"] = "zglebiaj wiedze o istotach demonicznych z tegiej okutej ksiegi",
-        ["twarda jednobarwna ksiege"] = "zglebiaj wiedze o wampirach z twarda jednobarwnej ksiega",
-        ["wielka opasla ksiege"] = "zglebiaj wiedze o smokach i smokowatych z wielkiej opaslej ksiega",
+        ["twarda jednobarwna ksiege"] = "zglebiaj wiedze o wampirach z twarda jednobarwnej ksiegi",
+        ["wielka opasla ksiege"] = "zglebiaj wiedze o smokach i smokowatych z wielkiej opaslej ksiegi",
         ["wysluzona bordowa ksiege"] = "zglebiaj wiedze o chaosie i jego tworach z wysluzonej bordowej ksiegi",
         ["zatechly przybrudzony rekopis"] = "zglebiaj wiedze o nieumarlych z zatechlego przybrudzonego rekopisu",
         ["zdobiona oprawna ksiege"] = "zglebiaj wiedze o starszych rasach z zdobionej oprawnej ksiegi",
@@ -47,8 +47,8 @@ scripts.misc.knowdlege.books = scripts.misc.knowdlege.books or {
     },
     ["patterns_alt"] = {
         ["wielkiej opaslej ksiegi"] = {
-           ["smokach i smokowatych"] = "zglebiaj wiedze o stworach pokoniunkcyjnych z wielkiej opaslej ksiega",
-           ["stworach pokoniunkcyjnych"] = "zglebiaj wiedze o wampirach z wielkiej opaslej ksiega"
+           ["smokach i smokowatych"] = "zglebiaj wiedze o stworach pokoniunkcyjnych z wielkiej opaslej ksiegi",
+           ["stworach pokoniunkcyjnych"] = "zglebiaj wiedze o wampirach z wielkiej opaslej ksiegi"
         },
         ["opaslego szarawego tomiszcza"] = {
             ["ryboludziach"] = "zglebiaj wiedze o starszych rasach z opaslego szarawego tomiszcza"

@@ -47,8 +47,8 @@ scripts.misc.knowdlege.books = scripts.misc.knowdlege.books or {
     },
     ["patterns_alt"] = {
         ["wielkiej opaslej ksiegi"] = {
-           ["smokach i smokowatych"] = "zglebiaj wiedze o stworach pokoniunkcyjnych z wielkiej opaslej ksiega",
-           ["stworach pokoniunkcyjnych"] = "zglebiaj wiedze o wampirach z wielkiej opaslej ksiega"
+           ["smokach i smokowatych"] = "zglebiaj wiedze o stworach pokoniunkcyjnych z wielkiej opaslej ksiegi",
+           ["stworach pokoniunkcyjnych"] = "zglebiaj wiedze o wampirach z wielkiej opaslej ksiegi"
         },
         ["opaslego szarawego tomiszcza"] = {
             ["ryboludziach"] = "zglebiaj wiedze o starszych rasach z opaslego szarawego tomiszcza"

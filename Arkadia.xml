@@ -252,7 +252,7 @@
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
 							<string>Oceniasz, ze (.*) waz.*</string>
-							<string>Ubranie to .* i wyglada na (.*)$</string>
+							<string>Ubranie to.* wyglada na (.*)$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -295,7 +295,7 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>Ubranie to .* i wyglada na (.*)$</string>
+							<string>Ubranie to.* wyglada na (.*)$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>

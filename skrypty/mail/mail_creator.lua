@@ -10,7 +10,8 @@ scripts.mail_creator = scripts.mail_creator or {
         plain_border = require("skrypty.mail.plain_border_template"),
         parchment = require("skrypty.mail.parchment_mail_template")
     },
-    template = "plain"
+    template = "plain",
+    justify = true
 }
 
 scripts.mail_creator.width = 55
@@ -42,6 +43,9 @@ end
 
 local function justify(line, limit)
     limit = limit or scripts.mail_creator.width
+    if line:len() < limit * 0.65 then
+        return line
+    end
     local words = string.split(line, " ")
     local n_words = table.size(words) * 2 - 1
     local space = limit - line:len()
@@ -51,8 +55,10 @@ local function justify(line, limit)
     end
     while space > 0 do
       space = space - 1
-      words[current_index] = words[current_index] .. " "
-      current_index = current_index + 2
+      if words[current_index] then
+        words[current_index] = words[current_index] .. " "
+        current_index = current_index + 2
+      end
       if current_index > n_words then
         current_index = 2
       end
@@ -155,8 +161,10 @@ function mailCreatorAddLine(line)
     end
 
     local lines = wrap(line)
-    for k, line in pairs(lines) do
-        lines[k] = justify(line)
+    if self.justify then
+        for k, line in pairs(lines) do
+            lines[k] = justify(line)
+        end
     end
     for _, wrapped in pairs(lines) do
         scripts.mail_creator:append_input(wrapped)
@@ -189,10 +197,11 @@ function scripts.mail_creator:send()
     end
 
     sendAll("napisz list", self.mail.to, self.mail.subject, self.mail.cc:trim() ~= "" and self.mail.cc or " ")
-    tempTrigger("Wpisz ~?, zeby uzyskac pomoc, lub **, by zakonczyc edycje.", function() 
+    local trigger = tempTrigger("Wpisz ~?, zeby uzyskac pomoc, lub **, by zakonczyc edycje.", function() 
         sendAll(unpack(self:crate_content()))
         send("**")
     end, 1)
+    tempTimer(10, function() killTrigger(trigger) end)
 end
 
 function alias_func_list()

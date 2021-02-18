@@ -24608,7 +24608,7 @@
 				</Alias>
 			</AliasGroup>
 			<Alias isActive="yes" isFolder="no">
-				<name>^/konfiguracja$</name>
+				<name>/konfiguracja</name>
 				<script>alias_func_first_time_config()</script>
 				<command></command>
 				<packageName></packageName>

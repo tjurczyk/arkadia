@@ -165,6 +165,7 @@ return {
     "skrypty/ui/log_cmds_ui",
     "skrypty/ui/ui_mapper_loaded_event",
     "skrypty/ui/auto_wrap",
+    "skrypty/ui/page_window",
     "mapper/db/core",
     "mapper/db/personal_keys",
     "mapper/db/utils",
@@ -272,7 +273,6 @@ return {
     "skrypty/ui/misc/lilith",
     "skrypty/ui/misc/ptakopodobny",
     "skrypty/ui/misc/tilea-nekromanta",
-    
     "skrypty/ui/footer_elements/mail",
     "mapper/localizers/ships_buses/urbimo-novigrad",
     "mapper/localizers/ships_buses/piana-temeria",
@@ -369,5 +369,6 @@ return {
     "skrypty/ui/gags/color/color_innych_spece/par/ktos_spec_g1",
     "skrypty/ui/gags/color/color_innych_spece/par/scatak",
     "skrypty/ui/gags/color/color_innych_spece/gp/ktos_spec",
-    "skrypty/ui/inline_compass_rose",
+    "skrypty/first_config",
+    "skrypty/ui/inline_compass_rose"
 }

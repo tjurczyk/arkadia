@@ -12,11 +12,11 @@ end
 
 function scripts.people.introduced:process(matches)
     self.introduced = string.split(matches[2]:gsub(" i ", ", "), ", ")
-    self.previous = scripts.state_store:get(self.key)
-    scripts.state_store:set(self.key, self.introduced)
     if selectString("Zapamietane", 1) > - 1 then
         creplace(string.format("<spring_green>[%d]<reset> Zapamietane", table.size(self.introduced)))
     end
+    self.previous = scripts.state_store:get(self:get_char_key())
+    scripts.state_store:set(self:get_char_key(), self.introduced)
     if self.previous then
         local deleted = table.n_complement(self.previous, self.introduced)
         if not table.is_empty(deleted) then
@@ -26,6 +26,10 @@ function scripts.people.introduced:process(matches)
         end
     end
     echo("\n\n")
+end
+
+function scripts.people.introduced:get_char_key()
+    return scripts.character_name and self.key .. "." .. scripts.character_name or self.key
 end
 
 function scripts.people.introduced:process_introduced(matches)

@@ -37,6 +37,7 @@ local ranks = {
     "Kapitan",
     "Sierzant",
     "'Krotki'",
+    "Kapral",
     "'Profesor' vel "
 }
 

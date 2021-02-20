@@ -24,8 +24,7 @@ function scripts.people:process_someone(short, name)
     local name_short = short
     name_short = name_short:gsub(" ", "_")
 
-
-    downloadFile(getMudletHomeDir() .. "/empty", "http://158.69.205.60/cgi-bin/people_listener.py?people_string=" .. name_short .. "!" .. title)
+    getHTTP("http://158.69.205.60/cgi-bin/people_listener.py?people_string=" .. name_short .. "!" .. title)
 end
 
 

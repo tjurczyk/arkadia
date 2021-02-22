@@ -32,8 +32,10 @@ misc["imperium_calendar"] = {
 
 function misc:replace_string_calendar_ishtar(str)
     local new_calendar_str = misc.ishtar_calendar[str]
-    selectString(str, 1)
-    replace(new_calendar_str)
+    if new_calendar_str then
+        selectString(str, 1)
+        replace(new_calendar_str)
+    end
 end
 
 function misc:replace_string_calendar_imperium(str)

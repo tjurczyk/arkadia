@@ -28,18 +28,12 @@ function scripts.people:color_person_build(item, color, suffix_only)
 
     local suffix
 
-    local first_capitalized = string.upper(string.sub(item["short"], 0, 1))
     local guild_str = scripts.people:get_guild_name(item["guild"])
-
-    -- it gets the rest of the string (without the first letter)
-    local rest_string = string.sub(item["short"], 2, #item["short"])
 
     -- finally, it constructs the regex
     local regex
     
     local norm_short = string.lower(item["short"])
-
-    regex = "(^|\\W)((" .. string.sub(item["short"], 0, 1) .. "|" .. first_capitalized .. ")" .. rest_string .. ")(?! chaosu| \\(to chyba)(\\W|$)"
 
     if norm_short ~= "" then
         if item["name"] ~= "" then
@@ -53,17 +47,13 @@ function scripts.people:color_person_build(item, color, suffix_only)
         end
     end
 
-    if item["name"] ~= "" then
-        if suffix ~= string.lower(item["name"]) then
-            regex = "(^|\\W)((" .. string.sub(item["short"], 0, 1) .. "|" .. first_capitalized .. ")" .. rest_string .. "|" .. item["name"] .. ")(?! chaosu| \\(to chyba)(\\W|$)"
-        else
-            regex = "(^|\\W)((" .. string.sub(item["short"], 0, 1) .. "|" .. first_capitalized .. ")" .. rest_string .. ")(?! chaosu| \\(to chyba)(\\W|$)"
-        end
+    if item.name ~= "" and suffix ~= string.lower(item.name) then
+        regex = "\\b(?i)(" .. item.short .. "(?-i)|" .. item.name .. ")(?! chaosu| \\(to chyba)\\b"
     else
-        regex = "(^|\\W)((" .. string.sub(item["short"], 0, 1) .. "|" .. first_capitalized .. ")" .. rest_string .. ")(?! chaosu| \\(to chyba)(\\W|$)"
+        regex = "\\b(?i)(" .. item.short .. "(?-i))(?! chaosu| \\(to chyba)\\b"
     end
 
-    local triggerId = tempRegexTrigger(regex, function() scripts.people:process_person_color(item, matches[3], suffix, color, suffix_only) end)
+    local triggerId = tempRegexTrigger(regex, function() scripts.people:process_person_color(item, matches[2], suffix, color, suffix_only) end)
     table.insert(self.color_triggers, triggerId)
     scripts.people.already_processed[item["_row_id"]] = triggerId
     scripts.people.already_processed_desc[item.short] = triggerId

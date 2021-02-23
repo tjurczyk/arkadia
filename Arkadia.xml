@@ -22779,6 +22779,9 @@
 						<string>.* mowi do ciebie: Nikt z zakryta twarza nie stanie przed obliczem ksiecia\.$</string>
 						<string>Nie dasz rady otworzyc .*, musisz sprobowac ja uniesc\.$</string>
 						<string>W chwili gdy ruszasz w strone zachodniej czesci pomieszczenia, zylki na zbrojach stojacych w niszach krasnoludow rozpalaja sie na zielono. Postaci jakby niepomne tego, ze zostaly wykonane z kamienia, wystepuja ze swoich wnek, blokujac ci przejscie dalej.</string>
+						<string>^.* staje ci na drodze\.$</string>
+						<string>^.* mowi do ciebie: Nikt z bronia nie stanie przed obliczem ksiecia\. Prosze zostawic ja na stojaku\.$</string>
+						<string>^.* staje na drodze.* blokujac</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -22822,6 +22825,9 @@
 						<integer>1</integer>
 						<integer>1</integer>
 						<integer>0</integer>
+						<integer>1</integer>
+						<integer>1</integer>
+						<integer>1</integer>
 					</regexCodePropertyList>
 				</Trigger>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">

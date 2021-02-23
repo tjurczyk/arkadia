@@ -105,6 +105,7 @@ return {
     "skrypty/people/bind_attack_gmcp",
     "skrypty/people/color_people",
     "skrypty/people/build_bind_table",
+    "skrypty/people/introduced",
     "skrypty/plugins/help",
     "skrypty/box/core",
     "skrypty/misc/improve",

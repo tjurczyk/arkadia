@@ -24053,6 +24053,13 @@
 					<packageName></packageName>
 					<regex>^/nabindach-$</regex>
 				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>/przedstawieni</name>
+					<script>alias_func_introduced_capture()</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/przedstawieni$</regex>
+				</Alias>
 			</AliasGroup>
 			<AliasGroup isActive="yes" isFolder="yes">
 				<name>misc</name>

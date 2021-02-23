@@ -47,7 +47,7 @@ function enemy_count_collect_enemies()
     local current_enemies = {}
     if gmcp.objects.nums then
         for i, obj in pairs(gmcp.objects.nums) do
-            if ateam.objs[obj]["enemy"] == true then
+            if ateam.objs[obj] and ateam.objs[obj]["enemy"] == true then
                 current_enemies[obj] = true
             end
         end

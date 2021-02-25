@@ -10,7 +10,8 @@ function scripts_ui_info_sneaky_click(id)
         amap.walk_mode = id
         scripts.ui.footer_info_sneaky:echo("<font color='" .. scripts.ui["footer_info_normal"] .. "'>Przemykam:</font> " .. scripts.ui["footer_info_walk_mode_to_text"][amap.walk_mode] .. "</font>")
     else
-        amap.walk_mode = amap.walk_mode % 3 + 1
+        local divider = (amap.disable_team_sneak or table.size(ateam.team) == 1) and 2 or 3
+        amap.walk_mode = amap.walk_mode % divider + 1
         scripts.ui.footer_info_sneaky:echo("<font color='" .. scripts.ui["footer_info_normal"] .. "'>Przemykam:</font> " .. scripts.ui["footer_info_walk_mode_to_text"][amap.walk_mode] .. "</font>")
     end
 end

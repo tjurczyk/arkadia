@@ -696,8 +696,8 @@
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^Trzyma(|sz) oburacz ([a-z ]+)\.$</string>
-						<string>^Trzyma(|sz) ([a-z ]+) (w lewej rece|w prawej rece)\.$</string>
+						<string>^Trzyma(?:sz)? oburacz (?P&lt;weapon1&gt;[a-z ]+)\.$</string>
+						<string>^Trzyma(?:sz)? (?P&lt;weapon1&gt;[a-z ]+?) w (?:lewej|prawej) rece(?&gt; oraz (?P&lt;weapon2&gt;[a-z ]+?) w (?:lewej|prawej) rece)?\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>

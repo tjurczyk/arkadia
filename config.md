@@ -1569,3 +1569,13 @@ Wyjścia brane są z GMCP (z komunikatu z Arkadii), a nie z mappera.
 Dostępne wartości:
 * `true` - włączone
 * `false` - wyłączone
+
+--
+
+## `amap.disable_team_sneak`
+
+Wyłącza z ustawień przemykania opcje przemykania z drużyną.
+
+Dostępne wartości:
+* `true` - przemykanie z drużyną pominięte
+* `false` - przemykanie z druyżną dostępne

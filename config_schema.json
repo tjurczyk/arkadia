@@ -2603,6 +2603,12 @@
       "default_value": false,
       "field_type": "boolean",
       "macros_on_modify": []
+    },
+    {
+      "name": "amap.disable_team_sneak",
+      "default_value": false,
+      "field_type": "boolean",
+      "macros_on_modify": []
     }
   ]
 }

@@ -696,8 +696,8 @@
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^Trzyma(|sz) oburacz ([a-z ]+)\.$</string>
-						<string>^Trzyma(|sz) ([a-z ]+) (w lewej rece|w prawej rece)\.$</string>
+						<string>^Trzyma(?:sz)? oburacz (?P&lt;weapon1&gt;[a-z ]+)\.$</string>
+						<string>^Trzyma(?:sz)? (?P&lt;weapon1&gt;[a-z ]+?) w (?:lewej|prawej) rece(?&gt; oraz (?P&lt;weapon2&gt;[a-z ]+?) w (?:lewej|prawej) rece)?\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -14301,7 +14301,7 @@
 							<string>^[ &gt;]*Przechodzi cie nagly dreszcz, gdy opuszczasz srebrzysta kose bojowa\.$</string>
 							<string>^[ &gt;]*Opuszczasz (.*)\.$</string>
 							<string>^[ &gt;]*Wprawnym ruchem przewieszasz .*\.$</string>
-							<string>^[ &gt;]*.*peka!</string>
+							<string>^(?!.*przez)(.+?) peka!$</string>
 							<string>Rozgladajac sie uwaznie, opuszczasz cicho</string>
 							<string>Niechetnie opuszczasz swoj zlowrogi orez.</string>
 							<string>Zamaszystym ruchem wznosisz wielki kamienny kafar do gory, by wesprzec go na ramieniu.</string>

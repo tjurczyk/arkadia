@@ -14301,7 +14301,7 @@
 							<string>^[ &gt;]*Przechodzi cie nagly dreszcz, gdy opuszczasz srebrzysta kose bojowa\.$</string>
 							<string>^[ &gt;]*Opuszczasz (.*)\.$</string>
 							<string>^[ &gt;]*Wprawnym ruchem przewieszasz .*\.$</string>
-							<string>^[ &gt;]*.*peka!</string>
+							<string>^(?!.*przez)(.+?) peka!$</string>
 							<string>Rozgladajac sie uwaznie, opuszczasz cicho</string>
 							<string>Niechetnie opuszczasz swoj zlowrogi orez.</string>
 							<string>Zamaszystym ruchem wznosisz wielki kamienny kafar do gory, by wesprzec go na ramieniu.</string>

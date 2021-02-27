@@ -338,8 +338,7 @@ function amap:check_room_on_direction_of(room, dir, force)
     if not force and n_exits and n_exits["up"] and not n_exits[dir] then
         local to_check_x, to_check_y, to_check_z = getRoomCoordinates(n_exits["up"])
         to_check_y = -to_check_y
-        if amap:check_direction_coords_correctness(amap.curr.x, amap.curr.y, amap.curr.z, to_check_x, to_check_y, to_check_z, dir)
-                and not amap.long_to_short[k] then
+        if amap:check_direction_coords_correctness(amap.curr.x, amap.curr.y, amap.curr.z, to_check_x, to_check_y, to_check_z, dir) then
             amap.dir_from_key = "up"
             amap:pre_on_key_event()
             return true
@@ -349,8 +348,7 @@ function amap:check_room_on_direction_of(room, dir, force)
     if not force and n_exits and n_exits["down"] and not n_exits[dir] then
         local to_check_x, to_check_y, to_check_z = getRoomCoordinates(n_exits["down"])
         to_check_y = -to_check_y
-        if amap:check_direction_coords_correctness(amap.curr.x, amap.curr.y, amap.curr.z, to_check_x, to_check_y, to_check_z, dir)
-                and not amap.long_to_short[k] then
+        if amap:check_direction_coords_correctness(amap.curr.x, amap.curr.y, amap.curr.z, to_check_x, to_check_y, to_check_z, dir) then
             amap.dir_from_key = "down"
             amap:pre_on_key_event()
             return true

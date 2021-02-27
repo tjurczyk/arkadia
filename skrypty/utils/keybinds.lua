@@ -58,7 +58,7 @@ function scripts.utils.bind_functional_team_follow(line, command, delay, silent)
 
     for k, v in pairs(ateam.team) do
         if type(k) == "number" then
-            if ateam and ateam.objs and ateam.objs[k]["team_leader"] and ateam.objs[k]["desc"]~= nil and string.find(line, ateam.objs[k]["desc"]) then
+            if ateam and ateam.objs and ateam.objs[k]["team_leader"] and ateam.objs[k]["desc"] ~= nil and string.find(line, ateam.objs[k]["desc"]) then
                 scripts.utils.bind_functional(command, silent)
                 raiseEvent("ateamTeamFollowBind")
             end

@@ -7532,7 +7532,7 @@
 								</Trigger>
 							</TriggerGroup>
 							<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>zbroje</name>
+								<name>sprzet</name>
 								<script></script>
 								<triggerType>0</triggerType>
 								<conditonLineDelta>0</conditonLineDelta>
@@ -7606,6 +7606,26 @@
 										<integer>1</integer>
 									</regexCodePropertyList>
 								</Trigger>
+								<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+									<name>ciernista-kobaltowa-halabarda</name>
+									<script>trigger_func_skrypty_ui_gags_color_color_moje_spece_bronie_ciernista_kobaltowa_halabarda()</script>
+									<triggerType>0</triggerType>
+									<conditonLineDelta>0</conditonLineDelta>
+									<mStayOpen>0</mStayOpen>
+									<mCommand></mCommand>
+									<packageName></packageName>
+									<mFgColor>#ff0000</mFgColor>
+									<mBgColor>#ffff00</mBgColor>
+									<mSoundFile></mSoundFile>
+									<colorTriggerFgColor>#000000</colorTriggerFgColor>
+									<colorTriggerBgColor>#000000</colorTriggerBgColor>
+									<regexCodeList>
+										<string>^Z kamienna, pozbawiona emocji twarza, wykonujesz zamaszysty cios ciernista kobaltowa halabarda i chociaz jej srebrzyste ostrze ledwie tylko zacina</string>
+									</regexCodeList>
+									<regexCodePropertyList>
+										<integer>1</integer>
+									</regexCodePropertyList>
+								</Trigger>
 							</TriggerGroup>
 						</TriggerGroup>
 						<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -7637,7 +7657,7 @@
 								<colorTriggerFgColor>#000000</colorTriggerFgColor>
 								<colorTriggerBgColor>#000000</colorTriggerBgColor>
 								<regexCodeList>
-									<string>^[ &gt;]*(.+) ledwo muska (?!cie)</string>
+									<string>^[ &gt;]*(.+) ledwo muska (?!cie )</string>
 								</regexCodeList>
 								<regexCodePropertyList>
 									<integer>1</integer>
@@ -7657,9 +7677,13 @@
 								<colorTriggerFgColor>#000000</colorTriggerFgColor>
 								<colorTriggerBgColor>#000000</colorTriggerBgColor>
 								<regexCodeList>
-									<string>^[ &gt;]*(.+) lekko rani (?!cie )</string>
+									<string>^[ &gt;]*(.+?) lekko rani (?!cie )</string>
+									<string>^[ &gt;]*Z lekkiego wymachu (.*?) trafia .*? lekko (go|ja) raniac</string>
+									<string>^[ &gt;]*(.+?) lekko kaleczy (.*?), trafiajac (go|ja) w</string>
 								</regexCodeList>
 								<regexCodePropertyList>
+									<integer>1</integer>
+									<integer>1</integer>
 									<integer>1</integer>
 								</regexCodePropertyList>
 							</Trigger>
@@ -11622,7 +11646,7 @@
 								</Trigger>
 							</TriggerGroup>
 							<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>zbroje</name>
+								<name>sprzet</name>
 								<script></script>
 								<triggerType>0</triggerType>
 								<conditonLineDelta>0</conditonLineDelta>
@@ -11691,6 +11715,26 @@
 									<colorTriggerBgColor>#000000</colorTriggerBgColor>
 									<regexCodeList>
 										<string>^Nagle lustrzana powierzchnia lsniacej plomienistej tarczy .*? rozblyskuje jasnoczerwonym, palacym swiatlem\.</string>
+									</regexCodeList>
+									<regexCodePropertyList>
+										<integer>1</integer>
+									</regexCodePropertyList>
+								</Trigger>
+								<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+									<name>ciernista-kobaltowa-halabarda</name>
+									<script>trigger_func_skrypty_ui_gags_color_color_innych_spece_bronie_ciernista_kobaltowa_halabarda()</script>
+									<triggerType>0</triggerType>
+									<conditonLineDelta>0</conditonLineDelta>
+									<mStayOpen>0</mStayOpen>
+									<mCommand></mCommand>
+									<packageName></packageName>
+									<mFgColor>#ff0000</mFgColor>
+									<mBgColor>#ffff00</mBgColor>
+									<mSoundFile></mSoundFile>
+									<colorTriggerFgColor>#000000</colorTriggerFgColor>
+									<colorTriggerBgColor>#000000</colorTriggerBgColor>
+									<regexCodeList>
+										<string>^.+? tnie cialo bezlitosnego wojowniczego mezczyzne jednym z ostrzy ciernistej kobaltowej halabardy, a mroczna energia emanujaca z broni, wydaje sie wysysac z ofiary czastke jej duszy\.</string>
 									</regexCodeList>
 									<regexCodePropertyList>
 										<integer>1</integer>
@@ -12259,7 +12303,7 @@
 								<colorTriggerFgColor>#000000</colorTriggerFgColor>
 								<colorTriggerBgColor>#000000</colorTriggerBgColor>
 								<regexCodeList>
-									<string>^[ &gt;]*.* trafia ([a-z]+).* w .*, lecz caly impet uderzenia zostaje .*</string>
+									<string>^[ &gt;]*[a-zA-Z (),!]+ trafia (?!cie )(.+?) w .*, lecz caly impet uderzenia zostaje .*</string>
 									<string>^[ &gt;]*[a-zA-Z (),!]+ lecz uderzenie zatrzymuje sie na (jego|jej) [a-z ]+\.$</string>
 									<string>^[ &gt;]*[a-zA-Z (),!]+ (gdy jego uderzenie|lecz) zeslizguje sie po (jego|jej) [a-z ]+\.$</string>
 								</regexCodeList>

@@ -138,6 +138,7 @@ function scripts.utils:_extract_list_items(list_arr)
                 end
             end
         end
+        item.raw_string = v
         extracted[item.name] = item
     end
 

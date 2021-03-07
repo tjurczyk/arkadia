@@ -5250,7 +5250,7 @@
 									<colorTriggerFgColor>#000000</colorTriggerFgColor>
 									<colorTriggerBgColor>#000000</colorTriggerBgColor>
 									<regexCodeList>
-										<string>ierzesz potezny zamach i wyprowadza.*ktory ma zmasakrowac.*Jednak [a-z]+ bron jakims cudem mija cel, nie czyniac</string>
+										<string>Bierzesz potezny zamach i wyprowadza.*ktory ma zmasakrowac.*Jednak [a-z]+ bro.*, nie czyniac</string>
 									</regexCodeList>
 									<regexCodePropertyList>
 										<integer>1</integer>

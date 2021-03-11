@@ -11,4 +11,4 @@ function scripts.invalid_commands:deny_invalid_send(command)
     end
 end
 
-self:init()
+scripts.invalid_commands:init()

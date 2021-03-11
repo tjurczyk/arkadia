@@ -22517,6 +22517,8 @@
 						<string>Rezygnujesz z przeplyniecia.</string>
 						<string>^Gdy przeszukujesz .*, twoja reka trafia niespodziewanie na jakis wystajacy element, ktory niechcacy wciskasz\.$</string>
 						<string>^Otwierasz szafke, a w srodku znajdujesz</string>
+						<string>Uwaznie przeszukujesz rekami dno morza, az w koncu natrafiasz na zoltawobrazowy bursztyn.</string>
+						<string>Udaje ci sie sprawnie przeplynac.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>0</integer>
@@ -22524,6 +22526,8 @@
 						<integer>0</integer>
 						<integer>1</integer>
 						<integer>1</integer>
+						<integer>0</integer>
+						<integer>0</integer>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>

@@ -14284,6 +14284,8 @@
 							<string>Czujesz w sobie niezwykla moc, gdy dobywasz adamantytowego mlota bojowego.</string>
 							<string>Gdy dobywasz foremnego iskrzacego mlota, pelzajace po broni wyladowania elektryczne przeskakuja na twa dlon i przedramie oplatajac je siateczka jasniejacych wici.</string>
 							<string>Pod wplywem twego pewnego chwytu zdobiony jasniejacy mlot rozblyskuje jasnym swiatlem, </string>
+							<string>Czujesz jak zalewa cie fala ogromnej pewnosci siebie i satysfakcji.</string>
+							<string>^Juz dzierzysz .*\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -14325,6 +14327,8 @@
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
+							<integer>0</integer>
+							<integer>1</integer>
 						</regexCodePropertyList>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">

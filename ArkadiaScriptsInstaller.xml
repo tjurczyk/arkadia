@@ -5,7 +5,9 @@
 		<Script isActive="yes" isFolder="no">
 			<name>ArkadiaScriptsInstaller</name>
 			<packageName></packageName>
-			<script>function lfs.isdir(dir)
+			<script>local installer = {}
+
+function lfs.isdir(dir)
     local current = lfs.currentdir()
     local exists = lfs.chdir(dir)
     lfs.chdir(current)
@@ -70,8 +72,7 @@ function handleUnzipEvents(event, ...)
         uninstallPackage("Arkadia")
         uninstallPackage("generic_mapper")
         uninstallPackage("skrypty_master3")
-        uninstallPackage(getProfileName().."ArkadiaScriptsInstaller")
-        uninstallPackage("ArkadiaScriptsInstaller")
+        uninstallPackage(installer.name)
         tempTimer(2, function()
             os.rename(unzipDirectory, scriptsDirectory)
             installPackage(scriptsDirectory .. "Arkadia.xml")
@@ -101,10 +102,15 @@ function deleteDir(dir)
     lfs.rmdir(dir)
 end
 
-installScripts()
-clearCmdLine()
+function ArkadiaScriptsInstaller(_, name)
+  installer.name = name
+  installScripts()
+  clearCmdLine()
+end
 </script>
-			<eventHandlerList />
+			<eventHandlerList>
+				<string>sysInstallPackage</string>
+			</eventHandlerList>
 		</Script>
 	</ScriptPackage>
 </MudletPackage>

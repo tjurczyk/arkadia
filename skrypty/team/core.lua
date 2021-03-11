@@ -428,7 +428,7 @@ function ateam:print_obj_enemy(id, obj)
 
         -- id section
         if ateam.broken_defense_names[obj["desc"]] then
-            cecho(scripts.ui.enemy_states_window_name, "<" .. ateam.options.broken_defense_fg_color .. ":" .. ateam.options.broken_defense_bg_color .. ">"..ateam.options.bracket_symbol_left..ateam.options.bracket_symbol_left .. str_id .. "]")
+            cecho(scripts.ui.enemy_states_window_name, "<" .. ateam.options.broken_defense_fg_color .. ":" .. ateam.options.broken_defense_bg_color .. ">".. ateam.options.bracket_symbol_left .. str_id .. "]")
         else
             local color = "white"
             if id == ateam.next_attack_objs.next_attak_obj and ateam.next_attack_objs.mark_in_state then

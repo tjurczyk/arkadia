@@ -22186,6 +22186,7 @@
 						<string>Podchodzisz do cedru rosnacego na skraju urwiska i chwytajac liny, ktora zostala przywiazana do jego pnia, zaczynasz schodzic na dol.</string>
 						<string>Klekasz powoli przed posagiem przedstawiajacym Mercopia.</string>
 						<string>^Zaczynasz plynac</string>
+						<string>^Przyklekasz i zaczynasz powoli i dokladnie szorowac szmata podloge, starajac sie pozbyc wszystkich zabrudzen\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>0</integer>
@@ -22207,6 +22208,7 @@
 						<integer>0</integer>
 						<integer>0</integer>
 						<integer>0</integer>
+						<integer>1</integer>
 						<integer>1</integer>
 					</regexCodePropertyList>
 				</Trigger>
@@ -22521,11 +22523,13 @@
 						<string>Rezygnujesz z przeplyniecia.</string>
 						<string>^Gdy przeszukujesz .*, twoja reka trafia niespodziewanie na jakis wystajacy element, ktory niechcacy wciskasz\.$</string>
 						<string>^Otwierasz szafke, a w srodku znajdujesz</string>
+						<string>^Konczysz myc podloge i podnosisz sie z kleczek, prostujac zmeczone plecy\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>0</integer>
 						<integer>0</integer>
 						<integer>0</integer>
+						<integer>1</integer>
 						<integer>1</integer>
 						<integer>1</integer>
 					</regexCodePropertyList>
@@ -22831,6 +22835,7 @@
 						<string>^.* mowi do ciebie: Nikt z bronia nie stanie przed obliczem ksiecia\. Prosze zostawic ja na stojaku\.$</string>
 						<string>^.* staje na drodze.* blokujac .*</string>
 						<string>Podejscie pod mury silnie bronionego garnizonu nie jest najlepszym pomyslem...</string>
+						<string>Podchodzisz pod drzwi na polnocy, zza ktorych rozlega sie czyjs ponury glos: 'Zmiataj stad, nim ktos ci sprezentuje sztylet pod zebrami!'</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -22877,6 +22882,7 @@
 						<integer>1</integer>
 						<integer>1</integer>
 						<integer>1</integer>
+						<integer>0</integer>
 						<integer>0</integer>
 					</regexCodePropertyList>
 				</Trigger>

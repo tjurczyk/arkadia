@@ -31,6 +31,7 @@ end
 function installScripts()
     downloadFile(latest_file, latest_release)
     registerAnonymousEventHandler("sysDownloadDone", "handleVersionDownload", true)
+    registerAnonymousEventHandler("sysDownloadError", "handleDownloadErrors", true)
 end
 
 function handleVersionDownload(_, filename, callback)
@@ -48,9 +49,15 @@ function handleVersionDownload(_, filename, callback)
     end
 end
 
+function handleDownloadErrors(_, errorFound)
+   cecho("\n&lt;CadetBlue&gt;(skrypty)&lt;tomato&gt;: Blad podczas pobieranie skryptow: ".. errorFound ..")\n")
+   uninstallPackage(installer.name)
+end
+
 function downloadScripts(version)
     pcall(deleteDir, scriptsDirectory)
     registerAnonymousEventHandler("sysDownloadDone", "handleDownload", true)
+    registerAnonymousEventHandler("sysDownloadError", "handleDownloadErrors", true)
     downloadFile(scriptsZip, url .. version)
     cecho("\n&lt;CadetBlue&gt;(skrypty)&lt;tomato&gt;: Pobieram aktualna paczke skryptow (".. version ..")\n")
 end

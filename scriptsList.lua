@@ -68,6 +68,7 @@ return {
     "skrypty/character/character_gmcp_updater",
     "skrypty/character/combat_state",
     "skrypty/character/profession",
+    "skrypty/character/titles",
     "skrypty/config/fixers",
     "skrypty/config/core",
     "skrypty/config/alias",

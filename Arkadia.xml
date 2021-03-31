@@ -4343,7 +4343,7 @@
 									<colorTriggerBgColor>#000000</colorTriggerBgColor>
 									<regexCodeList>
 										<string>^Rozpedzone ostrze dzierzonego przez ciebie misternego obosiecznego topora bezlitosnie wbija sie w .*</string>
-										<string>^Naglym pchnieciem wbijasz sterczacy z nasady zelezca kolec w .*, powodujac paskudny krwotok\.$</string>
+										<string>^Naglym pchnieciem wbijasz sterczacy z nasady zelezca misternego obosiecznego topora kolec w .*, powodujac paskudny krwotok\.$</string>
 									</regexCodeList>
 									<regexCodePropertyList>
 										<integer>1</integer>

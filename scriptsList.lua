@@ -336,6 +336,7 @@ return {
     "mapper/localizers/ships_buses/ships/parravon-bretonia",
     "skrypty/ui/gags/color/color_moje_ciosy/wiedzminski",
     "skrypty/ui/gags/color/color_moje_ciosy/srebrny_miecz",
+    "skrypty/ui/gags/color/color_moje_ciosy/special",
     "skrypty/ui/gags/color/color_moje_ciosy/jatagan",
     "skrypty/ui/gags/color/color_moje_ciosy/drag-ja",
     "skrypty/ui/gags/color/color_moje_spece/str",

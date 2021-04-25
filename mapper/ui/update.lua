@@ -92,7 +92,7 @@ function amap.ui:set_special_dir(id, dir)
 end
 
 function amap.ui:add_special_dir_if_possible(dir)
-    for id = 1,3 do
+    for id = 1, 3 do
         if amap.ui.compass["special_exit" .. id] == nil then
             amap.ui:set_special_dir(id, dir)
             return

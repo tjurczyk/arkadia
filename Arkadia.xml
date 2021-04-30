@@ -16772,8 +16772,10 @@
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
 							<string>(.* chwyta mocno lancuch i zaczyna powoli wspinac sie w gore.*)</string>
+							<string>(.* ostroznie wschodzi na pozostalosci klatki chwytajac sie powyginanych pretow. Znalazlszy sie na gorze lapie pek lancuchow i powoli zaczyna sie po nich wspinac\.)</string>
 						</regexCodeList>
 						<regexCodePropertyList>
+							<integer>1</integer>
 							<integer>1</integer>
 						</regexCodePropertyList>
 					</Trigger>
@@ -16792,8 +16794,10 @@
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
 							<string>(.* chwyta mocno lancuch i powoli zsuwa sie w dol.*)</string>
+							<string>(.* nachyla sie nad dziura w posadzce lapiac lancuch i zawisa na nim, by powoli  zaczac opuszczac sie w dol\.)</string>
 						</regexCodeList>
 						<regexCodePropertyList>
+							<integer>1</integer>
 							<integer>1</integer>
 						</regexCodePropertyList>
 					</Trigger>

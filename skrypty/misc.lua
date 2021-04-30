@@ -51,6 +51,15 @@ function misc:get_valued_string(amount)
     return money_str
 end
 
+function misc:run_separeted_command(command)
+    if command and command == "" then
+        return
+    end
+    local pre_elements = string.split(command, "[;#]")
+    for k, v in pairs(pre_elements) do
+        expandAlias(v)
+    end
+end
 
 
 function misc:test_commands()

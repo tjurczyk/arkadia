@@ -389,6 +389,22 @@
       ]
     },
     {
+      "name": "herbs.pre_use",
+      "default_value": "",
+      "field_type": "string",
+      "macros_on_modify": [
+        "_herbs"
+      ]
+    },
+    {
+      "name": "herbs.post_use",
+      "default_value": "",
+      "field_type": "string",
+      "macros_on_modify": [
+        "_herbs"
+      ]
+    },
+    {
       "name": "herbs.settings.get_herb_counts",
       "default_value": [
         1,

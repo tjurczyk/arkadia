@@ -607,3 +607,7 @@ function trigger_func_skrypty_ui_special_exits_follow_przeslizgnij_sie_przez_szc
     scripts.utils.bind_functional_team_follow(matches[2], "przeslizgnij sie przez szczeline", 15)
 end
 
+
+function trigger_func_skrypty_ui_special_exits_follow_wejdz_na_statek(ship)
+    scripts.utils.bind_functional_team_follow(matches[1], "wejdz na " .. ship, 15)
+end

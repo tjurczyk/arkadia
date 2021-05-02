@@ -22599,6 +22599,7 @@
 						<string>Uwaznie przeszukujesz rekami dno morza, az w koncu natrafiasz na zoltawobrazowy bursztyn.</string>
 						<string>Udaje ci sie sprawnie przeplynac.</string>
 						<string>Wynurzasz sie z wody lapczywie lapiac powietrze w pluca.</string>
+						<string>Zanurzasz sie pod wode.</string>
 						<string>^W cuchnacej brei na dnie ogromnego kotla znajdujesz</string>
 					</regexCodeList>
 					<regexCodePropertyList>
@@ -22608,6 +22609,7 @@
 						<integer>1</integer>
 						<integer>1</integer>
 						<integer>1</integer>
+						<integer>3</integer>
 						<integer>3</integer>
 						<integer>3</integer>
 						<integer>3</integer>

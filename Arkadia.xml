@@ -915,8 +915,10 @@
 							<string>nie jest zapalona\.$</string>
 							<string>[ &gt;]*Probujesz zapalic [a-z ]+ jest wyczerpana\.$</string>
 							<string>(?&lt;!fajka) wypala sie i gasnie.$</string>
+							<string>^Woda szybko gasi .* lampe\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
+							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>

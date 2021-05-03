@@ -51,6 +51,10 @@ function ateam:restart_ateam(silent)
     end
 end
 
+function ateam:is_leader()
+    return ateam.objs[ateam.my_id]["team_leader"]
+end
+
 function ateam:parse_objects_data()
     ateam.only_hp_update = true
     ateam.enemies_on_location_count = 0

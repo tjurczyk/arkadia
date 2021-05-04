@@ -101,7 +101,7 @@ end
 function herbs:create_triggers()
     for herb_long, herb_name in pairs(herbs.herbs_long_to_short) do
         local regex = "(?:^|\\W)(?i)(".. herb_long .. ")(?:\\W|$)(?!\\(" .. herb_name ..")"
-        herbs.herb_trigg_ids[herb_long] = tempRegexTrigger(regex, [[herbs:process_trigger(matches[2], "]] .. herb_name .. [[")]])
+        herbs.herb_trigg_ids[herb_long] = tempRegexTrigger(regex, function() herbs:process_trigger(matches[2], herb_name) end)
     end
 end
 
@@ -116,6 +116,14 @@ function herbs:process_trigger(herb_match, herb_name)
     replace(herb_match .. " (" .. herb_name .. ")")
     selectString(herb_name, 1)
     fg("blanched_almond")
+    local ln = getLineNumber()
+    setLink(function()
+        moveCursor(0, ln)
+            if selectString(herb_name, 1) > -1 then
+                creplace("<blanched_almond>" .. herb_name .. "<reset> " .. herbs.herbs_details[herb_name]["details"] .. "<reset>")
+            end
+            moveCursorEnd()
+    end, herbs.herbs_details[herb_name]["details"])
     resetFormat()
 end
 

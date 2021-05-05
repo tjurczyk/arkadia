@@ -284,6 +284,15 @@ Opcja do ustalania akcji "przed" i "po"
 
 ---
 
+## `herbs.pre_use`
+## `herbs.post_use`
+
+Opcja do ustalania akcji "przed" i "po" uzyciu ziola
+
+`pre_` to przed, `post_` to po.
+
+---
+
 ## `herbs.settings.get_herb_counts`
 ## `herbs.settings.use_herb_counts`
 

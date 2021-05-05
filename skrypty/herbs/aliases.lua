@@ -28,37 +28,26 @@ end
 
 function herbs:get_herb_from_bag(name, amount, bag_id)
     local ret_val = nil
-    if tonumber(herbs.db[bag_id][name]["amount"]) < amount then
+    if tonumber(herbs.db[bag_id][name]["amount"]) <= amount then
         ret_val = herbs.db[bag_id][name]["amount"]
-
-        send("otworz " .. scripts.id_to_string[bag_id] .. " woreczek")
-        for i = 1, herbs.db[bag_id][name]["amount"] do
-            send("wez " .. herbs.herbs_details[name]["acc"] .. " z otwartego woreczka")
-        end
-        send("zamknij woreczki")
-
+        self:send_get_commands(bag_id, herbs.db[bag_id][name]["amount"], name)
         herbs.db[bag_id][name] = nil
         herbs.index[name][bag_id] = nil
-        --send("", true)
     else
         ret_val = amount
-        if herbs.db[bag_id][name]["amount"] == amount then
-            -- taking all from this bag
-            herbs.db[bag_id][name] = nil
-            herbs.index[name][bag_id] = nil
-        else
-            herbs.db[bag_id][name]["amount"] = herbs.db[bag_id][name]["amount"] - amount
-        end
-
-        send("otworz " .. scripts.id_to_string[bag_id] .. " woreczek")
-        for i = 1, amount do
-            send("wez " .. herbs.herbs_details[name]["acc"] .. " z otwartego woreczka")
-        end
-        send("zamknij woreczki")
+        herbs.db[bag_id][name]["amount"] = herbs.db[bag_id][name]["amount"] - amount
+        self:send_get_commands(bag_id, amount, name)
     end
     herbs.window:print()
     return ret_val
 end
+
+function herbs:send_get_commands(bag_id, amount, herb_id)
+    send("otworz " .. scripts.id_to_string[bag_id] .. " woreczek")
+    send(string.format("wez %d %s z otwartego woreczka", amount, amount > 1 and herbs.data.herb_id_to_odmiana[herb_id].mnoga_biernik or herbs.data.herb_id_to_odmiana[herb_id].biernik))
+    send("zamknij otwarte woreczki")
+end
+
 
 function herbs:pack_herb_with_herb(bag_number, herb)
     if not herbs["herbs_details"][herb] then

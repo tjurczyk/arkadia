@@ -9,7 +9,7 @@ end
 
 function scripts.ui.auto_wrap_main_window:adjust_wrap()
     if self.enabled then
-        setWindowWrap("main", getColumnCount())
+        setWindowWrap("main", getColumnCount() - 2)
     end
 end
 

@@ -38,9 +38,7 @@ function trigger_func_skrypty_ui_misc_zniszczona_bron()
 end
 
 function trigger_func_skrypty_ui_misc_zniszczony_sprzet()
-    selectCurrentLine()
-    deleteLine()
-    cecho("<tomato>\n\n[  SPRZET  ] " .. matches[2] .. "\n\n")
+    creplaceLine("<tomato>\n\n[  SPRZET  ] " .. matches[1] .. "\n\n")
     resetFormat()
 
     local by_space = string.split(matches[2], " ")

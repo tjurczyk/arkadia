@@ -915,8 +915,10 @@
 							<string>nie jest zapalona\.$</string>
 							<string>[ &gt;]*Probujesz zapalic [a-z ]+ jest wyczerpana\.$</string>
 							<string>(?&lt;!fajka) wypala sie i gasnie.$</string>
+							<string>^Woda szybko gasi .* lampe\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
+							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
@@ -13559,7 +13561,7 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>(^[ &gt;]*.* peka!$)</string>
+							<string>^(?:[A-Z][a-z]+) (?:[a-z]+ ){1,3}peka!$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -13579,7 +13581,7 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>(^[ &gt;]*.* rozpada sie!$)</string>
+							<string>^(?:[A-Z][a-z]+) (?:[a-z]+ ){1,3}rozpada sie!$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -22257,7 +22259,6 @@
 						<string>Klekasz powoli przed posagiem przedstawiajacym Mercopia.</string>
 						<string>^Zaczynasz plynac</string>
 						<string>^Przyklekasz i zaczynasz powoli i dokladnie szorowac szmata podloge, starajac sie pozbyc wszystkich zabrudzen\.$</string>
-						<string>Zanurzasz sie pod wode.</string>
 						<string>Wiedziony pierwotnym zewem lesnego lowcy, zwinnie przyklekasz na kolano i zaczynasz szukac sladow,starajac sie uchwycic wszystkimi zmyslami podszepty natury.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
@@ -22282,7 +22283,6 @@
 						<integer>0</integer>
 						<integer>1</integer>
 						<integer>1</integer>
-						<integer>3</integer>
 						<integer>3</integer>
 					</regexCodePropertyList>
 				</Trigger>
@@ -22601,6 +22601,7 @@
 						<string>Uwaznie przeszukujesz rekami dno morza, az w koncu natrafiasz na zoltawobrazowy bursztyn.</string>
 						<string>Udaje ci sie sprawnie przeplynac.</string>
 						<string>Wynurzasz sie z wody lapczywie lapiac powietrze w pluca.</string>
+						<string>Zanurzasz sie pod wode.</string>
 						<string>^W cuchnacej brei na dnie ogromnego kotla znajdujesz</string>
 					</regexCodeList>
 					<regexCodePropertyList>
@@ -22610,6 +22611,7 @@
 						<integer>1</integer>
 						<integer>1</integer>
 						<integer>1</integer>
+						<integer>3</integer>
 						<integer>3</integer>
 						<integer>3</integer>
 						<integer>3</integer>
@@ -22919,6 +22921,7 @@
 						<string>Podejscie pod mury silnie bronionego garnizonu nie jest najlepszym pomyslem...</string>
 						<string>Podchodzisz pod drzwi na polnocy, zza ktorych rozlega sie czyjs ponury glos: 'Zmiataj stad, nim ktos ci sprezentuje sztylet pod zebrami!'</string>
 						<string>Probujesz isc naprzod, ale sliski lod sprawia, ze wywracasz sie na nim.</string>
+						<string>Tylko i wylacznie mieszkancy osady moga tam wejsc.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -22965,6 +22968,7 @@
 						<integer>1</integer>
 						<integer>1</integer>
 						<integer>1</integer>
+						<integer>3</integer>
 						<integer>3</integer>
 						<integer>3</integer>
 						<integer>3</integer>
@@ -23029,9 +23033,11 @@
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
 						<string>Jestes ogluszony i nie mozesz nic zrobic.</string>
+						<string>^Nie widzisz zadnego wyjscia .*</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>3</integer>
+						<integer>1</integer>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>

@@ -2,22 +2,28 @@ function herbs:put_herb_bag_down(bag_id)
     sendAll("odbezpiecz " .. tostring(bag_id) .. ". woreczek", "odtrocz go", "odloz go")
 end
 
-function herbs:use_herb(herb_id, herb_action, herb_amount)
-    herbs:get_herbs(herb_id, herb_amount)
+function herbs:use_herb(herb_id, action, amount)
+    self:use_herbs({[herb_id] = {action = action, amount = amount}})
+end
 
-    -- add when all "przypadek" are ready
-    --local proper_przypadek = scripts.utils:get_form_based_on_count(herb_amount)
-    --if herb_amount > 1 then
-    --  proper_przypadek = "mnoga_" .. proper_przypadek
-    --end
-    --local proper_herb_desc_przypadek = herbs.data.herb_id_to_odmiana[herb_id][proper_przypadek]
-    --local use_herb_command = herb_action .. " " .. tostring(herb_amount) .. " " .. proper_herb_desc_przypadek
+function herbs:use_herbs(entries)
+    if herbs.pre_use then misc:run_separeted_command(herbs.pre_use) end
+
+    for herb_id, entry in pairs(entries) do
+        herbs:perform_herb_use(herb_id, entry.action, entry.amount)
+    end
+
+    if herbs.post_use then misc:run_separeted_command(herbs.post_use) end
+end
+
+function herbs:perform_herb_use(herb_id, herb_action, herb_amount)
+    herbs:get_herbs(herb_id, herb_amount)
 
     local use_herb_command = herb_action
     if herb_amount > 1 then
-        use_herb_command = use_herb_command .. " ziola"
+        use_herb_command = use_herb_command .. " " .. herbs.data.herb_id_to_odmiana[herb_id].mnoga_biernik
     else
-        use_herb_command = use_herb_command .. " ziolo"
+        use_herb_command = use_herb_command .. " " .. herbs.data.herb_id_to_odmiana[herb_id].biernik
     end
 
     send(use_herb_command)
@@ -56,7 +62,6 @@ function herbs:do_post_actions()
     herbs:do_pre_post_actions("post")
 end
 
-
 function herbs:do_pre_post_actions(pre_post)
     local actions = nil
     if pre_post == "pre" then
@@ -64,13 +69,5 @@ function herbs:do_pre_post_actions(pre_post)
     elseif pre_post == "post" then
         actions = herbs.post_actions
     end
-    if actions ~= "" then
-        local pre_elements = string.split(actions, "[;#]")
-        for k, v in pairs(pre_elements) do
-            expandAlias(v)
-        end
-    end
+    misc:run_separeted_command(actions)
 end
-
-
-

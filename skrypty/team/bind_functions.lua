@@ -83,7 +83,7 @@ function ateam:zab_func(id)
         local local_str = id_retrieved
         send(ateam:get_attack_string() .. local_str, true)
 
-        if table.size(ateam.team) > 1 and ateam.team[ateam.my_id] == "@" and ateam.attack_mode > 1 then
+        if table.size(ateam.team) > 1 and ateam:is_leader() and ateam.attack_mode > 1 then
             send("wskaz " .. local_str .. " jako cel ataku", false)
 
             if ateam.attack_mode > 2 then
@@ -120,7 +120,7 @@ end
 function ateam:zab2_func(desc)
     send(ateam:get_attack_string() .. desc, false)
 
-    if table.size(ateam.team) > 1 and ateam.team[ateam.my_id] == "@" and ateam.attack_mode > 1 then
+    if table.size(ateam.team) > 1 and ateam:is_leader() and ateam.attack_mode > 1 then
         send("wskaz " .. desc .. " jako cel ataku", false)
 
         if ateam.attack_mode > 2 then
@@ -137,7 +137,7 @@ function ateam:zab3_func(obj_id)
     local obj = "ob_" .. tostring(obj_id)
     send(ateam:get_attack_string() .. obj, false)
 
-    if table.size(ateam.team) > 1 and ateam.team[ateam.my_id] == "@" and ateam.attack_mode > 1 then
+    if table.size(ateam.team) > 1 and ateam:is_leader() and ateam.attack_mode > 1 then
         send("wskaz " .. obj .. " jako cel ataku", false)
 
         if ateam.attack_mode > 2 then

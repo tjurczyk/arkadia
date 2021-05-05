@@ -19,7 +19,7 @@ end
 function herbs:perform_herb_use(herb_id, herb_action, herb_amount)
     herbs:get_herbs(herb_id, herb_amount)
     local use_herb_command = herb_action
-    use_herb_command = use_herb_command .. " " .. herbs:get_case(herb_id, herb_amount)
+    use_herb_command = use_herb_command .. " " .. herb_amount .. " " .. herbs:get_case(herb_id, herb_amount)
     send(use_herb_command)
 end
 

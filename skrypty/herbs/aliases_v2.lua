@@ -18,14 +18,8 @@ end
 
 function herbs:perform_herb_use(herb_id, herb_action, herb_amount)
     herbs:get_herbs(herb_id, herb_amount)
-
     local use_herb_command = herb_action
-    if herb_amount > 1 then
-        use_herb_command = use_herb_command .. " " .. herbs.data.herb_id_to_odmiana[herb_id].mnoga_biernik
-    else
-        use_herb_command = use_herb_command .. " " .. herbs.data.herb_id_to_odmiana[herb_id].biernik
-    end
-
+    use_herb_command = use_herb_command .. " " .. herbs:get_case(herb_id, herb_amount)
     send(use_herb_command)
 end
 

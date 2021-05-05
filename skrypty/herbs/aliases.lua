@@ -1,3 +1,5 @@
+local biernik_digits = {2,3,4}
+
 function herbs:get_herbs(name, amount)
     if not herbs.herbs_details[name] then
         scripts:print_log("Nie znam takiego ziola")
@@ -42,9 +44,25 @@ function herbs:get_herb_from_bag(name, amount, bag_id)
     return ret_val
 end
 
+function herbs:get_case(herb_id, herb_amount)
+    herb_amount = tonumber(herb_amount)
+    if herb_amount < 22 then
+        if herb_amount == 1 then
+            return herbs.data.herb_id_to_odmiana[herb_id].biernik
+        elseif table.contains(biernik_digits, herb_amount) then
+            return herbs.data.herb_id_to_odmiana[herb_id].mnoga_biernik
+        else
+            return herbs.data.herb_id_to_odmiana[herb_id].mnoga_dopelniacz
+        end
+    elseif herb_amount % 10 > 1 and herb_amount % 10 < 5 then
+        return herbs.data.herb_id_to_odmiana[herb_id].mnoga_biernik
+    end
+    return herbs.data.herb_id_to_odmiana[herb_id].mnoga_dopelniacz
+end
+
 function herbs:send_get_commands(bag_id, amount, herb_id)
     send("otworz " .. scripts.id_to_string[bag_id] .. " woreczek")
-    send(string.format("wez %d %s z otwartego woreczka", amount, amount > 1 and herbs.data.herb_id_to_odmiana[herb_id].mnoga_biernik or herbs.data.herb_id_to_odmiana[herb_id].biernik))
+    send(string.format("wez %d %s z otwartego woreczka", amount, herbs:get_case(herb_id, amount)))
     send("zamknij otwarte woreczki")
 end
 

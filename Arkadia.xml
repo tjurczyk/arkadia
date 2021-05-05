@@ -22257,7 +22257,6 @@
 						<string>Klekasz powoli przed posagiem przedstawiajacym Mercopia.</string>
 						<string>^Zaczynasz plynac</string>
 						<string>^Przyklekasz i zaczynasz powoli i dokladnie szorowac szmata podloge, starajac sie pozbyc wszystkich zabrudzen\.$</string>
-						<string>Zanurzasz sie pod wode.</string>
 						<string>Wiedziony pierwotnym zewem lesnego lowcy, zwinnie przyklekasz na kolano i zaczynasz szukac sladow,starajac sie uchwycic wszystkimi zmyslami podszepty natury.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
@@ -22282,7 +22281,6 @@
 						<integer>0</integer>
 						<integer>1</integer>
 						<integer>1</integer>
-						<integer>3</integer>
 						<integer>3</integer>
 					</regexCodePropertyList>
 				</Trigger>
@@ -22601,6 +22599,7 @@
 						<string>Uwaznie przeszukujesz rekami dno morza, az w koncu natrafiasz na zoltawobrazowy bursztyn.</string>
 						<string>Udaje ci sie sprawnie przeplynac.</string>
 						<string>Wynurzasz sie z wody lapczywie lapiac powietrze w pluca.</string>
+						<string>Zanurzasz sie pod wode.</string>
 						<string>^W cuchnacej brei na dnie ogromnego kotla znajdujesz</string>
 					</regexCodeList>
 					<regexCodePropertyList>
@@ -22610,6 +22609,7 @@
 						<integer>1</integer>
 						<integer>1</integer>
 						<integer>1</integer>
+						<integer>3</integer>
 						<integer>3</integer>
 						<integer>3</integer>
 						<integer>3</integer>

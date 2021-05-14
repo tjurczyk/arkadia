@@ -24583,6 +24583,7 @@
 					<packageName></packageName>
 					<regex>^/porownaj_ze_wszystkimi$</regex>
 				</Alias>
+					<packageName></packageName>
 			</AliasGroup>
 			<AliasGroup isActive="yes" isFolder="yes">
 				<name>colors</name>

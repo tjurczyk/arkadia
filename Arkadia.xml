@@ -24801,6 +24801,7 @@
 				<packageName></packageName>
 				<regex>^/konfiguracja$</regex>
 			</Alias>
+				<regex></regex>
 		</AliasGroup>
 		<AliasGroup isActive="yes" isFolder="yes">
 			<name>mapper</name>

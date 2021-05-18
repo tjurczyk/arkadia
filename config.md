@@ -1309,39 +1309,39 @@ Tymczasowy keybind (10) (domyslnie nieaktywny)
 
 ---
 
-## `scripts.keybind.configuration.multibdin1.modifier`
-## `scripts.keybind.configuration.multibdin1.key`
-## `scripts.keybind.configuration.multibdin1.keys`
-## `scripts.keybind.configuration.multibdin1.active`
+## `scripts.keybind.configuration.multibind1.modifier`
+## `scripts.keybind.configuration.multibind1.key`
+## `scripts.keybind.configuration.multibind1.keys`
+## `scripts.keybind.configuration.multibind1.active`
 
-Multbind na lokacje (1)
-
----
-
-## `scripts.keybind.configuration.multibdin2.modifier`
-## `scripts.keybind.configuration.multibdin2.key`
-## `scripts.keybind.configuration.multibdin2.keys`
-## `scripts.keybind.configuration.multibdin2.active`
-
-Multbind na lokacje (2)
+multibind na lokacje (1)
 
 ---
 
-## `scripts.keybind.configuration.multibdin3.modifier`
-## `scripts.keybind.configuration.multibdin3.key`
-## `scripts.keybind.configuration.multibdin3.keys`
-## `scripts.keybind.configuration.multibdin3.active`
+## `scripts.keybind.configuration.multibind2.modifier`
+## `scripts.keybind.configuration.multibind2.key`
+## `scripts.keybind.configuration.multibind2.keys`
+## `scripts.keybind.configuration.multibind2.active`
 
-Multbind na lokacje (3)
+multibind na lokacje (2)
 
 ---
 
-## `scripts.keybind.configuration.multibdin4.modifier`
-## `scripts.keybind.configuration.multibdin4.key`
-## `scripts.keybind.configuration.multibdin4.keys`
-## `scripts.keybind.configuration.multibdin4.active`
+## `scripts.keybind.configuration.multibind3.modifier`
+## `scripts.keybind.configuration.multibind3.key`
+## `scripts.keybind.configuration.multibind3.keys`
+## `scripts.keybind.configuration.multibind3.active`
 
-Multbind na lokacje (4)
+multibind na lokacje (3)
+
+---
+
+## `scripts.keybind.configuration.multibind4.modifier`
+## `scripts.keybind.configuration.multibind4.key`
+## `scripts.keybind.configuration.multibind4.keys`
+## `scripts.keybind.configuration.multibind4.active`
+
+multibind na lokacje (4)
 
 ---
 

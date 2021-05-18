@@ -1309,6 +1309,42 @@ Tymczasowy keybind (10) (domyslnie nieaktywny)
 
 ---
 
+## `scripts.keybind.configuration.multibdin1.modifier`
+## `scripts.keybind.configuration.multibdin1.key`
+## `scripts.keybind.configuration.multibdin1.keys`
+## `scripts.keybind.configuration.multibdin1.active`
+
+Multbind na lokacje (1)
+
+---
+
+## `scripts.keybind.configuration.multibdin2.modifier`
+## `scripts.keybind.configuration.multibdin2.key`
+## `scripts.keybind.configuration.multibdin2.keys`
+## `scripts.keybind.configuration.multibdin2.active`
+
+Multbind na lokacje (2)
+
+---
+
+## `scripts.keybind.configuration.multibdin3.modifier`
+## `scripts.keybind.configuration.multibdin3.key`
+## `scripts.keybind.configuration.multibdin3.keys`
+## `scripts.keybind.configuration.multibdin3.active`
+
+Multbind na lokacje (3)
+
+---
+
+## `scripts.keybind.configuration.multibdin4.modifier`
+## `scripts.keybind.configuration.multibdin4.key`
+## `scripts.keybind.configuration.multibdin4.keys`
+## `scripts.keybind.configuration.multibdin4.active`
+
+Multbind na lokacje (4)
+
+---
+
 ## `scripts.keybind.configuration.opening_gate.modifier`
 ## `scripts.keybind.configuration.opening_gate.key`
 ## `scripts.keybind.configuration.opening_gate.keys`

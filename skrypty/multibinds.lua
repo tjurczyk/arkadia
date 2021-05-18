@@ -12,13 +12,6 @@ scripts.multibinds.db = db:create("multibinds", {
     }
 })
 
-scripts.multibinds.command_keys = {
-    "Alt + 1",
-    "Alt + 2",
-    "Alt + 3",
-    "Alt + 4",
-}
-
 function scripts.multibinds:init()
     self.handler = scripts.event_register:force_register_event_handler(self.handler, "amapNewLocation", function (_, loc)
         self:update_ui(loc)
@@ -69,7 +62,7 @@ function scripts.multibinds:run_current(index)
      if actions and not table.is_empty(actions) then
         local action_binds = {}
         for index, props in pairs(actions) do
-            table.insert(action_binds, string.format("[%s] %s", self:get_command_key(index), props.action))
+            table.insert(action_binds, string.format("[%s] %s", scripts.keybind:keybind_tostring("multibind" .. index), props.action))
         end
         scripts.ui.multibinds_label:echo(table.concat(action_binds, "&nbsp;&nbsp;&nbsp;&nbsp;"))
     else
@@ -84,7 +77,7 @@ function scripts.multibinds:run_current(index)
         cecho("<tomato>Brak.<reset>")
     else
         for index, value in pairs(result) do
-            cecho(string.format("<gray>[%s] - %s<reset>\n", self:get_command_key(index), value.action))
+            cecho(string.format("<gray>[%s] - %s<reset>\n", scripts.keybind:keybind_tostring("multibind" .. index), value.action))
         end
     end
     echo("\n\n")

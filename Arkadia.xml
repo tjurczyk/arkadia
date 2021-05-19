@@ -23033,11 +23033,9 @@
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
 						<string>Jestes ogluszony i nie mozesz nic zrobic.</string>
-						<string>^Nie widzisz zadnego wyjscia .*</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>3</integer>
-						<integer>1</integer>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>

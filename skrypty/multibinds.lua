@@ -49,7 +49,6 @@ function scripts.multibinds:create_next(action)
     for k,v in pairs(binds) do
         table.remove(slots, table.index_of(slots, v.index))
     end
-    display(slots)
     if slots[1] then
         self:create(amap.curr.id, slots[1], action)
     else

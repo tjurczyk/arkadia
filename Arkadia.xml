@@ -14292,6 +14292,7 @@
 							<string>Pod wplywem twego pewnego chwytu zdobiony jasniejacy mlot rozblyskuje jasnym swiatlem, </string>
 							<string>Czujesz jak zalewa cie fala ogromnej pewnosci siebie i satysfakcji.</string>
 							<string>^Juz dzierzysz .*\.$</string>
+							<string>Zaciskasz dlon na niezwyklym koscianym toporze i przez chwile czujesz, jak bron wibruje od zgromadzonej w niej mocy.
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -14335,6 +14336,7 @@
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>1</integer>
+							<integer>3</integer>
 						</regexCodePropertyList>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">

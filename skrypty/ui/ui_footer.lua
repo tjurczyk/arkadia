@@ -35,14 +35,32 @@ function scripts.ui:setup_footer()
 
     scripts.ui.bottom:setColor(scripts.ui.footer_r, scripts.ui.footer_g, scripts.ui.footer_b)
 
+    scripts.ui.footer_vertical = Geyser.VBox:new({
+        name = "scripts.ui.footer_vertical",
+        x = 0,
+        y = 0,
+        width = "100%",
+        height = "100%"
+    }, scripts.ui.bottom)
+
+    scripts.ui.actions_container = Geyser.HBox:new({
+        name = "scripts.ui.actions_container",
+        x = 0,
+        y = 0,
+        width = "100%",
+        height = 25,
+        v_policy = Geyser.Fixed,
+        fontSize = 14
+    }, scripts.ui.footer_vertical)
+
     scripts.ui.footer = Geyser.HBox:new({
         name = "scripts.ui.footer",
         x = 0,
         y = 0,
         width = "100%",
-        height = "100%",
-    }, scripts.ui.bottom)
-
+        height = "100%"
+    }, scripts.ui.footer_vertical)
+    
     scripts.ui.footer_map = Geyser.Label:new({
         name = "scripts.ui.footer_map",
         h_stretch_factor = scripts.ui.footer_map_width_p,

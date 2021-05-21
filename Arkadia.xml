@@ -22926,6 +22926,7 @@
 						<string>Podchodzisz pod drzwi na polnocy, zza ktorych rozlega sie czyjs ponury glos: 'Zmiataj stad, nim ktos ci sprezentuje sztylet pod zebrami!'</string>
 						<string>Probujesz isc naprzod, ale sliski lod sprawia, ze wywracasz sie na nim.</string>
 						<string>Tylko i wylacznie mieszkancy osady moga tam wejsc.</string>
+						<string>Probujesz przecisnac sie przez otwor na dach, ale ze wzgledu na brak miejsca, zmuszony jestes wrocic na dol.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -22972,6 +22973,7 @@
 						<integer>1</integer>
 						<integer>1</integer>
 						<integer>1</integer>
+						<integer>3</integer>
 						<integer>3</integer>
 						<integer>3</integer>
 						<integer>3</integer>
@@ -24587,6 +24589,13 @@
 					<packageName></packageName>
 					<regex>^/porownaj_ze_wszystkimi$</regex>
 				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>chat</name>
+					<script>alias_func_print_talk_history()</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/chat$</regex>
+				</Alias>
 			</AliasGroup>
 			<AliasGroup isActive="yes" isFolder="yes">
 				<name>colors</name>
@@ -24805,6 +24814,55 @@
 				<packageName></packageName>
 				<regex>^/konfiguracja$</regex>
 			</Alias>
+			<AliasGroup isActive="yes" isFolder="yes">
+				<name>multibinds</name>
+				<script></script>
+				<command></command>
+				<packageName></packageName>
+				<regex></regex>
+				<Alias isActive="yes" isFolder="no">
+					<name>mbind add</name>
+					<script>alias_func_mbind_create_current(matches[2], matches[3])</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/mbind (\d) (.+)$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>mbind add +</name>
+					<script>alias_func_mbind_create_next(matches[2])</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/mbind\+ (.*)$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>mbind check</name>
+					<script>alias_func_mbind_display(matches[2])</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/mbind (\d+)$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>mbind clear</name>
+					<script>alias_func_mbind_clear_location()</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/mbind-$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>mbind clear index</name>
+					<script>alias_func_mbind_clear_location_index(matches[2])</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/mbind- (\d)$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>mbind check current</name>
+					<script>alias_func_mbind_display_current()</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/mbind$</regex>
+				</Alias>
+			</AliasGroup>
 		</AliasGroup>
 		<AliasGroup isActive="yes" isFolder="yes">
 			<name>mapper</name>

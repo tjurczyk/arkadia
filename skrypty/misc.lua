@@ -55,9 +55,13 @@ function misc:run_separeted_command(command)
     if command and command == "" then
         return
     end
-    local pre_elements = string.split(command, "[;#]")
-    for k, v in pairs(pre_elements) do
-        expandAlias(v)
+    local commands = scripts.utils:separate_bind(command)
+    for k, v in pairs(commands) do
+        if v["delay"] then
+            tempTimer(v["delay"], function() expandAlias(v["bind"]) end)
+        else
+            expandAlias(v["bind"])
+        end
     end
 end
 

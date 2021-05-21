@@ -22,6 +22,8 @@ function scripts.ui:setup()
     scripts.ui:setup_footer()
     scripts.ui:setup_footer_closed()
 
+    scripts.ui.multibinds:setup()
+
     scripts.ui:init_states_window_navbar()
     setBorderBottom(scripts.ui.footer_height)
 

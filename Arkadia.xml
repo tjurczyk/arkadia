@@ -24587,7 +24587,6 @@
 					<packageName></packageName>
 					<regex>^/porownaj_ze_wszystkimi$</regex>
 				</Alias>
-					<packageName></packageName>
 				<Alias isActive="yes" isFolder="no">
 					<name>chat</name>
 					<script>alias_func_print_talk_history()</script>

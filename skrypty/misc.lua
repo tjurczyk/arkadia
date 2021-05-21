@@ -158,7 +158,7 @@ function trigger_func_skrypty_misc_ostatnie_logowanie_licznik()
 end
 
 function trigger_func_skrypty_misc_tropienie_pewny()
-    misc:enemy_escape_print_arrow(matches[2], "blue")
+    misc:enemy_escape_print_arrow(matches[2], "RoyalBlue")
 end
 
 function trigger_func_skrypty_misc_tropienie_niepewny()

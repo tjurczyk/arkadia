@@ -2804,8 +2804,10 @@
 								<colorTriggerBgColor>#000000</colorTriggerBgColor>
 								<regexCodeList>
 									<string>(^[ &gt;]*Probujesz zaslonic ([a-zA-Z (),!]+) przed ciosami ([a-zA-Z (),!]+), jednak nie jestes w stanie tego uczynic\.$)</string>
+									<string>^Na rozkaz .* probujesz zaslonic (.*) przed ciosami (.*), jednak nie jestes w stanie tego uczynic\.$</string>
 								</regexCodeList>
 								<regexCodePropertyList>
+									<integer>1</integer>
 									<integer>1</integer>
 								</regexCodePropertyList>
 							</Trigger>
@@ -11886,8 +11888,10 @@
 								<colorTriggerBgColor>#000000</colorTriggerBgColor>
 								<regexCodeList>
 									<string>(^[ &gt;]*Probujesz zaslonic ([a-zA-Z (),!]+) przed ciosami ([a-zA-Z (),!]+), jednak nie jestes w stanie tego uczynic\.$)</string>
+									<string>(^Na rozkaz .* probujesz zaslonic (.*) przed ciosami (.*), jednak nie jestes w stanie tego uczynic\.$)</string>
 								</regexCodeList>
 								<regexCodePropertyList>
+									<integer>1</integer>
 									<integer>1</integer>
 								</regexCodePropertyList>
 							</Trigger>

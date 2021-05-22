@@ -16,7 +16,7 @@ function scripts.utils:separate_bind(bind_str)
     end
 
     local binds_return = {}
-    local binds = string.split(bind_str, "#")
+    local binds = string.split(bind_str, "[#;]")
 
     for k, v in pairs(binds) do
         local bind = string.split(v, "*")
@@ -138,6 +138,7 @@ function scripts.utils:_extract_list_items(list_arr)
                 end
             end
         end
+        item.raw_string = v
         extracted[item.name] = item
     end
 

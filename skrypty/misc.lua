@@ -51,6 +51,19 @@ function misc:get_valued_string(amount)
     return money_str
 end
 
+function misc:run_separeted_command(command)
+    if command and command == "" then
+        return
+    end
+    local commands = scripts.utils:separate_bind(command)
+    for k, v in pairs(commands) do
+        if v["delay"] then
+            tempTimer(v["delay"], function() expandAlias(v["bind"]) end)
+        else
+            expandAlias(v["bind"])
+        end
+    end
+end
 
 
 function misc:test_commands()
@@ -145,7 +158,7 @@ function trigger_func_skrypty_misc_ostatnie_logowanie_licznik()
 end
 
 function trigger_func_skrypty_misc_tropienie_pewny()
-    misc:enemy_escape_print_arrow(matches[2], "blue")
+    misc:enemy_escape_print_arrow(matches[2], "RoyalBlue")
 end
 
 function trigger_func_skrypty_misc_tropienie_niepewny()

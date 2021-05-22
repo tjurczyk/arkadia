@@ -33,7 +33,11 @@ ateam = ateam or {
         enemy_stun_fg_color = "black",
         broken_defense_bg_color = "LightPink",
         broken_defense_fg_color = "black",
-        alphabetical_sort_team = true
+        alphabetical_sort_team = true,
+        bracket_symbol_right = "]",
+        bracket_symbol_left = "[",
+        bracket_color = "white",
+        bracket_hp_color = "white",
     }
 }
 

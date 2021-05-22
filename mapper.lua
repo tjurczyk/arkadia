@@ -35,6 +35,7 @@ if not amap then
         can_bind_enemies = true,
         next_dir_bind = nil,
         legacy_locate = false,
+        disable_team_sneak = false,
     }
 end
 

@@ -26,31 +26,11 @@ misc.lang["languages"] = {
     ["tar-eltharin"] = 17,
     ["tileanski"] = 18,
     ["zerrikanski"] = 19,
-    ["potoczna"] = 20
+    ["potoczna"] = 20,
+    ["ghassally"] = 21
 }
 
-misc.lang["inv_languages"] = {
-    "bretonski",
-    "drukh-eltharin",
-    "estalijski",
-    "fan-eltharin",
-    "gnomi",
-    "grumbarth",
-    "halflinski",
-    "khazalid",
-    "kislevicki",
-    "krasnoludzki",
-    "mroczna mowa",
-    "nilfgaardzki",
-    "norski",
-    "reikspiel",
-    "skelliganski",
-    "starsza mowa",
-    "tar-eltharin",
-    "tileanski",
-    "zerrikanski",
-    "potoczna"
-}
+misc.lang["inv_languages"] = table.keys(misc.lang.languages)
 
 misc.lang["aliases"] = {}
 

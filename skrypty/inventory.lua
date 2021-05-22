@@ -83,15 +83,14 @@ function trigger_func_skrypty_inventory_bron_w_pochwie()
 end
 
 function trigger_func_skrypty_inventory_trzyma_bron()
-    selectString(matches[3], 1)
-
     local color = "yellow"
-    if scripts.inv.magics_data.magics[matches[3]] then
-        return
+    for i = 2, table.size(matches), 1 do
+        if not scripts.inv.magics_data.magics[matches[i]] then
+            selectCaptureGroup(i)
+            fg(color)
+            resetFormat()
+        end
     end
-
-    fg(color)
-    resetFormat()
 end
 
 function alias_func_skrypty_inventory_help()

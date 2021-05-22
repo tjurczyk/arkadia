@@ -75,7 +75,6 @@ scripts.people.mail["known_people"] =
     ["raul schied"] = "Karczma startowa",
     ["reinhard fleischer"] = "Rzeznik",
     ["rolph ederson"] = "Glowny Kaplan Swiatyni Vereny",
-    ["rudolf"] = "Karczma 'U Rudolfa'",
     ["vaclav gourm"] = "Pietro karczmy startowej",
     ["wielebny johann grau"] = "Swiatynia Sigmara",
     ["akun"] = "Kowal",

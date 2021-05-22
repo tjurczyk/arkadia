@@ -51,6 +51,10 @@ function ateam:restart_ateam(silent)
     end
 end
 
+function ateam:is_leader()
+    return ateam.objs[ateam.my_id]["team_leader"]
+end
+
 function ateam:parse_objects_data()
     ateam.only_hp_update = true
     ateam.enemies_on_location_count = 0
@@ -329,7 +333,7 @@ function ateam:print_obj_team(id, obj)
 
         -- id section
         if ateam.broken_defense_names[obj["desc"]] then
-            cecho(scripts.ui.states_window_name, "<" .. ateam.options.broken_defense_fg_color .. ":" .. ateam.options.broken_defense_bg_color .. ">"..bracket_symbol_left .. str_id .. "]")
+            cecho(scripts.ui.states_window_name, "<" .. ateam.options.broken_defense_fg_color .. ":" .. ateam.options.broken_defense_bg_color .. ">"..ateam.options.bracket_symbol_left .. str_id .. "]")
         else
             cecho(scripts.ui.states_window_name, "<"..ateam.options.bracket_color..":team_console_bg>"..ateam.options.bracket_symbol_left.."<reset>" .. str_id .. "<"..ateam.options.bracket_color..":team_console_bg>"..ateam.options.bracket_symbol_right)
         end
@@ -428,7 +432,7 @@ function ateam:print_obj_enemy(id, obj)
 
         -- id section
         if ateam.broken_defense_names[obj["desc"]] then
-            cecho(scripts.ui.enemy_states_window_name, "<" .. ateam.options.broken_defense_fg_color .. ":" .. ateam.options.broken_defense_bg_color .. ">"..bracket_symbol_left..ateam.options.bracket_symbol_left .. str_id .. "]")
+            cecho(scripts.ui.enemy_states_window_name, "<" .. ateam.options.broken_defense_fg_color .. ":" .. ateam.options.broken_defense_bg_color .. ">".. ateam.options.bracket_symbol_left .. str_id .. "]")
         else
             local color = "white"
             if id == ateam.next_attack_objs.next_attak_obj and ateam.next_attack_objs.mark_in_state then

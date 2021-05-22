@@ -8,7 +8,7 @@ function misc.improve:print_improve()
 
     cecho("+---------------------------------- <green>Postepy<grey> ---------------------------------+\n")
     cecho("|                                                                            |\n")
-    cecho("| <yellow>Aktualny czas   : " .. time .. "<grey>   " .. average_str .. "                           |\n")
+    cecho("| <yellow>Aktualny czas   : " .. time .. "<grey>   " .. scripts.utils.str_pad(average_str, 20) .. "                    |\n")
     cecho("|                                                                            |\n")
 
     local sum_me_killed = 0

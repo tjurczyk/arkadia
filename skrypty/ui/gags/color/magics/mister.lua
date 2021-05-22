@@ -3,7 +3,6 @@ function trigger_func_skrypty_ui_gags_moje_ciosy_misterny(value)
 end
 
 function trigger_func_skrypty_ui_gags_misterny_innych(value)
-    local matches = rex.match(matches[1], "\b(?:ciebie|cie|ci)\b")
-    display(matches)
-    scripts.gags:gag(value, 6, "innych_ciosy_we_mnie")
+    local target = rex.match(getCurrentLine(), "\\b(?:ciebie|cie|ci)\\b") and "innych_ciosy_we_mnie" or "innych_ciosy"
+    scripts.gags:gag(value, 6, target)
 end

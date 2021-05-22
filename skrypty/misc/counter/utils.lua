@@ -8,10 +8,10 @@ misc.counter.utils.two_word_mobs = {
     "smoczego ogra",
     "trolla jaskiniowego",
     "konia bojowego",
-    "zywiolka wody",
+    "zywiolaka wody",
     "zywiolaka powietrza",
     "zywiolaka ognia",
-    "zywioalaka ziemi"
+    "zywiolaka ziemi"
 }
 
 function misc.counter.utils:get_entry_key(key)

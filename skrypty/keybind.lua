@@ -212,6 +212,38 @@ scripts.keybind["configuration"] = {
         ["callback"] = "callback_temp10",
         ["active"] = false
     },
+    ["multibind1"] = {
+        ["modifier"] = { "Alt" },
+        ["key"] = "Minus",
+        ["keys"] = {},
+        ["description"] = "Multibind lokacyjny (1)",
+        ["callback"] = "callback_mbind1",
+        ["active"] = true
+    },
+    ["multibind2"] = {
+        ["modifier"] = { "Alt" },
+        ["key"] = "Minus",
+        ["keys"] = {},
+        ["description"] = "Multibind lokacyjny (2)",
+        ["callback"] = "callback_mbind2",
+        ["active"] = true
+    },
+    ["multibind3"] = {
+        ["modifier"] = { "Alt" },
+        ["key"] = "Minus",
+        ["keys"] = {},
+        ["description"] = "Multibind lokacyjny (3)",
+        ["callback"] = "callback_mbind3",
+        ["active"] = true
+    },
+    ["multibind4"] = {
+        ["modifier"] = { "Alt" },
+        ["key"] = "Minus",
+        ["keys"] = {},
+        ["description"] = "Multibind lokacyjny (4)",
+        ["callback"] = "callback_mbind4",
+        ["active"] = true
+    },
     ["opening_gate"] = {
         ["modifier"] = { "Control" },
         ["key"] = "2",

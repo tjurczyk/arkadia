@@ -125,4 +125,20 @@ function callback_walk_mode()
     scripts_ui_info_sneaky_click()
 end
 
+function callback_mbind1()
+    scripts.multibinds:run_current(1)
+end
+
+function callback_mbind2()
+    scripts.multibinds:run_current(2)
+end
+
+function callback_mbind3()
+    scripts.multibinds:run_current(3)
+end
+
+function callback_mbind4()
+    scripts.multibinds:run_current(4)
+end
+
 

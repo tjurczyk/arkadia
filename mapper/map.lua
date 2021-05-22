@@ -1,3 +1,8 @@
+local standard_lost_follows = table.concat({
+    "w szara mgle",
+    "w lesna gestwine"
+}, "|")
+
 function amap:follow(direction, is_team_follow)
     -- `direction' - passed direction, either from key or team follow
     -- `is_team_follow' true if called from team follow
@@ -198,7 +203,9 @@ function get_next_room_from_dirs(room_id, dir, spe, is_team_follow)
         --amap:print_log("mapper zgubiony, przeslij dzordzykowi: last curr.id: " .. tostring(amap.curr.id) .. ", spe: `" .. spe .. "`", true)
         amap:locate(true)
         amap:locate_on_next_location()
-        amap:log_failed_follow("[" .. getTime(true, "yyyy/MM/dd HH:mm:ss") .. "]: mapper zgubiony. last curr.id: " .. tostring(amap.curr.id) .. ", spe: `" .. spe .. "`\n")
+        if not rex.match(spe, "(?:".. standard_lost_follows .. ")$") then
+            amap:log_failed_follow("[" .. getTime(true, "yyyy/MM/dd HH:mm:ss") .. "]: mapper zgubiony. last curr.id: " .. tostring(amap.curr.id) .. ", spe: `" .. spe .. "`\n")
+        end
     end
 
     return new_id

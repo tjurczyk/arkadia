@@ -389,6 +389,22 @@
       ]
     },
     {
+      "name": "herbs.pre_use",
+      "default_value": "",
+      "field_type": "string",
+      "macros_on_modify": [
+        "_herbs"
+      ]
+    },
+    {
+      "name": "herbs.post_use",
+      "default_value": "",
+      "field_type": "string",
+      "macros_on_modify": [
+        "_herbs"
+      ]
+    },
+    {
       "name": "herbs.settings.get_herb_counts",
       "default_value": [
         1,
@@ -2292,6 +2308,142 @@
     {
       "name": "scripts.keybind.configuration.temp10.active",
       "default_value": false,
+      "field_type": "boolean",
+      "macros_on_modify": [
+        "_keybind"
+      ]
+    },
+    {
+      "name": "scripts.keybind.configuration.multibind1.modifier",
+      "default_value": [
+        "Alt"
+      ],
+      "field_type": "list",
+      "macros_on_modify": [
+        "_keybind"
+      ]
+    },
+    {
+      "name": "scripts.keybind.configuration.multibind1.key",
+      "default_value": "1",
+      "field_type": "string",
+      "macros_on_modify": [
+        "_keybind"
+      ]
+    },
+    {
+      "name": "scripts.keybind.configuration.multibind1.keys",
+      "default_value": [],
+      "field_type": "list",
+      "macros_on_modify": [
+        "_keybind"
+      ]
+    },
+    {
+      "name": "scripts.keybind.configuration.multibind1.active",
+      "default_value": true,
+      "field_type": "boolean",
+      "macros_on_modify": [
+        "_keybind"
+      ]
+    },
+    {
+      "name": "scripts.keybind.configuration.multibind2.modifier",
+      "default_value": [
+        "Alt"
+      ],
+      "field_type": "list",
+      "macros_on_modify": [
+        "_keybind"
+      ]
+    },
+    {
+      "name": "scripts.keybind.configuration.multibind2.key",
+      "default_value": "2",
+      "field_type": "string",
+      "macros_on_modify": [
+        "_keybind"
+      ]
+    },
+    {
+      "name": "scripts.keybind.configuration.multibind2.keys",
+      "default_value": [],
+      "field_type": "list",
+      "macros_on_modify": [
+        "_keybind"
+      ]
+    },
+    {
+      "name": "scripts.keybind.configuration.multibind2.active",
+      "default_value": true,
+      "field_type": "boolean",
+      "macros_on_modify": [
+        "_keybind"
+      ]
+    },
+    {
+      "name": "scripts.keybind.configuration.multibind3.modifier",
+      "default_value": [
+        "Alt"
+      ],
+      "field_type": "list",
+      "macros_on_modify": [
+        "_keybind"
+      ]
+    },
+    {
+      "name": "scripts.keybind.configuration.multibind3.key",
+      "default_value": "3",
+      "field_type": "string",
+      "macros_on_modify": [
+        "_keybind"
+      ]
+    },
+    {
+      "name": "scripts.keybind.configuration.multibind3.keys",
+      "default_value": [],
+      "field_type": "list",
+      "macros_on_modify": [
+        "_keybind"
+      ]
+    },
+    {
+      "name": "scripts.keybind.configuration.multibind3.active",
+      "default_value": true,
+      "field_type": "boolean",
+      "macros_on_modify": [
+        "_keybind"
+      ]
+    },
+    {
+      "name": "scripts.keybind.configuration.multibind4.modifier",
+      "default_value": [
+        "Alt"
+      ],
+      "field_type": "list",
+      "macros_on_modify": [
+        "_keybind"
+      ]
+    },
+    {
+      "name": "scripts.keybind.configuration.multibind4.key",
+      "default_value": "4",
+      "field_type": "string",
+      "macros_on_modify": [
+        "_keybind"
+      ]
+    },
+    {
+      "name": "scripts.keybind.configuration.multibind4.keys",
+      "default_value": [],
+      "field_type": "list",
+      "macros_on_modify": [
+        "_keybind"
+      ]
+    },
+    {
+      "name": "scripts.keybind.configuration.multibind4.active",
+      "default_value": true,
       "field_type": "boolean",
       "macros_on_modify": [
         "_keybind"

@@ -39,6 +39,12 @@ function trigger_func_mapper_blockers_blocker_team_dependent()
     end
 end
 
+function trigger_func_mapper_blockers_experimental_only()
+    if amap.blockers.is_experimental then
+        amap.blockers:block()
+    end
+end
+
 function trigger_func_mapper_blockers_blockers_block()
     if string.match(matches[2], "wsciekla piane z ust") then
         return

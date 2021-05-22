@@ -256,6 +256,7 @@ return {
     "skrypty/ui/footer_main_modes/main_footer_updater_mode5",
     "skrypty/ui/talk_window/gmcp_msgs",
     "skrypty/ui/talk_window/ui_talk_window",
+    "skrypty/ui/talk_window/talk_history",
     "skrypty/ui/gmcp_handlers/gmcp_state_handler",
     "skrypty/ui/gmcp_handlers/weapon_state",
     "skrypty/ui/gmcp_handlers/guard_state",

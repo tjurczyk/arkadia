@@ -893,6 +893,11 @@ Szerokosc (w %) dolnej belki
 
 ---
 
+## `scripts.ui.footer_actions_height`
+Wysokosc (w pikselach) paska akcji (gorna czesc stopki)
+
+---
+
 ## `scripts.ui.footer_map_width_p`
 
 Jaki % dolnej belki ma zajmowac roza wiatrow

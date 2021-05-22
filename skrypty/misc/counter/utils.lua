@@ -6,7 +6,12 @@ misc.counter.utils.two_word_mobs = {
     "rycerza chaosu",
     "smoka chaosu",
     "smoczego ogra",
-    "trolla jaskiniowego"
+    "trolla jaskiniowego",
+    "konia bojowego",
+    "zywiolaka wody",
+    "zywiolaka powietrza",
+    "zywiolaka ognia",
+    "zywiolaka ziemi"
 }
 
 function misc.counter.utils:get_entry_key(key)

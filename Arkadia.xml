@@ -4251,156 +4251,6 @@
 									</regexCodePropertyList>
 								</Trigger>
 							</TriggerGroup>
-							<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>misterny obosieczny topor</name>
-								<script></script>
-								<triggerType>0</triggerType>
-								<conditonLineDelta>0</conditonLineDelta>
-								<mStayOpen>0</mStayOpen>
-								<mCommand></mCommand>
-								<packageName></packageName>
-								<mFgColor>#ff0000</mFgColor>
-								<mBgColor>#ffff00</mBgColor>
-								<mSoundFile></mSoundFile>
-								<colorTriggerFgColor>#000000</colorTriggerFgColor>
-								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList />
-								<regexCodePropertyList />
-								<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-									<name>mister_1</name>
-									<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_misterny(1)</script>
-									<triggerType>0</triggerType>
-									<conditonLineDelta>0</conditonLineDelta>
-									<mStayOpen>0</mStayOpen>
-									<mCommand></mCommand>
-									<packageName></packageName>
-									<mFgColor>#ff0000</mFgColor>
-									<mBgColor>#ffff00</mBgColor>
-									<mSoundFile></mSoundFile>
-									<colorTriggerFgColor>#000000</colorTriggerFgColor>
-									<colorTriggerBgColor>#000000</colorTriggerBgColor>
-									<regexCodeList>
-										<string>^Z oszczednego zamachu uderzasz swym misternym obosiecznym toporem w .*</string>
-										<string>^Szybkim ciosem jednego ze szpikulcow misternego obos uderzasz w .*, pozostawiajac niewielkie zadrapanie\.$</string>
-									</regexCodeList>
-									<regexCodePropertyList>
-										<integer>1</integer>
-										<integer>1</integer>
-									</regexCodePropertyList>
-								</Trigger>
-								<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-									<name>mister_2</name>
-									<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_misterny(2)</script>
-									<triggerType>0</triggerType>
-									<conditonLineDelta>0</conditonLineDelta>
-									<mStayOpen>0</mStayOpen>
-									<mCommand></mCommand>
-									<packageName></packageName>
-									<mFgColor>#ff0000</mFgColor>
-									<mBgColor>#ffff00</mBgColor>
-									<mSoundFile></mSoundFile>
-									<colorTriggerFgColor>#000000</colorTriggerFgColor>
-									<colorTriggerBgColor>#000000</colorTriggerBgColor>
-									<regexCodeList>
-										<string>^Twoj misterny obosieczny topor zahacza o .*</string>
-										<string>^Ostrym jak sztylet gornym szpikulcem sterczacym ze styliska misternego obosiecznego topora godzisz .*, spuszczajac .* nieco krwi\.</string>
-									</regexCodeList>
-									<regexCodePropertyList>
-										<integer>1</integer>
-										<integer>1</integer>
-									</regexCodePropertyList>
-								</Trigger>
-								<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-									<name>mister_3</name>
-									<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_misterny(3)</script>
-									<triggerType>0</triggerType>
-									<conditonLineDelta>0</conditonLineDelta>
-									<mStayOpen>0</mStayOpen>
-									<mCommand></mCommand>
-									<packageName></packageName>
-									<mFgColor>#ff0000</mFgColor>
-									<mBgColor>#ffff00</mBgColor>
-									<mSoundFile></mSoundFile>
-									<colorTriggerFgColor>#000000</colorTriggerFgColor>
-									<colorTriggerBgColor>#000000</colorTriggerBgColor>
-									<regexCodeList>
-										<string>^Z szerokiego zamachu tniesz misternym obosiecznym toporem w .*</string>
-										<string>^Korzystajac z nadarzajacej sie okazji, gwaltownym uderzeniem styliska misternego obosiecznego topora wbijasz sterczacy zen szpic w .*, pozostawiajac gleboka rane\.$</string>
-									</regexCodeList>
-									<regexCodePropertyList>
-										<integer>1</integer>
-										<integer>1</integer>
-									</regexCodePropertyList>
-								</Trigger>
-								<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-									<name>mister_4</name>
-									<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_misterny(4)</script>
-									<triggerType>0</triggerType>
-									<conditonLineDelta>0</conditonLineDelta>
-									<mStayOpen>0</mStayOpen>
-									<mCommand></mCommand>
-									<packageName></packageName>
-									<mFgColor>#ff0000</mFgColor>
-									<mBgColor>#ffff00</mBgColor>
-									<mSoundFile></mSoundFile>
-									<colorTriggerFgColor>#000000</colorTriggerFgColor>
-									<colorTriggerBgColor>#000000</colorTriggerBgColor>
-									<regexCodeList>
-										<string>^Rozpedzone ostrze dzierzonego przez ciebie misternego obosiecznego topora bezlitosnie wbija sie w .*</string>
-										<string>^Naglym pchnieciem wbijasz sterczacy z nasady zelezca misternego obosiecznego topora kolec w .*, powodujac paskudny krwotok\.$</string>
-									</regexCodeList>
-									<regexCodePropertyList>
-										<integer>1</integer>
-										<integer>1</integer>
-									</regexCodePropertyList>
-								</Trigger>
-								<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-									<name>mister_5</name>
-									<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_misterny(5)</script>
-									<triggerType>0</triggerType>
-									<conditonLineDelta>0</conditonLineDelta>
-									<mStayOpen>0</mStayOpen>
-									<mCommand></mCommand>
-									<packageName></packageName>
-									<mFgColor>#ff0000</mFgColor>
-									<mBgColor>#ffff00</mBgColor>
-									<mSoundFile></mSoundFile>
-									<colorTriggerFgColor>#000000</colorTriggerFgColor>
-									<colorTriggerBgColor>#000000</colorTriggerBgColor>
-									<regexCodeList>
-										<string>^Przy akompaniamencie oszalamiajacego syku przecinanego powietrza krwawe ostrze twego misternego obosiecznego topora wrzyna sie w .*, odrzucajac .* w tyl niczym szmaciana lalke\.$</string>
-										<string>^Z impetem wyrzucasz przed siebie misterny obosieczny topor, idealnie wymierzajac cios gornego szpica w .*, bardzo ciezko</string>
-									</regexCodeList>
-									<regexCodePropertyList>
-										<integer>1</integer>
-										<integer>1</integer>
-									</regexCodePropertyList>
-								</Trigger>
-								<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-									<name>mister_6</name>
-									<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_misterny(6)</script>
-									<triggerType>0</triggerType>
-									<conditonLineDelta>0</conditonLineDelta>
-									<mStayOpen>0</mStayOpen>
-									<mCommand></mCommand>
-									<packageName></packageName>
-									<mFgColor>#ff0000</mFgColor>
-									<mBgColor>#ffff00</mBgColor>
-									<mSoundFile></mSoundFile>
-									<colorTriggerFgColor>#000000</colorTriggerFgColor>
-									<colorTriggerBgColor>#000000</colorTriggerBgColor>
-									<regexCodeList>
-										<string>^Druzgoczacym atakiem misternego obosiecznego topora brutalnie rozcinasz .*, zatrzymujac ped swej morderczej broni dopiero wtedy, kiedy zbrukane posoka ostrze grzeznie pomiedzy koscmi ofiary .*</string>
-										<string>^Ostrze twego misternego obosiecznego topora rozblyskuje w szalonym pedzie gdy biorac potezny zamach uderzasz nim </string>
-										<string>^Zdradliwe pchniecie ozdobiona siedmiocalowym kolcem rekojescia twego misternego obosiecznego topora zupelnie zaskakuje</string>
-									</regexCodeList>
-									<regexCodePropertyList>
-										<integer>1</integer>
-										<integer>1</integer>
-										<integer>1</integer>
-									</regexCodePropertyList>
-								</Trigger>
-							</TriggerGroup>
 						</TriggerGroup>
 						<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 							<name>color_moje_spece</name>
@@ -13355,6 +13205,338 @@
 									<integer>1</integer>
 								</regexCodePropertyList>
 							</Trigger>
+						</TriggerGroup>
+						<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+							<name>magiki</name>
+							<script></script>
+							<triggerType>0</triggerType>
+							<conditonLineDelta>0</conditonLineDelta>
+							<mStayOpen>0</mStayOpen>
+							<mCommand></mCommand>
+							<packageName></packageName>
+							<mFgColor>#ff0000</mFgColor>
+							<mBgColor>#ffff00</mBgColor>
+							<mSoundFile></mSoundFile>
+							<colorTriggerFgColor>#000000</colorTriggerFgColor>
+							<colorTriggerBgColor>#000000</colorTriggerBgColor>
+							<regexCodeList />
+							<regexCodePropertyList />
+							<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+								<name>misterny obosieczny topor</name>
+								<script></script>
+								<triggerType>0</triggerType>
+								<conditonLineDelta>0</conditonLineDelta>
+								<mStayOpen>0</mStayOpen>
+								<mCommand></mCommand>
+								<packageName></packageName>
+								<mFgColor>#ff0000</mFgColor>
+								<mBgColor>#ffff00</mBgColor>
+								<mSoundFile></mSoundFile>
+								<colorTriggerFgColor>#000000</colorTriggerFgColor>
+								<colorTriggerBgColor>#000000</colorTriggerBgColor>
+								<regexCodeList />
+								<regexCodePropertyList />
+								<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+									<name>moje</name>
+									<script></script>
+									<triggerType>0</triggerType>
+									<conditonLineDelta>0</conditonLineDelta>
+									<mStayOpen>0</mStayOpen>
+									<mCommand></mCommand>
+									<packageName></packageName>
+									<mFgColor>#ff0000</mFgColor>
+									<mBgColor>#ffff00</mBgColor>
+									<mSoundFile></mSoundFile>
+									<colorTriggerFgColor>#000000</colorTriggerFgColor>
+									<colorTriggerBgColor>#000000</colorTriggerBgColor>
+									<regexCodeList />
+									<regexCodePropertyList />
+									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+										<name>mister_1</name>
+										<script>trigger_func_skrypty_ui_gags_moje_ciosy_misterny(1)</script>
+										<triggerType>0</triggerType>
+										<conditonLineDelta>0</conditonLineDelta>
+										<mStayOpen>0</mStayOpen>
+										<mCommand></mCommand>
+										<packageName></packageName>
+										<mFgColor>#ff0000</mFgColor>
+										<mBgColor>#ffff00</mBgColor>
+										<mSoundFile></mSoundFile>
+										<colorTriggerFgColor>#000000</colorTriggerFgColor>
+										<colorTriggerBgColor>#000000</colorTriggerBgColor>
+										<regexCodeList>
+											<string>^Z oszczednego zamachu uderzasz swym misternym obosiecznym toporem w .*</string>
+											<string>^Szybkim ciosem jednego ze szpikulcow misternego obos uderzasz w .*, pozostawiajac niewielkie zadrapanie\.$</string>
+										</regexCodeList>
+										<regexCodePropertyList>
+											<integer>1</integer>
+											<integer>1</integer>
+										</regexCodePropertyList>
+									</Trigger>
+									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+										<name>mister_2</name>
+										<script>trigger_func_skrypty_ui_gags_moje_ciosy_misterny(2)</script>
+										<triggerType>0</triggerType>
+										<conditonLineDelta>0</conditonLineDelta>
+										<mStayOpen>0</mStayOpen>
+										<mCommand></mCommand>
+										<packageName></packageName>
+										<mFgColor>#ff0000</mFgColor>
+										<mBgColor>#ffff00</mBgColor>
+										<mSoundFile></mSoundFile>
+										<colorTriggerFgColor>#000000</colorTriggerFgColor>
+										<colorTriggerBgColor>#000000</colorTriggerBgColor>
+										<regexCodeList>
+											<string>^Twoj misterny obosieczny topor zahacza o .*</string>
+											<string>^Ostrym jak sztylet gornym szpikulcem sterczacym ze styliska misternego obosiecznego topora godzisz .*, spuszczajac .* nieco krwi\.</string>
+										</regexCodeList>
+										<regexCodePropertyList>
+											<integer>1</integer>
+											<integer>1</integer>
+										</regexCodePropertyList>
+									</Trigger>
+									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+										<name>mister_3</name>
+										<script>trigger_func_skrypty_ui_gags_moje_ciosy_misterny(3)</script>
+										<triggerType>0</triggerType>
+										<conditonLineDelta>0</conditonLineDelta>
+										<mStayOpen>0</mStayOpen>
+										<mCommand></mCommand>
+										<packageName></packageName>
+										<mFgColor>#ff0000</mFgColor>
+										<mBgColor>#ffff00</mBgColor>
+										<mSoundFile></mSoundFile>
+										<colorTriggerFgColor>#000000</colorTriggerFgColor>
+										<colorTriggerBgColor>#000000</colorTriggerBgColor>
+										<regexCodeList>
+											<string>^Z szerokiego zamachu tniesz misternym obosiecznym toporem w .*</string>
+											<string>^Korzystajac z nadarzajacej sie okazji, gwaltownym uderzeniem styliska misternego obosiecznego topora wbijasz sterczacy zen szpic w .*, pozostawiajac gleboka rane\.$</string>
+										</regexCodeList>
+										<regexCodePropertyList>
+											<integer>1</integer>
+											<integer>1</integer>
+										</regexCodePropertyList>
+									</Trigger>
+									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+										<name>mister_4</name>
+										<script>trigger_func_skrypty_ui_gags_moje_ciosy_misterny(4)</script>
+										<triggerType>0</triggerType>
+										<conditonLineDelta>0</conditonLineDelta>
+										<mStayOpen>0</mStayOpen>
+										<mCommand></mCommand>
+										<packageName></packageName>
+										<mFgColor>#ff0000</mFgColor>
+										<mBgColor>#ffff00</mBgColor>
+										<mSoundFile></mSoundFile>
+										<colorTriggerFgColor>#000000</colorTriggerFgColor>
+										<colorTriggerBgColor>#000000</colorTriggerBgColor>
+										<regexCodeList>
+											<string>^Rozpedzone ostrze dzierzonego przez ciebie misternego obosiecznego topora bezlitosnie wbija sie w .*</string>
+											<string>^Naglym pchnieciem wbijasz sterczacy z nasady zelezca misternego obosiecznego topora kolec w .*, powodujac paskudny krwotok\.$</string>
+										</regexCodeList>
+										<regexCodePropertyList>
+											<integer>1</integer>
+											<integer>1</integer>
+										</regexCodePropertyList>
+									</Trigger>
+									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+										<name>mister_5</name>
+										<script>trigger_func_skrypty_ui_gags_moje_ciosy_misterny(5)</script>
+										<triggerType>0</triggerType>
+										<conditonLineDelta>0</conditonLineDelta>
+										<mStayOpen>0</mStayOpen>
+										<mCommand></mCommand>
+										<packageName></packageName>
+										<mFgColor>#ff0000</mFgColor>
+										<mBgColor>#ffff00</mBgColor>
+										<mSoundFile></mSoundFile>
+										<colorTriggerFgColor>#000000</colorTriggerFgColor>
+										<colorTriggerBgColor>#000000</colorTriggerBgColor>
+										<regexCodeList>
+											<string>^Przy akompaniamencie oszalamiajacego syku przecinanego powietrza krwawe ostrze twego misternego obosiecznego topora wrzyna sie w .*, odrzucajac .* w tyl niczym szmaciana lalke\.$</string>
+											<string>^Z impetem wyrzucasz przed siebie misterny obosieczny topor, idealnie wymierzajac cios gornego szpica w .*, bardzo ciezko</string>
+										</regexCodeList>
+										<regexCodePropertyList>
+											<integer>1</integer>
+											<integer>1</integer>
+										</regexCodePropertyList>
+									</Trigger>
+									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+										<name>mister_6</name>
+										<script>trigger_func_skrypty_ui_gags_moje_ciosy_misterny(6)</script>
+										<triggerType>0</triggerType>
+										<conditonLineDelta>0</conditonLineDelta>
+										<mStayOpen>0</mStayOpen>
+										<mCommand></mCommand>
+										<packageName></packageName>
+										<mFgColor>#ff0000</mFgColor>
+										<mBgColor>#ffff00</mBgColor>
+										<mSoundFile></mSoundFile>
+										<colorTriggerFgColor>#000000</colorTriggerFgColor>
+										<colorTriggerBgColor>#000000</colorTriggerBgColor>
+										<regexCodeList>
+											<string>^Druzgoczacym atakiem misternego obosiecznego topora brutalnie rozcinasz .*, zatrzymujac ped swej morderczej broni dopiero wtedy, kiedy zbrukane posoka ostrze grzeznie pomiedzy koscmi ofiary .*</string>
+											<string>^Ostrze twego misternego obosiecznego topora rozblyskuje w szalonym pedzie gdy biorac potezny zamach uderzasz nim </string>
+											<string>^Zdradliwe pchniecie ozdobiona siedmiocalowym kolcem rekojescia twego misternego obosiecznego topora zupelnie zaskakuje</string>
+										</regexCodeList>
+										<regexCodePropertyList>
+											<integer>1</integer>
+											<integer>1</integer>
+											<integer>1</integer>
+										</regexCodePropertyList>
+									</Trigger>
+								</TriggerGroup>
+								<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+									<name>innych</name>
+									<script></script>
+									<triggerType>0</triggerType>
+									<conditonLineDelta>0</conditonLineDelta>
+									<mStayOpen>0</mStayOpen>
+									<mCommand></mCommand>
+									<packageName></packageName>
+									<mFgColor>#ff0000</mFgColor>
+									<mBgColor>#ffff00</mBgColor>
+									<mSoundFile></mSoundFile>
+									<colorTriggerFgColor>#000000</colorTriggerFgColor>
+									<colorTriggerBgColor>#000000</colorTriggerBgColor>
+									<regexCodeList />
+									<regexCodePropertyList />
+									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="yes" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+										<name>mister 1</name>
+										<script>trigger_func_skrypty_ui_gags_misterny_innych(1)</script>
+										<triggerType>0</triggerType>
+										<conditonLineDelta>0</conditonLineDelta>
+										<mStayOpen>0</mStayOpen>
+										<mCommand></mCommand>
+										<packageName></packageName>
+										<mFgColor>#ff0000</mFgColor>
+										<mBgColor>#ffff00</mBgColor>
+										<mSoundFile></mSoundFile>
+										<colorTriggerFgColor>#000000</colorTriggerFgColor>
+										<colorTriggerBgColor>#000000</colorTriggerBgColor>
+										<regexCodeList>
+											<string>^Z oszczednego zamachu .* misternym obosiecznym toporem</string>
+											<string>^Szybkim ciosem jednego ze szpikulcow misternego obosiecznego topora .* uderza</string>
+										</regexCodeList>
+										<regexCodePropertyList>
+											<integer>1</integer>
+											<integer>1</integer>
+										</regexCodePropertyList>
+									</Trigger>
+									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+										<name>mister 2</name>
+										<script>trigger_func_skrypty_ui_gags_misterny_innych(2)</script>
+										<triggerType>0</triggerType>
+										<conditonLineDelta>0</conditonLineDelta>
+										<mStayOpen>0</mStayOpen>
+										<mCommand></mCommand>
+										<packageName></packageName>
+										<mFgColor>#ff0000</mFgColor>
+										<mBgColor>#ffff00</mBgColor>
+										<mSoundFile></mSoundFile>
+										<colorTriggerFgColor>#000000</colorTriggerFgColor>
+										<colorTriggerBgColor>#000000</colorTriggerBgColor>
+										<regexCodeList>
+											<string>^.* zahacza misternym obosiecznym toporem</string>
+											<string>^.* godzi .* ostrym jak igla szpikulcem sterczacym z misternego obosiecznego topora</string>
+										</regexCodeList>
+										<regexCodePropertyList>
+											<integer>1</integer>
+											<integer>1</integer>
+										</regexCodePropertyList>
+									</Trigger>
+									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+										<name>mister 3</name>
+										<script>trigger_func_skrypty_ui_gags_misterny_innych(3)</script>
+										<triggerType>0</triggerType>
+										<conditonLineDelta>0</conditonLineDelta>
+										<mStayOpen>0</mStayOpen>
+										<mCommand></mCommand>
+										<packageName></packageName>
+										<mFgColor>#ff0000</mFgColor>
+										<mBgColor>#ffff00</mBgColor>
+										<mSoundFile></mSoundFile>
+										<colorTriggerFgColor>#000000</colorTriggerFgColor>
+										<colorTriggerBgColor>#000000</colorTriggerBgColor>
+										<regexCodeList>
+											<string>^.* z szerokiego zamachu tnie misternym obosiecznym toporem</string>
+											<string>^.* wykorzystuje .* misternego obosieczneg topora .*pozostawiajac gleboka rane\.$</string>
+										</regexCodeList>
+										<regexCodePropertyList>
+											<integer>1</integer>
+											<integer>1</integer>
+										</regexCodePropertyList>
+									</Trigger>
+									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+										<name>mister 4</name>
+										<script>trigger_func_skrypty_ui_gags_misterny_innych(4)</script>
+										<triggerType>0</triggerType>
+										<conditonLineDelta>0</conditonLineDelta>
+										<mStayOpen>0</mStayOpen>
+										<mCommand></mCommand>
+										<packageName></packageName>
+										<mFgColor>#ff0000</mFgColor>
+										<mBgColor>#ffff00</mBgColor>
+										<mSoundFile></mSoundFile>
+										<colorTriggerFgColor>#000000</colorTriggerFgColor>
+										<colorTriggerBgColor>#000000</colorTriggerBgColor>
+										<regexCodeList>
+											<string>^Rozpedzone ostrze dzierzonego przez (?!ciebie).* misternego obosiecznego topora</string>
+											<string>^Naglym pchnieciem .* wbija .* misternego obosiecznego topora .* powodujac paskudny krwotok\.$</string>
+										</regexCodeList>
+										<regexCodePropertyList>
+											<integer>1</integer>
+											<integer>1</integer>
+										</regexCodePropertyList>
+									</Trigger>
+									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+										<name>mister 5</name>
+										<script>trigger_func_skrypty_ui_gags_misterny_innych(5)
+
+</script>
+										<triggerType>0</triggerType>
+										<conditonLineDelta>0</conditonLineDelta>
+										<mStayOpen>0</mStayOpen>
+										<mCommand></mCommand>
+										<packageName></packageName>
+										<mFgColor>#ff0000</mFgColor>
+										<mBgColor>#ffff00</mBgColor>
+										<mSoundFile></mSoundFile>
+										<colorTriggerFgColor>#000000</colorTriggerFgColor>
+										<colorTriggerBgColor>#000000</colorTriggerBgColor>
+										<regexCodeList>
+											<string>^Przy akompaniamencie oszalamiajacego syku przecinanego powietrza krwawe ostrze dzierzonego przez .* misternego obosiecznego topora</string>
+											<string>.* z impetem wyrzuca przed siebie misterny obosieczny topor</string>
+										</regexCodeList>
+										<regexCodePropertyList>
+											<integer>1</integer>
+											<integer>1</integer>
+										</regexCodePropertyList>
+									</Trigger>
+									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+										<name>mister 6</name>
+										<script>trigger_func_skrypty_ui_gags_misterny_we_mnie(6)</script>
+										<triggerType>0</triggerType>
+										<conditonLineDelta>0</conditonLineDelta>
+										<mStayOpen>0</mStayOpen>
+										<mCommand></mCommand>
+										<packageName></packageName>
+										<mFgColor>#ff0000</mFgColor>
+										<mBgColor>#ffff00</mBgColor>
+										<mSoundFile></mSoundFile>
+										<colorTriggerFgColor>#000000</colorTriggerFgColor>
+										<colorTriggerBgColor>#000000</colorTriggerBgColor>
+										<regexCodeList>
+											<string>^Druzgoczacym atakiem misternego obosiecznego topora</string>
+											<string>^.* zupelnie zaskakuje .* misternego obosiecznego topora .* prawie na wylot!$</string>
+										</regexCodeList>
+										<regexCodePropertyList>
+											<integer>1</integer>
+											<integer>1</integer>
+										</regexCodePropertyList>
+									</Trigger>
+								</TriggerGroup>
+							</TriggerGroup>
 						</TriggerGroup>
 					</TriggerGroup>
 				</TriggerGroup>

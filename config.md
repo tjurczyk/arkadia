@@ -284,6 +284,15 @@ Opcja do ustalania akcji "przed" i "po"
 
 ---
 
+## `herbs.pre_use`
+## `herbs.post_use`
+
+Opcja do ustalania akcji "przed" i "po" uzyciu ziola
+
+`pre_` to przed, `post_` to po.
+
+---
+
 ## `herbs.settings.get_herb_counts`
 ## `herbs.settings.use_herb_counts`
 
@@ -1297,6 +1306,42 @@ Tymczasowy keybind (9) (domyslnie nieaktywny)
 ## `scripts.keybind.configuration.temp10.active`
 
 Tymczasowy keybind (10) (domyslnie nieaktywny)
+
+---
+
+## `scripts.keybind.configuration.multibind1.modifier`
+## `scripts.keybind.configuration.multibind1.key`
+## `scripts.keybind.configuration.multibind1.keys`
+## `scripts.keybind.configuration.multibind1.active`
+
+multibind na lokacje (1)
+
+---
+
+## `scripts.keybind.configuration.multibind2.modifier`
+## `scripts.keybind.configuration.multibind2.key`
+## `scripts.keybind.configuration.multibind2.keys`
+## `scripts.keybind.configuration.multibind2.active`
+
+multibind na lokacje (2)
+
+---
+
+## `scripts.keybind.configuration.multibind3.modifier`
+## `scripts.keybind.configuration.multibind3.key`
+## `scripts.keybind.configuration.multibind3.keys`
+## `scripts.keybind.configuration.multibind3.active`
+
+multibind na lokacje (3)
+
+---
+
+## `scripts.keybind.configuration.multibind4.modifier`
+## `scripts.keybind.configuration.multibind4.key`
+## `scripts.keybind.configuration.multibind4.keys`
+## `scripts.keybind.configuration.multibind4.active`
+
+multibind na lokacje (4)
 
 ---
 

@@ -47,19 +47,7 @@ function amap.db:execute_bind()
     if not amap.curr.id or getRoomUserData(amap.curr.id, "bind") == "" then
         return
     end
-
-    local binds = string.split(getRoomUserData(amap.curr.id, "bind"), "#")
-
-    for k, v in pairs(binds) do
-        --echo ("Working on: " .. tostring(v))
-        local bind = string.split(v, "*")
-        if table.size(bind) == 1 then
-            expandAlias(bind[1], true)
-        else
-            tempTimer(tonumber(bind[2]), function() expandAlias(bind[1], true) end)
-            --tempTimer( 0.5, [[send("westchnij")]] )
-        end
-    end
+    misc:run_separeted_command(getRoomUserData(amap.curr.id, "bind"))
 end
 
 registerAnonymousEventHandler("amapNewLocation", "amap_db_check_bind")

@@ -4,7 +4,9 @@ herbs = herbs or {
     data_url = "https://raw.githubusercontent.com/tjurczyk/arkadia-data/master/herbs_data.json",
     settings = { get_herb_counts = { 1, 3 }, use_herb_counts = { 1, 3 } },
     pre_actions = "",
-    post_actions = ""
+    post_actions = "",
+    pre_use = "",
+    post_use = ""
 }
 
 herbs["full_bag_amount"] = 44

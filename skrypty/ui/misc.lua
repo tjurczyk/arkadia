@@ -29,30 +29,20 @@ function trigger_func_skrypty_ui_misc_zniszczona_bron()
     cecho("<tomato>\n\n[  SPRZET  ] " .. matches[2] .. "\n\n")
     resetFormat()
 
-    if not string.match(matches[2], "dzierzon") then
-        raiseEvent("playBeep")
-        scripts.ui:info_action_update("ZNI. BRON")
-        scripts.utils.bind_functional("odloz zlamana bron")
-        scripts.ui.info_action_bind = "odloz zlamana bron"
-    end
+    raiseEvent("playBeep")
+    scripts.ui:info_action_update("ZNI. BRON")
+    scripts.utils.bind_functional("odloz zlamana bron")
+    scripts.ui.info_action_bind = "odloz zlamana bron"
 end
 
 function trigger_func_skrypty_ui_misc_zniszczony_sprzet()
-    selectCurrentLine()
-    deleteLine()
-    cecho("<tomato>\n\n[  SPRZET  ] " .. matches[2] .. "\n\n")
+    creplaceLine("<tomato>\n\n[  SPRZET  ] " .. matches[1] .. "\n\n")
     resetFormat()
 
-    local by_space = string.split(matches[2], " ")
-    local third_to_last_letter = string.sub(by_space[#by_space - 2], 1, 1)
-    local third_to_last_uppered = string.upper(third_to_last_letter)
-
-    if third_to_last_letter ~= third_to_last_uppered then
-        raiseEvent("playBeep")
-        scripts.ui:info_action_update("ZNI. ZBROJA")
-        scripts.utils.bind_functional("odloz zniszczona zbroje")
-        scripts.ui.info_action_bind = "odloz zniszczona zbroje"
-    end
+    raiseEvent("playBeep")
+    scripts.ui:info_action_update("ZNI. ZBROJA")
+    scripts.utils.bind_functional("odloz zniszczona zbroje")
+    scripts.ui.info_action_bind = "odloz zniszczona zbroje"
 end
 
 function trigger_func_skrypty_ui_misc_wyverna_trucizna_off()

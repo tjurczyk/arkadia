@@ -1027,6 +1027,12 @@ Mozliwe opcje to:
 
 ---
 
+## `scripts.ui.multibinds.font_size`
+
+Wielkosc czcionki paska akcji (multibindow)
+
+---
+
 ## `scripts.ui.bind_color`
 
 Kolor informacji o zbindowaniu

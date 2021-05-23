@@ -1487,6 +1487,14 @@
       ]
     },
     {
+        "name": "scripts.ui.multibinds.font_size",
+        "default_value": 10,
+        "field_type": "number",
+        "macros_on_modify": [
+          "_ux"
+        ]
+    },
+    {
       "name": "scripts.ui.bind_color",
       "default_value": "LawnGreen",
       "field_type": "string",

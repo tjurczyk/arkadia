@@ -3,7 +3,9 @@ function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_ja_ledwo_muska()
 end
 
 function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_ja_lekko_rani()
-    scripts.gags:gag(2, 6, "moje_ciosy")
+    if not rex.match(getCurrentLine(), "opalizujacego runicznego") then
+        scripts.gags:gag(2, 6, "moje_ciosy")
+    end
 end
 
 function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_ja_rani()

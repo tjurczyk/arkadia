@@ -81,3 +81,18 @@ function trigger_func_mapper_directions_add_special_camp()
     amap.ui:add_special_dir_if_possible("oboz")
 end
 
+function trigger_func_mapper_directions_elfi_okret()
+    if gmcp.gmcp_msgs.type == "room.contents.object" then
+        amap.ui:add_special_dir_if_possible("wejdz na bialy okret")
+    end
+end
+
+function trigger_func_mapper_directions_szkuner()
+    if gmcp.gmcp_msgs.type == "room.contents.object" then
+        amap.ui:add_special_dir_if_possible("wejdz na szkuner")
+    end
+end
+
+function trigger_func_mapper_locate_on_next()
+    amap:locate_on_next_location()
+end

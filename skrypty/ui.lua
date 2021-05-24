@@ -34,6 +34,8 @@ scripts.ui.footer_height = 70
 -- Szerokosc (w %) dolnej belki
 scripts.ui.footer_width = 100
 
+scripts.ui.footer_actions_height = 25
+
 -- Jaki % dolnej belki ma zajmowac roza wiatrow
 scripts.ui.footer_map_width_p = 14
 -- Jaki % dolnej belki ma zajmowac prawa czesc belki (informacyjna z zaslonami itp)

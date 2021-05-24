@@ -1339,6 +1339,14 @@
       ]
     },
     {
+        "name": "scripts.ui.footer_actions_height",
+        "default_value": 25,
+        "field_type": "number",
+        "macros_on_modify": [
+          "_ux"
+        ]
+      },
+    {
       "name": "scripts.ui.footer_map_width_p",
       "default_value": 14,
       "field_type": "number",
@@ -1477,6 +1485,14 @@
       "macros_on_modify": [
         "_ux"
       ]
+    },
+    {
+        "name": "scripts.ui.multibinds.font_size",
+        "default_value": 10,
+        "field_type": "number",
+        "macros_on_modify": [
+          "_ux"
+        ]
     },
     {
       "name": "scripts.ui.bind_color",

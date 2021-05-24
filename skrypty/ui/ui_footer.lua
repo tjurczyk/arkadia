@@ -48,7 +48,7 @@ function scripts.ui:setup_footer()
         x = 0,
         y = 0,
         width = "100%",
-        height = 25,
+        height = scripts.ui.footer_actions_height,
         v_policy = Geyser.Fixed,
         fontSize = 14
     }, scripts.ui.footer_vertical)

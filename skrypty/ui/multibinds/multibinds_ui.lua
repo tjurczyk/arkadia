@@ -1,4 +1,6 @@
-scripts.ui.multibinds = scripts.ui.multibinds or {}
+scripts.ui.multibinds = scripts.ui.multibinds or {
+    font_size = 10
+}
 
 function scripts.ui.multibinds:setup()
     local css = CSSMan.new([[
@@ -13,7 +15,7 @@ function scripts.ui.multibinds:setup()
         name = "scripts.ui.multibinds.label",
         height = "100%",
         width = "100%",
-        fontSize = 10
+        fontSize = self.font_size
     }, scripts.ui.actions_container)
 
     scripts.ui.multibinds_label:setStyleSheet(css:getCSS())

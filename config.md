@@ -893,6 +893,11 @@ Szerokosc (w %) dolnej belki
 
 ---
 
+## `scripts.ui.footer_actions_height`
+Wysokosc (w pikselach) paska akcji (gorna czesc stopki)
+
+---
+
 ## `scripts.ui.footer_map_width_p`
 
 Jaki % dolnej belki ma zajmowac roza wiatrow
@@ -1019,6 +1024,12 @@ Mozliwe opcje to:
 ```json
 "scripts.ui.cfg.info_items" : ["weapon", "order", "cover", "killed", "sneaky", "hidden", "attack", "collect","mail", "alert", "lamp", "compass", "combat" ]
 ```
+
+---
+
+## `scripts.ui.multibinds.font_size`
+
+Wielkosc czcionki paska akcji (multibindow)
 
 ---
 

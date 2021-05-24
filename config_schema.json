@@ -1324,7 +1324,7 @@
     },
     {
       "name": "scripts.ui.footer_height",
-      "default_value": 70,
+      "default_value": 100,
       "field_type": "number",
       "macros_on_modify": [
         "_ux"

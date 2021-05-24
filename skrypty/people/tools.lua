@@ -33,6 +33,21 @@ function scripts.people:get_last_id()
     return db:fetch_sql(scripts.people.db.people, sql_str)[1]["_row_id"]
 end
 
+local ranks = {
+    "Kapitan",
+    "Sierzant",
+    "'Krotki'",
+    "Kapral",
+    "'Profesor' vel "
+}
+
+function scripts.people:strip_ranks(name)
+    for _, rank in pairs(ranks) do
+        name = name:gsub("^" .. rank, ""):trim()
+    end
+    return name
+end
+
 function scripts.people:process_trigger_data(short, title)
     --
     -- returns two values: name and short
@@ -43,6 +58,7 @@ function scripts.people:process_trigger_data(short, title)
         -- name is then
         return short, nil
     else
+        title = scripts.people:strip_ranks(title)
         -- this is when "Siwy siwobrody mezczyzna przedstawia sie jako:"
         -- then get the name from title (first word separated by space)
         local ret_name = string.split(title, " ")[1]

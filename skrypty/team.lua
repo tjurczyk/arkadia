@@ -84,7 +84,7 @@ function alias_func_skrypty_team_zabij()
 end
 
 function alias_func_skrypty_team_zabij_noarg()
-    send("zabij cel ataku", true)
+    ateam:zab2_func("cel ataku")
 end
 
 function alias_func_skrypty_team_zaslon_team()

@@ -30,7 +30,7 @@ scripts.ui["footer_info_walk_mode_to_text"] = {
 -- W ktorym miejscu (% okna) ma sie zaczac dolna belka
 scripts.ui.footer_start = 0
 -- Wysokosc (w pikselsach) dolnej belki
-scripts.ui.footer_height = 70
+scripts.ui.footer_height = 100
 -- Szerokosc (w %) dolnej belki
 scripts.ui.footer_width = 100
 

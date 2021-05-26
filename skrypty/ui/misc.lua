@@ -26,7 +26,7 @@ end
 function trigger_func_skrypty_ui_misc_zniszczona_bron()
     selectCurrentLine()
     deleteLine()
-    cecho("<tomato>\n\n[  SPRZET  ] " .. matches[2] .. "\n\n")
+    cecho("<tomato>\n\n[  SPRZET  ] " .. matches[1] .. "\n\n")
     resetFormat()
 
     raiseEvent("playBeep")

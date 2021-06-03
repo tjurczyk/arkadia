@@ -149,6 +149,11 @@
       ]
     },
     {
+        "name": "scripts.config_watch.enabled",
+        "default_value": true,
+        "field_type": "boolean"
+      },
+    {
       "name": "ateam.attack_commands",
       "default_value": [
         "zabij"

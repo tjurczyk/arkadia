@@ -1,5 +1,8 @@
 local config_schema_file = getMudletHomeDir() .. "/arkadia/config_schema.json"
 local file = io.open(config_schema_file, "rb")
+
+scripts.config_watch = scripts.config_watch or {}
+
 if file then
     scripts.config_schema = yajl.to_value(file:read("*a"))
     file:close()
@@ -18,6 +21,7 @@ function scripts_load_v2_config(name)
             raiseEvent("profileLoaded")
             end
         )
+        scripts.config_watch:start(scripts.config)
     end
 end
 

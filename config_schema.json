@@ -149,6 +149,11 @@
       ]
     },
     {
+        "name": "scripts.config_watch.enabled",
+        "default_value": true,
+        "field_type": "boolean"
+      },
+    {
       "name": "ateam.attack_commands",
       "default_value": [
         "zabij"
@@ -1324,7 +1329,7 @@
     },
     {
       "name": "scripts.ui.footer_height",
-      "default_value": 70,
+      "default_value": 100,
       "field_type": "number",
       "macros_on_modify": [
         "_ux"

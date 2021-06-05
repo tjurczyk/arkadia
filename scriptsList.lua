@@ -75,6 +75,7 @@ return {
     "skrypty/config/alias",
     "skrypty/config/scripts_config",
     "skrypty/config/init",
+    "skrypty/config/config_watch",
     "skrypty/keybind/core",
     "skrypty/keybind/callback",
     "skrypty/keybind/help",

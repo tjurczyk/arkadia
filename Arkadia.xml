@@ -14419,7 +14419,7 @@
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>zniszczona_bron</name>
-						<script>trigger_func_skrypty_ui_misc_zniszczona_bron()</script>
+						<script>trigger_func_skrypty_ui_misc_zniszczona_bron(matches[2])</script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
 						<mStayOpen>0</mStayOpen>

@@ -23,26 +23,30 @@ function trigger_func_skrypty_ui_misc_klapa_campogrotta()
     resetFormat()
 end
 
-function trigger_func_skrypty_ui_misc_zniszczona_bron()
+function trigger_func_skrypty_ui_misc_zniszczona_bron(owner)
     selectCurrentLine()
     deleteLine()
     cecho("<tomato>\n\n[  SPRZET  ] " .. matches[1] .. "\n\n")
     resetFormat()
 
-    raiseEvent("playBeep")
-    scripts.ui:info_action_update("ZNI. BRON")
-    scripts.utils.bind_functional("odloz zlamana bron")
-    scripts.ui.info_action_bind = "odloz zlamana bron"
+    if not owner then
+        raiseEvent("playBeep")
+        scripts.ui:info_action_update("ZNI. BRON")
+        scripts.utils.bind_functional("odloz zlamana bron")
+        scripts.ui.info_action_bind = "odloz zlamana bron"
+    end
 end
 
-function trigger_func_skrypty_ui_misc_zniszczony_sprzet()
+function trigger_func_skrypty_ui_misc_zniszczony_sprzet(owner)
     creplaceLine("<tomato>\n\n[  SPRZET  ] " .. matches[1] .. "\n\n")
     resetFormat()
 
-    raiseEvent("playBeep")
-    scripts.ui:info_action_update("ZNI. ZBROJA")
-    scripts.utils.bind_functional("odloz zniszczona zbroje")
-    scripts.ui.info_action_bind = "odloz zniszczona zbroje"
+    if not owner then
+        raiseEvent("playBeep")
+        scripts.ui:info_action_update("ZNI. ZBROJA")
+        scripts.utils.bind_functional("odloz zniszczona zbroje")
+        scripts.ui.info_action_bind = "odloz zniszczona zbroje"
+    end
 end
 
 function trigger_func_skrypty_ui_misc_wyverna_trucizna_off()

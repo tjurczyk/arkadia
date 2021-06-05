@@ -4,6 +4,16 @@ Tutaj ustaw Twoje imie (miedzy innymi do globalnego licznika postepow i zabitych
 
 ---
 
+## `scripts.config_watch.enabled`
+
+Flaga okreslajaca czy automatyczne przeladowywanie configu na zmiany w pliku ma byc wlaczone.
+
+Dozwolone wartosci
+* `true`  - zmiany beda automatycznie przeladowywane
+* `false` - zmiany nie beda automatycznie przeladowywane
+
+---
+
 ## `ateam.all_numbering`
 Domyslna opcja czy maja byc numerowani neutralni osobnicy na lokacji
 

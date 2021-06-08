@@ -19107,7 +19107,7 @@
 					<script></script>
 					<triggerType>0</triggerType>
 					<conditonLineDelta>2</conditonLineDelta>
-					<mStayOpen>23</mStayOpen>
+					<mStayOpen>50</mStayOpen>
 					<mCommand></mCommand>
 					<packageName></packageName>
 					<mFgColor>#ff0000</mFgColor>

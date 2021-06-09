@@ -180,6 +180,14 @@
       ]
     },
     {
+        "name": "ateam.options.own_name",
+        "default_value": "JA",
+        "field_type": "string",
+        "macros_on_modify": [
+            "_ateam"
+        ]
+    },
+    {
       "name": "ateam.options.alphabetical_sort_team",
       "default_value": true,
       "field_type": "boolean",

@@ -1,28 +1,25 @@
 amap.walker_highlights = amap.walker_highlights or {
-    highlighter = Highlight:new({}, {255, 200, 150}, {150, 100, 255}),
     event_handlers = {}
 }
 
 function amap.walker_highlights:register_events()
-    table.insert(self.event_handlers, scripts.event_register:register_event_handler("amapWalkerStarted", function() self:highlight_current_path() end))
-    table.insert(self.event_handlers, scripts.event_register:register_event_handler("amapWalkerTerminated", function() self:clear_highlight() end))
-    table.insert(self.event_handlers, scripts.event_register:register_event_handler("amapWalkerFinished", function() self:clear_highlight() end))
+    self.handler_s = scripts.event_register:force_register_event_handler(self.handler_s, "amapWalkerStarted", function() self:start() end)
+    self.handler_t = scripts.event_register:force_register_event_handler(self.handler_t, "amapWalkerTerminated", function() self:finish() end)
+    self.handler_f = scripts.event_register:force_register_event_handler(self.handler_f, "amapWalkerFinished", function() self:finish() end)
 end
 
 function amap.walker_highlights:deregister_events()
-    for k,v in pairs(self.event_handlers) do
-        scripts.event_register:kill_event_handler(v)
-    end
+   scripts.event_register:kill_event_handler(self.handler_s)
+   scripts.event_register:kill_event_handler(self.handler_t)
+   scripts.event_register:kill_event_handler(self.handler_f)
 end
 
-function amap.walker_highlights:highlight_current_path()
-    self.highlighter:set_locations(speedWalkPath)
-    self.highlighter:on()
+function amap.walker_highlights:start()
+    amap.path_display:start(speedWalkPath[#speedWalkPath])
 end
 
-function amap.walker_highlights:clear_highlight()
-    self.highlighter:clear()
+function amap.walker_highlights:finish()
+    amap.path_display:stop()
 end
 
 amap.walker_highlights:register_events()
-

@@ -26643,6 +26643,27 @@
 				<packageName></packageName>
 				<regex>^/idz$</regex>
 			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>prowadz</name>
+				<script>alias_func_prowadz(matches[2])</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^/prowadz (\d+)$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>prowadz skrot</name>
+				<script>alias_func_prowadz_shortcut(matches[2])</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^/prowadz (\w+)$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>prowadz-</name>
+				<script>alias_func_prowadz_stop()</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>/prowadz-</regex>
+			</Alias>
 		</AliasGroup>
 	</AliasPackage>
 	<ActionPackage />

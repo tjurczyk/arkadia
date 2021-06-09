@@ -28,5 +28,6 @@ end
 
 function trigger_func_skrypty_ui_gags_color_color_moje_spece_bar_ja_spec_ja_ogluch()
     scripts.gags:gag_prefix("JA OGL", "moje_spece")
+    ateam:may_setup_paralyzed_name(matches[2])
 end
 

@@ -5633,10 +5633,10 @@
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>Nieprzyjemne chrzakniecie i metny wzrok przeciwnika swiadcza, ze dobrze wymierzony cios musial trafic w jakies wrazliwe miejsce.</string>
+											<string>.* walisz (.*) na odlew .* Nieprzyjemne chrzakniecie i metny wzrok przeciwnika swiadcza, ze dobrze wymierzony cios musial trafic w jakies wrazliwe miejsce.</string>
 										</regexCodeList>
 										<regexCodePropertyList>
-											<integer>0</integer>
+											<integer>1</integer>
 										</regexCodePropertyList>
 									</Trigger>
 								</Trigger>
@@ -5654,7 +5654,7 @@
 									<colorTriggerFgColor>#000000</colorTriggerFgColor>
 									<colorTriggerBgColor>#000000</colorTriggerBgColor>
 									<regexCodeList>
-										<string>Bierzesz ogromny zamach swoim gigantycznym granitowym mlotem.*Porzadnie .* zamroczylo\.</string>
+										<string>^Bierzesz ogromny zamach swoim gigantycznym granitowym mlotem i uderzasz nim w glowe (.*)\. Przeciwnik mruga oczami, nie bardzo wiedzac, co sie dzieje\. Porzadnie go zamroczylo\.$</string>
 									</regexCodeList>
 									<regexCodePropertyList>
 										<integer>1</integer>
@@ -9365,10 +9365,10 @@
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>Nieprzyjemne chrzakniecie i metny wzrok przeciwnika swiadcza, ze dobrze wymierzony cios musial trafic w jakies wrazliwe miejsce.</string>
+											<string>.* wali (.*) na odlew .* Nieprzyjemne chrzakniecie i metny wzrok przeciwnika swiadcza, ze dobrze wymierzony cios musial trafic w jakies wrazliwe miejsce.</string>
 										</regexCodeList>
 										<regexCodePropertyList>
-											<integer>0</integer>
+											<integer>1</integer>
 										</regexCodePropertyList>
 									</Trigger>
 								</Trigger>
@@ -9386,7 +9386,7 @@
 									<colorTriggerFgColor>#000000</colorTriggerFgColor>
 									<colorTriggerBgColor>#000000</colorTriggerBgColor>
 									<regexCodeList>
-										<string>.* bierze ogromny zamach swoim gigantycznym granitowym mlotem.*Porzadnie .*zamroczylo\.</string>
+										<string>.* bierze ogromny zamach swoim gigantycznym granitowym mlotem i wyprowadza potworny cios w glowe (.*)\. Przeciwnik mruga oczami, nie bardzo wiedzac, co sie dzieje\. Porzadnie go zamroczylo\.$</string>
 									</regexCodeList>
 									<regexCodePropertyList>
 										<integer>1</integer>

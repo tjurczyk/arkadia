@@ -3,14 +3,8 @@ function trigger_func_skrypty_ui_gags_color_color_bloki_blokowanie_proba_ciebie(
         return
     end
 
-    raiseEvent("playBeep")
-    tempTimer(0.3, [[ raiseEvent("playBeep") ]])
-    tempTimer(0.6, [[ raiseEvent("playBeep") ]])
-    tempTimer(0.9, [[ raiseEvent("playBeep") ]])
-    tempTimer(1.2, [[ raiseEvent("playBeep") ]])
-    selectCurrentLine()
-    deleteLine()
-    cecho("<red>\n\n[    BLOK    ] " .. matches[3] .. " przymierza sie do odciecia ci drogi ucieczki.\n\n")
+    scripts.sounds:play_beep_sequence()
+    creplaceLine("<red>\n\n[    BLOK    ] " .. matches[3] .. " przymierza sie do odciecia ci drogi ucieczki.\n\n")
     resetFormat()
 end
 
@@ -89,10 +83,8 @@ function trigger_func_skrypty_ui_gags_color_color_bloki_blokowanie_proba_kogos()
     end
 
     raiseEvent("playBeep")
-    tempTimer(0.3, [[ raiseEvent("playBeep") ]])
-    selectCurrentLine()
-    deleteLine()
-    cecho("<tomato>\n\n[    BLOK    ] " .. matches[2])
+    tempTimer(0.3, function () raiseEvent("playBeep") end)
+    creplaceLine("<tomato>\n\n[    BLOK    ] " .. matches[2])
     resetFormat()
 end
 

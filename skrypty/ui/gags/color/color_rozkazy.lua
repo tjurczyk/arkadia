@@ -3,13 +3,11 @@ function trigger_func_skrypty_ui_gags_color_color_rozkazy_rozkaz_kogos_zaslony()
         return
     end
 
-    selectCurrentLine()
-    deleteLine()
     if matches[3] == "ciebie" or matches[3] == "cie" then
         local uppered = string.upper(matches[3])
-        cecho("<sea_green>\n\n[ ROZKAZ DEF ] " .. matches[2] .. uppered .. ".\n\n")
+        creplaceLine("<sea_green>\n\n[ ROZKAZ DEF ] " .. matches[2] .. uppered .. ".\n\n")
     else
-        cecho("<sea_green>\n\n[ ROZKAZ DEF ] " .. matches[2] .. matches[3] .. ".\n\n")
+        creplaceLine("<sea_green>\n\n[ ROZKAZ DEF ] " .. matches[2] .. matches[3] .. ".\n\n")
     end
     resetFormat()
 end
@@ -19,13 +17,11 @@ function trigger_func_skrypty_ui_gags_color_color_rozkazy_rozkaz_kogos_zaatakowa
         return
     end
 
-    selectCurrentLine()
-    deleteLine()
     if matches[3] == "ciebie" or matches[3] == "cie" then
         local uppered = string.upper(matches[3])
-        cecho("<salmon>\n\n[ ROZKAZ ATT ] " .. matches[2] .. uppered .. ".\n\n")
+        creplaceLine("<salmon>\n\n[ ROZKAZ ATT ] " .. matches[2] .. uppered .. ".\n\n")
     else
-        cecho("<salmon>\n\n[ ROZKAZ ATT ] " .. matches[2] .. matches[3] .. ".\n\n")
+        creplaceLine("<salmon>\n\n[ ROZKAZ ATT ] " .. matches[2] .. matches[3] .. ".\n\n")
     end
     resetFormat()
 end
@@ -54,9 +50,7 @@ function trigger_func_skrypty_ui_gags_color_color_rozkazy_rozkaz_kogos_zablokowa
         return
     end
     
-    selectCurrentLine()
-    deleteLine()
-    cecho("<salmon>\n\n[ ROZKAZ BLO ] " .. matches[2] .. matches[3] .. ".\n\n")
+    creplaceLine("<salmon>\n\n[ ROZKAZ BLO ] " .. matches[2] .. matches[3] .. ".\n\n")
     resetFormat()
 end
 

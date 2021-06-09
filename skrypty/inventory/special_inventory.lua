@@ -113,9 +113,7 @@ function scripts.inv:get_magic_item_pattern(item)
 end
 
 function scripts.inv:magic_worn_off(message, type)
-    selectCurrentLine()
-    deleteLine()
-    cecho("<tomato>\n\n\t[  MAGIK ZNIKA   ] " .. message .. "\n\n")
+    creplaceLine("<tomato>\n\n\t[  MAGIK ZNIKA   ] " .. message .. "\n\n")
     resetFormat()
 
     raiseEvent("playBeep")

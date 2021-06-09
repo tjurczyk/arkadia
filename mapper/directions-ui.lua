@@ -2,8 +2,6 @@ amap.directions_ui = amap.directions_ui or {}
 
 function amap.directions_ui:handle_exits(dirs, any_direction)
     if amap.shorten_exits then
-        selectCurrentLine()
-        deleteLine()
         local str = "\n-----:"
 
         for dir, _ in pairs(dirs) do
@@ -11,7 +9,7 @@ function amap.directions_ui:handle_exits(dirs, any_direction)
         end
         str = str .. "\n"
         local color = any_direction and "LawnGreen" or "orange"
-        cecho("<" .. color .. ">" .. str)
+        creplaceLine("<" .. color .. ">" .. str)
     end
 
 

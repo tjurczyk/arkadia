@@ -15718,8 +15718,10 @@
 							<string>(.* wychyla sie przez okno i zaczyna schodzic na dol.*)</string>
 							<string>(.*Wykorzystujac platanine galezi mocno przywierajaca do skalnej sciany .* zaczyna powoli schodzic na dol\.*)</string>
 							<string>(.* zaczyna sie powoli opuszczac przez gleboka wyrwe w murze.*)</string>
+							<string>(.* uwaznie stawiajac kazdy swoj krok zsuwa sie posrod skal.*)</string>
 						</regexCodeList>
 						<regexCodePropertyList>
+							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
@@ -15912,8 +15914,10 @@
 							<string>(.* znika w kepie brzozek.*)</string>
 							<string>(.* wciska sie do szczeliny w scianie i po chwili znika z oczu.*)</string>
 							<string>(.* przeslizguje sie przez szczeline.*)</string>
+							<string>(.* wciska sie w skalne pekniecie w jednej ze scian.*)</string>
 						</regexCodeList>
 						<regexCodePropertyList>
+							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
@@ -18584,6 +18588,46 @@
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
 							<string>(.* przeslizguje sie przez szczeline.*)</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>1</integer>
+						</regexCodePropertyList>
+					</Trigger>
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>przecisnij-sie-do-baszty</name>
+						<script>trigger_func_skrypty_ui_special_exits_follow_przecisnij_sie_do_baszty()</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>(.* wciska sie w skalne pekniecie w jednej ze scian.*)</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>1</integer>
+						</regexCodePropertyList>
+					</Trigger>
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>przecisnij-sie-miedzy-skalami</name>
+						<script>trigger_func_skrypty_ui_special_exits_follow_przecisnij_sie_miedzy_skalami()</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>(.* uwaznie stawiajac kazdy swoj krok przeciska sie pomiedzy skalami.*)</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>

@@ -611,3 +611,11 @@ end
 function trigger_func_skrypty_ui_special_exits_follow_wejdz_na_statek(ship)
     scripts.utils.bind_functional_team_follow(matches[1], "wejdz na " .. ship, 15)
 end
+
+function trigger_func_skrypty_ui_special_exits_follow_przecisnij_sie_do_baszty()
+    scripts.utils.bind_functional_team_follow(matches[2], "przecisnij sie do baszty", 15)
+end
+
+function trigger_func_skrypty_ui_special_exits_follow_przecisnij_sie_miedzy_skalami()
+    scripts.utils.bind_functional_team_follow(matches[2], "przecisnij sie miedzy skalami", 15)
+end

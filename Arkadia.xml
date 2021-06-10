@@ -7564,7 +7564,7 @@
 									<colorTriggerFgColor>#000000</colorTriggerFgColor>
 									<colorTriggerBgColor>#000000</colorTriggerBgColor>
 									<regexCodeList>
-										<string>^Blekitno-srebrna trojkatna tarcza rozblyskuje nagle bardzo ostrym blekitnym swiatlem, skierowanym w .*</string>
+										<string>^Blekitno-srebrna trojkatna tarcza rozblyskuje nagle bardzo ostrym blekitnym swiatlem, skierowanym w strone (.*)!</string>
 									</regexCodeList>
 									<regexCodePropertyList>
 										<integer>1</integer>
@@ -11678,7 +11678,7 @@
 									<colorTriggerFgColor>#000000</colorTriggerFgColor>
 									<colorTriggerBgColor>#000000</colorTriggerBgColor>
 									<regexCodeList>
-										<string>^Trzymana przez .* blekitno-srebrna tarcza rozblyskuje nagle niesamowicie ostrym blekitnym swiatlem, skierowanym w strone .*</string>
+										<string>^Trzymana przez .* blekitno-srebrna trojkatna tarcza rozblyskuje nagle niesamowicie ostrym blekitnym swiatlem, skierowanym w strone (.*), lecz .*</string>
 									</regexCodeList>
 									<regexCodePropertyList>
 										<integer>1</integer>

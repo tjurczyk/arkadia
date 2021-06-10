@@ -87,7 +87,7 @@ function scripts.first_time_config.base_and_map(window_page, index)
     cecho(window_page.name, "-------------------\n")
     if not io.exists(getMudletHomeDir() .. "/map_master3.dat") then
         cecho(window_page.name, "<red>X<reset> Nie masz pobranej mapy.\n")
-        cechoLink(window_page.name, "Wpisz <tomato>/pobierz_mape<reset> lub kliknij <light_slate_blue>tutaj<reset>", function() scripts.first_time_config.download_map() end "Pobieranie mapy", true)
+        cechoLink(window_page.name, "Wpisz <tomato>/pobierz_mape<reset> lub kliknij <light_slate_blue>tutaj<reset>", function() scripts.first_time_config.download_map() end, "Pobieranie mapy", true)
     else
     
         cecho(window_page.name, "<green>✓<reset> Masz juz pobrana mape.")

@@ -539,8 +539,8 @@ function trigger_func_skrypty_ui_special_exits_follow_dotknij_slupa()
     scripts.utils.bind_functional_team_follow(matches[2], "dotknij slupa", 15)
 end
 
-function trigger_func_skrypty_ui_special_exits_follow_wejdz_we_wschodnia_sciane()
-    scripts.utils.bind_functional_team_follow(matches[2], "wejdz we wschodnia sciane", 15)
+function trigger_func_skrypty_ui_special_exits_follow_przejdz_przez_zachodnia_sciane()
+    scripts.utils.bind_functional_team_follow(matches[2], "przejdz przez zachodnia sciane", 15)
 end
 
 function trigger_func_skrypty_ui_special_exits_follow_obejdz_budynek()

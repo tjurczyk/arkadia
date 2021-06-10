@@ -18252,8 +18252,8 @@
 						</regexCodePropertyList>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-						<name>wejdz-we-wschodnia-sciane</name>
-						<script>trigger_func_skrypty_ui_special_exits_follow_wejdz_we_wschodnia_sciane()</script>
+						<name>przejdz-przez-zachodnia-sciane</name>
+						<script>trigger_func_skrypty_ui_special_exits_follow_przejdz_przez_zachodnia_sciane()</script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
 						<mStayOpen>0</mStayOpen>

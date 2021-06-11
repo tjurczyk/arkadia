@@ -1,5 +1,5 @@
 function herbs:put_herb_bag_down(bag_id)
-    sendAll("odbezpiecz " .. tostring(bag_id) .. ". woreczek", "odtrocz go", "odloz go")
+    sendAll("odbezpiecz " .. tostring(bag_id) .. ". woreczek", "odtrocz " .. tostring(bag_id) .. ". woreczek", "odloz " .. tostring(bag_id) .. ". woreczek")
 end
 
 function herbs:use_herb(herb_id, action, amount)
@@ -45,15 +45,17 @@ end
 function herbs:repack_from_to_bag(from_bag, to_bag)
     local string_from_bag = tostring(from_bag)
     local string_to_bag = tostring(to_bag)
-    sendAll("otworz " .. string_from_bag .. ". woreczek", "zajrzyj do niego", "wez ziola z niego", "otworz " .. string_to_bag .. ". woreczek", "zajrzyj do niego", "wloz ziola do niego", "otworz " .. string_from_bag .. ". woreczek", "wloz ziola do niego", "zamknij woreczki", true)
+    sendAll("otworz " .. string_from_bag .. ". woreczek", "wez ziola z " .. string_from_bag .. ". woreczka", "otworz " .. string_to_bag .. ". woreczek", "wloz ziola do " .. string_to_bag .. ". woreczka", "otworz " .. string_from_bag .. ". woreczek", "wloz ziola do " .. string_from_bag .. ". woreczka", "zamknij otwarte woreczki", true)
 end
 
 function herbs:do_pre_actions()
+    self.restore = scripts.character.options:set_temporary("parsing_order", 1)
     herbs:do_pre_post_actions("pre")
 end
 
 function herbs:do_post_actions()
     herbs:do_pre_post_actions("post")
+    self.restore()
 end
 
 function herbs:do_pre_post_actions(pre_post)

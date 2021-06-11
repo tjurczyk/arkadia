@@ -88,7 +88,7 @@ function doSpeedWalk()
         else
             send(curr_move)
         end
-        amap.walker_timer_id = tempTimer(amap.walker_delay, [[ amap:auto_walker() ]])
+        amap.walker_timer_id = tempTimer(amap.walker_delay, function() amap:auto_walker() end)
 
     else
         amap:print_log("Chodzik aktualnie pracuje, najpierw zastopuj uzywajac '/stop'")
@@ -135,7 +135,7 @@ function amap:auto_walker()
             else
                 send(curr_move)
             end
-            amap.walker_timer_id = tempTimer(amap.walker_delay, [[ amap:auto_walker() ]])
+            amap.walker_timer_id = tempTimer(amap.walker_delay, function() amap:auto_walker() end)
         end
     end
 end

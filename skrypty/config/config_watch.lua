@@ -1,5 +1,6 @@
 scripts.config_watch = scripts.config_watch or {
-    enabled = false
+    enabled = false,
+    is_paused = false
 }
 
 function scripts.config_watch:start(config)
@@ -19,7 +20,18 @@ function scripts.config_watch:start(config)
     addFileWatch(self.config._config_file_path)
 end
 
+function scripts.config_watch:pause()
+   self.is_paused = true
+end
+
+function scripts.config_watch:unpause()
+    self.is_paused = true
+ end
+
 function scripts.config_watch:path_changed(path)
+    if self.is_paused then
+        return
+    end
     if path == self.config._config_file_path then
         debugc("Plik konfiguracji " .. self.config._config_name .. " zostal zmieniony, przeladowuje konfiguracje.")
         scripts_load_v2_config(self.config._config_name)

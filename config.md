@@ -43,6 +43,13 @@ Sortowanie alfabetyczne druzyny w oknie kondycji.
 
 ---
 
+## `ateam.options.own_name`
+
+Określa jaka nazwa będzie wyświetlana obok naszej kondycji w oknie kondycji.
+Domyślnie `JA`
+
+---
+
 ## `ateam.options.broken_defense_bg_color`
 ## `ateam.options.broken_defense_fg_color`
 

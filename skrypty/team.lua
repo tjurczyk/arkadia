@@ -26,6 +26,7 @@ ateam = ateam or {
     paralyzed_name_to_safety_timer = {},
     broken_defense_name_to_safety_timer = {},
     options = {
+        own_name = "JA",
         team_numbering_mode = "mode1",
         team_mate_stun_bg_color = "goldenrod",
         team_mate_stun_fg_color = "black",

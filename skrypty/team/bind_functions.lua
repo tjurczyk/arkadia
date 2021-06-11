@@ -239,6 +239,9 @@ function ateam:w_func(id)
         local real_id = ateam.team[id]
         local local_str = "ob_" .. real_id
         send("gzwycofaj sie za " .. local_str, false)
+        if ateam.release_guards then
+            send("przestan kryc sie za zaslona", false)
+        end
     else
         scripts:print_log("Nie ma takiego id")
     end

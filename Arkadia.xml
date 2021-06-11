@@ -462,8 +462,10 @@
 							<string>^Dokladnie obracasz w dloniach</string>
 							<string>^Fachowym okiem osoby, ktora z doswiadczenia wie, jak wazna</string>
 							<string>^Przygladasz sie krytycznie .*, sprawdzajac palcem .* stan\.$</string>
+							<string>^Przejezdzajac palcem po ostrzu .*, sprawdzasz .* stan\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
+							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>

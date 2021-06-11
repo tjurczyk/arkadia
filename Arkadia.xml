@@ -15163,6 +15163,7 @@
 							<string>Czujesz jak zalewa cie fala ogromnej pewnosci siebie i satysfakcji.</string>
 							<string>^Juz dzierzysz .*\.$</string>
 							<string>Zaciskasz dlon na niezwyklym koscianym toporze i przez chwile czujesz, jak bron wibruje od zgromadzonej w niej mocy.</string>
+							<string>Zamaszystym ruchem wznosisz wielki kamienny kafar do gory, by wesprzec go na ramieniu.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -15207,6 +15208,7 @@
 							<integer>0</integer>
 							<integer>1</integer>
 							<integer>3</integer>
+							<integer>0</integer>
 						</regexCodePropertyList>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -15230,7 +15232,6 @@
 							<string>^(?!.*przez)(.+?) peka!$</string>
 							<string>Rozgladajac sie uwaznie, opuszczasz cicho</string>
 							<string>Niechetnie opuszczasz swoj zlowrogi orez.</string>
-							<string>Zamaszystym ruchem wznosisz wielki kamienny kafar do gory, by wesprzec go na ramieniu.</string>
 							<string>Gdy rozluzniasz chwyt na iskrzacej zdobionej bulawie, pomiedzy cwiekami na glowicy broni przestaja rzeskakiwac iskry.</string>
 							<string>Szybkim ruchem opuszczasz jasniejacy zdobiony jatagan, a luna wokol broni nieznacznie przygasa.</string>
 							<string>Wraz z opuszczeniem zdobionego jasniejacego chepesza zanika wypelniajace do tej pory twe serce uczucie niezlomnosci i mestwa,</string>
@@ -15246,7 +15247,6 @@
 							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
-							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>

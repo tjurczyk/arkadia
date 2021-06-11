@@ -27,6 +27,7 @@ return {
     "mapper/room",
     "mapper/map",
     "mapper/highlighter",
+    "mapper/path",
     "mapper/walker",
     "mapper/walk_cmd",
     "mapper/walker_highlights",

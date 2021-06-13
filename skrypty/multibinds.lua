@@ -18,6 +18,9 @@ function scripts.multibinds:init()
     self.handler = scripts.event_register:force_register_event_handler(self.handler, "amapNewLocation", function (_, loc)
         self:update_ui(loc)
     end)
+    self.handler2 = scripts.event_register:force_register_event_handler(self.handler2, "amapLocationSteppedBack", function (_, _, loc)
+        self:update_ui(loc)
+    end)
 end
 
 function scripts.multibinds:create(room_id, index, action)

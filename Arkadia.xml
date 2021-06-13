@@ -23732,8 +23732,16 @@
 						<string>^[ &gt;]*Nie wolno ci sie tam udac\.$</string>
 						<string>Trwa ladowanie danych postaci</string>
 						<string>Nie ma takiej komendy\. Wpisz</string>
+						<string>^[ &gt;]*Opierasz stopy o wyczuwane w kominie wyrwy, jednak nie mogac przytrzymac sie wolna reka brzegu komina, cofasz wsuniete juz wen nogi\.$</string>
+						<string>^[ &gt;]*Drabina jest zbyt nisko, by ja wykorzystac do zejscia\.$</string>
+						<string>^[ &gt;]*Ktos inny juz to zaczal robic. Otwor nie jest dosc szeroki by udalo sie to dwom osobom na raz\.$</string>
+						<string>^[ &gt;]*Wejscie do kurhanu jest zamkniete kamienna plyta\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
+						<integer>1</integer>
+						<integer>1</integer>
+						<integer>1</integer>
+						<integer>1</integer>
 						<integer>1</integer>
 						<integer>1</integer>
 						<integer>1</integer>

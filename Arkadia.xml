@@ -25734,6 +25734,13 @@
 					<packageName></packageName>
 					<regex>^/list$</regex>
 				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>Szybki list</name>
+					<script>alias_func_list_fast()</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/list (\w+) (.*)$</regex>
+				</Alias>
 			</AliasGroup>
 			<Alias isActive="yes" isFolder="no">
 				<name>/konfiguracja</name>

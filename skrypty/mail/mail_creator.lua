@@ -66,7 +66,7 @@ local function justify(line, limit)
     return table.concat(words)
 end
 
-function scripts.mail_creator:start()
+function scripts.mail_creator:window()
     openUserWindow(self.window_name, false, false)
     setFont(self.window_name, getFont())
     setFontSize(self.window_name, getFontSize())
@@ -82,7 +82,6 @@ function scripts.mail_creator:start()
     moveWindow(self.window_name, 10,30)
 
     clearUserWindow(self.window_name)
-    echo(self.window_name, "Do: ")
 
     enableCommandLine(self.window_name)
     setCmdLineAction(self.window_name, "mailCreatorAddLine")
@@ -94,13 +93,17 @@ function scripts.mail_creator:start()
             border: 1px solid #333;
         }
     ]])
+end
 
+function scripts.mail_creator:start()
     self.mail = {
         to = nil,
         subject = nil,
         cc = nil,
         content = {}
     }
+    self:window()
+    echo(self.window_name, "Do: ")
 end
 
 function mailCreatorAddLine(line)
@@ -114,6 +117,12 @@ function mailCreatorAddLine(line)
 
     if line:trim() == "~q" then
         hideWindow(self.window_name)
+        return
+    end
+
+    if line:trim() == "~d" then
+        table.remove(self.mail.content, table.size(self.mail.content))
+        self:print()
         return
     end
 
@@ -143,7 +152,6 @@ function mailCreatorAddLine(line)
 
     if not self.mail.cc then
         self.mail.cc = line
-        clearUserWindow(self.cc)
         echo(self.window_name, (self.mail.cc:trim() == "" and "--" or self.mail.cc))
         cecho(self.window_name, "\n<light_slate_gray>Wpisz tresc wiadomosci...<reset>")
         return
@@ -194,6 +202,25 @@ function scripts.mail_creator:send()
         send("**")
     end, 1)
     tempTimer(10, function() killTrigger(trigger) end)
+end
+
+function scripts.mail_creator:fast_mail(to, subject)
+    self.mail = {
+        to = to,
+        subject = subject,
+        cc = "",
+        content = {}
+    }
+
+    self:window()
+    echo(self.window_name, "Do: " .. self.mail.to .. "\n")
+    echo(self.window_name, "Temat: " .. self.mail.subject .. "\n")
+    echo(self.window_name, "CC: --\n")
+    cecho(self.window_name, "<light_slate_gray>Wpisz tresc wiadomosci...<reset>")
+end
+
+function alias_func_list_fast()
+    scripts.mail_creator:fast_mail(matches[2], matches[3])
 end
 
 function alias_func_list()

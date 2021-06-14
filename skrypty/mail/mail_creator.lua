@@ -69,6 +69,7 @@ end
 function scripts.mail_creator:start()
     openUserWindow(self.window_name, false, false)
     setFont(self.window_name, getFont())
+    setFontSize(self.window_name, getFontSize())
     setUserWindowTitle(self.window_name, "Tworzenie wiadomosci")
 
     local x = 1
@@ -80,18 +81,8 @@ function scripts.mail_creator:start()
 
     moveWindow(self.window_name, 10,30)
 
-    createMiniConsole(self.window_name, self.to, 10, 10, x, 20)
-    clearUserWindow(self.to)
-    echo(self.to, "Do: ")
-
-    createMiniConsole(self.window_name, self.subject, 10, 30, x, 20)
-    clearUserWindow(self.subject)
-
-    createMiniConsole(self.window_name, self.cc, 10, 50, x, 20)
-    clearUserWindow(self.cc)
-    
-    createMiniConsole(self.window_name, self.body, 10, 80, x, 500)
-    clearUserWindow(self.body)
+    clearUserWindow(self.window_name)
+    echo(self.window_name, "Do: ")
 
     enableCommandLine(self.window_name)
     setCmdLineAction(self.window_name, "mailCreatorAddLine")
@@ -133,9 +124,8 @@ function mailCreatorAddLine(line)
             return
         end
         self.mail.to = line
-        clearUserWindow(self.to)
-        echo(self.to, "Do: " .. self.mail.to)
-        echo(self.subject, "Temat: ")
+        echo(self.window_name, self.mail.to)
+        echo(self.window_name, "\nTemat: ")
         return
     end
 
@@ -146,17 +136,16 @@ function mailCreatorAddLine(line)
             return
         end
         self.mail.subject = line
-        clearUserWindow(self.subject)
-        echo(self.subject, "Temat: " .. self.mail.subject)
-        echo(self.cc, "CC: ")
+        echo(self.window_name, self.mail.subject)
+        echo(self.window_name, "\nCC: ")
         return
     end
 
     if not self.mail.cc then
         self.mail.cc = line
         clearUserWindow(self.cc)
-        echo(self.cc, "CC: " .. (self.mail.cc:trim() == "" and "--" or self.mail.cc))
-        cecho(self.body, "<light_slate_gray>Wpisz tresc wiadomosci...<reset>")
+        echo(self.window_name, (self.mail.cc:trim() == "" and "--" or self.mail.cc))
+        cecho(self.window_name, "\n<light_slate_gray>Wpisz tresc wiadomosci...<reset>")
         return
     end
 
@@ -177,9 +166,12 @@ function scripts.mail_creator:append_input(line)
 end
 
 function scripts.mail_creator:print()
-    clearUserWindow(self.body)
+    clearUserWindow(self.window_name)
+    echo(self.window_name, "Do: " .. self.mail.to .. "\n")
+    echo(self.window_name, "Temat: " .. self.mail.subject .. "\n")
+    echo(self.window_name, "CC: " .. (self.mail.cc:trim() == "" and "--" or self.mail.cc) .. "\n")
     for _, line in pairs(self:crate_content()) do
-        echo(self.body, line .. "\n")
+        echo(self.window_name, line .. "\n")
     end
 end
 

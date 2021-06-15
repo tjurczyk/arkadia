@@ -25095,14 +25095,14 @@
 					<script>alias_func_skrypty_people_dodaj_gildie()</script>
 					<command></command>
 					<packageName></packageName>
-					<regex>^/dodaj_do_gildii ([0-9]+) ([a-zA-Z]+)$</regex>
+					<regex>^/dodaj_do_gildii (\w+) (\w+)$</regex>
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
 					<name>usun_gildie</name>
 					<script>alias_func_skrypty_people_usun_gildie()</script>
 					<command></command>
 					<packageName></packageName>
-					<regex>^/dodaj_do_gildii ([0-9]+)$</regex>
+					<regex>^/dodaj_do_gildii (\w+)$</regex>
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
 					<name>zgildiowani</name>

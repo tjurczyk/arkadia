@@ -28,6 +28,13 @@ function scripts.people:retrieve_person_by_id(id)
     return db:fetch_sql(scripts.people.db.people, sql_str)
 end
 
+function scripts.people:retrieve_person_by_name(name)
+    local retrieved_people = nil
+
+    local sql_str = 'SELECT * FROM people WHERE name = "' .. string.title(name) .. '"'
+    return db:fetch_sql(scripts.people.db.people, sql_str)
+end
+
 function scripts.people:get_last_id()
     local sql_str = "SELECT * FROM people ORDER BY _row_id DESC LIMIT 1"
     return db:fetch_sql(scripts.people.db.people, sql_str)[1]["_row_id"]

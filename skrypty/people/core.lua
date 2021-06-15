@@ -221,15 +221,22 @@ function scripts.people:add_person_to_db(input_string)
     end
 
     local ret = nil
+    local name = string.title(arg_split[1])
+    local short = string.lower(arg_split[2])
+    local result = scripts.people:check_in_db(name, short)
+    if table.size(result) > 0 then
+        scripts:print_log("Postac o tym imieniu i opisie juz jest w bazie!")
+        return
+    end
 
     if #arg_split == 2 then
-        ret = scripts.people:add_person(string.title(arg_split[1]), string.lower(arg_split[2]), nil)
+        ret = scripts.people:add_person(name, short, nil)
     elseif #arg_split == 3 then
-        ret = scripts.people:add_person(string.title(arg_split[1]), string.lower(arg_split[2]), arg_split[3])
+        ret = scripts.people:add_person(name, short, arg_split[3])
     end
 
     if ret then
-        scripts:print_log("Postac <green>" .. string.title(arg_split[1]) .. "<tomato> dodana do bazy.")
+        scripts:print_log("Postac <green>" .. name .. "<tomato> dodana do bazy.")
     else
         scripts:print_log("Cos poszlo nie tak...")
     end

@@ -13423,7 +13423,7 @@
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>^Z oszczednego zamachu .* misternym obosiecznym toporem</string>
+											<string>^Z oszczednego zamachu .* uderza .* misternym obosiecznym toporem</string>
 											<string>^Szybkim ciosem jednego ze szpikulcow misternego obosiecznego topora .* uderza</string>
 										</regexCodeList>
 										<regexCodePropertyList>

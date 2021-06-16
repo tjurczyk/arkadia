@@ -260,12 +260,18 @@ function scripts.people:remove_person_from_db(id)
     end
 end
 
-function scripts.people:add_person_to_guild(imie, guild_name)
+function scripts.people:add_person_to_guild(id, guild_name)
     if not guild_name then
         error("Wrong input")
     end
 
-    local person = scripts.people:retrieve_person_by_name(imie)
+    local person = nil
+    if tonumber(id) then
+        person = scripts.people:retrieve_person_by_id(id)
+    else
+        person = scripts.people:retrieve_person_by_name(id)
+    end
+
     if table.is_empty(person) then
         scripts:print_log("Nie ma osoby o takim imieniu w bazie.")
         return

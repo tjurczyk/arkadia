@@ -13013,8 +13013,7 @@
 							<regexCodePropertyList />
 							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 								<name>zabiles_color</name>
-								<script>trigger_func_skrypty_ui_gags_color_color_other_zabiles_color()
-display(matches)</script>
+								<script>trigger_func_skrypty_ui_gags_color_color_other_zabiles_color()</script>
 								<triggerType>0</triggerType>
 								<conditonLineDelta>0</conditonLineDelta>
 								<mStayOpen>0</mStayOpen>

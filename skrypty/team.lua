@@ -64,6 +64,45 @@ function trigger_func_skrypty_team_left_team()
     tempTimer(0.4, function() ateam:restart_ateam(true) end)
 end
 
+function trigger_func_skrypty_team_clear_absent()
+    local druzyna
+    local druzyna_old = {}
+
+    for k, v in pairs(ateam.team) do
+        if type(v) == "number" then
+            table.insert(druzyna_old, ateam.objs[v]["desc"])
+        end
+    end
+
+    if matches[3] then
+        druzyna = string.gsub(matches[2] .. ", " .. matches[3], " i ", ", ")
+    else
+        druzyna = string.gsub(matches[2], " i ", ", ")
+    end
+
+    druzyna = string.gsub(druzyna, "kleczacy na ziemi ", "")
+    druzyna = string.gsub(druzyna, "kleczaca na ziemi ", "")
+    local disconnected = string.match(druzyna, "statua (%w+)")
+    if disconnected then
+        local id = scripts.utils:get_best_fuzzy_match(disconnected, druzyna_old, 0.6)
+        if id ~= -1 then
+            druzyna = string.gsub("statua " .. disconnected, druzyna_old[id])
+        end
+    end
+    druzyna = string.split(druzyna, ", ")
+
+    for k, v in pairs(ateam.team) do
+        if type(v) == "number" then
+            if not table.contains(druzyna, ateam.objs[v]["desc"]) then
+                scripts:print_log(ateam.objs[v]["desc"] .. " nie jest juz w druzynie.")
+                local letter = ateam.team[v]
+                ateam.team[v] = nil
+                ateam.team[letter] = nil
+            end
+        end
+    end
+end
+
 function trigger_func_skrypty_team_invite_bind()
     ateam:bind_joining(matches[2])
 end

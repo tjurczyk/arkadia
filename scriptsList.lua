@@ -346,6 +346,7 @@ return {
     "skrypty/ui/gags/color/color_moje_ciosy/jatagan",
     "skrypty/ui/gags/color/color_moje_ciosy/drag-ja",
     "skrypty/ui/gags/color/color_moje_ciosy/gryfi_mlot",
+    "skrypty/ui/gags/color/color_moje_ciosy/upiorny_mlot",
     "skrypty/ui/gags/color/color_moje_spece/str",
     "skrypty/ui/gags/color/color_moje_spece/mie",
     "skrypty/ui/gags/color/color_moje_spece/fan",

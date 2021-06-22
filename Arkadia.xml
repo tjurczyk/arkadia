@@ -12880,6 +12880,26 @@
 								</regexCodePropertyList>
 							</Trigger>
 							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+								<name>zajmuje_pozycje</name>
+								<script>trigger_func_skrypty_ui_gags_color_color_bloki_zajmuje_pozycje()</script>
+								<triggerType>0</triggerType>
+								<conditonLineDelta>0</conditonLineDelta>
+								<mStayOpen>0</mStayOpen>
+								<mCommand></mCommand>
+								<packageName></packageName>
+								<mFgColor>#ff0000</mFgColor>
+								<mBgColor>#ffff00</mBgColor>
+								<mSoundFile></mSoundFile>
+								<colorTriggerFgColor>#000000</colorTriggerFgColor>
+								<colorTriggerBgColor>#000000</colorTriggerBgColor>
+								<regexCodeList>
+									<string>.* zajmuje pozycje umozliwiajaca odciecie ([a-zA-Z (),!]+) drogi ucieczki\.$</string>
+								</regexCodeList>
+								<regexCodePropertyList>
+									<integer>1</integer>
+								</regexCodePropertyList>
+							</Trigger>
+							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 								<name>blokujesz_droge</name>
 								<script>trigger_func_skrypty_ui_gags_color_color_bloki_blokujesz_droge()</script>
 								<triggerType>0</triggerType>
@@ -12896,6 +12916,48 @@
 									<string>(^[ &gt;]*Blokujesz [a-zA-Z (),!]+ droge na .*\.$)</string>
 								</regexCodeList>
 								<regexCodePropertyList>
+									<integer>1</integer>
+								</regexCodePropertyList>
+							</Trigger>
+							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+								<name>blokuje_droge</name>
+								<script>trigger_func_skrypty_ui_gags_color_color_bloki_blokuje_droge()</script>
+								<triggerType>0</triggerType>
+								<conditonLineDelta>0</conditonLineDelta>
+								<mStayOpen>0</mStayOpen>
+								<mCommand></mCommand>
+								<packageName></packageName>
+								<mFgColor>#ff0000</mFgColor>
+								<mBgColor>#ffff00</mBgColor>
+								<mSoundFile></mSoundFile>
+								<colorTriggerFgColor>#000000</colorTriggerFgColor>
+								<colorTriggerBgColor>#000000</colorTriggerBgColor>
+								<regexCodeList>
+									<string>.*blokuje ([a-zA-Z (),!]+) droge na .*\.$</string>
+								</regexCodeList>
+								<regexCodePropertyList>
+									<integer>1</integer>
+								</regexCodePropertyList>
+							</Trigger>
+							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+								<name>blokuje_ci_droge</name>
+								<script>trigger_func_skrypty_ui_gags_color_color_bloki_blokuje_ci_droge()</script>
+								<triggerType>0</triggerType>
+								<conditonLineDelta>0</conditonLineDelta>
+								<mStayOpen>0</mStayOpen>
+								<mCommand></mCommand>
+								<packageName></packageName>
+								<mFgColor>#ff0000</mFgColor>
+								<mBgColor>#ffff00</mBgColor>
+								<mSoundFile></mSoundFile>
+								<colorTriggerFgColor>#000000</colorTriggerFgColor>
+								<colorTriggerBgColor>#000000</colorTriggerBgColor>
+								<regexCodeList>
+									<string>^Nie mozesz tego zrobic, gdyz .* blokuje ci droge\.$</string>
+									<string>^Nie mozesz sie tam udac, gdyz .* blokuje ci droge na .*\.$</string>
+								</regexCodeList>
+								<regexCodePropertyList>
+									<integer>1</integer>
 									<integer>1</integer>
 								</regexCodePropertyList>
 							</Trigger>
@@ -12956,6 +13018,28 @@
 									<string>(^[ &gt;]*([a-zA-Z (),!]+) przymierza sie do odciecia ([a-zA-Z ]+) drogi ucieczki\.$)</string>
 								</regexCodeList>
 								<regexCodePropertyList>
+									<integer>1</integer>
+								</regexCodePropertyList>
+							</Trigger>
+							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+								<name>blokowanie_proba_ty</name>
+								<script>trigger_func_skrypty_ui_gags_color_color_bloki_blokowanie_proba_ty()</script>
+								<triggerType>0</triggerType>
+								<conditonLineDelta>0</conditonLineDelta>
+								<mStayOpen>0</mStayOpen>
+								<mCommand></mCommand>
+								<packageName></packageName>
+								<mFgColor>#ff0000</mFgColor>
+								<mBgColor>#ffff00</mBgColor>
+								<mSoundFile></mSoundFile>
+								<colorTriggerFgColor>#000000</colorTriggerFgColor>
+								<colorTriggerBgColor>#000000</colorTriggerBgColor>
+								<regexCodeList>
+									<string>^Na rozkaz [a-zA-Z ]+ przymierzasz sie do odciecia [a-zA-Z ]+ drogi ucieczki\.$</string>
+									<string>^Przymierzasz sie do odciecia [a-zA-Z ]+ drogi ucieczki\.$</string>
+								</regexCodeList>
+								<regexCodePropertyList>
+									<integer>1</integer>
 									<integer>1</integer>
 								</regexCodePropertyList>
 							</Trigger>

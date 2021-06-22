@@ -13,11 +13,23 @@ function trigger_func_skrypty_ui_gags_color_color_bloki_blokuje_cie()
         return
     end
 
-    selectCurrentLine()
-    local str_replace = "[    BLOK    ] "
-    prefix(str_replace)
-    selectString(str_replace, 1)
-    fg("red")
+    scripts.sounds:play_beep_sequence()
+    creplaceLine("<red>\n\n[    BLOK    ] " .. matches[2])
+    resetFormat()
+end
+
+function trigger_func_skrypty_ui_gags_color_color_bloki_zajmuje_pozycje()
+    if scripts.gags:delete_line("bloki") then
+        return
+    end
+
+    if matches[2] == "ci" then
+        return
+    end
+
+    raiseEvent("playBeep")
+    tempTimer(0.3, function () raiseEvent("playBeep") end)
+    creplaceLine("<tomato>\n\n[    BLOK    ] " .. matches[1])
     resetFormat()
 end
 
@@ -26,11 +38,30 @@ function trigger_func_skrypty_ui_gags_color_color_bloki_zajmujesz_pozycje()
         return
     end
 
-    selectCurrentLine()
-    local str_replace = "[    BLOK    ] "
-    prefix(str_replace)
-    selectString(str_replace, 1)
-    fg("sea_green")
+    creplaceLine("<sea_green>\n\n[    BLOK    ] " .. matches[2])
+    resetFormat()
+end
+
+function trigger_func_skrypty_ui_gags_color_color_bloki_blokuje_ci_droge()
+    if scripts.gags:delete_line("bloki") then
+        return
+    end
+
+    raiseEvent("playBeep")
+    creplaceLine("<red>\n\n[    BLOK    ] <reset>" .. matches[1])
+    resetFormat()
+end
+
+function trigger_func_skrypty_ui_gags_color_color_bloki_blokuje_droge()
+    if scripts.gags:delete_line("bloki") then
+        return
+    end
+
+    if matches[2] == "ci" then
+        return
+    end
+
+    creplaceLine("<tomato>\n\n[    BLOK    ] <reset>" .. matches[1])
     resetFormat()
 end
 
@@ -88,3 +119,11 @@ function trigger_func_skrypty_ui_gags_color_color_bloki_blokowanie_proba_kogos()
     resetFormat()
 end
 
+function trigger_func_skrypty_ui_gags_color_color_bloki_blokowanie_proba_ty()
+    if scripts.gags:delete_line("bloki") then
+        return
+    end
+
+    creplaceLine("<sea_green>\n\n[    BLOK    ] " .. matches[1])
+    resetFormat()
+end

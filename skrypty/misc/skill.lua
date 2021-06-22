@@ -11,40 +11,18 @@ misc["skills_desc"] = {
     ["mistrzowsko"] = "[10/10]",
 }
 
+local colors = { "red", "orange", "yellow", "green", "SkyBlue"}
+
 function misc:skill_replace(text)
-    local um_matched = ""
     for k, v in pairs(misc["skills_desc"]) do
-        local str = selectString(k, 1)
-        if str > -1 then
-            um_matched = k
-            replace(k .. " " .. v)
-            break
-        end
-    end
+        local color = round( tonumber(v:sub(2,- 5)) / 11 * #colors)
+        local index = 1
+        while selectString(k, index) > -1 do
 
-    local found = false
-    for k, v in pairs(misc["skills_desc"]) do
-        local str = selectString(k, 2)
-        if str > -1 then
-            um_matched = k
-            replace(k .. " " .. v)
-            found = true
-            break
-        end
-    end
-
-    if found then
-        return
-    end
-
-    for k, v in pairs(misc["skills_desc"]) do
-        if um_matched ~= k then
-            local str = selectString(k, 1)
-            if str > -1 then
-                add_text = " " .. v
-                replace(k .. " " .. v)
-                break
-            end
+            creplace(string.format("<%s>%s %s<reset>%s", colors[color], k, scripts.utils.str_pad(v, 19 - k:len(), "right"), scripts.utils.str_pad("", k:len())))
+            selectString("]              ", 1)
+            replace("]", true)
+            index = index + 1
         end
     end
 end

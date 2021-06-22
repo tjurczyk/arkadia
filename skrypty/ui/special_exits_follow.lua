@@ -619,3 +619,39 @@ end
 function trigger_func_skrypty_ui_special_exits_follow_przecisnij_sie_miedzy_skalami()
     scripts.utils.bind_functional_team_follow(matches[2], "przecisnij sie miedzy skalami", 15)
 end
+
+function trigger_func_skrypty_ui_special_exits_follow_przecisnij_sie_przez_gaszcz()
+    scripts.utils.bind_functional_team_follow(matches[2], "przecisnij sie przez gaszcz", 15)
+end
+
+function trigger_func_skrypty_ui_special_exits_follow_przesun_glaz()
+    scripts.utils.bind_functional_team_follow(matches[2], "przesun glaz", 15)
+end
+
+function trigger_func_skrypty_ui_special_exits_follow_wejdz_do_szafy()
+    scripts.utils.bind_functional_team_follow(matches[2], "wejdz do szafy", 15)
+end
+
+function trigger_func_skrypty_ui_special_exits_follow_pchnij_sciane()
+    scripts.utils.bind_functional_team_follow(matches[2], "pchnij sciane", 15)
+end
+
+function trigger_func_skrypty_ui_special_exits_follow_wespnij_sie_do_kraty()
+    scripts.utils.bind_functional_team_follow(matches[2], "wespnij sie do kraty", 15)
+end
+
+function trigger_func_skrypty_ui_special_exits_follow_wejdz_do_okienka()
+    scripts.utils.bind_functional_team_follow(matches[2], "wejdz do okienka", 15)
+end
+
+function trigger_func_skrypty_ui_special_exits_follow_przecisnij_sie_przez_lukarne()
+    scripts.utils.bind_functional_team_follow(matches[2], "przecisnij sie przez lukarne", 15)
+end
+
+function trigger_func_skrypty_ui_special_exits_follow_wejdz_do_sarkofagu()
+    scripts.utils.bind_functional_team_follow(matches[2], "wejdz do sarkofagu", 15)
+end
+
+function trigger_func_skrypty_ui_special_exits_follow_zejdz_po_zboczu()
+    scripts.utils.bind_functional_team_follow(matches[2], "zejdz po zboczu", 15)
+end

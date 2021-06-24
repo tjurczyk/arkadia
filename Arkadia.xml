@@ -23808,7 +23808,7 @@
 						<string>Klekasz szukajac sladow.</string>
 						<string>Zaczynasz wspinac sie.*</string>
 						<string>Zaczynasz schodzic.*</string>
-						<string>^[ &gt;]*Siadasz</string>
+						<string>^[ &gt;]*Siadasz (?!okrakiem na miotle)</string>
 						<string>^[ &gt;]*Zajmujesz miejsce</string>
 						<string>Zaczynasz zglebiac</string>
 						<string>Klekasz na ziemi.*</string>
@@ -24025,7 +24025,7 @@
 						<string>Przy ciele znajdujesz </string>
 						<string>Twoje palce trafiaja na cos sypkiego i miekkiego. Gdy wyciagasz dlon jest ona pelna blyszczacego piasku.</string>
 						<string>Posrod pajeczyn dostrzegasz tajemniczy symbol wyrysowany kreda.</string>
-						<string>^Przestajesz doic krowe\.$</string>
+						<string>^Przestajesz doic</string>
 						<string>Niestety nic takiego tu nie ma.</string>
 						<string>Przeszukujesz [a-z ]+ znajdujac tam</string>
 						<string>Miedzy obsydianowymi soplami zauwazasz ukryte drzwi.</string>
@@ -24169,6 +24169,13 @@
 						<string>Wynurzasz sie z wody lapczywie lapiac powietrze w pluca.</string>
 						<string>Zanurzasz sie pod wode.</string>
 						<string>^W cuchnacej brei na dnie ogromnego kotla znajdujesz</string>
+						<string>Podrywasz sie z skorzanego fotela.</string>
+						<string>Po chwili wysilku udaje ci sie wymacac cos palcami. Ostroznie wygrzebujesz maly przedmiot, oczyszczajac go przy okazji z piachu i alg.</string>
+						<string>Po chwili cala ta czynnosc zaczyna byc nudna. W piasku chyba nie ma niczego poza zgnilymi wodorostami i bezwartosciowymi kawalkami drewna.</string>
+						<string>^Nadoil.s cieplego mleka\.$</string>
+						<string>Z ociaganiem podnosisz sie z wielkiego lozka.</string>
+						<string>Rozkopujesz zarosniety grob i przeszukujesz spoczywajacy w nim szkielet. Posrod spruchnialych, zniszczonych przedmiotow, udaje ci sie znalezc cos wartego uwagi.</string>
+						<string>^Po dokladnym przeszukaniu ciala stwierdzasz, ze korzystajac ze swoich umiejetnosci</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>0</integer>
@@ -24179,6 +24186,13 @@
 						<integer>1</integer>
 						<integer>3</integer>
 						<integer>3</integer>
+						<integer>3</integer>
+						<integer>3</integer>
+						<integer>1</integer>
+						<integer>3</integer>
+						<integer>3</integer>
+						<integer>3</integer>
+						<integer>1</integer>
 						<integer>3</integer>
 						<integer>3</integer>
 						<integer>1</integer>

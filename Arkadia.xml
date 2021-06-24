@@ -13917,7 +13917,7 @@
 									</Trigger>
 									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 										<name>mister 6</name>
-										<script>trigger_func_skrypty_ui_gags_misterny_we_mnie(6)</script>
+										<script>trigger_func_skrypty_ui_gags_misterny_innych(6)</script>
 										<triggerType>0</triggerType>
 										<conditonLineDelta>0</conditonLineDelta>
 										<mStayOpen>0</mStayOpen>

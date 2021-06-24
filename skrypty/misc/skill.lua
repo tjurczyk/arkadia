@@ -23,6 +23,7 @@ function misc:skill_replace(text)
             selectString("]              ", 1)
             replace("]", true)
             index = index + 1
+            resetFormat()
         end
     end
 end

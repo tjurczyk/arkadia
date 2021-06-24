@@ -89,7 +89,7 @@ end
 function amap:pre_on_key_event(force)
     local went_special = amap:check_room_on_direction_of(amap.curr, amap.dir_from_key, force)
     --local went_special = nil
-    if not went_special then
+    if not went_special and amap.long_to_short[amap.dir_from_key]then
         send(amap.walk_mode_to_prefix[amap.walk_mode] .. amap.long_to_short[amap.dir_from_key])
         amap:on_key_event()
     else

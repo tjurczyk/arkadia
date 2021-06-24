@@ -13419,7 +13419,7 @@
 								<colorTriggerFgColor>#000000</colorTriggerFgColor>
 								<colorTriggerBgColor>#000000</colorTriggerBgColor>
 								<regexCodeList>
-									<string>(^[ &gt;]*Zabil(es|as|) ([a-zA-Z (),!]+)\.$)</string>
+									<string>(^[ &gt;]*(Zabil(?:es|as|)) ([a-zA-Z (),!]+)\.$)</string>
 								</regexCodeList>
 								<regexCodePropertyList>
 									<integer>1</integer>
@@ -13439,7 +13439,7 @@
 								<colorTriggerFgColor>#000000</colorTriggerFgColor>
 								<colorTriggerBgColor>#000000</colorTriggerBgColor>
 								<regexCodeList>
-									<string>(^[ &gt;]*([a-zA-Z (),!]+) zabil(|a) ([a-zA-Z (),!]+)\.$)</string>
+									<string>(^[ &gt;]*([a-zA-Z (),!]+) (zabil(?:|a)) ([a-zA-Z (),!]+)\.$)</string>
 								</regexCodeList>
 								<regexCodePropertyList>
 									<integer>1</integer>

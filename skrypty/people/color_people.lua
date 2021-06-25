@@ -1,5 +1,5 @@
 function scripts.people:process_person_color(item, text, suffix, color, guild_color)
-    if item.name ~= text and suffix and not gmcp.gmcp_msgs.type == "room.short" then
+    if item.name ~= text and suffix and gmcp.gmcp_msgs.type ~= "room.short" then
         local full_sufix = "(" .. suffix .. ")"
         local replacement = string.format("%s %s", text, full_sufix)
         selectString(text, 1)

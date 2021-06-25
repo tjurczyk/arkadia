@@ -269,9 +269,9 @@ function alias_func_skrypty_misc_ocen_kamienie()
     misc:value_stones()
 end
 
-function alias_func_skrypty_misc_um()
+function alias_func_skrypty_misc_um(command)
     enableTrigger("scripts-um")
-    tempTimer(0.1, function() send("um", false) end)
+    tempTimer(0.1, function() send(command, false) end)
     tempTimer(0.5, function() disableTrigger("scripts-um") end)
 end
 

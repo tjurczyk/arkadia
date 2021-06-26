@@ -12,7 +12,7 @@ end
 function scripts.ui.no_weapon_alert:show_alert()
     if self.can_dispatch_alert and not self.is_knocked_off then
         scripts.messages:warning("Bijesz bez broni")
-        scripts.utils.bind_functional("dobadz wszystkich broni")
+        scripts.utils.bind_functional(scripts.inv.weapons.wield)
         if scripts.ui.cfg.states_window_navbar and table.contains(scripts.ui.cfg.states_window_nav_elements, "bron") then
             self:blink()
         end

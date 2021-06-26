@@ -38,9 +38,9 @@ function trigger_func_skrypty_ui_gags_color_color_other_mozesz_dobywac()
     raiseEvent("canWieldAfterKnockOff")
     creplaceLine("<green>\n\n[    BRON    ]<cornsilk> Mozesz dobyc broni klawiszem ']'\n\n")
     resetFormat()
-    scripts.utils.bind_functional("dobadz wszystkich broni")
+    scripts.utils.bind_functional(scripts.inv.weapons.wield)
     scripts.ui:info_action_update("DOBADZ")
-    scripts.ui.info_action_bind = "dobadz wszystkich broni"
+    scripts.ui.info_action_bind = scripts.inv.weapons.wield
 end
 
 function trigger_func_skrypty_ui_gags_color_color_other_wytracenie_tobie()
@@ -84,9 +84,9 @@ function trigger_func_skrypty_ui_gags_color_color_other_nekro_tilea()
     raiseEvent("playBeep")
     creplaceLine("<green>\n\n[    BRON    ]<cornsilk> Wez bron i dobadz jej\n\n")
     resetFormat()
-    scripts.utils.bind_functional("dobadz wszystkich broni")
+    scripts.utils.bind_functional(scripts.inv.weapons.wield)
     scripts.ui:info_action_update("WEZ BRON/DOBADZ")
-    scripts.ui.info_action_bind = "dobadz wszystkich broni"
+    scripts.ui.info_action_bind = scripts.inv.weapons.wield
 end
 
 function trigger_func_team_leadership()

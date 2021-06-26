@@ -1,7 +1,7 @@
 function scripts:print_help()
     cecho("+-------------------------- <green>Arkadia skrypty, ver " .. string.sub(scripts.ver .. "   ", 0, 5) .. "<grey> --------------------------+\n")
     cecho("|                                                                                |\n")
-    cecho("|         <yellow>https://github.com/tjurczyk/arkadia<grey>                                          |\n")
+    cecho("|         <yellow>https://github.com/tjurczyk/arkadia<grey>                                    |\n")
     cecho("|         <yellow>Chcesz zadotowac? <LawnGreen>Paypal: dzordzyk@gmail.com<grey>                           |\n")
     cecho("|                                                                                |\n")
     cecho("|                         -----------------------------                          |\n")

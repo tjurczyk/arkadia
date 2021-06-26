@@ -1,7 +1,7 @@
 function amap:print_help()
     cecho("+-------------------------- <green>Arkadia mapper, ver " .. string.sub(amap.ver .. "   ", 0, 5) .. "<grey> ---------------------------+\n")
     cecho("|                                                                                |\n")
-    cecho("|                         <yellow>https://github.com/tjurczyk/arkadia<grey>                          |\n")
+    cecho("|         <yellow>https://github.com/tjurczyk/arkadia<grey>                                    |\n")
     cecho("|                         <yellow>Chcesz zadotowac? <LawnGreen>Paypal: dzordzyk@gmail.com<grey>           |\n")
     cecho("|                                                                                |\n")
     cecho("|                         -----------------------------                          |\n")

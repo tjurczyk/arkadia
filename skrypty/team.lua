@@ -74,14 +74,15 @@ function trigger_func_skrypty_team_clear_absent()
         end
     end
 
+    druzyna = matches[2]
     if matches[3] then
-        druzyna = string.gsub(matches[2] .. ", " .. matches[3], " i ", ", ")
-    else
-        druzyna = string.gsub(matches[2], " i ", ", ")
+        druzyna = druzyna .. ", " .. matches[3]
     end
 
-    druzyna = string.gsub(druzyna, "kleczacy na ziemi ", "")
-    druzyna = string.gsub(druzyna, "kleczaca na ziemi ", "")
+    druzyna = string.gsub(druzyna, " i ", ", ")
+    druzyna = string.gsub(druzyna, "kleczac. na ziemi ", "")
+    druzyna = string.gsub(druzyna, "skryt. za %w+ ", "")
+
     local disconnected = string.match(druzyna, "statua (%w+)")
     if disconnected then
         local id = scripts.utils:get_best_fuzzy_match(disconnected, druzyna_old, 0.6)

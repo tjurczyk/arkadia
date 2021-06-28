@@ -15,14 +15,14 @@ local colors = { "red", "orange", "yellow", "green", "SkyBlue"}
 
 function misc:skill_replace(text)
     for k, v in pairs(misc["skills_desc"]) do
-        local color = round( tonumber(v:sub(2,- 5)) / 11 * #colors)
+        local color = math.max(1, round( tonumber(v:sub(2,- 5)) / 11 * #colors))
         local index = 1
         while selectString(k, index) > -1 do
-
             creplace(string.format("<%s>%s %s<reset>%s", colors[color], k, scripts.utils.str_pad(v, 19 - k:len(), "right"), scripts.utils.str_pad("", k:len())))
             selectString("]              ", 1)
             replace("]", true)
             index = index + 1
+            resetFormat()
         end
     end
 end

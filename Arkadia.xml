@@ -26079,10 +26079,10 @@
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
 					<name>um</name>
-					<script>alias_func_skrypty_misc_um()</script>
+					<script>alias_func_skrypty_misc_um(matches[1])</script>
 					<command></command>
 					<packageName></packageName>
-					<regex>^um(|iejetnosci)$</regex>
+					<regex>^um(?:|iejetnosci)( \w+)?$</regex>
 				</Alias>
 				<AliasGroup isActive="yes" isFolder="yes">
 					<name>wiedza</name>

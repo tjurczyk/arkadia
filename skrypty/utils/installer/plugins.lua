@@ -59,7 +59,9 @@ function scripts.plugins_installer:handle_unzip(event, plugin_name, branch, ...)
     if event == "sysUnzipDone" then
         if branch then
             local base_name = self.plugin_directory .. plugin_name
-            scripts.installer.delete_dir(base_name)
+            if lfs.isdir(base_name) then
+                scripts.installer.delete_dir(base_name)
+            end
             os.rename(base_name .. "-" .. branch, base_name)
         end
         scripts:print_log("Plugin " .. plugin_name .. " rozpakowany")

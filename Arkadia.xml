@@ -2172,7 +2172,7 @@
 					<name>gonienie</name>
 					<script>trigger_func_skrypty_misc_gonienie()</script>
 					<triggerType>0</triggerType>
-					<conditonLineDelta>8</conditonLineDelta>
+					<conditonLineDelta>20</conditonLineDelta>
 					<mStayOpen>0</mStayOpen>
 					<mCommand></mCommand>
 					<packageName></packageName>

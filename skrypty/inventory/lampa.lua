@@ -27,6 +27,7 @@ end
 
 function scripts.inv.lamp:take_bottle()
     scripts.inv:get_from_bag({"olej"}, "other", 1)
+    send("napelnij lampe olejem")
 end
 
 function scripts.inv.lamp:empty_bottle()

@@ -106,11 +106,11 @@ function alias_func_skrypty_people_usun_osobe()
 end
 
 function alias_func_skrypty_people_dodaj_gildie()
-    scripts.people:add_person_to_guild(tonumber(matches[2]), matches[3])
+    scripts.people:add_person_to_guild(matches[2], matches[3])
 end
 
 function alias_func_skrypty_people_usun_gildie()
-    scripts.people:add_person_to_guild(tonumber(matches[2]), 0)
+    scripts.people:add_person_to_guild(matches[2], 0)
 end
 
 function alias_func_skrypty_people_zgildiowani()

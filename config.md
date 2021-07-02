@@ -4,6 +4,16 @@ Tutaj ustaw Twoje imie (miedzy innymi do globalnego licznika postepow i zabitych
 
 ---
 
+## `scripts.config_watch.enabled`
+
+Flaga okreslajaca czy automatyczne przeladowywanie configu na zmiany w pliku ma byc wlaczone.
+
+Dozwolone wartosci
+* `true`  - zmiany beda automatycznie przeladowywane
+* `false` - zmiany nie beda automatycznie przeladowywane
+
+---
+
 ## `ateam.all_numbering`
 Domyslna opcja czy maja byc numerowani neutralni osobnicy na lokacji
 
@@ -30,6 +40,13 @@ Dozwolone wartosci
 Sortowanie alfabetyczne druzyny w oknie kondycji.
 * `true` - włączone
 * `false` - wyłączone
+
+---
+
+## `ateam.options.own_name`
+
+Określa jaka nazwa będzie wyświetlana obok naszej kondycji w oknie kondycji.
+Domyślnie `JA`
 
 ---
 
@@ -893,6 +910,11 @@ Szerokosc (w %) dolnej belki
 
 ---
 
+## `scripts.ui.footer_actions_height`
+Wysokosc (w pikselach) paska akcji (gorna czesc stopki)
+
+---
+
 ## `scripts.ui.footer_map_width_p`
 
 Jaki % dolnej belki ma zajmowac roza wiatrow
@@ -1019,6 +1041,12 @@ Mozliwe opcje to:
 ```json
 "scripts.ui.cfg.info_items" : ["weapon", "order", "cover", "killed", "sneaky", "hidden", "attack", "collect","mail", "alert", "lamp", "compass", "combat" ]
 ```
+
+---
+
+## `scripts.ui.multibinds.font_size`
+
+Wielkosc czcionki paska akcji (multibindow)
 
 ---
 

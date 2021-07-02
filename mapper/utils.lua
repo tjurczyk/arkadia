@@ -166,7 +166,7 @@ function amap:print_welcome_msg()
     amap:print_log("Uzywasz Arkadia Mapper ver. " .. amap.ver .. ". Pomoc dostepna w '/mapper'")
 end
 
-tempTimer(10, [[ amap:print_welcome_msg() ]])
+tempTimer(10, function() amap:print_welcome_msg() end)
 
 function amap:set_option(option, value)
     local success = true

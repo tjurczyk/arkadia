@@ -18,12 +18,10 @@ end
 
 function trigger_func_skrypty_ui_footer_elements_mail_masz_poczte()
     raiseEvent("playBeep")
-    tempTimer(1, [[ raiseEvent("playBeep") ]])
-    tempTimer(2, [[ raiseEvent("playBeep") ]])
+    tempTimer(1, function() raiseEvent("playBeep") end)
+    tempTimer(2, function() raiseEvent("playBeep") end)
 
-    selectCurrentLine()
-    deleteLine()
-    cecho("<tomato>\n[  POCZTA   ] " .. matches[2] .. "\n")
+    creplaceLine("<tomato>\n[  POCZTA   ] " .. matches[2] .. "\n")
     resetFormat()
 
     if not scripts.ui.footer_info_mail_mode or scripts.ui.footer_info_mail_mode == "" then

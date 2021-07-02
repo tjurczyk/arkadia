@@ -67,6 +67,10 @@ function amap_ui_set_dirs_trigger(dirs, leave_as_is)
     end
 
     local exits = getSpecialExitsSwap(amap.curr.id)
+    local swap = {}
+    for k,v in pairs(exits) do
+        swap[v] = swap[v] or k
+    end
     local special_dirs = {}
     if not exits then
         raiseEvent("amapCompassDrawingDone", regular_dirs, special_dirs)
@@ -74,9 +78,9 @@ function amap_ui_set_dirs_trigger(dirs, leave_as_is)
     end
 
     local id = 1
-    for k, v in pairs(exits) do
-        special_dirs[k] = true
-        amap.ui:set_special_dir(id, k)
+    for k, v in pairs(swap) do
+        special_dirs[v] = true
+        amap.ui:set_special_dir(id, v)
         id = id + 1
         if id == 4 then
             break

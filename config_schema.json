@@ -149,6 +149,11 @@
       ]
     },
     {
+        "name": "scripts.config_watch.enabled",
+        "default_value": true,
+        "field_type": "boolean"
+      },
+    {
       "name": "ateam.attack_commands",
       "default_value": [
         "zabij"
@@ -173,6 +178,14 @@
       "macros_on_modify": [
         "_ateam"
       ]
+    },
+    {
+        "name": "ateam.options.own_name",
+        "default_value": "JA",
+        "field_type": "string",
+        "macros_on_modify": [
+            "_ateam"
+        ]
     },
     {
       "name": "ateam.options.alphabetical_sort_team",
@@ -1324,7 +1337,7 @@
     },
     {
       "name": "scripts.ui.footer_height",
-      "default_value": 70,
+      "default_value": 100,
       "field_type": "number",
       "macros_on_modify": [
         "_ux"
@@ -1338,6 +1351,14 @@
         "_ux"
       ]
     },
+    {
+        "name": "scripts.ui.footer_actions_height",
+        "default_value": 25,
+        "field_type": "number",
+        "macros_on_modify": [
+          "_ux"
+        ]
+      },
     {
       "name": "scripts.ui.footer_map_width_p",
       "default_value": 14,
@@ -1477,6 +1498,14 @@
       "macros_on_modify": [
         "_ux"
       ]
+    },
+    {
+        "name": "scripts.ui.multibinds.font_size",
+        "default_value": 10,
+        "field_type": "number",
+        "macros_on_modify": [
+          "_ux"
+        ]
     },
     {
       "name": "scripts.ui.bind_color",

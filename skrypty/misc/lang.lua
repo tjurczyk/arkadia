@@ -30,7 +30,10 @@ misc.lang["languages"] = {
     ["ghassally"] = 21
 }
 
-misc.lang["inv_languages"] = table.keys(misc.lang.languages)
+misc.lang["inv_languages"] = {}
+for k, v in pairs(misc.lang["languages"]) do
+    misc.lang["inv_languages"][v] = k
+end
 
 misc.lang["aliases"] = {}
 

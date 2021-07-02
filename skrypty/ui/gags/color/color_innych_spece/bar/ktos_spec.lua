@@ -28,5 +28,6 @@ end
 
 function trigger_func_skrypty_ui_gags_color_color_innych_spece_bar_ktos_spec_ktos_ogluch()
     scripts.gags:gag_prefix("BAR OGL", "innych_spece")
+    ateam:may_setup_paralyzed_name(matches[2])
 end
 

@@ -28,9 +28,38 @@ function scripts.people:retrieve_person_by_id(id)
     return db:fetch_sql(scripts.people.db.people, sql_str)
 end
 
+function scripts.people:retrieve_person_by_name(name)
+    local retrieved_people = nil
+
+    local sql_str = 'SELECT * FROM people WHERE name = "' .. string.title(name) .. '"'
+    return db:fetch_sql(scripts.people.db.people, sql_str)
+end
+
+function scripts.people:check_in_db(name, short)
+    local retrieved_people = nil
+
+    local sql_str = 'SELECT * FROM people WHERE name ="' .. string.title(name) .. '" AND short = "' .. string.lower(short) .. '"'
+    return db:fetch_sql(scripts.people.db.people, sql_str)
+end
+
 function scripts.people:get_last_id()
     local sql_str = "SELECT * FROM people ORDER BY _row_id DESC LIMIT 1"
     return db:fetch_sql(scripts.people.db.people, sql_str)[1]["_row_id"]
+end
+
+local ranks = {
+    "Kapitan",
+    "Sierzant",
+    "'Krotki'",
+    "Kapral",
+    "'Profesor' vel "
+}
+
+function scripts.people:strip_ranks(name)
+    for _, rank in pairs(ranks) do
+        name = name:gsub("^" .. rank, ""):trim()
+    end
+    return name
 end
 
 function scripts.people:process_trigger_data(short, title)
@@ -43,6 +72,7 @@ function scripts.people:process_trigger_data(short, title)
         -- name is then
         return short, nil
     else
+        title = scripts.people:strip_ranks(title)
         -- this is when "Siwy siwobrody mezczyzna przedstawia sie jako:"
         -- then get the name from title (first word separated by space)
         local ret_name = string.split(title, " ")[1]

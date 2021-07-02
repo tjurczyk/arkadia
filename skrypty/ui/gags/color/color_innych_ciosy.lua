@@ -34,6 +34,10 @@ function trigger_func_skrypty_ui_gags_color_color_innych_ciosy_ktos_rani()
         return
     end
 
+    if string.starts(matches[1], "Dostrzegajac szanse na skuteczny atak") then
+        return
+    end
+
     scripts.gags:gag(3, 6, "innych_ciosy")
 end
 

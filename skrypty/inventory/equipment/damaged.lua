@@ -1,9 +1,7 @@
 scripts.inv.damaged = scripts.inv.damaged or {}
 
 function scripts.inv.damaged:alert(message, type)
-    selectCurrentLine()
-    deleteLine()
-    cecho("<tomato>\n\n[  ZNISZCZONY   ] " .. message .. "\n\n")
+    creplaceLine("<tomato>\n\n[  ZNISZCZONY   ] " .. message .. "\n\n")
     resetFormat()
 
     raiseEvent("playBeep")

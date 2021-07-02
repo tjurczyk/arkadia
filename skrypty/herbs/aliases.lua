@@ -1,4 +1,4 @@
-local biernik_digits = {2,3,4}
+local biernik_digits = { 2, 3, 4 }
 
 function herbs:get_herbs(name, amount)
     if not herbs.herbs_details[name] then
@@ -61,8 +61,8 @@ function herbs:get_case(herb_id, herb_amount)
 end
 
 function herbs:send_get_commands(bag_id, amount, herb_id)
-    send("otworz " .. scripts.id_to_string[bag_id] .. " woreczek")
-    send(string.format("wez %d %s z otwartego woreczka", amount, herbs:get_case(herb_id, amount)))
+    send("otworz " .. bag_id .. ". woreczek")
+    send(string.format("wez %d %s z %d. woreczka", amount, herbs:get_case(herb_id, amount), bag_id))
     send("zamknij otwarte woreczki")
 end
 
@@ -72,8 +72,6 @@ function herbs:pack_herb_with_herb(bag_number, herb)
         scripts:print_log("Nie znam takiego ziola")
         return
     end
-
-    local bag_number_string = scripts.id_to_string[bag_number]
 
     if not herbs.index[herb] or table.size(herbs.index[herb]) == 0 then
         scripts:print_log("Nie ma tego ziola w woreczkach")
@@ -94,7 +92,7 @@ function herbs:pack_herb_with_herb(bag_number, herb)
     end
 
     -- pack to the bag
-    sendAll("otworz " .. bag_number_string .. " woreczek", "wloz ziola do niego", "zamknij woreczki")
+    sendAll("otworz " .. bag_number .. ". woreczek", "wloz ziola do ".. bag_number .. ". woreczka", "zamknij otwarte woreczki")
 
     if to_get == 0 then
         scripts:print_log("Zapakowane")

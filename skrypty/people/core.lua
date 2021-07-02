@@ -15,14 +15,18 @@ function scripts.people:process_someone(short, name)
         tempTimer(math.random() * 0.4, function() scripts.people:process_someone_delay(short, name) end)
     end
 
-    local name_short = short
-    name_short = name_short:gsub(" ", "_")
 
     local title = name
     title = title:gsub(" ", "_")
+    
+    name = scripts.people:strip_ranks(name)
 
-    downloadFile(getMudletHomeDir() .. "/empty", "http://158.69.205.60/cgi-bin/people_listener.py?people_string=" .. name_short .. "!" .. title)
+    local name_short = short
+    name_short = name_short:gsub(" ", "_")
+
+    getHTTP("http://158.69.205.60/cgi-bin/people_listener.py?people_string=" .. name_short .. "!" .. title)
 end
+
 
 function scripts.people:process_someone_delay(short, title)
     local name = nil
@@ -217,15 +221,22 @@ function scripts.people:add_person_to_db(input_string)
     end
 
     local ret = nil
+    local name = string.title(arg_split[1])
+    local short = string.lower(arg_split[2])
+    local result = scripts.people:check_in_db(name, short)
+    if table.size(result) > 0 then
+        scripts:print_log("Postac o tym imieniu i opisie juz jest w bazie!")
+        return
+    end
 
     if #arg_split == 2 then
-        ret = scripts.people:add_person(arg_split[1], string.lower(arg_split[2]), nil)
+        ret = scripts.people:add_person(name, short, nil)
     elseif #arg_split == 3 then
-        ret = scripts.people:add_person(arg_split[1], string.lower(arg_split[2]), arg_split[3])
+        ret = scripts.people:add_person(name, short, arg_split[3])
     end
 
     if ret then
-        scripts:print_log("Osoba dodana")
+        scripts:print_log("Postac <green>" .. name .. "<tomato> dodana do bazy.")
     else
         scripts:print_log("Cos poszlo nie tak...")
     end
@@ -254,38 +265,46 @@ function scripts.people:add_person_to_guild(id, guild_name)
         error("Wrong input")
     end
 
-    local person = scripts.people:retrieve_person_by_id(id)
-    if #person == 0 then
-        scripts:print_log("Nie ma osoby o takim ID")
+    local person = nil
+    if tonumber(id) then
+        person = scripts.people:retrieve_person_by_id(id)
+    else
+        person = scripts.people:retrieve_person_by_name(id)
+    end
+
+    if table.is_empty(person) then
+        scripts:print_log("Nie ma osoby o takim imieniu w bazie.")
         return
     end
-    person = person[1]
 
     local guild_code = nil
-    if scripts.people["guilds"][guild_name] then
+
+    if scripts.people["guilds"][guild_name] or guild_name == 0 then
         guild_code = scripts.people["guilds"][guild_name]
+    else
+        scripts:print_log("Nierozpoznana gildia!")
+        return
     end
 
-    local ret = nil
-
-    if not guild_code then
-        person["guild"] = 0
-        if scripts.people:update_person(person) then
-            ret = "Usunieta gildia z osoby o id <green>" .. tostring(person._row_id) .. "<tomato>."
-        else
-            ret = "Cos poszlo nie tak..."
+    if guild_name == 0 then
+        for k, v in pairs(person) do
+            v["guild"] = 0
+            if scripts.people:update_person(v) then
+                scripts:print_log("Usunieta gildia postaci o imieniu <green>" .. v.name .. "<tomato> i opisie: <green>" .. v.short .. "<tomato>.")
+            else
+                scripts:print_log("Cos poszlo nie tak...")
+            end
         end
     else
-        person["guild"] = guild_code
-        if scripts.people:update_person(person) then
-            ret = "Dodana gildia <green>" .. guild_name .. "<tomato> do osoby o id <green>" .. tostring(person._row_id) .. "<tomato>."
-        else
-            ret = "Cos poszlo nie tak..."
+        for k, v in pairs(person) do
+            v["guild"] = guild_code
+            if scripts.people:update_person(v) then
+                scripts:print_log("Dodana gildia <green>" .. guild_name .. "<tomato> do postaci o imieniu <green>" .. v.name .. "<tomato> i opisie: <green>" .. v.short .. "<tomato>.")
+            else
+                scripts:print_log("Cos poszlo nie tak...")
+            end
         end
-        scripts.people:update_person(person)
     end
-
-    scripts:print_log(ret)
 end
 
 function scripts.people:modify_person(id, key, val)

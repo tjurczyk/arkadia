@@ -26,6 +26,7 @@ ateam = ateam or {
     paralyzed_name_to_safety_timer = {},
     broken_defense_name_to_safety_timer = {},
     options = {
+        own_name = "JA",
         team_numbering_mode = "mode1",
         team_mate_stun_bg_color = "goldenrod",
         team_mate_stun_fg_color = "black",
@@ -63,6 +64,46 @@ function trigger_func_skrypty_team_left_team()
     tempTimer(0.4, function() ateam:restart_ateam(true) end)
 end
 
+function trigger_func_skrypty_team_clear_absent()
+    local druzyna
+    local druzyna_old = {}
+
+    for k, v in pairs(ateam.team) do
+        if type(v) == "number" then
+            table.insert(druzyna_old, ateam.objs[v]["desc"])
+        end
+    end
+
+    druzyna = matches[2]
+    if matches[3] then
+        druzyna = druzyna .. ", " .. matches[3]
+    end
+
+    druzyna = string.gsub(druzyna, " i ", ", ")
+    druzyna = string.gsub(druzyna, "kleczac. na ziemi ", "")
+    druzyna = string.gsub(druzyna, "skryt. za %w+ ", "")
+
+    local disconnected = string.match(druzyna, "statua (%w+)")
+    if disconnected then
+        local id = scripts.utils:get_best_fuzzy_match(disconnected, druzyna_old, 0.6)
+        if id ~= -1 then
+            druzyna = string.gsub("statua " .. disconnected, druzyna_old[id])
+        end
+    end
+    druzyna = string.split(druzyna, ", ")
+
+    for k, v in pairs(ateam.team) do
+        if type(v) == "number" then
+            if not table.contains(druzyna, ateam.objs[v]["desc"]) then
+                scripts:print_log(ateam.objs[v]["desc"] .. " nie jest juz w druzynie.")
+                local letter = ateam.team[v]
+                ateam.team[v] = nil
+                ateam.team[letter] = nil
+            end
+        end
+    end
+end
+
 function trigger_func_skrypty_team_invite_bind()
     ateam:bind_joining(matches[2])
 end
@@ -84,7 +125,7 @@ function alias_func_skrypty_team_zabij()
 end
 
 function alias_func_skrypty_team_zabij_noarg()
-    send("zabij cel ataku", true)
+    ateam:zab2_func("cel ataku")
 end
 
 function alias_func_skrypty_team_zaslon_team()

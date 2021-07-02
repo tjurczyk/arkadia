@@ -94,6 +94,7 @@ end
 
 function ScriptsConfig:save_config(options)
     silent = options.silent
+    scripts.config_watch:pause()
     file = io.open(self._config_file_path, "w")
     io.output(file)
     io.write("{\n")
@@ -151,6 +152,7 @@ function ScriptsConfig:save_config(options)
     if not silent then
         scripts:print_log("zapisalem config dla profilu '" .. self._config_name .. "'")
     end
+    scripts.config_watch:unpause()
 end
 
 function ScriptsConfig:apply_fixers()

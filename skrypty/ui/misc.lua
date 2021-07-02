@@ -23,46 +23,42 @@ function trigger_func_skrypty_ui_misc_klapa_campogrotta()
     resetFormat()
 end
 
-function trigger_func_skrypty_ui_misc_zniszczona_bron()
-    selectCurrentLine()
-    deleteLine()
-    cecho("<tomato>\n\n[  SPRZET  ] " .. matches[2] .. "\n\n")
-    resetFormat()
-
-    raiseEvent("playBeep")
-    scripts.ui:info_action_update("ZNI. BRON")
-    scripts.utils.bind_functional("odloz zlamana bron")
-    scripts.ui.info_action_bind = "odloz zlamana bron"
-end
-
-function trigger_func_skrypty_ui_misc_zniszczony_sprzet()
+function trigger_func_skrypty_ui_misc_zniszczona_bron(owner)
     creplaceLine("<tomato>\n\n[  SPRZET  ] " .. matches[1] .. "\n\n")
     resetFormat()
 
-    raiseEvent("playBeep")
-    scripts.ui:info_action_update("ZNI. ZBROJA")
-    scripts.utils.bind_functional("odloz zniszczona zbroje")
-    scripts.ui.info_action_bind = "odloz zniszczona zbroje"
+    if not owner then
+        raiseEvent("playBeep")
+        scripts.ui:info_action_update("ZNI. BRON")
+        scripts.utils.bind_functional("odloz zlamana bron")
+        scripts.ui.info_action_bind = "odloz zlamana bron"
+    end
+end
+
+function trigger_func_skrypty_ui_misc_zniszczony_sprzet(owner)
+    creplaceLine("<tomato>\n\n[  SPRZET  ] " .. matches[1] .. "\n\n")
+    resetFormat()
+
+    if not owner then
+        raiseEvent("playBeep")
+        scripts.ui:info_action_update("ZNI. ZBROJA")
+        scripts.utils.bind_functional("odloz zniszczona zbroje")
+        scripts.ui.info_action_bind = "odloz zniszczona zbroje"
+    end
 end
 
 function trigger_func_skrypty_ui_misc_wyverna_trucizna_off()
-    selectCurrentLine()
-    deleteLine()
-    cecho("<LawnGreen>\n\n[  ZDROWIE  ] <grey>" .. matches[2] .. "\n\n")
+    creplaceLine("<LawnGreen>\n\n[  ZDROWIE  ] <grey>" .. matches[2] .. "\n\n")
     scripts.ui:info_action_update("")
 end
 
 function trigger_func_skrypty_ui_misc_wyverna_trucizna_on()
-    selectCurrentLine()
-    deleteLine()
-    cecho("<tomato>\n\n[  ZDROWIE  ] <grey>" .. matches[2] .. "\n\n")
+    creplaceLine("<tomato>\n\n[  ZDROWIE  ] <grey>" .. matches[2] .. "\n\n")
     scripts.ui:info_action_update("ZATRUTY")
 end
 
 function trigger_func_skrypty_ui_misc_ghoul_trucizna()
-    selectCurrentLine()
-    deleteLine()
-    cecho("<tomato>\n\n[  ZDROWIE  ] <grey>" .. matches[1] .. "\n\n")
+    creplaceLine("<tomato>\n\n[  ZDROWIE  ] <grey>" .. matches[1] .. "\n\n")
     scripts.ui:info_action_update("ZATRUTY")
 end
 

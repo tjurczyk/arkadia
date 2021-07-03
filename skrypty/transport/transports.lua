@@ -123,6 +123,25 @@ local definitions = {
                 set_pattern = "^(?:Czarnowlosy barczysty mezczyzna|Ancelmus) krzyczy: Nastepnym portem bedzie przystan na Blekitnej Wstedze!$",
             },
         }
+    },
+    ["Louis"] = {
+        enter = "Wchodzisz na rzeczna tratwe.",
+        start = "Tratwa odbija od brzegu.",
+        exit = "Schodzisz z tratwy.",
+        stops = {
+            {
+                start = 7732,
+                destination = 7733,
+                time = 25,
+                stop_pattern = "^(?:Smagly przygarbiony mezczyzna|Louis) krzyczy: Doplynelismy do przystani na poludniowym brzegu Grismerie! Mozna wysiadac!"
+            },
+            {
+                start = 7733,
+                destination = 7732,
+                time = 25,
+                stop_pattern = "^(?:Smagly przygarbiony mezczyzna|Louis) krzyczy: Doplynelismy do przystani na polnocnym brzegu Grismerie! Mozna wysiadac!"
+            }
+        }
     }
 }
 
@@ -179,7 +198,9 @@ end
 
 function scripts.transports:create_ride(definition_key, index)
     scripts:print_log("Create ride " .. definition_key .. " " .. index)
-    table.insert(self.active_rides, self.ride:new(definitions[definition_key], index, function(ride) self:remove_ride(ride) end))
+    local ride = self.ride:new(definition_key, definitions[definition_key], index, function(ride) self:remove_ride(ride) end)
+    table.insert(self.active_rides, ride)
+    return ride
 end
 
 function scripts.transports:remove_ride(ride)

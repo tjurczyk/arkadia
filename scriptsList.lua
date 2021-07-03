@@ -141,6 +141,8 @@ return {
     "skrypty/misc/misc_on_exit_dump",
     "skrypty/misc/misc_load_dump",
     "skrypty/misc/compare_with_everyone",
+    "skrypty/transport/transports",
+    "skrypty/transport/ride",
     "skrypty/utils/colors",
     "skrypty/utils/list",
     "skrypty/utils/sounds",

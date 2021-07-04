@@ -1,7 +1,7 @@
 scripts.transports.ride = {}
 
-local bar_height = 20
-local bar_width = 200
+local bar_height = 30
+local bar_width = 300
 local padding = 10
 
 function scripts.transports.ride:new(id, definition, index, cleanup_callback)
@@ -14,6 +14,7 @@ function scripts.transports.ride:new(id, definition, index, cleanup_callback)
     o.on_board = false
     o.cleanup_callback = cleanup_callback
     o.triggers = {}
+    o.handlers = {}
     o:init()
     o:initate_cleanup()
     return o
@@ -21,7 +22,19 @@ end
 
 function scripts.transports.ride:init()
     table.insert(self.triggers, tempExactMatchTrigger(self.definition.enter, function() self:enter() end))
-    table.insert(self.triggers, tempExactMatchTrigger(self.definition.exit, function() self:exit() end))
+    if self.definition.exit then
+        table.insert(self.triggers, tempExactMatchTrigger(self.definition.exit, function() self:exit() end))
+    end
+    if self.definition.exit_command then
+        table.insert(self.handlers, registerAnonymousEventHandler("sysDataSendRequest", function(_, command) 
+            if self.definition.exit_command ~= command then
+                return
+            end
+            registerAnonymousEventHandler("gmcp.room.info", function(_)
+                self:exit()
+            end, true)
+        end), true)
+    end
     table.insert(self.triggers, tempExactMatchTrigger(self.definition.start, function() self:start() end))
 end
 
@@ -58,6 +71,9 @@ function scripts.transports.ride:cleanup()
     if self.progress_timer then
         killTimer(self.progress_timer)
     end
+    for _, handlerId in pairs(self.handlers) do
+        killAnonymousEventHandler(handlerId)
+    end
     self:cleanup_callback()
 end
 
@@ -80,56 +96,43 @@ end
 
 function scripts.transports.ride:stop()
     local expected_time = self.definition.stops[self.index].time
+
+    local delta = os.time() - self.start_time
+    if delta < expected_time then
+        scripts:print_log("Czas podrozy " .. delta)
+    end
+
     self.index = self.index >= #self.definition.stops and 1 or self.index + 1
     scripts.transports:remove_invalid_rides(self)
     if self.progress_timer then
         killTimer(self.progress_timer)
     end
     self.progress_timer = nil
-    local delta = os.time() - self.start_time
-    if delta < expected_time then
-        scripts:print_log("Czas plyniecia " .. delta)
-    end
     self:hide_progress()
 end
 
 function scripts.transports.ride:show_progress()
     local border_bottom = getBorderBottom()
-    local border_left = getBorderLeft()
-    
-    setBorderBottom(border_bottom + bar_height + padding * 4)
+    local border_right = getBorderRight()
     
     self.progress = Geyser.Gauge:new({
         name = string.format("transport.progress.%s.%s", self.id, self.index),
-        x = border_left + padding * 2,
-        y = -border_bottom - padding * 4 - bar_height,
+        x = -border_right - padding * 2 - bar_width,
+        y = -border_bottom - padding + (-padding * 2 - bar_height ) * (#scripts.transports.active_rides),
         height = bar_height,
-        width = bar_width
+        width = bar_width,
+        fontSize = getFontSize() - 1,
+        font = getFont()
     })
-
-
-    self.progress.front:setStyleSheet([[
-        background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #f04141, stop: 0.1 #ef2929, stop: 0.49 #cc0000, stop: 0.5 #a40000, stop: 1 #cc0000);
-        padding: 3px;
-    ]])
-
-    self.progress.back:setStyleSheet([[
-        background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #bd3333, stop: 0.1 #bd2020, stop: 0.49 #990000, stop: 0.5 #700000, stop: 1 #990000;
-        padding: 3px;
-    ]])
-
 
     self:update_progress()
 end
 
 function scripts.transports.ride:update_progress()
     local current, total = self:get_progress()
-    self.progress:setValue(current, total, string.format("<center>%s -> %s   %s/%s</center>", self.definition.stops[self.index].start, self.definition.stops[self.index].destination, current, total))
+    self.progress:setValue(math.min(current, total), total, string.format("<pre><center>%s -> %s   %s/%s</center></pre>", self.definition.stops[self.index].start, self.definition.stops[self.index].destination, scripts.utils.str_pad(tostring(current), string.len(tostring(total)), "right"), total))
 end
 
 function scripts.transports.ride:hide_progress()
     self.progress:hide()
-
-    local border_bottom = getBorderBottom()
-    setBorderBottom(border_bottom - bar_height - padding * 4)
 end

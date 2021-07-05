@@ -34,7 +34,7 @@
 				<regexCodePropertyList />
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>left_team</name>
-					<script>trigger_func_skrypty_team_left_team()</script>
+					<script>trigger_func_skrypty_team_left_team(matches[2])</script>
 					<triggerType>0</triggerType>
 					<conditonLineDelta>0</conditonLineDelta>
 					<mStayOpen>0</mStayOpen>
@@ -50,9 +50,11 @@
 						<string>^.*Porzucasz swoja druzyne\.$</string>
 						<string>.*zmusza cie do opuszczenia druzyny\.$</string>
 						<string>Porzucasz druzyne, ktorej przewodzil.s</string>
-						<string>Zmuszasz [a-zA-Z ]+ do opuszczenia druzyny\.$</string>
+						<string>Zmuszasz ([a-zA-Z ]+) do opuszczenia druzyny\.$</string>
+						<string>^([a-zA-Z ]+) porzuca twoja druzyne\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
+						<integer>1</integer>
 						<integer>1</integer>
 						<integer>1</integer>
 						<integer>1</integer>

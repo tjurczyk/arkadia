@@ -40,6 +40,12 @@ Event podniesiony po zbudowaniu triggerów na kolorwanie postaci.
 
 ---
 
+## `teamChanged`
+
+Event podniesiony jezeli zmieni sie sklad druzyny.
+
+---
+
 ## `amapNewLocation`
 
 Argumenty:

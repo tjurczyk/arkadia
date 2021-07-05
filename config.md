@@ -544,6 +544,12 @@ Wartości:
 
 ---
 
+## `scripts.inv.weapons.wield`
+
+Komenda na dobywanie broni uzywana przez skrypty.
+
+---
+
 ## `scripts.inv.weapons.cases`
 ## `scripts.inv.weapons.cases_dopelniacz`
 

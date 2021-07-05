@@ -226,8 +226,7 @@ function misc.lvl_calc:calculate_lvl()
                 misc.lvl_calc.real_lvl_string[curr_lvl + 1] .. "<tomato>)"
     else
         local extra = (full_stat - misc.lvl_calc.stat_to_real_lvl[curr_lvl])
-        msg = "Twoj aktualny poziom to <green>" .. misc.lvl_calc.real_lvl_string[curr_lvl + 1] .. "(" .. tostring(full_stat) ..
-                " i masz + <green>" .. tostring(extra) .. "<tomato> podcech"
+        msg = string.format("Twoj aktualny poziom to <green> %s (%s) i masz + <green>%s<tomato> podcech", misc.lvl_calc.real_lvl_string[curr_lvl + 1], tostring(full_stat), tostring(extra))
     end
 
     scripts:print_log(msg, true)

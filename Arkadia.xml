@@ -50,8 +50,8 @@
 						<string>^.*Porzucasz swoja druzyne\.$</string>
 						<string>.*zmusza cie do opuszczenia druzyny\.$</string>
 						<string>Porzucasz druzyne, ktorej przewodzil.s</string>
-						<string>Zmuszasz ([a-zA-Z ]+) do opuszczenia druzyny\.$</string>
-						<string>^([a-zA-Z ]+) porzuca twoja druzyne\.$</string>
+						<string>Zmuszasz \[?([a-zA-Z ]+)\]? do opuszczenia druzyny\.$</string>
+						<string>^\[?([a-zA-Z ]+)\]? porzuca twoja druzyne\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>

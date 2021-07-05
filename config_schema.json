@@ -1021,6 +1021,12 @@
       ]
     },
     {
+      "name": "scripts.inv.weapons.wield",
+      "default_value": "dobadz wszystkich broni",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
       "name": "scripts.inv.weapons.cases",
       "default_value": [],
       "field_type": "list",

@@ -291,7 +291,7 @@ function trigger_func_skrypty_ui_special_exits_follow_obroc_rzezbe()
 end
 
 function trigger_func_skrypty_ui_special_exits_follow_zejdz_po_drabinie()
-    scripts.utils.bind_functional_team_follow(matches[2], "opusc bronie;zejdz po drabinie;dobadz wszystkich broni", 15)
+    scripts.utils.bind_functional_team_follow(matches[2], "opusc bronie;zejdz po drabinie;" .. scripts.inv.weapons.wield, 15)
 end
 
 function trigger_func_skrypty_ui_special_exits_follow_zejdz_po_drabinie_2()
@@ -303,7 +303,7 @@ function trigger_func_skrypty_ui_special_exits_follow_wejdz_po_drabinie()
         scripts.utils.bind_functional_team_follow(matches[2], "wespnij sie na gore", 15)
         return
     end
-    scripts.utils.bind_functional_team_follow(matches[2], "opusc bronie;wejdz po drabinie;dobadz wszystkich broni", 15)
+    scripts.utils.bind_functional_team_follow(matches[2], "opusc bronie;wejdz po drabinie;" .. scripts.inv.weapons.wield, 15)
 end
 
 function trigger_func_skrypty_ui_special_exits_follow_przejdz_przez_wneke()
@@ -319,7 +319,7 @@ function trigger_func_skrypty_ui_special_exits_follow_wejdz_do_czerwonego_wozu()
 end
 
 function trigger_func_skrypty_ui_special_exits_follow_zejdz_po_drabince()
-    scripts.utils.bind_functional_team_follow(matches[2], "opusc bronie;zejdz po drabince;dobadz wszystkich broni", 15)
+    scripts.utils.bind_functional_team_follow(matches[2], "opusc bronie;zejdz po drabince;" .. scripts.inv.weapons.wield, 15)
 end
 
 function trigger_func_skrypty_ui_special_exits_follow_wdrap_sie_na_glaz()
@@ -468,7 +468,7 @@ function trigger_func_skrypty_ui_special_exits_follow_wejdz_do_jaskini()
 end
 
 function trigger_func_skrypty_ui_special_exits_follow_opusc_bron_wejdz_po_drabince_dobadz_broni()
-    scripts.utils.bind_functional_team_follow(matches[2], "opusc bronie;wejdz po drabinie;dobadz wszystkich broni", 15)
+    scripts.utils.bind_functional_team_follow(matches[2], "opusc bronie;wejdz po drabinie;" .. scripts.inv.weapons.wield, 15)
 end
 
 function trigger_func_skrypty_ui_special_exits_follow_wejdz_na_pien()

@@ -8,8 +8,8 @@ end
 
 function trigger_func_skrypty_ui_misc_gryf_powrot_z_oglucha_gryfa()
     disableTrigger("powrot-z-oglucha-gryfa")
-    scripts.utils.bind_functional("dobadz wszystkich broni")
+    scripts.utils.bind_functional(scripts.inv.weapons.wield)
     scripts.ui:info_action_update("DOBADZ")
-    scripts.ui.info_action_bind = "dobadz wszystkich broni"
+    scripts.ui.info_action_bind = scripts.inv.weapons.wield
 end
 

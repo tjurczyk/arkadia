@@ -322,6 +322,13 @@ function ateam:give_leader(id)
 end
 
 function ateam:zap_func(id)
+    local i = tonumber(id)
+    if i == 0 then
+        for k,v in pairs(ateam.normal_ids) do
+            send("zapros ob_" .. v, false)
+        end
+        return
+    end
     if ateam.normal_ids and ateam.normal_ids[tonumber(id)] then
         local real_id = ateam.normal_ids[tonumber(id)]
         send("zapros ob_" .. real_id, false)

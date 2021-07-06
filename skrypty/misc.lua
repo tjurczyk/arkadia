@@ -237,7 +237,7 @@ function trigger_func_skrypty_misc_porownanie_wszystkich()
 
     local target = matches[2]
     local desc = matches[3]
-    local res = mod[target] * level[desc]
+    local res = round(mod[target] * level[desc])
     table.insert(scripts.comparing_all.current_compare_results, res)
     deleteLine()
 

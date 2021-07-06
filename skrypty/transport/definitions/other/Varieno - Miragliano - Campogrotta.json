@@ -6,26 +6,26 @@
         {
             "start": 5468,
             "destination": 5439,
-            "time": 999,
+            "time": 40,
             "stop_pattern": "^Z zewnatrz slyszysz glos woznicy: Fermata - incrocio alla Miragliano!$"
         },
         {
             "start": 5439,
             "destination": 5985,
-            "time": 999,
+            "time": 54,
             "set_pattern": "^(?:Woznica|Z zewnatrz).*: Partire per Varieno in qualche minuti!",
             "stop_pattern": "^Z zewnatrz slyszysz glos woznicy: Fermata - Varieno!$"
         },
         {
             "start": 5985,
             "destination": 5439,
-            "time": 999,
+            "time": 54,
             "stop_pattern": "^Z zewnatrz slyszysz glos woznicy: Fermata - incrocio alla Miragliano!$"
         },
         {
             "start": 5439,
             "destination": 5468,
-            "time": 999,
+            "time": 40,
             "stop_pattern": "^Z zewnatrz slyszysz glos woznicy: Fermata - Campogrotta!$",
             "set_pattern": "^(?:Woznica|Z zewnatrz).*: Partire per Campogrotta in qualche minuti!"
         } 

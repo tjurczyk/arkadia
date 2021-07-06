@@ -1,0 +1,31 @@
+{
+    "enter": "Wchodzisz na mala feluke.",
+    "exit": "Schodzisz z feluki.",
+    "start": "Feluka odbija od brzegu.",
+    "stops": [
+        {
+            "start": 2223,
+            "destination": 4061,
+            "time": 48,
+            "stop_pattern": "^(?:Jasnowlosy sniady elf|Flavius) krzyczy: Doplynelismy do przystani w Blaviken! Mozna wysiadac!$"
+        },
+        {
+            "start": 4061,
+            "destination": 11690,
+            "time": 42,
+            "stop_pattern": "^(?:Jasnowlosy sniady elf|Flavius) krzyczy: Doplynelismy do przystani w Daevon! Mozna wysiadac!$"
+        },
+        {
+            "start": 11690,
+            "destination": 4061,
+            "time": 55,
+            "stop_pattern": "^(?:Jasnowlosy sniady elf|Flavius) krzyczy: Doplynelismy do przystani w Blaviken! Mozna wysiadac!$"
+        },
+        {
+            "start": 4061,
+            "destination": 2223,
+            "time": 55,
+            "stop_pattern": "^(?:Jasnowlosy sniady elf|Flavius) krzyczy: Doplynelismy do przystani w Novigradzie! Mozna wysiadac!$"
+        }
+    ]
+}

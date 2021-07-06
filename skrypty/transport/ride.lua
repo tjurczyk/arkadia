@@ -5,6 +5,7 @@ local bar_width = 300
 local padding = 10
 
 function scripts.transports.ride:new(id, definition, index, cleanup_callback)
+    scripts:print_log("Creating ride " .. id .. " " .. index, true)
     local o = {}
     setmetatable(o, self)
     self.__index = self
@@ -118,7 +119,7 @@ function scripts.transports.ride:show_progress()
     self.progress = Geyser.Gauge:new({
         name = string.format("transport.progress.%s.%s", self.id, self.index),
         x = -border_right - padding * 2 - bar_width,
-        y = -border_bottom - padding + (-padding * 2 - bar_height ) * (#scripts.transports.active_rides),
+        y = -border_bottom - padding + (-padding * 2 - bar_height ) * table.index_of(scripts.transports.active_rides, self),
         height = bar_height,
         width = bar_width,
         fontSize = getFontSize() - 1,

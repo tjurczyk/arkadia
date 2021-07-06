@@ -34,8 +34,20 @@ function scripts.transports:init()
             if stop.set_pattern then
                 table.insert(self.triggers, tempRegexTrigger(stop.set_pattern, function()
                     if amap.curr.id == stop.start then
-
-                        self:create_ride(definition, index)
+                        local hasRide = false
+                        if #self.active_rides > 0 then
+                            for _,ride in pairs(self.active_rides) do
+                                if ride.id == definition and ride.index == index then
+                                    local ride = self:create_ride(definition, index)
+                                    self:remove_invalid_rides(ride)
+                                    hasRide = true
+                                    break
+                                end
+                            end
+                        end
+                        if not hasRide then
+                            self:create_ride(definition, index)
+                        end
                     end
                 end))
             end

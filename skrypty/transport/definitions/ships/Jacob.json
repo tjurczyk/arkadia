@@ -1,7 +1,7 @@
 {
-    "enter": "Wchodzisz na smukly drakkar\\.$",
-    "exit": "Schodzisz z drakkara\\.$",
-    "start": "Drakkar odbija od brzegu\\.$",
+    "enter": "Wchodzisz na smukly drakkar.",
+    "exit": "Schodzisz z drakkara.",
+    "start": "Drakkar odbija od brzegu.",
     "stops": [
         {
             "start": 4060,

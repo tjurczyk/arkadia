@@ -1,0 +1,43 @@
+{
+    "enter": "Oplacasz podroz u woznicy i wsiadasz do drewnianego stojacego wozu.",
+    "exit_command": "wyjscie",
+    "start": "Woznica donosnym glosem oznajmia odjazd.",
+    "stops": [
+        {
+            "start": 180,
+            "destination": 3342,
+            "time": 69,
+            "stop_pattern": "^Z zewnatrz dochodzi stlumiony glos woznicy: Postoj, na dziedzincu zajazdu\\.$"
+        },
+        {
+            "start": 3342,
+            "destination": 3457,
+            "time": 62,
+            "stop_pattern": "^Z zewnatrz dochodzi stlumiony glos woznicy: Postoj, centralny plac wioski\\.$"
+        },
+        {
+            "start": 3457,
+            "destination": 3252,
+            "time": 44,
+            "stop_pattern": "^Z zewnatrz dochodzi stlumiony glos woznicy: Postoj, placyk w Grabowej Buchcie\\.$"
+        },
+        {
+            "start": 3252,
+            "destination": 3457,
+            "time": 44,
+            "stop_pattern": "^Z zewnatrz dochodzi stlumiony glos woznicy: Postoj, centralny plac wioski\\.$"
+        },
+        {
+            "start": 3457,
+            "destination": 3342,
+            "time": 62,
+            "stop_pattern": "^Z zewnatrz dochodzi stlumiony glos woznicy: Postoj, na dziedzincu zajazdu\\.$"
+        },
+        {
+            "start": 3342,
+            "destination": 180,
+            "time": 69,
+            "stop_pattern": "^Z zewnatrz dochodzi stlumiony glos woznicy: Postoj, przystan powozowa\\.$"
+        }
+    ]
+}

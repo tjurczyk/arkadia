@@ -12,7 +12,7 @@
         {
             "start": 10018,
             "destination": 8087,
-            "time": 45,
+            "time": 42,
             "stop_pattern": "^(?:Haming|Stary zgorzknialy mezczyzna) krzyczy: Doplynelismy do przystani w Starych Bukach! Mozna wysiadac!$",
             "set_pattern": "^(?:Haming|Stary zgorzknialy mezczyzna) krzyczy: Nastepnym portem bedzie przystan w Starych Bukach!$"
         },

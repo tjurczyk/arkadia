@@ -50,8 +50,8 @@
 						<string>^.*Porzucasz swoja druzyne\.$</string>
 						<string>.*zmusza cie do opuszczenia druzyny\.$</string>
 						<string>Porzucasz druzyne, ktorej przewodzil.s</string>
-						<string>Zmuszasz ([a-zA-Z ]+) do opuszczenia druzyny\.$</string>
-						<string>^([a-zA-Z ]+) porzuca twoja druzyne\.$</string>
+						<string>Zmuszasz \[?([a-zA-Z ]+)\]? do opuszczenia druzyny\.$</string>
+						<string>^\[?([a-zA-Z ]+)\]? porzuca twoja druzyne\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -25282,6 +25282,13 @@
 					<command></command>
 					<packageName></packageName>
 					<regex>^/hp (.*)</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>/szepnij</name>
+					<script>alias_func_last_seen_hp(matches[2])</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/szepnij (.*)$</regex>
 				</Alias>
 			</AliasGroup>
 			<AliasGroup isActive="yes" isFolder="yes">

@@ -81,7 +81,7 @@ end
 
 function trigger_func_skrypty_team_no_team()
    if table.size(ateam.team) > 1 then
-        ateam.team = table.collect(ateam.team, function(key, value) return vale == "@" end)
+        ateam.team = table.collect(ateam.team, function(key, value) return value == "@" end)
         raiseEvent("teamChanged")
    end
 end

@@ -104,6 +104,7 @@ function trigger_func_skrypty_team_clear_absent()
     druzyna = string.gsub(druzyna, " i ", ", ")
     druzyna = string.gsub(druzyna, "kleczac. na ziemi ", "")
     druzyna = string.gsub(druzyna, "skryt. za %w+ ", "")
+    druzyna = string.gsub(druzyna, "wspinajac. sie %w+ ", "")
 
     local disconnected = string.match(druzyna, "statua (%w+)")
     if disconnected then

@@ -20475,8 +20475,8 @@
 							<string>Sa tutaj trzy widoczne wyjscia: polnocny-wschod, poludniowy-wschod i wschod.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
-							<integer>0</integer>
-							<integer>0</integer>
+							<integer>3</integer>
+							<integer>3</integer>
 						</regexCodePropertyList>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -20497,8 +20497,8 @@
 							<string>Jest tutaj jedno widoczne wyjscie: poludnie.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
-							<integer>0</integer>
-							<integer>0</integer>
+							<integer>3</integer>
+							<integer>3</integer>
 						</regexCodePropertyList>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -20519,8 +20519,8 @@
 							<string>Sa tutaj dwa widoczne wyjscia: schodki i poludniowy-wschod.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
-							<integer>0</integer>
-							<integer>0</integer>
+							<integer>3</integer>
+							<integer>3</integer>
 						</regexCodePropertyList>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -20541,8 +20541,8 @@
 							<string>Jest tutaj jedno widoczne wyjscie: schodki.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
-							<integer>0</integer>
-							<integer>0</integer>
+							<integer>3</integer>
+							<integer>3</integer>
 						</regexCodePropertyList>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -20562,7 +20562,7 @@
 							<string>Bez wiekszego problemu potwor zrzuca cie z platformy!</string>
 						</regexCodeList>
 						<regexCodePropertyList>
-							<integer>0</integer>
+							<integer>3</integer>
 						</regexCodePropertyList>
 					</Trigger>
 					<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -20605,8 +20605,8 @@
 							<string>Jest tutaj jedno widoczne wyjscie: zachod.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
-							<integer>0</integer>
-							<integer>0</integer>
+							<integer>3</integer>
+							<integer>3</integer>
 						</regexCodePropertyList>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -20646,7 +20646,7 @@
 							<string>Kierujesz sie w strone krzakow porastajacych polnocno-wchodnia czesc kotliny, lecz bezradnie zatrzymujesz sie przed zwarta sciana kolcow i galezi. Nie znajdujesz sposobu, jak wejsc w chaszcze.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
-							<integer>0</integer>
+							<integer>3</integer>
 						</regexCodePropertyList>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -20666,7 +20666,7 @@
 							<string>Kierujesz sie w strone krzakow porastajacych zachodnia czesc kotliny, lecz bezradnie zatrzymujesz sie przed zwarta sciana kolcow i galezi. Nie znajdujesz sposobu, jak wejsc w chaszcze.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
-							<integer>0</integer>
+							<integer>3</integer>
 						</regexCodePropertyList>
 					</Trigger>
 				</TriggerGroup>
@@ -23668,8 +23668,8 @@
 								<string>Jest tutaj jedno widoczne wyjscie: poludniowy-zachod.</string>
 							</regexCodeList>
 							<regexCodePropertyList>
-								<integer>0</integer>
-								<integer>0</integer>
+								<integer>3</integer>
+								<integer>3</integer>
 							</regexCodePropertyList>
 						</Trigger>
 						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -23690,8 +23690,8 @@
 								<string>Jest tutaj jedno widoczne wyjscie: polnocny-wschod.</string>
 							</regexCodeList>
 							<regexCodePropertyList>
-								<integer>0</integer>
-								<integer>0</integer>
+								<integer>3</integer>
+								<integer>3</integer>
 							</regexCodePropertyList>
 						</Trigger>
 					</TriggerGroup>
@@ -23727,7 +23727,7 @@
 								<string>Okret zbliza sie do brzegu, wplywajac na spokojne wody zatoki Urbimo.</string>
 							</regexCodeList>
 							<regexCodePropertyList>
-								<integer>0</integer>
+								<integer>3</integer>
 							</regexCodePropertyList>
 						</Trigger>
 						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -23747,7 +23747,7 @@
 								<string>Okret wplywa na wody delty Pontaru, wyraznie widac juz zebate blanki poteznych murow Novigradu</string>
 							</regexCodeList>
 							<regexCodePropertyList>
-								<integer>0</integer>
+								<integer>3</integer>
 							</regexCodePropertyList>
 						</Trigger>
 					</TriggerGroup>
@@ -23784,8 +23784,8 @@
 								<string>Sa tutaj dwa widoczne wyjscia: zachod i polnocny-wschod.</string>
 							</regexCodeList>
 							<regexCodePropertyList>
-								<integer>0</integer>
-								<integer>0</integer>
+								<integer>3</integer>
+								<integer>3</integer>
 							</regexCodePropertyList>
 						</Trigger>
 						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -23806,7 +23806,7 @@
 								<string>W mroku nocy dostrzegasz dwa widoczne wyjscia: zachod i polnocny-wschod.</string>
 							</regexCodeList>
 							<regexCodePropertyList>
-								<integer>0</integer>
+								<integer>3</integer>
 								<integer>0</integer>
 							</regexCodePropertyList>
 						</Trigger>
@@ -23828,7 +23828,7 @@
 								<string>Sa tutaj dwa widoczne wyjscia: poludnie i polnocny-zachod.</string>
 							</regexCodeList>
 							<regexCodePropertyList>
-								<integer>0</integer>
+								<integer>3</integer>
 								<integer>0</integer>
 							</regexCodePropertyList>
 						</Trigger>

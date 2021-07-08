@@ -20706,11 +20706,11 @@
 							<string>Woznica oznajmia glosno</string>
 						</regexCodeList>
 						<regexCodePropertyList>
-							<integer>0</integer>
-							<integer>0</integer>
-							<integer>0</integer>
-							<integer>0</integer>
-							<integer>0</integer>
+							<integer>2</integer>
+							<integer>2</integer>
+							<integer>2</integer>
+							<integer>2</integer>
+							<integer>2</integer>
 						</regexCodePropertyList>
 						<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 							<name>kz-nuln</name>

@@ -5,6 +5,7 @@ scripts.inv.weapons.cases_biernik = {}
 scripts.inv.weapons.main_weapons_action = {}
 scripts.inv.weapons.weapon_on_actions = {}
 scripts.inv.weapons.weapon_off_actions = {}
+scripts.inv.weapons.wield = "dobadz wszystkich broni"
 
 function alias_func_skrypty_inventory_weapons_db()
     scripts.inv.weapons:get_weapons()

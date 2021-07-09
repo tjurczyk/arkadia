@@ -50,7 +50,7 @@ ateam = ateam or {
 ateam["footer_info_attack_mode_to_text"] = { "A", "AW", "AWR" }
 
 function trigger_func_skrypty_team_start_ateam()
-    tempTimer(4, [[ ateam:start_ateam() ]])
+    tempTimer(4, function() ateam:start_ateam() end)
     tempTimer(5, function() scripts.ui:setup_talk_window() end)
 end
 
@@ -60,8 +60,23 @@ ateam.loginHandler = scripts.event_register:register_singleton_event_handler(ate
     scripts.ui:setup_talk_window()
 end)
 
-function trigger_func_skrypty_team_left_team()
-    tempTimer(0.4, function() ateam:restart_ateam(true) end)
+function trigger_func_skrypty_team_left_team(leaver)
+    if not leaver then
+        tempTimer(0.4, function() ateam:restart_ateam(true) end)
+    else
+        for k, v in pairs(ateam.team) do
+            if type(v) == "number" then
+                local id = scripts.utils:get_best_fuzzy_match(leaver, {ateam.objs[v]["desc"]}, 0.6)
+                if id ~= -1 then
+                    local letter = ateam.team[v]
+                    ateam.team[v] = nil
+                    ateam.team[letter] = nil
+                    raiseEvent("teamChanged")
+                    return
+                end
+            end
+        end
+    end
 end
 
 function trigger_func_skrypty_team_clear_absent()
@@ -87,7 +102,7 @@ function trigger_func_skrypty_team_clear_absent()
     if disconnected then
         local id = scripts.utils:get_best_fuzzy_match(disconnected, druzyna_old, 0.6)
         if id ~= -1 then
-            druzyna = string.gsub("statua " .. disconnected, druzyna_old[id])
+            druzyna = druzyna:gsub("statua " .. disconnected, druzyna_old[id])
         end
     end
     druzyna = string.split(druzyna, ", ")
@@ -95,10 +110,11 @@ function trigger_func_skrypty_team_clear_absent()
     for k, v in pairs(ateam.team) do
         if type(v) == "number" then
             if not table.contains(druzyna, ateam.objs[v]["desc"]) then
-                scripts:print_log(ateam.objs[v]["desc"] .. " nie jest juz w druzynie.")
+                scripts:print_log(ateam.objs[v]["desc"] .. " nie jest juz w druzynie.", true)
                 local letter = ateam.team[v]
                 ateam.team[v] = nil
                 ateam.team[letter] = nil
+                raiseEvent("teamChanged")
             end
         end
     end

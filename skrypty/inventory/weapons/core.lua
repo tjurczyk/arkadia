@@ -62,7 +62,7 @@ function scripts.inv.weapons:get_weapons()
             scripts.inv.weapons:get_weapon(v)
         end
     else
-        send("dobadz wszystkich broni", true)
+        send(scripts.inv.weapons.wield, true)
     end
 end
 

@@ -9367,8 +9367,10 @@
 									<colorTriggerBgColor>#000000</colorTriggerBgColor>
 									<regexCodeList>
 										<string>^[ &gt;]*Niezgrabnym ruchem [a-zA-Z !(),]+ unika ciosu .*, a .* wyrzucon(y|a) w bok .*, bardziej dla utrzymania rownowagi niz zadania ciosu, przecina tylko powietrze\.$</string>
+										<string>.* bierze potezny zamach i wyprowadza .* cios, ktory ma cie zmasakrowac\. Ku twojej uldze jego bron mija cie nawet przez chwile ci nie zagrazajac\. Uswiadamiasz sobie jednak, ze nastepnym razem mozesz nie miec tyle szczescia!</string>
 									</regexCodeList>
 									<regexCodePropertyList>
+										<integer>1</integer>
 										<integer>1</integer>
 									</regexCodePropertyList>
 								</Trigger>

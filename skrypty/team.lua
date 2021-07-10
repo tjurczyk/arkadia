@@ -79,6 +79,13 @@ function trigger_func_skrypty_team_left_team(leaver)
     end
 end
 
+function trigger_func_skrypty_team_no_team()
+   if table.size(ateam.team) > 1 then
+        ateam.team = table.collect(ateam.team, function(key, value) return value == "@" end)
+        raiseEvent("teamChanged")
+   end
+end
+
 function trigger_func_skrypty_team_clear_absent()
     local druzyna
     local druzyna_old = {}
@@ -95,8 +102,9 @@ function trigger_func_skrypty_team_clear_absent()
     end
 
     druzyna = string.gsub(druzyna, " i ", ", ")
-    druzyna = string.gsub(druzyna, "kleczac. na ziemi ", "")
-    druzyna = string.gsub(druzyna, "skryt. za %w+ ", "")
+    druzyna = string.gsub(druzyna, "[Kk]leczac. na ziemi ", "")
+    druzyna = string.gsub(druzyna, "[Ss]kryt. za %w+ ", "")
+    druzyna = string.gsub(druzyna, "[Ww]spinajac. sie ", "")
 
     local disconnected = string.match(druzyna, "statua (%w+)")
     if disconnected then

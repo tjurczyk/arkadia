@@ -1612,7 +1612,7 @@ Dostępne wartości:
 * `true` - włączone
 * `false` - wyłączone
 
---
+---
 
 ## `ateam.next_attack_objs.mark_in_state`
 
@@ -1638,7 +1638,7 @@ Dostępne wartości:
 
 Ustawia wielkość czcionka dla okna kolejki mobów (jeśli używane).
 
---
+---
 
 ## `scripts.ui.inline_compass_rose.enabled`
 
@@ -1649,7 +1649,7 @@ Dostępne wartości:
 * `true` - włączone
 * `false` - wyłączone
 
---
+---
 
 ## `amap.disable_team_sneak`
 

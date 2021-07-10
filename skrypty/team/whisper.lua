@@ -10,6 +10,6 @@ function ateam.whisper:whisper_to_team(content)
 
 end
 
-function alias_func_last_seen_hp(content)
+function alias_func_whisper(content)
     ateam.whisper:whisper_to_team(content)
 end

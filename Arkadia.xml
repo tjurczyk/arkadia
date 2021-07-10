@@ -25307,7 +25307,7 @@
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
 					<name>/szepnij</name>
-					<script>alias_func_last_seen_hp(matches[2])</script>
+					<script>alias_func_whisper(matches[2])</script>
 					<command></command>
 					<packageName></packageName>
 					<regex>^/szepnij (.*)$</regex>

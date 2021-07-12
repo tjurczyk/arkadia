@@ -20114,8 +20114,10 @@
 					<regexCodeList>
 						<string>^Wraz z .* pomagacie .* przeniesc .* na (.*)\.$</string>
 						<string>^Pomagasz .* przeniesc .* na (.*)\.$</string>
+						<string>.* kieruje lodz na (.*)\.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
+						<integer>1</integer>
 						<integer>1</integer>
 						<integer>1</integer>
 					</regexCodePropertyList>

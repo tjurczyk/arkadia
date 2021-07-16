@@ -1,8 +1,4 @@
 function trigger_func_mapper_team_follow_team_family_follow_team()
-    if amap.mode == "off" then
-        return
-    end
-
     if amap.polish_to_english[matches[4]] then
         amap.dir_from_team_follow = amap.polish_to_english[matches[4]]
     else
@@ -19,10 +15,6 @@ function trigger_func_mapper_team_follow_team_family_follow_team()
 end
 
 function trigger_func_mapper_team_follow_team_family_special()
-    if amap.mode == "off" then
-        return
-    end
-
     local sep = string.split(matches[3], " ")
     local last = sep[#sep]
     local one_to_last = sep[#sep - 1]

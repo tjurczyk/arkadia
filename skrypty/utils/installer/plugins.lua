@@ -106,7 +106,6 @@ function scripts.plugins_installer:handle_drop(filepath, suffix)
         self.plugin_zip = filepath
         self:handle_unzip(event, plugin_name, nil, ...)
     end, true)
-    display("Rozpakowuje " .. self.plugin_directory .. plugin_name)
     
     unzipAsync(filepath, self.plugin_directory .. plugin_name)
 end

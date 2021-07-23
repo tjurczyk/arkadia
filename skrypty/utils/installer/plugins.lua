@@ -70,7 +70,7 @@ function scripts.plugins_installer:handle_unzip(event, plugin_name, branch, ...)
         end
         scripts:print_log("Plugin " .. plugin_name .. " rozpakowany")
         load_plugin(plugin_name)
-        --os.remove(self.plugin_zip)
+        os.remove(self.plugin_zip)
     elseif event == "sysUnzipError" then
         scripts:print_log("Blad podczas rozpakowywania pluginu")
     end

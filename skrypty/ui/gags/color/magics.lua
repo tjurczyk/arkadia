@@ -35,7 +35,6 @@ function trigger_func_skrypty_ui_gags_moje_ciosy_arlekiny(value)
     scripts.gags:gag(value, 6, "moje_ciosy")
 end
 
--- Arlekiny
 function trigger_func_skrypty_ui_gags_moje_ciosy_arlekiny_fin()
     scripts.gags:gag_prefix("JA FIN", "moje_ciosy")
 end

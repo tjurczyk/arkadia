@@ -12593,8 +12593,12 @@
 									<string>^Wykonujesz zamaszyste ciecie .* mierzac w .*, lecz ono oslania sie .*\.$</string>
 									<string>^Wyprowadzasz szybkie pchniecie .* w .* lecz .* oslania sie .*\.$</string>
 									<string>^Wykonujesz zamaszyste ciecie .* oslania sie</string>
+									<string>^Zamierzasz sie .* lecz udaje sie mu sparowac</string>
+									<string>^Usmiechajac sie szyderczo, rzucasz sie do ataku</string>
 								</regexCodeList>
 								<regexCodePropertyList>
+									<integer>1</integer>
+									<integer>1</integer>
 									<integer>1</integer>
 									<integer>1</integer>
 									<integer>1</integer>
@@ -14563,7 +14567,7 @@
 									</Trigger>
 									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 										<name>arlekiny 4</name>
-										<script>trigger_func_skrypty_ui_gags_moje_ciosy_arlekiny(1)</script>
+										<script>trigger_func_skrypty_ui_gags_moje_ciosy_arlekiny(4)</script>
 										<triggerType>0</triggerType>
 										<conditonLineDelta>0</conditonLineDelta>
 										<mStayOpen>0</mStayOpen>
@@ -14583,7 +14587,7 @@
 									</Trigger>
 									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 										<name>arlekiny 5</name>
-										<script>trigger_func_skrypty_ui_gags_moje_ciosy_arlekiny(1)</script>
+										<script>trigger_func_skrypty_ui_gags_moje_ciosy_arlekiny(5)</script>
 										<triggerType>0</triggerType>
 										<conditonLineDelta>0</conditonLineDelta>
 										<mStayOpen>0</mStayOpen>
@@ -14602,8 +14606,8 @@
 										</regexCodePropertyList>
 									</Trigger>
 									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-										<name>arlekiny 1</name>
-										<script>trigger_func_skrypty_ui_gags_moje_ciosy_arlekiny(1)</script>
+										<name>arlekiny 6</name>
+										<script>trigger_func_skrypty_ui_gags_moje_ciosy_arlekiny(6)</script>
 										<triggerType>0</triggerType>
 										<conditonLineDelta>0</conditonLineDelta>
 										<mStayOpen>0</mStayOpen>
@@ -14615,7 +14619,7 @@
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>^W dzikim, nieokielznanym tancu ruszasz do ataku na</string>
+											<string>^Bez trudu unikasz uderzenia .* i odskakujesz od niego ze smiechem</string>
 										</regexCodeList>
 										<regexCodePropertyList>
 											<integer>1</integer>

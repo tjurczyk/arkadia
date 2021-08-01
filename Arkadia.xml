@@ -8597,8 +8597,10 @@
 										<string>(^[ &gt;]*.* zdecydowanie napiera bokiem na.*)</string>
 										<string>(^[ &gt;]*Nie tracac dystansu do .* cofa .*)</string>
 										<string>(^[ &gt;]*.* przesuwa sie nieznacznie w bok, obchodzac (|cie )powoli.*)</string>
+										<string>^Nie tracac do ciebie dystansu, .* cofa .*</string>
 									</regexCodeList>
 									<regexCodePropertyList>
+										<integer>1</integer>
 										<integer>1</integer>
 										<integer>1</integer>
 										<integer>1</integer>

@@ -126,6 +126,26 @@
 						<integer>1</integer>
 					</regexCodePropertyList>
 				</Trigger>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>no_team</name>
+					<script>trigger_func_skrypty_team_no_team()</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>Nie jestes w zadnej druzynie.</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>3</integer>
+					</regexCodePropertyList>
+				</Trigger>
 			</TriggerGroup>
 			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>inventory</name>
@@ -9347,8 +9367,10 @@
 									<colorTriggerBgColor>#000000</colorTriggerBgColor>
 									<regexCodeList>
 										<string>^[ &gt;]*Niezgrabnym ruchem [a-zA-Z !(),]+ unika ciosu .*, a .* wyrzucon(y|a) w bok .*, bardziej dla utrzymania rownowagi niz zadania ciosu, przecina tylko powietrze\.$</string>
+										<string>.* bierze potezny zamach i wyprowadza .* cios, ktory ma cie zmasakrowac\. Ku twojej uldze jego bron mija cie nawet przez chwile ci nie zagrazajac\. Uswiadamiasz sobie jednak, ze nastepnym razem mozesz nie miec tyle szczescia!</string>
 									</regexCodeList>
 									<regexCodePropertyList>
+										<integer>1</integer>
 										<integer>1</integer>
 									</regexCodePropertyList>
 								</Trigger>
@@ -20047,8 +20069,8 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^.*[pP]odazasz (|skradajac sie )za (.* na (.*))\.$</string>
-							<string>^Wraz z ([a-zA-Z ,]*) podazasz za (.* na (.*))\.$</string>
+							<string>^.*[pP]odazasz (|skradajac sie )za (.* na (.*))(?:,.*)?\.$</string>
+							<string>^Wraz z ([a-zA-Z ,]*) podazasz za (.* na (.*))(?:,.*)?\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -20092,8 +20114,10 @@
 					<regexCodeList>
 						<string>^Wraz z .* pomagacie .* przeniesc .* na (.*)\.$</string>
 						<string>^Pomagasz .* przeniesc .* na (.*)\.$</string>
+						<string>.* kieruje lodz na (.*)\.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
+						<integer>1</integer>
 						<integer>1</integer>
 						<integer>1</integer>
 					</regexCodePropertyList>
@@ -20475,8 +20499,8 @@
 							<string>Sa tutaj trzy widoczne wyjscia: polnocny-wschod, poludniowy-wschod i wschod.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
-							<integer>0</integer>
-							<integer>0</integer>
+							<integer>3</integer>
+							<integer>3</integer>
 						</regexCodePropertyList>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -20497,8 +20521,8 @@
 							<string>Jest tutaj jedno widoczne wyjscie: poludnie.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
-							<integer>0</integer>
-							<integer>0</integer>
+							<integer>3</integer>
+							<integer>3</integer>
 						</regexCodePropertyList>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -20519,8 +20543,8 @@
 							<string>Sa tutaj dwa widoczne wyjscia: schodki i poludniowy-wschod.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
-							<integer>0</integer>
-							<integer>0</integer>
+							<integer>3</integer>
+							<integer>3</integer>
 						</regexCodePropertyList>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -20541,8 +20565,8 @@
 							<string>Jest tutaj jedno widoczne wyjscie: schodki.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
-							<integer>0</integer>
-							<integer>0</integer>
+							<integer>3</integer>
+							<integer>3</integer>
 						</regexCodePropertyList>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -20562,7 +20586,7 @@
 							<string>Bez wiekszego problemu potwor zrzuca cie z platformy!</string>
 						</regexCodeList>
 						<regexCodePropertyList>
-							<integer>0</integer>
+							<integer>3</integer>
 						</regexCodePropertyList>
 					</Trigger>
 					<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -20605,8 +20629,8 @@
 							<string>Jest tutaj jedno widoczne wyjscie: zachod.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
-							<integer>0</integer>
-							<integer>0</integer>
+							<integer>3</integer>
+							<integer>3</integer>
 						</regexCodePropertyList>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -20646,7 +20670,7 @@
 							<string>Kierujesz sie w strone krzakow porastajacych polnocno-wchodnia czesc kotliny, lecz bezradnie zatrzymujesz sie przed zwarta sciana kolcow i galezi. Nie znajdujesz sposobu, jak wejsc w chaszcze.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
-							<integer>0</integer>
+							<integer>3</integer>
 						</regexCodePropertyList>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -20666,7 +20690,7 @@
 							<string>Kierujesz sie w strone krzakow porastajacych zachodnia czesc kotliny, lecz bezradnie zatrzymujesz sie przed zwarta sciana kolcow i galezi. Nie znajdujesz sposobu, jak wejsc w chaszcze.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
-							<integer>0</integer>
+							<integer>3</integer>
 						</regexCodePropertyList>
 					</Trigger>
 				</TriggerGroup>
@@ -20706,11 +20730,11 @@
 							<string>Woznica oznajmia glosno</string>
 						</regexCodeList>
 						<regexCodePropertyList>
-							<integer>0</integer>
-							<integer>0</integer>
-							<integer>0</integer>
-							<integer>0</integer>
-							<integer>0</integer>
+							<integer>2</integer>
+							<integer>2</integer>
+							<integer>2</integer>
+							<integer>2</integer>
+							<integer>2</integer>
 						</regexCodePropertyList>
 						<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 							<name>kz-nuln</name>
@@ -23668,8 +23692,8 @@
 								<string>Jest tutaj jedno widoczne wyjscie: poludniowy-zachod.</string>
 							</regexCodeList>
 							<regexCodePropertyList>
-								<integer>0</integer>
-								<integer>0</integer>
+								<integer>3</integer>
+								<integer>3</integer>
 							</regexCodePropertyList>
 						</Trigger>
 						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -23690,8 +23714,8 @@
 								<string>Jest tutaj jedno widoczne wyjscie: polnocny-wschod.</string>
 							</regexCodeList>
 							<regexCodePropertyList>
-								<integer>0</integer>
-								<integer>0</integer>
+								<integer>3</integer>
+								<integer>3</integer>
 							</regexCodePropertyList>
 						</Trigger>
 					</TriggerGroup>
@@ -23727,7 +23751,7 @@
 								<string>Okret zbliza sie do brzegu, wplywajac na spokojne wody zatoki Urbimo.</string>
 							</regexCodeList>
 							<regexCodePropertyList>
-								<integer>0</integer>
+								<integer>3</integer>
 							</regexCodePropertyList>
 						</Trigger>
 						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -23747,7 +23771,7 @@
 								<string>Okret wplywa na wody delty Pontaru, wyraznie widac juz zebate blanki poteznych murow Novigradu</string>
 							</regexCodeList>
 							<regexCodePropertyList>
-								<integer>0</integer>
+								<integer>3</integer>
 							</regexCodePropertyList>
 						</Trigger>
 					</TriggerGroup>
@@ -23784,8 +23808,8 @@
 								<string>Sa tutaj dwa widoczne wyjscia: zachod i polnocny-wschod.</string>
 							</regexCodeList>
 							<regexCodePropertyList>
-								<integer>0</integer>
-								<integer>0</integer>
+								<integer>3</integer>
+								<integer>3</integer>
 							</regexCodePropertyList>
 						</Trigger>
 						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -23806,7 +23830,7 @@
 								<string>W mroku nocy dostrzegasz dwa widoczne wyjscia: zachod i polnocny-wschod.</string>
 							</regexCodeList>
 							<regexCodePropertyList>
-								<integer>0</integer>
+								<integer>3</integer>
 								<integer>0</integer>
 							</regexCodePropertyList>
 						</Trigger>
@@ -23828,7 +23852,7 @@
 								<string>Sa tutaj dwa widoczne wyjscia: poludnie i polnocny-zachod.</string>
 							</regexCodeList>
 							<regexCodePropertyList>
-								<integer>0</integer>
+								<integer>3</integer>
 								<integer>0</integer>
 							</regexCodePropertyList>
 						</Trigger>
@@ -23876,7 +23900,7 @@
 						<string>Podaj tytul notki: </string>
 						<string>^Adresat:</string>
 						<string>Podaj tytul notki:</string>
-						<string>adefFhHmnpqrsRux.!?</string>
+						<string>^\[.*adefFhHmnqrsRux.!?</string>
 						<string>Zaczynasz szukac</string>
 						<string>^Zaczynasz rytmicznie ciagnac za dojki\.$</string>
 						<string>Zaczynasz wioslowac.</string>
@@ -23888,25 +23912,25 @@
 						<string>Wiedziony pierwotnym zewem lesnego lowcy, zwinnie przyklekasz na kolano i zaczynasz szukac sladow,starajac sie uchwycic wszystkimi zmyslami podszepty natury.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
-						<integer>0</integer>
-						<integer>0</integer>
+						<integer>2</integer>
+						<integer>2</integer>
 						<integer>1</integer>
 						<integer>1</integer>
 						<integer>1</integer>
 						<integer>1</integer>
-						<integer>0</integer>
+						<integer>2</integer>
 						<integer>1</integer>
-						<integer>0</integer>
-						<integer>0</integer>
+						<integer>2</integer>
+						<integer>2</integer>
 						<integer>1</integer>
-						<integer>0</integer>
-						<integer>0</integer>
-						<integer>0</integer>
+						<integer>2</integer>
 						<integer>1</integer>
-						<integer>0</integer>
-						<integer>0</integer>
-						<integer>0</integer>
-						<integer>0</integer>
+						<integer>2</integer>
+						<integer>1</integer>
+						<integer>3</integer>
+						<integer>2</integer>
+						<integer>2</integer>
+						<integer>3</integer>
 						<integer>1</integer>
 						<integer>1</integer>
 						<integer>3</integer>
@@ -24236,26 +24260,28 @@
 						<string>Z ociaganiem podnosisz sie z wielkiego lozka.</string>
 						<string>Rozkopujesz zarosniety grob i przeszukujesz spoczywajacy w nim szkielet. Posrod spruchnialych, zniszczonych przedmiotow, udaje ci sie znalezc cos wartego uwagi.</string>
 						<string>^Po dokladnym przeszukaniu ciala stwierdzasz, ze korzystajac ze swoich umiejetnosci</string>
+						<string>Wynurzasz sie na powierzchnie.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
-						<integer>0</integer>
-						<integer>0</integer>
-						<integer>0</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>3</integer>
 						<integer>3</integer>
 						<integer>3</integer>
 						<integer>3</integer>
 						<integer>1</integer>
+						<integer>1</integer>
+						<integer>1</integer>
+						<integer>3</integer>
 						<integer>3</integer>
 						<integer>3</integer>
 						<integer>3</integer>
 						<integer>1</integer>
 						<integer>3</integer>
 						<integer>3</integer>
+						<integer>3</integer>
 						<integer>1</integer>
+						<integer>3</integer>
+						<integer>3</integer>
+						<integer>1</integer>
+						<integer>3</integer>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
@@ -25282,6 +25308,13 @@
 					<command></command>
 					<packageName></packageName>
 					<regex>^/hp (.*)</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>/szepnij</name>
+					<script>alias_func_whisper(matches[2])</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/szepnij (.*)$</regex>
 				</Alias>
 			</AliasGroup>
 			<AliasGroup isActive="yes" isFolder="yes">
@@ -27362,13 +27395,6 @@
 				<command></command>
 				<packageName></packageName>
 				<regex>^/pokaz_kolory$</regex>
-			</Alias>
-			<Alias isActive="yes" isFolder="no">
-				<name>idz_do</name>
-				<script>alias_func_mapper_idz_do()</script>
-				<command></command>
-				<packageName></packageName>
-				<regex>^/idzdo$</regex>
 			</Alias>
 			<Alias isActive="yes" isFolder="no">
 				<name>idz_do_id</name>

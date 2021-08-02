@@ -66,6 +66,7 @@ return {
     "skrypty/team/enemy_count_tracker",
     "skrypty/team/last_seen_hp",
     "skrypty/team/next_attack_objs",
+    "skrypty/team/whisper",
     "skrypty/character/core",
     "skrypty/character/character_gmcp_updater",
     "skrypty/character/combat_state",

@@ -5,7 +5,8 @@ local travel_times_file = getMudletHomeDir() .. "/travel-times.json"
 local enter_commands = {
     "wsiadz na statek",
     "wejdz na statek",
-    "wsiadz do dylizansu"
+    "wsiadz do dylizansu",
+    "wsiadz do wozu"
 }
 
 

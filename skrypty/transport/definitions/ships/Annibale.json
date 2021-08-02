@@ -2,6 +2,7 @@
     "enter": "Wchodzisz na wielki trojmasztowy galeon.",
     "exit": "Schodzisz z galeonu.",
     "start": "Zaloga szybko odcumowuje statek, ktory powoli, majestatycznie zaczyna oddalac sie od brzegu.",
+    "bind": "ob widok",
     "stops": [
         {
             "start": 5947,

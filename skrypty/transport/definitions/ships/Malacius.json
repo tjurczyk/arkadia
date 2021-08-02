@@ -2,6 +2,7 @@
     "enter": "Wchodzisz na stara szkute.",
     "exit": "Schodzisz ze szkuty.",
     "start": "Szkuta odbija od brzegu.",
+    "bind": "ob widok",
     "stops": [
         {
             "start": 2574,

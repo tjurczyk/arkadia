@@ -2,6 +2,7 @@
     "enter": "Wchodzisz na smukly drakkar.",
     "exit": "Schodzisz z drakkara.",
     "start": "Drakkar odbija od brzegu.",
+    "bind": "ob widok",
     "stops": [
         {
             "start": 4060,

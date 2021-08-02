@@ -2,12 +2,13 @@
     "enter": "Oplacasz podroz u woznicy i wsiadasz do ciemnego stojacego dylizansu.",
     "start": "Drzwiczki sie zamykaja, drzenie przebiega przez caly pojazd, ktory powoli rusza.",
     "exit_command": "wyjscie",
+    "bind": "wyjrzyj przez okno",
     "stops": [
         {
             "start": 7640,
             "destination": 7550,
             "time": 42,
-            "stop_pattern": "Z zewnatrz dochodzi stlumiony glos woznicy: Postoj, rynek przy fontannie."
+            "stop_pattern": "^Z zewnatrz dochodzi stlumiony glos woznicy: Postoj, rynek przy fontannie\\.$"
         },
         {
             "start": 7550,

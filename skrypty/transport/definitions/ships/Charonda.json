@@ -2,6 +2,7 @@
     "enter": "Wchodzisz na dwumasztowy nilfgaardzki statek.",
     "exit": "Schodzisz ze statku.",
     "start": "Statek odbija od brzegu.",
+    "bind": "ob widok",
     "stops": [
         {
             "start": 7910,

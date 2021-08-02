@@ -5,7 +5,7 @@ local bar_width = 300
 local padding = 10
 
 function scripts.transports.ride:new(id, definition, index, cleanup_callback)
-    scripts:print_log("Creating ride " .. id .. " " .. index, true)
+    scripts:debug_log("Tworzenie obiektu podrozy: " .. id .. " " .. index, true)
     local o = {}
     setmetatable(o, self)
     self.__index = self
@@ -41,10 +41,15 @@ end
 
 function scripts.transports.ride:enter()
     self.on_board = true
+    if self.definition.bind then
+        cecho("\n<" .. scripts.ui:get_bind_color_backward_compatible() .. ">bind <yellow>" .. scripts.keybind:keybind_tostring("special_exit") .. ":<" .. scripts.ui:get_bind_color_backward_compatible() .. "> " .. self.definition.bind .. "\n\n")
+        scripts.transports.transport_bind = self.definition.bind
+    end
 end
 
 function scripts.transports.ride:exit()
     self.on_board = false
+    scripts.transports.transport_bind = nil
     self:initate_cleanup()
 end
 
@@ -108,7 +113,7 @@ function scripts.transports.ride:stop()
 
     local delta = os.time() - self.start_time
     if delta < expected_time then
-        scripts:print_log("Czas podrozy " .. delta)
+        scripts:debug_log("Czas podrozy krotszy niz znany do tej pory: " .. delta)
         self:store_new_minimum(delta)
     end
 

@@ -2,6 +2,7 @@
     "enter": "Wchodzisz na szeroka knare.",
     "exit": "Schodzisz z knary.",
     "start": "Knara odbija od brzegu.",
+    "bind": "ob widok",
     "stops": [
         {
             "start": 10311,

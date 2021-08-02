@@ -82,7 +82,7 @@ function scripts.transports:find_ride()
     end
     local candidate_key = location_to_definition[amap.curr.id]
     if not candidate_key then
-        scripts:print_log("No ride here!")
+        scripts:debug_log("Brak definicji srodka transportu!")
     else 
         local candidate = definitions[candidate_key]
         for index, stop in pairs(candidate.stops) do

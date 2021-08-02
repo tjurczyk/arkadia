@@ -2,6 +2,7 @@
     "enter": "Wchodzisz na stary buzar.",
     "exit": "Schodzisz z buzara.",
     "start": "Buzar odbija od brzegu.",
+    "bind": "ob widok",
     "stops": [
         {
             "start": 10369,

@@ -2,6 +2,7 @@
     "enter": "Wchodzisz na rzeczny transportowy statek.",
     "exit": "Schodzisz ze statku.",
     "start": "Statek odbija od brzegu.",
+    "bind": "ob widok",
     "stops": [
         {
             "start": 2616,

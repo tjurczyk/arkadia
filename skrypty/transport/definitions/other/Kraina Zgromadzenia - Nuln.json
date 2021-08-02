@@ -1,0 +1,48 @@
+{
+    "enter": "Oplacasz podroz u woznicy i wsiadasz do czarnego stojacego dylizansu.",    
+    "start": "Drzwiczki sie zamykaja, drzenie przebiega przez caly pojazd, ktory powoli rusza.",
+    "exit_command": "wyjscie",
+    "bind": "wyjrzyj przez okno",
+    "stops": [
+        {
+            "start": 6727,
+            "destination": 6571,
+            "time": 19,
+            "stop_pattern": "^Z zewnatrz dochodzi stlumiony glos woznicy: Postoj, rozstaje przed zajazdem\\."
+        },
+        {
+            "start": 6571,
+            "destination": 6779,
+            "time": 17,
+            "stop_pattern": "^Z zewnatrz dochodzi stlumiony glos woznicy: Postoj, trakt przez wioske\\.",
+            "set_pattern": "^Woznica.*wola: Za chwile ruszamy w kierunku Nuln!$"
+        },
+        {
+            "start": 6779,
+            "destination": 7256,
+            "time": 27,
+            "stop_pattern": "^Z zewnatrz dochodzi stlumiony glos woznicy: Postoj, placyk w polnocnej czesci miasta\\.",
+            "set_pattern": "^Woznica.*wola: Za chwile ruszamy w kierunku Nuln!$"
+        },
+        {
+            "start": 7256,
+            "destination": 6779,
+            "time": 27,
+            "stop_pattern": "^Z zewnatrz dochodzi stlumiony glos woznicy: Postoj, trakt przez wioske\\."
+        },
+        {
+            "start": 6779,
+            "destination": 6571,
+            "time": 17,
+            "stop_pattern": "^Z zewnatrz dochodzi stlumiony glos woznicy: Postoj, rozstaje przed zajazdem\\.",
+            "set_pattern": "^Woznica.*wola: Za chwile ruszamy w kierunku Krainy Zgromadzenia!$"
+        },
+        {
+            "start": 6571,
+            "destination": 6727,
+            "time": 19,
+            "stop_pattern": "^Z zewnatrz dochodzi stlumiony glos woznicy: Postoj, dziedziniec frontowy karczmy\\.",
+            "set_pattern": "^Woznica.*wola: Za chwile ruszamy w kierunku Krainy Zgromadzenia!$"
+        }
+    ]
+}

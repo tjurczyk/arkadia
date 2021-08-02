@@ -2,6 +2,7 @@
     "enter": "Wchodzisz na nieduzego barkasa.",
     "exit": "Schodzisz z barkasa.",
     "start": "Barkas odbija od brzegu.",
+    "bind": "ob widok",
     "stops": [
         {
             "start": 10314,

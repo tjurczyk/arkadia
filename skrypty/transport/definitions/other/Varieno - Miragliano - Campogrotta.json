@@ -2,6 +2,7 @@
     "enter": "Oplacasz podroz u woznicy i wsiadasz do szarego stojacego dylizansu.",
     "exit_command": "wyjscie",
     "start": "Drzwiczki sie zamykaja, drzenie przebiega przez caly pojazd, ktory powoli rusza.",
+    "bind": "wyjrzyj przez okno",
     "stops": [
         {
             "start": 5468,

@@ -2,6 +2,7 @@
     "enter": "Wchodzisz na smukly bryg.",
     "exit": "Schodzisz z brygu.",
     "start": "Zaloga odcumowuje statek, ktory powoli zaczyna odplywac od brzegu.",
+    "bind": "ob widok",
     "stops": [
         {
             "start": 4651,

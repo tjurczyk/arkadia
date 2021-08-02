@@ -2,6 +2,7 @@
     "enter": "Wchodzisz na rzeczna tratwe.",
     "start": "Tratwa odbija od brzegu.",
     "exit": "Schodzisz z tratwy.",
+    "bind": "ob widok",
     "stops": [
         {
             "start": 7732,

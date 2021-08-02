@@ -2,6 +2,7 @@
     "enter": "Wchodzisz na duzy solidny prom.",
     "exit": "Schodzisz z promu.",
     "start": "Prom odbija od brzegu.",
+    "bind": "ob widok",
     "stops": [
         {
             "start": 2464,

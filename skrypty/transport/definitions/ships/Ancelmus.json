@@ -2,11 +2,12 @@
     "enter": "Wchodzisz na wielka galere.",
     "exit": "Schodzisz z galery.",
     "start": "Galera odbija od brzegu.",
+    "bind": "ob widok",
     "stops": [
         {
             "start": 6429,
             "destination": 6621,
-            "time": 46,
+            "time": 43,
             "stop_pattern": "^(?:Czarnowlosy barczysty mezczyzna|Ancelmus) krzyczy: Doplynelismy do przystani w Krainie Zgromadzenia! Mozna wysiadac!$"
         },
         {

@@ -6,7 +6,7 @@
         {
             "start": 6429,
             "destination": 6621,
-            "time": 47,
+            "time": 46,
             "stop_pattern": "^(?:Czarnowlosy barczysty mezczyzna|Ancelmus) krzyczy: Doplynelismy do przystani w Krainie Zgromadzenia! Mozna wysiadac!$"
         },
         {
@@ -32,14 +32,14 @@
         {
             "start": 7233,
             "destination": 6621,
-            "time": 45,
+            "time": 40,
             "stop_pattern": "^(?:Czarnowlosy barczysty mezczyzna|Ancelmus) krzyczy: Doplynelismy do przystani w Krainie Zgromadzenia! Mozna wysiadac!$",
             "set_pattern": "^(?:Czarnowlosy barczysty mezczyzna|Ancelmus) krzyczy: Nastepnym portem bedzie przystan w Krainie Zgromadzenia!$"
         },
         {
             "start": 6621,
             "destination": 6429,
-            "time": 42,
+            "time": 40,
             "stop_pattern": "^(?:Czarnowlosy barczysty mezczyzna|Ancelmus) krzyczy: Doplynelismy do przystani na Blekitnej Wstedze! Mozna wysiadac!$",
             "set_pattern": "^(?:Czarnowlosy barczysty mezczyzna|Ancelmus) krzyczy: Nastepnym portem bedzie przystan na Blekitnej Wstedze!$"
         }

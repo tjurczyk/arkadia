@@ -1,0 +1,19 @@
+{
+    "enter": "Wchodzisz na prom.",
+    "exit": "Schodzisz z promu.",
+    "start": "Prom odbija od brzegu.",
+    "stops": [
+        {
+            "start": 4841,
+            "destination": 4824,
+            "time": 30,
+            "stop_pattern": "^(?:Wysoki muskularny mezczyzna|Daniel) krzyczy: Doplynelismy do przystani na polnocnym brzegu Brienne! Mozna wysiadac!$"
+        },
+        {
+            "start": 4824,
+            "destination": 4841,
+            "time": 30,
+            "stop_pattern": "^(?:Wysoki muskularny mezczyzna|Daniel) krzyczy: Doplynelismy do przystani na poludniowym brzegu Brienne! Mozna wysiadac!$"
+        }
+    ]
+}

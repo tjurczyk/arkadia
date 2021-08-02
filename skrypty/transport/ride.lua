@@ -34,7 +34,7 @@ function scripts.transports.ride:init()
             registerAnonymousEventHandler("gmcp.room.info", function(_)
                 self:exit()
             end, true)
-        end), true)
+        end))
     end
     table.insert(self.triggers, tempExactMatchTrigger(self.definition.start, function() self:start() end))
 end
@@ -65,20 +65,28 @@ end
 function scripts.transports.ride:cleanup()
     for _, triggerId in pairs(self.triggers) do
         killTrigger(triggerId)
+        self.triggers = {}
     end
     if self.stop_pattern then
         killTrigger(self.stop_pattern)
+        self.stop_pattern = nil
     end
     if self.progress_timer then
         killTimer(self.progress_timer)
+        self.progress_timer = nil
     end
     for _, handlerId in pairs(self.handlers) do
         killAnonymousEventHandler(handlerId)
+        self.handlers = {}
     end
+    self:hide_progress()
     self:cleanup_callback()
 end
 
 function scripts.transports.ride:start()
+    if not self.on_board then
+        return
+    end
     if self.stop_pattern then
         killTrigger(self.stop_pattern)
     end
@@ -101,6 +109,7 @@ function scripts.transports.ride:stop()
     local delta = os.time() - self.start_time
     if delta < expected_time then
         scripts:print_log("Czas podrozy " .. delta)
+        self:store_new_minimum(delta)
     end
 
     self.index = self.index >= #self.definition.stops and 1 or self.index + 1
@@ -112,13 +121,21 @@ function scripts.transports.ride:stop()
     self:hide_progress()
 end
 
+function scripts.transports.ride:store_new_minimum(time)
+    local times = scripts.transports:read_minimums()
+    times[self.id] = times[self.id] or {}
+    times[self.id][self.index] = math.min(time, tonumber(times[self.id][self.index]) or 99999)
+    self.definition.stops[self.index].time = math.min(time, self.definition.stops[self.index].time)
+    scripts.transports:store_minimums(times)
+end
+
 function scripts.transports.ride:show_progress()
     local border_bottom = getBorderBottom()
     local border_right = getBorderRight()
     
     self.progress = Geyser.Gauge:new({
         name = string.format("transport.progress.%s.%s", self.id, self.index),
-        x = -border_right - padding * 2 - bar_width,
+        x = -border_right - padding * 2 - bar_width - 20,
         y = -border_bottom - padding + (-padding * 2 - bar_height ) * table.index_of(scripts.transports.active_rides, self),
         height = bar_height,
         width = bar_width,
@@ -135,5 +152,7 @@ function scripts.transports.ride:update_progress()
 end
 
 function scripts.transports.ride:hide_progress()
-    self.progress:hide()
+    if self.progress then
+        self.progress:hide()
+    end
 end

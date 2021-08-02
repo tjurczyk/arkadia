@@ -1,7 +1,10 @@
 scripts.transports = scripts.transports or {triggers = {}, temp_triggers = {}, active_rides = {}}
 
+local travel_times_file = getMudletHomeDir() .. "/travel-times.json"
+
 local enter_commands = {
     "wsiadz na statek",
+    "wejdz na statek",
     "wsiadz do dylizansu"
 }
 
@@ -27,9 +30,14 @@ local location_to_definition = {}
 function scripts.transports:init()
     for _, triggerId in pairs(self.triggers) do
         killTrigger(triggerId)
+        self.triggers = {}
     end
+    local minimums = self:read_minimums()
     for definition, props in pairs(definitions) do
         for index, stop in pairs(props.stops) do
+            if minimums[definition] and minimums[definition][index] then
+                stop.time = math.min(stop.time, tonumber(minimums[definition][index]) or 999999)
+            end
             location_to_definition[stop.start] = definition
             if stop.set_pattern then
                 table.insert(self.triggers, tempRegexTrigger(stop.set_pattern, function()
@@ -38,7 +46,6 @@ function scripts.transports:init()
                         if #self.active_rides > 0 then
                             for _,ride in pairs(self.active_rides) do
                                 if ride.id == definition and ride.index == index then
-                                    local ride = self:create_ride(definition, index)
                                     self:remove_invalid_rides(ride)
                                     hasRide = true
                                     break
@@ -56,7 +63,7 @@ function scripts.transports:init()
     if self.enter_alias then
         killAlias(self.enter_alias)
     end
-    local alias_cmd = string.format("^%s$", table.concat(enter_commands, "|"))
+    local alias_cmd = string.format("^(?:%s)$", table.concat(enter_commands, "|"))
     self.enter_alias = tempAlias(alias_cmd, "_find_ride()")
 end
 
@@ -108,6 +115,20 @@ function scripts.transports:remove_all_rides()
         ride:cleanup()
     end
     self.active_rides = {}
+end
+
+function scripts.transports:read_minimums()
+    local handle = io.open(travel_times_file, "r")
+    local raw_times = handle:read("*a")
+    handle:close()
+    return (raw_times and raw_times ~= "") and yajl.to_value(raw_times) or {}  
+end
+
+
+function scripts.transports:store_minimums(minimums)
+    local handle = io.open(travel_times_file, "w")
+    handle:write(yajl.to_string(minimums))
+    handle:close()
 end
 
 scripts.transports:init()

@@ -10,8 +10,8 @@ end
 
 
 
-function scripts:print_url(formatted_msg, func_name, tooltip)
+function scripts:print_url(formatted_msg, func, tooltip)
     -- prints a clickable 'formatted_msg' that will execute 'func_name' when clicked and is 'tooltip'
-    cechoLink(formatted_msg, func_name .. "()", tooltip, true)
+    cechoLink(formatted_msg, type(func) == "function" and func or func .. "()", tooltip, true)
 end
 

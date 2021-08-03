@@ -8,13 +8,15 @@
             "start": 5946,
             "destination": 11154,
             "time": 85,
-            "stop_pattern": "^(?:Malutki tlusciutki mezczyzna|Cern) krzyczy: Doplynelismy do przystani na Wyspie Milosci! Mozna wysiadac!$"
+            "stop_pattern": "^(?:Malutki tlusciutki mezczyzna|Cern) krzyczy: Doplynelismy do przystani na Wyspie Milosci! Mozna wysiadac!$",
+            "label": "Wyspa Milosci"
         },
         {
             "start": 11154,
             "destination": 5946,
             "time": 87,
-            "stop_pattern": "^(?:Malutki tlusciutki mezczyzna|Cern) krzyczy: Doplynelismy do przystani w Urbimo! Mozna wysiadac!$"
+            "stop_pattern": "^(?:Malutki tlusciutki mezczyzna|Cern) krzyczy: Doplynelismy do przystani w Urbimo! Mozna wysiadac!$",
+            "label": "Urbimo"
         }
     ]
 }

@@ -8,13 +8,15 @@
             "start": 4060,
             "destination": 6428,
             "time": 174,
-            "stop_pattern": "^(?:Sniady spokojny mezczyzna|Jacob) krzyczy: Doplynelismy do przystani na Blekitnej Wstedze! Mozna wysiadac!"
+            "stop_pattern": "^(?:Sniady spokojny mezczyzna|Jacob) krzyczy: Doplynelismy do przystani na Blekitnej Wstedze! Mozna wysiadac!",
+            "label" : "Blekitna Wstega"
         },
         {
             "start": 6428,
             "destination": 4060,
             "time": 174,
-            "stop_pattern": "^(?:Sniady spokojny mezczyzna|Jacob) krzyczy: Doplynelismy do przystani w Blaviken! Mozna wysiadac!"
+            "stop_pattern": "^(?:Sniady spokojny mezczyzna|Jacob) krzyczy: Doplynelismy do przystani w Blaviken! Mozna wysiadac!",
+            "label" : "Blaviken"
         }
     ]
 }

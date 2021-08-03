@@ -134,6 +134,17 @@ Argumenty:
 
 ---
 
+## `travelDestinationReached`
+
+Event podniesiony kiedy srodek transportu dotrze do przystanku. 
+
+Argumenty:
+  * `arg1`: definicja przystanku
+  * `arg2`: definicja transportu
+  * `arg3`: obiekt podrozy
+
+---
+
 ## `ateamAttackingDifferentTarget`
 
 Event ten jest podniesiony w momencie, kiedy postac atakuje innego przeciwnika niz aktualny cel ataku.

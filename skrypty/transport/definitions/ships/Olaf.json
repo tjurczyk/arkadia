@@ -8,13 +8,15 @@
             "start": 10314,
             "destination": 23678,
             "time": 25,
-            "stop_pattern": "^(?:Rudobrody rozmowny mezczyzna|Olaf) krzyczy: Doplynelismy do przystani na wyspie Hindarsfjall! Mozna wysiadac!$"
+            "stop_pattern": "^(?:Rudobrody rozmowny mezczyzna|Olaf) krzyczy: Doplynelismy do przystani na wyspie Hindarsfjall! Mozna wysiadac!$",
+            "label" : "Hindarsfjall"
         },
         {
             "start": 23678,
             "destination": 10314,
             "time": 28,
-            "stop_pattern": "^(?:Rudobrody rozmowny mezczyzna|Olaf) krzyczy: Doplynelismy do zachodniego nabrzeza na wyspie Ard Skellig! Mozna wysiadac!$"
+            "stop_pattern": "^(?:Rudobrody rozmowny mezczyzna|Olaf) krzyczy: Doplynelismy do zachodniego nabrzeza na wyspie Ard Skellig! Mozna wysiadac!$",
+            "label" : "Ard Skellig"
         }
     ]
 }

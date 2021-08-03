@@ -8,25 +8,29 @@
             "start": 2223,
             "destination": 4061,
             "time": 48,
-            "stop_pattern": "^(?:Jasnowlosy sniady elf|Flavius) krzyczy: Doplynelismy do przystani w Blaviken! Mozna wysiadac!$"
+            "stop_pattern": "^(?:Jasnowlosy sniady elf|Flavius) krzyczy: Doplynelismy do przystani w Blaviken! Mozna wysiadac!$",
+            "label": "Blaviken"
         },
         {
             "start": 4061,
             "destination": 11690,
             "time": 42,
-            "stop_pattern": "^(?:Jasnowlosy sniady elf|Flavius) krzyczy: Doplynelismy do przystani w Daevon! Mozna wysiadac!$"
+            "stop_pattern": "^(?:Jasnowlosy sniady elf|Flavius) krzyczy: Doplynelismy do przystani w Daevon! Mozna wysiadac!$",
+            "label": "Daevon"
         },
         {
             "start": 11690,
             "destination": 4058,
             "time": 55,
-            "stop_pattern": "^(?:Jasnowlosy sniady elf|Flavius) krzyczy: Doplynelismy do przystani w Blaviken! Mozna wysiadac!$"
+            "stop_pattern": "^(?:Jasnowlosy sniady elf|Flavius) krzyczy: Doplynelismy do przystani w Blaviken! Mozna wysiadac!$",
+            "label": "Blaviken"
         },
         {
             "start": 4058,
             "destination": 2223,
             "time": 55,
-            "stop_pattern": "^(?:Jasnowlosy sniady elf|Flavius) krzyczy: Doplynelismy do przystani w Novigradzie! Mozna wysiadac!$"
+            "stop_pattern": "^(?:Jasnowlosy sniady elf|Flavius) krzyczy: Doplynelismy do przystani w Novigradzie! Mozna wysiadac!$",
+            "label": "Novigrad"
         }
     ]
 }

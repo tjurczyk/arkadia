@@ -8,13 +8,15 @@
             "start": 7732,
             "destination": 7733,
             "time": 25,
-            "stop_pattern": "^(?:Smagly przygarbiony mezczyzna|Louis) krzyczy: Doplynelismy do przystani na poludniowym brzegu Grismerie! Mozna wysiadac!"
+            "stop_pattern": "^(?:Smagly przygarbiony mezczyzna|Louis) krzyczy: Doplynelismy do przystani na poludniowym brzegu Grismerie! Mozna wysiadac!",
+            "label" : "Parravon"
         },
         {
             "start": 7733,
             "destination": 7732,
             "time": 25,
-            "stop_pattern": "^(?:Smagly przygarbiony mezczyzna|Louis) krzyczy: Doplynelismy do przystani na polnocnym brzegu Grismerie! Mozna wysiadac!"
+            "stop_pattern": "^(?:Smagly przygarbiony mezczyzna|Louis) krzyczy: Doplynelismy do przystani na polnocnym brzegu Grismerie! Mozna wysiadac!",
+            "label" : "Bretonia"
         }
     ]
 }

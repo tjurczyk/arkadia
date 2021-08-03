@@ -120,8 +120,10 @@ end
 
 function scripts.transports:read_minimums()
     local handle = io.open(travel_times_file, "r")
-    local raw_times = handle:read("*a")
-    handle:close()
+    if handle then
+        local raw_times = handle:read("*a")
+        handle:close()
+    end
     return (raw_times and raw_times ~= "") and yajl.to_value(raw_times) or {}  
 end
 

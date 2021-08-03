@@ -8,13 +8,15 @@
             "start": 23792,
             "destination": 9707,
             "time": 91,
-            "stop_pattern": "^(?:Charyzmatyczny brodaty mezczyzna|Batista) krzyczy: Doplynelismy do zachodniego nabrzeza w Baccali! Mozna wysiadac!$"
+            "stop_pattern": "^(?:Charyzmatyczny brodaty mezczyzna|Batista) krzyczy: Doplynelismy do zachodniego nabrzeza w Baccali! Mozna wysiadac!$",
+            "label": "Baccala"
         },
         {
             "start": 9707,
             "destination": 23792,
             "time": 95,
-            "stop_pattern": "^(?:Charyzmatyczny brodaty mezczyzna|Batista) krzyczy: Doplynelismy do przystani na wyspie Mekan! Mozna wysiadac!$"
+            "stop_pattern": "^(?:Charyzmatyczny brodaty mezczyzna|Batista) krzyczy: Doplynelismy do przystani na wyspie Mekan! Mozna wysiadac!$",
+            "label": "Mekan"
         }
     ]
 }

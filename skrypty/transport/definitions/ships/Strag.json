@@ -8,13 +8,15 @@
             "start": 2464,
             "destination": 3542,
             "time": 29,
-            "stop_pattern": "(?:Mlody smutny mezczyzna|Strag) krzyczy: Doplynelismy do przystani w Grabowej Buchcie! Mozna wysiadac!$"
+            "stop_pattern": "(?:Mlody smutny mezczyzna|Strag) krzyczy: Doplynelismy do przystani w Grabowej Buchcie! Mozna wysiadac!$",
+            "label" : "Grabowa Buchta"
         },
         {
             "start": 3542,
             "destination": 2464,
             "time": 33,
-            "stop_pattern": "(?:Mlody smutny mezczyzna|Strag) krzyczy: Doplynelismy do przystani promu w Oxenfurcie! Mozna wysiadac!$"
+            "stop_pattern": "(?:Mlody smutny mezczyzna|Strag) krzyczy: Doplynelismy do przystani promu w Oxenfurcie! Mozna wysiadac!$",
+            "label" : "Oxenfurt"
         }
     ]
 }

@@ -8,13 +8,15 @@
             "start": 10369,
             "destination": 23685,
             "time": 29,
-            "stop_pattern": "^(?:Kustykajacy barczysty mezczyzna|Rygwit) krzyczy: Doplynelismy do przystani na wyspie Kaer Hemdall! Mozna wysiadac!$"
+            "stop_pattern": "^(?:Kustykajacy barczysty mezczyzna|Rygwit) krzyczy: Doplynelismy do przystani na wyspie Kaer Hemdall! Mozna wysiadac!$",
+            "label" : "Kaer Hemdall"
         },
         {
             "start": 23685,
             "destination": 10369,
             "time": 29,
-            "stop_pattern": "^(?:Kustykajacy barczysty mezczyzna|Rygwit) krzyczy: Doplynelismy do zachodniej osady na wyspie Ard Skellig! Mozna wysiadac!$"
+            "stop_pattern": "^(?:Kustykajacy barczysty mezczyzna|Rygwit) krzyczy: Doplynelismy do zachodniej osady na wyspie Ard Skellig! Mozna wysiadac!$",
+            "label" : "Ard Skellig"
         }
     ]
 }

@@ -9,21 +9,24 @@
             "destination": 2467,
             "time": 40,
             "stop_pattern": "^(?:Chudy zdenerwowany mezczyzna|Pluskolec) krzyczy: Doplynelismy do pierwszego pomostu w Oxenfurcie! Mozna wysiadac!$",
-            "set_pattern": "^(?:Chudy zdenerwowany mezczyzna|Pluskolec) .*: Nastepnym portem bedzie pierwszy pomost w Oxenfurcie"
+            "set_pattern": "^(?:Chudy zdenerwowany mezczyzna|Pluskolec) .*: Nastepnym portem bedzie pierwszy pomost w Oxenfurcie",
+            "label" : "Oxenfurt"
         },
         {
             "start": 2467,
             "destination": 2212,
             "time": 40,
             "stop_pattern": "^(?:Chudy zdenerwowany mezczyzna|Pluskolec) krzyczy: Doplynelismy do przystani w Bialym Moscie! Mozna wysiadac!$",
-            "set_pattern": "^(?:Chudy zdenerwowany mezczyzna|Pluskolec) .*: Nastepnym portem bedzie przystan w Bialym Moscie"
+            "set_pattern": "^(?:Chudy zdenerwowany mezczyzna|Pluskolec) .*: Nastepnym portem bedzie przystan w Bialym Moscie",
+            "label" : "Bialy Most"
         },
         {
             "start": 2212,
             "destination": 7908,
             "time": 30,
             "stop_pattern": "^(?:Chudy zdenerwowany mezczyzna|Pluskolec) krzyczy: Doplynelismy do poludniowego nabrzeza w Novigradzie! Mozna wysiadac!$",
-            "set_pattern": "^(?:Chudy zdenerwowany mezczyzna|Pluskolec) .*: Nastepnym portem bedzie poludniowe nabrzeze w Novigradzie"
+            "set_pattern": "^(?:Chudy zdenerwowany mezczyzna|Pluskolec) .*: Nastepnym portem bedzie poludniowe nabrzeze w Novigradzie",
+            "label" : "Novigrad"
         }
     ]
 }

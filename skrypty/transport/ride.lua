@@ -1,7 +1,7 @@
 scripts.transports.ride = {}
 
 local bar_height = 30
-local bar_width = 300
+local bar_width = 350
 local padding = 10
 
 function scripts.transports.ride:new(id, definition, index, cleanup_callback)
@@ -117,6 +117,8 @@ function scripts.transports.ride:stop()
         self:store_new_minimum(delta)
     end
 
+    raiseEvent("travelDestinationReached", self.definition.stops[self.index], self.definition, self)
+
     self.index = self.index >= #self.definition.stops and 1 or self.index + 1
     scripts.transports:remove_invalid_rides(self)
     if self.progress_timer then
@@ -153,7 +155,9 @@ end
 
 function scripts.transports.ride:update_progress()
     local current, total = self:get_progress()
-    self.progress:setValue(math.min(current, total), total, string.format("<pre><center>%s -> %s   %s/%s</center></pre>", self.definition.stops[self.index].start, self.definition.stops[self.index].destination, scripts.utils.str_pad(tostring(current), string.len(tostring(total)), "right"), total))
+    local current_stop = self.definition.stops[self.index]
+    local label = current_stop.label and "→ " .. current_stop.label or string.format("%s → %s", current_stop.start, current_stop.destination)
+    self.progress:setValue(math.min(current, total), total, string.format("<pre><center>%s %s/%s</center></pre>", label, scripts.utils.str_pad(tostring(current), string.len(tostring(total)), "right"), total))
 end
 
 function scripts.transports.ride:hide_progress()

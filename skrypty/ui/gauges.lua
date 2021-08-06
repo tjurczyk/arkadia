@@ -47,7 +47,7 @@ Ui.setGaugeStyle = function(gauge, red, green, blue, colorfactor, type, fontsize
   cssfront = cssfront .. ');'
   cssback = cssback .. ');'
 
-  local csstext = textcss or f [[padding-left: 0.2em; font: "Cascadia Mono";]]
+  local csstext = textcss or f [[padding-left: 0.2em; font: "]] .. getFont() ..[[";]]
   if fontsize then gauge:setFontSize(fontsize) end
   gauge:setStyleSheet(cssfront, cssback, csstext)
 end

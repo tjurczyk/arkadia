@@ -150,6 +150,8 @@ function scripts.transports.ride:show_progress()
         font = getFont()
     })
 
+    Ui.setGaugeStyle(self.progress, 42, 28, 15, 3.5, 'SIMPLE', getFontSize() - 1, "")
+
     self:update_progress()
 end
 
@@ -157,7 +159,7 @@ function scripts.transports.ride:update_progress()
     local current, total = self:get_progress()
     local current_stop = self.definition.stops[self.index]
     local label = current_stop.label and "→ " .. current_stop.label or string.format("%s → %s", current_stop.start, current_stop.destination)
-    self.progress:setValue(math.min(current, total), total, string.format("<pre><center>%s %s/%s</center></pre>", label, scripts.utils.str_pad(tostring(current), string.len(tostring(total)), "right"), total))
+    self.progress:setValue(math.min(current, total), total, string.format("<center>%s %s/%s</center>", label, scripts.utils.str_pad(tostring(current), string.len(tostring(total)), "right"), total))
 end
 
 function scripts.transports.ride:hide_progress()

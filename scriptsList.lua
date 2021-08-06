@@ -53,6 +53,7 @@ return {
     "mapper/area",
     "mapper/dirs",
     "mapper/db",
+    "skrypty/ui/gauges",
     "skrypty/team/core",
     "skrypty/team/bind_functions",
     "skrypty/team/gmcp_handler_data",

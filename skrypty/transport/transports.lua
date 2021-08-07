@@ -5,6 +5,8 @@ local travel_times_file = getMudletHomeDir() .. "/travel-times.json"
 local enter_commands = {
     "wsiadz na statek",
     "wejdz na statek",
+    "wejdz na prom",
+    "wsiadz na prom",
     "wsiadz do dylizansu",
     "wsiadz do wozu"
 }
@@ -70,7 +72,7 @@ end
 
 function _find_ride()
     scripts.transports:find_ride()
-    send(matches[1])
+    send(matches[1], false)
 end
 
 function scripts.transports:get(location) 
@@ -120,8 +122,9 @@ end
 
 function scripts.transports:read_minimums()
     local handle = io.open(travel_times_file, "r")
+    local raw_times
     if handle then
-        local raw_times = handle:read("*a")
+        raw_times = handle:read("*a")
         handle:close()
     end
     return (raw_times and raw_times ~= "") and yajl.to_value(raw_times) or {}  

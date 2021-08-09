@@ -315,7 +315,7 @@ amap.special_exits = {
 }
 
 function trigger_func_mapper_jedziesz_wozem()
-    tempTimer(0.07, function() amap:locate(true) end)
+    registerAnonymousEventHandler("gmcp.room.info", function() amap:locate(true) end, true)
 end
 
 function trigger_func_mapper_idziesz()

@@ -83,13 +83,14 @@ function scripts.transports:find_ride()
     if #self.active_rides > 0 then
         return
     end
-    local candidate_key = location_to_definition[amap.curr.id]
+    local current_location = tonumber(amap.curr.id)
+    local candidate_key = location_to_definition[current_location]
     if not candidate_key then
         scripts:debug_log("Brak definicji srodka transportu!")
     else 
         local candidate = definitions[candidate_key]
         for index, stop in pairs(candidate.stops) do
-            if stop.start == amap.curr.id then
+            if stop.start == current_location then
                 self:create_ride(candidate_key, index)
             end
         end

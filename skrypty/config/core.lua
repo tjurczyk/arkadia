@@ -41,10 +41,6 @@ end
 function scripts_init_v2_config(name, wolacz)
     if io.exists(scripts_config_path(name)) then
         scripts:print_log("konfiguracja dla '" .. name .. "' juz istnieje")
-        if not check_if_load_trigger_exists(wolacz) then
-            scripts:print_log("Tworze trigger ladujacy konfiguracje podczas logowania.")
-            scriptc_config_create_trigger(name, wolacz)
-        end
     else
         scripts.config = ScriptsConfig:init(name, true)
         if not scripts.config then
@@ -66,6 +62,10 @@ function scripts_init_v2_config(name, wolacz)
         scriptc_config_create_trigger(name, wolacz)
         
         scripts:print_log("utworzona konfiguracja dla " .. name .. " w pliku " .. scripts_config_path(name))
+    end
+    if not check_if_load_trigger_exists(wolacz) then
+        scripts:print_log("Tworze trigger ladujacy konfiguracje podczas logowania.")
+        scriptc_config_create_trigger(name, wolacz)
     end
 end
 

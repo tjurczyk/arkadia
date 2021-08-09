@@ -24721,7 +24721,7 @@
 			</TriggerGroup>
 			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>jedziesz-wozem</name>
-				<script>trigger_func_mapper_jedziesz_wozem()</script>
+				<script>trigger_func_mapper_jedziesz_wozem(matches[2])</script>
 				<triggerType>0</triggerType>
 				<conditonLineDelta>0</conditonLineDelta>
 				<mStayOpen>0</mStayOpen>
@@ -24733,8 +24733,8 @@
 				<colorTriggerFgColor>#000000</colorTriggerFgColor>
 				<colorTriggerBgColor>#000000</colorTriggerBgColor>
 				<regexCodeList>
-					<string>jedziesz .* wozem na .*</string>
-					<string>jedziesz .* bryczka na .*</string>
+					<string>jedziesz .* wozem na (\w+)(?:,.*)?\.$</string>
+					<string>jedziesz .* bryczka na (\w+)(?:,.*)?\.$</string>
 				</regexCodeList>
 				<regexCodePropertyList>
 					<integer>1</integer>

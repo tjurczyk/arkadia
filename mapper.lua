@@ -314,7 +314,8 @@ amap.special_exits = {
     ["zejdz po zboczu"] = true,
 }
 
-function trigger_func_mapper_jedziesz_wozem()
+function trigger_func_mapper_jedziesz_wozem(direction)
+    amap:follow(amap.polish_to_english[direction], false)
     registerAnonymousEventHandler("gmcp.room.info", function() amap:locate(true) end, true)
 end
 

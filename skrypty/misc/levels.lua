@@ -15,15 +15,16 @@ misc["levels"] = {
 }
 
 misc["animal_levels"] = {
-    ["plochliwe"] = "[1/9]",
-    ["nerwowe"] = "[2/9]",
-    ["nieufne"] = "[3/9]",
-    ["ulegle"] = "[4/9]",
-    ["spokojne"] = "[5/9]",
-    ["przywiazane"] = "[6/9]",
-    ["ufne"] = "[7/9]",
-    ["lojalne"] = "[8/9]",
-    ["oddane"] = "[9/9]",
+    ["plochliwe"] = "[1/10]",
+    ["nerwowe"] = "[2/10]",
+    ["nieufne"] = "[3/10]",
+    ["ulegle"] = "[4/10]",
+    ["spokojne"] = "[5/10]",
+    ["przywiazane"] = "[6/10]",
+    ["ufne"] = "[7/10]",
+    ["lojalne"] = "[8/10]",
+    ["oddane"] = "[9/10]",
+    ["calkowicie oddane"] = "[10/10]"
 }
 
 function misc:level_replace(text)

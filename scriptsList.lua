@@ -100,6 +100,7 @@ return {
     "skrypty/herbs/db",
     "skrypty/herbs/help",
     "skrypty/herbs/herb_window",
+    "skrypty/herbs/herbs_effects",
     "skrypty/mail/mail_creator",
     "skrypty/people/core",
     "skrypty/people/tools",

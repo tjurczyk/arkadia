@@ -15,8 +15,8 @@
             "start": 5601,
             "destination": 5206,
             "time": 68,
-            "stop_pattern": "^(?:Luiggi|Lysawy gruby mezczyzna) krzyczy: Doplynelismy do przystani w Kreutzhoffen! Mozna wysiadac!$",
-            "label" : "Kreutzhoffen"
+            "stop_pattern": "^(?:Luiggi|Lysawy gruby mezczyzna) krzyczy: Doplynelismy do przystani w Kreutzhofen! Mozna wysiadac!$",
+            "label" : "Kreutzhofen"
         }
     ]
 }

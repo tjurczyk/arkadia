@@ -23,8 +23,8 @@
             "start": 7233,
             "destination": 5207,
             "time": 43,
-            "stop_pattern": "^(?:Czarnowlosy barczysty mezczyzna|Ancelmus) krzyczy: Doplynelismy do przystani w Kreutzhoffen! Mozna wysiadac!$",
-            "set_pattern": "^(?:Czarnowlosy barczysty mezczyzna|Ancelmus) krzyczy: Nastepnym portem bedzie przystan w Kreutzhoffen!$",
+            "stop_pattern": "^(?:Czarnowlosy barczysty mezczyzna|Ancelmus) krzyczy: Doplynelismy do przystani w Kreutzhofen! Mozna wysiadac!$",
+            "set_pattern": "^(?:Czarnowlosy barczysty mezczyzna|Ancelmus) krzyczy: Nastepnym portem bedzie przystan w Kreutzhofen!$",
             "label": "Kreutzhofen"
         },
         {

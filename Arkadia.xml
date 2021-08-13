@@ -22055,7 +22055,7 @@
 								<colorTriggerFgColor>#000000</colorTriggerFgColor>
 								<colorTriggerBgColor>#000000</colorTriggerBgColor>
 								<regexCodeList>
-									<string>Doplynelismy do przystani w Kreutzhoffen! Mozna wysiadac!</string>
+									<string>Doplynelismy do przystani w Kreutzhofen! Mozna wysiadac!</string>
 								</regexCodeList>
 								<regexCodePropertyList>
 									<integer>0</integer>
@@ -23473,7 +23473,7 @@
 								<colorTriggerFgColor>#000000</colorTriggerFgColor>
 								<colorTriggerBgColor>#000000</colorTriggerBgColor>
 								<regexCodeList>
-									<string>Doplynelismy do przystani w Kreutzhoffen! Mozna wysiadac!</string>
+									<string>Doplynelismy do przystani w Kreutzhofen! Mozna wysiadac!</string>
 								</regexCodeList>
 								<regexCodePropertyList>
 									<integer>0</integer>

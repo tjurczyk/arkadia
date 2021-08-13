@@ -7,7 +7,7 @@
         {
             "start": 2223,
             "destination": 4061,
-            "time": 48,
+            "time": 45,
             "stop_pattern": "^(?:Jasnowlosy sniady elf|Flavius) krzyczy: Doplynelismy do przystani w Blaviken! Mozna wysiadac!$",
             "label": "Blaviken"
         },

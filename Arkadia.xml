@@ -24475,6 +24475,7 @@
 						<string>Rozkopujesz zarosniety grob i przeszukujesz spoczywajacy w nim szkielet. Posrod spruchnialych, zniszczonych przedmiotow, udaje ci sie znalezc cos wartego uwagi.</string>
 						<string>^Po dokladnym przeszukaniu ciala stwierdzasz, ze korzystajac ze swoich umiejetnosci</string>
 						<string>Wynurzasz sie na powierzchnie.</string>
+						<string>Przeszukujesz cuchnace i przegnile zwloki, znajdujac</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>3</integer>
@@ -24496,6 +24497,7 @@
 						<integer>3</integer>
 						<integer>1</integer>
 						<integer>3</integer>
+						<integer>2</integer>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>

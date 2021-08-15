@@ -1,0 +1,40 @@
+{
+    "enter": "Wchodzisz na dwumasztowy nilfgaardzki statek.",
+    "exit": "Schodzisz ze statku.",
+    "start": "Statek odbija od brzegu.",
+    "bind": "ob widok",
+    "stops": [
+        {
+            "start": 7910,
+            "destination": 3281,
+            "time": 107,
+            "stop_pattern": "^(?:Otyly czerwononosy mezczyzna|Charonda) krzyczy: Doplynelismy do przystani w twierdzy Rozrog! Mozna wysiadac!$",
+            "set_pattern": "^(?:Otyly czerwononosy mezczyzna|Charonda).*: Nastepnym portem bedzie przystan w twierdzy Rozrog",
+            "label": "Rozrog"
+        },
+        {
+            "start": 3281,
+            "destination": 9705,
+            "time": 76,
+            "stop_pattern": "^(?:Otyly czerwononosy mezczyzna|Charonda) krzyczy: Doplynelismy do centralnego nabrzeza w Baccali! Mozna wysiadac!$",
+            "set_pattern": "^(?:Otyly czerwononosy mezczyzna|Charonda).*: Nastepnym portem bedzie centralne nabrzeze w Baccali",
+            "label": "Baccala"
+        },
+        {
+            "start": 9705,
+            "destination": 3281,
+            "time": 76,
+            "stop_pattern": "^(?:Otyly czerwononosy mezczyzna|Charonda) krzyczy: Doplynelismy do przystani w twierdzy Rozrog! Mozna wysiadac!$",
+            "set_pattern": "^(?:Otyly czerwononosy mezczyzna|Charonda).*: Nastepnym portem bedzie przystan w twierdzy Rozrog",
+            "label": "Rozrog"
+        },
+        {
+            "start": 3281,
+            "destination": 7910,
+            "time": 107,
+            "stop_pattern": "^(?:Otyly czerwononosy mezczyzna|Charonda) krzyczy: Doplynelismy do poludniowego nabrzeza w Novigradzie! Mozna wysiadac!$",
+            "set_pattern": "^(?:Otyly czerwononosy mezczyzna|Charonda).*: Nastepnym portem bedzie poludniowe nabrzeze w Novigradzie",
+            "label": "Novigrad"
+        }
+    ]
+}

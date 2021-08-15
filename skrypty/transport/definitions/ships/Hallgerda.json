@@ -1,0 +1,22 @@
+{
+    "enter": "Wchodzisz na szeroka knare.",
+    "exit": "Schodzisz z knary.",
+    "start": "Knara odbija od brzegu.",
+    "bind": "ob widok",
+    "stops": [
+        {
+            "start": 10311,
+            "destination": 7907,
+            "time": 63,
+            "stop_pattern": "^(?:Przysadzista jasnowlosa kobieta|Hallgerda) krzyczy: Doplynelismy do poludniowego nabrzeza w Novigradzie! Mozna wysiadac!$",
+            "label" : "Novigrad"
+        },
+        {
+            "start": 7907,
+            "destination": 10311,
+            "time": 56,
+            "stop_pattern": "^(?:Przysadzista jasnowlosa kobieta|Hallgerda) krzyczy: Doplynelismy do polnocnego nabrzeza na wyspie Ard Skellig! Mozna wysiadac!$",
+            "label" : "Ard Skellig"
+        }
+    ]
+}

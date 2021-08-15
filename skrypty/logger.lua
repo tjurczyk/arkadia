@@ -15,3 +15,8 @@ function scripts:print_url(formatted_msg, func_name, tooltip)
     cechoLink(formatted_msg, func_name .. "()", tooltip, true)
 end
 
+function scripts:debug_log(msg, new_line)
+    if scripts.debug then
+        self:print_log(msg, new_line)
+    end
+end

@@ -1,0 +1,34 @@
+{
+    "enter": "Oplacasz podroz u woznicy i wsiadasz do szarego stojacego dylizansu.",
+    "exit_command": "wyjscie",
+    "start": "Drzwiczki sie zamykaja, drzenie przebiega przez caly pojazd, ktory powoli rusza.",
+    "bind": "wyjrzyj przez okno",
+    "stops": [
+        {
+            "start": 5468,
+            "destination": 5439,
+            "time": 40,
+            "stop_pattern": "^Z zewnatrz slyszysz glos woznicy: Fermata - incrocio alla Miragliano!$"
+        },
+        {
+            "start": 5439,
+            "destination": 5985,
+            "time": 54,
+            "set_pattern": "^(?:Woznica|Z zewnatrz).*: Partire per Varieno in qualche minuti!",
+            "stop_pattern": "^Z zewnatrz slyszysz glos woznicy: Fermata - Varieno!$"
+        },
+        {
+            "start": 5985,
+            "destination": 5439,
+            "time": 54,
+            "stop_pattern": "^Z zewnatrz slyszysz glos woznicy: Fermata - incrocio alla Miragliano!$"
+        },
+        {
+            "start": 5439,
+            "destination": 5468,
+            "time": 40,
+            "stop_pattern": "^Z zewnatrz slyszysz glos woznicy: Fermata - Campogrotta!$",
+            "set_pattern": "^(?:Woznica|Z zewnatrz).*: Partire per Campogrotta in qualche minuti!"
+        } 
+    ]
+}

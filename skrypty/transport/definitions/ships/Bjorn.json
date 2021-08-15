@@ -1,0 +1,22 @@
+{
+    "enter": "Wchodzisz na maly statek.",
+    "exit": "Schodzisz ze statku.",
+    "start": "Statek odbija od brzegu.",
+    "bind": "ob widok",
+    "stops": [
+        {
+            "start": 3273,
+            "destination": 23708,
+            "time": 50,
+            "stop_pattern": "^(?:Zarosniety ogorzaly kapitan|Bjorn) krzyczy: Doplynelismy do przystani na wyspie Mekan! Mozna wysiadac!$",
+            "label": "Mekan"
+        },
+        {
+            "start": 23708,
+            "destination": 3273,
+            "time": 46,
+            "stop_pattern": "^(?:Zarosniety ogorzaly kapitan|Bjorn) krzyczy: Doplynelismy do przystani w twierdzy Rozrog! Mozna wysiadac!$",
+            "label": "Rozrog"
+        }
+    ]
+}

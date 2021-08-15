@@ -20283,8 +20283,8 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^.*[pP]odazasz (|skradajac sie )za (.* na (.*))(?:,.*)?\.$</string>
-							<string>^Wraz z ([a-zA-Z ,]*) podazasz za (.* na (.*))(?:,.*)?\.$</string>
+							<string>^.*[pP]odazasz (|skradajac sie )za (.* na (.*?))(?:,.*)?\.$</string>
+							<string>^Wraz z ([a-zA-Z ,]*) podazasz za (.* na (.*?))(?:,.*)?\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>

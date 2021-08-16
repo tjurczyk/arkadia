@@ -1,6 +1,8 @@
 scripts["people"] = scripts["people"] or { 
     db = {},
-    mail = {},
+    mail = {
+        show_automatically = false
+    },
     enemies = {},
     color_triggers = {},
     already_processed = {},

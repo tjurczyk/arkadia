@@ -37,7 +37,11 @@ function scripts.people.mail:check_package_person(name)
     local results = db:fetch(scripts.people.db.people, db:like(scripts.people.db.people.title, "%" .. lowered_name .. "%"))
 
     if amap and table.size(results) == 1 and results[1]["room_id"] ~= -1 then
-        amap:print_log("Mam ta osobe w bazie.", true)
+        if scripts.people.mail.show_automatically then
+            amap.path_display:start(results[1]["room_id"])
+        else
+            scripts:print_url("\n<orange>Kilknij tutaj, zeby pokazac sciezke.", function() amap.path_display:start(results[1]["room_id"]) end, "Prowadz do " .. results[1]["room_id"])
+        end
         return true
     end
 

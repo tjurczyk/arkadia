@@ -1580,6 +1580,12 @@ Dostępne wartości:
 
 ---
 
+## `scripts.people.mail.show_automatically`
+
+Flaga określa czy automatycznie pokazywać scieżkę na mapie do oddania paczki, po obejrzeniu paczki, jeżeli lokalizacja NPC jest znana.
+
+---
+
 ## `scripts.ui.notification_center.enabled`
 
 Określa czy notyfikacje na różne wydarzenia (np. pocztę) w prawym górnym rogu maja być włączone.

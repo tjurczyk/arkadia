@@ -1,0 +1,22 @@
+{
+    "enter": "Wchodzisz na tajemniczy okret.",
+    "exit": "Schodzisz z okretu.",
+    "start": "Okret odbija od brzegu.",
+    "bind": "ob widok",
+    "stops": [
+        {
+            "start": 7911,
+            "destination": 11153,
+            "time": 91,
+            "stop_pattern": "^(?:Intrygujacy dlugowlosy mezczyzna|Gvidon) krzyczy: Doplynelismy do przystani na Wyspie Milosci! Mozna wysiadac!$",
+            "label" : "Wyspa Milosci"
+        },
+        {
+            "start": 11153,
+            "destination": 7911,
+            "time": 86,
+            "stop_pattern": "^(?:Intrygujacy dlugowlosy mezczyzna|Gvidon) krzyczy: Doplynelismy do poludniowego nabrzeza w Novigradzie! Mozna wysiadac!$",
+            "label" : "Novigrad"
+        }
+    ]
+}

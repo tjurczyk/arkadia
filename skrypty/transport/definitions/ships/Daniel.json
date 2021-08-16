@@ -1,0 +1,22 @@
+{
+    "enter": "Wchodzisz na prom.",
+    "exit": "Schodzisz z promu.",
+    "start": "Prom odbija od brzegu.",
+    "bind": "ob widok",
+    "stops": [
+        {
+            "start": 4841,
+            "destination": 4824,
+            "time": 30,
+            "stop_pattern": "^(?:Wysoki muskularny mezczyzna|Daniel) krzyczy: Doplynelismy do przystani na polnocnym brzegu Brienne! Mozna wysiadac!$",
+            "label": "Zachod Quenelles"
+        },
+        {
+            "start": 4824,
+            "destination": 4841,
+            "time": 30,
+            "stop_pattern": "^(?:Wysoki muskularny mezczyzna|Daniel) krzyczy: Doplynelismy do przystani na poludniowym brzegu Brienne! Mozna wysiadac!$",
+            "label": "Laki pod Quenelles"
+        }
+    ]
+}

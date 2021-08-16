@@ -1,0 +1,36 @@
+{
+    "enter": "Wchodzisz na niewielki dwumasztowy statek.",
+    "exit": "Schodzisz ze statku.",
+    "start": "Statek odbija od brzegu.",
+    "bind": "ob widok",
+    "stops": [
+        {
+            "start": 3247,
+            "destination": 7912,
+            "time": 73,
+            "stop_pattern": "^(?:Zarosniety smierdzacy mezczyzna|Kelim) krzyczy: Doplynelismy do poludniowego nabrzeza w Novigradzie! Mozna wysiadac!$",
+            "label" : "Novigrad"
+        },
+        {
+            "start": 7912,
+            "destination": 3248,
+            "time": 58,
+            "stop_pattern": "^(?:Zarosniety smierdzacy mezczyzna|Kelim) krzyczy: Doplynelismy do srodkowego pomostu w Obawie! Mozna wysiadac!$",
+            "label" : "Obawa"
+        },
+        {
+            "start": 3248,
+            "destination": 927,
+            "time": 56,
+            "stop_pattern": "^(?:Zarosniety smierdzacy mezczyzna|Kelim) krzyczy: Doplynelismy do przystani w twierdzy Scala! Mozna wysiadac!$",
+            "label" : "Scala"
+        },
+        {
+            "start": 927,
+            "destination": 3247,
+            "time": 77,
+            "stop_pattern": "^(?:Zarosniety smierdzacy mezczyzna|Kelim) krzyczy: Doplynelismy do zachodniego pomostu w Obawie! Mozna wysiadac!$",
+            "label" : "Obawa"
+        }
+    ]
+}

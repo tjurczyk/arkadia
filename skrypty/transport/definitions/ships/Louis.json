@@ -1,0 +1,22 @@
+{
+    "enter": "Wchodzisz na rzeczna tratwe.",
+    "start": "Tratwa odbija od brzegu.",
+    "exit": "Schodzisz z tratwy.",
+    "bind": "ob widok",
+    "stops": [
+        {
+            "start": 7732,
+            "destination": 7733,
+            "time": 25,
+            "stop_pattern": "^(?:Smagly przygarbiony mezczyzna|Louis) krzyczy: Doplynelismy do przystani na poludniowym brzegu Grismerie! Mozna wysiadac!",
+            "label" : "Parravon"
+        },
+        {
+            "start": 7733,
+            "destination": 7732,
+            "time": 25,
+            "stop_pattern": "^(?:Smagly przygarbiony mezczyzna|Louis) krzyczy: Doplynelismy do przystani na polnocnym brzegu Grismerie! Mozna wysiadac!",
+            "label" : "Bretonia"
+        }
+    ]
+}

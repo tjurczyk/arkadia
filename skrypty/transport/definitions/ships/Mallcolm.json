@@ -1,0 +1,22 @@
+{
+    "enter": "Wchodzisz na rzeczny statek.",
+    "exit": "Schodzisz ze statku.",
+    "start": "Statek odbija od brzegu.",
+    "bind": "ob widok",
+    "stops": [
+        {
+            "start": 15409,
+            "destination": 6428,
+            "time": 41,
+            "stop_pattern": "^(?:Ciemnowlosy przyjacielski mezczyzna|Mallcolm) krzyczy: Doplynelismy do przystani na Blekitnej Wstedze! Mozna wysiadac!$",
+            "label" : "Blekitna Wstega"
+        },
+        {
+            "start": 6427,
+            "destination": 15409,
+            "time": 40,
+            "stop_pattern": "^(?:Ciemnowlosy przyjacielski mezczyzna|Mallcolm) krzyczy: Doplynelismy do przystani w twierdzy Karak Varn! Mozna wysiadac!$",
+            "label" : "Karak Varn"
+        }
+    ]
+}

@@ -1689,6 +1689,11 @@
       ]
     },
     {
+        "name": "scripts.gags.own_spec_prefix",
+        "default_value": "",
+        "field_type": "string"
+    },
+    {
       "name": "scripts.keybind.configuration.fight_support.modifier",
       "default_value": [
         "Control"

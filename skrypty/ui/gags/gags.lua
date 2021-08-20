@@ -8,7 +8,7 @@ end
 
 function scripts.gags:gag_spec(prefix, power, total_power, kind)
     local own_prefix = prefix == "" and "" or prefix .. " "
-    self:gag_prefix(string.format("%s%d/%d", prefix, power, total_power), kind)
+    self:gag_prefix(string.format("%s%d/%d", own_prefix, power, total_power), kind)
 end
 
 function scripts.gags:gag_own_spec(power, total_power)

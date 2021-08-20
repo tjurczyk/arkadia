@@ -7,15 +7,15 @@ function scripts.gags:gag(power, total_power, kind)
 end
 
 function scripts.gags:gag_spec(prefix, power, total_power, kind)
-    self:gag_prefix(string.format("%s %d/%d", prefix, power, total_power), kind)
+    local own_prefix = prefix == "" and "" or prefix .. " "
+    self:gag_prefix(string.format("%s%d/%d", prefix, power, total_power), kind)
 end
 
 function scripts.gags:gag_own_spec(power, total_power)
     if total_power then
         self:gag_spec(self.own_spec_prefix, power, total_power, "moje_spece")
     else
-        local own_prefix = self.own_spec_prefix == "" and "" or self.own_spec_prefix .. " "
-        self:gag_prefix(string.format("%s%s", own_prefix, power), "moje_spece")
+        self:gag_prefix(string.format("%s%s", self.own_prefix, power), "moje_spece")
     end
 end
 

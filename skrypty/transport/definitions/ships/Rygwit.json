@@ -1,0 +1,22 @@
+{
+    "enter": "Wchodzisz na stary buzar.",
+    "exit": "Schodzisz z buzara.",
+    "start": "Buzar odbija od brzegu.",
+    "bind": "ob widok",
+    "stops": [
+        {
+            "start": 10369,
+            "destination": 23685,
+            "time": 29,
+            "stop_pattern": "^(?:Kustykajacy barczysty mezczyzna|Rygwit) krzyczy: Doplynelismy do przystani na wyspie Kaer Hemdall! Mozna wysiadac!$",
+            "label" : "Kaer Hemdall"
+        },
+        {
+            "start": 23685,
+            "destination": 10369,
+            "time": 29,
+            "stop_pattern": "^(?:Kustykajacy barczysty mezczyzna|Rygwit) krzyczy: Doplynelismy do zachodniej osady na wyspie Ard Skellig! Mozna wysiadac!$",
+            "label" : "Ard Skellig"
+        }
+    ]
+}

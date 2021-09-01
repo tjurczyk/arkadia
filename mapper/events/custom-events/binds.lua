@@ -44,6 +44,10 @@ function amap_db_check_bind()
 end
 
 function amap.db:execute_bind()
+    if scripts.transports.transport_bind then
+        misc:run_separeted_command(scripts.transports.transport_bind)
+        return
+    end
     if not amap.curr.id or getRoomUserData(amap.curr.id, "bind") == "" then
         return
     end

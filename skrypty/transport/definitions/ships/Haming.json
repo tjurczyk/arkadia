@@ -1,0 +1,38 @@
+{
+    "enter": "Wchodzisz na rzeczny transportowy statek.",
+    "exit": "Schodzisz ze statku.",
+    "start": "Statek odbija od brzegu.",
+    "bind": "ob widok",
+    "stops": [
+        {
+            "start": 2616,
+            "destination": 10018,
+            "time": 42,
+            "stop_pattern": "^(?:Haming|Stary zgorzknialy mezczyzna) krzyczy: Doplynelismy do przystani w Hagge! Mozna wysiadac!$",
+            "label" : "Hagge"
+        },
+        {
+            "start": 10018,
+            "destination": 8087,
+            "time": 42,
+            "stop_pattern": "^(?:Haming|Stary zgorzknialy mezczyzna) krzyczy: Doplynelismy do przystani w Starych Bukach! Mozna wysiadac!$",
+            "set_pattern": "^(?:Haming|Stary zgorzknialy mezczyzna) krzyczy: Nastepnym portem bedzie przystan w Starych Bukach!$",
+            "label" : "Stare Buki"
+        },
+        {
+            "start": 8087,
+            "destination": 10018,
+            "time": 56,
+            "stop_pattern": "^(?:Haming|Stary zgorzknialy mezczyzna) krzyczy: Doplynelismy do przystani w Hagge! Mozna wysiadac!$",
+            "label" : "Hagge"
+        },
+        {
+            "start": 10018,
+            "destination": 2616,
+            "time": 63,
+            "stop_pattern": "^(?:Haming|Stary zgorzknialy mezczyzna) krzyczy: Doplynelismy do drugiego pomostu w Pianie! Mozna wysiadac!$",
+            "set_pattern": "^(?:Haming|Stary zgorzknialy mezczyzna) krzyczy: Nastepnym portem bedzie drugi pomost w Pianie!$",
+            "label" : "Piana"
+        }
+    ]
+}

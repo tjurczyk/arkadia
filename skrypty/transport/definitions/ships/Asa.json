@@ -1,0 +1,29 @@
+{
+    "enter": "Wchodzisz na plaskodenny skeid.",
+    "exit": "Schodzisz ze skeida.",
+    "start": "Skeid odbija od brzegu.",
+    "bind": "ob widok",
+    "stops": [
+        {
+            "start": 10313,
+            "destination": 23669,
+            "time": 55,
+            "stop_pattern": "^(?:Mlody zylasty mezczyzna|Asa) krzyczy: Doplynelismy do przystani na wyspie Faroe! Mozna wysiadac!$",
+            "label": "Faroe"
+        },
+        {
+            "start": 23669,
+            "destination": 3280,
+            "time": 86,
+            "stop_pattern": "^(?:Mlody zylasty mezczyzna|Asa) krzyczy: Doplynelismy do przystani w twierdzy Rozrog! Mozna wysiadac!$",
+            "label": "Rozrog"
+        },
+        {
+            "start": 3280,
+            "destination": 10313,
+            "time": 29,
+            "stop_pattern": "^(?:Mlody zylasty mezczyzna|Asa) krzyczy: Doplynelismy do zachodniego nabrzeza na wyspie Ard Skellig! Mozna wysiadac!$",
+            "label": "Ard Skellig"
+        }
+    ]
+}

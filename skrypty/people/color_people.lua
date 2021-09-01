@@ -1,5 +1,5 @@
 function scripts.people:process_person_color(item, text, suffix, color, guild_color)
-    if gmcp.gmcp_msgs.type == "room.short" then
+    if gmcp.gmcp_msgs and gmcp.gmcp_msgs.type == "room.short" then
         return
     end
     if item.name ~= text and suffix then

@@ -12,4 +12,3 @@ function trigger_func_mapper_localizers_ships_buses_ships_novigrad_oxenfurt_bial
     amap:print_log("GPS: Bialy Most", true)
     amap:set_position(2212, true)
 end
-

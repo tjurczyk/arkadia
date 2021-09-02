@@ -1542,7 +1542,7 @@
 							<colorTriggerFgColor>#000000</colorTriggerFgColor>
 							<colorTriggerBgColor>#000000</colorTriggerBgColor>
 							<regexCodeList>
-								<string>.*(Doplynelismy.*(Mozna|w calej swej)|Marynarze sprawnie cumuja)</string>
+								<string>^(?!Ktos).*(Doplynelismy.*(Mozna|w calej swej)|Marynarze sprawnie cumuja)</string>
 							</regexCodeList>
 							<regexCodePropertyList>
 								<integer>1</integer>

@@ -24124,6 +24124,7 @@
 						<string>^Zaczynasz plynac</string>
 						<string>^Przyklekasz i zaczynasz powoli i dokladnie szorowac szmata podloge, starajac sie pozbyc wszystkich zabrudzen\.$</string>
 						<string>Wiedziony pierwotnym zewem lesnego lowcy, zwinnie przyklekasz na kolano i zaczynasz szukac sladow,starajac sie uchwycic wszystkimi zmyslami podszepty natury.</string>
+						<string>Zajmujesz miejsce przy wioslach.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>2</integer>
@@ -24147,6 +24148,7 @@
 						<integer>3</integer>
 						<integer>1</integer>
 						<integer>1</integer>
+						<integer>3</integer>
 						<integer>3</integer>
 					</regexCodePropertyList>
 				</Trigger>
@@ -24476,6 +24478,7 @@
 						<string>^Po dokladnym przeszukaniu ciala stwierdzasz, ze korzystajac ze swoich umiejetnosci</string>
 						<string>Wynurzasz sie na powierzchnie.</string>
 						<string>Przeszukujesz cuchnace i przegnile zwloki, znajdujac</string>
+						<string>Wstajesz od wiosel.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>3</integer>
@@ -24498,6 +24501,7 @@
 						<integer>1</integer>
 						<integer>3</integer>
 						<integer>2</integer>
+						<integer>3</integer>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
@@ -24931,6 +24935,30 @@
 						<string>Jestes ogluszony i nie mozesz nic zrobic.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
+						<integer>3</integer>
+					</regexCodePropertyList>
+				</Trigger>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>blockers4</name>
+					<script>trigger_func_mapper_blockers_blocker()</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>Aby kierowac lodzia, musisz usiasc przy wioslach.</string>
+						<string>^Nie masz juz sil walczyc z zywiolem i dajesz sie poniesc pradowi na</string>
+						<string>Mimo wlozenia wszystkich sil w wioslowanie nie jestes w stanie pokonac niezwykle silnego pradu wody.</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>3</integer>
+						<integer>1</integer>
 						<integer>3</integer>
 					</regexCodePropertyList>
 				</Trigger>

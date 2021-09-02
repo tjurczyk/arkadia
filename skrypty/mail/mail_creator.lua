@@ -6,9 +6,11 @@ scripts.mail_creator = scripts.mail_creator or {
     body = "mail_body",
     width = 55,
     templates = {
-        plain = require("skrypty.mail.plain_mail_template"),
-        plain_border = require("skrypty.mail.plain_border_template"),
-        parchment = require("skrypty.mail.parchment_mail_template")
+        plain = require("skrypty.mail.templates.plain_mail"),
+        plain_border = require("skrypty.mail.templates.plain_border"),
+        parchment = require("skrypty.mail.templates.parchment"),
+        parchment2 = require("skrypty.mail.templates.parchment2"),
+        parchment3 = require("skrypty.mail.templates.parchment3")
     },
     template = "plain",
     justify = true

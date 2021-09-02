@@ -1,3 +1,14 @@
+--  +-----------------------------------------------------------+ 
+--  |                                                           | 
+--  |                                                           | 
+--  |                                                           | 
+--  |                                                           | 
+--  |                                                           | 
+--  |                                                           | 
+--  |                                                           | 
+--  |                                                           | 
+--  +-----------------------------------------------------------+ 
+
 local mail_creator = {}
 
 function mail_creator:crate_content(content)
@@ -9,7 +20,7 @@ function mail_creator:crate_content(content)
 end
 
 function mail_creator:border_line(line)
-    return [[ |  ]] .. scripts.utils.str_pad(line, self.width) ..[[  | ]]
+    return [[ |  ]] .. scripts.utils.str_pad(line:gsub("^>", ""), self.width, line:sub(1,1) ~= ">" and "left" or "right") ..[[  | ]]
 end
 
 function mail_creator:create_header()

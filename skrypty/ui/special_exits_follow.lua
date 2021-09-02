@@ -655,3 +655,7 @@ end
 function trigger_func_skrypty_ui_special_exits_follow_zejdz_po_zboczu()
     scripts.utils.bind_functional_team_follow(matches[2], "zejdz po zboczu", 15)
 end
+
+function trigger_func_skrypty_ui_special_exits_follow_rzeka()
+    scripts.utils.bind_functional_team_follow(matches[2], "przeplyn przez rzeke", 15)
+end

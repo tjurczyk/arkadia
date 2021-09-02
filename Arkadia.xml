@@ -20657,10 +20657,8 @@
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
 						<string>^(?:|&gt; )*Skryty za .* zaczynasz plynac na (.*)\.$</string>
-						<string>^Kierujesz lodz na (.*)\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
-						<integer>1</integer>
 						<integer>1</integer>
 					</regexCodePropertyList>
 				</Trigger>
@@ -24124,7 +24122,6 @@
 						<string>^Zaczynasz plynac</string>
 						<string>^Przyklekasz i zaczynasz powoli i dokladnie szorowac szmata podloge, starajac sie pozbyc wszystkich zabrudzen\.$</string>
 						<string>Wiedziony pierwotnym zewem lesnego lowcy, zwinnie przyklekasz na kolano i zaczynasz szukac sladow,starajac sie uchwycic wszystkimi zmyslami podszepty natury.</string>
-						<string>Zajmujesz miejsce przy wioslach.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>2</integer>
@@ -24148,7 +24145,6 @@
 						<integer>3</integer>
 						<integer>1</integer>
 						<integer>1</integer>
-						<integer>3</integer>
 						<integer>3</integer>
 					</regexCodePropertyList>
 				</Trigger>
@@ -24478,7 +24474,7 @@
 						<string>^Po dokladnym przeszukaniu ciala stwierdzasz, ze korzystajac ze swoich umiejetnosci</string>
 						<string>Wynurzasz sie na powierzchnie.</string>
 						<string>Przeszukujesz cuchnace i przegnile zwloki, znajdujac</string>
-						<string>Wstajesz od wiosel.</string>
+						<string>Przestajesz wioslowac.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>3</integer>
@@ -24955,10 +24951,12 @@
 						<string>Aby kierowac lodzia, musisz usiasc przy wioslach.</string>
 						<string>^Nie masz juz sil walczyc z zywiolem i dajesz sie poniesc pradowi na</string>
 						<string>Mimo wlozenia wszystkich sil w wioslowanie nie jestes w stanie pokonac niezwykle silnego pradu wody.</string>
+						<string>Przestajesz wioslowac.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>3</integer>
 						<integer>1</integer>
+						<integer>3</integer>
 						<integer>3</integer>
 					</regexCodePropertyList>
 				</Trigger>

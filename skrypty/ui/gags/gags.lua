@@ -1,11 +1,22 @@
-scripts.gags = scripts.gags or {}
+scripts.gags = scripts.gags or {
+    own_spec_prefix = ""
+}
 
 function scripts.gags:gag(power, total_power, kind)
     self:gag_prefix(string.format("%d/%d", power, total_power), kind)
 end
 
 function scripts.gags:gag_spec(prefix, power, total_power, kind)
-    self:gag_prefix(string.format("%s %d/%d", prefix, power, total_power), kind)
+    local own_prefix = prefix == "" and "" or prefix .. " "
+    self:gag_prefix(string.format("%s%d/%d", own_prefix, power, total_power), kind)
+end
+
+function scripts.gags:gag_own_spec(power, total_power)
+    if total_power then
+        self:gag_spec(self.own_spec_prefix, power, total_power, "moje_spece")
+    else
+        self:gag_prefix(string.format("%s%s", self.own_prefix, power), "moje_spece")
+    end
 end
 
 function scripts.gags:gag_prefix(gag_prefix, kind)

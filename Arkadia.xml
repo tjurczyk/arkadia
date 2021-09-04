@@ -7963,7 +7963,7 @@
 								<string>^(?!W slepiach)</string>
 							</regexCodeList>
 							<regexCodePropertyList>
-								<integer>0</integer>
+								<integer>1</integer>
 							</regexCodePropertyList>
 							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 								<name>ktos_ledwo_muska</name>

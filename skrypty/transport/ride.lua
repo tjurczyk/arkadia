@@ -37,6 +37,10 @@ function scripts.transports.ride:init()
         end))
     end
     table.insert(self.triggers, tempExactMatchTrigger(self.definition.start, function() self:start() end))
+    table.insert(self.triggers, tempRegexTrigger("^Jednym susem przesadzasz burte .* i wskakujesz do wody\\. Po chwili udaje ci sie doplynac z powrotem do brzegu\\.$", function() 
+        self:exit() 
+        self:abort()
+    end))
 end
 
 function scripts.transports.ride:enter()

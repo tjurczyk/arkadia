@@ -1143,6 +1143,12 @@ Kolory, ktore mozna wybrac sa dostepne w `/kolory` lub [tutaj](https://forums.mu
 
 ---
 
+## `scripts.gags.own_spec_prefix`
+
+Prefix dla gagow wlasnych ciosow specjalnych.
+
+---
+
 ## Keybindy
 
 Ponizej znajduje sie konfiguracja keybindow w skryptach.

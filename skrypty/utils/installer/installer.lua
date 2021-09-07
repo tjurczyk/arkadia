@@ -54,7 +54,12 @@ end
 function scripts.installer:handle_unzip_scripts(event, ...)
     if event == "sysUnzipDone" then
         os.remove(scripts.installer.scripts_zip)
-        pcall(scripts.installer.delete_dir, scripts.installer.scripts_directory)
+        local success, err = pcall(scripts.installer.delete_dir, scripts.installer.scripts_directory)
+        if not success then
+            scripts:print_log("Nie udalo sie zaktualizowac skryptow.")
+            scripts:print_log(err)
+            scripts.installer.delete_dir(scripts.installer.unzip_directory)
+        end
         uninstallPackage("Arkadia")
         tempTimer(1, function()
             scripts.installer:put_version_to_file()
@@ -142,11 +147,17 @@ function scripts.installer.delete_dir(dir)
         local file_path = dir .. '/' .. file
         if file ~= "." and file ~= ".." then
             if lfs.attributes(file_path, 'mode') == 'file' then
-                os.remove(file_path)
+                local code, sucess, err = pcall(os.remove, file_path)
+                if not sucess then
+                    error(err)
+                end
             elseif lfs.attributes(file_path, 'mode') == 'directory' then
                 scripts.installer.delete_dir(file_path)
             end
         end
     end
-    lfs.rmdir(dir)
+    local success, err = lfs.rmdir(dir)
+    if not success then
+        error(err)
+    end
 end

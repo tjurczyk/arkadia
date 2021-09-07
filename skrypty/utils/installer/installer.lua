@@ -59,6 +59,7 @@ function scripts.installer:handle_unzip_scripts(event, ...)
             scripts:print_log("Nie udalo sie zaktualizowac skryptow.")
             scripts:print_log(err)
             scripts.installer.delete_dir(scripts.installer.unzip_directory)
+            return
         end
         uninstallPackage("Arkadia")
         tempTimer(1, function()

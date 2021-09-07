@@ -159,6 +159,6 @@ function scripts.installer.delete_dir(dir)
     end
     local success, err = lfs.rmdir(dir)
     if not success then
-        error(err)
+        error("Nie udalo sie usunac katalogu " .. dir .. " - " .. err)
     end
 end

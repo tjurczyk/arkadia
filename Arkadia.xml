@@ -24477,6 +24477,7 @@
 						<string>Wynurzasz sie na powierzchnie.</string>
 						<string>Przeszukujesz cuchnace i przegnile zwloki, znajdujac</string>
 						<string>Przestajesz wioslowac.</string>
+						<string>Nie mozesz tego tak po prostu wyrwac. Uzyj noza lub czegos w tym stylu...</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>3</integer>
@@ -24499,6 +24500,7 @@
 						<integer>1</integer>
 						<integer>3</integer>
 						<integer>2</integer>
+						<integer>3</integer>
 						<integer>3</integer>
 					</regexCodePropertyList>
 				</Trigger>

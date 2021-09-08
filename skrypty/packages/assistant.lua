@@ -59,13 +59,21 @@ function scripts.packages:pickup(command)
     local _, _, index = command:find("wybierz paczke (%d+)")
     if index then
         self.trigger = tempRegexTrigger("^.* przekazuje ci jakas paczke\\.", function ()
-            scripts:print_log("Biore paczke " .. index)
             self:package_given(index)
         end, 1)
+        self.trigger_fail = tempRegexTrigger("Ty juz dla nas dostatecznie ciezko zapracowales|Nie ufam ci na tyle, aby powierzyc ci dostarczenie tej przesylki", function() 
+            if self.trigger then
+                killTrigger(self.trigger)
+                self.trigger = nil
+            end
+        end)
     end
 end
 
 function scripts.packages:package_given(index)
+    if self.trigger_fail then
+        killTrigger(self.trigger_fail)
+    end
     self.delivery_trigger = tempRegexTrigger("^(Oddajesz|Zwracasz) pocztowa paczke", function() self:package_delivered(matches[2] == "Oddajesz") end, 1)
     self.picked_offer = self.current_offer[index]
     if scripts.people.mail.show_automatically and self.picked_offer.location then
@@ -129,8 +137,10 @@ function scripts.packages:update_display()
             end
         end
         self.footer_info:echo("<font color='" .. scripts.ui["footer_info_normal"] .. "'>Paczka:</font> <font color='" .. scripts.ui["footer_info_neutral"] .. "'>" .. self.picked_offer.name .. time_to_deliver .. "</font>")
+        setLabelToolTip(self.footer_info.name, time_to_deliver)
     else
         self.footer_info:echo("<font color='" .. scripts.ui["footer_info_normal"] .. "'>Paczka: -</font>")
+        resetLabelToolTip(self.footer_info.name)
     end
 end
 

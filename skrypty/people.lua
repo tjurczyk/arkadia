@@ -71,10 +71,6 @@ function trigger_func_skrypty_people_przedstawianie_korki()
     scripts.people:process_someone(matches[3], matches[4])
 end
 
-function trigger_func_skrypty_people_poczta_tablica()
-    scripts.people.mail:check_table(matches[2])
-end
-
 function trigger_func_skrypty_people_paczka()
     scripts.people.mail:check_package_person(matches[2])
 end

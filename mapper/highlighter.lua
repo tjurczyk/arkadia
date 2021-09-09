@@ -24,7 +24,7 @@ function Highlight:on()
 end
 
 function Highlight:highlight_location(location_id, color1_rgb_table, color2_rgb_table)
-    highlightRoom(location_id, color1_rgb_table[1], color1_rgb_table[2], color1_rgb_table[3], color2_rgb_table[1], color2_rgb_table[2], color2_rgb_table[3], 0.85, 255, 255)
+    highlightRoom(location_id, color1_rgb_table[1], color1_rgb_table[2], color1_rgb_table[3], color2_rgb_table[1], color2_rgb_table[2], color2_rgb_table[3], 0.85, 255, 0)
 end
 
 function Highlight:off()

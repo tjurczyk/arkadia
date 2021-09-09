@@ -5,13 +5,14 @@ function scripts.people.mail:check_table(name)
 
     local lowered_name = string.lower(name)
 
-    local results = db:fetch(scripts.people.db.people, db:like(scripts.people.db.people.title, "%" .. name .. "%"))
+    local results = db:fetch_sql(scripts.people.db.people, "select * from people WHERE title GLOB '*".. name .."*'")
 
     if amap and table.size(results) == 1 and results[1]["room_id"] ~= -1 then
         -- it has a location in the db, color with green
         selectString(name, 1)
         fg("green")
         resetFormat()
+        return results[1]["room_id"]
     elseif table.size(results) > 1 then
         selectString(name, 1)
         fg("orange")

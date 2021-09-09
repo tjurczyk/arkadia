@@ -405,11 +405,14 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^W skrzyniach zauwazasz miedzy innymi (.*)\.$</string>
-							<string>^W .* (skrzyni|kufrze|skrzynce) zauwazasz miedzy innymi (.*)\.$</string>
-							<string>^Otwarty.* kosz(?:|yk) zawiera (.*)\.$</string>
-							<string>^Na stojakach zauwazasz miedzy innymi (.*)\.$</string>
-							<string>Debowy wysoki sekretarzyk zawiera (.*)\.$</string>
+							<string>^W skrzyniach zauwazasz miedzy innymi (?&lt;content&gt;.*)\.$</string>
+							<string>^W .* (skrzyni|kufrze|skrzynce) zauwazasz miedzy innymi (?&lt;content&gt;.*)\.$</string>
+							<string>^Otwarty.* kosz(?:|yk) zawiera (?&lt;content&gt;.*)\.$</string>
+							<string>^Na stojakach zauwazasz miedzy innymi (?&lt;content&gt;.*)\.$</string>
+							<string>Debowy wysoki sekretarzyk zawiera (?&lt;content&gt;.*)\.$</string>
+							<string>.* (?:skrzynia|kufer|komoda|stojak|biblioteczka|kuferek|skrzynka)(?: | z okuciami )zawiera (?&lt;content&gt;.*)\.$</string>
+							<string>Wsrod pedantycznego porzadku w szafie zauwazasz miedzy innymi (?&lt;content&gt;.*)\.$</string>
+							<string>Otwart[ay] [a-z ]+ (?:koszyk|szafa|sejf) zawiera (?&lt;content&gt;.*)\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -417,27 +420,6 @@
 							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
-						</regexCodePropertyList>
-					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-						<name>zagladanie_skrzynie1</name>
-						<script>trigger_func_skrypty_inventory_equipment_zagladanie_skrzynie1()</script>
-						<triggerType>0</triggerType>
-						<conditonLineDelta>0</conditonLineDelta>
-						<mStayOpen>0</mStayOpen>
-						<mCommand></mCommand>
-						<packageName></packageName>
-						<mFgColor>#ff0000</mFgColor>
-						<mBgColor>#ffff00</mBgColor>
-						<mSoundFile></mSoundFile>
-						<colorTriggerFgColor>#000000</colorTriggerFgColor>
-						<colorTriggerBgColor>#000000</colorTriggerBgColor>
-						<regexCodeList>
-							<string>.* (skrzynia|kufer|komoda|stojak|biblioteczka|kuferek|skrzynka)( | z okuciami )zawiera (.*)\.$</string>
-							<string>(Wsrod) (pedantycznego) porzadku w szafie zauwazasz miedzy innymi (.*)\.$</string>
-							<string>Otwart(a|y) [a-z ]+ (koszyk|szafa|sejf) zawiera (.*)\.$</string>
-						</regexCodeList>
-						<regexCodePropertyList>
 							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>

@@ -80,11 +80,7 @@ function trigger_func_skrypty_inventory_equipment_zagladanie_plecaki_otwarte()
 end
 
 function trigger_func_skrypty_inventory_equipment_zagladanie_skrzynie()
-    scripts.inv.containers:display_contents(matches[2])
-end
-
-function trigger_func_skrypty_inventory_equipment_zagladanie_skrzynie1()
-    scripts.inv.containers:display_contents(matches[4])
+    scripts.inv.containers:display_contents(matches.content)
 end
 
 function trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()

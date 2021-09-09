@@ -24,6 +24,7 @@ function scripts.installer:update_scripts(branch, repo)
     scripts.installer.scripts_zip = getMudletHomeDir() .. "/scripts.zip"
     scripts.installer.unzip_directory = getMudletHomeDir() .. "/".. short_repo_name .."-" .. tag .. "/"
     scripts.installer.scripts_directory = getMudletHomeDir() .. "/arkadia/"
+    scripts.installer.to_delete = getMudletHomeDir() .. "/arkadia-old-" .. os.time() .. "/"
 
     if lfs.isdir(scripts.installer.scripts_directory .. "/.git/") then
         scripts:print_log("Chyba nie chcesz aktualizowac repozytorium w ten sposob? :)")
@@ -54,13 +55,23 @@ end
 function scripts.installer:handle_unzip_scripts(event, ...)
     if event == "sysUnzipDone" then
         os.remove(scripts.installer.scripts_zip)
-        pcall(scripts.installer.delete_dir, scripts.installer.scripts_directory)
+        local success, err = os.rename(scripts.installer.scripts_directory, scripts.installer.to_delete)
+        if not success then
+            scripts:print_log("Nie udalo sie zaktualizowac skryptow.")
+            scripts:print_log(err)
+            scripts.installer.delete_dir(scripts.installer.unzip_directory)
+            return
+        end
+        local deleted, del_error = pcall(scripts.installer.delete_dir(scripts.installer.to_delete))
         uninstallPackage("Arkadia")
         tempTimer(1, function()
             scripts.installer:put_version_to_file()
             os.rename(scripts.installer.unzip_directory, scripts.installer.scripts_directory)
             installPackage(scripts.installer.scripts_directory .. "Arkadia.xml")
-            scripts:print_log("Ok, zrestartuj Mudleta")
+            if not deleted then
+                scripts:print_log("Nie udalo sie usunac katalogu ze starymi skryptami. Zalecane recznie usuniecie katalogu " .. scripts.installer.to_delete .. " Nowe skrypty powinny dzialac.")
+            end
+            scripts:print_log("Ok aktualizacja udana, zrestartuj Mudleta.")
         end)
     elseif event == "sysUnzipError" then
         scripts:print_log("Blad podczas rozpakowywania skryptow")
@@ -142,11 +153,17 @@ function scripts.installer.delete_dir(dir)
         local file_path = dir .. '/' .. file
         if file ~= "." and file ~= ".." then
             if lfs.attributes(file_path, 'mode') == 'file' then
-                os.remove(file_path)
+                local code, sucess, err = pcall(os.remove, file_path)
+                if not sucess then
+                    error(err)
+                end
             elseif lfs.attributes(file_path, 'mode') == 'directory' then
                 scripts.installer.delete_dir(file_path)
             end
         end
     end
-    lfs.rmdir(dir)
+    local success, err = lfs.rmdir(dir)
+    if not success then
+        error("Nie udalo sie usunac katalogu " .. dir .. " - " .. err)
+    end
 end

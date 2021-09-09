@@ -24888,11 +24888,13 @@
 						<string>Ogromne stwory przysiadaja przed brama, blokujac do niej dostepu.</string>
 						<string>^Ruszasz w dalsza droge ale nagle stajesz w pol kroku\. Masz dziwne odczucie, ze w tym miejscu grozi ci jakies niebezpieczenstwo\.$</string>
 						<string>Nagle czujesz, ze cos oplata twa noge... ziemia w zawrotnym tepie zamienia sie miejscami z niebem. Zwisasz teraz, przywiazany za noge rzemieniem, dyndajac jak kukielka.</string>
+						<string>Probujesz otworzyc polyskujace wrota, ale nie udaje ci sie to.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
 						<integer>0</integer>
 						<integer>1</integer>
+						<integer>3</integer>
 						<integer>3</integer>
 					</regexCodePropertyList>
 				</Trigger>

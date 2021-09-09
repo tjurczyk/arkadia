@@ -1,17 +1,5 @@
-function trigger_func_skrypty_ui_gags_color_color_npc_goblin1()
-    scripts.gags:gag(0, 3, "npc")
-end
-
-function trigger_func_skrypty_ui_gags_color_color_npc_goblin2()
-    scripts.gags:gag(1, 3, "npc")
-end
-
-function trigger_func_skrypty_ui_gags_color_color_npc_goblin3()
-    scripts.gags:gag(2, 3, "npc")
-end
-
-function trigger_func_skrypty_ui_gags_color_color_npc_goblin4()
-    scripts.gags:gag(3, 3, "npc")
+function trigger_func_skrypty_ui_gags_color_color_npc_goblin(value)
+    scripts.gags:gag(value, 6, "npc")
 end
 
 function trigger_func_skrypty_ui_gags_color_color_npc_ogluch()

@@ -1,6 +1,11 @@
 scripts_loaded = scripts_loaded or false
 local plugins_dir = getMudletHomeDir() .. "/plugins"
 
+local luaDirectory = getMudletHomeDir():gsub("\\", "/") .. "/arkadia/?.lua"
+if not package.path:find(luaDirectory, 1, true) then
+    package.path = string.format("%s;%s", luaDirectory, package.path)
+end
+
 function load_scripts(force)
     if not force and scripts_loaded then
         return

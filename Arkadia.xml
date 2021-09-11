@@ -27819,7 +27819,7 @@
 		<Script isActive="yes" isFolder="no">
 			<name>init</name>
 			<packageName></packageName>
-			<script>require("arkadia")		</script>
+			<script>require("arkadia")</script>
 			<eventHandlerList />
 		</Script>
 	</ScriptPackage>

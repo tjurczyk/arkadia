@@ -1,4 +1,4 @@
-name: Verify config.md and events.md
+name: Verify config.md, events.md and requires
 
 on: [push, pull_request]
 

@@ -32,3 +32,10 @@ if(len(not_covered) > 0):
     for name in not_covered:
         print(name)
     exit(1)
+
+not_covered = [item for item in events if item not in raise_events]
+if(len(not_covered) > 0):
+    print("Events not thrown anymore")
+    for name in not_covered:
+        print(name)
+    exit(1)

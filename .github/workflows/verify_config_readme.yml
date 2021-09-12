@@ -12,3 +12,5 @@ jobs:
         run: python ./.github/workflows/check_config.py
       - name: Run events verification
         run: python ./.github/workflows/check_events.py
+      - name: Run requires verification
+        run: python ./.github/workflows/check_require.py

@@ -1,4 +1,4 @@
-name: Verify config.md
+name: Verify config.md and events.md
 
 on: [push, pull_request]
 
@@ -8,5 +8,7 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
-      - name: Run verification
+      - name: Run config verification
         run: python ./.github/workflows/check_config.py
+      - name: Run events verification
+        run: python ./.github/workflows/check_events.py

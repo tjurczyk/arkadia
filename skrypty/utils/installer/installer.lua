@@ -62,7 +62,7 @@ function scripts.installer:handle_unzip_scripts(event, ...)
             scripts.installer.delete_dir(scripts.installer.unzip_directory)
             return
         end
-        local deleted, del_error = pcall(scripts.installer.delete_dir(scripts.installer.to_delete))
+        local deleted, del_error = pcall(scripts.installer.delete_dir, scripts.installer.to_delete)
         uninstallPackage("Arkadia")
         tempTimer(1, function()
             scripts.installer:put_version_to_file()

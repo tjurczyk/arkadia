@@ -1764,6 +1764,42 @@
       ]
     },
     {
+      "name": "scripts.keybind.configuration.critical_hp.modifier",
+      "default_value": [
+        "Control",
+        "Alt"
+      ],
+      "field_type": "list",
+      "content_type" : "key_modifiers",
+      "macros_on_modify": [
+        "_keybind"
+      ]
+    },
+    {
+      "name": "scripts.keybind.configuration.critical_hp.key",
+      "default_value": "Equal",
+      "field_type": "string",
+      "macros_on_modify": [
+        "_keybind"
+      ]
+    },
+    {
+      "name": "scripts.keybind.configuration.critical_hp.keys",
+      "default_value": [],
+      "field_type": "list",
+      "macros_on_modify": [
+        "_keybind"
+      ]
+    },
+    {
+      "name": "scripts.keybind.configuration.critical_hp.active",
+      "default_value": true,
+      "field_type": "boolean",
+      "macros_on_modify": [
+        "_keybind"
+      ]
+    },
+    {
       "name": "scripts.keybind.configuration.functional_key.modifier",
       "default_value": [],
       "field_type": "list",

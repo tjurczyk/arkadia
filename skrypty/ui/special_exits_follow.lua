@@ -659,3 +659,15 @@ end
 function trigger_func_skrypty_ui_special_exits_follow_rzeka()
     scripts.utils.bind_functional_team_follow(matches[2], "przeplyn przez rzeke", 15)
 end
+
+function trigger_func_skrypty_ui_special_exits_follow_wejdz_do_kutra()
+    scripts.utils.bind_functional_team_follow(matches[2], "wejdz do kutra", 15)
+end
+
+function trigger_func_skrypty_ui_special_exits_follow_zejdz_pod_poklad()
+    scripts.utils.bind_functional_team_follow(matches[2], "zejdz pod poklad", 15)
+end
+
+function trigger_func_skrypty_ui_special_exits_follow_zejdz_z_kutra()
+    scripts.utils.bind_functional_team_follow(matches[2], "zejdz z kutra", 15)
+end

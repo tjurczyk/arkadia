@@ -16500,8 +16500,10 @@
 							<string>(.* pochyla sie i czolgajac probuje przecisnac sie przez otwor w murze... po chwili znika ci z oczu.*)</string>
 							<string>(.* przeciska sie przez otwor.*)</string>
 							<string>(.* pochyla sie i probuje wpelznac.*)</string>
+							<string>(.* odsuwa gelezie z ogromnego glazu i wchodzi przez znajdujacy sie u jego podstawy otwor pod ziemie.*)</string>
 						</regexCodeList>
 						<regexCodePropertyList>
+							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
@@ -18011,8 +18013,10 @@
 						<regexCodeList>
 							<string>(.*) zapiera sie nogami o grunt i probuje uniesc ((?:[\w-]+ )?[\w-]+ \w+)\.</string>
 							<string>(.*) zapiera sie nogami o grunt i probuje uniesc ((?:[\w-]+ )?[\w-]+ \w+) w podlodze\.</string>
+							<string>(.*) unosi ciezka, zardzewiala (krate) i zeskakuje do otworu, ktory zaslaniala\.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
+							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
 						</regexCodePropertyList>
@@ -18784,8 +18788,10 @@
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
 							<string>(.* spycha jedno z czolen na wode.*)</string>
+							<string>(.* wchodzi do niezbyt glebokiej wody po piers i przeprawia sie na przeciwlegly brzeg.*)</string>
 						</regexCodeList>
 						<regexCodePropertyList>
+							<integer>1</integer>
 							<integer>1</integer>
 						</regexCodePropertyList>
 					</Trigger>
@@ -19345,7 +19351,7 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>(.* wspina sie po przerdzewialych stopniach drabinki ku widocznej w suficie kracie.*)</string>
+							<string>(.* wspina sie po .* stopniach(?: drabinki|) ku widocznej w suficie kracie.*)</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -19466,6 +19472,66 @@
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
 							<string>(^.* wchodzi do wody i przeplywa na przeciwlegly brzeg\.)</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>1</integer>
+						</regexCodePropertyList>
+					</Trigger>
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>wejdz_do_kutra</name>
+						<script>trigger_func_skrypty_ui_special_exits_follow_wejdz_do_kutra()</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>(.* zaczyna wspinac sie do kutra.*)</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>1</integer>
+						</regexCodePropertyList>
+					</Trigger>
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>zejdz_pod_poklad</name>
+						<script>trigger_func_skrypty_ui_special_exits_follow_zejdz_pod_poklad()</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>(.* zaczyna schodzic pod poklad.*)</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>1</integer>
+						</regexCodePropertyList>
+					</Trigger>
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>zejdz_z_kutra</name>
+						<script>trigger_func_skrypty_ui_special_exits_follow_zejdz_z_kutra()</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>(.* zaczyna schodzic z kutra.*)</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>

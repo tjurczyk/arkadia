@@ -8,7 +8,7 @@ readme_vars = []
 schema_vars = []
 
 for line in data:
-    variable = re.search("#* `(.*)`", line)
+    variable = re.search("## `(.*)`", line)
     if variable:
         readme_vars.append(variable.group(1))
 
@@ -21,6 +21,13 @@ for schema_entry in schema["fields"]:
 not_covered = [item for item in schema_vars if item not in readme_vars]
 if(len(not_covered) > 0):
     print("Config keys not present in config.md")
+    for name in not_covered:
+        print(name)
+    exit(1)
+
+not_covered = [item for item in readme_vars if item not in schema_vars]
+if(len(not_covered) > 0):
+    print("Config key not present anymore")
     for name in not_covered:
         print(name)
     exit(1)

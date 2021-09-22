@@ -83,6 +83,11 @@ Event podniesiony gdy chodzik zostanie przerwany (niezaleznie od przyczyny: blok
 
 ---
 
+## `amapWalkerStarted`
+
+Event podniesiony kiedy chodzik zostanie wystartowany.
+
+
 ## `amapWalkerFinished`
 
 Event podniesiony gdy chodzik dotrze do celu.
@@ -310,3 +315,36 @@ Argumenty:
 
 Event podniesiony kiedy zmienia sie status wydania rozkazu
 
+---
+
+## `switchReleasingGuards`
+
+Argumenty:
+  * `arg1`: stan puszczania zaslon (true/false)
+
+Event podniesiony kiedy przelaczone zostanie puszczanie zaslon.
+
+---
+
+## `equipmentEvaluation`
+
+Argumenty:
+  * `arg1`: tablica ze stanem ekwipinku
+
+Event podniesiony po ocenieniu elementu ekwipunku.
+
+## `setVar`
+
+Argumenty:
+  * `arg1`: klucz
+  * `arg2`: wartosc
+
+Event podniesiony po zmianie wartosci klucz konfiguracji.
+
+## `footerInfoCreators`
+
+Argumenty:
+  * `arg1`: tablica kreatorow
+
+Event podniesiony po stworzeniu tablicy kreatorow elementow stopki.
+Mozn go wykorzystac, zeby zarejestrowac swoj wlasny element.

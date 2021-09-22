@@ -13106,6 +13106,7 @@
 									<string>znienacka kopie cie w noge i kiedy tracisz rytm walki, przywala ci piescia prosto w nos.</string>
 									<string>Ktos bez zastanowienia uderza cie piescia w szczeke, robiac to z taka sila, ze niemal powala cie na ziemie.</string>
 									<string>silnym ciosem .* oglusza cie</string>
+									<string>Gigantyczny drapiezny troll pochyla leb i szarzuje, by uderzyc cie kreconymi rogami prosto w klatke piersiowa. Potezny cios odrzuca cie i wyrywa oddech z piersi.</string>
 								</regexCodeList>
 								<regexCodePropertyList>
 									<integer>0</integer>
@@ -13119,6 +13120,7 @@
 									<integer>0</integer>
 									<integer>0</integer>
 									<integer>1</integer>
+									<integer>3</integer>
 								</regexCodePropertyList>
 							</Trigger>
 							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -13284,8 +13286,10 @@
 									<string>.* silnym ciosem .* oglusza (?!cie)([ a-zA-Z]+)\.$</string>
 									<string>.* pochyla kosmaty leb i rzuca sie do przodu, z pelnym impetem trafiajac w ([ a-zA-Z]+). Uderzenie oglusza i powala ofiare\.$</string>
 									<string>.* znienacka kopie ([ a-zA-Z]+) w noge i kiedy ten traci rytm walki, przywala mu piescia prosto w nos\.$</string>
+									<string>^Gigantyczny drapiezny troll pochyla leb i szarzuje, by uderzyc ([ a-zA-Z]+) kreconymi rogami prosto w klatke piersiowa\\. Potezny cios odrzuca ofiare i wyrywa jej oddech z piersi\\.$</string>
 								</regexCodeList>
 								<regexCodePropertyList>
+									<integer>1</integer>
 									<integer>1</integer>
 									<integer>1</integer>
 									<integer>1</integer>
@@ -27819,15 +27823,7 @@
 		<Script isActive="yes" isFolder="no">
 			<name>init</name>
 			<packageName></packageName>
-			<script>local path = package.path
-local homeDirectory = getMudletHomeDir():gsub("\\", "/") .. "/arkadia/"
-
-local luaDirectory = string.format("%s/%s", homeDirectory, [[?.lua]])
-package.path = string.format("%s;%s", luaDirectory, path)
-
-package.loaded.init = nil
-require("init")
-		</script>
+			<script>require("arkadia")</script>
 			<eventHandlerList />
 		</Script>
 	</ScriptPackage>

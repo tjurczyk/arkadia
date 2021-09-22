@@ -36,7 +36,7 @@ end
 function trigger_func_skrypty_ui_gags_color_color_other_mozesz_dobywac()
     raiseEvent("playBeep")
     raiseEvent("canWieldAfterKnockOff")
-    creplaceLine("<green>\n\n[    BRON    ]<cornsilk> Mozesz dobyc broni klawiszem ']'\n\n")
+    creplaceLine("<green>\n\n[    BRON    ]<cornsilk> Mozesz dobyc broni klawiszem '" .. scripts.keybind:keybind_tostring("functional_key") .."'\n\n")
     resetFormat()
     scripts.utils.bind_functional(scripts.inv.weapons.wield)
     scripts.ui:info_action_update("DOBADZ")

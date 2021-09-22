@@ -231,7 +231,7 @@ function scripts.ui:setup_footer_info_guard_release()
     self.footer_info_guard_release:setStyleSheet(self.footer_info_core_base_css:getCSS())
     self.footer_info_guard_release:setClickCallback("scripts_ui_info_release_guards_click")
     setLabelCursor(self.footer_info_guard_release.name, "PointingHand")
-    self.releaseingGuardsUpdateHandler = scripts.event_register:register_singleton_event_handler(self.releaseingGuardsUpdateHandler, "switchReleasigGuards", function(_, state) scripts.ui:info_release_guards_update(state) end)
+    self.releaseingGuardsUpdateHandler = scripts.event_register:register_singleton_event_handler(self.releaseingGuardsUpdateHandler, "switchReleasingGuards", function(_, state) scripts.ui:info_release_guards_update(state) end)
     scripts.ui:info_release_guards_update(ateam.release_guards)
     self:add_footer_element(self.footer_info_guard_release)
 end

@@ -1150,7 +1150,7 @@
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>scripts.gags:is_combat()</string>
+						<string>return scripts.gags:is_combat()</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>4</integer>
@@ -2477,7 +2477,7 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>scripts.gags:is_combat()</string>
+							<string>return scripts.gags:is_combat()</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>4</integer>

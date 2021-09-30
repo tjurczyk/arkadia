@@ -2,6 +2,17 @@ scripts.gags = scripts.gags or {
     own_spec_prefix = ""
 }
 
+local combat_types = {
+    "combat.avatar",
+    "combat.team",
+    "combat.others",
+    "room.combat"
+}
+
+function scripts.gags:is_combat()
+    return gmcp and gmcp.gmcp_msgs and table.index_of(combat_types, gmcp.gmcp_msgs.type)
+end
+
 function scripts.gags:gag(power, total_power, kind)
     self:gag_prefix(string.format("%d/%d", power, total_power), kind)
 end

@@ -671,3 +671,19 @@ end
 function trigger_func_skrypty_ui_special_exits_follow_zejdz_z_kutra()
     scripts.utils.bind_functional_team_follow(matches[2], "zejdz z kutra", 15)
 end
+
+function trigger_func_skrypty_ui_special_exits_follow_przejdz_przez_portal()
+    scripts.utils.bind_functional_team_follow(matches[2], "przejdz przez portal", 15)
+end
+
+function trigger_func_skrypty_ui_special_exits_follow_przeskocz_na_polnoc_poludnie(kierunek)
+    scripts.utils.bind_functional_team_follow(matches[2], "przeskocz na " .. kierunek, 15)
+end
+
+function trigger_func_skrypty_ui_special_exits_follow_wejdz_na_skaly()
+    scripts.utils.bind_functional_team_follow(matches[2], "wejdz na skaly", 15)
+end
+
+function trigger_func_skrypty_ui_special_exits_follow_zejdz_na_wschod()
+    scripts.utils.bind_functional_team_follow(matches[2], "zejdz na wschod", 15)
+end

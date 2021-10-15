@@ -61,7 +61,7 @@ function scripts.packages:pickup(command)
         self.trigger = tempRegexTrigger("^.* przekazuje ci jakas paczke\\.", function ()
             self:package_given(index)
         end, 1)
-        self.trigger_fail = tempRegexTrigger("Ty juz dla nas dostatecznie ciezko zapracowales|Nie ufam ci na tyle, aby powierzyc ci dostarczenie tej przesylki", function() 
+        self.trigger_fail = tempRegexTrigger("Ty juz dla nas dostatecznie ciezko zapracowales|Nie ufam ci na tyle, aby powierzyc ci dostarczenie tej przesylki|Cos ci sie chyba pomylilo, nie ma takiej oferty", function() 
             if self.trigger then
                 killTrigger(self.trigger)
                 self.trigger = nil

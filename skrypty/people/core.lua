@@ -209,7 +209,7 @@ function scripts.people:search_name(name)
     end
 end
 
-function scripts.people:add_person_to_db(input_string)
+function scripts.people:add_person_to_db(input_string, guild)
     if not input_string then
         error("Wrong input")
     end
@@ -239,6 +239,11 @@ function scripts.people:add_person_to_db(input_string)
         scripts:print_log("Postac <green>" .. name .. "<tomato> dodana do bazy.")
     else
         scripts:print_log("Cos poszlo nie tak...")
+    end
+
+    if ret and guild then
+        local added = scripts.people:check_in_db(name, short)[1]
+        scripts.people:add_person_to_guild(added["_row_id"], guild)
     end
 end
 

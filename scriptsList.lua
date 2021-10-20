@@ -1,6 +1,7 @@
 return {
     "skrypty",
     "mapper",
+    "base/base_class",
     "skrypty/lfs",
     "skrypty/event_register",
     "skrypty/state_store",

@@ -20,7 +20,7 @@ function scripts.inv.equipment:replace(equipment)
 
     if equipment.typSprzetu == "puklerz" then
         cecho("<light_slate_blue>\n " .. string.sub("Typ zbroi: <grey>" .. equipment.typSprzetu .. "                                 ", 0, 50))
-        cecho("<light_slate_blue> " .. string.sub("Parowanie: <grey>" .. equipment.parowanie.label:gsub("/14", "/12") .. "                                 ", 0, 50))
+        cecho("<light_slate_blue> " .. string.sub("Parowanie: <grey>" .. equipment.parowanie.label .. "                                 ", 0, 50))
     elseif equipment.is_armor then
         cecho("<light_slate_blue>\n " .. string.sub("Typ zbroi: <grey>" .. equipment.typSprzetu .. "                                 ", 0, 50))
         cecho("<light_slate_blue>" .. string.sub("Klute: <grey>" .. equipment.klute.label .. "                                 ", 0, 50))

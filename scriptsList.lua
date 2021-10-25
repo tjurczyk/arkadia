@@ -346,6 +346,7 @@ return {
     "skrypty/ui/gags/color/color_moje_ciosy/drag-ja",
     "skrypty/ui/gags/color/color_moje_ciosy/niestandardowe_mloty",
     "skrypty/ui/gags/color/color_moje_ciosy/niestandardowe_drzewce",
+    "skrypty/ui/gags/color/color_moje_ciosy/niestandardowe_maczugi",
     "skrypty/ui/gags/color/color_moje_spece/str",
     "skrypty/ui/gags/color/color_moje_spece/mie",
     "skrypty/ui/gags/color/color_moje_spece/fan",

@@ -8,7 +8,8 @@ local enter_commands = {
     "wejdz na prom",
     "wsiadz na prom",
     "wsiadz do dylizansu",
-    "wsiadz do wozu"
+    "wsiadz do wozu",
+    "wjedz na statek"
 }
 
 

@@ -21024,12 +21024,14 @@
 						<string>Nagle jakas strzala wbija ci sie w korpus.</string>
 						<string>^Nagle jakas strzala wbija sie .* w korpus\.$</string>
 						<string>W ziemie wbila sie z niesamowita predkoscia dluga strzala.</string>
+						<string>Nadlatujaca ze swistem strzala wbija sie</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>3</integer>
 						<integer>3</integer>
 						<integer>1</integer>
 						<integer>3</integer>
+						<integer>2</integer>
 					</regexCodePropertyList>
 				</Trigger>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">

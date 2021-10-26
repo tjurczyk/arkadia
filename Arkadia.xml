@@ -20997,7 +20997,7 @@
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
 						<string>^Nagle .* podlatuje w gore, robi pol salta i zawisa bezwladnie, przywiazan. do drzewa, by dyndac jak kukielka\.$</string>
-						<string>Nagle czujesz, ze cos oplata twa noge... ziemia w zawrotnym tem?pie zamienia sie miejscami z niebem. Zwisasz teraz, przywiazany za noge rzemieniem, dyndajac jak kukielka.</string>
+						<string>Nagle czujesz, ze cos oplata twa noge... ziemia w zawrotnym tempie zamienia sie miejscami z niebem. Zwisasz teraz, przywiazany za noge rzemieniem, dyndajac jak kukielka.</string>
 						<string>(?i)rzemienna petla</string>
 					</regexCodeList>
 					<regexCodePropertyList>

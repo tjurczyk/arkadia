@@ -3,7 +3,10 @@ function trigger_func_skrypty_misc_enemies_eq_collect_weapons()
         return
     end
 
-    misc.enemy_eq[misc["currently_checking_enemy"]]["weapon"] = matches[2]
+    misc.enemy_eq[misc["currently_checking_enemy"]]["weapon"] = { matches[2] }
+    if matches[3] then
+        table.insert(misc.enemy_eq[misc["currently_checking_enemy"]]["weapon"], matches[3]:trim())
+    end
 end
 
 function trigger_func_skrypty_misc_enemies_eq_collect_armor()

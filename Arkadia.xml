@@ -2044,8 +2044,10 @@
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
 							<string>Ma na sobie (.*)\.$</string>
+							<string>^Od stop do glow .*\. Ponadto ma na sobie (.*)\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
+							<integer>1</integer>
 							<integer>1</integer>
 						</regexCodePropertyList>
 					</Trigger>
@@ -2063,8 +2065,8 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>Nosi (.*)\.$</string>
-							<string>Na zbroje ma narzucona (.*)\.$</string>
+							<string>^Nosi (.*)\.$</string>
+							<string>^Na zbroje ma narzucona (.*)\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>

@@ -33,7 +33,7 @@ function misc:enemies_print_summary()
         echo("\n\n")
         if v["weapon"] then
             cecho(" <orange>Bronie:  ")
-            for k, v in pairs(split_weapons(v["weapon"])) do
+            for k, v in pairs(v["weapon"]) do
                 local color = "yellow_green"
                 if table.contains(scripts.inv.magics_data.magics, string.lower(v)) then
                     color = scripts.inv.magics_color

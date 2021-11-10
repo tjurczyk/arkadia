@@ -2026,7 +2026,7 @@
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
 							<string>Trzyma oburacz (.*)\.$</string>
-							<string>Trzyma ([a-z ]+) (w lewej rece|w prawej rece)\.$</string>
+							<string>Trzyma ([a-z ]+?) (?:w lewej rece|w prawej rece)(?: oraz ([a-z ]+)(?:w lewej rece|w prawej rece))\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -2048,8 +2048,10 @@
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
 							<string>Ma na sobie (.*)\.$</string>
+							<string>^Od stop do glow .*\. Ponadto ma na sobie (.*)\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
+							<integer>1</integer>
 							<integer>1</integer>
 						</regexCodePropertyList>
 					</Trigger>
@@ -2067,8 +2069,8 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>Nosi (.*)\.$</string>
-							<string>Na zbroje ma narzucona (.*)\.$</string>
+							<string>^Nosi (.*)\.$</string>
+							<string>^Na zbroje ma narzucona (.*)\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>

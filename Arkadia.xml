@@ -2299,8 +2299,10 @@ display("NI")</script>
 					<regexCodeList>
 						<string>(.*) atakuje cie!</string>
 						<string>(.*) atakuje cie nie dajac ci czasu na skontrowanie swojego ataku!</string>
+						<string>^Ku twojemu zdumieniu, (.*) pojawil sie nagle tuz obok ciebie!</string>
 					</regexCodeList>
 					<regexCodePropertyList>
+						<integer>1</integer>
 						<integer>1</integer>
 						<integer>1</integer>
 					</regexCodePropertyList>
@@ -2321,8 +2323,10 @@ display("NI")</script>
 					<regexCodeList>
 						<string>^W oczach (.*) rozpala sie swiety ogien nienawisci i z imieniem Morra na ustach (rzuca sie do walki z toba)!</string>
 						<string>^(.*) z determinacja i pewnoscia siebie unosi swoja bron i (naciera na ciebie)!</string>
+						<string>^(.*) z pierwotna wsciekloscia (rzuca sie na ciebie), rozpoczynajac walke!</string>
 					</regexCodeList>
 					<regexCodePropertyList>
+						<integer>1</integer>
 						<integer>1</integer>
 						<integer>1</integer>
 					</regexCodePropertyList>

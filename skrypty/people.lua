@@ -96,7 +96,7 @@ function alias_func_skrypty_people_pokaz_wrogow()
 end
 
 function alias_func_skrypty_people_dodaj_osobe()
-    scripts.people:add_person_to_db(matches[2])
+    scripts.people:add_person_to_db(matches[2], matches[3])
 end
 
 function alias_func_skrypty_people_usun_osobe()

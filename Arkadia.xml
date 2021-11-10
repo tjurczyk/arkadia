@@ -21346,7 +21346,7 @@
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
 						<string>^Nagle .* podlatuje w gore, robi pol salta i zawisa bezwladnie, przywiazan. do drzewa, by dyndac jak kukielka\.$</string>
-						<string>Nagle czujesz, ze cos oplata twa noge... ziemia w zawrotnym tem?pie zamienia sie miejscami z niebem. Zwisasz teraz, przywiazany za noge rzemieniem, dyndajac jak kukielka.</string>
+						<string>Nagle czujesz, ze cos oplata twa noge... ziemia w zawrotnym tempie zamienia sie miejscami z niebem. Zwisasz teraz, przywiazany za noge rzemieniem, dyndajac jak kukielka.</string>
 						<string>(?i)rzemienna petla</string>
 					</regexCodeList>
 					<regexCodePropertyList>
@@ -21373,11 +21373,55 @@
 						<string>Nagle jakas strzala wbija ci sie w korpus.</string>
 						<string>^Nagle jakas strzala wbija sie .* w korpus\.$</string>
 						<string>W ziemie wbila sie z niesamowita predkoscia dluga strzala.</string>
+						<string>Nadlatujaca ze swistem strzala wbija sie</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>3</integer>
 						<integer>3</integer>
 						<integer>1</integer>
+						<integer>3</integer>
+						<integer>2</integer>
+					</regexCodePropertyList>
+				</Trigger>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>rusalka</name>
+					<script>trigger_func_rusalka()</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>zastyga nagle w miejscu.</string>
+						<string>Mimowolnie twoj wzrok krzyzuje sie ze wzrokiem zielonowlosej drobnej rusalki. Jej piekno wprost oszalamia cie...</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>0</integer>
+						<integer>3</integer>
+					</regexCodePropertyList>
+				</Trigger>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>rusalka2</name>
+					<script>trigger_func_rusalka2()</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>Nie jestes w stanie skrzywdzic tak pieknej istoty!</string>
+					</regexCodeList>
+					<regexCodePropertyList>
 						<integer>3</integer>
 					</regexCodePropertyList>
 				</Trigger>

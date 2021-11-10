@@ -10112,8 +10112,10 @@
 										<regexCodeList>
 											<string>cudem</string>
 											<string>ktore jednak</string>
+											<string>ktore szczesliwie</string>
 										</regexCodeList>
 										<regexCodePropertyList>
+											<integer>0</integer>
 											<integer>0</integer>
 											<integer>0</integer>
 										</regexCodePropertyList>

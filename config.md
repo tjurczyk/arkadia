@@ -900,6 +900,8 @@ Włacza/wyłącz bardziej graficzny pasek stanów
 
 Wartość bool
 
+---
+
 ## `scripts.ui.footer_start`
 
 W ktorym miejscu (% okna) ma sie zaczac dolna belka

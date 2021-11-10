@@ -9,14 +9,14 @@
             "destination": 3251,
             "time": 179,
             "stop_pattern": "^Bryg z wolna doplywa do brzegu\\.",
-            "label": "Quenelles"
+            "label": "Obawa"
         },
         {
             "start": 3251,
             "destination": 4651,
             "time": 179,
             "stop_pattern": "^Bryg z wolna doplywa do brzegu\\.",
-            "label": "Obawa"
+            "label": "Quenelles"
         }
     ]
 }

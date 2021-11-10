@@ -52,7 +52,8 @@ local ranks = {
     "Sierzant",
     "'Krotki'",
     "Kapral",
-    "'Profesor' vel "
+    "'Profesor' vel ",
+    "Seniore"
 }
 
 function scripts.people:strip_ranks(name)

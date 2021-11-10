@@ -50,7 +50,7 @@ function scripts.boxes:update()
     self.current_box = self.valid_banks[amap.curr.id]
     
     send("przejrzyj depozyt")
-    self.trigger = tempRegexTrigger("^(Twoj depozyt jest pusty|Nie posiadasz wykupionego depozytu|Twoj depozyt zawiera .*)\\.$", function ()
+    self.trigger = tempRegexTrigger("(Twoj depozyt jest pusty|Nie posiadasz wykupionego depozytu|Twoj depozyt zawiera .*)\\.$", function ()
         self:update_box(matches[1])
     end, 1)
 end

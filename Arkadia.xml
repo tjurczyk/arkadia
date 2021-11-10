@@ -12234,7 +12234,7 @@ display("NI")</script>
 									<colorTriggerFgColor>#000000</colorTriggerFgColor>
 									<colorTriggerBgColor>#000000</colorTriggerBgColor>
 									<regexCodeList>
-										<string>^[ &gt;]*.* uwaznie sledzi ruchy .* by trafiajac w nogi swym.* pozostawic bolesna rane\.$</string>
+										<string>^[ &gt;]*.* uwaznie sledzi ruchy .* by trafiajac w .* swym.* pozostawic bolesna rane\.$</string>
 									</regexCodeList>
 									<regexCodePropertyList>
 										<integer>1</integer>

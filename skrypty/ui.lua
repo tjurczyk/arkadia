@@ -178,6 +178,7 @@ scripts.ui["states_window_nav_printable_val_map"] = {
         [12] = "<green>12",
         [13] = "<green>13",
         [14] = "<green>14",
+        [15] = "<green>15",
     }
 }
 

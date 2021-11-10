@@ -25,6 +25,7 @@ return {
     "mapper/core",
     "mapper/room",
     "mapper/map",
+    "mapper/localization",
     "mapper/highlighter",
     "mapper/path",
     "mapper/walker",

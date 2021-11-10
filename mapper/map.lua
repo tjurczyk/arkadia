@@ -79,7 +79,11 @@ function amap:locate(noprint)
             msg = "Nie moge Cie zlokalizowac na podstawie tych koordynatow (prawdopodobnie lokacja z tymi koordynatami nie istnieje)"
         end
     else
-        msg = "GMCP nie zawiera koordynatow, nie moge cie zlokalizowac na mapie"
+        if amap.localization:try_to_locate() then
+            msg = "Zlokalizowalem po opisie lokacji i wyjsciach."
+        else 
+            msg = "GMCP nie zawiera koordynatow, nie moge cie zlokalizowac na mapie"
+        end
     end
 
     if not noprint then

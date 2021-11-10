@@ -413,8 +413,12 @@
 							<string>.* (?:skrzynia|kufer|komoda|stojak|biblioteczka|kuferek|skrzynka)(?: | z okuciami )zawiera (?&lt;content&gt;.*)\.$</string>
 							<string>Wsrod pedantycznego porzadku w szafie zauwazasz miedzy innymi (?&lt;content&gt;.*)\.$</string>
 							<string>Otwart[ay] [a-z ]+ (?:koszyk|szafa|sejf) zawiera (?&lt;content&gt;.*)\.$</string>
+							<string>^Narozna etazerka zawiera: (?&lt;content&gt;.*)\.$</string>
+							<string>^Dostrzegasz na (?:nim|niej) jeszcze (?&lt;content&gt;.*)\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
+							<integer>1</integer>
+							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>

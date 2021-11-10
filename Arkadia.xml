@@ -671,7 +671,8 @@
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>nic_do_naprawy</name>
-						<script>trigger_func_skrypty_inventory_kowal_nic_do_naprawy()</script>
+						<script>trigger_func_skrypty_inventory_kowal_nic_do_naprawy()
+display("NI")</script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
 						<mStayOpen>0</mStayOpen>
@@ -683,15 +684,9 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>do ciebie.*nie nadaj.* sie do naprawy</string>
-							<string>do ciebie.*nie wymaga.* naprawy</string>
-							<string>do ciebie.*nie wymaga.* ostrzenia</string>
-							<string>do ciebie.*nie nadaj.* sie do ostrzenia</string>
+							<string>do ciebie:.*(?i)nie (?:nadaj|wymaga).*(?:ostrzenia|naprawy)</string>
 						</regexCodeList>
 						<regexCodePropertyList>
-							<integer>1</integer>
-							<integer>1</integer>
-							<integer>1</integer>
 							<integer>1</integer>
 						</regexCodePropertyList>
 					</Trigger>
@@ -709,7 +704,7 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>do ciebie: Zobacze co da sie zrobic\.</string>
+							<string>do ciebie: Zobacze (?i)co da sie zrobic\.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>

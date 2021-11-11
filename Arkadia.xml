@@ -25628,6 +25628,7 @@ display("NI")</script>
 						<string>^[ &gt;]*(Nie mozesz sie tam udac, gdyz |)([Op]*pierzona skrzydlata bestia|[Ss]krzydlaty lwiopodobny potwor|[a-z]+ niebezpieczny gryf) swoim cielskiem zagradza ci droge( ucieczki|) na .*</string>
 						<string>^[ &gt;]*Nie mozesz sie tam udac, gdyz siedzisz.*</string>
 						<string>^[ &gt;]*Nie mozesz sie tam udac, gdyz .* blokuj(e|a) ci droge na.*</string>
+						<string>^[ &gt;]*Nie mozesz sie tam udac, gdyz pod wplywem spojrzenia zoltych slepi zlowrogiego ptakopodobnego mezczyzny.*</string>
 						<string>^[ &gt;]*Nie mozesz wyjsc z domu poniewaz stoisz na krzesle\.$</string>
 						<string>^[ &gt;]*Nie mozesz wyjsc z domu poniewaz stoisz na szafie\.$</string>
 						<string>^[ &gt;]*Nie mozesz zejsc gdyz klapa jest zamknieta\.$</string>

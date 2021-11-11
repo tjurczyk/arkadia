@@ -178,3 +178,20 @@ function trigger_func_skrypty_ui_misc_woz_maribor_kierunek()
     resetFormat()
 end
 
+function trigger_func_skrypty_ui_misc_nazmeczenie()
+    local level = matches[2]
+    local color = 'green'
+
+    if level == 'bardzo zmeczony' or level == 'bardzo zmeczona' or level == 'nieco wyczerpany' or level == 'nieco wyczerpana' or level == 'wyczerpany' or level == 'wyczerpana' then
+    color = 'ansi_light_yellow'
+    elseif level == 'bardzo wyczerpany' or level == 'bardzo wyczerpana' or level == 'wycienczony' or level == 'wycienczona' or level == 'calkowicie wycienczony' or level == 'calkowicie wycienczona' then
+    color = 'ansi_light_red'
+    end
+
+    selectCurrentLine()
+    selectString(level, 1)
+    fg(color)
+
+    resetFormat()
+end
+

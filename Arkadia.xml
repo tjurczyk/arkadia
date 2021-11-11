@@ -27583,6 +27583,13 @@
 						<packageName></packageName>
 						<regex>^/abeep ([012])$</regex>
 					</Alias>
+					<Alias isActive="yes" isFolder="no">
+						<name>test</name>
+						<script>alias_func_skrypty_misc_attack_beep_test()</script>
+						<command></command>
+						<packageName></packageName>
+						<regex>^/beep$</regex>
+					</Alias>
 				</AliasGroup>
 				<Alias isActive="yes" isFolder="no">
 					<name>exp_start</name>

@@ -16784,6 +16784,36 @@
 							<integer>0</integer>
 						</regexCodePropertyList>
 					</Trigger>
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>zmeczenie</name>
+						<script>trigger_func_skrypty_ui_misc_zmeczenie()</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>^[&gt; ]*Zziajanym glosem meldujesz, ze jestes (bardzo zmeczon(?:y|a)|nieco wyczerpan(?:y|a)|wyczerpan(?:y|a)|bardzo wyczerpan(?:y|a)|wycienczon(?:y|a)|calkowicie wycienczon(?:y|a))\.</string>
+							<string>^[&gt; ]*Zziajanym glosem .* melduje, ze jest (bardzo zmeczon(?:y|a)|nieco wyczerpan(?:y|a)|wyczerpan(?:y|a)|bardzo wyczerpan(?:y|a)||wycienczon(?:y|a)|calkowicie wycienczon(?:y|a))\.</string>
+							<string>^[&gt; ]*Charakterystycznym wojskowym tonem meldujesz, ze jestes (zmeczon(?:y|a)|troche zmeczon(?:y|a)|wypoczet(?:y|a)|w pelni wypoczet(?:y|a))\.</string>
+							<string>^[&gt; ]*Charakterystycznym wojskowym tonem .* melduje, ze jest (zmeczon(?:y|a)|troche zmeczon(?:y|a)|wypoczet(?:y|a)|w pelni wypoczet(?:y|a))\.</string>
+							<string>^[&gt; ]*Wykorzystujac chwile przerwy wierzchem dloni ocierasz z czola geste krople potu, (troche zmeczon(?:y|a)|zmeczon(?:y|a)|bardzo zmeczon(?:y|a)|nieco wyczerpan(?:y|a)|wyczerpan(?:y|a)|bardzo wyczerpan(?:y|a)|wycienczon(?:y|a)|calkowicie wycienczon(?:y|a)) ciezka praca</string>
+							<string>^[&gt; ]*.* wykorzystujac chwile przerwy wierzchem dloni ociera z czola geste krople potu, (troche zmeczon(?:y|a)|zmeczon(?:y|a)|bardzo zmeczon(?:y|a)|nieco wyczerpan(?:y|a)|wyczerpan(?:y|a)|bardzo wyczerpan(?:y|a)|wycienczon(?:y|a)|calkowicie wycienczon(?:y|a)) ciezka praca</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>1</integer>
+							<integer>1</integer>
+							<integer>1</integer>
+							<integer>1</integer>
+							<integer>1</integer>
+							<integer>1</integer>
+						</regexCodePropertyList>
+					</Trigger>
 				</TriggerGroup>
 				<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>footer_elements</name>

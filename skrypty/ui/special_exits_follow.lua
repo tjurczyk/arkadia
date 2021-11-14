@@ -35,6 +35,9 @@ function trigger_func_skrypty_ui_special_exits_follow_przejdz_furtke()
 end
 
 function trigger_func_skrypty_ui_special_exits_follow_zejdz_na_dol()
+    if line:match("podchodzi do cedru na skraju urwiska, chwyta za przywiazana do jego pnia line i") then
+        return
+    end
     scripts.utils.bind_functional_team_follow(matches[2], "zejdz na dol", 15)
 end
 

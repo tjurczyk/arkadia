@@ -16158,8 +16158,8 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>(Tablica ogloszeniowa)</string>
-							<string>(Wiekowa tablica ogloszeniowa)</string>
+							<string>^[ &gt;]*(Tablica ogloszeniowa)</string>
+							<string>^[ &gt;]*(Wiekowa tablica ogloszeniowa)</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -16284,10 +16284,10 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>Czujesz fale zimna, ktora blyskawicznie rozchodzi sie po calym twym ciele, gdy ghoul z pozoru niegroznie kaleczy cie swym dlugim, ociekajacym jadem pazurem.</string>
+							<string>^[ &gt;]*Czujesz fale zimna, ktora blyskawicznie rozchodzi sie po calym twym ciele, gdy ghoul z pozoru niegroznie kaleczy cie swym dlugim, ociekajacym jadem pazurem\.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
-							<integer>0</integer>
+							<integer>1</integer>
 						</regexCodePropertyList>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -16774,9 +16774,9 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>Przystan powozowa.</string>
-							<string>Sa tutaj trzy widoczne wyjscia: polnoc, zachod i wschod.</string>
-							<string>Otwarty stojacy powoz.</string>
+							<string>^[ &gt;]*Przystan powozowa\.</string>
+							<string>^[ &gt;]*Sa tutaj trzy widoczne wyjscia: polnoc, zachod i wschod\.</string>
+							<string>^[ &gt;]*Otwarty stojacy powoz\.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -16798,14 +16798,14 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>Przystan powozowa.</string>
-							<string>Sa tutaj trzy widoczne wyjscia: polnoc, zachod i wschod.</string>
-							<string>Drewniany stojacy woz.</string>
+							<string>^[ &gt;]*Przystan powozowa.</string>
+							<string>^[ &gt;]*Sa tutaj trzy widoczne wyjscia: polnoc, zachod i wschod.</string>
+							<string>^[ &gt;]*Drewniany stojacy woz.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
-							<integer>0</integer>
-							<integer>0</integer>
-							<integer>0</integer>
+							<integer>1</integer>
+							<integer>1</integer>
+							<integer>1</integer>
 						</regexCodePropertyList>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -17173,10 +17173,10 @@
 							<colorTriggerFgColor>#000000</colorTriggerFgColor>
 							<colorTriggerBgColor>#000000</colorTriggerBgColor>
 							<regexCodeList>
-								<string>Czeka na ciebie nieprzeczytana poczta</string>
+								<string>^Czeka na ciebie nieprzeczytana poczta</string>
 							</regexCodeList>
 							<regexCodePropertyList>
-								<integer>0</integer>
+								<integer>1</integer>
 							</regexCodePropertyList>
 						</Trigger>
 						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -17233,10 +17233,10 @@
 							<colorTriggerFgColor>#000000</colorTriggerFgColor>
 							<colorTriggerBgColor>#000000</colorTriggerBgColor>
 							<regexCodeList>
-								<string>List jest gotowy do wyslania.</string>
+								<string>^List jest gotowy do wyslania.</string>
 							</regexCodeList>
 							<regexCodePropertyList>
-								<integer>0</integer>
+								<integer>1</integer>
 							</regexCodePropertyList>
 						</Trigger>
 						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -17293,7 +17293,7 @@
 							<colorTriggerFgColor>#000000</colorTriggerFgColor>
 							<colorTriggerBgColor>#000000</colorTriggerBgColor>
 							<regexCodeList>
-								<string>Wysylasz .* na poczte.</string>
+								<string>^Wysylasz .* na poczte.</string>
 							</regexCodeList>
 							<regexCodePropertyList>
 								<integer>1</integer>

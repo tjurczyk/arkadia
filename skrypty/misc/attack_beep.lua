@@ -57,7 +57,16 @@ function misc.attack_beep:process_player_attack(name, upper)
     resetFormat()
 end
 
+function misc.attack_beep:test_beep()
+    raiseEvent("playBeep")
+    scripts:print_log("Beepuje")
+end
+
 function alias_func_skrypty_misc_attack_beep_set_level()
     misc.attack_beep:set_attack_level(tonumber(matches[2]))
 end
 
+
+function alias_func_skrypty_misc_attack_beep_test()
+    misc.attack_beep:test_beep()
+end

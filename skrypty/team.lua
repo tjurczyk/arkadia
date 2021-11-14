@@ -304,3 +304,6 @@ function alias_func_skrypty_team_puszczanie_zaslon()
     ateam:switch_releasing_guards()
 end
 
+function alias_func_skrypty_team_last_activity()
+    ateam:check_team_last_activity()
+end

@@ -26979,6 +26979,13 @@
 					<packageName></packageName>
 					<regex>^/szepnij (.*)$</regex>
 				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>/ostatnio</name>
+					<script>alias_func_skrypty_team_last_activity()</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/ostatnio$</regex>
+				</Alias>
 			</AliasGroup>
 			<AliasGroup isActive="yes" isFolder="yes">
 				<name>inventory</name>
@@ -27915,6 +27922,13 @@
 						<command></command>
 						<packageName></packageName>
 						<regex>^/abeep ([012])$</regex>
+					</Alias>
+					<Alias isActive="yes" isFolder="no">
+						<name>test</name>
+						<script>alias_func_skrypty_misc_attack_beep_test()</script>
+						<command></command>
+						<packageName></packageName>
+						<regex>^/beep$</regex>
 					</Alias>
 				</AliasGroup>
 				<Alias isActive="yes" isFolder="no">

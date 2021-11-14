@@ -26647,6 +26647,13 @@
 					<packageName></packageName>
 					<regex>^/szepnij (.*)$</regex>
 				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>/ostatnio</name>
+					<script>alias_func_skrypty_team_last_activity()</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/ostatnio$</regex>
+				</Alias>
 			</AliasGroup>
 			<AliasGroup isActive="yes" isFolder="yes">
 				<name>inventory</name>

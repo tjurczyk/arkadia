@@ -221,7 +221,7 @@ function amap:init_self_locating()
             scripts.event_register:kill_event_handler(amap.locate_handler)
         end
     end)
-    amap.set_position_handler = scripts.event_register:register_event_handler(amap.set_position_handler, "setPosition", function()
+    amap.set_position_handler = scripts.event_register:force_register_event_handler(amap.set_position_handler, "setPosition", function()
         scripts.event_register:kill_event_handler(amap.locate_handler)
     end, true)
 end

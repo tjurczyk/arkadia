@@ -71,9 +71,6 @@ function scripts.ingress:post_process_message(msg)
     if gmcp.gmcp_msgs.type == "comm" then
         scripts.ui.talk_history:add(msg)
     end
-    if gmcp.gmcp_msgs.type == "comm" then
-        scripts.ui.talk_history:add(msg)
-    end
     if gmcp.gmcp_msgs.type == "room.short" then
         amap.localization.current_short = ansi2string(msg):gsub("\n", "")
     end

@@ -9066,12 +9066,8 @@
 							<mSoundFile></mSoundFile>
 							<colorTriggerFgColor>#000000</colorTriggerFgColor>
 							<colorTriggerBgColor>#000000</colorTriggerBgColor>
-							<regexCodeList>
-								<string>^(?!W slepiach)</string>
-							</regexCodeList>
-							<regexCodePropertyList>
-								<integer>1</integer>
-							</regexCodePropertyList>
+							<regexCodeList />
+							<regexCodePropertyList />
 							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 								<name>ktos_ledwo_muska</name>
 								<script>trigger_func_skrypty_ui_gags_color_color_innych_ciosy_ktos_ledwo_muska()</script>
@@ -9354,12 +9350,8 @@
 							<mSoundFile></mSoundFile>
 							<colorTriggerFgColor>#000000</colorTriggerFgColor>
 							<colorTriggerBgColor>#000000</colorTriggerBgColor>
-							<regexCodeList>
-								<string>^(?!W slepiach)</string>
-							</regexCodeList>
-							<regexCodePropertyList>
-								<integer>1</integer>
-							</regexCodePropertyList>
+							<regexCodeList />
+							<regexCodePropertyList />
 							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 								<name>ktos_ledwo_muska_cie</name>
 								<script>trigger_func_skrypty_ui_gags_color_color_innych_ciosy_we_mnie_ktos_ledwo_muska_cie()</script>

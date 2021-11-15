@@ -21629,7 +21629,7 @@
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^[ &gt;]*Probujesz otworzyc.* wrota.*</string>
+						<string>^[ &gt;]*Probujesz otworzyc .* wrota.*</string>
 						<string>^[ &gt;]*Probujesz otworzyc .* drzwiczki.*</string>
 						<string>^[ &gt;]*Probujesz otworzyc .* krate.*</string>
 						<string>^[ &gt;]*Probujesz otworzyc .* brame.*</string>
@@ -21838,25 +21838,25 @@
 						<string>^((Korytarze) (jaskini) (ciagna) sie na) (.*)\.$</string>
 						<string>^((Trakt) (wiedzie) (na)) ([^.]+)\.$</string>
 						<string>(([tT]rakt) (rozgalezia) (sie)) na (.*)\.$</string>
-						<string>((Szlak|Sciezka) (prowadzi) (tutaj)) w .* kieru.*: (.*)\.$</string>
-						<string>((Linia) (brzegowa) (ciagnie)) sie na (.*)\.$</string>
-						<string>((Wedrowke) (skrajem lasu|po karczowisku|po lesie)) mozesz kontynuowac (udajac sie na) (.*)\.$</string>
-						<string>((Wedrowke) (przez) rozlegle laki mozesz kontynuowac (udajac sie na) (.*))\.$</string>
-						<string>((Wijaca) (sie) (miedzy)) skalami, gorska sciezka prowadzi na (.*)\.$</string>
-						<string>((Wydeptane) (w) (kukurydzy)) sciezki prowadza na (.*)\.$</string>
-						<string>((Wyjscia) (prowadza) (tutaj)) w .* kierunkach: (.*)\.$</string>
-						<string>((Wykopany) (w) (ziemi)) tunel rozgalezia sie tutaj, zas jego odnogi wioda na (.*)\.$</string>
-						<string>((Wykopany) (w) (ziemi)) tunel wiedzie w dwoch kierunkach: (.*)\.$</string>
-						<string>((Mozesz) (sie) (stad)) udac na (.*)\.$</string>
-						<string>((Mozesz) (skierowac) (lodz)) na (.*)\.$</string>
-						<string>((Trakt) (jest) (zasypany)) glazami i mozna podazac nim tylko w jednym kierunku, na (.*)\.$</string>
-						<string>((Mozesz) (podazac) (traktem)) na (.*), w strone fortu\.$</string>
-						<string>((Mozesz) (stad) (poplynac)) na (.*)\.$</string>
-						<string>((W) (mroku) (nocy)) dostrzegasz .* widoczne wyjsci.: (.*)\.</string>
-						<string>((Tunel) (ciagnie) (sie)) na (.*)\.</string>
-						<string>((Jaskinie) (ciagna) (sie)) na (.*)\.</string>
-						<string>((Tunele) (ciagna) (sie)) na (.*)\.</string>
-						<string>((Rozpadlina) (ciagnie) (sie)) na (.*)\.</string>
+						<string>^((Szlak|Sciezka) (prowadzi) (tutaj)) w .* kieru.*: (.*)\.$</string>
+						<string>^((Linia) (brzegowa) (ciagnie)) sie na (.*)\.$</string>
+						<string>^((Wedrowke) (skrajem lasu|po karczowisku|po lesie)) mozesz kontynuowac (udajac sie na) (.*)\.$</string>
+						<string>^((Wedrowke) (przez) rozlegle laki mozesz kontynuowac (udajac sie na) (.*))\.$</string>
+						<string>^((Wijaca) (sie) (miedzy)) skalami, gorska sciezka prowadzi na (.*)\.$</string>
+						<string>^((Wydeptane) (w) (kukurydzy)) sciezki prowadza na (.*)\.$</string>
+						<string>^((Wyjscia) (prowadza) (tutaj)) w .* kierunkach: (.*)\.$</string>
+						<string>^((Wykopany) (w) (ziemi)) tunel rozgalezia sie tutaj, zas jego odnogi wioda na (.*)\.$</string>
+						<string>^((Wykopany) (w) (ziemi)) tunel wiedzie w dwoch kierunkach: (.*)\.$</string>
+						<string>^((Mozesz) (sie) (stad)) udac na (.*)\.$</string>
+						<string>^((Mozesz) (skierowac) (lodz)) na (.*)\.$</string>
+						<string>^((Trakt) (jest) (zasypany)) glazami i mozna podazac nim tylko w jednym kierunku, na (.*)\.$</string>
+						<string>^((Mozesz) (podazac) (traktem)) na (.*), w strone fortu\.$</string>
+						<string>^((Mozesz) (stad) (poplynac)) na (.*)\.$</string>
+						<string>^((W) (mroku) (nocy)) dostrzegasz .* widoczne wyjsci.: (.*)\.</string>
+						<string>^((Tunel) (ciagnie) (sie)) na (.*)\.</string>
+						<string>^((Jaskinie) (ciagna) (sie)) na (.*)\.</string>
+						<string>^((Tunele) (ciagna) (sie)) na (.*)\.</string>
+						<string>^((Rozpadlina) (ciagnie) (sie)) na (.*)\.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -21899,9 +21899,9 @@
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>Mozesz podazac traktem na (.*)\. Natomiast (aby|jesli chcesz) zejsc z wytyczonej drogi (wystarczy|musisz|mozesz) udac sie w dowolnym innym kierunku\.</string>
-						<string>Wedrowke przez rozlegle laki mozesz kontynuowac w dowolnie wybranym kierunku.</string>
-						<string>Mozesz stad wyruszyc w dowolnie wybranym kierunku.</string>
+						<string>^Mozesz podazac traktem na (.*)\. Natomiast (aby|jesli chcesz) zejsc z wytyczonej drogi (wystarczy|musisz|mozesz) udac sie w dowolnym innym kierunku\.</string>
+						<string>^Wedrowke przez rozlegle laki mozesz kontynuowac w dowolnie wybranym kierunku.</string>
+						<string>^Mozesz stad wyruszyc w dowolnie wybranym kierunku.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -21923,7 +21923,7 @@
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>Trakt wiedzie na (.*)\. Mozna jednak z niego zejsc i udac sie na (.*)\.$</string>
+						<string>^Trakt wiedzie na (.*)\. Mozna jednak z niego zejsc i udac sie na (.*)\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -26168,7 +26168,7 @@
 					</Trigger>
 				</TriggerGroup>
 				<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-					<name>Probojesz...</name>
+					<name>Probujesz...</name>
 					<script></script>
 					<triggerType>0</triggerType>
 					<conditonLineDelta>0</conditonLineDelta>
@@ -26181,7 +26181,7 @@
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^[ &gt;]*Probojesz</string>
+						<string>^[ &gt;]*Probujesz</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>

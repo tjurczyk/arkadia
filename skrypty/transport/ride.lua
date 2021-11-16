@@ -38,7 +38,7 @@ function scripts.transports.ride:init()
     end
     table.insert(self.triggers, tempExactMatchTrigger(self.definition.start, function() self:start() end))
     table.insert(self.triggers, tempRegexTrigger("^Jednym susem przesadzasz burte .* i wskakujesz do wody\\. Po chwili udaje ci sie doplynac z powrotem do brzegu\\.$", function() 
-        self:exit() 
+        self:exit()
         self:abort()
     end))
 end
@@ -163,6 +163,11 @@ function scripts.transports.ride:update_progress()
     local current, total = self:get_progress()
     local current_stop = self.definition.stops[self.index]
     local label = current_stop.label and "→ " .. current_stop.label or string.format("%s → %s", current_stop.start, current_stop.destination)
+    local path = getPath(current_stop.start, current_stop.destination)
+    if path then
+        local percentage = math.min(current, total) / total
+        raiseEvent("rideProgress", self, speedWalkPath[math.floor(percentage * #speedWalkPath)])
+    end
     self.progress:setValue(math.min(current, total), total, string.format("<center>%s %s/%s</center>", label, scripts.utils.str_pad(tostring(current), string.len(tostring(total)), "right"), total))
 end
 

@@ -46,6 +46,11 @@ function scripts.packages:add(index, name, city, time)
     else
         location = scripts.people.mail:check_table(name)
     end
+
+    selectString(name, 1)
+    local command = "wybierz paczke " .. index
+    setLink(function() send(command) end, command)
+    
     self.current_offer[index] = { name = name, location = location }
     if city and city ~= "" then
         self.current_offer[index].city = city
@@ -161,6 +166,25 @@ end
 
 function trigger_packages_assistant_close()
     setTriggerStayOpen("tablice-open", 0)
+end
+
+function scripts.packages:test()
+
+    echo("\n")
+    feedTriggers(" Tablica zawiera liste adresatow przesylek, ktore mozesz tutaj pobrac:\n")
+    feedTriggers(" o============================================================================o\n")
+    feedTriggers(" |                Adresat badz                     Cena          Czas na      |\n")
+    feedTriggers(" |               urzad pocztowy                  zl/sr/md      dostarczenie   |\n")
+    feedTriggers(" o -------------------------------------------------------------------------- o\n")
+    feedTriggers(" |   1. Vole                                      0/ 4/ 2        nieogr.      |\n")
+    feedTriggers(" | * 2. Gevair Droc'Aleach                        0/ 5/ 6        nieogr.      |\n")
+    feedTriggers(" | * 3. Galanel Vinel, Hagge                      7/17/ 7        nieogr.      |\n")
+    feedTriggers(" |   4. Vilfrid Wenck, Daevon                    13/17/11        nieogr.      |\n")
+    feedTriggers(" o -------------------------------------------------------------------------- o\n")
+    feedTriggers(" |      Symbolem * oznaczono przesylki ciezkie.                               |\n")
+    feedTriggers(" o============================================================================o\n")
+    echo("\n")
+
 end
 
 scripts.packages:init()

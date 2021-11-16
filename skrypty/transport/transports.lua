@@ -76,7 +76,7 @@ function _find_ride()
     send(matches[1], false)
 end
 
-function scripts.transports:get(location) 
+function scripts.transports:get(location)
     return location_to_definition[location]
 end
 

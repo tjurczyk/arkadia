@@ -221,6 +221,7 @@ function scripts.people:process_line(msg)
             for k,v in pairs(current_table[tokens[i]:lower()][tokens[i+1]][tokens[i+2]]) do
                 scripts.people:process_person_color(string.format("%s %s %s", tokens[i], tokens[i+1], tokens[i+2]), v.name,  v.guild, v.suffix, v.color, v.suffix_only)
             end
+            i = i + 3
         end
         current_table = self.tokens_table["n1"]
         if current_table[tokens[i]] and current_table[tokens[i]].name then

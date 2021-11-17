@@ -54,7 +54,12 @@ scripts.people.trigger_guilds = {
     "ZS", "ZH", "GP"
 }
 
-scripts.people.tokens_table = {}
+scripts.people.tokens_table = {
+    n1 = {},
+    n2 = {},
+    n3 = {},
+    n4 = {}
+}
 
 function trigger_func_skrypty_people_przedstawienie()
     scripts.people:process_someone(multimatches[1][3], multimatches[2][1])

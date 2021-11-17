@@ -49,20 +49,41 @@ function scripts.people:color_person_build(item, color, suffix_only)
     end
 
     local items = item.short:lower():split(" ")
+    local value = {
+        short = item.short,
+        name = item.name,
+        guild = guild_str,
+        suffix = suffix,
+        color = color,
+        suffix_only = suffix_only
+    }
+
+    -- todo maybe can be generic?
+    if #items == 2 then
+        local current_table = self.tokens_table["n2"]
+        current_table[items[1]] = current_table[items[1]] or {}
+        current_table[items[1]][items[2]][item.name] = value
+    end
+
     if #items == 3 then
-        local value = {
-            short = item.short,
-            name = item.name,
-            guild = guild_str,
-            suffix = suffix,
-            color = color,
-            suffix_only = suffix_only
-        }
-        self.tokens_table[items[1]] = self.tokens_table[items[1]] or {}
-        self.tokens_table[items[1]][items[2]] = self.tokens_table[items[1]][items[2]] or {}
-        self.tokens_table[items[1]][items[2]][items[3]] = self.tokens_table[items[1]][items[2]][items[3]] or {}
-        self.tokens_table[items[1]][items[2]][items[3]][item.name] = value
-        self.tokens_table[item.name] = value
+        local current_table = self.tokens_table["n3"]
+        current_table[items[1]] = current_table[items[1]] or {}
+        current_table[items[1]][items[2]] = current_table[items[1]][items[2]] or {}
+        current_table[items[1]][items[2]][items[3]] = current_table[items[1]][items[2]][items[3]] or {}
+        current_table[items[1]][items[2]][items[3]][item.name] = value
+    end
+
+    if #items == 4 then
+        local current_table = self.tokens_table["n4"]
+        current_table[items[1]] = current_table[items[1]] or {}
+        current_table[items[1]][items[2]] = current_table[items[1]][items[2]] or {}
+        current_table[items[1]][items[2]][items[3]] = current_table[items[1]][items[2]][items[3]] or {}
+        current_table[items[1]][items[2]][items[3]][items[4]] = current_table[items[1]][items[2]][items[3]][items[4]] or {}
+        current_table[items[1]][items[2]][items[3]][items[4]][item.name] = value
+    end
+
+    if item.name and item.name ~= "" then
+        self.tokens_table["n1"][item.name] = value
     end
 
     scripts.people.already_processed[item["_row_id"]] = true
@@ -184,18 +205,35 @@ function scripts.people:trigger_people_starter()
     end
 end
 
+
 function scripts.people:process_line(msg)
+    if table.is_empty(self.tokens_table) then
+        return
+    end
     local tokens = ansi2string(msg):gsub("%.", ""):gsub("[,!?-]", ""):gsub("\t", ""):gsub("\n", ""):split("[ /]")
     for i = 1, #tokens, 1 do
-        if scripts.people.tokens_table[tokens[i]:lower()] and scripts.people.tokens_table[tokens[i]:lower()][tokens[i+1]] and scripts.people.tokens_table[tokens[i]:lower()][tokens[i+1]][tokens[i+2]]
+        local match = false
+        local current_table = self.tokens_table["n3"]
+        if current_table[tokens[i]:lower()] and current_table[tokens[i]:lower()][tokens[i+1]] and current_table[tokens[i]:lower()][tokens[i+1]][tokens[i+2]]
             and tokens[i+3] ~= "chaosu" and (tokens[i+3] ~= "to" and tokens[i+4] ~= "chyba") then
-            for k,v in pairs(scripts.people.tokens_table[tokens[i]:lower()][tokens[i+1]][tokens[i+2]]) do
+            match = true
+            for k,v in pairs(current_table[tokens[i]:lower()][tokens[i+1]][tokens[i+2]]) do
                 scripts.people:process_person_color(string.format("%s %s %s", tokens[i], tokens[i+1], tokens[i+2]), v.name,  v.guild, v.suffix, v.color, v.suffix_only)
             end
         end
-        if scripts.people.tokens_table[tokens[i]] and scripts.people.tokens_table[tokens[i]].name then
-            local item = scripts.people.tokens_table[tokens[i]]
+        current_table = self.tokens_table["n1"]
+        if current_table[tokens[i]] and current_table[tokens[i]].name then
+            local item = current_table[tokens[i]]
             scripts.people:process_person_color(tokens[i], item.name, item.guild, item.suffix, item.color, item.suffix_only)
+        end
+        current_table = self.tokens_table["n2"]
+        if not match and current_table[tokens[i]:lower()] and current_table[tokens[i]:lower()][tokens[i+1]] then
+            match = true
+            for k,v in pairs(current_table[tokens[i]:lower()][tokens[i+1]]) do
+                display(k)
+                local form = string.format("%s %s", tokens[i], tokens[i+1])
+                scripts.people:process_person_color(form, v.name,  v.guild, v.suffix, v.color, v.suffix_only)
+            end
         end
     end
 end

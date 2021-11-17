@@ -314,8 +314,9 @@ amap.special_exits = {
     ["zejdz po zboczu"] = true,
 }
 
-function trigger_func_mapper_jedziesz_wozem()
-    tempTimer(0.07, function() amap:locate(true) end)
+function trigger_func_mapper_jedziesz_wozem(direction)
+    amap:follow(amap.polish_to_english[direction], false)
+    registerAnonymousEventHandler("gmcp.room.info", function() amap:locate(true) end, true)
 end
 
 function trigger_func_mapper_idziesz()
@@ -376,10 +377,6 @@ end
 
 function alias_func_mapper_show_colors()
     amap:show_colors()
-end
-
-function alias_func_mapper_idz_do()
-    amap:go_to_mail()
 end
 
 function alias_func_mapper_idz_do_id()

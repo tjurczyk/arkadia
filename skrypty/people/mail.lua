@@ -5,13 +5,14 @@ function scripts.people.mail:check_table(name)
 
     local lowered_name = string.lower(name)
 
-    local results = db:fetch(scripts.people.db.people, db:like(scripts.people.db.people.title, "%" .. name .. "%"))
+    local results = db:fetch_sql(scripts.people.db.people, "select * from people WHERE title GLOB '*".. name .."*'")
 
     if amap and table.size(results) == 1 and results[1]["room_id"] ~= -1 then
         -- it has a location in the db, color with green
         selectString(name, 1)
         fg("green")
         resetFormat()
+        return results[1]["room_id"]
     elseif table.size(results) > 1 then
         selectString(name, 1)
         fg("orange")
@@ -37,10 +38,11 @@ function scripts.people.mail:check_package_person(name)
     local results = db:fetch(scripts.people.db.people, db:like(scripts.people.db.people.title, "%" .. lowered_name .. "%"))
 
     if amap and table.size(results) == 1 and results[1]["room_id"] ~= -1 then
-        -- if hit, set a bind for '/idzdo' and print a msg
-        amap.go_to_room_mail = results[1]["room_id"]
-        amap:print_log("Mam ta osobe w bazie, '/idzdo' zeby tam isc", true)
-        tempTimer(30, function() amap.go_to_room_mail = nil end)
+        if scripts.people.mail.show_automatically then
+            amap.path_display:start(results[1]["room_id"])
+        else
+            scripts:print_url("\n<orange>Kilknij tutaj, zeby pokazac sciezke.", function() amap.path_display:start(results[1]["room_id"]) end, "Prowadz do " .. results[1]["room_id"])
+        end
         return true
     end
 

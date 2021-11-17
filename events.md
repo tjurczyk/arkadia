@@ -40,6 +40,12 @@ Event podniesiony po zbudowaniu triggerów na kolorwanie postaci.
 
 ---
 
+## `teamChanged`
+
+Event podniesiony jezeli zmieni sie sklad druzyny.
+
+---
+
 ## `amapNewLocation`
 
 Argumenty:
@@ -76,6 +82,11 @@ Event podniesiony w momencie, kiedy ruch zostal zablokowany przez brame.
 Event podniesiony gdy chodzik zostanie przerwany (niezaleznie od przyczyny: bloker, ruch manualny, '/stop').
 
 ---
+
+## `amapWalkerStarted`
+
+Event podniesiony kiedy chodzik zostanie wystartowany.
+
 
 ## `amapWalkerFinished`
 
@@ -125,6 +136,17 @@ Event podniesiony gdy gracz wykonuje ruch przez niego zainicjowany
 
 Argumenty:
   * `arg1`: kierunek
+
+---
+
+## `travelDestinationReached`
+
+Event podniesiony kiedy srodek transportu dotrze do przystanku. 
+
+Argumenty:
+  * `arg1`: definicja przystanku
+  * `arg2`: definicja transportu
+  * `arg3`: obiekt podrozy
 
 ---
 
@@ -293,3 +315,36 @@ Argumenty:
 
 Event podniesiony kiedy zmienia sie status wydania rozkazu
 
+---
+
+## `switchReleasingGuards`
+
+Argumenty:
+  * `arg1`: stan puszczania zaslon (true/false)
+
+Event podniesiony kiedy przelaczone zostanie puszczanie zaslon.
+
+---
+
+## `equipmentEvaluation`
+
+Argumenty:
+  * `arg1`: tablica ze stanem ekwipinku
+
+Event podniesiony po ocenieniu elementu ekwipunku.
+
+## `setVar`
+
+Argumenty:
+  * `arg1`: klucz
+  * `arg2`: wartosc
+
+Event podniesiony po zmianie wartosci klucz konfiguracji.
+
+## `footerInfoCreators`
+
+Argumenty:
+  * `arg1`: tablica kreatorow
+
+Event podniesiony po stworzeniu tablicy kreatorow elementow stopki.
+Mozn go wykorzystac, zeby zarejestrowac swoj wlasny element.

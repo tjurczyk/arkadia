@@ -239,6 +239,9 @@ function ateam:w_func(id)
         local real_id = ateam.team[id]
         local local_str = "ob_" .. real_id
         send("gzwycofaj sie za " .. local_str, false)
+        if ateam.release_guards then
+            send("przestan kryc sie za zaslona", false)
+        end
     else
         scripts:print_log("Nie ma takiego id")
     end
@@ -298,9 +301,20 @@ function ateam:bind_joining(name)
     local obj_to_join = nil
 
     for k, v in pairs(gmcp.objects.nums) do
-        if ateam.objs[v]["desc"] == name or ateam.objs[v]["desc"] == lowered_name then
+        if ateam.objs[v]["desc"] == name or ateam.objs[v]["desc"] == lowered_name and not ateam.objs[v].enemy and not table.index_of(scripts.people.enemy_people)then
             obj_to_join = v
             break
+        end
+    end
+
+    if table.size(scripts.people.enemy_guilds) > 0 then       
+        local results = #string.split(name, " ") > 1 and scripts.people:search(name) or scripts.people:retrieve_person(name)
+        local can_be_enemy = false
+        for _, person in pairs(results) do
+            if table.index_of(scripts.people.enemy_guilds, scripts.people:get_guild_name(person.guild)) then
+                scripts:print_log(string.format("%s - cwaniak probuje zaprosic cie do druzyny. Wstyd!", name), true)
+                return
+            end
         end
     end
 

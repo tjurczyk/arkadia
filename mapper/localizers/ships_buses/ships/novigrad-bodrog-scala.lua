@@ -17,4 +17,3 @@ function trigger_func_mapper_localizers_ships_buses_ships_novigrad_bodrog_scala_
     amap:print_log("GPS: Scala", true)
     amap:set_position(927, true)
 end
-

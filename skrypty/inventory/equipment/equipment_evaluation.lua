@@ -27,7 +27,7 @@ function scripts.inv.equipment:replace(equipment)
         cecho("<light_slate_blue>\n " .. string.sub("Ciete: <grey>" .. equipment.ciete.label .. "                                 ", 0, 50))
         cecho("<light_slate_blue>" .. string.sub("Obuchowe: <grey>" .. equipment.obuchowe.label .. "                                 ", 0, 50))
         if equipment.parowanie then
-            cecho("<light_slate_blue>\n " .. string.sub("Parowanie: <grey>" .. equipment.parowanie.label .. "                                 ", 0, 50))
+            cecho("<light_slate_blue>\n " .. string.sub("Parowanie: <grey>" .. equipment.parowanie.label:gsub("/14", "/12") .. "                                 ", 0, 50))
         end
     else
         if equipment.typSprzetu == "dwureczny miecz" then

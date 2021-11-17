@@ -1,0 +1,54 @@
+{
+    "enter": "Oplacasz podroz u woznicy i wsiadasz do zielonego stojacego dylizansu.",
+    "start": "Drzwiczki sie zamykaja, drzenie przebiega przez caly pojazd, ktory powoli rusza.",
+    "exit_command": "wyjscie",
+    "bind": "wyjrzyj przez okno",
+    "stops": [
+        {
+            "start": 4824,
+            "destination": 4985,
+            "time": 11,
+            "stop_pattern": "^Z zewnatrz dochodzi stlumiony glos woznicy: Postoj, dziedziniec przed zajazdem 'Pod piegowata elfka'\\.$",
+            "label": "'Pod piegowata elfka'"
+        },
+        {
+            "start": 4985,
+            "destination": 5200,
+            "time": 50,
+            "stop_pattern": "^Z zewnatrz dochodzi stlumiony glos woznicy: Postoj, placyk w centrum miasteczka Kreutzhofen\\.$",
+            "set_pattern": "^Woznica.* wola: Nastepny postoj - Kreutzhofen!$",
+            "label": "Kreutzhofen"
+        },
+        {
+            "start": 5200,
+            "destination": 6903,
+            "time": 49,
+            "stop_pattern": "^Z zewnatrz dochodzi stlumiony glos woznicy: Postoj, niewielki plac w poludniowej czesci miasta\\.$",
+            "set_pattern": "^Woznica.* wola: Nastepny postoj - Nuln!$",
+            "label": "Nuln"
+        },
+        {
+            "start": 6903,
+            "destination": 5200,
+            "time": 49,
+            "stop_pattern": "^Z zewnatrz dochodzi stlumiony glos woznicy: Postoj, placyk w centrum miasteczka Kreutzhofen\\.$",
+            "label": "Kreutzhofen"
+        },
+        {
+            "start": 5200,
+            "destination": 4985,
+            "time": 53,
+            "stop_pattern": "^Z zewnatrz dochodzi stlumiony glos woznicy: Postoj, dziedziniec przed zajazdem 'Pod piegowata elfka'\\.$",
+            "set_pattern": "^Woznica.* wola: Nastepny postoj - Karczma 'Pod piegowata elfka'!$",
+            "label": "'Pod piegowata elfka'"
+        },
+        {
+            "start": 4985,
+            "destination": 4824,
+            "time": 12,
+            "stop_pattern": "^Z zewnatrz dochodzi stlumiony glos woznicy: Postoj, rynek miejski Salignac La Rouge\\.$",
+            "set_pattern": "^Woznica.* wola: Nastepny postoj - Salignac La Rouge!$",
+            "label": "Salignac La Rouge"
+        }
+    ]
+}

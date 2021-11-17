@@ -1,0 +1,21 @@
+{
+    "enter": "Wchodzisz na szeroki drewniany prom.",
+    "exit": "Schodzisz z promu.",
+    "start": "Prom odbija od brzegu.",
+    "stops": [
+        {
+            "start": 2624,
+            "destination": 3442,
+            "time": 25,
+            "stop_pattern": "^(?:Mlody silny mezczyzna|Gmeath) krzyczy: Doplynelismy do przystani na poludniowym brzegu Pontaru! Mozna wysiadac!$",
+            "label": "Polnocny brzeg Pontaru"
+        },
+        {
+            "start": 3442,
+            "destination": 2624,
+            "time": 25,
+            "stop_pattern": "^(?:Mlody silny mezczyzna|Gmeath) krzyczy: Doplynelismy do przystani na polnocnym brzegu Pontaru! Mozna wysiadac!$",
+            "label": "Poludniowy brzeg Pontaru"
+        }
+    ]
+}

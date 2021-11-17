@@ -1,0 +1,22 @@
+{
+    "enter": "Wchodzisz na dluga niezgrabna barke.",
+    "exit": "Schodzisz z barki.",
+    "start": "Barka odbija od brzegu.",
+    "bind": "ob widok",
+    "stops": [
+        {
+            "start": 6891,
+            "destination": 7568,
+            "time": 43,
+            "stop_pattern": "^(?:Mrukliwy krzywonosy mezczyzna|Creyard) krzyczy: Doplynelismy do zachodniego nabrzeza w Bogenhafen! Mozna wysiadac!$",
+            "label": "Bogenhafen"
+        },
+        {
+            "start": 7568,
+            "destination": 6891,
+            "time": 40,
+            "stop_pattern": "^(?:Mrukliwy krzywonosy mezczyzna|Creyard) krzyczy: Doplynelismy do wschodniego nabrzeza w Nuln! Mozna wysiadac!$",
+            "label": "Nuln"
+        }
+    ]
+}

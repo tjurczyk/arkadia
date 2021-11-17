@@ -1,0 +1,22 @@
+{
+    "enter": "Wchodzisz na smukly drakkar.",
+    "exit": "Schodzisz z drakkara.",
+    "start": "Drakkar odbija od brzegu.",
+    "bind": "ob widok",
+    "stops": [
+        {
+            "start": 4060,
+            "destination": 6428,
+            "time": 174,
+            "stop_pattern": "^(?:Sniady spokojny mezczyzna|Jacob) krzyczy: Doplynelismy do przystani na Blekitnej Wstedze! Mozna wysiadac!",
+            "label" : "Blekitna Wstega"
+        },
+        {
+            "start": 6428,
+            "destination": 4060,
+            "time": 174,
+            "stop_pattern": "^(?:Sniady spokojny mezczyzna|Jacob) krzyczy: Doplynelismy do przystani w Blaviken! Mozna wysiadac!",
+            "label" : "Blaviken"
+        }
+    ]
+}

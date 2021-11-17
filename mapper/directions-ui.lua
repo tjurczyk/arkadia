@@ -2,8 +2,6 @@ amap.directions_ui = amap.directions_ui or {}
 
 function amap.directions_ui:handle_exits(dirs, any_direction)
     if amap.shorten_exits then
-        selectCurrentLine()
-        deleteLine()
         local str = "\n-----:"
 
         for dir, _ in pairs(dirs) do
@@ -11,7 +9,7 @@ function amap.directions_ui:handle_exits(dirs, any_direction)
         end
         str = str .. "\n"
         local color = any_direction and "LawnGreen" or "orange"
-        cecho("<" .. color .. ">" .. str)
+        creplaceLine("<" .. color .. ">" .. str)
     end
 
 
@@ -25,6 +23,11 @@ end
 
 function trigger_func_mapper_directions_ui_wyjscia_all()
     local dirs = { ["n"] = true, ["nw"] = true, ["w"] = true, ["sw"] = true, ["s"] = true, ["se"] = true, ["e"] = true, ["ne"] = true }
+    amap.directions_ui:handle_exits(dirs)
+end
+
+function trigger_func_mapper_directions_ui_wyjscia_all_ud()
+    local dirs = { ["n"] = true, ["nw"] = true, ["w"] = true, ["sw"] = true, ["s"] = true, ["se"] = true, ["e"] = true, ["ne"] = true, ["d"] = true, ["u"] = true }
     amap.directions_ui:handle_exits(dirs)
 end
 

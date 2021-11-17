@@ -1,0 +1,22 @@
+{
+    "enter": "Wchodzisz na stara szkute.",
+    "exit": "Schodzisz ze szkuty.",
+    "start": "Szkuta odbija od brzegu.",
+    "bind": "ob widok",
+    "stops": [
+        {
+            "start": 2574,
+            "destination": 4059,
+            "time": 55,
+            "stop_pattern": "^(?:Malacius|Starszy spokojny mezczyzna krzyczy): Doplynelismy do przystani w Blaviken! Mozna wysiadac!$",
+            "label" : "Blaviken"
+        },
+        {
+            "start": 4059,
+            "destination": 2574,
+            "time": 55,
+            "stop_pattern": "^(?:Malacius|Starszy spokojny mezczyzna krzyczy): Doplynelismy do czwartego pomostu w Oxenfurcie! Mozna wysiadac!$",
+            "label" : "Oxenfurt"
+        }
+    ]
+}

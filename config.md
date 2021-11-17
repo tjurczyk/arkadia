@@ -4,6 +4,16 @@ Tutaj ustaw Twoje imie (miedzy innymi do globalnego licznika postepow i zabitych
 
 ---
 
+## `scripts.config_watch.enabled`
+
+Flaga okreslajaca czy automatyczne przeladowywanie configu na zmiany w pliku ma byc wlaczone.
+
+Dozwolone wartosci
+* `true`  - zmiany beda automatycznie przeladowywane
+* `false` - zmiany nie beda automatycznie przeladowywane
+
+---
+
 ## `ateam.all_numbering`
 Domyslna opcja czy maja byc numerowani neutralni osobnicy na lokacji
 
@@ -30,6 +40,13 @@ Dozwolone wartosci
 Sortowanie alfabetyczne druzyny w oknie kondycji.
 * `true` - włączone
 * `false` - wyłączone
+
+---
+
+## `ateam.options.own_name`
+
+Określa jaka nazwa będzie wyświetlana obok naszej kondycji w oknie kondycji.
+Domyślnie `JA`
 
 ---
 
@@ -527,6 +544,12 @@ Wartości:
 
 ---
 
+## `scripts.inv.weapons.wield`
+
+Komenda na dobywanie broni uzywana przez skrypty.
+
+---
+
 ## `scripts.inv.weapons.cases`
 ## `scripts.inv.weapons.cases_dopelniacz`
 
@@ -877,6 +900,8 @@ Włacza/wyłącz bardziej graficzny pasek stanów
 
 Wartość bool
 
+---
+
 ## `scripts.ui.footer_start`
 
 W ktorym miejscu (% okna) ma sie zaczac dolna belka
@@ -1018,6 +1043,7 @@ Mozliwe opcje to:
 * `lamp`           - wskazania lampy
 * `compass`        - komendy pre i postwalk
 * `combat`         - stan walki + ochloniecia po walce
+* `package`        - aktualnie pobrana paczka pocztowa
 * `placeholder`    - puste miejsce, mozna dac odstep pomiedzy konkretnymi elementami, element moze byc deklarowany pare razy
 
 ### Przykład
@@ -1117,6 +1143,12 @@ Ponizej jest opcja co ma byc robione:
 Opcja kolorow do tagow (czyli tylko kiedy scripts.gag_settings ustawione ne 2)
 
 Kolory, ktore mozna wybrac sa dostepne w `/kolory` lub [tutaj](https://forums.mudlet.org/download/file.php?id=129&sid=be964a7a97580514727bfcb7cfcb5aec&mode=view)
+
+---
+
+## `scripts.gags.own_spec_prefix`
+
+Prefix dla gagow wlasnych ciosow specjalnych.
 
 ---
 
@@ -1557,6 +1589,12 @@ Dostępne wartości:
 
 ---
 
+## `scripts.people.mail.show_automatically`
+
+Flaga określa czy automatycznie pokazywać scieżkę na mapie do oddania paczki, po obejrzeniu paczki, jeżeli lokalizacja NPC jest znana.
+
+---
+
 ## `scripts.ui.notification_center.enabled`
 
 Określa czy notyfikacje na różne wydarzenia (np. pocztę) w prawym górnym rogu maja być włączone.
@@ -1589,7 +1627,7 @@ Dostępne wartości:
 * `true` - włączone
 * `false` - wyłączone
 
---
+---
 
 ## `ateam.next_attack_objs.mark_in_state`
 
@@ -1615,7 +1653,7 @@ Dostępne wartości:
 
 Ustawia wielkość czcionka dla okna kolejki mobów (jeśli używane).
 
---
+---
 
 ## `scripts.ui.inline_compass_rose.enabled`
 
@@ -1626,7 +1664,7 @@ Dostępne wartości:
 * `true` - włączone
 * `false` - wyłączone
 
---
+---
 
 ## `amap.disable_team_sneak`
 

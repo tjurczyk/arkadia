@@ -26,6 +26,7 @@ ateam = ateam or {
     paralyzed_name_to_safety_timer = {},
     broken_defense_name_to_safety_timer = {},
     options = {
+        own_name = "JA",
         team_numbering_mode = "mode1",
         team_mate_stun_bg_color = "goldenrod",
         team_mate_stun_fg_color = "black",
@@ -49,7 +50,7 @@ ateam = ateam or {
 ateam["footer_info_attack_mode_to_text"] = { "A", "AW", "AWR" }
 
 function trigger_func_skrypty_team_start_ateam()
-    tempTimer(4, [[ ateam:start_ateam() ]])
+    tempTimer(4, function() ateam:start_ateam() end)
     tempTimer(5, function() scripts.ui:setup_talk_window() end)
 end
 
@@ -59,8 +60,72 @@ ateam.loginHandler = scripts.event_register:register_singleton_event_handler(ate
     scripts.ui:setup_talk_window()
 end)
 
-function trigger_func_skrypty_team_left_team()
-    tempTimer(0.4, function() ateam:restart_ateam(true) end)
+function trigger_func_skrypty_team_left_team(leaver)
+    if not leaver then
+        tempTimer(0.4, function() ateam:restart_ateam(true) end)
+    else
+        for k, v in pairs(ateam.team) do
+            if type(v) == "number" then
+                local id = scripts.utils:get_best_fuzzy_match(leaver, {ateam.objs[v]["desc"]}, 0.6)
+                if id ~= -1 then
+                    local letter = ateam.team[v]
+                    ateam.team[v] = nil
+                    ateam.team[letter] = nil
+                    raiseEvent("teamChanged")
+                    return
+                end
+            end
+        end
+    end
+end
+
+function trigger_func_skrypty_team_no_team()
+   if table.size(ateam.team) > 1 then
+        ateam.team = table.collect(ateam.team, function(key, value) return value == "@" end)
+        raiseEvent("teamChanged")
+   end
+end
+
+function trigger_func_skrypty_team_clear_absent()
+    local druzyna
+    local druzyna_old = {}
+
+    for k, v in pairs(ateam.team) do
+        if type(v) == "number" then
+            table.insert(druzyna_old, ateam.objs[v]["desc"])
+        end
+    end
+
+    druzyna = matches[2]
+    if matches[3] then
+        druzyna = druzyna .. ", " .. matches[3]
+    end
+
+    druzyna = string.gsub(druzyna, " i ", ", ")
+    druzyna = string.gsub(druzyna, "[Kk]leczac. na ziemi ", "")
+    druzyna = string.gsub(druzyna, "[Ss]kryt. za %w+ ", "")
+    druzyna = string.gsub(druzyna, "[Ww]spinajac. sie ", "")
+
+    local disconnected = string.match(druzyna, "statua (%w+)")
+    if disconnected then
+        local id = scripts.utils:get_best_fuzzy_match(disconnected, druzyna_old, 0.6)
+        if id ~= -1 then
+            druzyna = druzyna:gsub("statua " .. disconnected, druzyna_old[id])
+        end
+    end
+    druzyna = string.split(druzyna, ", ")
+
+    for k, v in pairs(ateam.team) do
+        if type(v) == "number" then
+            if not table.contains(druzyna, ateam.objs[v]["desc"]) then
+                scripts:print_log(ateam.objs[v]["desc"] .. " nie jest juz w druzynie.", true)
+                local letter = ateam.team[v]
+                ateam.team[v] = nil
+                ateam.team[letter] = nil
+                raiseEvent("teamChanged")
+            end
+        end
+    end
 end
 
 function trigger_func_skrypty_team_invite_bind()
@@ -239,3 +304,6 @@ function alias_func_skrypty_team_puszczanie_zaslon()
     ateam:switch_releasing_guards()
 end
 
+function alias_func_skrypty_team_last_activity()
+    ateam:check_team_last_activity()
+end

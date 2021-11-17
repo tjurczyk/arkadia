@@ -354,7 +354,7 @@ function ateam:print_obj_team(id, obj)
         end
 
         -- name section
-        local str_name = "JA"
+        local str_name = self.options.own_name
         local str_name_original = obj["desc"]
         if str_id ~= " @" then
             str_name = str_name_original
@@ -362,7 +362,7 @@ function ateam:print_obj_team(id, obj)
 
         if ateam.paralyzed_names[obj["desc"]] then
             cecho(scripts.ui.states_window_name, "<" .. ateam.options.team_mate_stun_fg_color .. ":" .. ateam.options.team_mate_stun_bg_color .. ">" .. str_name .. " ")
-        elseif str_name ~= "JA" then
+        elseif str_name ~= self.options.own_name then
             cecho(scripts.ui.states_window_name, "<LimeGreen:team_console_bg>" .. str_name .. " ")
         else
             cecho(scripts.ui.states_window_name, "<white:team_console_bg>" .. str_name .. " ")
@@ -377,7 +377,7 @@ function ateam:print_obj_team(id, obj)
             cecho(scripts.ui.states_window_name, "  <red:team_console_bg>X<reset>")
         end
 
-        if str_name ~= "JA" and ateam.team[id] then
+        if str_name ~= self.options.own_name and ateam.team[id] then
             local a = selectString(scripts.ui.states_window_name, str_name_original, 1)
 
             setLink(scripts.ui.states_window_name, [[ateam:za_func("]] .. ateam.team[id] .. [[")]], "zaslon " .. str_name_original)
@@ -631,7 +631,7 @@ function ateam:switch_releasing_guards()
         ateam.release_guards = true
         scripts:print_log("Ok, bede puszczal zaslony")
     end
-    raiseEvent("switchReleasigGuards", ateam.release_guards)
+    raiseEvent("switchReleasingGuards", ateam.release_guards)
 end
 
 function ateam:build_alphabetical_list()

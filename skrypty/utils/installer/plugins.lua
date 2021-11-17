@@ -3,6 +3,10 @@ scripts.plugins_installer = scripts.plugins_installer or {
     valid_extensions = { "zip", "mpackage" }
 }
 
+function scripts.plugins_installer:init()
+    self.drop_handler = scripts.event_register:force_register_event_handler(self.drop_handler, "sysDropEvent", function(_, filepath, suffix) self:handle_drop(filepath, suffix) end)
+end
+
 function scripts.plugins_installer:install_from_url(url)
     local repo_owner, repo, format, branch = url:match("https://codeload%.github%.com/(.*)/(.*)/(.*)/(.*)")
 
@@ -59,6 +63,9 @@ function scripts.plugins_installer:handle_unzip(event, plugin_name, branch, ...)
     if event == "sysUnzipDone" then
         if branch then
             local base_name = self.plugin_directory .. plugin_name
+            if lfs.isdir(base_name) then
+                scripts.installer.delete_dir(base_name)
+            end
             os.rename(base_name .. "-" .. branch, base_name)
         end
         scripts:print_log("Plugin " .. plugin_name .. " rozpakowany")
@@ -85,6 +92,24 @@ function scripts.plugins_installer:uninstall(plugin_name)
     scripts:print_log("Plugin " .. plugin_name .. " odinstalowany")
 end
 
+function scripts.plugins_installer:handle_drop(filepath, suffix)
+    if suffix ~= "arkadia" then
+        return
+    end
+
+    local plugin_name, extension = filepath:gmatch(".+/(.+)%.(.+)$")()
+    scripts.event_register:register_event_handler("sysUnzipDone", function(event, ...)
+        self.plugin_zip = filepath
+        self:handle_unzip(event, plugin_name, nil, ...)
+    end, true)
+    scripts.event_register:register_event_handler("sysUnzipError", function(event, ...)
+        self.plugin_zip = filepath
+        self:handle_unzip(event, plugin_name, nil, ...)
+    end, true)
+    
+    unzipAsync(filepath, self.plugin_directory .. plugin_name)
+end
+
 function alias_func_install_plugin()
     scripts.plugins_installer:install_from_url(matches[2])
 end
@@ -93,3 +118,4 @@ function alias_func_uninstall_plugin()
     scripts.plugins_installer:uninstall(matches[2])
 end
 
+scripts.plugins_installer:init()

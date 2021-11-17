@@ -1,5 +1,8 @@
 local config_schema_file = getMudletHomeDir() .. "/arkadia/config_schema.json"
 local file = io.open(config_schema_file, "rb")
+
+scripts.config_watch = scripts.config_watch or {}
+
 if file then
     scripts.config_schema = yajl.to_value(file:read("*a"))
     file:close()
@@ -18,15 +21,26 @@ function scripts_load_v2_config(name)
             raiseEvent("profileLoaded")
             end
         )
+        scripts.config_watch:start(scripts.config)
     end
+end
+
+local function check_if_load_trigger_exists(wolacz)
+    local restore = scripts_load_v2_config
+    local was_called = false
+    scripts_load_v2_config = function() was_called = true end
+    feedTriggers("\nWitaj, ".. wolacz ..". Podaj swe haslo\n")
+    scripts_load_v2_config = restore
+    deleteLine()
+    if getCurrentLine() == "" then
+        deleteLine()
+    end
+    return was_called
 end
 
 function scripts_init_v2_config(name, wolacz)
     if io.exists(scripts_config_path(name)) then
         scripts:print_log("konfiguracja dla '" .. name .. "' juz istnieje")
-        cecho("<CadetBlue>(skrypty): ")
-        local code = string.format([[scriptc_config_create_trigger("%s", "%s")]], name, wolacz)
-        cechoLink("<tomato>jezeli chcesz utworzy sam trigger do automatycznego ladowania konifugracji kliknij tutaj", code, "Utworz trigger", true)
     else
         scripts.config = ScriptsConfig:init(name, true)
         if not scripts.config then
@@ -48,6 +62,10 @@ function scripts_init_v2_config(name, wolacz)
         scriptc_config_create_trigger(name, wolacz)
         
         scripts:print_log("utworzona konfiguracja dla " .. name .. " w pliku " .. scripts_config_path(name))
+    end
+    if not check_if_load_trigger_exists(wolacz) then
+        scripts:print_log("Tworze trigger ladujacy konfiguracje podczas logowania.")
+        scriptc_config_create_trigger(name, wolacz)
     end
 end
 

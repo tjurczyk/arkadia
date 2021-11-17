@@ -149,6 +149,11 @@
       ]
     },
     {
+        "name": "scripts.config_watch.enabled",
+        "default_value": true,
+        "field_type": "boolean"
+      },
+    {
       "name": "ateam.attack_commands",
       "default_value": [
         "zabij"
@@ -173,6 +178,14 @@
       "macros_on_modify": [
         "_ateam"
       ]
+    },
+    {
+        "name": "ateam.options.own_name",
+        "default_value": "JA",
+        "field_type": "string",
+        "macros_on_modify": [
+            "_ateam"
+        ]
     },
     {
       "name": "ateam.options.alphabetical_sort_team",
@@ -1008,6 +1021,12 @@
       ]
     },
     {
+      "name": "scripts.inv.weapons.wield",
+      "default_value": "dobadz wszystkich broni",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
       "name": "scripts.inv.weapons.cases",
       "default_value": [],
       "field_type": "list",
@@ -1670,11 +1689,17 @@
       ]
     },
     {
+        "name": "scripts.gags.own_spec_prefix",
+        "default_value": "",
+        "field_type": "string"
+    },
+    {
       "name": "scripts.keybind.configuration.fight_support.modifier",
       "default_value": [
         "Control"
       ],
       "field_type": "list",
+      "content_type" : "key_modifiers",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -1709,6 +1734,7 @@
         "Control"
       ],
       "field_type": "list",
+      "content_type" : "key_modifiers",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -1738,9 +1764,46 @@
       ]
     },
     {
+      "name": "scripts.keybind.configuration.critical_hp.modifier",
+      "default_value": [
+        "Control",
+        "Alt"
+      ],
+      "field_type": "list",
+      "content_type" : "key_modifiers",
+      "macros_on_modify": [
+        "_keybind"
+      ]
+    },
+    {
+      "name": "scripts.keybind.configuration.critical_hp.key",
+      "default_value": "Equal",
+      "field_type": "string",
+      "macros_on_modify": [
+        "_keybind"
+      ]
+    },
+    {
+      "name": "scripts.keybind.configuration.critical_hp.keys",
+      "default_value": [],
+      "field_type": "list",
+      "macros_on_modify": [
+        "_keybind"
+      ]
+    },
+    {
+      "name": "scripts.keybind.configuration.critical_hp.active",
+      "default_value": true,
+      "field_type": "boolean",
+      "macros_on_modify": [
+        "_keybind"
+      ]
+    },
+    {
       "name": "scripts.keybind.configuration.functional_key.modifier",
       "default_value": [],
       "field_type": "list",
+      "content_type" : "key_modifiers",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -1773,6 +1836,7 @@
       "name": "scripts.keybind.configuration.attack_bind_objs.modifier",
       "default_value": [],
       "field_type": "list",
+      "content_type" : "key_modifiers",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -1809,6 +1873,7 @@
       "name": "scripts.keybind.configuration.break_attack_target.modifier",
       "default_value": [],
       "field_type": "list",
+      "content_type" : "key_modifiers",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -1841,6 +1906,7 @@
       "name": "scripts.keybind.configuration.block_attack_target.modifier",
       "default_value": [],
       "field_type": "list",
+      "content_type" : "key_modifiers",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -1875,6 +1941,7 @@
         "Control"
       ],
       "field_type": "list",
+      "content_type" : "key_modifiers",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -1909,6 +1976,7 @@
         "Control"
       ],
       "field_type": "list",
+      "content_type" : "key_modifiers",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -1941,6 +2009,7 @@
       "name": "scripts.keybind.configuration.empty_bottle.modifier",
       "default_value": [],
       "field_type": "list",
+      "content_type" : "key_modifiers",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -1973,6 +2042,7 @@
       "name": "scripts.keybind.configuration.enter_ship.modifier",
       "default_value": [],
       "field_type": "list",
+      "content_type" : "key_modifiers",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -2007,6 +2077,7 @@
         "Control"
       ],
       "field_type": "list",
+      "content_type" : "key_modifiers",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -2041,6 +2112,7 @@
         "Control"
       ],
       "field_type": "list",
+      "content_type" : "key_modifiers",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -2075,6 +2147,7 @@
         "Alt"
       ],
       "field_type": "list",
+      "content_type" : "key_modifiers",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -2109,6 +2182,7 @@
         "Alt"
       ],
       "field_type": "list",
+      "content_type" : "key_modifiers",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -2141,6 +2215,7 @@
       "name": "scripts.keybind.configuration.temp5.modifier",
       "default_value": [],
       "field_type": "list",
+      "content_type" : "key_modifiers",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -2173,6 +2248,7 @@
       "name": "scripts.keybind.configuration.temp6.modifier",
       "default_value": [],
       "field_type": "list",
+      "content_type" : "key_modifiers",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -2205,6 +2281,7 @@
       "name": "scripts.keybind.configuration.temp7.modifier",
       "default_value": [],
       "field_type": "list",
+      "content_type" : "key_modifiers",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -2237,6 +2314,7 @@
       "name": "scripts.keybind.configuration.temp8.modifier",
       "default_value": [],
       "field_type": "list",
+      "content_type" : "key_modifiers",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -2269,6 +2347,7 @@
       "name": "scripts.keybind.configuration.temp9.modifier",
       "default_value": [],
       "field_type": "list",
+      "content_type" : "key_modifiers",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -2301,6 +2380,7 @@
       "name": "scripts.keybind.configuration.temp10.modifier",
       "default_value": [],
       "field_type": "list",
+      "content_type" : "key_modifiers",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -2335,6 +2415,7 @@
         "Alt"
       ],
       "field_type": "list",
+      "content_type" : "key_modifiers",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -2369,6 +2450,7 @@
         "Alt"
       ],
       "field_type": "list",
+      "content_type" : "key_modifiers",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -2403,6 +2485,7 @@
         "Alt"
       ],
       "field_type": "list",
+      "content_type" : "key_modifiers",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -2437,6 +2520,7 @@
         "Alt"
       ],
       "field_type": "list",
+      "content_type" : "key_modifiers",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -2471,6 +2555,7 @@
         "Control"
       ],
       "field_type": "list",
+      "content_type" : "key_modifiers",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -2505,6 +2590,7 @@
         "Control"
       ],
       "field_type": "list",
+      "content_type" : "key_modifiers",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -2539,6 +2625,7 @@
         "Control"
       ],
       "field_type": "list",
+      "content_type" : "key_modifiers",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -2571,6 +2658,7 @@
       "name": "scripts.keybind.configuration.walk_mode.modifier",
       "default_value": [],
       "field_type": "list",
+      "content_type" : "key_modifiers",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -2727,6 +2815,12 @@
     {
       "name": "scripts.mail_creator.justify",
       "default_value": true,
+      "field_type": "boolean",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.people.mail.show_automatically",
+      "default_value": false,
       "field_type": "boolean",
       "macros_on_modify": []
     },

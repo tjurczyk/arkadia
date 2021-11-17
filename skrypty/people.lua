@@ -1,6 +1,8 @@
 scripts["people"] = scripts["people"] or { 
     db = {},
-    mail = {},
+    mail = {
+        show_automatically = false
+    },
     enemies = {},
     color_triggers = {},
     already_processed = {},
@@ -70,10 +72,6 @@ function trigger_func_skrypty_people_przedstawianie_korki()
     scripts.people:process_someone(matches[3], matches[4])
 end
 
-function trigger_func_skrypty_people_poczta_tablica()
-    scripts.people.mail:check_table(matches[2])
-end
-
 function trigger_func_skrypty_people_paczka()
     scripts.people.mail:check_package_person(matches[2])
 end
@@ -99,7 +97,7 @@ function alias_func_skrypty_people_pokaz_wrogow()
 end
 
 function alias_func_skrypty_people_dodaj_osobe()
-    scripts.people:add_person_to_db(matches[2])
+    scripts.people:add_person_to_db(matches[2], matches[3])
 end
 
 function alias_func_skrypty_people_usun_osobe()
@@ -107,11 +105,11 @@ function alias_func_skrypty_people_usun_osobe()
 end
 
 function alias_func_skrypty_people_dodaj_gildie()
-    scripts.people:add_person_to_guild(tonumber(matches[2]), matches[3])
+    scripts.people:add_person_to_guild(matches[2], matches[3])
 end
 
 function alias_func_skrypty_people_usun_gildie()
-    scripts.people:add_person_to_guild(tonumber(matches[2]), 0)
+    scripts.people:add_person_to_guild(matches[2], 0)
 end
 
 function alias_func_skrypty_people_zgildiowani()

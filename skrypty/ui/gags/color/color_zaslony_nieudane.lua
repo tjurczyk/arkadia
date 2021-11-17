@@ -3,9 +3,7 @@ function trigger_func_skrypty_ui_gags_color_color_zaslony_nieudane_nie_zaslanias
         return
     end
 
-    selectCurrentLine()
-    deleteLine()
-    cecho("\n<" .. scripts.gag_colors["zaslony_nieudane"] .. ">[N ZASLANIASZ] " .. matches[2] .. "\n")
+    creplaceLine("\n<" .. scripts.gag_colors["zaslony_nieudane"] .. ">[N ZASLANIASZ] " .. matches[2] .. "\n")
     resetFormat()
 end
 
@@ -13,10 +11,8 @@ function trigger_func_skrypty_ui_gags_color_color_zaslony_nieudane_nie_zaslania_
     if scripts.gags:delete_line("zaslony_nieudane") then
         return
     end
-
-    selectCurrentLine()
-    deleteLine()
-    cecho("\n<" .. scripts.gag_colors["zaslony_nieudane"] .. ">[ N ZASLANIA ] " .. matches[2] .. "\n")
+    
+    creplaceLine("\n<" .. scripts.gag_colors["zaslony_nieudane"] .. ">[ N ZASLANIA ] " .. matches[2] .. "\n")
     resetFormat()
 end
 

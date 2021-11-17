@@ -291,7 +291,7 @@ function trigger_func_skrypty_ui_special_exits_follow_obroc_rzezbe()
 end
 
 function trigger_func_skrypty_ui_special_exits_follow_zejdz_po_drabinie()
-    scripts.utils.bind_functional_team_follow(matches[2], "opusc bronie;zejdz po drabinie;dobadz wszystkich broni", 15)
+    scripts.utils.bind_functional_team_follow(matches[2], "opusc bronie;zejdz po drabinie;" .. scripts.inv.weapons.wield, 15)
 end
 
 function trigger_func_skrypty_ui_special_exits_follow_zejdz_po_drabinie_2()
@@ -303,7 +303,7 @@ function trigger_func_skrypty_ui_special_exits_follow_wejdz_po_drabinie()
         scripts.utils.bind_functional_team_follow(matches[2], "wespnij sie na gore", 15)
         return
     end
-    scripts.utils.bind_functional_team_follow(matches[2], "opusc bronie;wejdz po drabinie;dobadz wszystkich broni", 15)
+    scripts.utils.bind_functional_team_follow(matches[2], "opusc bronie;wejdz po drabinie;" .. scripts.inv.weapons.wield, 15)
 end
 
 function trigger_func_skrypty_ui_special_exits_follow_przejdz_przez_wneke()
@@ -319,7 +319,7 @@ function trigger_func_skrypty_ui_special_exits_follow_wejdz_do_czerwonego_wozu()
 end
 
 function trigger_func_skrypty_ui_special_exits_follow_zejdz_po_drabince()
-    scripts.utils.bind_functional_team_follow(matches[2], "opusc bronie;zejdz po drabince;dobadz wszystkich broni", 15)
+    scripts.utils.bind_functional_team_follow(matches[2], "opusc bronie;zejdz po drabince;" .. scripts.inv.weapons.wield, 15)
 end
 
 function trigger_func_skrypty_ui_special_exits_follow_wdrap_sie_na_glaz()
@@ -468,7 +468,7 @@ function trigger_func_skrypty_ui_special_exits_follow_wejdz_do_jaskini()
 end
 
 function trigger_func_skrypty_ui_special_exits_follow_opusc_bron_wejdz_po_drabince_dobadz_broni()
-    scripts.utils.bind_functional_team_follow(matches[2], "opusc bronie;wejdz po drabinie;dobadz wszystkich broni", 15)
+    scripts.utils.bind_functional_team_follow(matches[2], "opusc bronie;wejdz po drabinie;" .. scripts.inv.weapons.wield, 15)
 end
 
 function trigger_func_skrypty_ui_special_exits_follow_wejdz_na_pien()
@@ -539,8 +539,8 @@ function trigger_func_skrypty_ui_special_exits_follow_dotknij_slupa()
     scripts.utils.bind_functional_team_follow(matches[2], "dotknij slupa", 15)
 end
 
-function trigger_func_skrypty_ui_special_exits_follow_wejdz_we_wschodnia_sciane()
-    scripts.utils.bind_functional_team_follow(matches[2], "wejdz we wschodnia sciane", 15)
+function trigger_func_skrypty_ui_special_exits_follow_przejdz_przez_zachodnia_sciane()
+    scripts.utils.bind_functional_team_follow(matches[2], "przejdz przez zachodnia sciane", 15)
 end
 
 function trigger_func_skrypty_ui_special_exits_follow_obejdz_budynek()
@@ -610,4 +610,80 @@ end
 
 function trigger_func_skrypty_ui_special_exits_follow_wejdz_na_statek(ship)
     scripts.utils.bind_functional_team_follow(matches[1], "wejdz na " .. ship, 15)
+end
+
+function trigger_func_skrypty_ui_special_exits_follow_przecisnij_sie_do_baszty()
+    scripts.utils.bind_functional_team_follow(matches[2], "przecisnij sie do baszty", 15)
+end
+
+function trigger_func_skrypty_ui_special_exits_follow_przecisnij_sie_miedzy_skalami()
+    scripts.utils.bind_functional_team_follow(matches[2], "przecisnij sie miedzy skalami", 15)
+end
+
+function trigger_func_skrypty_ui_special_exits_follow_przecisnij_sie_przez_gaszcz()
+    scripts.utils.bind_functional_team_follow(matches[2], "przecisnij sie przez gaszcz", 15)
+end
+
+function trigger_func_skrypty_ui_special_exits_follow_przesun_glaz()
+    scripts.utils.bind_functional_team_follow(matches[2], "przesun glaz", 15)
+end
+
+function trigger_func_skrypty_ui_special_exits_follow_wejdz_do_szafy()
+    scripts.utils.bind_functional_team_follow(matches[2], "wejdz do szafy", 15)
+end
+
+function trigger_func_skrypty_ui_special_exits_follow_pchnij_sciane()
+    scripts.utils.bind_functional_team_follow(matches[2], "pchnij sciane", 15)
+end
+
+function trigger_func_skrypty_ui_special_exits_follow_wespnij_sie_do_kraty()
+    scripts.utils.bind_functional_team_follow(matches[2], "wespnij sie do kraty", 15)
+end
+
+function trigger_func_skrypty_ui_special_exits_follow_wejdz_do_okienka()
+    scripts.utils.bind_functional_team_follow(matches[2], "wejdz do okienka", 15)
+end
+
+function trigger_func_skrypty_ui_special_exits_follow_przecisnij_sie_przez_lukarne()
+    scripts.utils.bind_functional_team_follow(matches[2], "przecisnij sie przez lukarne", 15)
+end
+
+function trigger_func_skrypty_ui_special_exits_follow_wejdz_do_sarkofagu()
+    scripts.utils.bind_functional_team_follow(matches[2], "wejdz do sarkofagu", 15)
+end
+
+function trigger_func_skrypty_ui_special_exits_follow_zejdz_po_zboczu()
+    scripts.utils.bind_functional_team_follow(matches[2], "zejdz po zboczu", 15)
+end
+
+function trigger_func_skrypty_ui_special_exits_follow_rzeka()
+    scripts.utils.bind_functional_team_follow(matches[2], "przeplyn przez rzeke", 15)
+end
+
+function trigger_func_skrypty_ui_special_exits_follow_wejdz_do_kutra()
+    scripts.utils.bind_functional_team_follow(matches[2], "wejdz do kutra", 15)
+end
+
+function trigger_func_skrypty_ui_special_exits_follow_zejdz_pod_poklad()
+    scripts.utils.bind_functional_team_follow(matches[2], "zejdz pod poklad", 15)
+end
+
+function trigger_func_skrypty_ui_special_exits_follow_zejdz_z_kutra()
+    scripts.utils.bind_functional_team_follow(matches[2], "zejdz z kutra", 15)
+end
+
+function trigger_func_skrypty_ui_special_exits_follow_przejdz_przez_portal()
+    scripts.utils.bind_functional_team_follow(matches[2], "przejdz przez portal", 15)
+end
+
+function trigger_func_skrypty_ui_special_exits_follow_przeskocz_na_polnoc_poludnie(kierunek)
+    scripts.utils.bind_functional_team_follow(matches[2], "przeskocz na " .. kierunek, 15)
+end
+
+function trigger_func_skrypty_ui_special_exits_follow_wejdz_na_skaly()
+    scripts.utils.bind_functional_team_follow(matches[2], "wejdz na skaly", 15)
+end
+
+function trigger_func_skrypty_ui_special_exits_follow_zejdz_na_wschod()
+    scripts.utils.bind_functional_team_follow(matches[2], "zejdz na wschod", 15)
 end

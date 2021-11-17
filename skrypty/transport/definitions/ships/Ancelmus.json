@@ -1,0 +1,54 @@
+{
+    "enter": "Wchodzisz na wielka galere.",
+    "exit": "Schodzisz z galery.",
+    "start": "Galera odbija od brzegu.",
+    "bind": "ob widok",
+    "stops": [
+        {
+            "start": 6429,
+            "destination": 6621,
+            "time": 43,
+            "stop_pattern": "^(?:Czarnowlosy barczysty mezczyzna|Ancelmus) krzyczy: Doplynelismy do przystani w Krainie Zgromadzenia! Mozna wysiadac!$",
+            "label" : "Kraina Zgromadzenia"
+        },
+        {
+            "start": 6621,
+            "destination": 7233,
+            "time": 44,
+            "stop_pattern": "^(?:Czarnowlosy barczysty mezczyzna|Ancelmus) krzyczy: Doplynelismy do wschodniego nabrzeza w Nuln! Mozna wysiadac!$",
+            "set_pattern": "^(?:Czarnowlosy barczysty mezczyzna|Ancelmus) krzyczy: Nastepnym portem bedzie wschodnie nabrzeze w Nuln!$",
+            "label": "Nuln"
+        },
+        {
+            "start": 7233,
+            "destination": 5207,
+            "time": 43,
+            "stop_pattern": "^(?:Czarnowlosy barczysty mezczyzna|Ancelmus) krzyczy: Doplynelismy do przystani w Kreutzhofen! Mozna wysiadac!$",
+            "set_pattern": "^(?:Czarnowlosy barczysty mezczyzna|Ancelmus) krzyczy: Nastepnym portem bedzie przystan w Kreutzhofen!$",
+            "label": "Kreutzhofen"
+        },
+        {
+            "start": 5207,
+            "destination": 7233,
+            "time": 40,
+            "stop_pattern": "^(?:Czarnowlosy barczysty mezczyzna|Ancelmus) krzyczy: Doplynelismy do wschodniego nabrzeza w Nuln! Mozna wysiadac!$",
+            "label": "Nuln"
+        },
+        {
+            "start": 7233,
+            "destination": 6621,
+            "time": 40,
+            "stop_pattern": "^(?:Czarnowlosy barczysty mezczyzna|Ancelmus) krzyczy: Doplynelismy do przystani w Krainie Zgromadzenia! Mozna wysiadac!$",
+            "set_pattern": "^(?:Czarnowlosy barczysty mezczyzna|Ancelmus) krzyczy: Nastepnym portem bedzie przystan w Krainie Zgromadzenia!$",
+            "label": "Kraina Zgromadzenia"
+        },
+        {
+            "start": 6621,
+            "destination": 6429,
+            "time": 40,
+            "stop_pattern": "^(?:Czarnowlosy barczysty mezczyzna|Ancelmus) krzyczy: Doplynelismy do przystani na Blekitnej Wstedze! Mozna wysiadac!$",
+            "set_pattern": "^(?:Czarnowlosy barczysty mezczyzna|Ancelmus) krzyczy: Nastepnym portem bedzie przystan na Blekitnej Wstedze!$",
+            "label": "Blekitna Wstega"
+        }
+    ]
+}

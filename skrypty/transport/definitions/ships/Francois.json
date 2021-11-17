@@ -1,0 +1,22 @@
+{
+    "enter": "Wchodzisz na smukly bryg.",
+    "exit": "Schodzisz z brygu.",
+    "start": "Zaloga odcumowuje statek, ktory powoli zaczyna odplywac od brzegu.",
+    "bind": "ob widok",
+    "stops": [
+        {
+            "start": 4651,
+            "destination": 3251,
+            "time": 179,
+            "stop_pattern": "^Bryg z wolna doplywa do brzegu\\.",
+            "label": "Obawa"
+        },
+        {
+            "start": 3251,
+            "destination": 4651,
+            "time": 179,
+            "stop_pattern": "^Bryg z wolna doplywa do brzegu\\.",
+            "label": "Quenelles"
+        }
+    ]
+}

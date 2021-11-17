@@ -29,7 +29,9 @@ end
 function trigger_func_skrypty_ui_footer_elements_cover_action_success()
     ateam.cover_command = nil
     disableTimer("cover_timer")
-    scripts.ui.cover_wait_time = 5
+-- pablo start
+    scripts.ui.cover_epoch = getEpoch()
+-- pablo end
     scripts.ui.states_window_nav_states["guard_state"] = 5
     enableTimer("cover_timer")
     raiseEvent("guard_state", 5)
@@ -37,7 +39,9 @@ end
 
 function trigger_func_skrypty_ui_footer_elements_cover_action_fail()
     disableTimer("cover_timer")
-    scripts.ui.cover_wait_time = 5
+-- pablo start
+    scripts.ui.cover_epoch = getEpoch()
+-- pablo end
     scripts.ui.states_window_nav_states["guard_state"] = 5
     enableTimer("cover_timer")
     raiseEvent("guard_state", 5)

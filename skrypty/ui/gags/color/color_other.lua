@@ -7,6 +7,18 @@ function trigger_func_skrypty_ui_gags_color_color_other_zabiles_color()
     end
     local counter_str = "<tomato> (" .. tostring(counter) .. " / " .. tostring(misc.counter.all_kills) .. ")"
 
+    local npc_biernik = matches[4]
+    local npc = misc.counter.utils:get_entry_key(npc_biernik)
+    local sql_query = "SELECT sum(amount)as amount FROM counter2_daysum WHERE character=\"" .. scripts.character_name .. "\" AND type=\"".. npc .."\""
+    local retrieved = db:fetch_sql(misc.counter2.db_daysum.counter2_daysum, sql_query)
+    local Total = ""
+    for k, v in pairs(retrieved) do
+        display(v)
+        if v["amount"] then Total = v["amount"] end
+        break
+    end
+
+    local counter_str = counter_str.." <green>["..Total.."]"
     creplaceLine("\n\n<tomato>[  " .. matches[3]:upper() .. "  ] <grey>" .. matches[2] .. counter_str .. "\n\n")
     scripts.inv.collect:killed_action()
     resetFormat()

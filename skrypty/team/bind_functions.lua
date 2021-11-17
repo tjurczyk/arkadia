@@ -1,8 +1,25 @@
+function ateam:puszczac_zaslone(id)
+    if self.release_guards then
+        for key,value in pairs(scripts.people.bind_enemies) do
+            if value then
+                for ID, data in pairs(ateam.objs) do
+                    if data["desc"] == value then
+                        scripts:print_log("Nie puszczam bo wrogowie.")
+                        return false
+                    end
+                end
+            end
+        end
+    end
+    return self.release_guards
+end
+
+
 function ateam:zas_func(id)
     if ateam.enemy_op_ids[tonumber(id)] then
         local real_id = ateam.enemy_op_ids[tonumber(id)]
         send("zaslon przed ob_" .. real_id, false)
-        if ateam.release_guards then
+        if ateam:puszczac_zaslone(id) then
             send("przestan zaslaniac", false)
         end
     else
@@ -14,7 +31,7 @@ function ateam:za_func(id)
     if ateam.team[id] then
         local real_id = ateam.team[id]
         sendAll("przestan kryc sie za zaslona", "zaslon ob_" .. real_id, false)
-        if ateam.release_guards then
+        if ateam:puszczac_zaslone(id) then
             send("przestan zaslaniac", false)
         end
     else
@@ -34,7 +51,7 @@ function ateam:za_func_support(teammate, id)
         local real_teammate = ateam.team[string.upper(teammate)]
         local real_id = ateam.enemy_op_ids[tonumber(id)]
         sendAll("przestan kryc sie za zaslona", "zaslon ob_" .. real_teammate .. " przed ob_" .. real_id, false)
-        if ateam.release_guards then
+        if ateam:puszczac_zaslone(id) then
             send("przestan zaslaniac", false)
         end
     else
@@ -335,8 +352,8 @@ end
 function ateam:zap_func(id)
     local i = tonumber(id)
     if i == 0 then
-        for k,v in pairs(ateam.normal_ids) do
-            send("zapros ob_" .. v, false)
+        for _,v in pairs(ateam.normal_ids) do
+            if v>100 then send("zapros ob_" .. v, true) end
         end
         return
     end

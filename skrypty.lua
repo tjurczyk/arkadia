@@ -49,15 +49,17 @@ function timer_func_skrypty_lamp_info_timer()
 end
 
 function timer_func_skrypty_cover_timer()
-    if scripts.ui.cover_wait_time == 1 then
-        scripts.ui.cover_wait_time = "ok"
-        scripts.ui.states_window_nav_states["guard_state"] = "ok"
+--pablo start
+	local teraz = getEpoch() - scripts.ui.cover_epoch
+    local state
+    if teraz > 5 then
+        state = "<green>ok"
         disableTimer("cover_timer")
     else
-        scripts.ui.cover_wait_time = scripts.ui.cover_wait_time - 1
-        scripts.ui.states_window_nav_states["guard_state"] = scripts.ui.states_window_nav_states["guard_state"] - 1
+        state = "<red>"..string.format("%.1f", teraz)
     end
-    raiseEvent("guard_state", scripts.ui.cover_wait_time)
+    scripts.ui.states_window_nav_states["guard_state"] = state
+    raiseEvent("guard_state", state)
 end
 
 function timer_func_skrypty_order_timer()

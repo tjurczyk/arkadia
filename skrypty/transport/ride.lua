@@ -27,7 +27,7 @@ function scripts.transports.ride:init()
         table.insert(self.triggers, tempExactMatchTrigger(self.definition.exit, function() self:exit() end))
     end
     if self.definition.exit_command then
-        table.insert(self.handlers, registerAnonymousEventHandler("sysDataSendRequest", function(_, command) 
+        table.insert(self.handlers, registerAnonymousEventHandler("sysDataSendRequest", function(_, command)
             if self.definition.exit_command ~= command then
                 return
             end
@@ -37,7 +37,7 @@ function scripts.transports.ride:init()
         end))
     end
     table.insert(self.triggers, tempExactMatchTrigger(self.definition.start, function() self:start() end))
-    table.insert(self.triggers, tempRegexTrigger("^Jednym susem przesadzasz burte .* i wskakujesz do wody\\. Po chwili udaje ci sie doplynac z powrotem do brzegu\\.$", function() 
+    table.insert(self.triggers, tempRegexTrigger("^Jednym susem przesadzasz burte .* i wskakujesz do wody\\. Po chwili udaje ci sie doplynac z powrotem do brzegu\\.$", function()
         self:exit()
         self:abort()
     end))
@@ -105,7 +105,7 @@ function scripts.transports.ride:start()
         killTimer(self.progress_timer)
     end
     self:show_progress()
-    self.progress_timer = tempTimer(1, function() self:update_progress() end, true)
+    self.progress_timer = tempTimer(0.5, function() self:update_progress() end, true)
 end
 
 function scripts.transports.ride:get_progress()
@@ -143,7 +143,7 @@ end
 function scripts.transports.ride:show_progress()
     local border_bottom = getBorderBottom()
     local border_right = getBorderRight()
-    
+
     self.progress = Geyser.Gauge:new({
         name = string.format("transport.progress.%s.%s", self.id, self.index),
         x = -border_right - padding * 2 - bar_width - 20,

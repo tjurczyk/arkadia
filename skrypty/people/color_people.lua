@@ -232,7 +232,6 @@ function scripts.people:process_line(msg)
         if not match and current_table[tokens[i]:lower()] and current_table[tokens[i]:lower()][tokens[i+1]] then
             match = true
             for k,v in pairs(current_table[tokens[i]:lower()][tokens[i+1]]) do
-                display(k)
                 local form = string.format("%s %s", tokens[i], tokens[i+1])
                 scripts.people:process_person_color(form, v.name,  v.guild, v.suffix, v.color, v.suffix_only)
             end

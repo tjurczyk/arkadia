@@ -1,5 +1,5 @@
-function scripts.people:process_person_color(item, text, suffix, color, guild_color)
-    if item.name ~= text and suffix then
+function scripts.people:process_person_color(text, name, guild, suffix, color, guild_color)
+    if text ~= name and suffix then
         local full_sufix = "(" .. suffix .. ")"
         local replacement = string.format("%s %s", text, full_sufix)
         selectString(text, 1)
@@ -13,7 +13,7 @@ function scripts.people:process_person_color(item, text, suffix, color, guild_co
         fg(color)
     else
         local i = 1
-        while selectString(scripts.people:get_guild_name(item.guild), i) > -1 do
+        while selectString(guild, i) > -1 do
             fg(guild_color)
             i = i + 1
         end
@@ -22,19 +22,16 @@ function scripts.people:process_person_color(item, text, suffix, color, guild_co
 end
 
 function scripts.people:color_person_build(item, color, suffix_only)
-    if item["short"] == "" or scripts.people.already_processed[item["_row_id"]] then
+    if item.short == "" or scripts.people.already_processed[item["_row_id"]] then
         return
     end
 
     local suffix
 
     local guild_str = scripts.people:get_guild_name(item["guild"])
-
-    -- finally, it constructs the regex
-    local regex
-    
     local norm_short = string.lower(item["short"])
 
+    
     if norm_short ~= "" then
         if item["name"] ~= "" then
             suffix = item["name"]
@@ -47,16 +44,25 @@ function scripts.people:color_person_build(item, color, suffix_only)
         end
     end
 
-    if item.name ~= "" and suffix ~= string.lower(item.name) then
-        regex = "\\b(?i)(" .. item.short .. "(?-i)|" .. item.name .. ")(?! chaosu| \\(to chyba)\\b"
-    else
-        regex = "\\b(?i)(" .. item.short .. "(?-i))(?! chaosu| \\(to chyba)\\b"
+    local items = item.short:lower():split(" ")
+    if #items == 3 then
+        local value = {
+            short = item.short,
+            name = item.name,
+            guild = guild_str,
+            suffix = suffix,
+            color = color,
+            suffix_only = suffix_only
+        }
+        self.tokens_table[items[1]] = self.tokens_table[items[1]] or {}
+        self.tokens_table[items[1]][items[2]] = self.tokens_table[items[1]][items[2]] or {}
+        self.tokens_table[items[1]][items[2]][items[3]] = self.tokens_table[items[1]][items[2]][items[3]] or {}
+        self.tokens_table[items[1]][items[2]][items[3]][item.name] = value
+        self.tokens_table[item.name] = value
     end
 
-    local triggerId = tempRegexTrigger(regex, function() scripts.people:process_person_color(item, matches[2], suffix, color, suffix_only) end)
-    table.insert(self.color_triggers, triggerId)
-    scripts.people.already_processed[item["_row_id"]] = triggerId
-    scripts.people.already_processed_desc[item.short] = triggerId
+    scripts.people.already_processed[item["_row_id"]] = true
+    scripts.people.already_processed_desc[item.short] = true
 end
 
 function scripts.people:color_people_guild(guild_name, color)

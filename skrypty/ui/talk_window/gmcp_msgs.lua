@@ -18,20 +18,3 @@ if scripts.event_handlers["skrypty/ui/talk_window/gmcp_msgs.gmcp.gmcp_msgs.gmcp_
 end
 
 scripts.event_handlers["skrypty/ui/talk_window/gmcp_msgs.gmcp.gmcp_msgs.gmcp_msgs"] = registerAnonymousEventHandler("gmcp.gmcp_msgs", gmcp_msgs)
-
-
-function check_msg(msg)
-    local tokens = ansi2string(msg):gsub("%.", ""):gsub("[,!?-]", ""):gsub("\t", ""):gsub("\n", ""):split("[ /]")
-    for i = 1, #tokens, 1 do
-        if scripts.people.tokens_table[tokens[i]:lower()] and scripts.people.tokens_table[tokens[i]:lower()][tokens[i+1]] and scripts.people.tokens_table[tokens[i]:lower()][tokens[i+1]][tokens[i+2]]
-            and tokens[i+3] ~= "chaosu" and (tokens[i+3] ~= "to" and tokens[i+4] ~= "chyba") then
-            for k,v in pairs(scripts.people.tokens_table[tokens[i]:lower()][tokens[i+1]][tokens[i+2]]) do
-                scripts.people:process_person_color(string.format("%s %s %s", tokens[i], tokens[i+1], tokens[i+2]), v.name,  v.guild, v.suffix, v.color, v.suffix_only)
-            end
-        end
-        if scripts.people.tokens_table[tokens[i]] and scripts.people.tokens_table[tokens[i]].name then
-            local item = scripts.people.tokens_table[tokens[i]]
-            scripts.people:process_person_color(tokens[i], item.name, item.guild, item.suffix, item.color, item.suffix_only)
-        end
-    end
-end

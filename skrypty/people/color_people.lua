@@ -62,6 +62,7 @@ function scripts.people:color_person_build(item, color, suffix_only)
     if #items == 2 then
         local current_table = self.tokens_table["n2"]
         current_table[items[1]] = current_table[items[1]] or {}
+        current_table[items[1]][items[2]] = current_table[items[1]][items[2]] or {}
         current_table[items[1]][items[2]][item.name] = value
     end
 

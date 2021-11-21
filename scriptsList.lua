@@ -380,5 +380,6 @@ return {
     "skrypty/ui/gags/color/color_innych_spece/gp/ktos_spec",
     "skrypty/first_config",
     "skrypty/ui/inline_compass_rose",
-    "skrypty/world/brokilon"
+    "skrypty/world/brokilon",
+    "skrypty/world/mahakam"
 }

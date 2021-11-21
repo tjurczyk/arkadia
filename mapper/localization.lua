@@ -22,9 +22,5 @@ function amap.localization:try_to_locate()
     if #results == 1 then
         amap:set_position(results[1].room_id, true)
         return true
-    else
-        for k,v in pairs(results) do
-            scripts:print_log("Mozliwa lokacja: " .. v.room_id)
-        end
     end
 end

@@ -6,7 +6,7 @@ function lfs.isdir(dir)
 end
 
 function check_scripts()
-    if not lfs.isdir(getMudletHomeDir() .. "/arkadia/") then
+    if not lfs.isdir(getMudletHomeDir() .. "/arkadia/") or (not table.contains(getPackages(), "Arkadia") and not table.contains(getModules(), "Arkadia")) then
         function recover_scripts()
             local f = loadstring(recovery_code)
             f()

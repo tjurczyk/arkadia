@@ -79,11 +79,13 @@ function amap_ui_set_dirs_trigger(dirs, leave_as_is)
 
     local id = 1
     for k, v in pairs(swap) do
-        special_dirs[v] = true
-        amap.ui:set_special_dir(id, v)
-        id = id + 1
-        if id == 4 then
-            break
+        if not v:starts("script") then
+            special_dirs[v] = true
+            amap.ui:set_special_dir(id, v)
+            id = id + 1
+            if id == 4 then
+                break
+            end
         end
     end
 

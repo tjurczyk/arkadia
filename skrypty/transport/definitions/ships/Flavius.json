@@ -29,7 +29,7 @@
             "start": 4058,
             "destination": 2223,
             "time": 55,
-            "stop_pattern": "^(?:Jasnowlosy sniady elf|Flavius) krzyczy: Doplynelismy do przystani w Novigradzie! Mozna wysiadac!$",
+            "stop_pattern": "^(?:Jasnowlosy sniady elf|Flavius) krzyczy: Doplynelismy do polnocnego nabrzeza w Novigradzie! Mozna wysiadac!$",
             "label": "Novigrad"
         }
     ]

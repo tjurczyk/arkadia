@@ -47,12 +47,18 @@ scripts.people.show_binds_setting = 1
 scripts.people.colored_guilds = {}
 scripts.people.colored_people = {}
 
-
 scripts.people.trigger_guilds = {
     "CKN", "ES", "SC", "KS", "KM", "OS",
     "OHM", "SGW", "PE", "WKS", "LE", "KG",
     "KGKS", "MC", "OK", "RA", "GL", "ZT",
     "ZS", "ZH", "GP"
+}
+
+scripts.people.tokens_table = {
+    n1 = {},
+    n2 = {},
+    n3 = {},
+    n4 = {}
 }
 
 function trigger_func_skrypty_people_przedstawienie()

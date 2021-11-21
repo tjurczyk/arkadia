@@ -381,7 +381,7 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^Otwart(y|a|e) .* (plecak|torba|sakwa|sakiewka|worek) zawiera (.*)\.$</string>
+							<string>^Otwart(y|a|e) .* (plecak|torba|sakwa|sakiewka|worek)(?: z .*)? zawiera (.*)\.$</string>
 							<string>(^[ &gt;]*(Uwaznie) ogladasz zawartosc .*\. W srodku dostrzegasz (.*)\.$)</string>
 							<string>^Rozwiazujesz na chwile rzemyk, sprawdzajac zawartosc swojej .* sakiewki.*\. ((W) srodku dostrzegasz (.*)\.$)</string>
 						</regexCodeList>
@@ -8747,12 +8747,8 @@
 							<mSoundFile></mSoundFile>
 							<colorTriggerFgColor>#000000</colorTriggerFgColor>
 							<colorTriggerBgColor>#000000</colorTriggerBgColor>
-							<regexCodeList>
-								<string>^(?!W slepiach)</string>
-							</regexCodeList>
-							<regexCodePropertyList>
-								<integer>1</integer>
-							</regexCodePropertyList>
+							<regexCodeList />
+							<regexCodePropertyList />
 							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 								<name>ktos_ledwo_muska</name>
 								<script>trigger_func_skrypty_ui_gags_color_color_innych_ciosy_ktos_ledwo_muska()</script>
@@ -9035,12 +9031,8 @@
 							<mSoundFile></mSoundFile>
 							<colorTriggerFgColor>#000000</colorTriggerFgColor>
 							<colorTriggerBgColor>#000000</colorTriggerBgColor>
-							<regexCodeList>
-								<string>^(?!W slepiach)</string>
-							</regexCodeList>
-							<regexCodePropertyList>
-								<integer>1</integer>
-							</regexCodePropertyList>
+							<regexCodeList />
+							<regexCodePropertyList />
 							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 								<name>ktos_ledwo_muska_cie</name>
 								<script>trigger_func_skrypty_ui_gags_color_color_innych_ciosy_we_mnie_ktos_ledwo_muska_cie()</script>
@@ -16882,10 +16874,10 @@
 							<colorTriggerFgColor>#000000</colorTriggerFgColor>
 							<colorTriggerBgColor>#000000</colorTriggerBgColor>
 							<regexCodeList>
-								<string>^List jest gotowy do wyslania.</string>
+								<string>List jest gotowy do wyslania.</string>
 							</regexCodeList>
 							<regexCodePropertyList>
-								<integer>1</integer>
+								<integer>0</integer>
 							</regexCodePropertyList>
 						</Trigger>
 						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -20783,6 +20775,26 @@
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
 						<string>^Wypisano na niej duzymi literami: ([a-zA-Z ]+).*$</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>1</integer>
+					</regexCodePropertyList>
+				</Trigger>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>process people</name>
+					<script>trigger_func_people_process_line(line)</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>

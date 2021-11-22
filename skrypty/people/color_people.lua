@@ -211,7 +211,7 @@ function scripts.people:process_line(msg)
     if table.is_empty(self.tokens_table) then
         return
     end
-    local tokens = ansi2string(msg):gsub("%.", ""):gsub("[,!?-]", ""):gsub("\t", ""):gsub("\n", ""):split("[ /]")
+    local tokens = ansi2string(msg):gsub("%.", ""):gsub("[,!%?-%*]", ""):gsub("\t", ""):gsub("\n", ""):split("[ /]")
     for i = 1, #tokens, 1 do
         local match = false
         local current_table = self.tokens_table["n3"]

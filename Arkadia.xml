@@ -24582,7 +24582,6 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<string>Smok zagradza ci przejscie do pieczary.</string>
 						<string>Szarpiesz energicznie za klamke, lecz drzwi stawiaja opor.</string>
 						<string>Troll zastawia Ci wejscie.</string>
-						<string>^[ &gt;]*Tylko czlonkowie Stowarzyszenia Polelfow moga tam wejsc\.$</string>
 						<string>Uhhh, nie odwazysz sie przeskoczyc tak szerokiej przepasci!</string>
 						<string>Uuups... droga sie skonczyla... Najlepiej bedzie jak zawrocisz!</string>
 						<string>^[ &gt;]*(Valent|Otyly wasaty mezczyzna) blokuje ci droge, odganiajac trzymanym w reku tasakiem\.$</string>
@@ -24616,7 +24615,6 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<integer>2</integer>
 						<integer>2</integer>
 						<integer>2</integer>
-						<integer>1</integer>
 						<integer>2</integer>
 						<integer>2</integer>
 						<integer>1</integer>

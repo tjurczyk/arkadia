@@ -80,3 +80,7 @@ function scripts.ingress:post_process_message(msg)
 end
 
 scripts.ingress:init()
+
+function is_msg_type(type)
+    return gmcp.gmcp_msgs and type == gmcp.gmcp_msgs.type
+end

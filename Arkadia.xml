@@ -30,8 +30,12 @@
 				<mSoundFile></mSoundFile>
 				<colorTriggerFgColor>#000000</colorTriggerFgColor>
 				<colorTriggerBgColor>#000000</colorTriggerBgColor>
-				<regexCodeList />
-				<regexCodePropertyList />
+				<regexCodeList>
+					<string>druzyn</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>0</integer>
+				</regexCodePropertyList>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>left_team</name>
 					<script>trigger_func_skrypty_team_left_team(matches[2])</script>
@@ -101,26 +105,6 @@
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
 						<string>^[ &gt;]?\[?(\w*)\]? zaprasza cie do swojej druzyny\.$</string>
-					</regexCodeList>
-					<regexCodePropertyList>
-						<integer>1</integer>
-					</regexCodePropertyList>
-				</Trigger>
-				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-					<name>killer-stop-watch</name>
-					<script>trigger_func_skrypty_team_killer_stop_watch()</script>
-					<triggerType>0</triggerType>
-					<conditonLineDelta>0</conditonLineDelta>
-					<mStayOpen>0</mStayOpen>
-					<mCommand></mCommand>
-					<packageName></packageName>
-					<mFgColor>#ff0000</mFgColor>
-					<mBgColor>#ffff00</mBgColor>
-					<mSoundFile></mSoundFile>
-					<colorTriggerFgColor>#000000</colorTriggerFgColor>
-					<colorTriggerBgColor>#000000</colorTriggerBgColor>
-					<regexCodeList>
-						<string>^[ &gt;]*Ostatnie logowanie:.*$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -575,64 +559,6 @@
 					</regexCodePropertyList>
 				</Trigger>
 				<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-					<name>magiki_zbieranie</name>
-					<script></script>
-					<triggerType>0</triggerType>
-					<conditonLineDelta>0</conditonLineDelta>
-					<mStayOpen>0</mStayOpen>
-					<mCommand></mCommand>
-					<packageName></packageName>
-					<mFgColor>#ff0000</mFgColor>
-					<mBgColor>#ffff00</mBgColor>
-					<mSoundFile></mSoundFile>
-					<colorTriggerFgColor>#000000</colorTriggerFgColor>
-					<colorTriggerBgColor>#000000</colorTriggerBgColor>
-					<regexCodeList />
-					<regexCodePropertyList />
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-						<name>szczerba</name>
-						<script>trigger_func_skrypty_inventory_magiki_zbieranie_szczerba()</script>
-						<triggerType>0</triggerType>
-						<conditonLineDelta>0</conditonLineDelta>
-						<mStayOpen>0</mStayOpen>
-						<mCommand></mCommand>
-						<packageName></packageName>
-						<mFgColor>#ff0000</mFgColor>
-						<mBgColor>#ffff00</mBgColor>
-						<mSoundFile></mSoundFile>
-						<colorTriggerFgColor>#000000</colorTriggerFgColor>
-						<colorTriggerBgColor>#000000</colorTriggerBgColor>
-						<regexCodeList>
-							<string>Gdy siegasz reka, by otworzyc zamknieta podluzna skrzynie, wieko samo zaczyna sie podnosic!</string>
-						</regexCodeList>
-						<regexCodePropertyList>
-							<integer>0</integer>
-						</regexCodePropertyList>
-					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-						<name>mutant_oxen</name>
-						<script>trigger_func_skrypty_inventory_magiki_zbieranie_mutant_oxen()</script>
-						<triggerType>0</triggerType>
-						<conditonLineDelta>0</conditonLineDelta>
-						<mStayOpen>0</mStayOpen>
-						<mCommand></mCommand>
-						<packageName></packageName>
-						<mFgColor>#ff0000</mFgColor>
-						<mBgColor>#ffff00</mBgColor>
-						<mSoundFile></mSoundFile>
-						<colorTriggerFgColor>#000000</colorTriggerFgColor>
-						<colorTriggerBgColor>#000000</colorTriggerBgColor>
-						<regexCodeList>
-							<string>zabil poteznego zdeformowanego mezczyzne</string>
-							<string>Zabil.s poteznego zdeformowanego mezczyzne</string>
-						</regexCodeList>
-						<regexCodePropertyList>
-							<integer>0</integer>
-							<integer>1</integer>
-						</regexCodePropertyList>
-					</Trigger>
-				</TriggerGroup>
-				<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>kowal</name>
 					<script></script>
 					<triggerType>0</triggerType>
@@ -764,7 +690,7 @@
 							<string>Widzisz jak ogromny ognisty trojzab przysysa sie na moment do rany</string>
 						</regexCodeList>
 						<regexCodePropertyList>
-							<integer>0</integer>
+							<integer>2</integer>
 						</regexCodePropertyList>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -807,10 +733,10 @@
 							<string>Widok slabnacego wroga tylko dodaje ci sil.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
-							<integer>0</integer>
-							<integer>0</integer>
-							<integer>0</integer>
-							<integer>0</integer>
+							<integer>3</integer>
+							<integer>3</integer>
+							<integer>3</integer>
+							<integer>3</integer>
 						</regexCodePropertyList>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -830,7 +756,7 @@
 							<string>Czujesz przyjemne mrowienie gdy jakas magiczna sila przenika przez twoje cialo.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
-							<integer>0</integer>
+							<integer>3</integer>
 						</regexCodePropertyList>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -850,7 +776,7 @@
 							<string>Czujesz jak uzdrawiajaca energia przepelnia twe cialo.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
-							<integer>0</integer>
+							<integer>3</integer>
 						</regexCodePropertyList>
 					</Trigger>
 				</TriggerGroup>
@@ -886,7 +812,7 @@
 							<string>Od twojego amuletu emanuje przyjemne cieplo.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
-							<integer>0</integer>
+							<integer>3</integer>
 						</regexCodePropertyList>
 					</Trigger>
 				</TriggerGroup>
@@ -1125,12 +1051,12 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^Porzucasz druzyne, ktorej przewodzil(es|as)\.$</string>
-							<string>^Porzucasz swoja druzyne\.$</string>
+							<string>Porzucasz druzyne, ktorej</string>
+							<string>Porzucasz swoja druzyne</string>
 						</regexCodeList>
 						<regexCodePropertyList>
-							<integer>1</integer>
-							<integer>1</integer>
+							<integer>2</integer>
+							<integer>2</integer>
 						</regexCodePropertyList>
 					</Trigger>
 				</TriggerGroup>
@@ -1819,22 +1745,6 @@
 					</Trigger>
 				</TriggerGroup>
 				<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-					<name>knowledge</name>
-					<script></script>
-					<triggerType>0</triggerType>
-					<conditonLineDelta>0</conditonLineDelta>
-					<mStayOpen>0</mStayOpen>
-					<mCommand></mCommand>
-					<packageName></packageName>
-					<mFgColor>#ff0000</mFgColor>
-					<mBgColor>#ffff00</mBgColor>
-					<mSoundFile></mSoundFile>
-					<colorTriggerFgColor>#000000</colorTriggerFgColor>
-					<colorTriggerBgColor>#000000</colorTriggerBgColor>
-					<regexCodeList />
-					<regexCodePropertyList />
-				</TriggerGroup>
-				<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>calendar</name>
 					<script></script>
 					<triggerType>0</triggerType>
@@ -1848,10 +1758,10 @@
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^Jest w przyblizeniu </string>
+						<string>Jest w przyblizeniu </string>
 					</regexCodeList>
 					<regexCodePropertyList>
-						<integer>1</integer>
+						<integer>2</integer>
 					</regexCodePropertyList>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>pory_roku_ishtar</name>
@@ -2130,12 +2040,12 @@
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^Stalowa klatka nadjezdza.*</string>
-						<string>^Otworzyly sie drzwi klatki.*</string>
+						<string>Stalowa klatka nadjezdza</string>
+						<string>Otworzyly sie drzwi klatki</string>
 					</regexCodeList>
 					<regexCodePropertyList>
-						<integer>1</integer>
-						<integer>1</integer>
+						<integer>2</integer>
+						<integer>2</integer>
 					</regexCodePropertyList>
 				</Trigger>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -2152,7 +2062,7 @@
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^Nie masz wystarczajacej ilosci pieniedzy, zeby zaplacic.*</string>
+						<string>Nie masz wystarczajacej ilosci pieniedzy, zeby zaplacic</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -2236,14 +2146,14 @@
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^Do zobaczenia!$</string>
-						<string>^Opuszczasz realny swiat\.$</string>
-						<string>^Zbyt dluga nieaktywnosc - wylogowuje cie\.$</string>
+						<string>Do zobaczenia!</string>
+						<string>Opuszczasz realny swiat.</string>
+						<string>Zbyt dluga nieaktywnosc - wylogowuje cie.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
+						<integer>2</integer>
+						<integer>2</integer>
+						<integer>2</integer>
 					</regexCodePropertyList>
 				</Trigger>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -2260,10 +2170,10 @@
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^Oceniasz starannie.*.$</string>
+						<string>Oceniasz starannie</string>
 					</regexCodeList>
 					<regexCodePropertyList>
-						<integer>1</integer>
+						<integer>2</integer>
 					</regexCodePropertyList>
 				</Trigger>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -2394,10 +2304,10 @@
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^Jestes w stanie wyroznic </string>
+						<string>Jestes w stanie wyroznic </string>
 					</regexCodeList>
 					<regexCodePropertyList>
-						<integer>1</integer>
+						<integer>2</integer>
 					</regexCodePropertyList>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>tropienie-pewny-rasa</name>
@@ -2491,1068 +2401,6 @@
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList />
 					<regexCodePropertyList />
-					<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-						<name>delete</name>
-						<script></script>
-						<triggerType>0</triggerType>
-						<conditonLineDelta>0</conditonLineDelta>
-						<mStayOpen>0</mStayOpen>
-						<mCommand></mCommand>
-						<packageName></packageName>
-						<mFgColor>#ff0000</mFgColor>
-						<mBgColor>#ffff00</mBgColor>
-						<mSoundFile></mSoundFile>
-						<colorTriggerFgColor>#000000</colorTriggerFgColor>
-						<colorTriggerBgColor>#000000</colorTriggerBgColor>
-						<regexCodeList />
-						<regexCodePropertyList />
-						<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-							<name>delete_moje_ciosy</name>
-							<script></script>
-							<triggerType>0</triggerType>
-							<conditonLineDelta>0</conditonLineDelta>
-							<mStayOpen>0</mStayOpen>
-							<mCommand></mCommand>
-							<packageName></packageName>
-							<mFgColor>#ff0000</mFgColor>
-							<mBgColor>#ffff00</mBgColor>
-							<mSoundFile></mSoundFile>
-							<colorTriggerFgColor>#000000</colorTriggerFgColor>
-							<colorTriggerBgColor>#000000</colorTriggerBgColor>
-							<regexCodeList />
-							<regexCodePropertyList />
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>ja_ledwo_muskam</name>
-								<script>trigger_func_skrypty_ui_gags_delete_delete_moje_ciosy_ja_ledwo_muskam()</script>
-								<triggerType>0</triggerType>
-								<conditonLineDelta>0</conditonLineDelta>
-								<mStayOpen>0</mStayOpen>
-								<mCommand></mCommand>
-								<packageName></packageName>
-								<mFgColor>#ff0000</mFgColor>
-								<mBgColor>#ffff00</mBgColor>
-								<mSoundFile></mSoundFile>
-								<colorTriggerFgColor>#000000</colorTriggerFgColor>
-								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList>
-									<string>(^[ &gt;]*Ledwo muskasz ([a-zA-Z (),!]+), trafiajac .*\.$)</string>
-								</regexCodeList>
-								<regexCodePropertyList>
-									<integer>1</integer>
-								</regexCodePropertyList>
-							</Trigger>
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>ja_lekko_rani</name>
-								<script>trigger_func_skrypty_ui_gags_delete_delete_moje_ciosy_ja_lekko_rani()</script>
-								<triggerType>0</triggerType>
-								<conditonLineDelta>0</conditonLineDelta>
-								<mStayOpen>0</mStayOpen>
-								<mCommand></mCommand>
-								<packageName></packageName>
-								<mFgColor>#ff0000</mFgColor>
-								<mBgColor>#ffff00</mBgColor>
-								<mSoundFile></mSoundFile>
-								<colorTriggerFgColor>#000000</colorTriggerFgColor>
-								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList>
-									<string>(^[ &gt;]*Lekko ranisz [a-zA-Z (),!]+, trafiajac .*\.$)</string>
-								</regexCodeList>
-								<regexCodePropertyList>
-									<integer>1</integer>
-								</regexCodePropertyList>
-							</Trigger>
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>ja_rani</name>
-								<script>trigger_func_skrypty_ui_gags_delete_delete_moje_ciosy_ja_rani()</script>
-								<triggerType>0</triggerType>
-								<conditonLineDelta>0</conditonLineDelta>
-								<mStayOpen>0</mStayOpen>
-								<mCommand></mCommand>
-								<packageName></packageName>
-								<mFgColor>#ff0000</mFgColor>
-								<mBgColor>#ffff00</mBgColor>
-								<mSoundFile></mSoundFile>
-								<colorTriggerFgColor>#000000</colorTriggerFgColor>
-								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList>
-									<string>(^[ &gt;]*Ranisz [a-zA-Z (),!]+, trafiajac .*\.$)</string>
-								</regexCodeList>
-								<regexCodePropertyList>
-									<integer>1</integer>
-								</regexCodePropertyList>
-							</Trigger>
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>ja_powaznie_rani</name>
-								<script>trigger_func_skrypty_ui_gags_delete_delete_moje_ciosy_ja_powaznie_rani()</script>
-								<triggerType>0</triggerType>
-								<conditonLineDelta>0</conditonLineDelta>
-								<mStayOpen>0</mStayOpen>
-								<mCommand></mCommand>
-								<packageName></packageName>
-								<mFgColor>#ff0000</mFgColor>
-								<mBgColor>#ffff00</mBgColor>
-								<mSoundFile></mSoundFile>
-								<colorTriggerFgColor>#000000</colorTriggerFgColor>
-								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList>
-									<string>(^[ &gt;]*Powaznie ranisz [a-zA-Z (),!]+, trafiajac .*\.$)</string>
-								</regexCodeList>
-								<regexCodePropertyList>
-									<integer>1</integer>
-								</regexCodePropertyList>
-							</Trigger>
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>ja_bardzo_ciezko_rani</name>
-								<script>trigger_func_skrypty_ui_gags_delete_delete_moje_ciosy_ja_bardzo_ciezko_rani()</script>
-								<triggerType>0</triggerType>
-								<conditonLineDelta>0</conditonLineDelta>
-								<mStayOpen>0</mStayOpen>
-								<mCommand></mCommand>
-								<packageName></packageName>
-								<mFgColor>#ff0000</mFgColor>
-								<mBgColor>#ffff00</mBgColor>
-								<mSoundFile></mSoundFile>
-								<colorTriggerFgColor>#000000</colorTriggerFgColor>
-								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList>
-									<string>(^[ &gt;]*Bardzo ciezko ranisz [a-zA-Z (),!]+, trafiajac .*\.$)</string>
-								</regexCodeList>
-								<regexCodePropertyList>
-									<integer>1</integer>
-								</regexCodePropertyList>
-							</Trigger>
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>ja_masakruje</name>
-								<script>trigger_func_skrypty_ui_gags_delete_delete_moje_ciosy_ja_masakruje()</script>
-								<triggerType>0</triggerType>
-								<conditonLineDelta>0</conditonLineDelta>
-								<mStayOpen>0</mStayOpen>
-								<mCommand></mCommand>
-								<packageName></packageName>
-								<mFgColor>#ff0000</mFgColor>
-								<mBgColor>#ffff00</mBgColor>
-								<mSoundFile></mSoundFile>
-								<colorTriggerFgColor>#000000</colorTriggerFgColor>
-								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList>
-									<string>(^[ &gt;]*Masakrujesz [a-zA-Z (),!]+, trafiajac .*\.$)</string>
-								</regexCodeList>
-								<regexCodePropertyList>
-									<integer>1</integer>
-								</regexCodePropertyList>
-							</Trigger>
-						</TriggerGroup>
-						<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-							<name>delete_innych_ciosy</name>
-							<script></script>
-							<triggerType>0</triggerType>
-							<conditonLineDelta>0</conditonLineDelta>
-							<mStayOpen>0</mStayOpen>
-							<mCommand></mCommand>
-							<packageName></packageName>
-							<mFgColor>#ff0000</mFgColor>
-							<mBgColor>#ffff00</mBgColor>
-							<mSoundFile></mSoundFile>
-							<colorTriggerFgColor>#000000</colorTriggerFgColor>
-							<colorTriggerBgColor>#000000</colorTriggerBgColor>
-							<regexCodeList />
-							<regexCodePropertyList />
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>ktos_ledwo_muska</name>
-								<script>trigger_func_skrypty_ui_gags_delete_delete_innych_ciosy_ktos_ledwo_muska()</script>
-								<triggerType>0</triggerType>
-								<conditonLineDelta>0</conditonLineDelta>
-								<mStayOpen>0</mStayOpen>
-								<mCommand></mCommand>
-								<packageName></packageName>
-								<mFgColor>#ff0000</mFgColor>
-								<mBgColor>#ffff00</mBgColor>
-								<mSoundFile></mSoundFile>
-								<colorTriggerFgColor>#000000</colorTriggerFgColor>
-								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList>
-									<string>(^[ &gt;]*[a-zA-Z (),!]+ ledwo muska [A-Za-z (),!]+, trafiajac .*\.$)</string>
-								</regexCodeList>
-								<regexCodePropertyList>
-									<integer>1</integer>
-								</regexCodePropertyList>
-							</Trigger>
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>ktos_lekko_rani</name>
-								<script>trigger_func_skrypty_ui_gags_delete_delete_innych_ciosy_ktos_lekko_rani()</script>
-								<triggerType>0</triggerType>
-								<conditonLineDelta>0</conditonLineDelta>
-								<mStayOpen>0</mStayOpen>
-								<mCommand></mCommand>
-								<packageName></packageName>
-								<mFgColor>#ff0000</mFgColor>
-								<mBgColor>#ffff00</mBgColor>
-								<mSoundFile></mSoundFile>
-								<colorTriggerFgColor>#000000</colorTriggerFgColor>
-								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList>
-									<string>(^[ &gt;]*[a-zA-Z (),!]+ lekko rani [A-Za-z (),!]+, trafiajac .*\.$)</string>
-								</regexCodeList>
-								<regexCodePropertyList>
-									<integer>1</integer>
-								</regexCodePropertyList>
-							</Trigger>
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>ktos_rani</name>
-								<script>trigger_func_skrypty_ui_gags_delete_delete_innych_ciosy_ktos_rani()</script>
-								<triggerType>0</triggerType>
-								<conditonLineDelta>0</conditonLineDelta>
-								<mStayOpen>0</mStayOpen>
-								<mCommand></mCommand>
-								<packageName></packageName>
-								<mFgColor>#ff0000</mFgColor>
-								<mBgColor>#ffff00</mBgColor>
-								<mSoundFile></mSoundFile>
-								<colorTriggerFgColor>#000000</colorTriggerFgColor>
-								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList>
-									<string>(^[ &gt;]*[a-zA-Z (),!]+ rani [A-Za-z (),!]+, trafiajac .*\.$)</string>
-								</regexCodeList>
-								<regexCodePropertyList>
-									<integer>1</integer>
-								</regexCodePropertyList>
-							</Trigger>
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>ktos_powaznie_rani</name>
-								<script>trigger_func_skrypty_ui_gags_delete_delete_innych_ciosy_ktos_powaznie_rani()</script>
-								<triggerType>0</triggerType>
-								<conditonLineDelta>0</conditonLineDelta>
-								<mStayOpen>0</mStayOpen>
-								<mCommand></mCommand>
-								<packageName></packageName>
-								<mFgColor>#ff0000</mFgColor>
-								<mBgColor>#ffff00</mBgColor>
-								<mSoundFile></mSoundFile>
-								<colorTriggerFgColor>#000000</colorTriggerFgColor>
-								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList>
-									<string>(^[ &gt;]*[a-zA-Z (),!]+ powaznie rani [A-Za-z (),!]+, trafiajac .*\.$)</string>
-								</regexCodeList>
-								<regexCodePropertyList>
-									<integer>1</integer>
-								</regexCodePropertyList>
-							</Trigger>
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>ktos_bardzo_ciezko_rani</name>
-								<script>trigger_func_skrypty_ui_gags_delete_delete_innych_ciosy_ktos_bardzo_ciezko_rani()</script>
-								<triggerType>0</triggerType>
-								<conditonLineDelta>0</conditonLineDelta>
-								<mStayOpen>0</mStayOpen>
-								<mCommand></mCommand>
-								<packageName></packageName>
-								<mFgColor>#ff0000</mFgColor>
-								<mBgColor>#ffff00</mBgColor>
-								<mSoundFile></mSoundFile>
-								<colorTriggerFgColor>#000000</colorTriggerFgColor>
-								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList>
-									<string>(^[ &gt;]*[a-zA-Z (),!]+ bardzo ciezko rani [A-Za-z (),!]+, trafiajac .*\.$)</string>
-								</regexCodeList>
-								<regexCodePropertyList>
-									<integer>1</integer>
-								</regexCodePropertyList>
-							</Trigger>
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>ktos_masakruje</name>
-								<script>trigger_func_skrypty_ui_gags_delete_delete_innych_ciosy_ktos_masakruje()</script>
-								<triggerType>0</triggerType>
-								<conditonLineDelta>0</conditonLineDelta>
-								<mStayOpen>0</mStayOpen>
-								<mCommand></mCommand>
-								<packageName></packageName>
-								<mFgColor>#ff0000</mFgColor>
-								<mBgColor>#ffff00</mBgColor>
-								<mSoundFile></mSoundFile>
-								<colorTriggerFgColor>#000000</colorTriggerFgColor>
-								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList>
-									<string>(^[ &gt;]*[a-zA-Z (),!]+ masakruje [A-Za-z (),!]+, trafiajac .*\.$)</string>
-								</regexCodeList>
-								<regexCodePropertyList>
-									<integer>1</integer>
-								</regexCodePropertyList>
-							</Trigger>
-						</TriggerGroup>
-						<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-							<name>delete_zaslony_udane</name>
-							<script></script>
-							<triggerType>0</triggerType>
-							<conditonLineDelta>0</conditonLineDelta>
-							<mStayOpen>0</mStayOpen>
-							<mCommand></mCommand>
-							<packageName></packageName>
-							<mFgColor>#ff0000</mFgColor>
-							<mBgColor>#ffff00</mBgColor>
-							<mSoundFile></mSoundFile>
-							<colorTriggerFgColor>#000000</colorTriggerFgColor>
-							<colorTriggerBgColor>#000000</colorTriggerBgColor>
-							<regexCodeList />
-							<regexCodePropertyList />
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>zaslaniasz_ty</name>
-								<script>trigger_func_skrypty_ui_gags_delete_delete_zaslony_udane_zaslaniasz_ty()</script>
-								<triggerType>0</triggerType>
-								<conditonLineDelta>0</conditonLineDelta>
-								<mStayOpen>0</mStayOpen>
-								<mCommand></mCommand>
-								<packageName></packageName>
-								<mFgColor>#ff0000</mFgColor>
-								<mBgColor>#ffff00</mBgColor>
-								<mSoundFile></mSoundFile>
-								<colorTriggerFgColor>#000000</colorTriggerFgColor>
-								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList>
-									<string>(^[ &gt;]*Zrecznie zaslaniasz ([a-zA-Z (),!]+) przed ciosami ([a-zA-Z (),!]+)\.$)</string>
-									<string>(^[ &gt;]*Z wprawa stajesz pomiedzy ([a-zA-Z (),!]+) a ([a-zA-Z (),!]+), przyjmujac na siebie nadchodzace ciosy\.$)</string>
-								</regexCodeList>
-								<regexCodePropertyList>
-									<integer>1</integer>
-									<integer>1</integer>
-								</regexCodePropertyList>
-							</Trigger>
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>zaslania_kogos</name>
-								<script>trigger_func_skrypty_ui_gags_delete_delete_zaslony_udane_zaslania_kogos()</script>
-								<triggerType>0</triggerType>
-								<conditonLineDelta>0</conditonLineDelta>
-								<mStayOpen>0</mStayOpen>
-								<mCommand></mCommand>
-								<packageName></packageName>
-								<mFgColor>#ff0000</mFgColor>
-								<mBgColor>#ffff00</mBgColor>
-								<mSoundFile></mSoundFile>
-								<colorTriggerFgColor>#000000</colorTriggerFgColor>
-								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList>
-									<string>(^[ &gt;]*([a-zA-Z (),!]+) zrecznie zaslania ([a-zA-Z (),!]+) przed ciosami ([a-zA-Z (),!]+)\.$)</string>
-								</regexCodeList>
-								<regexCodePropertyList>
-									<integer>1</integer>
-								</regexCodePropertyList>
-							</Trigger>
-						</TriggerGroup>
-						<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-							<name>delete_zaslony_nieudane</name>
-							<script></script>
-							<triggerType>0</triggerType>
-							<conditonLineDelta>0</conditonLineDelta>
-							<mStayOpen>0</mStayOpen>
-							<mCommand></mCommand>
-							<packageName></packageName>
-							<mFgColor>#ff0000</mFgColor>
-							<mBgColor>#ffff00</mBgColor>
-							<mSoundFile></mSoundFile>
-							<colorTriggerFgColor>#000000</colorTriggerFgColor>
-							<colorTriggerBgColor>#000000</colorTriggerBgColor>
-							<regexCodeList />
-							<regexCodePropertyList />
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>nie_zaslaniasz_ty</name>
-								<script>trigger_func_skrypty_ui_gags_delete_delete_zaslony_nieudane_nie_zaslaniasz_ty()</script>
-								<triggerType>0</triggerType>
-								<conditonLineDelta>0</conditonLineDelta>
-								<mStayOpen>0</mStayOpen>
-								<mCommand></mCommand>
-								<packageName></packageName>
-								<mFgColor>#ff0000</mFgColor>
-								<mBgColor>#ffff00</mBgColor>
-								<mSoundFile></mSoundFile>
-								<colorTriggerFgColor>#000000</colorTriggerFgColor>
-								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList>
-									<string>(^[ &gt;]*Probujesz zaslonic ([a-zA-Z (),!]+) przed ciosami ([a-zA-Z (),!]+), jednak nie jestes w stanie tego uczynic\.$)</string>
-									<string>^Na rozkaz .* probujesz zaslonic (.*) przed ciosami (.*), jednak nie jestes w stanie tego uczynic\.$</string>
-								</regexCodeList>
-								<regexCodePropertyList>
-									<integer>1</integer>
-									<integer>1</integer>
-								</regexCodePropertyList>
-							</Trigger>
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>nie_zaslania_kogos</name>
-								<script>trigger_func_skrypty_ui_gags_delete_delete_zaslony_nieudane_nie_zaslania_kogos()</script>
-								<triggerType>0</triggerType>
-								<conditonLineDelta>0</conditonLineDelta>
-								<mStayOpen>0</mStayOpen>
-								<mCommand></mCommand>
-								<packageName></packageName>
-								<mFgColor>#ff0000</mFgColor>
-								<mBgColor>#ffff00</mBgColor>
-								<mSoundFile></mSoundFile>
-								<colorTriggerFgColor>#000000</colorTriggerFgColor>
-								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList>
-									<string>(^[ &gt;]*([a-zA-Z (),!]+) probuje zaslonic ([a-zA-Z (),!]+) przed ciosami ([a-zA-Z (),!]+), jednak nie jest w stanie tego uczynic\.$)</string>
-								</regexCodeList>
-								<regexCodePropertyList>
-									<integer>1</integer>
-								</regexCodePropertyList>
-							</Trigger>
-						</TriggerGroup>
-						<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-							<name>delete_moje_uniki</name>
-							<script></script>
-							<triggerType>0</triggerType>
-							<conditonLineDelta>0</conditonLineDelta>
-							<mStayOpen>0</mStayOpen>
-							<mCommand></mCommand>
-							<packageName></packageName>
-							<mFgColor>#ff0000</mFgColor>
-							<mBgColor>#ffff00</mBgColor>
-							<mSoundFile></mSoundFile>
-							<colorTriggerFgColor>#000000</colorTriggerFgColor>
-							<colorTriggerBgColor>#000000</colorTriggerBgColor>
-							<regexCodeList />
-							<regexCodePropertyList />
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>ja_unikasz_ciosu</name>
-								<script>trigger_func_skrypty_ui_gags_delete_delete_moje_uniki_ja_unikasz_ciosu()</script>
-								<triggerType>0</triggerType>
-								<conditonLineDelta>0</conditonLineDelta>
-								<mStayOpen>0</mStayOpen>
-								<mCommand></mCommand>
-								<packageName></packageName>
-								<mFgColor>#ff0000</mFgColor>
-								<mBgColor>#ffff00</mBgColor>
-								<mSoundFile></mSoundFile>
-								<colorTriggerFgColor>#000000</colorTriggerFgColor>
-								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList>
-									<string>^[ &gt;]*[a-zA-Z (),!]+ lecz tobie udaje sie uniknac tego ciosu\.$</string>
-									<string>^[ &gt;]*[a-zA-Z (),!]+ lecz tobie udaje sie go uniknac\.$</string>
-									<string>^[ &gt;]*[a-zA-Z (),!]+ ale tobie w pore udaje sie uskoczyc przed rozpedzona bronia\.$</string>
-								</regexCodeList>
-								<regexCodePropertyList>
-									<integer>1</integer>
-									<integer>1</integer>
-									<integer>1</integer>
-								</regexCodePropertyList>
-							</Trigger>
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>ja_ktos_nie_trafia</name>
-								<script>trigger_func_skrypty_ui_gags_delete_delete_moje_uniki_ja_ktos_nie_trafia()</script>
-								<triggerType>0</triggerType>
-								<conditonLineDelta>0</conditonLineDelta>
-								<mStayOpen>0</mStayOpen>
-								<mCommand></mCommand>
-								<packageName></packageName>
-								<mFgColor>#ff0000</mFgColor>
-								<mBgColor>#ffff00</mBgColor>
-								<mSoundFile></mSoundFile>
-								<colorTriggerFgColor>#000000</colorTriggerFgColor>
-								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList>
-									<string>^[ &gt;]*[a-zA-Z (),!]+ nie udaje sie trafic ciebie [a-zA-Z ]+\.$</string>
-									<string>^[ &gt;]*[a-zA-Z (),!]+ prawie cie trafiajac\.$</string>
-									<string>^[ &gt;]*[a-zA-Z (),!]+ nieumiejetnie probujac trafic cie\.$</string>
-								</regexCodeList>
-								<regexCodePropertyList>
-									<integer>1</integer>
-									<integer>1</integer>
-									<integer>1</integer>
-								</regexCodePropertyList>
-							</Trigger>
-						</TriggerGroup>
-						<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-							<name>delete_innych_uniki</name>
-							<script></script>
-							<triggerType>0</triggerType>
-							<conditonLineDelta>0</conditonLineDelta>
-							<mStayOpen>0</mStayOpen>
-							<mCommand></mCommand>
-							<packageName></packageName>
-							<mFgColor>#ff0000</mFgColor>
-							<mBgColor>#ffff00</mBgColor>
-							<mSoundFile></mSoundFile>
-							<colorTriggerFgColor>#000000</colorTriggerFgColor>
-							<colorTriggerBgColor>#000000</colorTriggerBgColor>
-							<regexCodeList />
-							<regexCodePropertyList />
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>ktos_unika_ciosu</name>
-								<script>trigger_func_skrypty_ui_gags_delete_delete_innych_uniki_ktos_unika_ciosu()</script>
-								<triggerType>0</triggerType>
-								<conditonLineDelta>0</conditonLineDelta>
-								<mStayOpen>0</mStayOpen>
-								<mCommand></mCommand>
-								<packageName></packageName>
-								<mFgColor>#ff0000</mFgColor>
-								<mBgColor>#ffff00</mBgColor>
-								<mSoundFile></mSoundFile>
-								<colorTriggerFgColor>#000000</colorTriggerFgColor>
-								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList>
-									<string>(^[ &gt;]*Probujesz trafic [a-zA-Z (),!]+, lecz [a-z ]+ unika [a-z ]+ ciosu\.$)</string>
-								</regexCodeList>
-								<regexCodePropertyList>
-									<integer>1</integer>
-								</regexCodePropertyList>
-							</Trigger>
-						</TriggerGroup>
-						<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-							<name>delete_moje_parowanie</name>
-							<script></script>
-							<triggerType>0</triggerType>
-							<conditonLineDelta>0</conditonLineDelta>
-							<mStayOpen>0</mStayOpen>
-							<mCommand></mCommand>
-							<packageName></packageName>
-							<mFgColor>#ff0000</mFgColor>
-							<mBgColor>#ffff00</mBgColor>
-							<mSoundFile></mSoundFile>
-							<colorTriggerFgColor>#000000</colorTriggerFgColor>
-							<colorTriggerBgColor>#000000</colorTriggerBgColor>
-							<regexCodeList />
-							<regexCodePropertyList />
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>ja_paruje_cios</name>
-								<script>trigger_func_skrypty_ui_gags_delete_delete_moje_parowanie_ja_paruje_cios()</script>
-								<triggerType>0</triggerType>
-								<conditonLineDelta>0</conditonLineDelta>
-								<mStayOpen>0</mStayOpen>
-								<mCommand></mCommand>
-								<packageName></packageName>
-								<mFgColor>#ff0000</mFgColor>
-								<mBgColor>#ffff00</mBgColor>
-								<mSoundFile></mSoundFile>
-								<colorTriggerFgColor>#000000</colorTriggerFgColor>
-								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList>
-									<string>^[ &gt;]*[a-zA-Z (),!]+ w ciebie, lecz tobie udaje sie zbic je z linii ataku .*\.$</string>
-									<string>^[ &gt;]*[a-zA-Z (),!]+ lecz sprawnie parujesz go .*\.$</string>
-									<string>^[ &gt;]*[a-zA-Z (),!]+ zbijasz na bok niespodziewany cios .*\.$</string>
-									<string>^[ &gt;]*[a-zA-Z (),!]+ lecz tobie w ostatniej chwili udaje sie odruchowo zaslonic .*\.$</string>
-								</regexCodeList>
-								<regexCodePropertyList>
-									<integer>1</integer>
-									<integer>1</integer>
-									<integer>1</integer>
-									<integer>1</integer>
-								</regexCodePropertyList>
-							</Trigger>
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>ja_paruje</name>
-								<script>trigger_func_skrypty_ui_gags_delete_delete_moje_parowanie_ja_paruje()</script>
-								<triggerType>0</triggerType>
-								<conditonLineDelta>0</conditonLineDelta>
-								<mStayOpen>0</mStayOpen>
-								<mCommand></mCommand>
-								<packageName></packageName>
-								<mFgColor>#ff0000</mFgColor>
-								<mBgColor>#ffff00</mBgColor>
-								<mSoundFile></mSoundFile>
-								<colorTriggerFgColor>#000000</colorTriggerFgColor>
-								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList>
-									<string>(^[ &gt;]*([a-zA-Z (),!]+) wykonuje zamach [a-zA-Z ]+ mierzac w ciebie, lecz tobie udaje sie go sparowac [a-zA-Z ]+\.$) </string>
-									<string>(^[ &gt;]*([a-zA-Z (),!]+) wykonuje zamaszyste ciecie .* mierzac w ciebie, lecz tobie udaje sie je zbic z linii ataku .*\.$)</string>
-								</regexCodeList>
-								<regexCodePropertyList>
-									<integer>1</integer>
-									<integer>1</integer>
-								</regexCodePropertyList>
-							</Trigger>
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>ja_zbroja_paruje</name>
-								<script>trigger_func_skrypty_ui_gags_delete_delete_moje_parowanie_ja_zbroja_paruje()</script>
-								<triggerType>0</triggerType>
-								<conditonLineDelta>0</conditonLineDelta>
-								<mStayOpen>0</mStayOpen>
-								<mCommand></mCommand>
-								<packageName></packageName>
-								<mFgColor>#ff0000</mFgColor>
-								<mBgColor>#ffff00</mBgColor>
-								<mSoundFile></mSoundFile>
-								<colorTriggerFgColor>#000000</colorTriggerFgColor>
-								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList>
-									<string>(^[ &gt;]*[a-zA-Z (),!]+ trafia cie [a-z ]+ w [a-z ]+, lecz caly impet uderzenia zostaje wyparowan. przez [a-z ]+\.$)</string>
-									<string>.*wyrzuca w przod swoja zwierzeca glowe, lecz caly impet zatrzymuje sie na .*</string>
-									<string>^[ &gt;]*Pazury .* zeslizguja sie po .*\.$</string>
-									<string>^[ &gt;]*[a-zA-Z (),!]+ lecz uderzenie zatrzymuje sie na (twym|twych|twej) [a-z ]+\.$</string>
-									<string>^[ &gt;]*[a-zA-Z (),!]+ gdy jego uderzenie zeslizguje sie po (twym|twych|twej) [a-z ]+\.$</string>
-									<string>^[ &gt;]*[a-zA-Z (),!]+ by wyprowadzic cios zdolny przebic (twoj|twoja|twe) [a-z ]+\.$</string>
-								</regexCodeList>
-								<regexCodePropertyList>
-									<integer>1</integer>
-									<integer>1</integer>
-									<integer>1</integer>
-									<integer>1</integer>
-									<integer>1</integer>
-									<integer>1</integer>
-								</regexCodePropertyList>
-							</Trigger>
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>ja_tarcza_paruje</name>
-								<script>trigger_func_skrypty_ui_gags_delete_delete_moje_parowanie_ja_tarcza_paruje()</script>
-								<triggerType>0</triggerType>
-								<conditonLineDelta>0</conditonLineDelta>
-								<mStayOpen>0</mStayOpen>
-								<mCommand></mCommand>
-								<packageName></packageName>
-								<mFgColor>#ff0000</mFgColor>
-								<mBgColor>#ffff00</mBgColor>
-								<mSoundFile></mSoundFile>
-								<colorTriggerFgColor>#000000</colorTriggerFgColor>
-								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList>
-									<string>^[ &gt;]*[a-zA-Z (),!]+ w ciebie, lecz .* sie oslonic .*\.$</string>
-									<string>^[ &gt;]*[a-zA-Z (),!]+ naciera na ciebie, lecz jego .* z hukiem trafia w .* (tarcze|puklerz|pawez).*\.$</string>
-									<string>^[ &gt;]*[a-zA-Z (),!]+ lecz ty zbijasz go .*\.$</string>
-									<string>^[ &gt;]*[a-zA-Z (),!.]+ W pore mozesz wiec nadstawic .*, zbijajac uderzenie i momentalnie przechodzac do przeciwnatarcia\.$</string>
-								</regexCodeList>
-								<regexCodePropertyList>
-									<integer>1</integer>
-									<integer>1</integer>
-									<integer>1</integer>
-									<integer>1</integer>
-								</regexCodePropertyList>
-							</Trigger>
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>baron-tarcza2</name>
-								<script>trigger_func_skrypty_ui_gags_delete_delete_moje_parowanie_baron_tarcza2()</script>
-								<triggerType>0</triggerType>
-								<conditonLineDelta>0</conditonLineDelta>
-								<mStayOpen>0</mStayOpen>
-								<mCommand></mCommand>
-								<packageName></packageName>
-								<mFgColor>#ff0000</mFgColor>
-								<mBgColor>#ffff00</mBgColor>
-								<mSoundFile></mSoundFile>
-								<colorTriggerFgColor>#000000</colorTriggerFgColor>
-								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList>
-									<string>^[ &gt;]*Blekitno-srebrna herbowa tarcza rozblyskuje nagle bardzo ostrym blekitnym swiatlem, skierowanym w strone.*</string>
-								</regexCodeList>
-								<regexCodePropertyList>
-									<integer>1</integer>
-								</regexCodePropertyList>
-							</Trigger>
-						</TriggerGroup>
-						<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-							<name>delete_innych_parowanie</name>
-							<script></script>
-							<triggerType>0</triggerType>
-							<conditonLineDelta>0</conditonLineDelta>
-							<mStayOpen>0</mStayOpen>
-							<mCommand></mCommand>
-							<packageName></packageName>
-							<mFgColor>#ff0000</mFgColor>
-							<mBgColor>#ffff00</mBgColor>
-							<mSoundFile></mSoundFile>
-							<colorTriggerFgColor>#000000</colorTriggerFgColor>
-							<colorTriggerBgColor>#000000</colorTriggerBgColor>
-							<regexCodeList />
-							<regexCodePropertyList />
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>ktos_paruje</name>
-								<script>trigger_func_skrypty_ui_gags_delete_delete_innych_parowanie_ktos_paruje()</script>
-								<triggerType>0</triggerType>
-								<conditonLineDelta>0</conditonLineDelta>
-								<mStayOpen>0</mStayOpen>
-								<mCommand></mCommand>
-								<packageName></packageName>
-								<mFgColor>#ff0000</mFgColor>
-								<mBgColor>#ffff00</mBgColor>
-								<mSoundFile></mSoundFile>
-								<colorTriggerFgColor>#000000</colorTriggerFgColor>
-								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList>
-									<string>(^[ &gt;]*Wykonujesz zamaszyste ciecie [a-z ]+ mierzac w [a-zA-Z (),!]+, lecz [a-z]+ zbija .* linii ataku .*\.$)</string>
-								</regexCodeList>
-								<regexCodePropertyList>
-									<integer>1</integer>
-								</regexCodePropertyList>
-							</Trigger>
-						</TriggerGroup>
-						<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-							<name>delete_cele</name>
-							<script></script>
-							<triggerType>0</triggerType>
-							<conditonLineDelta>0</conditonLineDelta>
-							<mStayOpen>0</mStayOpen>
-							<mCommand></mCommand>
-							<packageName></packageName>
-							<mFgColor>#ff0000</mFgColor>
-							<mBgColor>#ffff00</mBgColor>
-							<mSoundFile></mSoundFile>
-							<colorTriggerFgColor>#000000</colorTriggerFgColor>
-							<colorTriggerBgColor>#000000</colorTriggerBgColor>
-							<regexCodeList />
-							<regexCodePropertyList />
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>cel_obrony_ktos</name>
-								<script>trigger_func_skrypty_ui_gags_delete_delete_cele_cel_obrony_ktos()</script>
-								<triggerType>0</triggerType>
-								<conditonLineDelta>0</conditonLineDelta>
-								<mStayOpen>0</mStayOpen>
-								<mCommand></mCommand>
-								<packageName></packageName>
-								<mFgColor>#ff0000</mFgColor>
-								<mBgColor>#ffff00</mBgColor>
-								<mSoundFile></mSoundFile>
-								<colorTriggerFgColor>#000000</colorTriggerFgColor>
-								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList>
-									<string>(^[ &gt;]*([a-zA-Z (),!]+) wskazuje ([a-zA-Z (),!]+) jako cel obrony\.$)</string>
-								</regexCodeList>
-								<regexCodePropertyList>
-									<integer>1</integer>
-								</regexCodePropertyList>
-							</Trigger>
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>cel_ataku_ktos</name>
-								<script>trigger_func_skrypty_ui_gags_delete_delete_cele_cel_ataku_ktos()</script>
-								<triggerType>0</triggerType>
-								<conditonLineDelta>0</conditonLineDelta>
-								<mStayOpen>0</mStayOpen>
-								<mCommand></mCommand>
-								<packageName></packageName>
-								<mFgColor>#ff0000</mFgColor>
-								<mBgColor>#ffff00</mBgColor>
-								<mSoundFile></mSoundFile>
-								<colorTriggerFgColor>#000000</colorTriggerFgColor>
-								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList>
-									<string>(^[ &gt;]*([a-zA-Z (),!]+) wskazuje ([a-zA-Z (),!]+) jako cel ataku.$)</string>
-								</regexCodeList>
-								<regexCodePropertyList>
-									<integer>1</integer>
-								</regexCodePropertyList>
-							</Trigger>
-						</TriggerGroup>
-						<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-							<name>delete_rozkazy</name>
-							<script></script>
-							<triggerType>0</triggerType>
-							<conditonLineDelta>0</conditonLineDelta>
-							<mStayOpen>0</mStayOpen>
-							<mCommand></mCommand>
-							<packageName></packageName>
-							<mFgColor>#ff0000</mFgColor>
-							<mBgColor>#ffff00</mBgColor>
-							<mSoundFile></mSoundFile>
-							<colorTriggerFgColor>#000000</colorTriggerFgColor>
-							<colorTriggerBgColor>#000000</colorTriggerBgColor>
-							<regexCodeList />
-							<regexCodePropertyList />
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>rozkaz_kogos_zaslony</name>
-								<script>trigger_func_skrypty_ui_gags_delete_delete_rozkazy_rozkaz_kogos_zaslony()</script>
-								<triggerType>0</triggerType>
-								<conditonLineDelta>0</conditonLineDelta>
-								<mStayOpen>0</mStayOpen>
-								<mCommand></mCommand>
-								<packageName></packageName>
-								<mFgColor>#ff0000</mFgColor>
-								<mBgColor>#ffff00</mBgColor>
-								<mSoundFile></mSoundFile>
-								<colorTriggerFgColor>#000000</colorTriggerFgColor>
-								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList>
-									<string>(^[ &gt;]*([a-zA-Z (),!]+) wydaje ci rozkaz zasloniecia ([a-zA-Z (),!]+)\.$)</string>
-								</regexCodeList>
-								<regexCodePropertyList>
-									<integer>1</integer>
-								</regexCodePropertyList>
-							</Trigger>
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>rozkaz_kogos_zaatakowac</name>
-								<script>trigger_func_skrypty_ui_gags_delete_delete_rozkazy_rozkaz_kogos_zaatakowac()</script>
-								<triggerType>0</triggerType>
-								<conditonLineDelta>0</conditonLineDelta>
-								<mStayOpen>0</mStayOpen>
-								<mCommand></mCommand>
-								<packageName></packageName>
-								<mFgColor>#ff0000</mFgColor>
-								<mBgColor>#ffff00</mBgColor>
-								<mSoundFile></mSoundFile>
-								<colorTriggerFgColor>#000000</colorTriggerFgColor>
-								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList>
-									<string>(^[ &gt;]*([a-zA-Z (),!]+) wydaje ci rozkaz ataku na ([a-zA-Z (),!]+)\.$)</string>
-								</regexCodeList>
-								<regexCodePropertyList>
-									<integer>1</integer>
-								</regexCodePropertyList>
-							</Trigger>
-						</TriggerGroup>
-						<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-							<name>delete_bloki</name>
-							<script></script>
-							<triggerType>0</triggerType>
-							<conditonLineDelta>0</conditonLineDelta>
-							<mStayOpen>0</mStayOpen>
-							<mCommand></mCommand>
-							<packageName></packageName>
-							<mFgColor>#ff0000</mFgColor>
-							<mBgColor>#ffff00</mBgColor>
-							<mSoundFile></mSoundFile>
-							<colorTriggerFgColor>#000000</colorTriggerFgColor>
-							<colorTriggerBgColor>#000000</colorTriggerBgColor>
-							<regexCodeList />
-							<regexCodePropertyList />
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>blokowanie_proba_ciebie</name>
-								<script>trigger_func_skrypty_ui_gags_delete_delete_bloki_blokowanie_proba_ciebie()</script>
-								<triggerType>0</triggerType>
-								<conditonLineDelta>0</conditonLineDelta>
-								<mStayOpen>0</mStayOpen>
-								<mCommand></mCommand>
-								<packageName></packageName>
-								<mFgColor>#ff0000</mFgColor>
-								<mBgColor>#ffff00</mBgColor>
-								<mSoundFile></mSoundFile>
-								<colorTriggerFgColor>#000000</colorTriggerFgColor>
-								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList>
-									<string>(^[ &gt;]*([a-zA-Z(),!]+) przymierza sie do odciecia ci drogi ucieczki\.$)</string>
-								</regexCodeList>
-								<regexCodePropertyList>
-									<integer>1</integer>
-								</regexCodePropertyList>
-							</Trigger>
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>blokuje_cie</name>
-								<script>trigger_func_skrypty_ui_gags_delete_delete_bloki_blokuje_cie()</script>
-								<triggerType>0</triggerType>
-								<conditonLineDelta>0</conditonLineDelta>
-								<mStayOpen>0</mStayOpen>
-								<mCommand></mCommand>
-								<packageName></packageName>
-								<mFgColor>#ff0000</mFgColor>
-								<mBgColor>#ffff00</mBgColor>
-								<mSoundFile></mSoundFile>
-								<colorTriggerFgColor>#000000</colorTriggerFgColor>
-								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList>
-									<string>(^[ &gt;]*([a-zA-Z (),!]+) zajmuje pozycje umozliwiajaca odciecie ci drogi ucieczki\.$)</string>
-								</regexCodeList>
-								<regexCodePropertyList>
-									<integer>1</integer>
-								</regexCodePropertyList>
-							</Trigger>
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>zajmujesz_pozycje</name>
-								<script>trigger_func_skrypty_ui_gags_delete_delete_bloki_zajmujesz_pozycje()</script>
-								<triggerType>0</triggerType>
-								<conditonLineDelta>0</conditonLineDelta>
-								<mStayOpen>0</mStayOpen>
-								<mCommand></mCommand>
-								<packageName></packageName>
-								<mFgColor>#ff0000</mFgColor>
-								<mBgColor>#ffff00</mBgColor>
-								<mSoundFile></mSoundFile>
-								<colorTriggerFgColor>#000000</colorTriggerFgColor>
-								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList>
-									<string>(^[ &gt;]*Zajmujesz pozycje umozliwiajaca odciecie [a-zA-Z (),!]+ drogi ucieczki\.$)</string>
-								</regexCodeList>
-								<regexCodePropertyList>
-									<integer>1</integer>
-								</regexCodePropertyList>
-							</Trigger>
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>blokujesz_droge</name>
-								<script>trigger_func_skrypty_ui_gags_delete_delete_bloki_blokujesz_droge()</script>
-								<triggerType>0</triggerType>
-								<conditonLineDelta>0</conditonLineDelta>
-								<mStayOpen>0</mStayOpen>
-								<mCommand></mCommand>
-								<packageName></packageName>
-								<mFgColor>#ff0000</mFgColor>
-								<mBgColor>#ffff00</mBgColor>
-								<mSoundFile></mSoundFile>
-								<colorTriggerFgColor>#000000</colorTriggerFgColor>
-								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList>
-									<string>(^[ &gt;]*Blokujesz [a-zA-Z (),!]+ droge na .*\.$)</string>
-								</regexCodeList>
-								<regexCodePropertyList>
-									<integer>1</integer>
-								</regexCodePropertyList>
-							</Trigger>
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>omija_nieskuteczny_blok</name>
-								<script>trigger_func_skrypty_ui_gags_delete_delete_bloki_omija_nieskuteczny_blok()</script>
-								<triggerType>0</triggerType>
-								<conditonLineDelta>0</conditonLineDelta>
-								<mStayOpen>0</mStayOpen>
-								<mCommand></mCommand>
-								<packageName></packageName>
-								<mFgColor>#ff0000</mFgColor>
-								<mBgColor>#ffff00</mBgColor>
-								<mSoundFile></mSoundFile>
-								<colorTriggerFgColor>#000000</colorTriggerFgColor>
-								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList>
-									<string>(^[ &gt;]*[a-zA-Z (),!]+ omija twoj nieskuteczny blok\.$)</string>
-								</regexCodeList>
-								<regexCodePropertyList>
-									<integer>1</integer>
-								</regexCodePropertyList>
-							</Trigger>
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>przestajesz_odcinac</name>
-								<script>trigger_func_skrypty_ui_gags_delete_delete_bloki_przestajesz_odcinac()</script>
-								<triggerType>0</triggerType>
-								<conditonLineDelta>0</conditonLineDelta>
-								<mStayOpen>0</mStayOpen>
-								<mCommand></mCommand>
-								<packageName></packageName>
-								<mFgColor>#ff0000</mFgColor>
-								<mBgColor>#ffff00</mBgColor>
-								<mSoundFile></mSoundFile>
-								<colorTriggerFgColor>#000000</colorTriggerFgColor>
-								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList>
-									<string>(^[ &gt;]*Przestajesz odcinac droge ucieczki [a-zA-Z (),!]+\.$)</string>
-								</regexCodeList>
-								<regexCodePropertyList>
-									<integer>1</integer>
-								</regexCodePropertyList>
-							</Trigger>
-						</TriggerGroup>
-						<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-							<name>delete_bron</name>
-							<script></script>
-							<triggerType>0</triggerType>
-							<conditonLineDelta>0</conditonLineDelta>
-							<mStayOpen>0</mStayOpen>
-							<mCommand></mCommand>
-							<packageName></packageName>
-							<mFgColor>#ff0000</mFgColor>
-							<mBgColor>#ffff00</mBgColor>
-							<mSoundFile></mSoundFile>
-							<colorTriggerFgColor>#000000</colorTriggerFgColor>
-							<colorTriggerBgColor>#000000</colorTriggerBgColor>
-							<regexCodeList />
-							<regexCodePropertyList />
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>ktos_opuszcza_bron</name>
-								<script>trigger_func_skrypty_ui_gags_delete_delete_bron_ktos_opuszcza_bron()</script>
-								<triggerType>0</triggerType>
-								<conditonLineDelta>0</conditonLineDelta>
-								<mStayOpen>0</mStayOpen>
-								<mCommand></mCommand>
-								<packageName></packageName>
-								<mFgColor>#ff0000</mFgColor>
-								<mBgColor>#ffff00</mBgColor>
-								<mSoundFile></mSoundFile>
-								<colorTriggerFgColor>#000000</colorTriggerFgColor>
-								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList>
-									<string>(^[ &gt;]*Uderzenie jest tak silne, ze [a-zA-Z (),!]+ bezwiednie opuszcza [a-z ]+\.$)</string>
-								</regexCodeList>
-								<regexCodePropertyList>
-									<integer>1</integer>
-								</regexCodePropertyList>
-							</Trigger>
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>walczysz_bez_broni</name>
-								<script>trigger_func_skrypty_ui_gags_delete_delete_bron_walczysz_bez_broni()</script>
-								<triggerType>0</triggerType>
-								<conditonLineDelta>0</conditonLineDelta>
-								<mStayOpen>0</mStayOpen>
-								<mCommand></mCommand>
-								<packageName></packageName>
-								<mFgColor>#ff0000</mFgColor>
-								<mBgColor>#ffff00</mBgColor>
-								<mSoundFile></mSoundFile>
-								<colorTriggerFgColor>#000000</colorTriggerFgColor>
-								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList>
-									<string>^(Nie udaje ci sie trafic|Probujesz trafic|Ledwo muskasz|Lekko ranisz) .* (lewa|prawa) piescia.*$</string>
-									<string>^(Nie udaje ci sie trafic|Probujesz trafic|Ledwo muskasz|Lekko ranisz) .* (lewym|prawym) kolanem.*$</string>
-									<string>^(Nie udaje ci sie trafic|Probujesz trafic|Ledwo muskasz|Lekko ranisz) .* (lewa|prawa) stopa.*$</string>
-									<string>^(Nie udaje ci sie trafic|Probujesz trafic|Ledwo muskasz|Lekko ranisz) .* (lewym|prawym) lokciem.*$</string>
-								</regexCodeList>
-								<regexCodePropertyList>
-									<integer>1</integer>
-									<integer>1</integer>
-									<integer>1</integer>
-									<integer>1</integer>
-								</regexCodePropertyList>
-							</Trigger>
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>ktos_dobywa_broni</name>
-								<script>trigger_func_skrypty_ui_gags_delete_delete_bron_ktos_dobywa_broni()</script>
-								<triggerType>0</triggerType>
-								<conditonLineDelta>0</conditonLineDelta>
-								<mStayOpen>0</mStayOpen>
-								<mCommand></mCommand>
-								<packageName></packageName>
-								<mFgColor>#ff0000</mFgColor>
-								<mBgColor>#ffff00</mBgColor>
-								<mSoundFile></mSoundFile>
-								<colorTriggerFgColor>#000000</colorTriggerFgColor>
-								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList>
-									<string>(^[ &gt;]*[a-zA-Z (),!]+ dobywa [a-z ]+\.$)</string>
-								</regexCodeList>
-								<regexCodePropertyList>
-									<integer>1</integer>
-								</regexCodePropertyList>
-							</Trigger>
-						</TriggerGroup>
-						<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-							<name>delete_npc</name>
-							<script></script>
-							<triggerType>0</triggerType>
-							<conditonLineDelta>0</conditonLineDelta>
-							<mStayOpen>0</mStayOpen>
-							<mCommand></mCommand>
-							<packageName></packageName>
-							<mFgColor>#ff0000</mFgColor>
-							<mBgColor>#ffff00</mBgColor>
-							<mSoundFile></mSoundFile>
-							<colorTriggerFgColor>#000000</colorTriggerFgColor>
-							<colorTriggerBgColor>#000000</colorTriggerBgColor>
-							<regexCodeList />
-							<regexCodePropertyList />
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>goblin</name>
-								<script>trigger_func_skrypty_ui_gags_delete_delete_npc_goblin()</script>
-								<triggerType>0</triggerType>
-								<conditonLineDelta>0</conditonLineDelta>
-								<mStayOpen>0</mStayOpen>
-								<mCommand></mCommand>
-								<packageName></packageName>
-								<mFgColor>#ff0000</mFgColor>
-								<mBgColor>#ffff00</mBgColor>
-								<mSoundFile></mSoundFile>
-								<colorTriggerFgColor>#000000</colorTriggerFgColor>
-								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList>
-									<string>(^[ &gt;]*W slepiach [a-z ]+ goblina pojawia sie nienawistny blysk.*\.$)</string>
-								</regexCodeList>
-								<regexCodePropertyList>
-									<integer>1</integer>
-								</regexCodePropertyList>
-							</Trigger>
-						</TriggerGroup>
-						<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-							<name>delete_other</name>
-							<script></script>
-							<triggerType>0</triggerType>
-							<conditonLineDelta>0</conditonLineDelta>
-							<mStayOpen>0</mStayOpen>
-							<mCommand></mCommand>
-							<packageName></packageName>
-							<mFgColor>#ff0000</mFgColor>
-							<mBgColor>#ffff00</mBgColor>
-							<mSoundFile></mSoundFile>
-							<colorTriggerFgColor>#000000</colorTriggerFgColor>
-							<colorTriggerBgColor>#000000</colorTriggerBgColor>
-							<regexCodeList />
-							<regexCodePropertyList />
-						</TriggerGroup>
-					</TriggerGroup>
 					<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>color</name>
 						<script></script>
@@ -16130,10 +14978,10 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>(^[ &gt;]*Jestes tak zmeczony, ze nie mozesz dalej podazac w tym kierunku\.$)</string>
+							<string>Jestes tak zmeczony, ze nie mozesz dalej podazac w tym kierunku.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
-							<integer>1</integer>
+							<integer>2</integer>
 						</regexCodePropertyList>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -16150,12 +14998,12 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^[ &gt;]*(Tablica ogloszeniowa)</string>
-							<string>^[ &gt;]*(Wiekowa tablica ogloszeniowa)</string>
+							<string>Tablica ogloszeniowa</string>
+							<string>Wiekowa tablica ogloszeniowa</string>
 						</regexCodeList>
 						<regexCodePropertyList>
-							<integer>1</integer>
-							<integer>1</integer>
+							<integer>2</integer>
+							<integer>2</integer>
 						</regexCodePropertyList>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -16172,10 +15020,10 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>(^[ &gt;]*Kamienna plyta z przerazliwym zgrzytem zamyka wejscie do grobowca!)</string>
+							<string>Kamienna plyta z przerazliwym zgrzytem zamyka wejscie do grobowca!</string>
 						</regexCodeList>
 						<regexCodePropertyList>
-							<integer>1</integer>
+							<integer>2</integer>
 						</regexCodePropertyList>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -16236,15 +15084,15 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>(^[ &gt;]*Twoj oddech wraca powoli do normy, swiat znow nabiera zwyczajnych barw, zas serce zaczyna ci znow normalnie bic. Z ulga stwierdzasz, iz diabelska trucizna zostala juz chyba zneutralizowana przez twoj organizm\.$)</string>
+							<string>Twoj oddech wraca powoli do normy, swiat znow nabiera zwyczajnych barw, zas serce zaczyna ci znow normalnie bic. Z ulga stwierdzasz, iz diabelska trucizna zostala juz chyba zneutralizowana przez twoj organizm</string>
 						</regexCodeList>
 						<regexCodePropertyList>
-							<integer>1</integer>
+							<integer>2</integer>
 						</regexCodePropertyList>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-						<name>wyverna_trucizna_on</name>
-						<script>trigger_func_skrypty_ui_misc_wyverna_trucizna_on()</script>
+						<name>trucizna_on</name>
+						<script>trigger_func_skrypty_ui_misc_trucizna_on()</script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
 						<mStayOpen>0</mStayOpen>
@@ -16256,30 +15104,12 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>(^[ &gt;]*Czujesz, ze do twego ciala dostala sie jakas trucizna!$)</string>
+							<string>Czujesz, ze do twego ciala dostala sie jakas trucizna!</string>
+							<string>Czujesz fale zimna, ktora blyskawicznie rozchodzi sie po calym twym ciele, gdy ghoul z pozoru niegroznie kaleczy cie swym dlugim, ociekajacym jadem pazurem</string>
 						</regexCodeList>
 						<regexCodePropertyList>
-							<integer>1</integer>
-						</regexCodePropertyList>
-					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-						<name>ghoul-trucizna</name>
-						<script>trigger_func_skrypty_ui_misc_ghoul_trucizna()</script>
-						<triggerType>0</triggerType>
-						<conditonLineDelta>0</conditonLineDelta>
-						<mStayOpen>0</mStayOpen>
-						<mCommand></mCommand>
-						<packageName></packageName>
-						<mFgColor>#ff0000</mFgColor>
-						<mBgColor>#ffff00</mBgColor>
-						<mSoundFile></mSoundFile>
-						<colorTriggerFgColor>#000000</colorTriggerFgColor>
-						<colorTriggerBgColor>#000000</colorTriggerBgColor>
-						<regexCodeList>
-							<string>^[ &gt;]*Czujesz fale zimna, ktora blyskawicznie rozchodzi sie po calym twym ciele, gdy ghoul z pozoru niegroznie kaleczy cie swym dlugim, ociekajacym jadem pazurem\.</string>
-						</regexCodeList>
-						<regexCodePropertyList>
-							<integer>1</integer>
+							<integer>2</integer>
+							<integer>0</integer>
 						</regexCodePropertyList>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -16496,12 +15326,12 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^(Bezpiecznie schodzisz na dol\.)$</string>
-							<string>^(Docierasz na gore\.)$</string>
+							<string>Bezpiecznie schodzisz na dol.</string>
+							<string>Docierasz na gore.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
-							<integer>1</integer>
-							<integer>1</integer>
+							<integer>2</integer>
+							<integer>2</integer>
 						</regexCodePropertyList>
 					</Trigger>
 					<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -16656,8 +15486,7 @@
 						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 							<name>Ptakopodobny (inkantacja)</name>
 							<script>
-								trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()
-							</script>
+trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 							<triggerType>0</triggerType>
 							<conditonLineDelta>0</conditonLineDelta>
 							<mStayOpen>0</mStayOpen>
@@ -16708,7 +15537,7 @@
 								<string>Nagle czujesz, ze tracisz kontrole nad swym cialem - nie mozesz sie poruszyc!</string>
 							</regexCodeList>
 							<regexCodePropertyList>
-								<integer>0</integer>
+								<integer>2</integer>
 							</regexCodePropertyList>
 						</Trigger>
 					</TriggerGroup>
@@ -16766,14 +15595,14 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^[ &gt;]*Przystan powozowa\.</string>
-							<string>^[ &gt;]*Sa tutaj trzy widoczne wyjscia: polnoc, zachod i wschod\.</string>
-							<string>^[ &gt;]*Otwarty stojacy powoz\.</string>
+							<string>Przystan powozowa.</string>
+							<string>Sa tutaj trzy widoczne wyjscia: polnoc, zachod i wschod.</string>
+							<string>Otwarty stojacy powoz.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
-							<integer>1</integer>
-							<integer>1</integer>
-							<integer>1</integer>
+							<integer>2</integer>
+							<integer>2</integer>
+							<integer>2</integer>
 						</regexCodePropertyList>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -16790,14 +15619,14 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^[ &gt;]*Przystan powozowa.</string>
-							<string>^[ &gt;]*Sa tutaj trzy widoczne wyjscia: polnoc, zachod i wschod.</string>
-							<string>^[ &gt;]*Drewniany stojacy woz.</string>
+							<string>Przystan powozowa.</string>
+							<string>Sa tutaj trzy widoczne wyjscia: polnoc, zachod i wschod.</string>
+							<string>Drewniany stojacy woz.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
-							<integer>1</integer>
-							<integer>1</integer>
-							<integer>1</integer>
+							<integer>2</integer>
+							<integer>2</integer>
+							<integer>2</integer>
 						</regexCodePropertyList>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -16860,11 +15689,11 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^[ &gt;]*Chowasz sie najlepiej jak potrafisz\.$</string>
+							<string>Chowasz sie najlepiej jak potrafisz.</string>
 							<string>odazasz skradajac sie za </string>
 						</regexCodeList>
 						<regexCodePropertyList>
-							<integer>1</integer>
+							<integer>2</integer>
 							<integer>0</integer>
 						</regexCodePropertyList>
 					</Trigger>
@@ -16882,20 +15711,20 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^[ &gt;]*Wychodzisz z ukrycia\.$</string>
-							<string>^[ &gt;]*Jest tu zbyt ciezko sie schowac, wiec jestes widoczny z powrotem\.$</string>
+							<string>Wychodzisz z ukrycia.</string>
+							<string>Jest tu zbyt ciezko sie schowac, wiec jestes widoczny z powrotem.</string>
 							<string>Nie jestes w stanie wymknac sie stad niezauwazenie.</string>
 							<string>Nie jestes dowodca zadnej druzyny.</string>
 							<string>Nie jestes juz schowany</string>
 							<string>Nie mozesz tak po prostu wymknac sie z walki.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
-							<integer>1</integer>
-							<integer>1</integer>
-							<integer>0</integer>
-							<integer>0</integer>
-							<integer>0</integer>
-							<integer>0</integer>
+							<integer>2</integer>
+							<integer>2</integer>
+							<integer>2</integer>
+							<integer>2</integer>
+							<integer>2</integer>
+							<integer>2</integer>
 						</regexCodePropertyList>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -16912,12 +15741,12 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^[ &gt;]*Wiedziony naglym instynktem siegasz po .*\.$</string>
+							<string>Wiedziony naglym instynktem siegasz po</string>
 							<string>Ostrze kosy rozblyska nieziemskim blaskiem, gdy dobywasz broni w obie rece.</string>
-							<string>^[ &gt;]*Dobywasz oburacz .*\.$</string>
-							<string>^[ &gt;]*Dobywasz .* reka\.$</string>
-							<string>^[ &gt;]*Trzymasz oburacz .*\.$</string>
-							<string>^[ &gt;]*Trzymasz .* w (prawej|lewej) rece.*</string>
+							<string>Dobywasz oburacz</string>
+							<string>^Dobywasz .* reka\.$</string>
+							<string>Trzymasz oburacz</string>
+							<string>^Trzymasz .* w (prawej|lewej) rece.*</string>
 							<string>Z latwoscia dobywasz ogromnego ognistego trojzebu, czujac pulsujaca moc w zaciskajacych sie na drzewcu rekach.</string>
 							<string>^[ &gt;]*Siegasz do .*, dobywajac z nie[a-z]+ .*\.$</string>
 							<string>^[ &gt;]*Gwaltownym ruchem wyszarpujesz zza plecow.*\.$</string>
@@ -16927,7 +15756,7 @@
 							<string>Z trudem dobywasz gigantycznego granitowego mlota.</string>
 							<string>Dobywasz dwurecznego krysztalowego korbacza czujac, ze stales sie panem tej poteznej broni.</string>
 							<string>Dobywasz [a-z ]+ zaciskajac dlon na rekojesci.</string>
-							<string>Pewnym chwytem dobywasz [a-z ]+\.$</string>
+							<string>Pewnym chwytem dobywasz</string>
 							<string>Gdy dobywasz [a-z ]+, klinga broni rozgrzewa sie do czerwonosci\.$</string>
 							<string>Czujesz, jak przez twoje palce przebiega delikatne, elektryzujace drzenie, jakby bulawa witala sie z uteskniona dlonia.</string>
 							<string>Z lekkoscia dobywasz jasniejacego zdobionego jatagana, a ten rozblyskuje jeszcze mocniejsza poswiata.</string>
@@ -16944,7 +15773,7 @@
 							<string>Plynnymi, pelnymi pewnosci ruchami dobywasz</string>
 							<string>Dobywasz waskiego kunsztownego sihilla, a runa smierci na jego klindze ozywa na chwile.</string>
 							<string>Dobywasz opalizujacego runicznego topora obosiecznego. Ciarki przechodza ci po plecach, gdy twe rece bezwiednie dopasowuja sie do uchwytu, a runy na ostrzu rozblyskuja bladoczerwonym swiatlem.</string>
-							<string>^Dobywasz krysztalowego korbacza czujac, ze stales sie \w+ tej poteznej broni\.$</string>
+							<string>Dobywasz krysztalowego korbacza czujac</string>
 							<string>Poprawiasz uchwyt na polyskliwym smuklym espadonie i wywijasz nim kilka mlyncow, sprawdzajac wywazenie broni.</string>
 							<string>^Dobywasz .* pewnym chwytem, szykujac sie do walki\.$</string>
 							<string>^Poprawiasz uchwyt na .* i wywijasz \w kilka mlyncow, sprawdzajac wywazenie broni\.$</string>
@@ -16952,58 +15781,58 @@
 							<string>Gdy dobywasz foremnego iskrzacego mlota, pelzajace po broni wyladowania elektryczne przeskakuja na twa dlon i przedramie oplatajac je siateczka jasniejacych wici.</string>
 							<string>Pod wplywem twego pewnego chwytu zdobiony jasniejacy mlot rozblyskuje jasnym swiatlem, </string>
 							<string>Czujesz jak zalewa cie fala ogromnej pewnosci siebie i satysfakcji.</string>
-							<string>^Juz dzierzysz .*\.$</string>
+							<string>Juz dzierzysz</string>
 							<string>Zaciskasz dlon na niezwyklym koscianym toporze i przez chwile czujesz, jak bron wibruje od zgromadzonej w niej mocy.</string>
 							<string>Zaciskasz dlon na rekojesci szponiastej dwusegmentowej maczugi powodujac, ze jej najezona ostrzami glowica kolysze sie ociezale na boki.</string>
 							<string>Z mrozaca krew w zylach gracja dobywasz waskiego zebatego palasza, a twoje spojrzenie staje siezimne jak lod.</string>
 							<string>Chwytasz za rekojesc obosiecznego gwiezdnego topora, unoszac go na wysokosc swej twarzy. W odpowiedzi na twoj dotyk, czarne jak noc zelezce zaczyna mienic sie blaskiem tysiaca gwiazd.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
+							<integer>2</integer>
+							<integer>2</integer>
+							<integer>2</integer>
 							<integer>1</integer>
-							<integer>3</integer>
+							<integer>2</integer>
+							<integer>1</integer>
+							<integer>2</integer>
 							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
+							<integer>2</integer>
+							<integer>2</integer>
+							<integer>2</integer>
+							<integer>2</integer>
 							<integer>1</integer>
-							<integer>3</integer>
+							<integer>2</integer>
 							<integer>1</integer>
-							<integer>1</integer>
-							<integer>1</integer>
+							<integer>2</integer>
+							<integer>2</integer>
+							<integer>0</integer>
+							<integer>2</integer>
+							<integer>2</integer>
+							<integer>0</integer>
+							<integer>2</integer>
 							<integer>0</integer>
 							<integer>0</integer>
-							<integer>3</integer>
-							<integer>3</integer>
+							<integer>2</integer>
+							<integer>0</integer>
+							<integer>0</integer>
+							<integer>0</integer>
+							<integer>2</integer>
+							<integer>2</integer>
+							<integer>2</integer>
+							<integer>2</integer>
 							<integer>1</integer>
 							<integer>1</integer>
+							<integer>2</integer>
+							<integer>2</integer>
 							<integer>1</integer>
-							<integer>3</integer>
-							<integer>3</integer>
 							<integer>0</integer>
+							<integer>2</integer>
 							<integer>3</integer>
-							<integer>3</integer>
-							<integer>0</integer>
-							<integer>3</integer>
-							<integer>0</integer>
-							<integer>0</integer>
-							<integer>3</integer>
-							<integer>0</integer>
-							<integer>0</integer>
-							<integer>0</integer>
-							<integer>3</integer>
-							<integer>3</integer>
-							<integer>1</integer>
-							<integer>3</integer>
-							<integer>1</integer>
-							<integer>1</integer>
-							<integer>3</integer>
-							<integer>3</integer>
-							<integer>0</integer>
-							<integer>0</integer>
-							<integer>1</integer>
-							<integer>3</integer>
-							<integer>3</integer>
-							<integer>3</integer>
-							<integer>3</integer>
+							<integer>2</integer>
+							<integer>2</integer>
+							<integer>2</integer>
 						</regexCodePropertyList>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -17021,9 +15850,9 @@
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
 							<string>^[ &gt;]*Powoli opuszczasz .*, raz jeszcze, dla pewnosci, ogarniajac wzrokiem cala okolice\.</string>
-							<string>^[ &gt;]*Przechodzi cie nagly dreszcz, gdy opuszczasz srebrzysta kose bojowa\.$</string>
+							<string>Przechodzi cie nagly dreszcz, gdy opuszczasz srebrzysta kose bojowa.</string>
 							<string>^[ &gt;]*Opuszczasz (.*)\.$</string>
-							<string>^[ &gt;]*Wprawnym ruchem przewieszasz .*\.$</string>
+							<string>Wprawnym ruchem przewieszasz</string>
 							<string>^(?!.*przez)(.+?) peka!$</string>
 							<string>Rozgladajac sie uwaznie, opuszczasz cicho</string>
 							<string>Niechetnie opuszczasz swoj zlowrogi orez.</string>
@@ -17038,9 +15867,9 @@
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
+							<integer>3</integer>
 							<integer>1</integer>
-							<integer>1</integer>
-							<integer>1</integer>
+							<integer>2</integer>
 							<integer>1</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -17126,13 +15955,13 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^[ &gt;]*Wydajesz rozkaz .*</string>
-							<string>^[ &gt;]*Glosno wypowiadasz rozkaz, chyba jednak nikt cie nie zrozumia.</string>
+							<string>Wydajesz rozkaz</string>
+							<string>Glosno wypowiadasz rozkaz, chyba jednak nikt cie nie zrozumia</string>
 							<string>przekazuje ci prowadzenie druzyny.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
-							<integer>1</integer>
-							<integer>1</integer>
+							<integer>2</integer>
+							<integer>2</integer>
 							<integer>0</integer>
 						</regexCodePropertyList>
 					</Trigger>
@@ -17165,10 +15994,10 @@
 							<colorTriggerFgColor>#000000</colorTriggerFgColor>
 							<colorTriggerBgColor>#000000</colorTriggerBgColor>
 							<regexCodeList>
-								<string>^Czeka na ciebie nieprzeczytana poczta</string>
+								<string>Czeka na ciebie nieprzeczytana poczta</string>
 							</regexCodeList>
 							<regexCodePropertyList>
-								<integer>1</integer>
+								<integer>2</integer>
 							</regexCodePropertyList>
 						</Trigger>
 						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -17205,10 +16034,10 @@
 							<colorTriggerFgColor>#000000</colorTriggerFgColor>
 							<colorTriggerBgColor>#000000</colorTriggerBgColor>
 							<regexCodeList>
-								<string>^Listy nieprzeczytane:</string>
+								<string>Listy nieprzeczytane:</string>
 							</regexCodeList>
 							<regexCodePropertyList>
-								<integer>1</integer>
+								<integer>2</integer>
 							</regexCodePropertyList>
 						</Trigger>
 						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -20835,22 +19664,6 @@
 						</regexCodePropertyList>
 					</Trigger>
 				</TriggerGroup>
-				<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-					<name>special_mobs</name>
-					<script></script>
-					<triggerType>0</triggerType>
-					<conditonLineDelta>0</conditonLineDelta>
-					<mStayOpen>0</mStayOpen>
-					<mCommand></mCommand>
-					<packageName></packageName>
-					<mFgColor>#ff0000</mFgColor>
-					<mBgColor>#ffff00</mBgColor>
-					<mSoundFile></mSoundFile>
-					<colorTriggerFgColor>#000000</colorTriggerFgColor>
-					<colorTriggerBgColor>#000000</colorTriggerBgColor>
-					<regexCodeList />
-					<regexCodePropertyList />
-				</TriggerGroup>
 			</TriggerGroup>
 			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>herbs</name>
@@ -21291,10 +20104,10 @@
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^Decydujesz sie porzucic stary fach i rozpoczynasz trening w zawodzie (.*)\.$</string>
+						<string>Decydujesz sie porzucic stary fach i rozpoczynasz trening w zawodzie</string>
 					</regexCodeList>
 					<regexCodePropertyList>
-						<integer>1</integer>
+						<integer>2</integer>
 					</regexCodePropertyList>
 				</Trigger>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -21314,7 +20127,7 @@
 						<string>Twoja wysoka forma pozwala ci nieznacznie przyspieszyc nauke zawodu.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
-						<integer>0</integer>
+						<integer>3</integer>
 					</regexCodePropertyList>
 				</Trigger>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="yes" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -21331,11 +20144,11 @@
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^Tytul zwiazany z WYROZNIENIEm:</string>
+						<string>Tytul zwiazany z WYROZNIENIEm:</string>
 						<string>Do wyboru sa:</string>
 					</regexCodeList>
 					<regexCodePropertyList>
-						<integer>1</integer>
+						<integer>2</integer>
 						<integer>2</integer>
 					</regexCodePropertyList>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -21439,14 +20252,14 @@
 					<regexCodeList>
 						<string>Nadlatujaca ze swistem strzala wbija ci sie w korpus.</string>
 						<string>Nagle jakas strzala wbija ci sie w korpus.</string>
-						<string>^Nagle jakas strzala wbija sie .* w korpus\.$</string>
+						<string>Nagle jakas strzala wbija sie</string>
 						<string>W ziemie wbila sie z niesamowita predkoscia dluga strzala.</string>
 						<string>Nadlatujaca ze swistem strzala wbija sie</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>3</integer>
 						<integer>3</integer>
-						<integer>1</integer>
+						<integer>2</integer>
 						<integer>3</integer>
 						<integer>2</integer>
 					</regexCodePropertyList>
@@ -21831,9 +20644,9 @@
 				<colorTriggerBgColor>#000000</colorTriggerBgColor>
 				<regexCodeList />
 				<regexCodePropertyList />
-				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-					<name>wyjscia</name>
-					<script>trigger_func_mapper_directions_ui_wyjscia()</script>
+				<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>short exits</name>
+					<script></script>
 					<triggerType>0</triggerType>
 					<conditonLineDelta>0</conditonLineDelta>
 					<mStayOpen>0</mStayOpen>
@@ -21845,122 +20658,142 @@
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^((Jest|Sa) tutaj .* widoczn(e|ych) wyjsc(|ia|ie):) (.*)\.$</string>
-						<string>^((W) (gestych) (ciemnosciach) dostrzegasz .* (?:wiodacy|rozwidlajacy sie) na) (.*)\.$</string>
-						<string>^((Korytarze) (jaskini) (ciagna) sie na) (.*)\.$</string>
-						<string>^((Trakt) (wiedzie) (na)) ([^.]+)\.$</string>
-						<string>(([tT]rakt) (rozgalezia) (sie)) na (.*)\.$</string>
-						<string>^((Szlak|Sciezka) (prowadzi) (tutaj)) w .* kieru.*: (.*)\.$</string>
-						<string>^((Linia) (brzegowa) (ciagnie)) sie na (.*)\.$</string>
-						<string>^((Wedrowke) (skrajem lasu|po karczowisku|po lesie)) mozesz kontynuowac (udajac sie na) (.*)\.$</string>
-						<string>^((Wedrowke) (przez) rozlegle laki mozesz kontynuowac (udajac sie na) (.*))\.$</string>
-						<string>^((Wijaca) (sie) (miedzy)) skalami, gorska sciezka prowadzi na (.*)\.$</string>
-						<string>^((Wydeptane) (w) (kukurydzy)) sciezki prowadza na (.*)\.$</string>
-						<string>^((Wyjscia) (prowadza) (tutaj)) w .* kierunkach: (.*)\.$</string>
-						<string>^((Wykopany) (w) (ziemi)) tunel rozgalezia sie tutaj, zas jego odnogi wioda na (.*)\.$</string>
-						<string>^((Wykopany) (w) (ziemi)) tunel wiedzie w dwoch kierunkach: (.*)\.$</string>
-						<string>^((Mozesz) (sie) (stad)) udac na (.*)\.$</string>
-						<string>^((Mozesz) (skierowac) (lodz)) na (.*)\.$</string>
-						<string>^((Trakt) (jest) (zasypany)) glazami i mozna podazac nim tylko w jednym kierunku, na (.*)\.$</string>
-						<string>^((Mozesz) (podazac) (traktem)) na (.*), w strone fortu\.$</string>
-						<string>^((Mozesz) (stad) (poplynac)) na (.*)\.$</string>
-						<string>^((W) (mroku) (nocy)) dostrzegasz .* widoczne wyjsci.: (.*)\.</string>
-						<string>^((Tunel) (ciagnie) (sie)) na (.*)\.</string>
-						<string>^((Jaskinie) (ciagna) (sie)) na (.*)\.</string>
-						<string>^((Tunele) (ciagna) (sie)) na (.*)\.</string>
-						<string>^((Rozpadlina) (ciagnie) (sie)) na (.*)\.</string>
+						<string>return is_msg_type("room.exits")</string>
 					</regexCodeList>
 					<regexCodePropertyList>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
+						<integer>4</integer>
 					</regexCodePropertyList>
-				</Trigger>
-				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-					<name>wyjscia-all</name>
-					<script>trigger_func_mapper_directions_ui_wyjscia_all()</script>
-					<triggerType>0</triggerType>
-					<conditonLineDelta>0</conditonLineDelta>
-					<mStayOpen>0</mStayOpen>
-					<mCommand></mCommand>
-					<packageName></packageName>
-					<mFgColor>#ff0000</mFgColor>
-					<mBgColor>#ffff00</mBgColor>
-					<mSoundFile></mSoundFile>
-					<colorTriggerFgColor>#000000</colorTriggerFgColor>
-					<colorTriggerBgColor>#000000</colorTriggerBgColor>
-					<regexCodeList>
-						<string>^Mozesz podazac traktem na (.*)\. Natomiast (aby|jesli chcesz) zejsc z wytyczonej drogi (wystarczy|musisz|mozesz) udac sie w dowolnym innym kierunku\.</string>
-						<string>^Wedrowke przez rozlegle laki mozesz kontynuowac w dowolnie wybranym kierunku.</string>
-						<string>^Mozesz stad wyruszyc w dowolnie wybranym kierunku.</string>
-					</regexCodeList>
-					<regexCodePropertyList>
-						<integer>1</integer>
-						<integer>3</integer>
-						<integer>3</integer>
-					</regexCodePropertyList>
-				</Trigger>
-				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-					<name>wyjscia-2</name>
-					<script>trigger_func_mapper_directions_ui_wyjscia_2()</script>
-					<triggerType>0</triggerType>
-					<conditonLineDelta>0</conditonLineDelta>
-					<mStayOpen>0</mStayOpen>
-					<mCommand></mCommand>
-					<packageName></packageName>
-					<mFgColor>#ff0000</mFgColor>
-					<mBgColor>#ffff00</mBgColor>
-					<mSoundFile></mSoundFile>
-					<colorTriggerFgColor>#000000</colorTriggerFgColor>
-					<colorTriggerBgColor>#000000</colorTriggerBgColor>
-					<regexCodeList>
-						<string>^Trakt wiedzie na (.*)\. Mozna jednak z niego zejsc i udac sie na (.*)\.$</string>
-					</regexCodeList>
-					<regexCodePropertyList>
-						<integer>1</integer>
-					</regexCodePropertyList>
-				</Trigger>
-				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-					<name>wyjscia-2_1</name>
-					<script>trigger_func_mapper_directions_ui_wyjscia_2_1()</script>
-					<triggerType>0</triggerType>
-					<conditonLineDelta>0</conditonLineDelta>
-					<mStayOpen>0</mStayOpen>
-					<mCommand></mCommand>
-					<packageName></packageName>
-					<mFgColor>#ff0000</mFgColor>
-					<mBgColor>#ffff00</mBgColor>
-					<mSoundFile></mSoundFile>
-					<colorTriggerFgColor>#000000</colorTriggerFgColor>
-					<colorTriggerBgColor>#000000</colorTriggerBgColor>
-					<regexCodeList>
-						<string>Mozesz podazac traktem na (.*) albo (.*). Natomiast aby zejsc z wytyczonej drogi musisz udac sie na (.*)\.$</string>
-					</regexCodeList>
-					<regexCodePropertyList>
-						<integer>1</integer>
-					</regexCodePropertyList>
-				</Trigger>
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>wyjscia</name>
+						<script>trigger_func_mapper_directions_ui_wyjscia()</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>^((Jest|Sa) tutaj .* widoczn(e|ych) wyjsc(|ia|ie):) (.*)\.$</string>
+							<string>^((W) (gestych) (ciemnosciach) dostrzegasz .* (?:wiodacy|rozwidlajacy sie) na) (.*)\.$</string>
+							<string>^((Korytarze) (jaskini) (ciagna) sie na) (.*)\.$</string>
+							<string>^((Trakt) (wiedzie) (na)) ([^.]+)\.$</string>
+							<string>(([tT]rakt) (rozgalezia) (sie)) na (.*)\.$</string>
+							<string>^((Szlak|Sciezka) (prowadzi) (tutaj)) w .* kieru.*: (.*)\.$</string>
+							<string>^((Linia) (brzegowa) (ciagnie)) sie na (.*)\.$</string>
+							<string>^((Wedrowke) (skrajem lasu|po karczowisku|po lesie)) mozesz kontynuowac (udajac sie na) (.*)\.$</string>
+							<string>^((Wedrowke) (przez) rozlegle laki mozesz kontynuowac (udajac sie na) (.*))\.$</string>
+							<string>^((Wijaca) (sie) (miedzy)) skalami, gorska sciezka prowadzi na (.*)\.$</string>
+							<string>^((Wydeptane) (w) (kukurydzy)) sciezki prowadza na (.*)\.$</string>
+							<string>^((Wyjscia) (prowadza) (tutaj)) w .* kierunkach: (.*)\.$</string>
+							<string>^((Wykopany) (w) (ziemi)) tunel rozgalezia sie tutaj, zas jego odnogi wioda na (.*)\.$</string>
+							<string>^((Wykopany) (w) (ziemi)) tunel wiedzie w dwoch kierunkach: (.*)\.$</string>
+							<string>^((Mozesz) (sie) (stad)) udac na (.*)\.$</string>
+							<string>^((Mozesz) (skierowac) (lodz)) na (.*)\.$</string>
+							<string>^((Trakt) (jest) (zasypany)) glazami i mozna podazac nim tylko w jednym kierunku, na (.*)\.$</string>
+							<string>^((Mozesz) (podazac) (traktem)) na (.*), w strone fortu\.$</string>
+							<string>^((Mozesz) (stad) (poplynac)) na (.*)\.$</string>
+							<string>^((W) (mroku) (nocy)) dostrzegasz .* widoczne wyjsci.: (.*)\.</string>
+							<string>^((Tunel) (ciagnie) (sie)) na (.*)\.</string>
+							<string>^((Jaskinie) (ciagna) (sie)) na (.*)\.</string>
+							<string>^((Tunele) (ciagna) (sie)) na (.*)\.</string>
+							<string>^((Rozpadlina) (ciagnie) (sie)) na (.*)\.</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>1</integer>
+							<integer>1</integer>
+							<integer>1</integer>
+							<integer>1</integer>
+							<integer>1</integer>
+							<integer>1</integer>
+							<integer>1</integer>
+							<integer>1</integer>
+							<integer>1</integer>
+							<integer>1</integer>
+							<integer>1</integer>
+							<integer>1</integer>
+							<integer>1</integer>
+							<integer>1</integer>
+							<integer>1</integer>
+							<integer>1</integer>
+							<integer>1</integer>
+							<integer>1</integer>
+							<integer>1</integer>
+							<integer>1</integer>
+							<integer>1</integer>
+							<integer>1</integer>
+							<integer>1</integer>
+							<integer>1</integer>
+						</regexCodePropertyList>
+					</Trigger>
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>wyjscia-all</name>
+						<script>trigger_func_mapper_directions_ui_wyjscia_all()</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>^Mozesz podazac traktem na (.*)\. Natomiast (aby|jesli chcesz) zejsc z wytyczonej drogi (wystarczy|musisz|mozesz) udac sie w dowolnym innym kierunku\.</string>
+							<string>Wedrowke przez rozlegle laki mozesz kontynuowac w dowolnie wybranym kierunku.</string>
+							<string>Mozesz stad wyruszyc w dowolnie wybranym kierunku.</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>1</integer>
+							<integer>2</integer>
+							<integer>2</integer>
+						</regexCodePropertyList>
+					</Trigger>
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>wyjscia-2</name>
+						<script>trigger_func_mapper_directions_ui_wyjscia_2()</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>^Trakt wiedzie na (.*)\. Mozna jednak z niego zejsc i udac sie na (.*)\.$</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>1</integer>
+						</regexCodePropertyList>
+					</Trigger>
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>wyjscia-2_1</name>
+						<script>trigger_func_mapper_directions_ui_wyjscia_2_1()</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>Mozesz podazac traktem na (.*) albo (.*). Natomiast aby zejsc z wytyczonej drogi musisz udac sie na (.*)\.$</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>1</integer>
+						</regexCodePropertyList>
+					</Trigger>
+				</TriggerGroup>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>neg_wyjscia-2</name>
 					<script>trigger_func_mapper_directions_ui_neg_wyjscia_2()</script>
@@ -22157,7 +20990,7 @@
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^(?:|&gt; )*Skryty za .* zaczynasz plynac na (.*)\.$</string>
+						<string>^Skryty za .* zaczynasz plynac na (.*)\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -22212,8 +21045,8 @@
 							<string>Sa tutaj trzy widoczne wyjscia: polnocny-wschod, poludniowy-wschod i wschod.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
-							<integer>3</integer>
-							<integer>3</integer>
+							<integer>2</integer>
+							<integer>2</integer>
 						</regexCodePropertyList>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -22234,8 +21067,8 @@
 							<string>Jest tutaj jedno widoczne wyjscie: poludnie.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
-							<integer>3</integer>
-							<integer>3</integer>
+							<integer>2</integer>
+							<integer>2</integer>
 						</regexCodePropertyList>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -22256,8 +21089,8 @@
 							<string>Sa tutaj dwa widoczne wyjscia: schodki i poludniowy-wschod.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
-							<integer>3</integer>
-							<integer>3</integer>
+							<integer>2</integer>
+							<integer>2</integer>
 						</regexCodePropertyList>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -22278,8 +21111,8 @@
 							<string>Jest tutaj jedno widoczne wyjscie: schodki.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
-							<integer>3</integer>
-							<integer>3</integer>
+							<integer>2</integer>
+							<integer>2</integer>
 						</regexCodePropertyList>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -22299,7 +21132,7 @@
 							<string>Bez wiekszego problemu potwor zrzuca cie z platformy!</string>
 						</regexCodeList>
 						<regexCodePropertyList>
-							<integer>3</integer>
+							<integer>2</integer>
 						</regexCodePropertyList>
 					</Trigger>
 					<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -22342,8 +21175,8 @@
 							<string>Jest tutaj jedno widoczne wyjscie: zachod.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
-							<integer>3</integer>
-							<integer>3</integer>
+							<integer>2</integer>
+							<integer>2</integer>
 						</regexCodePropertyList>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -22383,7 +21216,7 @@
 							<string>Kierujesz sie w strone krzakow porastajacych polnocno-wchodnia czesc kotliny, lecz bezradnie zatrzymujesz sie przed zwarta sciana kolcow i galezi. Nie znajdujesz sposobu, jak wejsc w chaszcze.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
-							<integer>3</integer>
+							<integer>2</integer>
 						</regexCodePropertyList>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -22403,7 +21236,7 @@
 							<string>Kierujesz sie w strone krzakow porastajacych zachodnia czesc kotliny, lecz bezradnie zatrzymujesz sie przed zwarta sciana kolcow i galezi. Nie znajdujesz sposobu, jak wejsc w chaszcze.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
-							<integer>3</integer>
+							<integer>2</integer>
 						</regexCodePropertyList>
 					</Trigger>
 				</TriggerGroup>
@@ -25464,7 +24297,7 @@
 								<string>Okret zbliza sie do brzegu, wplywajac na spokojne wody zatoki Urbimo.</string>
 							</regexCodeList>
 							<regexCodePropertyList>
-								<integer>3</integer>
+								<integer>2</integer>
 							</regexCodePropertyList>
 						</Trigger>
 						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -25521,8 +24354,8 @@
 								<string>Sa tutaj dwa widoczne wyjscia: zachod i polnocny-wschod.</string>
 							</regexCodeList>
 							<regexCodePropertyList>
-								<integer>3</integer>
-								<integer>3</integer>
+								<integer>2</integer>
+								<integer>2</integer>
 							</regexCodePropertyList>
 						</Trigger>
 						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -25543,8 +24376,8 @@
 								<string>W mroku nocy dostrzegasz dwa widoczne wyjscia: zachod i polnocny-wschod.</string>
 							</regexCodeList>
 							<regexCodePropertyList>
-								<integer>3</integer>
-								<integer>0</integer>
+								<integer>2</integer>
+								<integer>2</integer>
 							</regexCodePropertyList>
 						</Trigger>
 						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -25565,8 +24398,8 @@
 								<string>Sa tutaj dwa widoczne wyjscia: poludnie i polnocny-zachod.</string>
 							</regexCodeList>
 							<regexCodePropertyList>
-								<integer>3</integer>
-								<integer>0</integer>
+								<integer>2</integer>
+								<integer>2</integer>
 							</regexCodePropertyList>
 						</Trigger>
 					</TriggerGroup>
@@ -25659,31 +24492,31 @@
 					<regexCodeList>
 						<string>^[ &gt;]*Jestes tak zmeczon(y|a), ze nie mozesz dalej podazac w tym kierunku\.$</string>
 						<string>.*stoi ci na drodze\.$</string>
-						<string>^[ &gt;]*Bierzesz rozbieg i probujesz przeskoczyc wyrwe, jednak zle wymierzasz odleglosc.*</string>
+						<string>Bierzesz rozbieg i probujesz przeskoczyc wyrwe, jednak zle wymierzasz odleglosc</string>
 						<string>.*krypty zablokowane jest przez kamienna plyte\.$</string>
-						<string>^[ &gt;]*Jesli chcesz, by brama zostala otwarta, musisz do niej zapukac lub w nia uderzyc\.$</string>
-						<string>^[ &gt;]*Przejscie blokuje obalony pien.*</string>
-						<string>^[ &gt;]*Brama jest zamknieta noca\.$</string>
-						<string>^[ &gt;]*Chcesz sforsowac zamknieta brame\? W nocy nikt ci nie otworzy\.$</string>
-						<string>^[ &gt;]*Chcesz wpasc do rozpadliny\? Taka decyzje musisz potwierdzic\.$</string>
-						<string>^[ &gt;]*Chwytasz za bluszcz probujac wspiac sie z jego pomoca na szczyt urwiska\. Udaje ci sie nawet pokonac z pol metra, nim rosliny rwa sie, zmuszajac cie do upadku\.$</string>
-						<string>^[ &gt;]*Cofasz sie pare krokow, bierzesz gleboki oddech, rozpedzasz sie, lecz w ostatniej chwili zatrzymujesz sie tuz przed ogniem, odwracajac sie szybko od niego\. Tym razem oblecial cie strach\.$</string>
+						<string>Jesli chcesz, by brama zostala otwarta, musisz do niej zapukac lub w nia uderzyc.</string>
+						<string>Przejscie blokuje obalony pien</string>
+						<string>Brama jest zamknieta noca.</string>
+						<string>Chcesz sforsowac zamknieta brame?</string>
+						<string>Chcesz wpasc do rozpadliny? Taka decyzje musisz potwierdzic.</string>
+						<string>Chwytasz za bluszcz probujac wspiac sie z jego pomoca na szczyt urwiska. Udaje ci sie nawet pokonac z pol metra, nim rosliny rwa sie, zmuszajac cie do upadku.</string>
+						<string>Cofasz sie pare krokow, bierzesz gleboki oddech, rozpedzasz sie, lecz w ostatniej chwili zatrzymujesz sie tuz przed ogniem</string>
 						<string>^[ &gt;]*(Czarnowlosa wysoka gnomka|Raila) zagradza ci droge\.$</string>
-						<string>^[ &gt;]*Droge zastepuje ci barczysty straznik mowiac: Prosze okazac kwit magazynowy lub wskazac towar do przechowania\.$</string>
-						<string>^[ &gt;]*Forsowanie zamknietych drzwi nie jest najlepszym pomyslem\.$</string>
-						<string>^[ &gt;]*Geste krzaki i porzucone narzedzia zupelnie blokuja dalsza podroz w tym kierunku\. Niestety, musisz zawrocic\.$</string>
+						<string>Droge zastepuje ci barczysty straznik mowiac: Prosze okazac kwit magazynowy lub wskazac towar do przechowania.</string>
+						<string>Forsowanie zamknietych drzwi nie jest najlepszym pomyslem.</string>
+						<string>Geste krzaki i porzucone narzedzia zupelnie blokuja dalsza podroz w tym kierunku. Niestety, musisz zawrocic.</string>
 						<string>.*grzyboczlek stoi ci na drodze\.$</string>
 						<string>^[ &gt;]*Idziesz na polnocny-zachod, lecz zawracasz zrezygnowan(y|a), gdyz przejscie zostalo zasypane\.$</string>
 						<string>^[ &gt;]*Idziesz na poludniowy-wschod, lecz zawracasz zrezygnowan(y|a), gdyz przejscie zostalo zasypane\.$</string>
-						<string>^[ &gt;]*Jest zbyt ciemno, zeby moc znalezc stad jakies wyjscie\.$</string>
-						<string>^[ &gt;]*Juz po chwili dostrzegasz jednak, ze przejscie zatrzymuje sie na poteznej skalnej scianie\.$</string>
-						<string>^[ &gt;]*Karczmarz zagradza ci wejscie do kuchni\.$</string>
+						<string>Jest zbyt ciemno, zeby moc znalezc stad jakies wyjscie.</string>
+						<string>Juz po chwili dostrzegasz jednak, ze przejscie zatrzymuje sie na poteznej skalnej scianie.</string>
+						<string>Karczmarz zagradza ci wejscie do kuchni.</string>
 						<string>^[ &gt;]*Ktos inny juz to zaczal robic\. Otwor nie jest dosc szeroki by udalo sie to dwom osobom na raz\.$</string>
-						<string>^[ &gt;]*Masz zbyt wielkie obawy by tam wejsc\.$</string>
+						<string>Masz zbyt wielkie obawy by tam wejsc.</string>
 						<string>.*mezczyzna stoi ci na drodze\.$</string>
 						<string>.* hardo do ciebie: A ty gdzie\? Tam maja wstep tylko mahakamscy kowale\.$</string>
-						<string>^[ &gt;]*Moze najpierw wyjdz z wody.*</string>
-						<string>^[ &gt;]*Musisz stanac w kolejce i poczekac na audiencje\.$</string>
+						<string>Moze najpierw wyjdz z wody</string>
+						<string>Musisz stanac w kolejce i poczekac na audiencje.</string>
 						<string>^[ &gt;]*(Nie mozesz sie tam udac, gdyz |)([Op]*pierzona skrzydlata bestia|[Ss]krzydlaty lwiopodobny potwor|[a-z]+ niebezpieczny gryf) swoim cielskiem zagradza ci droge( ucieczki|) na .*</string>
 						<string>Ogromny stwor blokuje dojscie do bramy.</string>
 						<string>Probujesz isc w glab korytarza, lecz zwalisty szarawy golem zastepuje ci droge.</string>
@@ -25691,34 +24524,34 @@
 					<regexCodePropertyList>
 						<integer>1</integer>
 						<integer>1</integer>
+						<integer>2</integer>
+						<integer>1</integer>
+						<integer>2</integer>
+						<integer>2</integer>
+						<integer>2</integer>
+						<integer>2</integer>
+						<integer>2</integer>
+						<integer>2</integer>
+						<integer>2</integer>
+						<integer>1</integer>
+						<integer>2</integer>
+						<integer>2</integer>
+						<integer>2</integer>
 						<integer>1</integer>
 						<integer>1</integer>
 						<integer>1</integer>
+						<integer>2</integer>
+						<integer>2</integer>
+						<integer>2</integer>
+						<integer>1</integer>
+						<integer>2</integer>
 						<integer>1</integer>
 						<integer>1</integer>
+						<integer>2</integer>
+						<integer>2</integer>
 						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>0</integer>
-						<integer>0</integer>
+						<integer>2</integer>
+						<integer>2</integer>
 					</regexCodePropertyList>
 				</Trigger>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -25735,72 +24568,72 @@
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^[ &gt;]*Ochotnik zagradza ci droge!$</string>
-						<string>^[ &gt;]*Patrzysz na spieniona, gorska rzeke i zastanawiasz sie nad tym czy sobie poradzisz\.\.\. Tym razem decydujesz sie zrezygnowac z przeprawy\.$</string>
-						<string>^[ &gt;]*Po chwili wahania decydujesz sie nie schodzic\.$</string>
-						<string>^[ &gt;]*Po przejsciu paru krokow zauwazasz, ze majaczy przed toba potezna skalna sciana\.$</string>
-						<string>^[ &gt;]*Pociagasz za klamke, ale drzwi sa zamkniete\.$</string>
+						<string>Ochotnik zagradza ci droge!</string>
+						<string>Patrzysz na spieniona, gorska rzeke i zastanawiasz sie nad tym czy sobie poradzisz... Tym razem decydujesz sie zrezygnowac z przeprawy.</string>
+						<string>Po chwili wahania decydujesz sie nie schodzic.</string>
+						<string>Po przejsciu paru krokow zauwazasz, ze majaczy przed toba potezna skalna sciana.</string>
+						<string>Pociagasz za klamke, ale drzwi sa zamkniete.</string>
 						<string>.*potepieniec stoi ci na drodze\.$</string>
-						<string>^[ &gt;]*Pozostalosci po snieznej lawinie uniemozliwiaja dalsza wedrowke w wybranym kierunku\.$</string>
+						<string>Pozostalosci po snieznej lawinie uniemozliwiaja dalsza wedrowke w wybranym kierunku.</string>
 						<string>^[ &gt;]*Przeciez nie bedziesz [ws]chodzic po drabinie majac obie rece zajete trzymaniem broni!$</string>
-						<string>^[ &gt;]*Przygladasz sie uwaznie miejscu, na ktorego chcesz sie wspiac i oceniajac trudnosc wspinaczki stwierdzasz ze najpierw musisz troche odpoczac\.$</string>
-						<string>^[ &gt;]*Ruszasz przed siebie, zaglebiajac sie w leszczyne, lecz od samego poczatku odnosisz wrazenie, ze sciezka cie zwodzi, nie chcac przepuscic przez gestwine\. Po dluzszym czasie przedzierania sie przez trzesawisko, wracasz do punktu wyjscia\.$</string>
-						<string>^[ &gt;]*Schodzisz na dol po drabince, lecz w polowie drogi pomieszczenie okazuje sie byc zalane ciemna woda i jestes zmuszon. zawrocic na gore.*</string>
-						<string>^[ &gt;]*Smok zagradza ci przejscie do pieczary\.$</string>
-						<string>^[ &gt;]*Szarpiesz energicznie za klamke, lecz drzwi stawiaja opor\.$</string>
-						<string>^[ &gt;]*Troll zastawia Ci wejscie\.$</string>
+						<string>Przygladasz sie uwaznie miejscu, na ktorego chcesz sie wspiac i oceniajac trudnosc wspinaczki stwierdzasz ze najpierw musisz troche odpoczac.</string>
+						<string>Ruszasz przed siebie, zaglebiajac sie w leszczyne, lecz od samego poczatku odnosisz wrazenie, ze sciezka cie zwodzi, nie chcac przepuscic przez gestwine\. Po dluzszym czasie przedzierania sie przez trzesawisko, wracasz do punktu wyjscia.</string>
+						<string>Schodzisz na dol po drabince, lecz w polowie drogi pomieszczenie okazuje sie byc zalane ciemna woda</string>
+						<string>Smok zagradza ci przejscie do pieczary.</string>
+						<string>Szarpiesz energicznie za klamke, lecz drzwi stawiaja opor.</string>
+						<string>Troll zastawia Ci wejscie.</string>
 						<string>^[ &gt;]*Tylko czlonkowie Stowarzyszenia Polelfow moga tam wejsc\.$</string>
-						<string>^[ &gt;]*Uhhh, nie odwazysz sie przeskoczyc tak szerokiej przepasci!$</string>
-						<string>^[ &gt;]*Uuups\.\.\. droga sie skonczyla\.\.\. Najlepiej bedzie jak zawrocisz!$</string>
+						<string>Uhhh, nie odwazysz sie przeskoczyc tak szerokiej przepasci!</string>
+						<string>Uuups... droga sie skonczyla... Najlepiej bedzie jak zawrocisz!</string>
 						<string>^[ &gt;]*(Valent|Otyly wasaty mezczyzna) blokuje ci droge, odganiajac trzymanym w reku tasakiem\.$</string>
 						<string>^[ &gt;]*Wasaty potezny krasnolud .* hardo do ciebie\. Dokad leziesz\. Wara stad komu innemu glowe zawracac\.$</string>
-						<string>^[ &gt;]*Wejscie tylko dla glow klanow\.$</string>
-						<string>^[ &gt;]*Wydaje ci sie, ze kowal jest bardzo znany z tego, ze nigdy nie ma go w kuzni\. W tej wiosce konia nie podkujesz i musisz poszukac gdzie indziej\.$</string>
+						<string>Wejscie tylko dla glow klanow.</string>
+						<string>Wydaje ci sie, ze kowal jest bardzo znany z tego, ze nigdy nie ma go w kuzni. W tej wiosce konia nie podkujesz i musisz poszukac gdzie indziej.</string>
 						<string>^[ &gt;]*(Zapracowana mloda krasnoludka|Frina) mowi twardo: Gdzie sie pcha\?!$</string>
 						<string>.*zastawia przejscie do poludniowej nawy.*</string>
-						<string>^[ &gt;]*Zboj zagradza ci przejscie na poludnie\.$</string>
-						<string>^[ &gt;]*Zimne spojrzenia obecnych tu osob powstrzymuja cie skutecznie\.$</string>
-						<string>^[ &gt;]*Zbyt szybko probujesz ruszyc dalej, momentalnie tracac rownowage na waskim przejsciu\. Widok ziejacej pod toba bezkresnej otchlani uswiadamia ci, ze most trzeba pokonac powoli i z najwieksza ostroznoscia\.$</string>
-						<string>^[ &gt;]*Zbyt wiele rzeczy cie przytlacza, by udalo ci sie z tym wszystkim wgramolic na gore\.$</string>
+						<string>Zboj zagradza ci przejscie na poludnie.</string>
+						<string>Zimne spojrzenia obecnych tu osob powstrzymuja cie skutecznie.</string>
+						<string>Zbyt szybko probujesz ruszyc dalej, momentalnie tracac rownowage na waskim przejsciu</string>
+						<string>Zbyt wiele rzeczy cie przytlacza, by udalo ci sie z tym wszystkim wgramolic na gore.</string>
 						<string>Trwa ladowanie danych postaci</string>
-						<string>^[ &gt;]*Opierasz stopy o wyczuwane w kominie wyrwy, jednak nie mogac przytrzymac sie wolna reka brzegu komina, cofasz wsuniete juz wen nogi\.$</string>
-						<string>^[ &gt;]*Drabina jest zbyt nisko, by ja wykorzystac do zejscia\.$</string>
-						<string>^[ &gt;]*Ktos inny juz to zaczal robic. Otwor nie jest dosc szeroki by udalo sie to dwom osobom na raz\.$</string>
-						<string>^[ &gt;]*Wejscie do kurhanu jest zamkniete kamienna plyta\.$</string>
+						<string>Opierasz stopy o wyczuwane w kominie wyrwy, jednak nie mogac przytrzymac sie wolna reka brzegu komina, cofasz wsuniete juz wen nogi.</string>
+						<string>Drabina jest zbyt nisko, by ja wykorzystac do zejscia.</string>
+						<string>Ktos inny juz to zaczal robic. Otwor nie jest dosc szeroki by udalo sie to dwom osobom na raz.</string>
+						<string>Wejscie do kurhanu jest zamkniete kamienna plyta.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
+						<integer>2</integer>
+						<integer>2</integer>
+						<integer>2</integer>
+						<integer>2</integer>
+						<integer>2</integer>
+						<integer>1</integer>
+						<integer>2</integer>
+						<integer>1</integer>
+						<integer>2</integer>
+						<integer>2</integer>
+						<integer>2</integer>
+						<integer>2</integer>
+						<integer>2</integer>
+						<integer>2</integer>
+						<integer>1</integer>
+						<integer>2</integer>
+						<integer>2</integer>
 						<integer>1</integer>
 						<integer>1</integer>
+						<integer>2</integer>
+						<integer>2</integer>
 						<integer>1</integer>
 						<integer>1</integer>
+						<integer>2</integer>
+						<integer>2</integer>
+						<integer>2</integer>
+						<integer>2</integer>
 						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
+						<integer>2</integer>
+						<integer>2</integer>
+						<integer>2</integer>
+						<integer>2</integer>
 					</regexCodePropertyList>
 				</Trigger>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -25818,9 +24651,9 @@
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
 						<string>.*do ciebie: Nikt z bronia nie wejdzie na teren Uniwersytetu\. Prosze zostawic ja na stojaku\.$</string>
-						<string>^[ &gt;]*Wspinasz sie po pionowej scianie skalnej, jednak w polowie drogi twoja noga zeslizguje sie, a ty, nie mogac zlapac sie niczego mogacego powstrzymac twe obsuniecie, spadasz spowrotem na dol\.$</string>
-						<string>^[ &gt;]*Wrota stajni sa zamkniete na noc\.$</string>
-						<string>^[ &gt;]*Wszystkie stragany sa juz uprzatniete\.$</string>
+						<string>Wspinasz sie po pionowej scianie skalnej, jednak w polowie drogi twoja noga zeslizguje sie, a ty, nie mogac zlapac sie niczego mogacego powstrzymac twe obsuniecie, spadasz spowrotem na dol.</string>
+						<string>Wrota stajni sa zamkniete na noc.</string>
+						<string>Wszystkie stragany sa juz uprzatniete.</string>
 						<string>^[ &gt;]*Droge na .* blokuje nieprzebyty masyw skalny\.$</string>
 						<string>^[ &gt;]*Czujny gladkolicy mezczyzna staje na drodze blokujac przejscie\.</string>
 						<string>^[ &gt;]*.* zjawa.* swym niematerialnym cialem blokuje ci dalsza droge w glab swiatyni\.$</string>
@@ -25854,39 +24687,39 @@
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
+						<integer>2</integer>
+						<integer>2</integer>
+						<integer>2</integer>
 						<integer>1</integer>
 						<integer>1</integer>
 						<integer>1</integer>
 						<integer>1</integer>
 						<integer>1</integer>
+						<integer>2</integer>
+						<integer>2</integer>
+						<integer>2</integer>
 						<integer>1</integer>
+						<integer>2</integer>
+						<integer>2</integer>
+						<integer>2</integer>
+						<integer>2</integer>
 						<integer>1</integer>
+						<integer>2</integer>
 						<integer>1</integer>
-						<integer>0</integer>
-						<integer>0</integer>
-						<integer>0</integer>
+						<integer>2</integer>
+						<integer>2</integer>
+						<integer>2</integer>
+						<integer>2</integer>
 						<integer>1</integer>
-						<integer>0</integer>
-						<integer>0</integer>
-						<integer>0</integer>
-						<integer>0</integer>
-						<integer>1</integer>
-						<integer>0</integer>
-						<integer>1</integer>
-						<integer>0</integer>
-						<integer>0</integer>
-						<integer>0</integer>
-						<integer>0</integer>
-						<integer>1</integer>
-						<integer>0</integer>
+						<integer>2</integer>
 						<integer>1</integer>
 						<integer>1</integer>
 						<integer>1</integer>
 						<integer>3</integer>
-						<integer>3</integer>
-						<integer>3</integer>
-						<integer>3</integer>
-						<integer>3</integer>
+						<integer>2</integer>
+						<integer>2</integer>
+						<integer>2</integer>
+						<integer>2</integer>
 					</regexCodePropertyList>
 				</Trigger>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -25903,7 +24736,7 @@
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^[ &gt;]*Probujesz sie ruszyc na .*, jednak pajecze sieci, w ktore sie w miedzyczasie zaplatal.s, uniemozliwiaja ci to\.$</string>
+						<string>^Probujesz sie ruszyc na .*, jednak pajecze sieci, w ktore sie w miedzyczasie zaplatal.s, uniemozliwiaja ci to\.$</string>
 						<string>Ogromne stwory przysiadaja przed brama, blokujac do niej dostepu.</string>
 						<string>^Ruszasz w dalsza droge ale nagle stajesz w pol kroku\. Masz dziwne odczucie, ze w tym miejscu grozi ci jakies niebezpieczenstwo\.$</string>
 						<string>Nagle czujesz, ze cos oplata twa noge... ziemia w zawrotnym tepie zamienia sie miejscami z niebem. Zwisasz teraz, przywiazany za noge rzemieniem, dyndajac jak kukielka.</string>
@@ -25911,10 +24744,10 @@
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
-						<integer>0</integer>
+						<integer>2</integer>
 						<integer>1</integer>
-						<integer>3</integer>
-						<integer>3</integer>
+						<integer>2</integer>
+						<integer>2</integer>
 					</regexCodePropertyList>
 				</Trigger>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -25938,26 +24771,6 @@
 					</regexCodePropertyList>
 				</Trigger>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-					<name>blockers-experimental</name>
-					<script>trigger_func_mapper_blockers_experimental_only()</script>
-					<triggerType>0</triggerType>
-					<conditonLineDelta>0</conditonLineDelta>
-					<mStayOpen>0</mStayOpen>
-					<mCommand></mCommand>
-					<packageName></packageName>
-					<mFgColor>#ff0000</mFgColor>
-					<mBgColor>#ffff00</mBgColor>
-					<mSoundFile></mSoundFile>
-					<colorTriggerFgColor>#000000</colorTriggerFgColor>
-					<colorTriggerBgColor>#000000</colorTriggerBgColor>
-					<regexCodeList>
-						<string>Jestes ogluszony i nie mozesz nic zrobic.</string>
-					</regexCodeList>
-					<regexCodePropertyList>
-						<integer>3</integer>
-					</regexCodePropertyList>
-				</Trigger>
-				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>blockers4</name>
 					<script>trigger_func_mapper_blockers_blocker()</script>
 					<triggerType>0</triggerType>
@@ -25976,9 +24789,9 @@
 						<string>Przestajesz wioslowac.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
-						<integer>3</integer>
-						<integer>3</integer>
-						<integer>3</integer>
+						<integer>2</integer>
+						<integer>2</integer>
+						<integer>2</integer>
 					</regexCodePropertyList>
 				</Trigger>
 				<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -25995,10 +24808,10 @@
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^[ &gt;]*Nie masz</string>
+						<string>Nie masz</string>
 					</regexCodeList>
 					<regexCodePropertyList>
-						<integer>1</integer>
+						<integer>2</integer>
 					</regexCodePropertyList>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>blockers</name>
@@ -26014,18 +24827,18 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^[ &gt;]*Nie masz tam wstepu\.$</string>
-							<string>^[ &gt;]*Nie masz dalej wstepu\.$</string>
-							<string>^[ &gt;]*Nie masz jak sie stad wydostac, gdyz klapa w suficie jest zamknieta\.$</string>
-							<string>^[ &gt;]*Nie masz na to sily\.$</string>
-							<string>^[ &gt;]*Nie masz juz sil walczyc z zywiolem i dajesz sie poniesc pradowi na</string>
+							<string>Nie masz tam wstepu</string>
+							<string>Nie masz dalej wstepu</string>
+							<string>Nie masz jak sie stad wydostac, gdyz klapa w suficie jest zamknieta</string>
+							<string>Nie masz na to sily</string>
+							<string>Nie masz juz sil walczyc z zywiolem i dajesz sie poniesc pradowi na</string>
 						</regexCodeList>
 						<regexCodePropertyList>
-							<integer>1</integer>
-							<integer>1</integer>
-							<integer>1</integer>
-							<integer>1</integer>
-							<integer>1</integer>
+							<integer>2</integer>
+							<integer>2</integer>
+							<integer>2</integer>
+							<integer>2</integer>
+							<integer>2</integer>
 						</regexCodePropertyList>
 					</Trigger>
 				</TriggerGroup>
@@ -26043,10 +24856,10 @@
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^[ &gt;]*Nie mozesz</string>
+						<string>Nie mozesz</string>
 					</regexCodeList>
 					<regexCodePropertyList>
-						<integer>1</integer>
+						<integer>2</integer>
 					</regexCodePropertyList>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>blockers</name>
@@ -26062,28 +24875,28 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^[ &gt;]*Nie mozesz sie tam udac, gdyz lezysz\.$</string>
-							<string>^[ &gt;]*Nie mozesz sie tam udac, gdyz siedzisz\.*</string>
-							<string>^[ &gt;]*Nie mozesz sie tam udac, gdyz .* blokuj(e|a) ci droge na.*</string>
-							<string>^[ &gt;]*Nie mozesz wyjsc z domu poniewaz stoisz na krzesle\.$</string>
-							<string>^[ &gt;]*Nie mozesz wyjsc z domu poniewaz stoisz na szafie\.$</string>
-							<string>^[ &gt;]*Nie mozesz sie tam udac, gdyz kapiesz sie w jeziorku\.$</string>
-							<string>^[ &gt;]*Nie mozesz sie tam udac, gdyz pod wplywem spojrzenia zoltych slepi zlowrogiego ptakopodobnego mezczyzny.*</string>
-							<string>^[ &gt;]*Nie mozesz zejsc gdyz klapa jest zamknieta\.$</string>
-							<string>^[ &gt;]*Nie mozesz sie tam udac, gdyz .* zagradza</string>
-							<string>^[ &gt;]*Nie mozesz tak po prostu wymknac sie z walki\.$</string>
+							<string>Nie mozesz sie tam udac, gdyz lezysz</string>
+							<string>Nie mozesz sie tam udac, gdyz siedzisz</string>
+							<string>^Nie mozesz sie tam udac, gdyz .* blokuj(e|a) ci droge na.*</string>
+							<string>Nie mozesz wyjsc z domu poniewaz stoisz na krzesle</string>
+							<string>Nie mozesz wyjsc z domu poniewaz stoisz na szafie</string>
+							<string>Nie mozesz sie tam udac, gdyz kapiesz sie w jeziorku</string>
+							<string>Nie mozesz sie tam udac, gdyz pod wplywem spojrzenia zoltych slepi zlowrogiego ptakopodobnego mezczyzny</string>
+							<string>Nie mozesz zejsc gdyz klapa jest zamknieta</string>
+							<string>^Nie mozesz sie tam udac, gdyz .* zagradza</string>
+							<string>Nie mozesz tak po prostu wymknac sie z walki</string>
 						</regexCodeList>
 						<regexCodePropertyList>
+							<integer>2</integer>
+							<integer>2</integer>
 							<integer>1</integer>
+							<integer>2</integer>
+							<integer>2</integer>
+							<integer>2</integer>
+							<integer>2</integer>
+							<integer>2</integer>
 							<integer>1</integer>
-							<integer>1</integer>
-							<integer>1</integer>
-							<integer>1</integer>
-							<integer>1</integer>
-							<integer>1</integer>
-							<integer>1</integer>
-							<integer>1</integer>
-							<integer>1</integer>
+							<integer>2</integer>
 						</regexCodePropertyList>
 					</Trigger>
 				</TriggerGroup>
@@ -26101,10 +24914,10 @@
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^[ &gt;]*Najpierw</string>
+						<string>Najpierw</string>
 					</regexCodeList>
 					<regexCodePropertyList>
-						<integer>1</integer>
+						<integer>2</integer>
 					</regexCodePropertyList>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>blockers</name>
@@ -26120,12 +24933,12 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^[ &gt;]*Najpierw wejdz do kabiny i sie rozbierz!$</string>
-							<string>^[ &gt;]*Najpierw wejdz do kabiny i sie ubierz!$</string>
+							<string>Najpierw wejdz do kabiny i sie rozbierz!</string>
+							<string>Najpierw wejdz do kabiny i sie ubierz!</string>
 						</regexCodeList>
 						<regexCodePropertyList>
-							<integer>1</integer>
-							<integer>1</integer>
+							<integer>2</integer>
+							<integer>2</integer>
 						</regexCodePropertyList>
 					</Trigger>
 				</TriggerGroup>
@@ -26143,10 +24956,10 @@
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^[ &gt;]*Niestety</string>
+						<string>Niestety</string>
 					</regexCodeList>
 					<regexCodePropertyList>
-						<integer>1</integer>
+						<integer>2</integer>
 					</regexCodePropertyList>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>blockers</name>
@@ -26162,20 +24975,20 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^[ &gt;]*Niestety drzwi zdaja sie byc zaryglowane od wewnatrz\.$</string>
-							<string>^[ &gt;]*Niestety, mieszkancy najwyrazniej zamykaja sie na noc\. Chyba lepiej bedzie sprobowac za dnia\.$</string>
-							<string>^[ &gt;]*Niestety, nie zmiescisz sie, gdyz ktos juz sie tam znajduje\.$</string>
-							<string>^[ &gt;]*Niestety, wyglada na to, ze wiecej osob niz jedna sie tam nie zmiesci\.$</string>
-							<string>^[ &gt;]*Niestety, brama jest zamknieta\.$</string>
-							<string>^[ &gt;]*Niestety, sniezne zaspy zasypaly przelecz, uniemozliwiajac podroz traktem na .*\.$</string>
+							<string>Niestety drzwi zdaja sie byc zaryglowane od wewnatrz</string>
+							<string>Niestety, mieszkancy najwyrazniej zamykaja sie na noc. Chyba lepiej bedzie sprobowac za dnia</string>
+							<string>Niestety, nie zmiescisz sie, gdyz ktos juz sie tam znajduje</string>
+							<string>Niestety, wyglada na to, ze wiecej osob niz jedna sie tam nie zmiesci</string>
+							<string>Niestety, brama jest zamknieta</string>
+							<string>Niestety, sniezne zaspy zasypaly przelecz, uniemozliwiajac podroz traktem na</string>
 						</regexCodeList>
 						<regexCodePropertyList>
-							<integer>1</integer>
-							<integer>1</integer>
-							<integer>1</integer>
-							<integer>1</integer>
-							<integer>1</integer>
-							<integer>1</integer>
+							<integer>2</integer>
+							<integer>2</integer>
+							<integer>2</integer>
+							<integer>2</integer>
+							<integer>2</integer>
+							<integer>2</integer>
 						</regexCodePropertyList>
 					</Trigger>
 				</TriggerGroup>
@@ -26193,10 +25006,10 @@
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^[ &gt;]*Probujesz</string>
+						<string>Probujesz</string>
 					</regexCodeList>
 					<regexCodePropertyList>
-						<integer>1</integer>
+						<integer>2</integer>
 					</regexCodePropertyList>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>blockers</name>
@@ -26212,34 +25025,34 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^[ &gt;]*Probujesz otworzyc (.*|)(brame|wrota|drzwi|krate|furtke|drzwiczki|drzwiczki w bramie|wrota z brazu), ale nie udaje ci sie to\.$</string>
-							<string>^[ &gt;]*Probujesz otworzyc drzwi, lecz oprocz alarmujacego dzwieku dzwonkow nie osiagasz zadnych efektow\.$</string>
-							<string>^[ &gt;]*Probujesz przekroczyc brame, ale .* zastepuje ci droge\.$</string>
-							<string>^[ &gt;]*Probujesz przepchnac stojace pod sciana beczki\. Niestety sa dla ciebie za ciezkie i musisz dac za wygrana\.$</string>
-							<string>^[ &gt;]*Probujesz rozpaczliwie wspiac sie na gore, ale zeslizgujesz sie po mokrych kamieniach\.$</string>
-							<string>^[ &gt;]*Probujesz sie wcisnac do otworu, jednakze ktos najwyrazniej jest juz w srodku, a jest tam zbyt wasko by zmiescily sie tam dwie osoby na raz\.$</string>
-							<string>^[ &gt;]*Probujesz wspiac sie po pniu, ale robisz to zbyt slamazarnie i zjezdzasz z powrotem w dol\.$</string>
-							<string>^[ &gt;]*Probujesz wdrapac sie na omszaly pien zagradzajacy droge, lecz na sliskiej korze osuwa ci sie noga i spadasz z powrotem na sciezke\.$</string>
-							<string>^[ &gt;]*Probujesz otworzyc brame, ale jest zamknieta!$</string>
-							<string>^[ &gt;]*Probujesz otworzyc brame, ale jest zamknieta od wewnatrz\.$</string>
-							<string>^[ &gt;]*Probujesz wejsc w zakryte pajeczynami przejscie, lecz duzy szarawy golem odpycha cie brutalnie\.$</string>
-							<string>^[ &gt;]*Probujesz isc naprzod, ale sliski lod sprawia, ze wywracasz sie na nim\.$</string>
-							<string>^[ &gt;]*Probujesz przecisnac sie przez otwor na dach, ale ze wzgledu na brak miejsca, zmuszon.*</string>
+							<string>^Probujesz otworzyc (.*|)(brame|wrota|drzwi|krate|furtke|drzwiczki|drzwiczki w bramie|wrota z brazu), ale nie udaje ci sie to\.$</string>
+							<string>Probujesz otworzyc drzwi, lecz oprocz alarmujacego dzwieku dzwonkow nie osiagasz zadnych efektow.</string>
+							<string>^Probujesz przekroczyc brame, ale .* zastepuje ci droge\.$</string>
+							<string>Probujesz przepchnac stojace pod sciana beczki. Niestety sa dla ciebie za ciezkie i musisz dac za wygrana.</string>
+							<string>Probujesz rozpaczliwie wspiac sie na gore, ale zeslizgujesz sie po mokrych kamieniach.</string>
+							<string>Probujesz sie wcisnac do otworu, jednakze ktos najwyrazniej jest juz w srodku, a jest tam zbyt wasko by zmiescily sie tam dwie osoby na raz.</string>
+							<string>Probujesz wspiac sie po pniu, ale robisz to zbyt slamazarnie i zjezdzasz z powrotem w dol.</string>
+							<string>Probujesz wdrapac sie na omszaly pien zagradzajacy droge, lecz na sliskiej korze osuwa ci sie noga i spadasz z powrotem na sciezke.</string>
+							<string>Probujesz otworzyc brame, ale jest zamknieta!</string>
+							<string>Probujesz otworzyc brame, ale jest zamknieta od wewnatrz.</string>
+							<string>Probujesz wejsc w zakryte pajeczynami przejscie, lecz duzy szarawy golem odpycha cie brutalnie.</string>
+							<string>Probujesz isc naprzod, ale sliski lod sprawia, ze wywracasz sie na nim.</string>
+							<string>^Probujesz przecisnac sie przez otwor na dach, ale ze wzgledu na brak miejsca,</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
+							<integer>2</integer>
 							<integer>1</integer>
-							<integer>1</integer>
-							<integer>1</integer>
-							<integer>1</integer>
-							<integer>1</integer>
-							<integer>1</integer>
-							<integer>1</integer>
-							<integer>1</integer>
-							<integer>1</integer>
-							<integer>1</integer>
-							<integer>1</integer>
-							<integer>1</integer>
+							<integer>2</integer>
+							<integer>2</integer>
+							<integer>2</integer>
+							<integer>2</integer>
+							<integer>2</integer>
+							<integer>2</integer>
+							<integer>2</integer>
+							<integer>2</integer>
+							<integer>2</integer>
+							<integer>2</integer>
 						</regexCodePropertyList>
 					</Trigger>
 				</TriggerGroup>
@@ -26257,10 +25070,10 @@
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^[ &gt;]*Podchodzisz</string>
+						<string>Podchodzisz</string>
 					</regexCodeList>
 					<regexCodePropertyList>
-						<integer>1</integer>
+						<integer>2</integer>
 					</regexCodePropertyList>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>blockers</name>
@@ -26276,14 +25089,14 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^[ &gt;]*Podchodzisz pod drzwi na polnocy, ktore nagle otwieraja sie z hukiem i wylatuje przez nie pijany mezczyzna omal na ciebie nie wpadajac\. Zaraz potem drzwi zatrzaskuje sie\.$</string>
-							<string>^[ &gt;]*Podchodzisz pod drzwi na poludniu, jednak okazuja sie one zamkniete na klucz\.$</string>
-							<string>^[ &gt;]*Podchodzisz do drzwi i szarpiesz za klamke, jednak sa one zamkniete\. Wiszaca obok kartka informuje:</string>
+							<string>Podchodzisz pod drzwi na polnocy, ktore nagle otwieraja sie z hukiem i wylatuje przez nie pijany mezczyzna omal na ciebie nie wpadajac. Zaraz potem drzwi zatrzaskuje sie.</string>
+							<string>Podchodzisz pod drzwi na poludniu, jednak okazuja sie one zamkniete na klucz.</string>
+							<string>Podchodzisz do drzwi i szarpiesz za klamke, jednak sa one zamkniete. Wiszaca obok kartka informuje:</string>
 						</regexCodeList>
 						<regexCodePropertyList>
-							<integer>1</integer>
-							<integer>1</integer>
-							<integer>1</integer>
+							<integer>2</integer>
+							<integer>2</integer>
+							<integer>2</integer>
 						</regexCodePropertyList>
 					</Trigger>
 				</TriggerGroup>
@@ -26301,10 +25114,10 @@
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^[ &gt;]*Nie</string>
+						<string>Nie</string>
 					</regexCodeList>
 					<regexCodePropertyList>
-						<integer>1</integer>
+						<integer>2</integer>
 					</regexCodePropertyList>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>blockers</name>
@@ -26320,30 +25133,30 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^[ &gt;]*Nie jestes pewn(y|a) swojej umiejetnosci plywania w tej brudnej rzece\.\.\.$</string>
-							<string>^[ &gt;]*Nie jestes w stanie wymknac sie stad niezauwazenie\.$</string>
+							<string>^Nie jestes pewn(y|a) swojej umiejetnosci plywania w tej brudnej rzece\.\.\.$</string>
+							<string>Nie jestes w stanie wymknac sie stad niezauwazenie.</string>
 							<string>^[ &gt;]*Nie jestes zbyt pewn(y|a) swojej umiejetnosci latania\.\.\.$</string>
 							<string>^[ &gt;]*Nie mozesz sie tam udac, gdyz [a-z ]+ troll zagradza ci droge na [a-z]+\.$</string>
 							<string>^[ &gt;]*Nie widzisz zadnego mostku ani nawet kladki, a woda w tym miejscu rzeki jest dosc gleboka\. Zawracasz zrezygnowan(y|a)\.$</string>
 							<string>^[ &gt;]*Nie dasz rady otworzyc .*, musisz sprobowac ja uniesc\.$</string>
 							<string>^[ &gt;]*Nie dasz rady otworzyc .*  kraty, musisz sprobowac ja uniesc\.$</string>
-							<string>^[ &gt;]*Nie jestes dowodca zadnej druzyny\.</string>
-							<string>^[ &gt;]*Nie wolno ci sie tam udac\.$</string>
-							<string>^[ &gt;]*Nie mozesz sie tam udac, gdyz musisz najpierw zejsc z wozu</string>
-							<string>^[ &gt;]*Nie ma takiej komendy\. Wpisz</string>
+							<string>Nie jestes dowodca zadnej druzyny.</string>
+							<string>Nie wolno ci sie tam udac.</string>
+							<string>Nie mozesz sie tam udac, gdyz musisz najpierw zejsc z wozu</string>
+							<string>Nie ma takiej komendy. Wpisz</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
+							<integer>2</integer>
 							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
-							<integer>1</integer>
-							<integer>1</integer>
-							<integer>1</integer>
-							<integer>1</integer>
-							<integer>1</integer>
+							<integer>2</integer>
+							<integer>2</integer>
+							<integer>2</integer>
+							<integer>2</integer>
 						</regexCodePropertyList>
 					</Trigger>
 				</TriggerGroup>
@@ -26445,10 +25258,10 @@
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^[ &gt;]*Zaczynasz schodzic na dol\.</string>
+						<string>Zaczynasz schodzic na dol.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
-						<integer>1</integer>
+						<integer>2</integer>
 					</regexCodePropertyList>
 				</Trigger>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -26465,10 +25278,10 @@
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^[ &gt;]*Zaczynasz wspinac sie .*</string>
+						<string>Zaczynasz wspinac sie</string>
 					</regexCodeList>
 					<regexCodePropertyList>
-						<integer>1</integer>
+						<integer>2</integer>
 					</regexCodePropertyList>
 				</Trigger>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -26485,10 +25298,10 @@
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^[ &gt;]*Odpadasz od sciany i lecisz w dol</string>
+						<string>Odpadasz od sciany i lecisz w dol</string>
 					</regexCodeList>
 					<regexCodePropertyList>
-						<integer>1</integer>
+						<integer>2</integer>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
@@ -26506,10 +25319,10 @@
 				<colorTriggerFgColor>#000000</colorTriggerFgColor>
 				<colorTriggerBgColor>#000000</colorTriggerBgColor>
 				<regexCodeList>
-					<string>Wykonuje komende 'idz .*</string>
+					<string>Wykonuje komende 'idz</string>
 				</regexCodeList>
 				<regexCodePropertyList>
-					<integer>1</integer>
+					<integer>2</integer>
 				</regexCodePropertyList>
 			</Trigger>
 		</TriggerGroup>

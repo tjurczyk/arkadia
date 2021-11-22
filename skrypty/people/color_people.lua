@@ -240,4 +240,6 @@ end
 
 function trigger_func_people_process_line()
     scripts.people:process_line(line)
+    -- todo extract separately
+    scripts.tokens:process_line(line)
 end

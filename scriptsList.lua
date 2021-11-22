@@ -15,6 +15,7 @@ return {
     "skrypty/people",
     "skrypty/misc",
     "skrypty/multibinds",
+    "skrypty/tokens",
     "skrypty/utils",
     "skrypty/ui",
     "skrypty/logger",

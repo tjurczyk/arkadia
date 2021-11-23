@@ -1,7 +1,7 @@
 function trigger_func_skrypty_inventory_kowal_konczy_prace()
     if scripts.inv.kowal_working then
         scripts.inv.kowal_waiting = nil
-        scripts.utils.bind_functional("naostrz wszystkie bronie;napraw wszystkie zbroje")
+        scripts.utils.bind_functional("naostrz wszystkie bronie#napraw wszystkie zbroje")
         scripts.inv.kowal_working = false
         scripts.inv.kowal_timet_set = false
     end

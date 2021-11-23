@@ -986,7 +986,7 @@
     },
     {
       "name": "scripts.inv.lamp.lamp_empty_bottle_bind",
-      "default_value": "odloz olej; wez butelke z plecaka; napelnij lampe olejem",
+      "default_value": "odloz olej#wez butelke z plecaka#napelnij lampe olejem",
       "field_type": "string",
       "macros_on_modify": []
     },

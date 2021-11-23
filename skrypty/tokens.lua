@@ -3,7 +3,7 @@ scripts.tokens = scripts.tokens or {
 }
 
 function scripts.tokens:register(substring, callback)
-    local key = debug.getinfo(2).name
+    local key = self:get_key()
     local tokens = substring:lower():split(" ")
     local current_table = self.registered
     for _, value in ipairs(tokens) do
@@ -37,4 +37,9 @@ function scripts.tokens:process_line(msg)
             end
         end
     end
+end
+
+function scripts.tokens:get_key()
+    local caller = debug.getinfo(3)
+    return string.format("%s:%s", caller.source or "", caller.currentline or "")
 end

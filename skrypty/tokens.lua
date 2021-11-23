@@ -2,16 +2,16 @@ scripts.tokens = scripts.tokens or {
     registered = {}
 }
 
-scripts.tokens.registered = {}
-
 function scripts.tokens:register(substring, callback)
+    local key = debug.getinfo(2).name
     local tokens = substring:lower():split(" ")
     local current_table = self.registered
-    for index, value in ipairs(tokens) do
-        current_table[value] = {}
+    for _, value in ipairs(tokens) do
+        current_table[value] = current_table[value] or {}
         current_table = current_table[value]
     end
-    current_table.callback = function(current_match) callback(current_match) end
+    current_table.callbacks = current_table.callbacks or {}
+    current_table.callbacks[key] = function(current_match) callback(current_match) end
 end
 
 function scripts.tokens:process_line(msg)
@@ -26,8 +26,10 @@ function scripts.tokens:process_line(msg)
             current_table = current_table[tokens[j]:lower()]
             if current_table then
                 table.insert(current_match, tokens[j])
-                if current_table.callback then
-                    current_table.callback(table.concat(current_match, " "))
+                if current_table.callbacks then
+                    for key, callback in pairs(current_table.callbacks) do
+                       callback(table.concat(current_match, " "))
+                    end
                 end
             else
                 current_match = {}

@@ -147,7 +147,7 @@ function scripts.people:enemy_person_build(item)
     if item.short then
         scripts.people.bind_enemies[item.short] = true
     end
-    scripts.people:color_person_build(item, "red")
+    scripts.people:color_person_build(item, scripts.people.enemy_color)
 end
 
 function scripts.people:enemy_people_guild(guild_name)

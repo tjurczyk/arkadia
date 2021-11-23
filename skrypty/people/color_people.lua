@@ -108,11 +108,6 @@ function scripts.people:color_people_guild(guild_name, color)
 end
 
 function scripts.people:starter()
-    for _, id in pairs(scripts.people.color_triggers) do
-        killTrigger(id)
-    end
-
-    scripts.people.color_triggers = {}
     scripts.people.already_processed = {}
     scripts.people.already_processed_desc = {}
 
@@ -174,11 +169,12 @@ function scripts.people:color_people_starter()
                 end
             end
         else
-            table.insert(scripts.people.color_triggers, tempRegexTrigger("(?i)(" .. k .. ")", function()
-                selectCaptureGroup(2)
-                fg(v)
-                resetFormat()
-            end ))
+            scripts.tokens:register(k, function(match)
+                if selectString(match, 1) > -1 then
+                    fg(v)
+                    resetFormat()
+                end
+            end )
         end
     end
 

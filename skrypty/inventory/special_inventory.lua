@@ -17,10 +17,7 @@ end
 
 function scripts.inv:setup_magics_triggers()
     local magic_callback = function(current_match)
-        if selectString(current_match, 1) > -1 then
-            fg(scripts.inv.magics_color)
-            resetFormat()
-        end
+        scripts.tokens:highlight(current_match, scripts.inv.magics_color)
     end
 
     if scripts.inv.magics_data then
@@ -36,10 +33,7 @@ function scripts.inv:setup_magic_keys_triggers()
     if scripts.inv["magic_keys_data"]["magic_keys"] then
         for k, v in pairs(scripts.inv["magic_keys_data"]["magic_keys"]) do
             local key_callback = function(current_match)
-                if selectString(current_match, 1) > -1 then
-                    fg(scripts.inv.magic_keys_color)
-                    resetFormat()
-                end
+                scripts.tokens:highlight(current_match, scripts.inv.magic_keys_color)
             end
             scripts.tokens:register(v, key_callback)
         end

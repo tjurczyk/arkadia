@@ -1,31 +1,21 @@
-function scripts.people:process_person_color(text, name, guild, suffix, color, guild_color)
+function scripts.people:process_person_color(text, name, guild, color, suffix_color)
     if gmcp.gmcp_msgs and gmcp.gmcp_msgs.type == "room.short" then
         return
     end
-
-    if text ~= name and suffix then
-        local full_sufix = "(" .. suffix .. ")"
-        local replacement = string.format("%s %s", text, full_sufix)
-        selectString(text, 1)
-        replace(replacement, true)
-        selectString(full_sufix, 1)
-        fg(color)
-    end
-
-    if not guild_color then
-        selectString(text, 1)
-        fg(color)
-    else
-        local i = 1
-        while selectString(guild, i) > -1 do
-            fg(guild_color)
-            i = i + 1
+    if text ~= name then
+        local sub = text
+        if not suffix_color then
+            sub = string.format("<%s>%s<reset>", color, sub)
         end
+        local replacement = string.format("%s <%s>(%s <%s>%s<%s>)<reset>", sub, color, name, suffix_color or color, guild, color)
+        creplace(replacement)
+    elseif not suffix_color then
+        fg(color)
     end
     resetFormat()
 end
 
-function scripts.people:color_person_build(item, color, suffix_only)
+function scripts.people:color_person_build(item, color, guild_color)
     if item.short == "" or scripts.people.already_processed[item["_row_id"]] then
         return
     end
@@ -48,43 +38,20 @@ function scripts.people:color_person_build(item, color, suffix_only)
         end
     end
 
-    local items = item.short:lower():split(" ")
-    local value = {
-        short = item.short,
-        name = item.name,
-        guild = guild_str,
-        suffix = suffix,
-        color = color,
-        suffix_only = suffix_only
-    }
-
-    -- todo maybe can be generic?
-    if #items == 2 then
-        local current_table = self.tokens_table["n2"]
-        current_table[items[1]] = current_table[items[1]] or {}
-        current_table[items[1]][items[2]] = current_table[items[1]][items[2]] or {}
-        current_table[items[1]][items[2]][item.name] = value
-    end
-
-    if #items == 3 then
-        local current_table = self.tokens_table["n3"]
-        current_table[items[1]] = current_table[items[1]] or {}
-        current_table[items[1]][items[2]] = current_table[items[1]][items[2]] or {}
-        current_table[items[1]][items[2]][items[3]] = current_table[items[1]][items[2]][items[3]] or {}
-        current_table[items[1]][items[2]][items[3]][item.name] = value
-    end
-
-    if #items == 4 then
-        local current_table = self.tokens_table["n4"]
-        current_table[items[1]] = current_table[items[1]] or {}
-        current_table[items[1]][items[2]] = current_table[items[1]][items[2]] or {}
-        current_table[items[1]][items[2]][items[3]] = current_table[items[1]][items[2]][items[3]] or {}
-        current_table[items[1]][items[2]][items[3]][items[4]] = current_table[items[1]][items[2]][items[3]][items[4]] or {}
-        current_table[items[1]][items[2]][items[3]][items[4]][item.name] = value
-    end
-
+    scripts.tokens:register(item.short, function(current_match)
+        scripts.tokens:process_token(current_match, function()
+            scripts.people:process_person_color(current_match, item.name, guild_str, color, guild_color)
+        end)
+    end, "people" .. (item.name or ""))
+   
     if item.name and item.name ~= "" then
-        self.tokens_table["n1"][item.name] = value
+        scripts.tokens:register(item.name, function(current_match)
+            if current_match:sub(1, 1) == item.name:sub(1,1) then
+                scripts.tokens:process_token(current_match, function()
+                    scripts.people:process_person_color(current_match, item.name, guild_str, color, guild_color)
+                end)
+            end
+        end, "people")
     end
 
     scripts.people.already_processed[item["_row_id"]] = true
@@ -203,39 +170,7 @@ function scripts.people:trigger_people_starter()
 end
 
 
-function scripts.people:process_line(msg)
-    if table.is_empty(self.tokens_table) then
-        return
-    end
-    local tokens = ansi2string(msg):gsub("%.", ""):gsub("[,!?-]", ""):gsub("\t", ""):gsub("\n", ""):split("[ /]")
-    for i = 1, #tokens, 1 do
-        local match = false
-        local current_table = self.tokens_table["n3"]
-        if current_table[tokens[i]:lower()] and current_table[tokens[i]:lower()][tokens[i+1]] and current_table[tokens[i]:lower()][tokens[i+1]][tokens[i+2]]
-            and tokens[i+3] ~= "chaosu" and (tokens[i+3] ~= "to" and tokens[i+4] ~= "chyba") then
-            match = true
-            for k,v in pairs(current_table[tokens[i]:lower()][tokens[i+1]][tokens[i+2]]) do
-                scripts.people:process_person_color(string.format("%s %s %s", tokens[i], tokens[i+1], tokens[i+2]), v.name,  v.guild, v.suffix, v.color, v.suffix_only)
-            end
-        end
-        current_table = self.tokens_table["n1"]
-        if current_table[tokens[i]] and current_table[tokens[i]].name then
-            local item = current_table[tokens[i]]
-            scripts.people:process_person_color(tokens[i], item.name, item.guild, item.suffix, item.color, item.suffix_only)
-        end
-        current_table = self.tokens_table["n2"]
-        if not match and current_table[tokens[i]:lower()] and current_table[tokens[i]:lower()][tokens[i+1]] then
-            match = true
-            for k,v in pairs(current_table[tokens[i]:lower()][tokens[i+1]]) do
-                local form = string.format("%s %s", tokens[i], tokens[i+1])
-                scripts.people:process_person_color(form, v.name,  v.guild, v.suffix, v.color, v.suffix_only)
-            end
-        end
-    end
-end
 
 function trigger_func_people_process_line()
-    scripts.people:process_line(line)
-    -- todo extract separately
     scripts.tokens:process_line(line)
 end

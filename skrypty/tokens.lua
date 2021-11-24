@@ -18,7 +18,8 @@ function scripts.tokens:process_line(msg)
     if table.is_empty(self.registered) then
         return
     end
-    local tokens = ansi2string(msg):gsub("%.", ""):gsub("[,!%?-%*]", ""):gsub("\t", ""):gsub("\n", ""):split("[ /]")
+    local tokens = ansi2string(msg):gsub("%.", ""):gsub("[,!%?-%*()]", ""):gsub("\t", ""):gsub("\n", ""):split("[ /]")
+    display(tokens)
     local already_matched = {}
     for i = 1, #tokens, 1 do
         local current_match = {}

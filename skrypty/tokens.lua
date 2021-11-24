@@ -19,6 +19,7 @@ function scripts.tokens:process_line(msg)
         return
     end
     local tokens = ansi2string(msg):gsub("%.", ""):gsub("[,!%?-%*]", ""):gsub("\t", ""):gsub("\n", ""):split("[ /]")
+    local already_matched = {}
     for i = 1, #tokens, 1 do
         local current_match = {}
         local current_table = self.registered
@@ -28,9 +29,12 @@ function scripts.tokens:process_line(msg)
                 table.insert(current_match, tokens[j])
                 if current_table.callbacks then
                     local full_string = table.concat(current_match, " ")
+                    if not already_matched[full_string] then
+                        already_matched[full_string] = true
                         for key, callback in pairs(current_table.callbacks) do
                             callback(full_string)
                         end
+                    end
                 end
             else
                 current_match = {}

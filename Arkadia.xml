@@ -216,7 +216,7 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>Twoje doswiadczenie i umiejetnosci podpowiadaja ci, ze (jak na (lekka|srednia|ciezka) zbroje (chroni|chronia)|(chroni|chronia)) (on|ona|one) (.*)</string>
+							<string>^Twoje doswiadczenie i umiejetnosci podpowiadaja ci, ze (jak na (lekka|srednia|ciezka) zbroje (chroni|chronia)|(chroni|chronia)) (on|ona|one) (.*)</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -298,8 +298,8 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>Oceniasz, ze (.*) waz.*</string>
-							<string>Ubranie to.* wyglada na (.*)$</string>
+							<string>^Oceniasz, ze (.*) waz.*</string>
+							<string>^Ubranie to.* wyglada na (.*)$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -320,8 +320,8 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>Wyglada na to, ze (sa |jest |)([a-z .]+)$</string>
-							<string>Oceniasz, ze (.*) waz</string>
+							<string>^Wyglada na to, ze (sa |jest |)([a-z .]+)$</string>
+							<string>^Oceniasz, ze (.*) waz</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -342,7 +342,7 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>Ubranie to.* wyglada na (.*)$</string>
+							<string>^Ubranie to.* wyglada na (.*)$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -410,10 +410,10 @@
 							<string>^W .* (skrzyni|kufrze|skrzynce) zauwazasz miedzy innymi (?&lt;content&gt;.*)\.$</string>
 							<string>^Otwarty.* kosz(?:|yk) zawiera (?&lt;content&gt;.*)\.$</string>
 							<string>^Na stojakach zauwazasz miedzy innymi (?&lt;content&gt;.*)\.$</string>
-							<string>Debowy wysoki sekretarzyk zawiera (?&lt;content&gt;.*)\.$</string>
+							<string>^Debowy wysoki sekretarzyk zawiera (?&lt;content&gt;.*)\.$</string>
 							<string>.* (?:skrzynia|kufer|komoda|stojak|biblioteczka|kuferek|skrzynka)(?: | z okuciami )zawiera (?&lt;content&gt;.*)\.$</string>
-							<string>Wsrod pedantycznego porzadku w szafie zauwazasz miedzy innymi (?&lt;content&gt;.*)\.$</string>
-							<string>Otwart[ay] [a-z ]+ (?:koszyk|szafa|sejf) zawiera (?&lt;content&gt;.*)\.$</string>
+							<string>^Wsrod pedantycznego porzadku w szafie zauwazasz miedzy innymi (?&lt;content&gt;.*)\.$</string>
+							<string>^Otwart[ay] [a-z ]+ (?:koszyk|szafa|sejf) zawiera (?&lt;content&gt;.*)\.$</string>
 							<string>^Narozna etazerka zawiera: (?&lt;content&gt;.*)\.$</string>
 							<string>^Dostrzegasz na (?:nim|niej) jeszcze (?&lt;content&gt;.*)\.$</string>
 						</regexCodeList>
@@ -444,7 +444,7 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>Twoj depozyt zawiera (.*)\.$</string>
+							<string>^Twoj depozyt zawiera (.*)\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -1033,7 +1033,7 @@
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>Wyglada na to, ze mogl(?:a|o|)by ci jeszcze ([\w\s]*) sluzyc\.</string>
+						<string>^Wyglada na to, ze mogl(?:a|o|)by ci jeszcze ([\w\s]*) sluzyc\.</string>
 						<string>\(posluzy ([\w\s]*)(?:, .*)?\)</string>
 					</regexCodeList>
 					<regexCodePropertyList>

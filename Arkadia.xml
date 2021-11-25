@@ -15723,9 +15723,9 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 							<integer>2</integer>
 						</regexCodePropertyList>
 					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>weapon_on</name>
-						<script>trigger_func_skrypty_ui_footer_elements_weapon_on()</script>
+						<script></script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
 						<mStayOpen>0</mStayOpen>
@@ -15736,104 +15736,200 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<mSoundFile></mSoundFile>
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
-						<regexCodeList>
-							<string>Wiedziony naglym instynktem siegasz po</string>
-							<string>Ostrze kosy rozblyska nieziemskim blaskiem, gdy dobywasz broni w obie rece.</string>
-							<string>Dobywasz oburacz</string>
-							<string>^Dobywasz .* reka\.$</string>
-							<string>Trzymasz oburacz</string>
-							<string>^Trzymasz .* w (prawej|lewej) rece.*</string>
-							<string>Z latwoscia dobywasz ogromnego ognistego trojzebu, czujac pulsujaca moc w zaciskajacych sie na drzewcu rekach.</string>
-							<string>^[ &gt;]*Siegasz do .*, dobywajac z nie[a-z]+ .*\.$</string>
-							<string>^[ &gt;]*Gwaltownym ruchem wyszarpujesz zza plecow.*\.$</string>
-							<string>^[ &gt;]*Jednym plynnym ruchem dobywasz .*</string>
-							<string>Szybkim i bezszelestnym ruchem dobywasz</string>
-							<string>Plynnym, pelnym pewnosci ruchem dobywasz</string>
-							<string>Z trudem dobywasz gigantycznego granitowego mlota.</string>
-							<string>Dobywasz dwurecznego krysztalowego korbacza czujac, ze stales sie panem tej poteznej broni.</string>
-							<string>Dobywasz [a-z ]+ zaciskajac dlon na rekojesci.</string>
-							<string>Pewnym chwytem dobywasz</string>
-							<string>Gdy dobywasz [a-z ]+, klinga broni rozgrzewa sie do czerwonosci\.$</string>
-							<string>Czujesz, jak przez twoje palce przebiega delikatne, elektryzujace drzenie, jakby bulawa witala sie z uteskniona dlonia.</string>
-							<string>Z lekkoscia dobywasz jasniejacego zdobionego jatagana, a ten rozblyskuje jeszcze mocniejsza poswiata.</string>
-							<string>Zgrzytajac demostracyjnie klinga wysuwasz powoli</string>
-							<string>Zamaszystym ruchem wznosisz wielki kamienny kafar do gory, by wesprzec go na ramieniu.</string>
-							<string>Ujmujesz rezonujacy krysztalowy mlot i czujesz, jak metalowy trzonek delikatnie wibruje w twojej dloni.</string>
-							<string>Chwytasz stylisko misternego obosiecznego topora w garsc</string>
-							<string>Dobywasz kruczoczarnego misternego miecza, a jego lsniace ostrze na krotka chwile rozswietla sie jasnym, czerwonym blaskiem. </string>
-							<string>Dobywasz niematerialnego ulotnego szamszira prawa reka, a bron skreca sie i zwija, rosnac i kurczac sie naprzemiennie, </string>
-							<string>Pod wplywem twego pewnego chwytu zdobiony jasniejacy chepesz rozblyskuje jasnym swiatlem, </string>
-							<string>Zaciskasz dlon na egzotycznym jadeitowym palaszu i przez chwile czujesz, jak bron wibruje od zgromadzonej w niej mocy.</string>
-							<string>Ostroznie chwytasz oburacz trzonek koscianego kilofa</string>
-							<string>Pelnym pewnosci siebie ruchem dobywasz</string>
-							<string>Plynnymi, pelnymi pewnosci ruchami dobywasz</string>
-							<string>Dobywasz waskiego kunsztownego sihilla, a runa smierci na jego klindze ozywa na chwile.</string>
-							<string>Dobywasz opalizujacego runicznego topora obosiecznego. Ciarki przechodza ci po plecach, gdy twe rece bezwiednie dopasowuja sie do uchwytu, a runy na ostrzu rozblyskuja bladoczerwonym swiatlem.</string>
-							<string>Dobywasz krysztalowego korbacza czujac</string>
-							<string>Poprawiasz uchwyt na polyskliwym smuklym espadonie i wywijasz nim kilka mlyncow, sprawdzajac wywazenie broni.</string>
-							<string>^Dobywasz .* pewnym chwytem, szykujac sie do walki\.$</string>
-							<string>^Poprawiasz uchwyt na .* i wywijasz \w kilka mlyncow, sprawdzajac wywazenie broni\.$</string>
-							<string>Czujesz w sobie niezwykla moc, gdy dobywasz adamantytowego mlota bojowego.</string>
-							<string>Gdy dobywasz foremnego iskrzacego mlota, pelzajace po broni wyladowania elektryczne przeskakuja na twa dlon i przedramie oplatajac je siateczka jasniejacych wici.</string>
-							<string>Pod wplywem twego pewnego chwytu zdobiony jasniejacy mlot rozblyskuje jasnym swiatlem, </string>
-							<string>Czujesz jak zalewa cie fala ogromnej pewnosci siebie i satysfakcji.</string>
-							<string>Juz dzierzysz</string>
-							<string>Zaciskasz dlon na niezwyklym koscianym toporze i przez chwile czujesz, jak bron wibruje od zgromadzonej w niej mocy.</string>
-							<string>Zaciskasz dlon na rekojesci szponiastej dwusegmentowej maczugi powodujac, ze jej najezona ostrzami glowica kolysze sie ociezale na boki.</string>
-							<string>Z mrozaca krew w zylach gracja dobywasz waskiego zebatego palasza, a twoje spojrzenie staje siezimne jak lod.</string>
-							<string>Chwytasz za rekojesc obosiecznego gwiezdnego topora, unoszac go na wysokosc swej twarzy. W odpowiedzi na twoj dotyk, czarne jak noc zelezce zaczyna mienic sie blaskiem tysiaca gwiazd.</string>
-						</regexCodeList>
-						<regexCodePropertyList>
-							<integer>2</integer>
-							<integer>2</integer>
-							<integer>2</integer>
-							<integer>1</integer>
-							<integer>2</integer>
-							<integer>1</integer>
-							<integer>2</integer>
-							<integer>1</integer>
-							<integer>1</integer>
-							<integer>1</integer>
-							<integer>2</integer>
-							<integer>2</integer>
-							<integer>2</integer>
-							<integer>2</integer>
-							<integer>1</integer>
-							<integer>2</integer>
-							<integer>1</integer>
-							<integer>2</integer>
-							<integer>2</integer>
-							<integer>0</integer>
-							<integer>2</integer>
-							<integer>2</integer>
-							<integer>0</integer>
-							<integer>2</integer>
-							<integer>0</integer>
-							<integer>0</integer>
-							<integer>2</integer>
-							<integer>0</integer>
-							<integer>0</integer>
-							<integer>0</integer>
-							<integer>2</integer>
-							<integer>2</integer>
-							<integer>2</integer>
-							<integer>2</integer>
-							<integer>1</integer>
-							<integer>1</integer>
-							<integer>2</integer>
-							<integer>2</integer>
-							<integer>1</integer>
-							<integer>0</integer>
-							<integer>2</integer>
-							<integer>3</integer>
-							<integer>2</integer>
-							<integer>2</integer>
-							<integer>2</integer>
-						</regexCodePropertyList>
-					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<regexCodeList />
+						<regexCodePropertyList />
+						<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+							<name>Dobywasz...</name>
+							<script></script>
+							<triggerType>0</triggerType>
+							<conditonLineDelta>0</conditonLineDelta>
+							<mStayOpen>0</mStayOpen>
+							<mCommand></mCommand>
+							<packageName></packageName>
+							<mFgColor>#ff0000</mFgColor>
+							<mBgColor>#ffff00</mBgColor>
+							<mSoundFile></mSoundFile>
+							<colorTriggerFgColor>#000000</colorTriggerFgColor>
+							<colorTriggerBgColor>#000000</colorTriggerBgColor>
+							<regexCodeList>
+								<string>Dobywasz </string>
+							</regexCodeList>
+							<regexCodePropertyList>
+								<integer>2</integer>
+							</regexCodePropertyList>
+							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+								<name>weapon_on</name>
+								<script>trigger_func_skrypty_ui_footer_elements_weapon_on()</script>
+								<triggerType>0</triggerType>
+								<conditonLineDelta>0</conditonLineDelta>
+								<mStayOpen>0</mStayOpen>
+								<mCommand></mCommand>
+								<packageName></packageName>
+								<mFgColor>#ff0000</mFgColor>
+								<mBgColor>#ffff00</mBgColor>
+								<mSoundFile></mSoundFile>
+								<colorTriggerFgColor>#000000</colorTriggerFgColor>
+								<colorTriggerBgColor>#000000</colorTriggerBgColor>
+								<regexCodeList>
+									<string>Dobywasz oburacz</string>
+									<string>^Dobywasz .* reka\.$</string>
+									<string>Dobywasz dwurecznego krysztalowego korbacza czujac, ze stales sie panem tej poteznej broni.</string>
+									<string>Dobywasz [a-z ]+ zaciskajac dlon na rekojesci.</string>
+									<string>Dobywasz kruczoczarnego misternego miecza, a jego lsniace ostrze na krotka chwile rozswietla sie jasnym, czerwonym blaskiem. </string>
+									<string>Dobywasz niematerialnego ulotnego szamszira prawa reka, a bron skreca sie i zwija, rosnac i kurczac sie naprzemiennie, </string>
+									<string>Dobywasz waskiego kunsztownego sihilla, a runa smierci na jego klindze ozywa na chwile.</string>
+									<string>Dobywasz opalizujacego runicznego topora obosiecznego. Ciarki przechodza ci po plecach, gdy twe rece bezwiednie dopasowuja sie do uchwytu, a runy na ostrzu rozblyskuja bladoczerwonym swiatlem.</string>
+									<string>Dobywasz krysztalowego korbacza czujac</string>
+									<string>^Dobywasz .* pewnym chwytem, szykujac sie do walki\.$</string>
+								</regexCodeList>
+								<regexCodePropertyList>
+									<integer>2</integer>
+									<integer>1</integer>
+									<integer>2</integer>
+									<integer>1</integer>
+									<integer>2</integer>
+									<integer>2</integer>
+									<integer>2</integer>
+									<integer>2</integer>
+									<integer>2</integer>
+									<integer>1</integer>
+								</regexCodePropertyList>
+							</Trigger>
+						</TriggerGroup>
+						<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+							<name>Zaciskasz...</name>
+							<script></script>
+							<triggerType>0</triggerType>
+							<conditonLineDelta>0</conditonLineDelta>
+							<mStayOpen>0</mStayOpen>
+							<mCommand></mCommand>
+							<packageName></packageName>
+							<mFgColor>#ff0000</mFgColor>
+							<mBgColor>#ffff00</mBgColor>
+							<mSoundFile></mSoundFile>
+							<colorTriggerFgColor>#000000</colorTriggerFgColor>
+							<colorTriggerBgColor>#000000</colorTriggerBgColor>
+							<regexCodeList>
+								<string>Zaciskasz </string>
+							</regexCodeList>
+							<regexCodePropertyList>
+								<integer>2</integer>
+							</regexCodePropertyList>
+							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+								<name>weapon_on</name>
+								<script>trigger_func_skrypty_ui_footer_elements_weapon_on()</script>
+								<triggerType>0</triggerType>
+								<conditonLineDelta>0</conditonLineDelta>
+								<mStayOpen>0</mStayOpen>
+								<mCommand></mCommand>
+								<packageName></packageName>
+								<mFgColor>#ff0000</mFgColor>
+								<mBgColor>#ffff00</mBgColor>
+								<mSoundFile></mSoundFile>
+								<colorTriggerFgColor>#000000</colorTriggerFgColor>
+								<colorTriggerBgColor>#000000</colorTriggerBgColor>
+								<regexCodeList>
+									<string>Zaciskasz dlon na egzotycznym jadeitowym palaszu i przez chwile czujesz, jak bron wibruje od zgromadzonej w niej mocy.</string>
+									<string>Zaciskasz dlon na niezwyklym koscianym toporze i przez chwile czujesz, jak bron wibruje od zgromadzonej w niej mocy.</string>
+									<string>Zaciskasz dlon na rekojesci szponiastej dwusegmentowej maczugi powodujac, ze jej najezona ostrzami glowica kolysze sie ociezale na boki.</string>
+									<string>Zaciskasz dlon na misternym snieznobialym harpunie i przez chwile czujesz, jak bron wibruje od zgromadzonej w niej mocy.</string>
+									<string>Zaciskasz dlonie na rekojesci lodowatej dlugiej maczugi.</string>
+								</regexCodeList>
+								<regexCodePropertyList>
+									<integer>3</integer>
+									<integer>3</integer>
+									<integer>3</integer>
+									<integer>3</integer>
+									<integer>2</integer>
+								</regexCodePropertyList>
+							</Trigger>
+						</TriggerGroup>
+						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+							<name>weapon_on</name>
+							<script>trigger_func_skrypty_ui_footer_elements_weapon_on()</script>
+							<triggerType>0</triggerType>
+							<conditonLineDelta>0</conditonLineDelta>
+							<mStayOpen>0</mStayOpen>
+							<mCommand></mCommand>
+							<packageName></packageName>
+							<mFgColor>#ff0000</mFgColor>
+							<mBgColor>#ffff00</mBgColor>
+							<mSoundFile></mSoundFile>
+							<colorTriggerFgColor>#000000</colorTriggerFgColor>
+							<colorTriggerBgColor>#000000</colorTriggerBgColor>
+							<regexCodeList>
+								<string>Wiedziony naglym instynktem siegasz po</string>
+								<string>Ostrze kosy rozblyska nieziemskim blaskiem, gdy dobywasz broni w obie rece.</string>
+								<string>Trzymasz oburacz</string>
+								<string>^Trzymasz .* w (prawej|lewej) rece.*</string>
+								<string>Z latwoscia dobywasz ogromnego ognistego trojzebu, czujac pulsujaca moc w zaciskajacych sie na drzewcu rekach.</string>
+								<string>^[ &gt;]*Siegasz do .*, dobywajac z nie[a-z]+ .*\.$</string>
+								<string>^[ &gt;]*Gwaltownym ruchem wyszarpujesz zza plecow.*\.$</string>
+								<string>^[ &gt;]*Jednym plynnym ruchem dobywasz .*</string>
+								<string>Szybkim i bezszelestnym ruchem dobywasz</string>
+								<string>Plynnym, pelnym pewnosci ruchem dobywasz</string>
+								<string>Z trudem dobywasz gigantycznego granitowego mlota.</string>
+								<string>Pewnym chwytem dobywasz</string>
+								<string>Gdy dobywasz [a-z ]+, klinga broni rozgrzewa sie do czerwonosci\.$</string>
+								<string>Czujesz, jak przez twoje palce przebiega delikatne, elektryzujace drzenie, jakby bulawa witala sie z uteskniona dlonia.</string>
+								<string>Z lekkoscia dobywasz jasniejacego zdobionego jatagana, a ten rozblyskuje jeszcze mocniejsza poswiata.</string>
+								<string>Zgrzytajac demostracyjnie klinga wysuwasz powoli</string>
+								<string>Zamaszystym ruchem wznosisz wielki kamienny kafar do gory, by wesprzec go na ramieniu.</string>
+								<string>Ujmujesz rezonujacy krysztalowy mlot i czujesz, jak metalowy trzonek delikatnie wibruje w twojej dloni.</string>
+								<string>Chwytasz stylisko misternego obosiecznego topora w garsc</string>
+								<string>Pod wplywem twego pewnego chwytu zdobiony jasniejacy chepesz rozblyskuje jasnym swiatlem, </string>
+								<string>Ostroznie chwytasz oburacz trzonek koscianego kilofa</string>
+								<string>Pelnym pewnosci siebie ruchem dobywasz</string>
+								<string>Plynnymi, pelnymi pewnosci ruchami dobywasz</string>
+								<string>Poprawiasz uchwyt na polyskliwym smuklym espadonie i wywijasz nim kilka mlyncow, sprawdzajac wywazenie broni.</string>
+								<string>^Poprawiasz uchwyt na .* i wywijasz \w kilka mlyncow, sprawdzajac wywazenie broni\.$</string>
+								<string>Czujesz w sobie niezwykla moc, gdy dobywasz adamantytowego mlota bojowego.</string>
+								<string>Gdy dobywasz foremnego iskrzacego mlota, pelzajace po broni wyladowania elektryczne przeskakuja na twa dlon i przedramie oplatajac je siateczka jasniejacych wici.</string>
+								<string>Pod wplywem twego pewnego chwytu zdobiony jasniejacy mlot rozblyskuje jasnym swiatlem, </string>
+								<string>Czujesz jak zalewa cie fala ogromnej pewnosci siebie i satysfakcji.</string>
+								<string>Juz dzierzysz</string>
+								<string>Z mrozaca krew w zylach gracja dobywasz waskiego zebatego palasza, a twoje spojrzenie staje siezimne jak lod.</string>
+								<string>Chwytasz za rekojesc obosiecznego gwiezdnego topora, unoszac go na wysokosc swej twarzy. W odpowiedzi na twoj dotyk, czarne jak noc zelezce zaczyna mienic sie blaskiem tysiaca gwiazd.</string>
+							</regexCodeList>
+							<regexCodePropertyList>
+								<integer>2</integer>
+								<integer>2</integer>
+								<integer>2</integer>
+								<integer>1</integer>
+								<integer>2</integer>
+								<integer>1</integer>
+								<integer>1</integer>
+								<integer>1</integer>
+								<integer>2</integer>
+								<integer>2</integer>
+								<integer>2</integer>
+								<integer>2</integer>
+								<integer>1</integer>
+								<integer>2</integer>
+								<integer>2</integer>
+								<integer>0</integer>
+								<integer>2</integer>
+								<integer>2</integer>
+								<integer>0</integer>
+								<integer>0</integer>
+								<integer>0</integer>
+								<integer>0</integer>
+								<integer>0</integer>
+								<integer>2</integer>
+								<integer>1</integer>
+								<integer>2</integer>
+								<integer>2</integer>
+								<integer>1</integer>
+								<integer>0</integer>
+								<integer>2</integer>
+								<integer>2</integer>
+								<integer>2</integer>
+							</regexCodePropertyList>
+						</Trigger>
+					</TriggerGroup>
+					<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>weapon_off</name>
-						<script>trigger_func_skrypty_ui_footer_elements_weapon_off()</script>
+						<script></script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
 						<mStayOpen>0</mStayOpen>
@@ -15844,41 +15940,57 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<mSoundFile></mSoundFile>
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
-						<regexCodeList>
-							<string>^[ &gt;]*Powoli opuszczasz .*, raz jeszcze, dla pewnosci, ogarniajac wzrokiem cala okolice\.</string>
-							<string>Przechodzi cie nagly dreszcz, gdy opuszczasz srebrzysta kose bojowa.</string>
-							<string>^[ &gt;]*Opuszczasz (.*)\.$</string>
-							<string>Wprawnym ruchem przewieszasz</string>
-							<string>^(?!.*przez)(.+?) peka!$</string>
-							<string>Rozgladajac sie uwaznie, opuszczasz cicho</string>
-							<string>Niechetnie opuszczasz swoj zlowrogi orez.</string>
-							<string>Gdy rozluzniasz chwyt na iskrzacej zdobionej bulawie, pomiedzy cwiekami na glowicy broni przestaja rzeskakiwac iskry.</string>
-							<string>Szybkim ruchem opuszczasz jasniejacy zdobiony jatagan, a luna wokol broni nieznacznie przygasa.</string>
-							<string>Wraz z opuszczeniem zdobionego jasniejacego chepesza zanika wypelniajace do tej pory twe serce uczucie niezlomnosci i mestwa,</string>
-							<string>Czujesz nienaturalna tesknote, gdy tylko twoje palce zwalniaja chwyt na egzotycznym jadeitowym palaszu.</string>
-							<string>Rozluzniasz swoj uchwyt na opalizujacym runicznym toporze obosiecznym. Przez chwile czujesz ogromna, nieokreslona pustke. Swiecace runy na ostrzu topora przygasaja.</string>
-							<string>Czujesz nieokreslona pustke, gdy opuszczasz adamantytowy mlot bojowy.</string>
-							<string>Wraz z opuszczeniem zdobionego jasniejacego mlota zanika wypelniajace do tej pory twe serce uczucie niezlomnosci</string>
-							<string>Rozluzniasz chwyt na rezonujacym krysztalowym mlocie i przez chwile zmagasz sie ze zdretwialymi palcami.</string>
-						</regexCodeList>
-						<regexCodePropertyList>
-							<integer>1</integer>
-							<integer>3</integer>
-							<integer>1</integer>
-							<integer>2</integer>
-							<integer>1</integer>
-							<integer>0</integer>
-							<integer>0</integer>
-							<integer>0</integer>
-							<integer>0</integer>
-							<integer>0</integer>
-							<integer>0</integer>
-							<integer>0</integer>
-							<integer>0</integer>
-							<integer>0</integer>
-							<integer>0</integer>
-						</regexCodePropertyList>
-					</Trigger>
+						<regexCodeList />
+						<regexCodePropertyList />
+						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+							<name>weapon_off</name>
+							<script>trigger_func_skrypty_ui_footer_elements_weapon_off()</script>
+							<triggerType>0</triggerType>
+							<conditonLineDelta>0</conditonLineDelta>
+							<mStayOpen>0</mStayOpen>
+							<mCommand></mCommand>
+							<packageName></packageName>
+							<mFgColor>#ff0000</mFgColor>
+							<mBgColor>#ffff00</mBgColor>
+							<mSoundFile></mSoundFile>
+							<colorTriggerFgColor>#000000</colorTriggerFgColor>
+							<colorTriggerBgColor>#000000</colorTriggerBgColor>
+							<regexCodeList>
+								<string>^[ &gt;]*Powoli opuszczasz .*, raz jeszcze, dla pewnosci, ogarniajac wzrokiem cala okolice\.</string>
+								<string>Przechodzi cie nagly dreszcz, gdy opuszczasz srebrzysta kose bojowa.</string>
+								<string>^[ &gt;]*Opuszczasz (.*)\.$</string>
+								<string>Wprawnym ruchem przewieszasz</string>
+								<string>^(?!.*przez)(.+?) peka!$</string>
+								<string>Rozgladajac sie uwaznie, opuszczasz cicho</string>
+								<string>Niechetnie opuszczasz swoj zlowrogi orez.</string>
+								<string>Gdy rozluzniasz chwyt na iskrzacej zdobionej bulawie, pomiedzy cwiekami na glowicy broni przestaja rzeskakiwac iskry.</string>
+								<string>Szybkim ruchem opuszczasz jasniejacy zdobiony jatagan, a luna wokol broni nieznacznie przygasa.</string>
+								<string>Wraz z opuszczeniem zdobionego jasniejacego chepesza zanika wypelniajace do tej pory twe serce uczucie niezlomnosci i mestwa,</string>
+								<string>Czujesz nienaturalna tesknote, gdy tylko twoje palce zwalniaja chwyt na egzotycznym jadeitowym palaszu.</string>
+								<string>Rozluzniasz swoj uchwyt na opalizujacym runicznym toporze obosiecznym. Przez chwile czujesz ogromna, nieokreslona pustke. Swiecace runy na ostrzu topora przygasaja.</string>
+								<string>Czujesz nieokreslona pustke, gdy opuszczasz adamantytowy mlot bojowy.</string>
+								<string>Wraz z opuszczeniem zdobionego jasniejacego mlota zanika wypelniajace do tej pory twe serce uczucie niezlomnosci</string>
+								<string>Rozluzniasz chwyt na rezonujacym krysztalowym mlocie i przez chwile zmagasz sie ze zdretwialymi palcami.</string>
+							</regexCodeList>
+							<regexCodePropertyList>
+								<integer>1</integer>
+								<integer>3</integer>
+								<integer>1</integer>
+								<integer>2</integer>
+								<integer>1</integer>
+								<integer>0</integer>
+								<integer>2</integer>
+								<integer>0</integer>
+								<integer>2</integer>
+								<integer>2</integer>
+								<integer>0</integer>
+								<integer>2</integer>
+								<integer>0</integer>
+								<integer>0</integer>
+								<integer>2</integer>
+							</regexCodePropertyList>
+						</Trigger>
+					</TriggerGroup>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>cover_action_success</name>
 						<script>trigger_func_skrypty_ui_footer_elements_cover_action_success()</script>

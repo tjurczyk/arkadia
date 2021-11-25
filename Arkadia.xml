@@ -199,7 +199,7 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>Twoje doswiadczenie i umiejetnosci podpowiadaja ci, ze (jak na (lekka|srednia|ciezka) zbroje (chroni|chronia)|(chroni|chronia)) (on|ona|one) (.*)</string>
+							<string>^Twoje doswiadczenie i umiejetnosci podpowiadaja ci, ze (jak na (lekka|srednia|ciezka) zbroje (chroni|chronia)|(chroni|chronia)) (on|ona|one) (.*)</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -281,8 +281,8 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>Oceniasz, ze (.*) waz.*</string>
-							<string>Ubranie to.* wyglada na (.*)$</string>
+							<string>^Oceniasz, ze (.*) waz.*</string>
+							<string>^Ubranie to.* wyglada na (.*)$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -303,8 +303,8 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>Wyglada na to, ze (sa |jest |)([a-z .]+)$</string>
-							<string>Oceniasz, ze (.*) waz</string>
+							<string>^Wyglada na to, ze (sa |jest |)([a-z .]+)$</string>
+							<string>^Oceniasz, ze (.*) waz</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -325,7 +325,7 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>Ubranie to.* wyglada na (.*)$</string>
+							<string>^Ubranie to.* wyglada na (.*)$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -393,10 +393,10 @@
 							<string>^W .* (skrzyni|kufrze|skrzynce) zauwazasz miedzy innymi (?&lt;content&gt;.*)\.$</string>
 							<string>^Otwarty.* kosz(?:|yk) zawiera (?&lt;content&gt;.*)\.$</string>
 							<string>^Na stojakach zauwazasz miedzy innymi (?&lt;content&gt;.*)\.$</string>
-							<string>Debowy wysoki sekretarzyk zawiera (?&lt;content&gt;.*)\.$</string>
+							<string>^Debowy wysoki sekretarzyk zawiera (?&lt;content&gt;.*)\.$</string>
 							<string>.* (?:skrzynia|kufer|komoda|stojak|biblioteczka|kuferek|skrzynka)(?: | z okuciami )zawiera (?&lt;content&gt;.*)\.$</string>
-							<string>Wsrod pedantycznego porzadku w szafie zauwazasz miedzy innymi (?&lt;content&gt;.*)\.$</string>
-							<string>Otwart[ay] [a-z ]+ (?:koszyk|szafa|sejf) zawiera (?&lt;content&gt;.*)\.$</string>
+							<string>^Wsrod pedantycznego porzadku w szafie zauwazasz miedzy innymi (?&lt;content&gt;.*)\.$</string>
+							<string>^Otwart[ay] [a-z ]+ (?:koszyk|szafa|sejf) zawiera (?&lt;content&gt;.*)\.$</string>
 							<string>^Narozna etazerka zawiera: (?&lt;content&gt;.*)\.$</string>
 							<string>^Dostrzegasz na (?:nim|niej) jeszcze (?&lt;content&gt;.*)\.$</string>
 						</regexCodeList>
@@ -427,7 +427,7 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>Twoj depozyt zawiera (.*)\.$</string>
+							<string>^Twoj depozyt zawiera (.*)\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -687,10 +687,10 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>Widzisz jak ogromny ognisty trojzab przysysa sie na moment do rany</string>
+							<string>Widzisz jak ogromny ognisty trojzab przysysa sie na moment do rany.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
-							<integer>2</integer>
+							<integer>3</integer>
 						</regexCodePropertyList>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -1052,11 +1052,11 @@
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
 							<string>Porzucasz druzyne, ktorej</string>
-							<string>Porzucasz swoja druzyne</string>
+							<string>Porzucasz swoja druzyne.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>2</integer>
-							<integer>2</integer>
+							<integer>3</integer>
 						</regexCodePropertyList>
 					</Trigger>
 				</TriggerGroup>
@@ -1933,8 +1933,8 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>Trzyma oburacz (.*)\.$</string>
-							<string>Trzyma ([a-z ]+?) (?:w lewej rece|w prawej rece)(?: oraz ([a-z ]+)(?:w lewej rece|w prawej rece))\.$</string>
+							<string>^Trzyma oburacz (.*)\.$</string>
+							<string>^Trzyma ([a-z ]+?) (?:w lewej rece|w prawej rece)(?: oraz ([a-z ]+)(?:w lewej rece|w prawej rece))\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -1955,7 +1955,7 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>Ma na sobie (.*)\.$</string>
+							<string>^Ma na sobie (.*)\.$</string>
 							<string>^Od stop do glow .*\. Ponadto ma na sobie (.*)\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
@@ -2040,12 +2040,12 @@
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>Stalowa klatka nadjezdza</string>
-						<string>Otworzyly sie drzwi klatki</string>
+						<string>Stalowa klatka nadjezdza na linie!</string>
+						<string>Otworzyly sie drzwi klatki.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
-						<integer>2</integer>
-						<integer>2</integer>
+						<integer>3</integer>
+						<integer>3</integer>
 					</regexCodePropertyList>
 				</Trigger>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -2065,7 +2065,7 @@
 						<string>Nie masz wystarczajacej ilosci pieniedzy, zeby zaplacic</string>
 					</regexCodeList>
 					<regexCodePropertyList>
-						<integer>1</integer>
+						<integer>2</integer>
 					</regexCodePropertyList>
 				</Trigger>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -2258,10 +2258,10 @@
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^[ &gt;]*Ostatnie logowanie:</string>
+						<string>Ostatnie logowanie:</string>
 					</regexCodeList>
 					<regexCodePropertyList>
-						<integer>1</integer>
+						<integer>2</integer>
 					</regexCodePropertyList>
 				</Trigger>
 				<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -15415,7 +15415,7 @@
 							<colorTriggerFgColor>#000000</colorTriggerFgColor>
 							<colorTriggerBgColor>#000000</colorTriggerBgColor>
 							<regexCodeList>
-								<string>Nie mogacoprzec sie rzuconemu urokowi opuszczasz .*</string>
+								<string>Nie mogac oprzec sie rzuconemu urokowi opuszczasz .*</string>
 							</regexCodeList>
 							<regexCodePropertyList>
 								<integer>1</integer>
@@ -15455,8 +15455,8 @@
 							<colorTriggerFgColor>#000000</colorTriggerFgColor>
 							<colorTriggerBgColor>#000000</colorTriggerBgColor>
 							<regexCodeList>
-								<string>Dzierzona przez .*bron zaczyna podrygiwac, wpadajac w dziwny rezonans z</string>
-								<string>Czujesz ze dzierzona przez ciebie bron zaczyna podrygiwac, wpadajac</string>
+								<string>^Dzierzona przez .*bron zaczyna podrygiwac, wpadajac w dziwny rezonans z</string>
+								<string>^Czujesz ze dzierzona przez ciebie bron zaczyna podrygiwac, wpadajac</string>
 							</regexCodeList>
 							<regexCodePropertyList>
 								<integer>1</integer>

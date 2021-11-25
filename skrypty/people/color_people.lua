@@ -41,7 +41,7 @@ function scripts.people:color_person_build(item, color, guild_color)
     scripts.tokens:register(item.short, function(current_match)
         scripts.tokens:process_token(current_match, function()
             scripts.people:process_person_color(current_match, item.name, guild_str, color, guild_color)
-        end)
+        end, function(what, k) return not (line:find(what .. " chaosu", k) or line:find(" %(to chyba")) end)
     end, "people" .. (item.name or ""))
    
     if item.name and item.name ~= "" then

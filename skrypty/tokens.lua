@@ -49,13 +49,14 @@ function scripts.tokens:get_key()
     return string.format("%s:%s", caller.source or "", caller.currentline or "")
 end
 
-function scripts.tokens:process_token(what, callback)
+function scripts.tokens:process_token(what, callback, additional_checks)
+    additional_checks = additional_checks or function() return true end
     local c, k = 1, 1
     while k > 0 do
         k = line:find(what, k)
         if k == nil then return; end
         c = c + 1
-        if k == line:find("%f[%a]"..what.."%f[%A]", k) then
+        if k == line:find("%f[%a]"..what.."%f[%A]", k) and additional_checks(what, k) then
         if selectString(what, c-1) > -1 then
            callback()
         else return end

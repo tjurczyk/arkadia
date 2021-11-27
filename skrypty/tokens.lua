@@ -68,10 +68,10 @@ end
 function scripts.tokens:highlight(what, color, bold, underline, italicize)
     local c, k = 1, 1
     while k > 0 do
-        k = line:find(what, k)
+        k = line:find(what:gsub("%-", "%%-"), k)
         if k == nil then return; end
         c = c + 1
-        if k == line:find("%f[%a]"..what.."%f[%A]", k) then
+        if k == line:find("%f[%a]"..what:gsub("%-", "%%-").."%f[%A]", k) then
         if selectString(what, c-1) > -1 then
             if color     then fg(color) end
             if bold      then setBold(true) end

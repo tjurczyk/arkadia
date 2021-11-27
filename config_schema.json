@@ -2786,7 +2786,7 @@
     },
     {
       "name": "scripts.sounds.beep",
-      "default_value": "arkadia/sounds/beep.wav",
+      "default_value": "sounds/beep.wav",
       "field_type": "string",
       "content_type" : "file_path",
       "macros_on_modify": []

@@ -2,7 +2,7 @@ function scripts.people:process_person_color(text, name, guild, color, suffix_co
     if gmcp.gmcp_msgs and gmcp.gmcp_msgs.type == "room.short" then
         return
     end
-    if text ~= name then
+    if text:lower():title() ~= name:lower():title() then
         local sub = text
         if not suffix_color then
             sub = string.format("<%s>%s<reset>", color, sub)

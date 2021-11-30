@@ -50,12 +50,12 @@
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>.*rozwiazuje druzyne\.$</string>
-						<string>^.*Porzucasz swoja druzyne\.$</string>
-						<string>.*zmusza cie do opuszczenia druzyny\.$</string>
-						<string>Porzucasz druzyne, ktorej przewodzil.s</string>
-						<string>Zmuszasz \[?([a-zA-Z ]+)\]? do opuszczenia druzyny\.$</string>
-						<string>^\[?([a-zA-Z ]+)\]? porzuca twoja druzyne\.$</string>
+						<string>^\[?([A-Z][a-z ]+?)\]? rozwiazuje druzyne\.$</string>
+						<string>^Porzucasz swoja druzyne\.$</string>
+						<string>^\[?([A-Z][a-z ]+?)\]? zmusza cie do opuszczenia druzyny\.$</string>
+						<string>^Porzucasz druzyne, ktorej przewodzil[ea]s\.$</string>
+						<string>^Zmuszasz \[?([A-Za-z][a-z ]+?)\]? do opuszczenia druzyny\.$</string>
+						<string>^\[?([A-Z][a-z ]+?)\]? porzuca twoja druzyne\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -104,7 +104,7 @@
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^[ &gt;]?\[?(\w*)\]? zaprasza cie do swojej druzyny\.$</string>
+						<string>\[?([A-Z][a-z ]+?)\]? zaprasza cie do swojej druzyny\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -131,6 +131,7 @@
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
+
 			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>inventory</name>
 				<script></script>

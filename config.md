@@ -624,6 +624,14 @@ Dozwolone wartosci:
 
 ---
 
+## `scripts.people.enemy_color`
+
+Wybor koloru dla wrogow.
+
+Kolory, ktore mozna wybrac sa dostepne w `/kolory` lub [tutaj](https://forums.mudlet.org/download/file.php?id=129&sid=be964a7a97580514727bfcb7cfcb5aec&mode=view)
+
+---
+
 ## `scripts.people.enemy_guilds`
 ## `scripts.people.enemy_people`
 

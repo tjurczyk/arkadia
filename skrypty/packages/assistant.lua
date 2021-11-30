@@ -131,7 +131,7 @@ function scripts.packages:update_display()
         if self.picked_offer.pickup_time then
             local elapsed = (os.time() - self.picked_offer.pickup_time)
             local total = self.picked_offer.time * 120
-            time_to_deliver = " " .. misc.improve:seconds_to_formatted_string(total - elapsed)
+            time_to_deliver = " " .. misc.improve:seconds_to_formatted_string(math.max(0, total - elapsed))
             if not self.timer then
                 self.timer = tempTimer(1, function() self:update_display() end, true)
             end

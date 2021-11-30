@@ -37,7 +37,8 @@ local gems = { "obsydia(ny|now|n)", "labrado(ry|row|r)", "oliwi(ny|now|n)", "gag
 
 scripts.inv.pretty_containers.fixed_groups = {
     ["sklerotyzowan.* mlecznoszar.* tarcz.*"] = "inne",
-    ["nakrapian.* chitynow.* pancerz.*"] = "inne"
+    ["nakrapian.* chitynow.* pancerz.*"] = "inne",
+    ["fragment.* koralowej plaskorzezby z rybim ogonem"] = "klucze"
 }
 
 scripts.inv.pretty_containers.group_definitions = {

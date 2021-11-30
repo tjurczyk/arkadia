@@ -624,6 +624,14 @@ Dozwolone wartosci:
 
 ---
 
+## `scripts.people.enemy_color`
+
+Wybor koloru dla wrogow.
+
+Kolory, ktore mozna wybrac sa dostepne w `/kolory` lub [tutaj](https://forums.mudlet.org/download/file.php?id=129&sid=be964a7a97580514727bfcb7cfcb5aec&mode=view)
+
+---
+
 ## `scripts.people.enemy_guilds`
 ## `scripts.people.enemy_people`
 
@@ -1560,9 +1568,10 @@ Ustawienie startowe na konkretnej lokacji po zalogowaniu w 'name' powinna znalez
 * Linux/Mac - musi zaczynać się od `/` np. `/home/user/sounds/beep.wav`
 
 Dopuszczalna jest ścięzką względna do katalogu profilu np.
-* `arkadia/sounds/beep.wav`
+* `sounds/beep.wav`
 
 UWAGA! Sciezki powinny zawierac `/`, a nie `\`
+UWAGA! Pliki z katalogu skryptów nie powinny być używane, mogą powodować problemy z aktualizacją!
 
 ---
 

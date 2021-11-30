@@ -132,10 +132,6 @@ function trigger_func_skrypty_team_invite_bind()
     ateam:bind_joining(matches[2])
 end
 
-function trigger_func_skrypty_team_killer_stop_watch()
-    misc.improve["improve_start_timestamp"] = getEpoch()
-end
-
 function alias_func_skrypty_team_kk()
     ateam:kk()
 end

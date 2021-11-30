@@ -16,3 +16,12 @@ function scripts.config_fixers.states_nav_printable_fixers(config)
     end
     return false
 end
+
+function scripts.config_fixers.fix_beep(config)
+    local entry = config._config["scripts.sounds.beep"]:gsub("\\", "/")
+    if entry == string.format("%s/sounds.beep.wav", getMudletHomeDir()):gsub("\\", "/") or entry == "arkadia/sounds/beep.wav" then
+        config._config["scripts.sounds.beep"] = "sounds/beep.wav"
+        return true
+    end
+    return false
+end

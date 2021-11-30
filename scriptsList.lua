@@ -15,6 +15,7 @@ return {
     "skrypty/people",
     "skrypty/misc",
     "skrypty/multibinds",
+    "skrypty/tokens",
     "skrypty/utils",
     "skrypty/ui",
     "skrypty/logger",
@@ -188,7 +189,6 @@ return {
     "mapper/ui/build",
     "mapper/ui/update",
     "mapper/ui/location_marker",
-    "skrypty/inventory/magiki_zbieranie",
     "skrypty/inventory/kowal",
     "skrypty/inventory/magic-weapons",
     "skrypty/inventory/magic-jewelry",
@@ -380,6 +380,7 @@ return {
     "skrypty/ui/gags/color/color_innych_spece/gp/ktos_spec",
     "skrypty/first_config",
     "skrypty/ui/inline_compass_rose",
+    "skrypty/world/baccala",
     "skrypty/world/brokilon",
     "skrypty/world/mahakam"
 }

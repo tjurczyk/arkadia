@@ -49,7 +49,6 @@ end
 
 function trigger_func_skrypty_ui_footer_elements_order_action()
     disableTimer("order_timer")
-    --scripts.ui:info_order_ready_update("15")
     scripts.ui.states_window_nav_states["order_state"] = 15
     scripts.ui.order_wait_time = 15
     enableTimer("order_timer")

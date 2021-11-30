@@ -141,6 +141,9 @@ function scripts.transports.ride:store_new_minimum(time)
 end
 
 function scripts.transports.ride:show_progress()
+    if not scripts.transports.show_progress then
+        return
+    end
     local border_bottom = getBorderBottom()
     local border_right = getBorderRight()
     
@@ -160,6 +163,7 @@ function scripts.transports.ride:show_progress()
 end
 
 function scripts.transports.ride:update_progress()
+    if not self.progress then return end
     local current, total = self:get_progress()
     local current_stop = self.definition.stops[self.index]
     local label = current_stop.label and "→ " .. current_stop.label or string.format("%s → %s", current_stop.start, current_stop.destination)

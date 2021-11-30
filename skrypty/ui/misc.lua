@@ -5,20 +5,20 @@ function trigger_func_skrypty_ui_misc_nie_ma_kierunku()
 end
 
 function trigger_func_skrypty_ui_misc_jestes_zbyt_zmeczony()
-    selectString(matches[2], 1)
+    selectCurrentLine()
     fg("tan")
     resetFormat()
 end
 
 function trigger_func_skrypty_ui_misc_tablica_ogloszeniowa()
-    selectString(matches[2], 1)
+    selectCurrentLine()
     fg("cornsilk")
     resetFormat()
 end
 
 function trigger_func_skrypty_ui_misc_klapa_campogrotta()
     raiseEvent("playBeep")
-    selectString(matches[2], 1)
+    selectCurrentLine()
     fg("tomato")
     resetFormat()
 end
@@ -52,13 +52,8 @@ function trigger_func_skrypty_ui_misc_wyverna_trucizna_off()
     scripts.ui:info_action_update("")
 end
 
-function trigger_func_skrypty_ui_misc_wyverna_trucizna_on()
+function trigger_func_skrypty_ui_misc_trucizna_on()
     creplaceLine("<tomato>\n\n[  ZDROWIE  ] <grey>" .. matches[2] .. "\n\n")
-    scripts.ui:info_action_update("ZATRUTY")
-end
-
-function trigger_func_skrypty_ui_misc_ghoul_trucizna()
-    creplaceLine("<tomato>\n\n[  ZDROWIE  ] <grey>" .. matches[1] .. "\n\n")
     scripts.ui:info_action_update("ZATRUTY")
 end
 
@@ -141,7 +136,7 @@ function trigger_func_skrypty_ui_misc_wskazuje_dol_trop()
 end
 
 function trigger_func_skrypty_ui_misc_gory_wyjscia_zejscia()
-    selectString(matches[2], 1)
+    selectCurrentLine()
     fg("LawnGreen")
     resetFormat()
 end

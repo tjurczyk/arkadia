@@ -189,7 +189,6 @@ return {
     "mapper/ui/build",
     "mapper/ui/update",
     "mapper/ui/location_marker",
-    "skrypty/inventory/magiki_zbieranie",
     "skrypty/inventory/kowal",
     "skrypty/inventory/magic-weapons",
     "skrypty/inventory/magic-jewelry",

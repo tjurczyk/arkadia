@@ -80,3 +80,11 @@ function scripts.ingress:post_process_message(msg)
 end
 
 scripts.ingress:init()
+
+function is_msg_type(...)
+    return gmcp.gmcp_msgs and table.contains(arg, gmcp.gmcp_msgs.type)
+end
+
+function is_combat_msg()
+    return is_msg_type("combat.avatar", "combat.team", "combat.others")
+end

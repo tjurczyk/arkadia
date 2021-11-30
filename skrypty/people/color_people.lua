@@ -2,13 +2,15 @@ function scripts.people:process_person_color(text, name, guild, color, suffix_co
     if gmcp.gmcp_msgs and gmcp.gmcp_msgs.type == "room.short" then
         return
     end
+    local selectedText, offset, len = getSelection()
     if text:lower():title() ~= name:lower():title() then
         local sub = text
         if not suffix_color then
             sub = string.format("<%s>%s<reset>", color, sub)
+            creplace(sub)
         end
-        local replacement = string.format("%s <%s>(%s <%s>%s<%s>)<reset>", sub, color, name, suffix_color or color, guild, color)
-        creplace(replacement)
+        moveCursor(offset + len, getLineNumber())
+        cinsertText(string.format(" <%s>(%s <%s>%s<%s>)<reset>", color, name, suffix_color or color, guild, color))
     elseif not suffix_color then
         fg(color)
     end

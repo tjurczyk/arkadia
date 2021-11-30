@@ -107,7 +107,7 @@ Skrypty mają swoje ustawienia, które można załadować za pomocą `/laduj imi
 Komenda `/laduj imie` ładuje plik o nazwie `imie.json` z katalogu profilu Mudleta.
 
 Pierwszej konfiguracji można również dokonań za pomocą kreatora, który w przypadku pierwszego uruchomienia pojawi się automatycznie.
-Konfigurator można przywołać komendą `/konfiguruj`.
+Konfigurator można przywołać komendą `/konfiguracja`.
 
 #### KATALOG PROFILU
 Aby dowiedzieć się gdzie siedzi katalog profilu, należy w linii komend w Mudlecie wykonać komendę:

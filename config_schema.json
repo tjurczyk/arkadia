@@ -1103,6 +1103,15 @@
       "macros_on_modify": []
     },
     {
+        "name": "scripts.people.enemy_color",
+        "default_value": "red",
+        "field_type": "string",
+        "content_type" : "mudlet_color",
+        "macros_on_modify": [
+          "_people"
+        ]
+    },
+    {
       "name": "scripts.people.enemy_guilds",
       "default_value": [],
       "field_type": "list",
@@ -2777,7 +2786,7 @@
     },
     {
       "name": "scripts.sounds.beep",
-      "default_value": "arkadia/sounds/beep.wav",
+      "default_value": "sounds/beep.wav",
       "field_type": "string",
       "content_type" : "file_path",
       "macros_on_modify": []
@@ -2869,6 +2878,12 @@
     {
       "name": "amap.disable_team_sneak",
       "default_value": false,
+      "field_type": "boolean",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.transports.show_progress",
+      "default_value": true,
       "field_type": "boolean",
       "macros_on_modify": []
     }

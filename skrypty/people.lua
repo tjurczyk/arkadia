@@ -33,6 +33,7 @@ scripts.people["updating_names"] = false
 
 scripts.people["name_color"] = "yellow"
 scripts.people["guild_color"] = "dark_orange"
+scripts.people["enemy_color"] = "red"
 
 scripts.people["people_triggers"] = scripts.people["people_triggers"] or {}
 scripts.people["people_triggers_objects"] = scripts.people["people_triggers_objects"] or {}

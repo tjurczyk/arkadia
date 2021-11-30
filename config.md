@@ -1673,3 +1673,13 @@ Wyłącza z ustawień przemykania opcje przemykania z drużyną.
 Dostępne wartości:
 * `true` - przemykanie z drużyną pominięte
 * `false` - przemykanie z druyżną dostępne
+
+---
+
+## `scripts.transports.show_progress`
+
+Włącza/wyłącza pasek pokazujący orientacyjny czas do dotarcia do celu podczas korzystania ze środków transportu.
+
+Dostępne wartości:
+* `true` - pasek będzie widoczny
+* `false` - pasek będzie niewidoczny

@@ -1,4 +1,9 @@
-scripts.transports = scripts.transports or {triggers = {}, temp_triggers = {}, active_rides = {}}
+scripts.transports = scripts.transports or {
+    triggers = {},
+    temp_triggers = {},
+    active_rides = {},
+    show_progress = true,
+}
 
 local travel_times_file = getMudletHomeDir() .. "/travel-times.json"
 

@@ -2871,6 +2871,12 @@
       "default_value": false,
       "field_type": "boolean",
       "macros_on_modify": []
+    },
+    {
+      "name": "scripts.transports.show_progress",
+      "default_value": true,
+      "field_type": "boolean",
+      "macros_on_modify": []
     }
   ]
 }

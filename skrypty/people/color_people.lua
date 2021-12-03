@@ -3,7 +3,7 @@ function scripts.people:process_person_color(text, name, guild, color, suffix_co
         return
     end
     local selectedText, offset, len = getSelection()
-    if text:lower():title() ~= name:lower():title() then
+    if name and text:lower():title() ~= name:lower():title() then
         local sub = text
         if not suffix_color then
             sub = string.format("<%s>%s<reset>", color, sub)
@@ -42,8 +42,9 @@ function scripts.people:color_person_build(item, color, guild_color)
 
     scripts.tokens:register(item.short, function(current_match)
         scripts.tokens:process_token(current_match, function()
-            scripts.people:process_person_color(current_match, item.name, guild_str, color, guild_color)
-        end, function(what, k) return not (line:find(what .. " chaosu", k) or line:find(" %(to chyba")) end)
+            local name = not line:find(" %(to chyba") and item.name
+            scripts.people:process_person_color(current_match, name, guild_str, color, guild_color)
+        end, function(what, k) return not line:find(what .. " chaosu", k) end)
     end, "people" .. (item.name or ""))
    
     if item.name and item.name ~= "" then

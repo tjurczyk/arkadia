@@ -24581,8 +24581,10 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
 						<string>Wynurzajac sie z otchlani wlasnego umyslu</string>
+						<string>Czujesz sie jakbys wydobywal sie z glebokiej otchlani</string>
 					</regexCodeList>
 					<regexCodePropertyList>
+						<integer>2</integer>
 						<integer>2</integer>
 					</regexCodePropertyList>
 				</Trigger>

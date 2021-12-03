@@ -1,6 +1,5 @@
 function herbs:init_herbs()
     if herbs["use_herb_triggers"] then
-        herbs:delete_triggers()
         herbs:create_triggers()
     end
     herbs:v2_init_data()
@@ -100,18 +99,14 @@ end
 
 function herbs:create_triggers()
     for herb_long, herb_name in pairs(herbs.herbs_long_to_short) do
-        local regex = "(?:^|\\W)(?i)(".. herb_long .. ")(?:\\W|$)(?!\\((?:\\w+ ?)+)"
-        herbs.herb_trigg_ids[herb_long] = tempRegexTrigger(regex, function() herbs:process_trigger(matches[2], herb_name) end)
-    end
-end
-
-function herbs:delete_triggers()
-    for herb_long, herb_trigger_id in pairs(herbs.herb_trigg_ids) do
-        killTrigger(herb_trigger_id)
+        scripts.tokens:register(herb_long, function(current_match) herbs:process_trigger(current_match, herb_name) end, "herbs " .. herb_name)
     end
 end
 
 function herbs:process_trigger(herb_match, herb_name)
+    if line:starts("|") then
+        return
+    end
     selectString(herb_match, 1)
     replace(herb_match .. " (" .. herb_name .. ")")
     selectString(herb_name, 1)

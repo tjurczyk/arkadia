@@ -14022,7 +14022,7 @@
 									<string>Uderzenie w glowe oglusza cie i powala na ziemie.</string>
 									<string>znienacka kopie cie w noge i kiedy tracisz rytm walki, przywala ci piescia prosto w nos.</string>
 									<string>Ktos bez zastanowienia uderza cie piescia w szczeke, robiac to z taka sila, ze niemal powala cie na ziemie.</string>
-									<string>silnym ciosem .* oglusza cie</string>
+									<string>silnym ciosem .* oglusza cie\b</string>
 									<string>Gigantyczny drapiezny troll pochyla leb i szarzuje, by uderzyc cie kreconymi rogami prosto w klatke piersiowa. Potezny cios odrzuca cie i wyrywa oddech z piersi.</string>
 								</regexCodeList>
 								<regexCodePropertyList>

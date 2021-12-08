@@ -411,7 +411,8 @@
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>zagladanie_depozyt</name>
-						<script>trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
+						<script>-- pattern z premedytacja nie zawiera ^
+trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
 						<mStayOpen>0</mStayOpen>
@@ -423,7 +424,7 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^Twoj depozyt zawiera (.*)\.$</string>
+							<string>Twoj depozyt zawiera (.*)\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>

@@ -206,7 +206,7 @@ function herbs:get_clickable_teammate_data(teammate_name)
 end
 
 function herbs:get_clickable_herb_data(herb_name)
-    local herb_actions = { "expandAlias(\"/ziolo " .. herb_name .. "\")" }
+    local herb_actions = { "" }
     local herb_hints = { herb_name }
 
     for k, v in pairs(herbs.settings.get_herb_counts) do
@@ -240,7 +240,7 @@ function herbs:get_clickable_herb_data(herb_name)
             use_element["hints"] = {}
             use_element["actions"] = {}
             table.insert(use_element["hints"], herb_name)
-            table.insert(use_element["actions"], "expandAlias(\"/ziolo " .. herb_name .. "\")")
+            table.insert(use_element["actions"], "")
             for kk, current_count in pairs(herbs.settings.use_herb_counts) do
                 local use_hint = ""
                 local use_action = ""

@@ -20023,7 +20023,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^(|&gt; )(.*), kladac szczegolny akcent na swoje nazwisko, przedstawia sie jako: (.*)\.$</string>
+						<string>^(|&gt; )(.*), kladac szczegolny akcent na swoje nazwisko, przedstawia sie jako: \w+, (.*)\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>

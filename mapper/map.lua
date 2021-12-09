@@ -81,6 +81,7 @@ function amap:locate(noprint, skip_db)
     else
         if not skip_db and amap.localization:try_to_locate() then
             msg = "Zlokalizowalem po opisie lokacji i wyjsciach."
+            ret = true
         else 
             msg = "GMCP nie zawiera koordynatow, nie moge cie zlokalizowac na mapie"
         end
@@ -206,7 +207,6 @@ function get_next_room_from_dirs(room_id, dir, spe, is_team_follow)
     end
 
     if is_team_follow and not new_id then
-        --amap:print_log("mapper zgubiony, przeslij dzordzykowi: last curr.id: " .. tostring(amap.curr.id) .. ", spe: `" .. spe .. "`", true)
         amap:locate(true)
         amap:locate_on_next_location()
         if not rex.match(spe, "(?:".. standard_lost_follows .. ")$") then

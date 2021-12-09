@@ -37,8 +37,9 @@ function scripts.transports.ride:init()
         end))
     end
     table.insert(self.triggers, tempExactMatchTrigger(self.definition.start, function() self:start() end))
-    table.insert(self.triggers, tempRegexTrigger("^Jednym susem przesadzasz burte .* i wskakujesz do wody\\. Po chwili udaje ci sie doplynac z powrotem do brzegu\\.$", function() 
-        self:exit() 
+    table.insert(self.triggers, tempRegexTrigger("^Podazasz za .* na zewnatrz\\.", function() self:exit() end))
+    table.insert(self.triggers, tempRegexTrigger("^Jednym susem przesadzasz burte .* i wskakujesz do wody\\.", function() 
+        self:exit()
         self:abort()
     end))
 end
@@ -165,6 +166,10 @@ end
 function scripts.transports.ride:update_progress()
     if not self.progress then return end
     local current, total = self:get_progress()
+    if current > (total * 2) then
+        scripts:print_log("Cos poszlo nie tak. Zglos blad zwiazany z przejazdem srodkiem transportu.")
+        self:abort()
+    end
     local current_stop = self.definition.stops[self.index]
     local label = current_stop.label and "→ " .. current_stop.label or string.format("%s → %s", current_stop.start, current_stop.destination)
     self.progress:setValue(math.min(current, total), total, string.format("<center>%s %s/%s</center>", label, scripts.utils.str_pad(tostring(current), string.len(tostring(total)), "right"), total))

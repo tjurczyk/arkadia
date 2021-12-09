@@ -115,8 +115,16 @@ function trigger_func_skrypty_team_clear_absent()
     end
     druzyna = string.split(druzyna, ", ")
 
+    local descs = {}
     for k, v in pairs(ateam.team) do
         if type(v) == "number" then
+            if descs[ateam.objs[v]["desc"]] then
+                local old_id = descs[ateam.objs[v]["desc"]]
+                local letter = ateam.team[old_id]
+                ateam.team[old_id] = nil
+                ateam.team[letter] = nil
+                raiseEvent("teamChanged")
+            end
             if not table.contains(druzyna, ateam.objs[v]["desc"]) then
                 scripts:print_log(ateam.objs[v]["desc"] .. " nie jest juz w druzynie.", true)
                 local letter = ateam.team[v]
@@ -124,6 +132,7 @@ function trigger_func_skrypty_team_clear_absent()
                 ateam.team[letter] = nil
                 raiseEvent("teamChanged")
             end
+            descs[ateam.objs[v]["desc"]] = v
         end
     end
 end

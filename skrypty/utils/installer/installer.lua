@@ -10,7 +10,6 @@ function scripts.installer:on_scripts_version(version)
 end
 
 function scripts.installer:update_scripts(branch, repo)
-
     local tag = branch ~= "" and branch and branch or "master"
     local repo = repo ~= "" and repo and repo or scripts.installer.main_repo
     local short_repo_name = repo:gsub("(.*)/", "")

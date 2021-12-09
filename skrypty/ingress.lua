@@ -44,12 +44,11 @@ function scripts.ingress:prompt_handler()
     local msg = dec(gmcp.gmcp_msgs.text)
     local plain = ansi2string(msg)
     local feed_msg = msg
-    while plain:sub(1,2) == prompt_sequence and plain:len() > 2 do
-        local separator_point = msg:find(prompt_sequence)
-        feed_msg = feed_msg:sub(separator_point + 2)
-        plain = ansi2string(feed_msg)
+    if plain == prompt_sequence then
+        decho(ansi2decho(plain))
+    else 
+        feedTriggers(feed_msg)
     end
-    feedTriggers(feed_msg)
     return msg
 end
 

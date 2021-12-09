@@ -48,10 +48,10 @@ function misc:item_damaged_replace(text, filtered)
         return
     end
     fg(misc.item_damaged_color[text])
-    selectString(text, 1)
-    local add_text = " " .. misc.item_damaged_desc[text]
-    replace(text .. add_text)
-    selectString(misc.item_damaged_desc[text], 1)
+    if selectString(text, 1) > -1 then
+        local add_text = " " .. misc.item_damaged_desc[text]
+        replace(text .. add_text)
+    end
     resetFormat()
     if filtered then
         setTriggerStayOpen("gzocen", 1)

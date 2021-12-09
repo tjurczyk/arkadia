@@ -107,10 +107,12 @@ function herbs:process_trigger(herb_match, herb_name)
     if line:starts("|") then
         return
     end
-    selectString(herb_match, 1)
-    replace(herb_match .. " (" .. herb_name .. ")")
-    selectString(herb_name, 1)
-    fg("blanched_almond")
+    if selectString(herb_match, 1) > -1 then
+        replace(herb_match .. " (" .. herb_name .. ")")
+    end
+    if selectString(herb_name, 1) > - 1 then
+        fg("blanched_almond")
+    end
     local ln = getLineNumber()
     setLink(function()
         moveCursor(0, ln)

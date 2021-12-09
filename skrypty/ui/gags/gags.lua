@@ -38,8 +38,9 @@ function scripts.gags:gag_prefix(gag_prefix, kind)
     selectCurrentLine()
     local str_replace = string.format("[%s] ", gag_prefix)
     prefix(str_replace)
-    selectString(str_replace, 1)
-    fg(scripts.gag_colors[kind])
+    if selectString(str_replace, 1) > -1 then
+        fg(scripts.gag_colors[kind])
+    end
     resetFormat()
 end
 

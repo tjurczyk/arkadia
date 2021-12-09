@@ -50,8 +50,7 @@ function misc.attack_beep:process_player_attack(name, upper)
     selectCurrentLine()
     fg("red")
 
-    if upper then
-        selectString(upper, 1)
+    if upper and selectString(upper, 1) > -1 then
         replace(upper:upper())
     end
     resetFormat()

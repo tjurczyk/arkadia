@@ -25,11 +25,11 @@ misc["wear_used_color"] = {
 }
 
 function misc:wear_used_replace(text)
-    fg(misc.wear_used_color[text])
-    selectString(text, 1)
-    local add_text = " " .. misc.wear_used_desc[text]
-    replace(text .. add_text)
-    selectString(misc.wear_used_desc[text], 1)
-    resetFormat()
+    if selectString(text, 1) > -1 then
+        fg(misc.wear_used_color[text])
+        local add_text = " " .. misc.wear_used_desc[text]
+        replace(text .. add_text)
+        resetFormat()
+    end
 end
 

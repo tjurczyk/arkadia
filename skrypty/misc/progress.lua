@@ -19,10 +19,10 @@ misc["progress_desc"] = {
 }
 
 function progress_replace(text)
-    selectString(text, 1)
-    local add_text = " " .. misc.progress_desc[text]
-    replace(text .. add_text)
-    selectString(misc.progress_desc[text], 1)
+    if selectString(text, 1) > -1 then
+        local add_text = " " .. misc.progress_desc[text]
+        replace(text .. add_text)
+    end
     resetFormat()
 end
 

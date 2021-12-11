@@ -16,12 +16,8 @@ end
 
 local beep = lfs.attributes(scripts.sounds.beep)
 if not beep then
+    downloadFile(scripts.sounds.beep, "https://raw.githubusercontent.com/tjurczyk/arkadia-data/master/sounds/beep.wav")
     lfs.mkdir(getMudletHomeDir() .. "/sounds")
-    local sourceFile = io.open(getMudletHomeDir() .. "/arkadia/sounds/beep.wav", "r+b")
-    local destFile = io.open(scripts.sounds.beep, "w+b")
-    destFile:write(sourceFile:read("*a"))
-    sourceFile:close()
-    destFile:close()
 end
 
 function scripts.sound_player:play(sound)

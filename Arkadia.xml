@@ -390,7 +390,7 @@
 							<string>^Otwarty.* kosz(?:|yk) zawiera (?&lt;content&gt;.*)\.$</string>
 							<string>^Na stojakach zauwazasz miedzy innymi (?&lt;content&gt;.*)\.$</string>
 							<string>^Debowy wysoki sekretarzyk zawiera (?&lt;content&gt;.*)\.$</string>
-							<string>.* (?:skrzynia|kufer|komoda|stojak|biblioteczka|kuferek|skrzynka)(?: | z okuciami )zawiera (?&lt;content&gt;.*)\.$</string>
+							<string>.* (?:skrzynia|kufer|komoda|stojak|biblioteczka|kuferek|skrzynka)(?:| z okuciami| depozytowa) zawiera (?&lt;content&gt;.*)\.$</string>
 							<string>^Wsrod pedantycznego porzadku w szafie zauwazasz miedzy innymi (?&lt;content&gt;.*)\.$</string>
 							<string>^Otwart[ay] [a-z ]+ (?:koszyk|szafa|sejf) zawiera (?&lt;content&gt;.*)\.$</string>
 							<string>^Narozna etazerka zawiera: (?&lt;content&gt;.*)\.$</string>

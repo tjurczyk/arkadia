@@ -136,8 +136,8 @@ function trigger_func_skrypty_misc_oceniasz_starannie()
     prefix("\n======= ")
     echo(" ========\n\n")
     selectCurrentLine()
-    bg("SlateGray")
-    fg("black")
+    bg("DarkSlateGray")
+    fg("white")
     resetFormat()
 end
 

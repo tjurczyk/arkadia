@@ -5,7 +5,9 @@ function scripts.ui.window_modify(windowName, text, ...)
         if position > -1 then
             for arg_i = 1, arg.n, 1 do
                 arg[arg_i](windowName, { x = position, y = i}, text)
-                selectString(windowName, text, 1)
+                if selectString(windowName, text, 1) == -1 then
+                    break
+                end
             end
         end
     end

@@ -16,10 +16,10 @@ misc["item_used_color"] = {
 
 function misc:item_used_replace(text)
     fg(misc.item_used_color[text])
-    selectString(text, 1)
-    local add_text = " " .. misc.item_used_desc[text]
-    replace(text .. add_text)
-    selectString(misc.item_used_desc[text], 1)
+    if selectString(text, 1) > -1 then
+        local add_text = " " .. misc.item_used_desc[text]
+        replace(text .. add_text)
+    end
     resetFormat()
 end
 

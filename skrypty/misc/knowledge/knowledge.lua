@@ -14,11 +14,11 @@ misc["knowledge_desc"] = {
 misc.knowledge = misc.knowledge or {}
 
 function misc.knowledge:knowledge_replace(text)
-    selectString(text, 1)
-    local add_text = " " .. misc.knowledge_desc[text]
-    replace(text .. add_text)
-    selectString(misc.knowledge_desc[text], 1)
-    resetFormat()
+    if selectString(text, 1) > -1 then
+        local add_text = " " .. misc.knowledge_desc[text]
+        replace(text .. add_text)
+        resetFormat()
+    end
 end
 
 function misc.knowledge:initial_zglebiaj()
@@ -31,8 +31,9 @@ end
 
 -- rozbija output dostepnych do zglebiania wiedzy na linie
 function misc.knowledge:zglebiaj_replace(text)
-    selectString(text, 1)
-    replace("\n")
+    if selectString(text, 1) > -1 then
+        replace("\n")
+    end
 
     text = string.gsub(text, "czy o ([^?]*)?", ", o %1")
     local available = string.split(text, ",")

@@ -40,8 +40,9 @@ function trigger_func_skrypty_ui_gags_color_color_rozkazy_rozkaz_atak_wykonanie(
     selectCurrentLine()
     local str_replace = "[ ROZKAZ WYK ] "
     prefix(str_replace)
-    selectString(str_replace, 1)
-    fg("sea_green")
+    if selectString(str_replace, 1) > -1 then
+        fg("sea_green")
+    end
     resetFormat()
 end
 

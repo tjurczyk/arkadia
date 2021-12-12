@@ -222,8 +222,8 @@
 						</regexCodePropertyList>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-						<name>ekwipunek_poziom_zuzycia</name>
-						<script>trigger_func_skrypty_inventory_equipment_ekwipunek_poziom_zuzycia()</script>
+						<name>ekwiupnek ocena</name>
+						<script></script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
 						<mStayOpen>0</mStayOpen>
@@ -235,13 +235,35 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^Ten element ekwipunku wyglada na ([a-z .]+)$</string>
-							<string>^Ten pojemnik .* wyglada na ([a-z .]+)$</string>
+							<string>Ten</string>
 						</regexCodeList>
 						<regexCodePropertyList>
-							<integer>1</integer>
-							<integer>1</integer>
+							<integer>2</integer>
 						</regexCodePropertyList>
+						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+							<name>ekwipunek_poziom_zuzycia</name>
+							<script>trigger_func_skrypty_inventory_equipment_ekwipunek_poziom_zuzycia()</script>
+							<triggerType>0</triggerType>
+							<conditonLineDelta>0</conditonLineDelta>
+							<mStayOpen>0</mStayOpen>
+							<mCommand></mCommand>
+							<packageName></packageName>
+							<mFgColor>#ff0000</mFgColor>
+							<mBgColor>#ffff00</mBgColor>
+							<mSoundFile></mSoundFile>
+							<colorTriggerFgColor>#000000</colorTriggerFgColor>
+							<colorTriggerBgColor>#000000</colorTriggerBgColor>
+							<regexCodeList>
+								<string>^Ten element ekwipunku wyglada na ([a-z .]+)$</string>
+								<string>^Ten pojemnik .* wyglada na ([a-z .]+)$</string>
+								<string>^Ten egzemplarz .* wyglada na ([a-z .]+)$</string>
+							</regexCodeList>
+							<regexCodePropertyList>
+								<integer>1</integer>
+								<integer>1</integer>
+								<integer>1</integer>
+							</regexCodePropertyList>
+						</Trigger>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>poziom_zniszczenia</name>
@@ -6953,7 +6975,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>^Bierzesz ogromny zamach swoim gigantycznym granitowym mlotem i uderzasz nim w glowe (.*)\. Przeciwnik mruga oczami, nie bardzo wiedzac, co sie dzieje\. Porzadnie go zamroczylo\.$</string>
+											<string>^Bierzesz ogromny zamach swoim gigantycznym granitowym mlotem i uderzasz nim w glowe (.*)\.</string>
 										</regexCodeList>
 										<regexCodePropertyList>
 											<integer>1</integer>
@@ -10691,7 +10713,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>.* bierze ogromny zamach swoim gigantycznym granitowym mlotem i wyprowadza potworny cios w glowe (.*)\. Przeciwnik mruga oczami, nie bardzo wiedzac, co sie dzieje\. Porzadnie go zamroczylo\.$</string>
+											<string>.* bierze ogromny zamach swoim gigantycznym granitowym mlotem i wyprowadza potworny cios w glowe (.*)\.</string>
 										</regexCodeList>
 										<regexCodePropertyList>
 											<integer>1</integer>
@@ -24668,7 +24690,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<string>Musisz stanac w kolejce i poczekac na audiencje.</string>
 						<string>^[ &gt;]*(Nie mozesz sie tam udac, gdyz |)([Op]*pierzona skrzydlata bestia|[Ss]krzydlaty lwiopodobny potwor|[a-z]+ niebezpieczny gryf) swoim cielskiem zagradza ci droge( ucieczki|) na .*</string>
 						<string>Ogromny stwor blokuje dojscie do bramy.</string>
-						<string>Probujesz isc w glab korytarza, lecz zwalisty szarawy golem zastepuje ci droge.</string>
+						<string>^Ruszasz po granitowej posadzce na .*, jednak powstrzymuje cie buchajacy z peknietego chodnika strumien goracej pary\\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -24700,7 +24722,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<integer>2</integer>
 						<integer>1</integer>
 						<integer>2</integer>
-						<integer>2</integer>
+						<integer>1</integer>
 					</regexCodePropertyList>
 				</Trigger>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -25184,12 +25206,14 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 							<string>Probujesz otworzyc brame, ale jest zamknieta od wewnatrz.</string>
 							<string>Probujesz wejsc w zakryte pajeczynami przejscie, lecz duzy szarawy golem odpycha cie brutalnie.</string>
 							<string>Probujesz isc naprzod, ale sliski lod sprawia, ze wywracasz sie na nim.</string>
-							<string>^Probujesz przecisnac sie przez otwor na dach, ale ze wzgledu na brak miejsca,</string>
+							<string>Probujesz przecisnac sie przez otwor na dach, ale ze wzgledu na brak miejsca,</string>
+							<string>Probujesz isc w glab korytarza, lecz zwalisty szarawy golem zastepuje ci droge.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
 							<integer>2</integer>
 							<integer>1</integer>
+							<integer>2</integer>
 							<integer>2</integer>
 							<integer>2</integer>
 							<integer>2</integer>

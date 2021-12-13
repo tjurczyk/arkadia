@@ -1,5 +1,5 @@
 function get_kill_count(linijka)
-    cecho("dupas"..linijka)
+    cecho("dupas: "..linijka)
     local bestigory = {"poteznego","rogatego","gigantycznego","ogromnego","gargantuicznego","przerazajacego","muskularnego","umiesnionego"}
     local Oneadj_two_word_mobs = {"kamiennego trolla","lodowego trolla"}
     local l_keys = string.split(linijka, " ")
@@ -9,7 +9,7 @@ function get_kill_count(linijka)
             if v["day"] then return v["day"] end
             break
         end
-    elseif table.contains(misc.counter.utils.Oneadj_two_word_mobs, l_keys[2] .. " " .. l_keys[3])  then
+    elseif table.size(l_keys)==3 and table.contains(misc.counter.utils.Oneadj_two_word_mobs, l_keys[2] .. " " .. l_keys[3])  then
             l_key = l_keys[2] .. " " .. l_keys[3]
             local retrieved = db:fetch_sql(misc.counter2.db_log.counter2_log, "select count(*) as day from counter2_log where text like '%'"..l_key)
             for k, v in pairs(retrieved) do

@@ -3,6 +3,7 @@ scripts.inv.get_magics_to_put_down_exempts = {
     ["mosiezna duza broszka w ksztalcie liscia debu"] = "mosiezna duza broszke w ksztalcie liscia debu",
     ["zielonym luskowatym plaszczem"] = "zielony luskowaty plaszcz",
     ["szmaragdowozielonym misternym plaszczem"] = "szmaragdowozielony misterny plaszcz",
+    ["dluga czarna szata"] = "dluga czarna szate",
     ["krasnoludzka starozytna korone"] = false,
     ["kruczoczarny misterny miecz"] = false,
     ["zamkniety ozdobny skorzany plecak"] = false,

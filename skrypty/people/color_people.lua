@@ -54,7 +54,7 @@ function scripts.people:color_person_build(item, color, guild_color)
                     scripts.people:process_person_color(current_match, item.name, guild_str, color, guild_color)
                 end)
             end
-        end, "people")
+        end, "people" ..item.name .. tostring(color))
     end
 
     scripts.people.already_processed[item["_row_id"]] = true

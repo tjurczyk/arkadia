@@ -28,21 +28,25 @@ misc["animal_levels"] = {
 }
 
 function misc:level_replace(text)
-    selectString(text, 1)
-    local add_text = " " .. misc.levels[text]
-    replace(text .. add_text)
-    selectString(misc.levels[text], 1)
-    fg("light_slate_blue")
-    resetFormat()
+    if selectString(text, 1) > -1 then
+        local add_text = " " .. misc.levels[text]
+        replace(text .. add_text)
+    end
+    if selectString(misc.levels[text], 1) > -1 then
+        fg("light_slate_blue")
+        resetFormat()
+    end
 end
 
 function misc:animal_level_replace(text)
-    selectString(text, 1)
-    local add_text = " " .. misc.animal_levels[text]
-    replace(text .. add_text)
-    selectString(misc.animal_levels[text], 1)
-    fg("light_slate_blue")
-    resetFormat()
+    if selectString(text, 1) > -1 then
+        local add_text = " " .. misc.animal_levels[text]
+        replace(text .. add_text)
+    end
+    if selectString(misc.animal_levels[text], 1) > -1 then
+        fg("light_slate_blue")
+        resetFormat()
+    end
 end
 
 function trigger_func_skrypty_misc_levels_scripts_knowledge()

@@ -19,8 +19,9 @@ function misc:skill_replace(text)
         local index = 1
         while selectString(k, index) > -1 do
             creplace(string.format("<%s>%s %s<reset>%s", colors[color], k, scripts.utils.str_pad(v, 19 - k:len(), "right"), scripts.utils.str_pad("", k:len())))
-            selectString("]              ", 1)
-            replace("]", true)
+            if selectString("]              ", 1) > -1 then
+                replace("]", true)
+            end
             index = index + 1
             resetFormat()
         end

@@ -1,8 +1,9 @@
 function misc:value_to_gold(amount, str)
-    selectString(str, 1)
-    local money_str = misc:get_valued_string(amount)
-    replace("")
-    cecho(string.sub(str, 0, -2) .. ", czyli" .. money_str .. ".")
+    if selectString(str, 1) > -1 then
+        local money_str = misc:get_valued_string(amount)
+        replace("")
+        cecho(string.sub(str, 0, -2) .. ", czyli" .. money_str .. ".")
+    end
 end
 
 function misc:value_stones()

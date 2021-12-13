@@ -14,9 +14,10 @@ scripts.inv.durability.replacements = {
 function trigger_func_durability_replacement()
     local current_item = scripts.inv.durability.replacements[matches[2]]
     if current_item then
-        selectString(matches[2], 1)
-        fg(current_item.color)
-        replace(matches[2] .. " ("..  current_item.short_label ..")")
-        resetFormat()
+        if selectString(matches[2], 1) > -1 then
+            fg(current_item.color)
+            replace(matches[2] .. " ("..  current_item.short_label ..")")
+            resetFormat()
+        end
     end
 end

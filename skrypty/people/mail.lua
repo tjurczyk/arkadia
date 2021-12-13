@@ -9,20 +9,23 @@ function scripts.people.mail:check_table(name)
 
     if amap and table.size(results) == 1 and results[1]["room_id"] ~= -1 then
         -- it has a location in the db, color with green
-        selectString(name, 1)
-        fg("green")
-        resetFormat()
+        if selectString(name, 1) > -1 then
+            fg("green")
+            resetFormat()
+        end
         return results[1]["room_id"]
     elseif table.size(results) > 1 then
-        selectString(name, 1)
-        fg("orange")
-        resetFormat()
+        if selectString(name, 1) > -1 then
+            fg("orange")
+            resetFormat()
+        end
     elseif scripts.people.mail.known_people[lowered_name] then
         -- we have a hint, so color with yellow and add the line with the description
         local name_padded = scripts.people.mail.known_people[lowered_name] .. "                                                                     "
-        selectString(name, 1)
-        fg("yellow")
-        resetFormat()
+        if selectString(name, 1) > -1 then
+            fg("yellow")
+            resetFormat()
+        end
         cecho("\n |      <yellow>" .. string.sub(name_padded, 0, 70) .. "<grey>|")
     end
 end

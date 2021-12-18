@@ -1,5 +1,4 @@
 function get_kill_count(linijka)
-    cecho("dupas: "..linijka)
     local bestigory = {"poteznego","rogatego","gigantycznego","ogromnego","gargantuicznego","przerazajacego","muskularnego","umiesnionego"}
     local Oneadj_two_word_mobs = {"kamiennego trolla","lodowego trolla"}
     local l_keys = string.split(linijka, " ")

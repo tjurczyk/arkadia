@@ -3782,11 +3782,15 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 									<mSoundFile></mSoundFile>
 									<colorTriggerFgColor>#000000</colorTriggerFgColor>
 									<colorTriggerBgColor>#000000</colorTriggerBgColor>
-									<regexCodeList />
-									<regexCodePropertyList />
+									<regexCodeList>
+										<string>upiorn(?:ego|ym|y) ciemn(?:ego|ym|y) mlo(?:ta|cie|t)</string>
+									</regexCodeList>
+									<regexCodePropertyList>
+										<integer>1</integer>
+									</regexCodePropertyList>
 									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-										<name>ja_ledwo_muskasz_upiorny</name>
-										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_upiorny_mlot_1()</script>
+										<name>upiorny_1</name>
+										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_upiorny_mlot(1)</script>
 										<triggerType>0</triggerType>
 										<conditonLineDelta>0</conditonLineDelta>
 										<mStayOpen>0</mStayOpen>
@@ -3798,15 +3802,15 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>^Ledwie muskasz .* szybkim ciosem upiornego ciemnego mlota\.$</string>
+											<string>szybkim ciosem</string>
 										</regexCodeList>
 										<regexCodePropertyList>
-											<integer>1</integer>
+											<integer>0</integer>
 										</regexCodePropertyList>
 									</Trigger>
 									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-										<name>ja_lekko_ranisz_upiorny</name>
-										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_upiorny_mlot_2()</script>
+										<name>upiorny_2</name>
+										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_upiorny_mlot(2)</script>
 										<triggerType>0</triggerType>
 										<conditonLineDelta>0</conditonLineDelta>
 										<mStayOpen>0</mStayOpen>
@@ -3818,15 +3822,15 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>^Gwaltownym wymachem upiornego ciemnego mlota w .*, lekko (?:go|ja|je) raniac\.$</string>
+											<string>dosiega</string>
 										</regexCodeList>
 										<regexCodePropertyList>
-											<integer>1</integer>
+											<integer>0</integer>
 										</regexCodePropertyList>
 									</Trigger>
 									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-										<name>ja_kaleczac_upiorny</name>
-										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_upiorny_mlot_3()</script>
+										<name>upiorny_3</name>
+										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_upiorny_mlot(3)</script>
 										<triggerType>0</triggerType>
 										<conditonLineDelta>0</conditonLineDelta>
 										<mStayOpen>0</mStayOpen>
@@ -3838,15 +3842,15 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>^Dajac poniesc sie drzemiacej w upiornym ciemnym mlocie furii, z poteznego zamachu uderzasz w .*, a wsciekla sila tego ciosu odrzuca twojego przeciwnika w tyl, potwornie (?:go|ja|je) kaleczac\.$</string>
+											<string>rozjarzaja sie niklym blaskiem</string>
 										</regexCodeList>
 										<regexCodePropertyList>
-											<integer>1</integer>
+											<integer>0</integer>
 										</regexCodePropertyList>
 									</Trigger>
 									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-										<name>ja_potwornie_ranisz_upiorny</name>
-										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_upiorny_mlot_4()</script>
+										<name>upiorny_4</name>
+										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_upiorny_mlot(4)</script>
 										<triggerType>0</triggerType>
 										<conditonLineDelta>0</conditonLineDelta>
 										<mStayOpen>0</mStayOpen>
@@ -3858,15 +3862,15 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>^Przy akompaniamencie ogluszajacego wrzasku, dobywajacego sie z glowy szakala na  upiornym ciemnym mlocie, potwornie ranisz .*\.$</string>
+											<string>Dajac poniesc sie drzemiacej</string>
 										</regexCodeList>
 										<regexCodePropertyList>
-											<integer>1</integer>
+											<integer>2</integer>
 										</regexCodePropertyList>
 									</Trigger>
 									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-										<name>ja_fin_upiorny</name>
-										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_upiorny_mlot_fin()</script>
+										<name>upiorny_5</name>
+										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_upiorny_mlot(5)</script>
 										<triggerType>0</triggerType>
 										<conditonLineDelta>0</conditonLineDelta>
 										<mStayOpen>0</mStayOpen>
@@ -3878,10 +3882,30 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>^Skupiajac cale swoje sily na okrutnym ataku sprawiasz, ze upiorny ciemny mlot rozkrwawia .*, zas agonalny krzyk ofiary miesza sie z ogluszajacym wrzaskiem triumfu, wydobywajacym sie z umieszczonej na broni glowy szakala\. Skonczywszy dzielo zniszczenia, zlowrogi orez uspokaja sie, nadal jednak czujesz, ze jego zadza nie zostala w pelni zaspokojona\.\.\.$</string>
+											<string>Przy akompaniamencie ogluszajacego</string>
 										</regexCodeList>
 										<regexCodePropertyList>
-											<integer>1</integer>
+											<integer>2</integer>
+										</regexCodePropertyList>
+									</Trigger>
+									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+										<name>upiorny_fin</name>
+										<script>trigger_func_skrypty_ui_gags_moje_ciosy_bron_fin()</script>
+										<triggerType>0</triggerType>
+										<conditonLineDelta>0</conditonLineDelta>
+										<mStayOpen>0</mStayOpen>
+										<mCommand></mCommand>
+										<packageName></packageName>
+										<mFgColor>#ff0000</mFgColor>
+										<mBgColor>#ffff00</mBgColor>
+										<mSoundFile></mSoundFile>
+										<colorTriggerFgColor>#000000</colorTriggerFgColor>
+										<colorTriggerBgColor>#000000</colorTriggerBgColor>
+										<regexCodeList>
+											<string>Skupiajac cale swoje sily</string>
+										</regexCodeList>
+										<regexCodePropertyList>
+											<integer>2</integer>
 										</regexCodePropertyList>
 									</Trigger>
 								</TriggerGroup>
@@ -4183,24 +4207,14 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 									<colorTriggerFgColor>#000000</colorTriggerFgColor>
 									<colorTriggerBgColor>#000000</colorTriggerBgColor>
 									<regexCodeList>
-										<string>^Unikajac ataku przeciwnika, wyprowadzasz.*</string>
-										<string>^Robisz z wykroku zamach gryfim srebrzystym mlotem wojennym.*</string>
-										<string>^Zaciskasz mocniej palce na chropowatym stylisku i wyprowadzasz.*</string>
-										<string>^Pozornym atakiem zwodzisz przeciwnika, po czym z mlynca wyprowadzasz.*</string>
-										<string>^Widzac zawahanie przeciwnika, bierzesz z nad glowy.*</string>
-										<string>^Podbiegasz do .* i z rozpedu uderzasz gryfim srebrzystym mlotem wojennym.*</string>
+										<string>srebrzystym mlotem wojennym</string>
 									</regexCodeList>
 									<regexCodePropertyList>
-										<integer>1</integer>
-										<integer>1</integer>
-										<integer>1</integer>
-										<integer>1</integer>
-										<integer>1</integer>
-										<integer>1</integer>
+										<integer>0</integer>
 									</regexCodePropertyList>
 									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-										<name>ledwie_zahaczajac</name>
-										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_gryfi_mlot_1()</script>
+										<name>gryfi_1</name>
+										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_gryfi_mlot(1)</script>
 										<triggerType>0</triggerType>
 										<conditonLineDelta>0</conditonLineDelta>
 										<mStayOpen>0</mStayOpen>
@@ -4219,8 +4233,8 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										</regexCodePropertyList>
 									</Trigger>
 									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-										<name>nieznacznie_tlukac</name>
-										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_gryfi_mlot_2()</script>
+										<name>gryfi_2</name>
+										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_gryfi_mlot(2)</script>
 										<triggerType>0</triggerType>
 										<conditonLineDelta>0</conditonLineDelta>
 										<mStayOpen>0</mStayOpen>
@@ -4239,8 +4253,8 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										</regexCodePropertyList>
 									</Trigger>
 									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-										<name>bolesnie_obijajac</name>
-										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_gryfi_mlot_3()</script>
+										<name>gryfi_3</name>
+										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_gryfi_mlot(3)</script>
 										<triggerType>0</triggerType>
 										<conditonLineDelta>0</conditonLineDelta>
 										<mStayOpen>0</mStayOpen>
@@ -4255,12 +4269,12 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<string>bolesnie obijajac</string>
 										</regexCodeList>
 										<regexCodePropertyList>
-											<integer>1</integer>
+											<integer>0</integer>
 										</regexCodePropertyList>
 									</Trigger>
 									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-										<name>dotkliwie_raniac</name>
-										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_gryfi_mlot_4()</script>
+										<name>gryfi_4</name>
+										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_gryfi_mlot(4)</script>
 										<triggerType>0</triggerType>
 										<conditonLineDelta>0</conditonLineDelta>
 										<mStayOpen>0</mStayOpen>
@@ -4279,8 +4293,8 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										</regexCodePropertyList>
 									</Trigger>
 									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-										<name>zaglebiasz_srebrzyste_gryfie</name>
-										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_gryfi_mlot_5()</script>
+										<name>gryfi_5</name>
+										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_gryfi_mlot(5)</script>
 										<triggerType>0</triggerType>
 										<conditonLineDelta>0</conditonLineDelta>
 										<mStayOpen>0</mStayOpen>
@@ -4292,15 +4306,15 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>zaglebiasz srebrzyste gryfie</string>
+											<string>Widzac zawahanie przeciwnika</string>
 										</regexCodeList>
 										<regexCodePropertyList>
-											<integer>0</integer>
+											<integer>2</integer>
 										</regexCodePropertyList>
 									</Trigger>
 									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-										<name>krwawa_miazge</name>
-										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_gryfi_mlot_fin()</script>
+										<name>gryfi_fin</name>
+										<script>trigger_func_skrypty_ui_gags_moje_ciosy_bron_fin()</script>
 										<triggerType>0</triggerType>
 										<conditonLineDelta>0</conditonLineDelta>
 										<mStayOpen>0</mStayOpen>
@@ -4319,26 +4333,6 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										</regexCodePropertyList>
 									</Trigger>
 								</TriggerGroup>
-								<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-									<name>wulkaniczny_mlot_fin</name>
-									<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_wulkaniczny_mlot_fin()</script>
-									<triggerType>0</triggerType>
-									<conditonLineDelta>0</conditonLineDelta>
-									<mStayOpen>0</mStayOpen>
-									<mCommand></mCommand>
-									<packageName></packageName>
-									<mFgColor>#ff0000</mFgColor>
-									<mBgColor>#ffff00</mBgColor>
-									<mSoundFile></mSoundFile>
-									<colorTriggerFgColor>#000000</colorTriggerFgColor>
-									<colorTriggerBgColor>#000000</colorTriggerBgColor>
-									<regexCodeList>
-										<string>^Podchodzisz do .* i z wymachu wbijasz asymetryczny wulkaniczny mlot w trzewia ofiary, gruchoczac kosci i miazdzac jej witalne organy.</string>
-									</regexCodeList>
-									<regexCodePropertyList>
-										<integer>1</integer>
-									</regexCodePropertyList>
-								</Trigger>
 								<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 									<name>wulkaniczny_mlot</name>
 									<script></script>
@@ -4353,20 +4347,14 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 									<colorTriggerFgColor>#000000</colorTriggerFgColor>
 									<colorTriggerBgColor>#000000</colorTriggerBgColor>
 									<regexCodeList>
-										<string>^Wykorzystujesz (umiejetnie|straszliwy|zrecznie) ped asymetrycznego wulkanicznego mlota.*</string>
-										<string>^Bierzesz (straszliwy|mocarny|potezny) zamach asymetrycznym wulkanicznym mlotem.*</string>
-										<string>^Uderzasz asymetrycznym wulkanicznym mlotem.*</string>
-										<string>^Wyprowadzasz z (furia|impetem|calej sily) uderzenie asymetrycznym wulkanicznym mlotem.*</string>
+										<string>asymetryczn(?:ego|y) wulkaniczn(?:ego|y) mlot(?:a|)</string>
 									</regexCodeList>
 									<regexCodePropertyList>
 										<integer>1</integer>
-										<integer>1</integer>
-										<integer>1</integer>
-										<integer>1</integer>
 									</regexCodePropertyList>
 									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-										<name>ledwie_zahaczajac</name>
-										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_wulkaniczny_mlot_1()</script>
+										<name>wulkaniczny_1</name>
+										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_wulkaniczny_mlot(1)</script>
 										<triggerType>0</triggerType>
 										<conditonLineDelta>0</conditonLineDelta>
 										<mStayOpen>0</mStayOpen>
@@ -4385,8 +4373,8 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										</regexCodePropertyList>
 									</Trigger>
 									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-										<name>nieznacznie_raniac</name>
-										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_wulkaniczny_mlot_2()</script>
+										<name>wulkaniczny_2</name>
+										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_wulkaniczny_mlot(2)</script>
 										<triggerType>0</triggerType>
 										<conditonLineDelta>0</conditonLineDelta>
 										<mStayOpen>0</mStayOpen>
@@ -4405,8 +4393,8 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										</regexCodePropertyList>
 									</Trigger>
 									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-										<name>bolesnie_raniac</name>
-										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_wulkaniczny_mlot_3()</script>
+										<name>wulkaniczny_3</name>
+										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_wulkaniczny_mlot(3)</script>
 										<triggerType>0</triggerType>
 										<conditonLineDelta>0</conditonLineDelta>
 										<mStayOpen>0</mStayOpen>
@@ -4425,8 +4413,8 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										</regexCodePropertyList>
 									</Trigger>
 									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-										<name>dotkliwie_raniac</name>
-										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_wulkaniczny_mlot_4()</script>
+										<name>wulkaniczny_4</name>
+										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_wulkaniczny_mlot(4)</script>
 										<triggerType>0</triggerType>
 										<conditonLineDelta>0</conditonLineDelta>
 										<mStayOpen>0</mStayOpen>
@@ -4445,8 +4433,8 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										</regexCodePropertyList>
 									</Trigger>
 									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-										<name>bardzo_ciezko_raniac</name>
-										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_wulkaniczny_mlot_5()</script>
+										<name>wulkaniczny_5</name>
+										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_wulkaniczny_mlot(5)</script>
 										<triggerType>0</triggerType>
 										<conditonLineDelta>0</conditonLineDelta>
 										<mStayOpen>0</mStayOpen>
@@ -4465,8 +4453,8 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										</regexCodePropertyList>
 									</Trigger>
 									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-										<name>masakrujac</name>
-										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_wulkaniczny_mlot_6()</script>
+										<name>wulkaniczny_6</name>
+										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_wulkaniczny_mlot(6)</script>
 										<triggerType>0</triggerType>
 										<conditonLineDelta>0</conditonLineDelta>
 										<mStayOpen>0</mStayOpen>
@@ -4479,6 +4467,26 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
 											<string>masakrujac</string>
+										</regexCodeList>
+										<regexCodePropertyList>
+											<integer>0</integer>
+										</regexCodePropertyList>
+									</Trigger>
+									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+										<name>wulkaniczny_fin</name>
+										<script>trigger_func_skrypty_ui_gags_moje_ciosy_bron_fin()</script>
+										<triggerType>0</triggerType>
+										<conditonLineDelta>0</conditonLineDelta>
+										<mStayOpen>0</mStayOpen>
+										<mCommand></mCommand>
+										<packageName></packageName>
+										<mFgColor>#ff0000</mFgColor>
+										<mBgColor>#ffff00</mBgColor>
+										<mSoundFile></mSoundFile>
+										<colorTriggerFgColor>#000000</colorTriggerFgColor>
+										<colorTriggerBgColor>#000000</colorTriggerBgColor>
+										<regexCodeList>
+											<string>gruchoczac kosci</string>
 										</regexCodeList>
 										<regexCodePropertyList>
 											<integer>0</integer>
@@ -4499,16 +4507,14 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 									<colorTriggerFgColor>#000000</colorTriggerFgColor>
 									<colorTriggerBgColor>#000000</colorTriggerBgColor>
 									<regexCodeList>
-										<string>^Wyprowadzasz (?:mocarne|potezne|z furia|z impetem|straszliwe|z calej sily) uderzenie wielkim runicznym mlotem wojennym,.*</string>
-										<string>^Bierzesz (?:znad glowy |)zamach wielkim runicznym mlotem wojennym.*</string>
+										<string>wielkim runicznym mlotem wojennym</string>
 									</regexCodeList>
 									<regexCodePropertyList>
-										<integer>1</integer>
-										<integer>1</integer>
+										<integer>0</integer>
 									</regexCodePropertyList>
 									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-										<name>runiczny_ledwie_zahaczajac</name>
-										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_runiczny_mlot_1()</script>
+										<name>runiczny_1</name>
+										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_runiczny_mlot(1)</script>
 										<triggerType>0</triggerType>
 										<conditonLineDelta>0</conditonLineDelta>
 										<mStayOpen>0</mStayOpen>
@@ -4527,8 +4533,8 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										</regexCodePropertyList>
 									</Trigger>
 									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-										<name>runiczny_nieznacznie_tlukac</name>
-										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_runiczny_mlot_2()</script>
+										<name>runiczny_2</name>
+										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_runiczny_mlot(2)</script>
 										<triggerType>0</triggerType>
 										<conditonLineDelta>0</conditonLineDelta>
 										<mStayOpen>0</mStayOpen>
@@ -4547,8 +4553,8 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										</regexCodePropertyList>
 									</Trigger>
 									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-										<name>runiczny_bolesnie_obijajac</name>
-										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_runiczny_mlot_3()</script>
+										<name>runiczny_3</name>
+										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_runiczny_mlot(3)</script>
 										<triggerType>0</triggerType>
 										<conditonLineDelta>0</conditonLineDelta>
 										<mStayOpen>0</mStayOpen>
@@ -4567,8 +4573,8 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										</regexCodePropertyList>
 									</Trigger>
 									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-										<name>runiczny_dotkliwie_raniac</name>
-										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_runiczny_mlot_4()</script>
+										<name>runiczny_4</name>
+										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_runiczny_mlot(4)</script>
 										<triggerType>0</triggerType>
 										<conditonLineDelta>0</conditonLineDelta>
 										<mStayOpen>0</mStayOpen>
@@ -4587,8 +4593,8 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										</regexCodePropertyList>
 									</Trigger>
 									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-										<name>runiczny_bardzo_ciezko_lomoczac</name>
-										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_runiczny_mlot_5()</script>
+										<name>runiczny_5</name>
+										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_runiczny_mlot(5)</script>
 										<triggerType>0</triggerType>
 										<conditonLineDelta>0</conditonLineDelta>
 										<mStayOpen>0</mStayOpen>
@@ -4607,8 +4613,8 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										</regexCodePropertyList>
 									</Trigger>
 									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-										<name>runiczny_niemal_pada_na_ziemie</name>
-										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_runiczny_mlot_6()</script>
+										<name>runiczny_6</name>
+										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_runiczny_mlot(6)</script>
 										<triggerType>0</triggerType>
 										<conditonLineDelta>0</conditonLineDelta>
 										<mStayOpen>0</mStayOpen>
@@ -4626,28 +4632,27 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<integer>0</integer>
 										</regexCodePropertyList>
 									</Trigger>
+									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+										<name>runiczny_fin</name>
+										<script>trigger_func_skrypty_ui_gags_moje_ciosy_bron_fin()</script>
+										<triggerType>0</triggerType>
+										<conditonLineDelta>0</conditonLineDelta>
+										<mStayOpen>0</mStayOpen>
+										<mCommand></mCommand>
+										<packageName></packageName>
+										<mFgColor>#ff0000</mFgColor>
+										<mBgColor>#ffff00</mBgColor>
+										<mSoundFile></mSoundFile>
+										<colorTriggerFgColor>#000000</colorTriggerFgColor>
+										<colorTriggerBgColor>#000000</colorTriggerBgColor>
+										<regexCodeList>
+											<string>krwawa miazge</string>
+										</regexCodeList>
+										<regexCodePropertyList>
+											<integer>0</integer>
+										</regexCodePropertyList>
+									</Trigger>
 								</TriggerGroup>
-								<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-									<name>wielki_runiczny_mlot_wojenny_fin</name>
-									<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_runiczny_mlot_fin()
-</script>
-									<triggerType>0</triggerType>
-									<conditonLineDelta>0</conditonLineDelta>
-									<mStayOpen>0</mStayOpen>
-									<mCommand></mCommand>
-									<packageName></packageName>
-									<mFgColor>#ff0000</mFgColor>
-									<mBgColor>#ffff00</mBgColor>
-									<mSoundFile></mSoundFile>
-									<colorTriggerFgColor>#000000</colorTriggerFgColor>
-									<colorTriggerBgColor>#000000</colorTriggerBgColor>
-									<regexCodeList>
-										<string>^Doskakujesz do .* i z calej sily uderzasz wielkim runicznym mlotem wojennym, zamieniajac wnetrznosci ofiary w krwawa miazge\.$</string>
-									</regexCodeList>
-									<regexCodePropertyList>
-										<integer>1</integer>
-									</regexCodePropertyList>
-								</Trigger>
 								<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 									<name>foremny_mlot</name>
 									<script></script>
@@ -4662,18 +4667,14 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 									<colorTriggerFgColor>#000000</colorTriggerFgColor>
 									<colorTriggerBgColor>#000000</colorTriggerBgColor>
 									<regexCodeList>
-										<string>^Syczac i trzeszczac, przestrzen rozjarza sie strzelajacymi rozblyskami.*</string>
-										<string>^Przestrzen skwierczy i kipi od wyladowan.*</string>
-										<string>^Suchy trzask wyladowan rozdziera przestrzen.*</string>
+										<string>foremnym iskrzacym mlotem</string>
 									</regexCodeList>
 									<regexCodePropertyList>
-										<integer>1</integer>
-										<integer>1</integer>
-										<integer>1</integer>
+										<integer>0</integer>
 									</regexCodePropertyList>
 									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-										<name>ledwie_osmalajac</name>
-										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_foremny_mlot_1()</script>
+										<name>foremny_1</name>
+										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_foremny_mlot(1)</script>
 										<triggerType>0</triggerType>
 										<conditonLineDelta>0</conditonLineDelta>
 										<mStayOpen>0</mStayOpen>
@@ -4692,8 +4693,8 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										</regexCodePropertyList>
 									</Trigger>
 									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-										<name>nieznacznie_przypiekajac</name>
-										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_foremny_mlot_2()</script>
+										<name>foremny_2</name>
+										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_foremny_mlot(2)</script>
 										<triggerType>0</triggerType>
 										<conditonLineDelta>0</conditonLineDelta>
 										<mStayOpen>0</mStayOpen>
@@ -4712,8 +4713,8 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										</regexCodePropertyList>
 									</Trigger>
 									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-										<name>lekko_przypiekajac</name>
-										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_foremny_mlot_3()</script>
+										<name>foremny_3</name>
+										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_foremny_mlot(3)</script>
 										<triggerType>0</triggerType>
 										<conditonLineDelta>0</conditonLineDelta>
 										<mStayOpen>0</mStayOpen>
@@ -4732,8 +4733,8 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										</regexCodePropertyList>
 									</Trigger>
 									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-										<name>dotkliwie_przypiekajac</name>
-										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_foremny_mlot_4()</script>
+										<name>foremny_4</name>
+										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_foremny_mlot(4)</script>
 										<triggerType>0</triggerType>
 										<conditonLineDelta>0</conditonLineDelta>
 										<mStayOpen>0</mStayOpen>
@@ -4752,8 +4753,8 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										</regexCodePropertyList>
 									</Trigger>
 									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-										<name>mocno_parzac</name>
-										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_foremny_mlot_5()</script>
+										<name>foremny_5</name>
+										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_foremny_mlot(5)</script>
 										<triggerType>0</triggerType>
 										<conditonLineDelta>0</conditonLineDelta>
 										<mStayOpen>0</mStayOpen>
@@ -4772,8 +4773,8 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										</regexCodePropertyList>
 									</Trigger>
 									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-										<name>powaznie_parzac</name>
-										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_foremny_mlot_6()</script>
+										<name>foremny_6</name>
+										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_foremny_mlot(6)</script>
 										<triggerType>0</triggerType>
 										<conditonLineDelta>0</conditonLineDelta>
 										<mStayOpen>0</mStayOpen>
@@ -4792,8 +4793,8 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										</regexCodePropertyList>
 									</Trigger>
 									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-										<name>smiertelnie_parzac</name>
-										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_foremny_mlot_fin()</script>
+										<name>foremny_fin</name>
+										<script>trigger_func_skrypty_ui_gags_moje_ciosy_bron_fin()</script>
 										<triggerType>0</triggerType>
 										<conditonLineDelta>0</conditonLineDelta>
 										<mStayOpen>0</mStayOpen>
@@ -4825,11 +4826,15 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 									<mSoundFile></mSoundFile>
 									<colorTriggerFgColor>#000000</colorTriggerFgColor>
 									<colorTriggerBgColor>#000000</colorTriggerBgColor>
-									<regexCodeList />
-									<regexCodePropertyList />
+									<regexCodeList>
+										<string>rezonujac(?:ego|ym) krysztalow(?:ego|ym) mlot(?:a|em)</string>
+									</regexCodeList>
+									<regexCodePropertyList>
+										<integer>1</integer>
+									</regexCodePropertyList>
 									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-										<name>tluczesz</name>
-										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_rezonujacy_mlot_1()</script>
+										<name>rezonujacy_1</name>
+										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_rezonujacy_mlot(1)</script>
 										<triggerType>0</triggerType>
 										<conditonLineDelta>0</conditonLineDelta>
 										<mStayOpen>0</mStayOpen>
@@ -4841,15 +4846,15 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>^Tluczesz lekko .* graniasta glowica swojego rezonujacego krysztalowego mlota\.$</string>
+											<string>graniasta glowica</string>
 										</regexCodeList>
 										<regexCodePropertyList>
-											<integer>1</integer>
+											<integer>0</integer>
 										</regexCodePropertyList>
 									</Trigger>
 									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-										<name>obijasz</name>
-										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_rezonujacy_mlot_2()</script>
+										<name>rezonujacy_2</name>
+										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_rezonujacy_mlot(2)</script>
 										<triggerType>0</triggerType>
 										<conditonLineDelta>0</conditonLineDelta>
 										<mStayOpen>0</mStayOpen>
@@ -4861,15 +4866,15 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>^Obijasz bolesnie .* silnym ciosem swojego rezonujacego krysztalowego mlota\.$</string>
+											<string>bolesnie</string>
 										</regexCodeList>
 										<regexCodePropertyList>
-											<integer>1</integer>
+											<integer>0</integer>
 										</regexCodePropertyList>
 									</Trigger>
 									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-										<name>potwiernie_kaleczac</name>
-										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_rezonujacy_mlot_3()</script>
+										<name>rezonujacy_3</name>
+										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_rezonujacy_mlot(3)</script>
 										<triggerType>0</triggerType>
 										<conditonLineDelta>0</conditonLineDelta>
 										<mStayOpen>0</mStayOpen>
@@ -4881,15 +4886,15 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>^Bierzesz zamach znad glowy rezonujacym krysztalowym mlotem, potwornie kaleczac .*</string>
+											<string>potwornie kaleczac</string>
 										</regexCodeList>
 										<regexCodePropertyList>
-											<integer>1</integer>
+											<integer>0</integer>
 										</regexCodePropertyList>
 									</Trigger>
 									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-										<name>niemal_konczysz</name>
-										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_rezonujacy_mlot_4()</script>
+										<name>rezonujacy_4</name>
+										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_rezonujacy_mlot(4)</script>
 										<triggerType>0</triggerType>
 										<conditonLineDelta>0</conditonLineDelta>
 										<mStayOpen>0</mStayOpen>
@@ -4901,15 +4906,15 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>^Niemal konczysz walke z .*, gdy straszliwym ciosem rezonujacego krysztalowego mlota trafiasz.*</string>
+											<string>straszliwym ciosem</string>
 										</regexCodeList>
 										<regexCodePropertyList>
-											<integer>1</integer>
+											<integer>0</integer>
 										</regexCodePropertyList>
 									</Trigger>
 									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 										<name>rezonujacy_fin</name>
-										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_rezonujacy_mlot_fin()</script>
+										<script>trigger_func_skrypty_ui_gags_moje_ciosy_bron_fin()</script>
 										<triggerType>0</triggerType>
 										<conditonLineDelta>0</conditonLineDelta>
 										<mStayOpen>0</mStayOpen>
@@ -4921,10 +4926,10 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>^Zamaszyste uderzenie twojego rezonujacego krysztalowego mlota miazdzy witalne organy .*</string>
+											<string>miazdzy witalne organy</string>
 										</regexCodeList>
 										<regexCodePropertyList>
-											<integer>1</integer>
+											<integer>0</integer>
 										</regexCodePropertyList>
 									</Trigger>
 									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -4941,10 +4946,10 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>^Graniasta glowica twojego rezonujacego krysztalowego mlota zaczyna drgac coraz mocniej i wydaje z siebie narastajacy, niemal bolesny dzwiek\. Gdy bierzesz kolejny zamach, powstaje potezna, soniczna fala, ktora uderza w .*</string>
+											<string>soniczna fala</string>
 										</regexCodeList>
 										<regexCodePropertyList>
-											<integer>1</integer>
+											<integer>0</integer>
 										</regexCodePropertyList>
 									</Trigger>
 								</TriggerGroup>

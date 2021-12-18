@@ -31,7 +31,7 @@ function trigger_func_skrypty_ui_gags_color_color_innych_ciosy_ktos_rani()
         ["i"] = true,
         ["mocno"] = true,
         ["krwawo"] = true,
-        ["smiertelnie"] = true,
+        ["smiertelnie"] = true
     }
 
     if ignore_list[matches[3]] then
@@ -43,6 +43,10 @@ function trigger_func_skrypty_ui_gags_color_color_innych_ciosy_ktos_rani()
     end
 
     if string.starts(matches[1], "Dostrzegajac szanse na skuteczny atak") then
+        return
+    end
+
+    if string.match(line, "upiornym ciemnym mlocie") then
         return
     end
 

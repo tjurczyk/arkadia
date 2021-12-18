@@ -38,3 +38,6 @@ end
 function trigger_func_skrypty_ui_gags_moje_ciosy_arlekiny_fin()
     scripts.gags:gag_prefix("JA FIN", "moje_ciosy")
 end
+function trigger_func_skrypty_ui_gags_moje_ciosy_bron_fin()
+    scripts.gags:gag_prefix("FIN", "moje_ciosy")
+end

@@ -1,4 +1,7 @@
 function trigger_func_pulapka_brokilon()
+    if line:starts("Nagle czujesz") then
+        amap:move_backward()
+    end
     prefix("[ PULAPKA ]  ")
     selectCurrentLine()
     fg("orange_red")

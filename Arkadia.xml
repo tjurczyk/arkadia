@@ -46,17 +46,11 @@
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^\[?([A-Z][a-z ]+?)\]? rozwiazuje druzyne\.$</string>
-						<string>^Porzucasz swoja druzyne\.$</string>
 						<string>^\[?([A-Z][a-z ]+?)\]? zmusza cie do opuszczenia druzyny\.$</string>
-						<string>^Porzucasz druzyne, ktorej przewodzil[ea]s\.$</string>
 						<string>^Zmuszasz \[?([A-Za-z][a-z ]+?)\]? do opuszczenia druzyny\.$</string>
 						<string>^\[?([A-Z][a-z ]+?)\]? porzuca twoja druzyne\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
 						<integer>1</integer>
 						<integer>1</integer>
 						<integer>1</integer>
@@ -121,9 +115,15 @@
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
 						<string>Nie jestes w zadnej druzynie.</string>
+						<string>^\[?([A-Z][a-z ]+?)\]? rozwiazuje druzyne\.$</string>
+						<string>^Porzucasz swoja druzyne\.$</string>
+						<string>^Porzucasz druzyne, ktorej przewodzil[ea]s\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>3</integer>
+						<integer>1</integer>
+						<integer>1</integer>
+						<integer>1</integer>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>

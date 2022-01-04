@@ -3,7 +3,7 @@ function scripts.people:process_person_color(text, name, guild, color, suffix_co
         return
     end
     local selectedText, offset, len = getSelection()
-    if name and text:lower():title() ~= name:lower():title() then
+    if name and name ~= "" and text:lower():title() ~= name:lower():title() then
         local sub = text
         if not suffix_color then
             sub = string.format("<%s>%s<reset>", color, sub)

@@ -48,12 +48,12 @@ function trigger_func_skrypty_ui_misc_zniszczony_sprzet(owner)
 end
 
 function trigger_func_skrypty_ui_misc_wyverna_trucizna_off()
-    creplaceLine("<LawnGreen>\n\n[  ZDROWIE  ] <grey>" .. matches[2] .. "\n\n")
+    creplaceLine("<LawnGreen>\n\n[  ZDROWIE  ] <grey>" .. line .. "\n\n")
     scripts.ui:info_action_update("")
 end
 
 function trigger_func_skrypty_ui_misc_trucizna_on()
-    creplaceLine("<tomato>\n\n[  ZDROWIE  ] <grey>" .. matches[2] .. "\n\n")
+    creplaceLine("<tomato>\n\n[  ZDROWIE  ] <grey>" .. line .. "\n\n")
     scripts.ui:info_action_update("ZATRUTY")
 end
 

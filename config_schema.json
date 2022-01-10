@@ -2886,6 +2886,12 @@
       "default_value": true,
       "field_type": "boolean",
       "macros_on_modify": []
-    }
+    },
+    {
+        "name": "amap.water_animal",
+        "default_value": false,
+        "field_type": "boolean",
+        "macros_on_modify": []
+      }
   ]
 }

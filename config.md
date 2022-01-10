@@ -1692,3 +1692,13 @@ Włącza/wyłącza pasek pokazujący orientacyjny czas do dotarcia do celu podcz
 Dostępne wartości:
 * `true` - pasek będzie widoczny
 * `false` - pasek będzie niewidoczny
+
+---
+
+## `amap.water_animal`
+
+Włącza/wyłącza pojenie zwierzęcia razem z piciem wody na lokacji.
+
+Dostępne wartości:
+* `true` - pojenie włączone
+* `false` - pojenie wyłączone

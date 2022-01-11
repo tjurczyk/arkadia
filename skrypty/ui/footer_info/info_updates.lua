@@ -84,8 +84,8 @@ end
 -- cover
 --
 function scripts_ui_info_cover_ready_click()
-    if scripts.ui.footer_info_cover_ready_enable_click and ateam.cover_command then
-        expandAlias(ateam.cover_command)
+    if scripts.ui.footer_info_cover_ready_enable_click and ateam.cover_command_click then
+        expandAlias(ateam.cover_command_click)
     end
 end
 

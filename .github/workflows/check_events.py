@@ -26,7 +26,7 @@ for root, directories, files in path:
                         raise_events.append(variable.group(1))
 
 
-not_covered = [item for item in raise_events if item not in events and item not in mudlet_events]
+not_covered = [item for item in raise_events if item not in events and item not in mudlet_events and not item.startswith("gmcp.")]
 if(len(not_covered) > 0):
     print("Events not present in events.md")
     for name in not_covered:

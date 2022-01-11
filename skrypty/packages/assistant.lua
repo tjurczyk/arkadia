@@ -43,6 +43,10 @@ function scripts.packages:add(index, name, city, time)
         fg("spring_green")
         resetFormat()
         location = assistant_match.room_id
+        if getPath(amap.curr.id, location) and selectString("               |", 1) then
+            local distance = table.size(speedWalkPath)
+            replace(scripts.utils.str_pad(tostring(distance), 8, "right") .. "       |")
+        end
     else
         location = scripts.people.mail:check_table(name)
     end
@@ -168,23 +172,21 @@ function trigger_packages_assistant_close()
     setTriggerStayOpen("tablice-open", 0)
 end
 
-function scripts.packages:test()
+function trigger_packages_assistant_replace_terminals()
+    selectCaptureGroup(1)
+    if matches[1] == "==o" then
+        replace("====================o", true)
+    elseif matches[1] == "  |" then
+        replace("                    |", true)
+    elseif matches[1] == "- o" then
+        replace("------------------- o", true)
+    end
 
-    echo("\n")
-    feedTriggers(" Tablica zawiera liste adresatow przesylek, ktore mozesz tutaj pobrac:\n")
-    feedTriggers(" o============================================================================o\n")
-    feedTriggers(" |                Adresat badz                     Cena          Czas na      |\n")
-    feedTriggers(" |               urzad pocztowy                  zl/sr/md      dostarczenie   |\n")
-    feedTriggers(" o -------------------------------------------------------------------------- o\n")
-    feedTriggers(" |   1. Vole                                      0/ 4/ 2        nieogr.      |\n")
-    feedTriggers(" | * 2. Gevair Droc'Aleach                        0/ 5/ 6        nieogr.      |\n")
-    feedTriggers(" | * 3. Galanel Vinel, Hagge                      7/17/ 7        nieogr.      |\n")
-    feedTriggers(" |   4. Vilfrid Wenck, Daevon                    13/17/11        nieogr.      |\n")
-    feedTriggers(" o -------------------------------------------------------------------------- o\n")
-    feedTriggers(" |      Symbolem * oznaczono przesylki ciezkie.                               |\n")
-    feedTriggers(" o============================================================================o\n")
-    echo("\n")
-
+    local cursor = selectString("dostarczenie              ", 1)
+    if cursor > -1 then
+        moveCursor(cursor + 18, getLineNumber())
+        replace("dostarczenie       Dystans", true)
+    end
 end
 
 scripts.packages:init()

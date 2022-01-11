@@ -1,7 +1,7 @@
 function ateam:zas_func(id)
     if ateam.enemy_op_ids[tonumber(id)] then
         local real_id = ateam.enemy_op_ids[tonumber(id)]
-        send("zaslon przed ob_" .. real_id, false)
+        send(string.format("%s przed ob_%s", self.cover_command, real_id), false)
         if ateam.release_guards then
             send("przestan zaslaniac", false)
         end
@@ -13,7 +13,7 @@ end
 function ateam:za_func(id)
     if ateam.team[id] then
         local real_id = ateam.team[id]
-        sendAll("przestan kryc sie za zaslona", "zaslon ob_" .. real_id, false)
+        sendAll("przestan kryc sie za zaslona", string.format("%s ob_%s", self.cover_command, real_id), false)
         if ateam.release_guards then
             send("przestan zaslaniac", false)
         end
@@ -23,7 +23,7 @@ function ateam:za_func(id)
 end
 
 function ateam:za_func_def()
-    sendAll("przestan kryc sie za zaslona", "zaslon cel obrony", false)
+    sendAll("przestan kryc sie za zaslona", string.format("%s cel obrony", self.cover_command), false)
     if ateam.release_guards then
         send("przestan zaslaniac", false)
     end
@@ -33,7 +33,7 @@ function ateam:za_func_support(teammate, id)
     if ateam.team[string.upper(teammate)] and ateam.enemy_op_ids[tonumber(id)] then
         local real_teammate = ateam.team[string.upper(teammate)]
         local real_id = ateam.enemy_op_ids[tonumber(id)]
-        sendAll("przestan kryc sie za zaslona", "zaslon ob_" .. real_teammate .. " przed ob_" .. real_id, false)
+        sendAll("przestan kryc sie za zaslona", string.format("%s ob_%s przed ob_%s", self.cover_command, real_teammate, real_id), false)
         if ateam.release_guards then
             send("przestan zaslaniac", false)
         end
@@ -45,13 +45,13 @@ end
 function ateam:za_func_group(id, number)
     send("opcje grupa " .. tostring(number), false)
     if not id then
-        sendAll("przestan kryc sie za zaslona", "zaslon cel obrony", false)
+        sendAll("przestan kryc sie za zaslona", string.format("%s cel obrony", self.cover_command), false)
         if ateam.release_guards then
             send("przestan zaslaniac", false)
         end
     elseif ateam.team[string.upper(id)] then
         local real_id = ateam.team[string.upper(id)]
-        sendAll("przestan kryc sie za zaslona", "zaslon ob_" .. real_id, false)
+        sendAll("przestan kryc sie za zaslona", string.format("%s ob_%s", self.cover_command, real_id), false)
         if ateam.release_guards then
             send("przestan zaslaniac", false)
         end

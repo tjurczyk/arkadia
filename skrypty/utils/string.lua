@@ -227,5 +227,5 @@ function scripts.utils.str_pad(str, length, align)
 end
 
 function scripts.utils.gender_form(male, female)
-    return scripts.character.info:is_male() and male or female
+    return scripts.character:is_male() and male or female
 end

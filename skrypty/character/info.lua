@@ -9,8 +9,8 @@ function scripts.character.info_update:init()
     end)
 end
 
-function scripts.character.info:is_male()
-    return self.gender == "male"
+function scripts.character:is_male()
+    return self.info.gender == "male"
 end
 
 scripts.character.info_update:init()

@@ -51,7 +51,7 @@ function ateam:za_func_group(id, number)
         end
     elseif ateam.team[string.upper(id)] then
         local real_id = ateam.team[string.upper(id)]
-        sendAll("przestan kryc sie za zaslona", string.format("%s ob_%s", self.cover_command real_id), false)
+        sendAll("przestan kryc sie za zaslona", string.format("%s ob_%s", self.cover_command, real_id), false)
         if ateam.release_guards then
             send("przestan zaslaniac", false)
         end

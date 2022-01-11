@@ -8715,8 +8715,10 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
 											<string>Wykorzystujac dogodny moment wyprowadzasz</string>
+											<string>Wykorzystujac dogodny moment probujesz wyprowadzic</string>
 										</regexCodeList>
 										<regexCodePropertyList>
+											<integer>0</integer>
 											<integer>0</integer>
 										</regexCodePropertyList>
 										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -12834,7 +12836,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>Wykorzystujac dogodny moment .* wyprowadza </string>
+											<string>^Wykorzystujac dogodny moment.* (?:wyprowadza|probuje wyprowadzic)\s</string>
 										</regexCodeList>
 										<regexCodePropertyList>
 											<integer>1</integer>
@@ -21237,8 +21239,8 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>Wyschniete jeziorko.</string>
-							<string>Jest tutaj jedno widoczne wyjscie: poludnie.</string>
+							<string>Wyciagasz dlon w strone blasku i trafiasz w pustke. Woda rozlewa sie na boki odrzucajac twe cialo na twardepodloze...</string>
+							<string>Niebo.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>2</integer>
@@ -25213,11 +25215,13 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 							<string>Probujesz isc naprzod, ale sliski lod sprawia, ze wywracasz sie na nim.</string>
 							<string>Probujesz przecisnac sie przez otwor na dach, ale ze wzgledu na brak miejsca,</string>
 							<string>Probujesz isc w glab korytarza, lecz zwalisty szarawy golem zastepuje ci droge.</string>
+							<string>Probujesz przecisnac sie przez otwor na dach, ale ze wzgledu na brak miejsca, zmuszony jestes wrocic na dol.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
 							<integer>2</integer>
 							<integer>1</integer>
+							<integer>2</integer>
 							<integer>2</integer>
 							<integer>2</integer>
 							<integer>2</integer>

@@ -27,7 +27,7 @@ function trigger_func_skrypty_ui_footer_elements_weapon_off()
 end
 
 function trigger_func_skrypty_ui_footer_elements_cover_action_success()
-    ateam.cover_command = nil
+    ateam.cover_command_click = nil
     disableTimer("cover_timer")
     scripts.ui.cover_wait_time = 5
     scripts.ui.states_window_nav_states["guard_state"] = 5

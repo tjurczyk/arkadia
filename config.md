@@ -1704,3 +1704,8 @@ Włącza/wyłącza pojenie zwierzęcia razem z piciem wody na lokacji.
 Dostępne wartości:
 * `true` - pojenie włączone
 * `false` - pojenie wyłączone
+
+## `ateam.cover_command`
+
+Ustawienie komendy do zaslony, domyslnie jest `zaslon`.
+

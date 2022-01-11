@@ -2901,6 +2901,12 @@
         "default_value": false,
         "field_type": "boolean",
         "macros_on_modify": []
-      }
+    },
+    {
+        "name": "ateam.cover_command",
+        "default_value": "zaslon",
+        "field_type": "string",
+        "macros_on_modify": []
+    }
   ]
 }

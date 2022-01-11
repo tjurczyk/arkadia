@@ -15637,12 +15637,12 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<regexCodeList>
 							<string>Przystan powozowa.</string>
 							<string>Sa tutaj trzy widoczne wyjscia: polnoc, zachod i wschod.</string>
-							<string>Otwarty stojacy powoz.</string>
+							<string>stojacy powoz</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>2</integer>
 							<integer>2</integer>
-							<integer>2</integer>
+							<integer>0</integer>
 						</regexCodePropertyList>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -15661,12 +15661,12 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<regexCodeList>
 							<string>Przystan powozowa.</string>
 							<string>Sa tutaj trzy widoczne wyjscia: polnoc, zachod i wschod.</string>
-							<string>Drewniany stojacy woz.</string>
+							<string>stojacy woz</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>2</integer>
 							<integer>2</integer>
-							<integer>2</integer>
+							<integer>0</integer>
 						</regexCodePropertyList>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">

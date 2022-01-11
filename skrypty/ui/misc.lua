@@ -167,16 +167,6 @@ function trigger_func_skrypty_ui_misc_powoz_maribor_kierunek()
     end
 end
 
-feedTriggers("Przystan powozowa.\n")
-feedTriggers("Sa tutaj trzy widoczne wyjscia: polnoc, zachod i wschod.\n")
-feedTriggers("Otwarty stojacy powoz i drewniany stojacy woz.\n")
-echo("\n")
-
-feedTriggers("Przystan powozowa.\n")
-feedTriggers("Sa tutaj trzy widoczne wyjscia: polnoc, zachod i wschod.\n")
-feedTriggers("Drewniany stojacy woz i otwarty stojacy powoz.\n")
-echo("\n")
-
 function trigger_func_skrypty_ui_misc_woz_maribor_kierunek()
     local cursor = selectString("stojacy woz", 1)
     if cursor then

@@ -3,21 +3,22 @@
     "exit_command": "wyjscie",
     "start": "Woznica oznajmia odjazd.",
     "bind": "wyjrzyj przez okno",
+    "show_path": true,
     "stops": [
         {
             "start": 729,
             "destination": 3760,
             "time": 19,
-            "stop_pattern": "^(?:Woznica oznajmia|Z zewnatrz dochodzi) .*: Postoj - wies Anchor\\. Nastepny przystanek - Bialy Most\\.$",
-            "set_pattern": "^(?:Woznica oznajmia|Z zewnatrz dochodzi) .*: Postoj - wies Anchor\\. Nastepny przystanek - Bialy Most\\.$",
+            "stop_pattern": "^Monotonne kolysanie ustaje w koncu i woz zatrzymuje sie\\.$",
+            "set_pattern": "^Siedzacy na kozle woznica krzyczy: Niedlugo wyruszamy w kierunku Oxenfurtu w Redanii!$",
             "label": "Anchor"
         },
         {
             "start": 3760,
             "destination": 746,
             "time": 23,
-            "stop_pattern": "^(?:Woznica oznajmia|Z zewnatrz dochodzi) .*: Postoj - plac w centrum Bialego Mostu\\. Nastepny przystanek - rozdroza niedaleko Piany\\.$",
-            "set_pattern": "^(?:Woznica oznajmia|Z zewnatrz dochodzi) .*: Postoj - plac w centrum Bialego Mostu\\. Nastepny przystanek - rozdroza niedaleko Piany\\.$",
+            "stop_pattern": "^Monotonne kolysanie ustaje w koncu i woz zatrzymuje sie\\.$",
+            "set_pattern": "^Siedzacy na kozle woznica krzyczy: Niedlugo wyruszamy w kierunku Oxenfurtu w Redanii!$",
             "label": "Bialy Most"
             
         },
@@ -25,48 +26,48 @@
             "start": 746,
             "destination": 764,
             "time": 15,
-            "stop_pattern": "^(?:Woznica oznajmia|Z zewnatrz dochodzi) .*: Postoj - rozdroza niedaleko Piany\\. Nastepny przystanek - wies na podgrodziu Oxenfurtu\\.$",
-            "set_pattern": "^(?:Woznica oznajmia|Z zewnatrz dochodzi) .*: Postoj - rozdroza niedaleko Piany\\. Nastepny przystanek - wies na podgrodziu Oxenfurtu\\.$",
+            "stop_pattern": "^Monotonne kolysanie ustaje w koncu i woz zatrzymuje sie\\.$",
+            "set_pattern": "^Siedzacy na kozle woznica krzyczy: Niedlugo wyruszamy w kierunku Oxenfurtu w Redanii!$",
             "label": "Piana"
         },
         {
             "start": 764,
             "destination": 790,
             "time": 21,
-            "stop_pattern": "^(?:Woznica oznajmia|Z zewnatrz dochodzi) .*: Postoj - wies na podgrodziu Oxenfurtu\\. Nastepny przystanek - rozdroza niedaleko Piany\\.$",
-            "set_pattern": "^(?:Woznica oznajmia|Z zewnatrz dochodzi) .*: Postoj - wies na podgrodziu Oxenfurtu\\. Nastepny przystanek - rozdroza niedaleko Piany\\.$",
+            "stop_pattern": "^Monotonne kolysanie ustaje w koncu i woz zatrzymuje sie\\.$",
+            "set_pattern": "^Siedzacy na kozle woznica krzyczy: Niedlugo wyruszamy w kierunku Oxenfurtu w Redanii!$",
             "label": "Podgrodzie Oxenfurtu"
         },
         {
             "start": 790,
             "destination": 764,
             "time": 22,
-            "stop_pattern": "^(?:Woznica oznajmia|Z zewnatrz dochodzi) .*: Postoj - rozdroza niedaleko Piany\\. Nastepny przystanek - Bialy Most\\.$",
-            "set_pattern": "^(?:Woznica oznajmia|Z zewnatrz dochodzi) .*: Postoj - rozdroza niedaleko Piany\\. Nastepny przystanek - Bialy Most\\.$",
+            "stop_pattern": "^Monotonne kolysanie ustaje w koncu i woz zatrzymuje sie\\.$",
+            "set_pattern": "^Siedzacy na kozle woznica krzyczy: Wkrotce wyruszamy w kierunku stolicy Temerii - Wyzimy!",
             "label": "Piana"
         },
         {
             "start": 764,
             "destination": 746,
             "time": 15,
-            "stop_pattern": "^(?:Woznica oznajmia|Z zewnatrz dochodzi) .*: Postoj - plac w centrum Bialego Mostu\\. Nastepny przystanek - wies Anchor\\.$",
-            "set_pattern": "^(?:Woznica oznajmia|Z zewnatrz dochodzi) .*: Postoj - plac w centrum Bialego Mostu\\. Nastepny przystanek - wies Anchor\\.$",
+            "stop_pattern": "^Monotonne kolysanie ustaje w koncu i woz zatrzymuje sie\\.$",
+            "set_pattern": "^Siedzacy na kozle woznica krzyczy: Wkrotce wyruszamy w kierunku stolicy Temerii - Wyzimy!$",
             "label": "Bialy Most"
         },
         {
             "start": 746,
             "destination": 3760,
             "time": 23,
-            "stop_pattern": "^(?:Woznica oznajmia|Z zewnatrz dochodzi) .*: Postoj - wies Anchor\\. Nastepny przystanek - Wyzima\\.$",
-            "set_pattern": "^(?:Woznica oznajmia|Z zewnatrz dochodzi) .*: Postoj - wies Anchor\\. Nastepny przystanek - Wyzima\\.$",
+            "stop_pattern": "^Monotonne kolysanie ustaje w koncu i woz zatrzymuje sie\\.$",
+            "set_pattern": "^Siedzacy na kozle woznica krzyczy: Wkrotce wyruszamy w kierunku stolicy Temerii - Wyzimy!$",
             "label": "Anchor"
         },
         {
             "start": 3760,
             "destination": 729,
             "time": 18,
-            "stop_pattern": "^(?:Woznica oznajmia|Z zewnatrz dochodzi) .*: Postoj - pod Wyzima\\. Nastepny przystanek - wies Anchor\\.$",
-            "set_pattern": "^(?:Woznica oznajmia|Z zewnatrz dochodzi) .*: Postoj - pod Wyzima\\. Nastepny przystanek - wies Anchor\\.$",
+            "stop_pattern": "^Monotonne kolysanie ustaje w koncu i woz zatrzymuje sie\\.$",
+            "set_pattern": "^Siedzacy na kozle woznica krzyczy: Wkrotce wyruszamy w kierunku stolicy Temerii - Wyzimy!$",
             "label": "Wyzima"
         }
     ]

@@ -160,17 +160,19 @@ function trigger_func_skrypty_ui_misc_zywiolak_wykopuje_kogos()
 end
 
 function trigger_func_skrypty_ui_misc_powoz_maribor_kierunek()
-    selectCurrentLine()
-    local str_replace = " (Bodrog)"
-    suffix(str_replace)
-    resetFormat()
+    local cursor = selectString("stojacy powoz", 1)
+    if cursor then
+        moveCursor(cursor + 13, getLineNumber())
+        insertText(" (Bodrog)")
+    end
 end
 
 function trigger_func_skrypty_ui_misc_woz_maribor_kierunek()
-    selectCurrentLine()
-    local str_replace = " (Grabowa Buchta)"
-    suffix(str_replace)
-    resetFormat()
+    local cursor = selectString("stojacy woz", 1)
+    if cursor then
+        moveCursor(cursor + 11, getLineNumber())
+        insertText(" (Grabowa Buchta)")
+    end
 end
 
 function trigger_func_skrypty_ui_misc_zmeczenie()

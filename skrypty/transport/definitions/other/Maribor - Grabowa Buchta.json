@@ -3,6 +3,7 @@
     "exit_command": "wyjscie",
     "start": "Woznica donosnym glosem oznajmia odjazd.",
     "bind": "wyjrzyj na zewnatrz",
+    "show_path": true,
     "stops": [
         {
             "start": 3525,

@@ -54,8 +54,7 @@ function scripts.packages:add(index, name, city, time)
     selectString(name, 1)
     local command = "wybierz paczke " .. index
     setLink(function() send(command) end, command)
-
-
+    
     self.current_offer[index] = { name = name, location = location }
     if city and city ~= "" then
         self.current_offer[index].city = city

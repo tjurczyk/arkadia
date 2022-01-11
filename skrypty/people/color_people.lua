@@ -1,43 +1,33 @@
-function scripts.people:process_person_color(item, text, suffix, color, guild_color)
+function scripts.people:process_person_color(text, name, guild, color, suffix_color)
     if gmcp.gmcp_msgs and gmcp.gmcp_msgs.type == "room.short" then
         return
     end
-    if item.name ~= text and suffix then
-        local full_sufix = "(" .. suffix .. ")"
-        local replacement = string.format("%s %s", text, full_sufix)
-        selectString(text, 1)
-        replace(replacement, true)
-        selectString(full_sufix, 1)
-        fg(color)
-    end
-
-    if not guild_color then
-        selectString(text, 1)
-        fg(color)
-    else
-        local i = 1
-        while selectString(scripts.people:get_guild_name(item.guild), i) > -1 do
-            fg(guild_color)
-            i = i + 1
+    local selectedText, offset, len = getSelection()
+    if name and name ~= "" and text:lower():title() ~= name:lower():title() then
+        local sub = text
+        if not suffix_color then
+            sub = string.format("<%s>%s<reset>", color, sub)
+            creplace(sub)
         end
+        moveCursor(offset + len, getLineNumber())
+        cinsertText(string.format(" <%s>(%s <%s>%s<%s>)<reset>", color, name, suffix_color or color, guild, color))
+    elseif not suffix_color then
+        fg(color)
     end
     resetFormat()
 end
 
-function scripts.people:color_person_build(item, color, suffix_only)
-    if item["short"] == "" or scripts.people.already_processed[item["_row_id"]] then
+function scripts.people:color_person_build(item, color, guild_color)
+    if item.short == "" or scripts.people.already_processed[item["_row_id"]] then
         return
     end
 
     local suffix
 
     local guild_str = scripts.people:get_guild_name(item["guild"])
-
-    -- finally, it constructs the regex
-    local regex
-    
     local norm_short = string.lower(item["short"])
 
+    
     if norm_short ~= "" then
         if item["name"] ~= "" then
             suffix = item["name"]
@@ -50,16 +40,25 @@ function scripts.people:color_person_build(item, color, suffix_only)
         end
     end
 
-    if item.name ~= "" and suffix ~= string.lower(item.name) then
-        regex = "\\b(?i)(" .. item.short .. "(?-i)|" .. item.name .. ")(?! chaosu| \\(to chyba)\\b"
-    else
-        regex = "\\b(?i)(" .. item.short .. "(?-i))(?! chaosu| \\(to chyba)\\b"
+    scripts.tokens:register(item.short, function(current_match)
+        scripts.tokens:process_token(current_match, function()
+            local name = not line:find(" %(to chyba") and item.name
+            scripts.people:process_person_color(current_match, name, guild_str, color, guild_color)
+        end, function(what, k) return not line:find(what .. " chaosu", k) end)
+    end, "people" .. (item.name or ""))
+   
+    if item.name and item.name ~= "" then
+        scripts.tokens:register(item.name, function(current_match)
+            if current_match:sub(1, 1) == item.name:sub(1,1) then
+                scripts.tokens:process_token(current_match, function()
+                    scripts.people:process_person_color(current_match, item.name, guild_str, color, guild_color)
+                end)
+            end
+        end, "people" ..item.name .. tostring(color))
     end
 
-    local triggerId = tempRegexTrigger(regex, function() scripts.people:process_person_color(item, matches[2], suffix, color, suffix_only) end)
-    table.insert(self.color_triggers, triggerId)
-    scripts.people.already_processed[item["_row_id"]] = triggerId
-    scripts.people.already_processed_desc[item.short] = triggerId
+    scripts.people.already_processed[item["_row_id"]] = true
+    scripts.people.already_processed_desc[item.short] = true
 end
 
 function scripts.people:color_people_guild(guild_name, color)
@@ -79,11 +78,6 @@ function scripts.people:color_people_guild(guild_name, color)
 end
 
 function scripts.people:starter()
-    for _, id in pairs(scripts.people.color_triggers) do
-        killTrigger(id)
-    end
-
-    scripts.people.color_triggers = {}
     scripts.people.already_processed = {}
     scripts.people.already_processed_desc = {}
 
@@ -118,7 +112,7 @@ function scripts.people:enemy_person_build(item)
     if item.short then
         scripts.people.bind_enemies[item.short] = true
     end
-    scripts.people:color_person_build(item, "red")
+    scripts.people:color_person_build(item, scripts.people.enemy_color)
 end
 
 function scripts.people:enemy_people_guild(guild_name)
@@ -145,11 +139,12 @@ function scripts.people:color_people_starter()
                 end
             end
         else
-            table.insert(scripts.people.color_triggers, tempRegexTrigger("(?i)(" .. k .. ")", function()
-                selectCaptureGroup(2)
-                fg(v)
-                resetFormat()
-            end ))
+            scripts.tokens:register(k, function(match)
+                if selectString(match, 1) > -1 then
+                    fg(v)
+                    resetFormat()
+                end
+            end )
         end
     end
 
@@ -177,3 +172,8 @@ function scripts.people:trigger_people_starter()
     end
 end
 
+
+
+function trigger_func_people_process_line()
+    scripts.tokens:process_line(line)
+end

@@ -9,11 +9,13 @@ return {
     "skrypty/team",
     "skrypty/character",
     "skrypty/keybind",
+    "skrypty/ingress",
     "skrypty/inventory",
     "skrypty/herbs",
     "skrypty/people",
     "skrypty/misc",
     "skrypty/multibinds",
+    "skrypty/tokens",
     "skrypty/utils",
     "skrypty/ui",
     "skrypty/logger",
@@ -187,7 +189,6 @@ return {
     "mapper/ui/build",
     "mapper/ui/update",
     "mapper/ui/location_marker",
-    "skrypty/inventory/magiki_zbieranie",
     "skrypty/inventory/kowal",
     "skrypty/inventory/magic-weapons",
     "skrypty/inventory/magic-jewelry",
@@ -257,7 +258,6 @@ return {
     "skrypty/ui/footer_main_modes/main_footer_updater_mode3_daracan",
     "skrypty/ui/footer_main_modes/main_footer_updater_mode4_kazur",
     "skrypty/ui/footer_main_modes/main_footer_updater_mode5",
-    "skrypty/ui/talk_window/gmcp_msgs",
     "skrypty/ui/talk_window/ui_talk_window",
     "skrypty/ui/talk_window/talk_history",
     "skrypty/ui/gmcp_handlers/gmcp_state_handler",
@@ -380,5 +380,7 @@ return {
     "skrypty/ui/gags/color/color_innych_spece/gp/ktos_spec",
     "skrypty/first_config",
     "skrypty/ui/inline_compass_rose",
-    "skrypty/world/brokilon"
+    "skrypty/world/baccala",
+    "skrypty/world/brokilon",
+    "skrypty/world/mahakam"
 }

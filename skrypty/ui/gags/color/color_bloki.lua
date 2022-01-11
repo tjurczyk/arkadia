@@ -73,8 +73,9 @@ function trigger_func_skrypty_ui_gags_color_color_bloki_blokujesz_droge()
     selectCurrentLine()
     local str_replace = "[    BLOK    ] "
     prefix(str_replace)
-    selectString(str_replace, 1)
-    fg("sea_green")
+    if selectString(str_replace, 1) > -1 then
+        fg("sea_green")
+    end
     resetFormat()
 end
 
@@ -86,8 +87,9 @@ function trigger_func_skrypty_ui_gags_color_color_bloki_omija_nieskuteczny_blok(
     selectCurrentLine()
     local str_replace = "[    BLOK    ] "
     prefix(str_replace)
-    selectString(str_replace, 1)
-    fg("yellow")
+    if selectString(str_replace, 1) > -1 then
+        fg("yellow")
+    end
     resetFormat()
 end
 
@@ -99,8 +101,9 @@ function trigger_func_skrypty_ui_gags_color_color_bloki_przestajesz_odcinac()
     selectCurrentLine()
     local str_replace = "[    BLOK    ] "
     prefix(str_replace)
-    selectString(str_replace, 1)
-    fg("sea_green")
+    if selectString(str_replace, 1) > -1 then
+        fg("sea_green")
+    end
     resetFormat()
 end
 

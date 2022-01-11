@@ -176,10 +176,10 @@ end
 function misc.lvl_calc:cechy_replace(m1, m2)
     local value, step= misc.lvl_calc:collect_stat(m1, m2)
 
-    selectString(m1, 1)
-    creplace(m1..' <green>['..value..'/10]')
-    if m1 and step then
-        selectString(m2, 1)
+    if selectString(m1, 1) > -1 then
+        creplace(m1..' <green>['..value..'/10]')
+    end
+    if m1 and step and selectString(m2, 1) > -1 then
         creplace(m2..' <green>['..step..'/5]')
     end
 

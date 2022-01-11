@@ -3,26 +3,13 @@ scripts.inv.get_magics_to_put_down_exempts = {
     ["mosiezna duza broszka w ksztalcie liscia debu"] = "mosiezna duza broszke w ksztalcie liscia debu",
     ["zielonym luskowatym plaszczem"] = "zielony luskowaty plaszcz",
     ["szmaragdowozielonym misternym plaszczem"] = "szmaragdowozielony misterny plaszcz",
+    ["dluga czarna szata"] = "dluga czarna szate",
     ["krasnoludzka starozytna korone"] = false,
     ["kruczoczarny misterny miecz"] = false,
     ["zamkniety ozdobny skorzany plecak"] = false,
     ["otwarty ozdobny skorzany plecak"] = false,
-    ["ozdobny skorzany plecak"] = false,
+    ["ozdobny skorzany plecak"] = false
 }
-
-function scripts.inv:special_inventory_highlight(text, color)
-    selectString(text, 1)
-    fg(color)
-    resetFormat()
-end
-
-function scripts.inv:setup_special_inventory_highlight(item, color)
-    if not item then
-        error("Wrong input")
-    end
-
-    return tempRegexTrigger(self:get_magic_item_pattern(item), [[ scripts.inv:special_inventory_highlight(matches[2], "]] .. color .. [[") ]])
-end
 
 function scripts.inv:set_all_magic()
     scripts.inv:setup_magics_triggers()
@@ -30,31 +17,26 @@ function scripts.inv:set_all_magic()
 end
 
 function scripts.inv:setup_magics_triggers()
-    for k, v in pairs(scripts.inv.magics_trigger_ids) do
-        killTrigger(v)
+    local magic_callback = function(current_match)
+        scripts.tokens:highlight(current_match, scripts.inv.magics_color)
     end
-
-    scripts.inv.magics_trigger_ids = {}
 
     if scripts.inv.magics_data then
         for magic, properties in pairs(scripts.inv.magics_data.magics) do
             for _, regexp in pairs(properties.regexps) do
-                table.insert(scripts.inv.magics_trigger_ids, scripts.inv:setup_special_inventory_highlight(regexp, scripts.inv.magics_color))
+                scripts.tokens:register(regexp, magic_callback)
             end
         end
     end
 end
 
 function scripts.inv:setup_magic_keys_triggers()
-    for k, v in pairs(scripts.inv.magic_keys_trigger_ids) do
-        killTrigger(v)
-    end
-
-    scripts.inv.magic_keys_trigger_ids = {}
-
     if scripts.inv["magic_keys_data"]["magic_keys"] then
         for k, v in pairs(scripts.inv["magic_keys_data"]["magic_keys"]) do
-            table.insert(scripts.inv.magic_keys_trigger_ids, scripts.inv:setup_special_inventory_highlight(v, scripts.inv.magic_keys_color))
+            local key_callback = function(current_match)
+                scripts.tokens:highlight(current_match, scripts.inv.magic_keys_color)
+            end
+            scripts.tokens:register(v, key_callback)
         end
     end
 end

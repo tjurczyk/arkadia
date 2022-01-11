@@ -70,11 +70,12 @@ function misc:test_commands()
 end
 
 function trigger_func_skrypty_misc_gubisz_kompana()
-    selectString(matches[2], 1)
-    fg("purple")
-    bg("grey")
-    replace(string.upper(matches[2]))
-    resetFormat()
+    if selectString(matches[2], 1) > -1 then
+        fg("purple")
+        bg("grey")
+        replace(string.upper(matches[2]))
+        resetFormat()
+    end
 end
 
 function trigger_func_skrypty_misc_klatka_mahakam()
@@ -124,7 +125,7 @@ function trigger_func_skrypty_misc_do_zobaczenia_resety()
     scripts.ui:info_compass_update("")
     tempTimer(1.2, function() misc.improve:improve_reset() end)
     scripts.ui:info_killed_update()
-    scripts.utils:enable_keybinds(true)
+    scripts.utils.enable_keybinds(true)
     scripts.temp_binds.unbind_temp(true)
     amap["queue"] = get_new_list()
     misc_clear_dump()
@@ -136,8 +137,8 @@ function trigger_func_skrypty_misc_oceniasz_starannie()
     prefix("\n======= ")
     echo(" ========\n\n")
     selectCurrentLine()
-    bg("SlateGray")
-    fg("black")
+    bg("DarkSlateGray")
+    fg("white")
     resetFormat()
 end
 

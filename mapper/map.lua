@@ -50,7 +50,7 @@ function amap:follow(direction, is_team_follow)
     end
 end
 
-function amap:locate(noprint)
+function amap:locate(noprint, skip_db)
     amap.history = get_new_list()
     local tmp_loc = amap:extract_gmcp()
 
@@ -79,8 +79,9 @@ function amap:locate(noprint)
             msg = "Nie moge Cie zlokalizowac na podstawie tych koordynatow (prawdopodobnie lokacja z tymi koordynatami nie istnieje)"
         end
     else
-        if amap.localization:try_to_locate() then
+        if not skip_db and amap.localization:try_to_locate() then
             msg = "Zlokalizowalem po opisie lokacji i wyjsciach."
+            ret = true
         else 
             msg = "GMCP nie zawiera koordynatow, nie moge cie zlokalizowac na mapie"
         end
@@ -92,8 +93,10 @@ function amap:locate(noprint)
     return ret
 end
 
-function amap:locate_on_next_location()
-    registerAnonymousEventHandler("gmcp.room.info", function() amap:locate(true) end, true)
+function amap:locate_on_next_location(skip_db)
+    registerAnonymousEventHandler("gmcp.room.info", function()
+        amap:locate(true, skip_db)
+    end, true)
 end
 
 function amap:set_position(room_id, silent)
@@ -204,7 +207,6 @@ function get_next_room_from_dirs(room_id, dir, spe, is_team_follow)
     end
 
     if is_team_follow and not new_id then
-        --amap:print_log("mapper zgubiony, przeslij dzordzykowi: last curr.id: " .. tostring(amap.curr.id) .. ", spe: `" .. spe .. "`", true)
         amap:locate(true)
         amap:locate_on_next_location()
         if not rex.match(spe, "(?:".. standard_lost_follows .. ")$") then
@@ -215,13 +217,13 @@ function get_next_room_from_dirs(room_id, dir, spe, is_team_follow)
     return new_id
 end
 
-function amap:init_self_locating()
-    amap.locate_handler = scripts.event_register:register_singleton_event_handler(amap.locate_handler, "gmcp.room.info", function ()
-        if amap:locate(true) then
+function amap:init_self_locating(skip_db)
+    amap.locate_handler = scripts.event_register:force_register_event_handler(amap.locate_handler, "gmcp.room.info", function ()
+        if amap:locate(true, skip_db) then
             scripts.event_register:kill_event_handler(amap.locate_handler)
         end
     end)
-    amap.set_position_handler = scripts.event_register:register_event_handler(amap.set_position_handler, "setPosition", function()
+    amap.set_position_handler = scripts.event_register:force_register_event_handler(amap.set_position_handler, "setPosition", function()
         scripts.event_register:kill_event_handler(amap.locate_handler)
     end, true)
 end
@@ -339,7 +341,12 @@ function amap:check_room_on_direction_of(room, dir, force)
             to_check_y = -to_check_y
             if not force and amap:check_direction_coords_correctness(amap.curr.x, amap.curr.y, amap.curr.z, to_check_x, to_check_y, to_check_z, dir)
                     and not n_exits[dir] then
-                send(k)
+                if not k:starts("script:") then
+                    send(k)
+                else
+                    local cmd = k:gsub("script:", "")
+                    loadstring(cmd)()
+                end
                 return true
             end
         end

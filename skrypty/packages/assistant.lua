@@ -66,7 +66,7 @@ function scripts.packages:pickup(command)
         self.trigger = tempRegexTrigger("^.* przekazuje ci jakas paczke\\.", function ()
             self:package_given(index)
         end, 1)
-        self.trigger_fail = tempRegexTrigger("Ty juz dla nas dostatecznie ciezko zapracowales|Nie ufam ci na tyle, aby powierzyc ci dostarczenie tej przesylki|Cos ci sie chyba pomylilo, nie ma takiej oferty", function() 
+        self.trigger_fail = tempRegexTrigger("Ty juz dla nas dostatecznie ciezko zapracowales|Nie ufam ci na tyle, aby powierzyc ci dostarczenie tej przesylki|Cos ci sie chyba pomylilo, nie ma takiej oferty|Niestety, nie widzisz tu nikogo, od kogo mozna by wziac zlecenie", function() 
             if self.trigger then
                 killTrigger(self.trigger)
                 self.trigger = nil
@@ -136,7 +136,7 @@ function scripts.packages:update_display()
         if self.picked_offer.pickup_time then
             local elapsed = (os.time() - self.picked_offer.pickup_time)
             local total = self.picked_offer.time * 120
-            time_to_deliver = " " .. misc.improve:seconds_to_formatted_string(total - elapsed)
+            time_to_deliver = " " .. misc.improve:seconds_to_formatted_string(math.max(0, total - elapsed))
             if not self.timer then
                 self.timer = tempTimer(1, function() self:update_display() end, true)
             end

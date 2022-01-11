@@ -225,3 +225,7 @@ function scripts.utils.str_pad(str, length, align)
     local postpad = total_pad - prepad
     return string.rep(" ", prepad) .. str .. string.rep(" ", postpad)
 end
+
+function scripts.utils.gender_form(male, female)
+    return scripts.character.info:is_male() and male or female
+end

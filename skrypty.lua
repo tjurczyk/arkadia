@@ -21,6 +21,20 @@ function alias_func_skrypty_fake()
     echo("\n")
 end
 
+function alias_func_skrypty_fake_combat()
+    local s = matches[2]
+
+    s = string.gsub(s, "%$", "\n")
+    gmcp = {
+        gmcp_msgs = {
+            text = enc(s .. "\n"),
+            type = "combat.avatar"
+        }
+        }
+    raiseEvent("gmcp.gmcp_msgs", gmcp)
+    echo("\n")
+end
+
 function alias_func_skrypty_lua_code()
     local f, e = loadstring("return " .. matches[2])
     if not f then

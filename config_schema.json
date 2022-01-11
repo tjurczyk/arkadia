@@ -1698,6 +1698,15 @@
       ]
     },
     {
+        "name": "scripts.gag_colors.npc_spece",
+        "default_value": "floral_white",
+        "field_type": "string",
+        "content_type" : "mudlet_color",
+        "macros_on_modify": [
+          "_ux"
+        ]
+      },
+    {
         "name": "scripts.gags.own_spec_prefix",
         "default_value": "",
         "field_type": "string"

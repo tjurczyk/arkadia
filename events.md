@@ -348,3 +348,9 @@ Argumenty:
 
 Event podniesiony po stworzeniu tablicy kreatorow elementow stopki.
 Mozn go wykorzystac, zeby zarejestrowac swoj wlasny element.
+
+## `rideProgress`
+
+Argument:
+  * `arg1`: obiekt podrozy
+  * `arg2`: aktualnie wyliczona lokacja (w przyblizeniu)

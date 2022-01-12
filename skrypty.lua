@@ -1,4 +1,4 @@
-scripts = scripts or { ver = "4.48" }
+scripts = scripts or { ver = "4.49" }
 scripts.event_handlers = scripts.event_handlers or {}
 
 function alias_func_skrypty_help()
@@ -18,6 +18,20 @@ function alias_func_skrypty_fake()
 
     s = string.gsub(s, "%$", "\n")
     feedTriggers("\n" .. s .. "\n")
+    echo("\n")
+end
+
+function alias_func_skrypty_fake_combat()
+    local s = matches[2]
+
+    s = string.gsub(s, "%$", "\n")
+    gmcp = {
+        gmcp_msgs = {
+            text = enc(s .. "\n"),
+            type = "combat.avatar"
+        }
+        }
+    raiseEvent("gmcp.gmcp_msgs", gmcp)
     echo("\n")
 end
 

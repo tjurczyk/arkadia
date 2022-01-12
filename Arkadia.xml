@@ -8715,8 +8715,10 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
 											<string>Wykorzystujac dogodny moment wyprowadzasz</string>
+											<string>Wykorzystujac dogodny moment probujesz wyprowadzic</string>
 										</regexCodeList>
 										<regexCodePropertyList>
+											<integer>0</integer>
 											<integer>0</integer>
 										</regexCodePropertyList>
 										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -12834,7 +12836,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>Wykorzystujac dogodny moment .* wyprowadza </string>
+											<string>^Wykorzystujac dogodny moment.* (?:wyprowadza|probuje wyprowadzic)\s</string>
 										</regexCodeList>
 										<regexCodePropertyList>
 											<integer>1</integer>
@@ -15637,12 +15639,12 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<regexCodeList>
 							<string>Przystan powozowa.</string>
 							<string>Sa tutaj trzy widoczne wyjscia: polnoc, zachod i wschod.</string>
-							<string>Otwarty stojacy powoz.</string>
+							<string>stojacy powoz</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>2</integer>
 							<integer>2</integer>
-							<integer>2</integer>
+							<integer>0</integer>
 						</regexCodePropertyList>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -15661,12 +15663,12 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<regexCodeList>
 							<string>Przystan powozowa.</string>
 							<string>Sa tutaj trzy widoczne wyjscia: polnoc, zachod i wschod.</string>
-							<string>Drewniany stojacy woz.</string>
+							<string>stojacy woz</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>2</integer>
 							<integer>2</integer>
-							<integer>2</integer>
+							<integer>0</integer>
 						</regexCodePropertyList>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -20513,8 +20515,30 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<string> Tablica zawiera liste adresatow przesylek, ktore mozesz tutaj pobrac:</string>
 					</regexCodeList>
 					<regexCodePropertyList>
-						<integer>3</integer>
+						<integer>2</integer>
 					</regexCodePropertyList>
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>terminals</name>
+						<script>trigger_packages_assistant_replace_terminals()</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>..o$</string>
+							<string>..\|$</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>1</integer>
+							<integer>1</integer>
+						</regexCodePropertyList>
+					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>paczka-tablica</name>
 						<script>trigger_packages_assistant_package(matches.index, matches.name, matches.city, matches.time)</script>
@@ -20535,11 +20559,11 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 							<integer>1</integer>
 						</regexCodePropertyList>
 					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>tablica-close</name>
 						<script>trigger_packages_assistant_close()</script>
 						<triggerType>0</triggerType>
-						<conditonLineDelta>0</conditonLineDelta>
+						<conditonLineDelta>2</conditonLineDelta>
 						<mStayOpen>0</mStayOpen>
 						<mCommand></mCommand>
 						<packageName></packageName>
@@ -20550,8 +20574,10 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
 							<string> |      Symbolem * oznaczono</string>
+							<string> o==</string>
 						</regexCodeList>
 						<regexCodePropertyList>
+							<integer>2</integer>
 							<integer>2</integer>
 						</regexCodePropertyList>
 					</Trigger>
@@ -21237,8 +21263,8 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>Wyschniete jeziorko.</string>
-							<string>Jest tutaj jedno widoczne wyjscie: poludnie.</string>
+							<string>Wyciagasz dlon w strone blasku i trafiasz w pustke. Woda rozlewa sie na boki odrzucajac twe cialo na twardepodloze...</string>
+							<string>Niebo.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>2</integer>
@@ -25213,11 +25239,13 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 							<string>Probujesz isc naprzod, ale sliski lod sprawia, ze wywracasz sie na nim.</string>
 							<string>Probujesz przecisnac sie przez otwor na dach, ale ze wzgledu na brak miejsca,</string>
 							<string>Probujesz isc w glab korytarza, lecz zwalisty szarawy golem zastepuje ci droge.</string>
+							<string>Probujesz przecisnac sie przez otwor na dach, ale ze wzgledu na brak miejsca, zmuszony jestes wrocic na dol.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
 							<integer>2</integer>
 							<integer>1</integer>
+							<integer>2</integer>
 							<integer>2</integer>
 							<integer>2</integer>
 							<integer>2</integer>

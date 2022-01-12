@@ -1129,6 +1129,7 @@ Ponizej jest opcja co ma byc robione:
   "bloki" : 2,
   "bron" : 2,
   "npc" : 2,
+  "npc_spece" : 2
 }
 ```
 
@@ -1147,6 +1148,7 @@ Ponizej jest opcja co ma byc robione:
 ## `scripts.gag_colors.zaslony_nieudane`
 ## `scripts.gag_colors.bron`
 ## `scripts.gag_colors.npc`
+## `scripts.gag_colors.npc_spece`
 
 Opcja kolorow do tagow (czyli tylko kiedy scripts.gag_settings ustawione ne 2)
 
@@ -1692,3 +1694,20 @@ Włącza/wyłącza pasek pokazujący orientacyjny czas do dotarcia do celu podcz
 Dostępne wartości:
 * `true` - pasek będzie widoczny
 * `false` - pasek będzie niewidoczny
+
+---
+
+## `amap.water_animal`
+
+Włącza/wyłącza pojenie zwierzęcia razem z piciem wody na lokacji.
+
+Dostępne wartości:
+* `true` - pojenie włączone
+* `false` - pojenie wyłączone
+
+---
+
+## `ateam.cover_command`
+
+Ustawienie komendy do zaslony, domyslnie jest `zaslon`.
+

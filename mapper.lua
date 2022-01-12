@@ -36,6 +36,7 @@ if not amap then
         next_dir_bind = nil,
         legacy_locate = false,
         disable_team_sneak = false,
+        water_animal = false
     }
 end
 

@@ -101,6 +101,10 @@ function scripts.ui.window:set_font_size(font_size)
     setFontSize(self.id, font_size)
 end
 
+function scripts.ui.window:set_auto_wrap(wrap)
+    self.auto_wrap = wrap
+end
+
 function scripts.ui.window:on_mouse_enter(callback)
     self.on_mouse_enter = callback
 end

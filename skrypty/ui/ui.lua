@@ -27,6 +27,8 @@ function scripts.ui:setup()
     scripts.ui:init_states_window_navbar()
     setBorderBottom(scripts.ui.footer_height)
 
+    scripts.ui.combat_window:init()
+
     raiseEvent("uiReady")
 end
 

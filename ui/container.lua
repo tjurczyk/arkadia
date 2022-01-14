@@ -99,10 +99,12 @@ end
 
 function scripts.ui.window:set_font_size(font_size)
     setFontSize(self.id, font_size)
+    self:refresh()
 end
 
 function scripts.ui.window:set_auto_wrap(wrap)
     self.auto_wrap = wrap
+    self:refresh()
 end
 
 function scripts.ui.window:on_mouse_enter(callback)

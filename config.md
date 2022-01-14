@@ -1711,3 +1711,18 @@ Dostępne wartości:
 
 Ustawienie komendy do zaslony, domyslnie jest `zaslon`.
 
+---
+
+## `scripts.ui.combat_window.enabled`
+
+Włącza/wyłącza oddzielne okno walki.
+
+Dostępne wartości:
+* `true` - okno włączone
+* `false` - okno wyłączone
+
+---
+
+## `scripts.ui.combat_window.enabled`
+
+Wielkość czionki w oknie walki

@@ -1,8 +1,8 @@
 local img_path = getMudletHomeDir() .. "/arkadia/ui/assets/"
 
 scripts.ui.combat_window = scripts.ui.combat_window or {
-    font_size = getFontSize(),
-    enabled = true,
+    font_size = 12,
+    enabled = false,
     name = "combat_window",
     separate_combat_window = true,
     captures = {
@@ -17,7 +17,7 @@ function scripts.ui.combat_window:init()
     if scripts.ui.combat_window.enabled then
         self.window = scripts.ui.window:new(self.name, "Walka")
         self.window:add_buttons(function() self:create_buttons() end)
-        self.window:set_font_size(getFontSize() - 2)
+        self.window:set_font_size(scripts.ui.combat_window.font_size)
     end
     self.handler = scripts.event_register:force_register_event_handler(self.handler, "gmcp.room.info", function()
         moveCursor(self.name, 0, getLastLineNumber(self.name) - 2)
@@ -44,7 +44,7 @@ function scripts.ui.combat_window:create_buttons()
             cecho("combat_window", string.format("%s: <%s>%s<reset>\n", value.label, toggled and "green" or "red", toggled and "ON" or "OFF"))
             scripts.state_store:set(self.name, self.captures)
         end, self.name)
-        base = base + 90 + 10
+        base = base + button.width + 10
     end
 end
 
@@ -72,5 +72,3 @@ end
 function scripts.ui.combat_window:should_capture(type)
     return self.captures[type]
 end
-
-scripts.ui.combat_window:init()

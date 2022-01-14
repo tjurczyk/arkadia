@@ -22,6 +22,8 @@ return {
     "skrypty/base64-helper",
     "skrypty/help",
     "skrypty/invalid_commands",
+    "ui/container",
+    "ui/button",
     "mapper/area_verifier",
     "mapper/areas",
     "mapper/core",
@@ -162,6 +164,7 @@ return {
     "skrypty/utils/ard-utils",
     "skrypty/utils/ard_pretty_table",
     "skrypty/utils/data_downloader",
+    "skrypty/ui/combat_window",
     "skrypty/ui/CSSMan",
     "skrypty/ui/footer_main_modes",
     "skrypty/ui/help",
@@ -383,5 +386,5 @@ return {
     "skrypty/ui/inline_compass_rose",
     "skrypty/world/baccala",
     "skrypty/world/brokilon",
-    "skrypty/world/mahakam"
+    "skrypty/world/mahakam",
 }

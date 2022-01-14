@@ -35,7 +35,7 @@ function scripts.ui:setup_footer()
     })
 
     scripts.ui.bottom:setStyleSheet([[
-        background-image : url(]].. string.format("%s/arkadia/ui/assets/", getMudletHomeDir())..[[background-01.png);
+        background-image : url(]].. string.format("%s/arkadia/ui/assets/", getMudletHomeDir())..[[background-03.png);
     ]])
 
     scripts.ui.footer_vertical = Geyser.VBox:new({

@@ -49,6 +49,7 @@ function scripts.ui.combat_window:create_buttons()
 end
 
 function scripts.ui.combat_window:process(msg)
+    local str_msg = ansi2string(msg)
     if gmcp.gmcp_msgs and scripts.ui.combat_window:should_capture(gmcp.gmcp_msgs.type) then
         local numberOfExtraLines = getLineCount() - getLineNumber()
         for i = 1, numberOfExtraLines, 1 do
@@ -58,7 +59,7 @@ function scripts.ui.combat_window:process(msg)
             deleteLine()
         end
     end
-    if scripts.ui.combat_window:should_capture("hp") and rex.match(ansi2string(msg), "[Jj]est(?:es)? (?:ledwo zyw(?:y|a)|ciezko rann(?:y|a)|w zlej kondycji|rann(?:y|a)|lekko rann(?:y|a)|w dobrym stanie|w swietnej kondycji)") then
+    if scripts.ui.combat_window:should_capture("hp") and rex.match(str_msg, "^[Jj]est(?:es)? (?:ledwo zyw(?:y|a)|ciezko rann(?:y|a)|w zlej kondycji|rann(?:y|a)|lekko rann(?:y|a)|w dobrym stanie|w swietnej kondycji)") then
         decho(self.name, ansi2decho(msg))
     end
 end

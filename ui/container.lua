@@ -1,13 +1,17 @@
 local img_path = getMudletHomeDir() .. "/arkadia/ui/assets/"
 
 setBackgroundColor(0, 0, 0, 0)
-
 setAppStyleSheet([[
     QDockWidget::title {
         background-color: #171512;
         padding: 5px;
         background-image : url(]]..img_path..[[background-02.png);
      }
+
+     QToolBar {
+        background-image : url(]]..img_path..[[/background-02.png);
+        border-bottom: 1px solid #171512;
+      }
 ]])
 
 scripts.ui.window = scripts.ui.window or {}

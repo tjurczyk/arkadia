@@ -13,7 +13,7 @@ function scripts.ui:create_state_window(name)
     if not scripts.ui.states_windows_loaded[name] then
         scripts.ui.states_windows_loaded[name] = scripts.ui.window:new(name, "Kondycje", scripts.ui.states_window_no_wrap)
     end
-    scripts.ui.states_windows_loaded[name]:set_auto_wrap(scripts.ui.states_window_no_wrap)
+    scripts.ui.states_windows_loaded[name]:set_auto_wrap(not scripts.ui.states_window_no_wrap)
     clearUserWindow(name)
     setFontSize(name, scripts.ui.states_font_size)
     

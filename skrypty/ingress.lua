@@ -76,7 +76,9 @@ function scripts.ingress:post_process_message(msg)
     if gmcp.gmcp_msgs.type == "room.exits" then
         amap.localization.current_exit = ansi2string(msg):gsub("\n", "")
     end
-    scripts.ui.combat_window:process(msg)
+    if scripts.ui.combat_window.enabled then
+        scripts.ui.combat_window:process(msg)
+    end
 end
 
 scripts.ingress:init()

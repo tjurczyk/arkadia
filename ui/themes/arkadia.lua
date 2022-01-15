@@ -56,3 +56,32 @@ function scripts.ui.themes.arkadia:get_border_stylesheet()
         border-image: url(]]..scripts.ui.img_path..[[uni-container-borders.png) 58 94 repeat;
     ]]
 end
+
+function scripts.ui.themes.arkadia:get_notification_color()
+    return closestColor("#d1b493");
+end
+
+function scripts.ui.themes.arkadia:get_notification_stylesheet()
+    return [[
+        QLabel {
+            border-style: solid;
+            border-width: 24px 49px 24px 49px;
+            background-color: #171512;
+            border-image: url(]]..scripts.ui.img_path..[[uni-container-borders-short-height.png) 58 94 repeat;
+            qproperty-wordWrap: true;
+        }
+    ]]
+end
+
+function scripts.ui.themes.arkadia:get_notification_close_stylesheet()
+    return [[
+        QLabel{
+            background-color: transparent;
+            background-image : url(]]..scripts.ui.img_path..[[btn-exit.png);
+        }
+
+        QLabel:hover{
+         background-image : url(]]..scripts.ui.img_path..[[btn-exit-hover.png);
+        }
+    ]]
+end

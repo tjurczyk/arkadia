@@ -61,34 +61,26 @@ function scripts.ui.notification_center:print_single_notification(index, notific
         width = self.width, height = self.height
     })
 
+    deleteLabel("notification_console_" .. notification.id)
     local label = Geyser.Label:new({
         name = "notification_console_" .. notification.id,
         x = 0, y = 0,
         width = "100%", height = "100%",
-        fgColor = "black",
         fontSize = getFontSize() * 0.8
     }, container)
     label:echo(notification.text)
-    label:setStyleSheet([[
-        padding: 5px;
-        border: 1px solid #fff;
-        border-radius: 5px;
-        background: rgba(255, 255, 255, 0.8);
-        qproperty-wordWrap: true;
-    ]])
+    label:setStyleSheet(scripts.ui.current_theme:get_notification_stylesheet())
+    label:setFgColor(scripts.ui.current_theme:get_notification_color())
     label:setFont(getFont())
-
+    deleteLabel("close_" .. notification.id)
     local close_label =  Geyser.Label:new({
         name = "close_" .. notification.id,
         x = -25, y = 5,
-        width = 20, height = 20,
+        width = 27, height = 27,
         message = "<center>X</center>",
         fgColor = "black"
     }, container)
-    close_label:setStyleSheet([[
-        background: rgba(0, 0, 0, 0);
-        color: #000000;
-    ]])
+    close_label:setStyleSheet(scripts.ui.current_theme:get_notification_close_stylesheet())
 
     table.insert(self.containers, container)
 

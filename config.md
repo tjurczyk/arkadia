@@ -1723,6 +1723,6 @@ Dostępne wartości:
 
 ---
 
-## `scripts.ui.combat_window.enabled`
+## `scripts.ui.combat_window.font_size`
 
 Wielkość czionki w oknie walki

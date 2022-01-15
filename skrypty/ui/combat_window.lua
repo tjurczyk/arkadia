@@ -18,13 +18,16 @@ function scripts.ui.combat_window:init()
         self.window = scripts.ui.window:new(self.name, "Walka")
         self.window:add_buttons(function() self:create_buttons() end)
         self.window:set_font_size(scripts.ui.combat_window.font_size)
+        self.handler = scripts.event_register:force_register_event_handler(self.handler, "gmcp.room.info", function()
+            moveCursor(self.name, 0, getLastLineNumber(self.name) - 2)
+            if getCurrentLine(self.name) ~= "------------------" and not table.contains({"zerknij", "spojrz", "sp"}, scripts.last_send) then
+                cecho(self.name, "\n<:transparent>------------------\n\n")
+            end
+        end)
+    else
+        hideWindow(self.name)
+        scripts.event_register:kill_event_handler(self.handler)
     end
-    self.handler = scripts.event_register:force_register_event_handler(self.handler, "gmcp.room.info", function()
-        moveCursor(self.name, 0, getLastLineNumber(self.name) - 2)
-        if getCurrentLine(self.name) ~= "------------------" and not table.contains({"zerknij", "spojrz", "sp"}, scripts.last_send) then
-            cecho(self.name, "\n<:transparent>------------------\n\n")
-        end
-    end)
     self.captures = scripts.state_store:get(self.name) or self.captures
 end
 
@@ -54,23 +57,23 @@ function scripts.ui.combat_window:process(msg)
             local lines = {}
             local numberOfExtraLines = getLineCount() - getLineNumber()
             while true do
-                local currentLine = getCurrentLine()
+                local currentLine = getCurrentLine():trim()
                 table.insert(lines, currentLine)
                 selectCurrentLine()
                 copy()
                 appendBuffer(scripts.ui.combat_window.name)
                 deleteLine()
-                if currentLine:ends(".") or currentLine:ends("?") or currentLine:ends("!") then
+                if currentLine:ends(".") or currentLine:ends("?") or currentLine:ends("!") or currentLine == "ERROR: Invalid line number" then
                     break
                 end
                 if #lines >= numberOfExtraLines then
-                    scripts:print_log("Cos poszlo nie tak.")
+                    scripts:print_log("Cos poszlo nie tak. Zglos blad zalaczajac linie ponizej.")
                     display(lines)
                     break
                 end
             end
     end
-    if scripts.ui.combat_window:should_capture("hp") and rex.match(str_msg, "(?:^J|j)est(?:es)? (?:ledwo zyw(?:y|a)|ciezko rann(?:y|a)|w zlej kondycji|rann(?:y|a)|lekko rann(?:y|a)|w dobrym stanie|w swietnej kondycji)") then
+    if scripts.ui.combat_window:should_capture("hp") and rex.match(str_msg, "(?!^Wyglada)(?:^J|j)est(?:es)? (?:ledwo zyw(?:y|a)|ciezko rann(?:y|a)|w zlej kondycji|rann(?:y|a)|lekko rann(?:y|a)|w dobrym stanie|w swietnej kondycji)") then
         decho(self.name, ansi2decho(msg))
     end
 end

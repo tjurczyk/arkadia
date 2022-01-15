@@ -34,22 +34,7 @@ end
 
 function scripts.ui.toggle_button:updateStyleSheet()
     local color = self.toggled and string.format("rgb(%s, %s, %s, %%s)", self.r, self.g, self.b) or "rgb(130, 30, 30, %s)"
-    setLabelStyleSheet(self.id, [[
-        QLabel {
-            border: 0;
-            padding: 0;
-            background-color: ]] .. string.format(color, 125) .. [[;
-            background-image : url(]] .. scripts.ui.img_path .. [[btn-universal-m.png);
-            text-transform: uppercase;
-            font-weight: 500;
-            color: #d1b493;
-            font-size: 10px;
-        }
-
-        QLabel:hover{
-            background-color: ]] .. string.format(color, 255) .. [[;
-        }
-    ]])
+    setLabelStyleSheet(self.id, scripts.ui.current_theme:get_button_stylesheet(color))
 end
 
 function scripts.ui.toggle_button:set_text(text)

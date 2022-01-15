@@ -68,3 +68,21 @@ function scripts.ui.themes.plain:get_notification_close_stylesheet()
         }
     ]]
 end
+
+function scripts.ui.themes.plain:get_button_stylesheet(color)
+    return [[
+        QLabel {
+            border: 0;
+            padding: 0;
+            background-color: ]] .. string.format(color, 125) .. [[;
+            text-transform: uppercase;
+            font-weight: 500;
+            color: #CCC;
+            font-size: 10px;
+        }
+
+        QLabel:hover{
+            background-color: ]] .. string.format(color, 255) .. [[;
+        }
+    ]]
+end

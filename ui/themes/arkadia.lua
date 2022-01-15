@@ -1,6 +1,7 @@
 scripts.ui.themes.arkadia = scripts.ui.themes.plain:new()
 
 function scripts.ui.themes.arkadia:apply_app_stylesheet()
+    setBackgroundColor(0,0,0,0)
     setAppStyleSheet([[
         QDockWidget::title {
             background-color: #171512;
@@ -82,6 +83,25 @@ function scripts.ui.themes.arkadia:get_notification_close_stylesheet()
 
         QLabel:hover{
          background-image : url(]]..scripts.ui.img_path..[[btn-exit-hover.png);
+        }
+    ]]
+end
+
+function scripts.ui.themes.arkadia:get_button_stylesheet(color)
+    return [[
+        QLabel {
+            border: 0;
+            padding: 0;
+            background-color: ]] .. string.format(color, 125) .. [[;
+            background-image : url(]] .. scripts.ui.img_path .. [[btn-universal-m.png);
+            text-transform: uppercase;
+            font-weight: 500;
+            color: #d1b493;
+            font-size: 10px;
+        }
+
+        QLabel:hover{
+            background-color: ]] .. string.format(color, 255) .. [[;
         }
     ]]
 end

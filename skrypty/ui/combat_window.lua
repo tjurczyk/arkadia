@@ -51,13 +51,21 @@ end
 function scripts.ui.combat_window:process(msg)
     local str_msg = ansi2string(msg)
     if gmcp.gmcp_msgs and scripts.ui.combat_window:should_capture(gmcp.gmcp_msgs.type) then
+            local lines = {}
+            local numberOfExtraLines = getLineCount() - getLineNumber()
             while true do
                 local currentLine = getCurrentLine()
+                table.insert(lines, currentLine)
                 selectCurrentLine()
                 copy()
                 appendBuffer(scripts.ui.combat_window.name)
                 deleteLine()
-                if currentLine:ends(".") then
+                if currentLine:ends(".") or currentLine:ends("?") or currentLine:ends("!") then
+                    break
+                end
+                if #lines >= numberOfExtraLines then
+                    scripts:print_log("Cos poszlo nie tak.")
+                    display(lines)
                     break
                 end
             end

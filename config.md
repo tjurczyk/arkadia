@@ -1713,6 +1713,16 @@ Ustawienie komendy do zaslony, domyslnie jest `zaslon`.
 
 ---
 
+## `scripts.ui.theme`
+
+Ustawienie wyglądu interefejsu skryptów.
+
+Dostępne wartości:
+* `arkadia`
+* `plain`
+
+---
+
 ## `scripts.ui.combat_window.enabled`
 
 Włącza/wyłącza oddzielne okno walki.

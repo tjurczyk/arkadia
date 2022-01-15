@@ -1,5 +1,3 @@
-local img_path = getMudletHomeDir() .. "/arkadia/ui/assets/"
-
 scripts.ui.toggle_button = scripts.ui.toggle_button or {}
 
 function scripts.ui.toggle_button:new(id, label, x, y, toggled, callback, window)
@@ -41,7 +39,7 @@ function scripts.ui.toggle_button:updateStyleSheet()
             border: 0;
             padding: 0;
             background-color: ]] .. string.format(color, 125) .. [[;
-            background-image : url(]] .. img_path .. [[btn-universal-m.png);
+            background-image : url(]] .. scripts.ui.img_path .. [[btn-universal-m.png);
             text-transform: uppercase;
             font-weight: 500;
             color: #d1b493;

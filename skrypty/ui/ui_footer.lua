@@ -34,9 +34,8 @@ function scripts.ui:setup_footer()
         height = scripts.ui.footer_height,
     })
 
-    scripts.ui.bottom:setStyleSheet([[
-        background-image : url(]].. string.format("%s/arkadia/ui/assets/", getMudletHomeDir())..[[background-03.png);
-    ]])
+    scripts.ui.bottom:setStyleSheet(scripts.ui.current_theme:get_footer_stylesheet())
+    scripts.ui.bottom:setColor(scripts.ui.footer_r, scripts.ui.footer_g, scripts.ui.footer_b)
 
     scripts.ui.footer_vertical = Geyser.VBox:new({
         name = "scripts.ui.footer_vertical",

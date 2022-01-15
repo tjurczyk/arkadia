@@ -1,19 +1,3 @@
-local img_path = getMudletHomeDir() .. "/arkadia/ui/assets/"
-
-setBackgroundColor(0, 0, 0, 0)
-setAppStyleSheet([[
-    QDockWidget::title {
-        background-color: #171512;
-        padding: 5px;
-        background-image : url(]]..img_path..[[background-02.png);
-     }
-
-     QToolBar {
-        background-image : url(]]..img_path..[[/background-02.png);
-        border-bottom: 1px solid #171512;
-      }
-]])
-
 scripts.ui.window = scripts.ui.window or {}
 
 function scripts.ui.window:new(id, label, auto_wrap)
@@ -34,14 +18,7 @@ function scripts.ui.window:init()
     setFontSize(self.id, self.font_size)
     setFont(self.id, self.font)
     setUserWindowTitle(self.id, self.label)
-    
-    setUserWindowStyleSheet(self.id, [[
-        QWidget { 
-            padding: 15px 20px;
-            background-color: #171512;
-            background-origin: border-box;
-        }
-    ]])
+
     setBackgroundColor(self.id, 0, 0, 0, 0)
     self:refresh()
     self.resize_handler = scripts.event_register:force_register_event_handler(self.resize_handler, "sysUserWindowResizeEvent", function(event, x, y, windowName)
@@ -58,25 +35,16 @@ function scripts.ui.window:refresh()
         setWindowWrap(self.id, 1000)
     end
 
+    setUserWindowStyleSheet(self.id, scripts.ui.current_theme:get_window_stylesheet())
+
     if self.buttons_func then
         local button_bg_id = string.format("%s-button_bg", self.id)
 
-        setUserWindowStyleSheet(self.id, [[
-            QWidget { 
-                padding: 55px 20px 10px 20px;
-                background-color: #171512;
-                background-origin: border-box;
-            }
-        ]])
+        setUserWindowStyleSheet(self.id, scripts.ui.current_theme:get_button_window_stylesheet())
 
         deleteLabel(button_bg_id)
         createLabel(self.id, button_bg_id, 0, 0, getUserWindowSize(self.id), 50, false, false)
-        setLabelStyleSheet(button_bg_id, [[
-            background: none;
-            background-image : url(]]..img_path..[[background-02.png);
-            background-origin: padding-box;
-            border-bottom: 3px solid #403931;
-        ]])
+        setLabelStyleSheet(button_bg_id, scripts.ui.current_theme:get_button_area_bg())
         
         self.buttons_func()
     end
@@ -85,12 +53,7 @@ function scripts.ui.window:refresh()
     local width, heigth = getUserWindowSize(self.id)
     deleteLabel(border_label_id)
     createLabel(self.id, border_label_id, 0, 0, width, heigth, false, true)
-    setLabelStyleSheet(border_label_id, [[
-        background: none;
-        border-style: solid;
-        border-width: 24px 49px 24px 49px;
-        border-image: url(]]..img_path..[[uni-container-borders.png) 58 94 repeat;
-    ]])
+    setLabelStyleSheet(border_label_id, scripts.ui.current_theme:get_border_stylesheet())
 
     setLabelOnEnter(border_label_id, function() self:on_mouse_enter() end)
     setLabelOnLeave(border_label_id, function() self:on_mouse_leave() end)

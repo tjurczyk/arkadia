@@ -24,6 +24,8 @@ return {
     "skrypty/invalid_commands",
     "ui/container",
     "ui/button",
+    "ui/themes/plain",
+    "ui/themes/arkadia",
     "mapper/area_verifier",
     "mapper/areas",
     "mapper/core",

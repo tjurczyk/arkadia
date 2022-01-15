@@ -2923,6 +2923,14 @@
         "macros_on_modify": [
             "_ux"
         ]
+    },
+    {
+        "name": "scripts.ui.theme",
+        "default_value": "arkadia",
+        "field_type": "string",
+        "macros_on_modify": [
+            "_ux"
+        ]
     }
   ]
 }

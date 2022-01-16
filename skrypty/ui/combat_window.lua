@@ -67,8 +67,11 @@ function scripts.ui.combat_window:process(msg)
                     break
                 end
                 if #lines >= numberOfExtraLines then
-                    scripts:print_log("Cos poszlo nie tak. Zglos blad zalaczajac linie ponizej.")
-                    display(lines)
+                    scripts:print_log("Cos poszlo nie tak. Zglos blad zalaczajac linie ponizej.", true)
+                    display({
+                        type = gmcp.gmcp_msgs.type,
+                        lines = lines
+                    })
                     break
                 end
             end

@@ -87,11 +87,15 @@ function trigger_func_skrypty_misc_brak_monet()
 end
 
 function trigger_func_skrypty_misc_gonienie()
-    misc:enemy_escape_print_arrow(multimatches[2][3], "blue")
+    if rex.match(multimatches[2][2], "(?i)" .. multimatches[1][2]) then
+        misc:enemy_escape_print_arrow(multimatches[2][4], "blue")
+    end
 end
 
 function trigger_func_skrypty_misc_gonienie_panika()
-    misc:enemy_escape_print_arrow(multimatches[2][2])
+    if rex.match(multimatches[2][2], "(?i)" .. multimatches[1][2]) then
+        misc:enemy_escape_print_arrow(multimatches[2][3])
+    end
 end
 
 function trigger_func_skrypty_misc_nosi_na_sobie()

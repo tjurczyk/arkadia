@@ -89,8 +89,8 @@ function scripts.multibinds:run_current(index)
      local actions = self:get_for_location(loc)
      if actions and not table.is_empty(actions) then
         local action_binds = {}
-        for index, props in pairs(actions) do
-            table.insert(action_binds, string.format("[%s] %s", scripts.keybind:keybind_tostring("multibind" .. index), props.action))
+        for _, props in pairs(actions) do
+            table.insert(action_binds, string.format("[%s] %s", scripts.keybind:keybind_tostring("multibind" .. props.index), props.action))
         end
         scripts.ui.multibinds_label:echo(table.concat(action_binds, "&nbsp;&nbsp;&nbsp;&nbsp;"))
     else
@@ -104,8 +104,8 @@ function scripts.multibinds:run_current(index)
     if table.is_empty(result) then
         cecho("<tomato>Brak.<reset>")
     else
-        for index, value in pairs(result) do
-            cecho(string.format("<gray>[%s] - %s<reset>\n", scripts.keybind:keybind_tostring("multibind" .. index), value.action))
+        for _, value in pairs(result) do
+            cecho(string.format("<gray>[%s] - %s<reset>\n", scripts.keybind:keybind_tostring("multibind" .. props.index), value.action))
         end
     end
     echo("\n\n")

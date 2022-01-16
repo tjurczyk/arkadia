@@ -5,6 +5,7 @@ function scripts.invalid_commands:init()
 end
 
 function scripts.invalid_commands:deny_invalid_send(command)
+    scripts.last_send = command
     if string.sub(command,1,1) == "/" and string.sub(command,2,2) ~= " " then
         denyCurrentSend()
         scripts:print_log("Nieprawidlowy alias")

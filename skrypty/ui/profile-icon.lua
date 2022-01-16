@@ -1,5 +1,5 @@
 scripts.profile_icon = scripts.profile_icon or {
-    url = "https://res.cloudinary.com/arkadia-skrypty/image/upload/l_text:Roboto_34:%s,co_rgb:000000,x_10,w_70/bo_1px_solid_black/v1590440599/arkadia-wide-black_gsb7hz.png"
+    url = "https://res.cloudinary.com/arkadia-skrypty/image/upload/b_white/l_text:Roboto_34:Dargoth,co_rgb:000000,x_10,w_70/bo_1px_solid_black/v1590440599/arkadia-wide-black_gsb7hz.png"
 }
 function scripts.profile_icon:set_icon(name)
     local url = self.url:format(name:upper())

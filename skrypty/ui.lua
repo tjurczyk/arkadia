@@ -233,6 +233,10 @@ scripts.ui.cfg["footer_mode5_settings"] = {
   }
 }
 
+scripts.ui.img_path = getMudletHomeDir() .. "/arkadia/ui/assets/"
+scripts.ui.themes = scripts.ui.themes or {}
+scripts.ui.theme = "arkadia"
+
 function scripts.ui:decode_states_window_navbar_key(k)
     if not scripts.ui.states_window_elem_map[k] then
         error("wrong input: " .. k)

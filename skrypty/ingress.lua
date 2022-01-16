@@ -46,7 +46,7 @@ function scripts.ingress:prompt_handler()
     local feed_msg = msg
     if plain == prompt_sequence then
         decho(ansi2decho(plain))
-    else 
+    else
         feedTriggers(feed_msg)
     end
     return msg
@@ -75,6 +75,9 @@ function scripts.ingress:post_process_message(msg)
     end
     if gmcp.gmcp_msgs.type == "room.exits" then
         amap.localization.current_exit = ansi2string(msg):gsub("\n", "")
+    end
+    if scripts.ui.combat_window.enabled then
+        scripts.ui.combat_window:process(msg)
     end
 end
 

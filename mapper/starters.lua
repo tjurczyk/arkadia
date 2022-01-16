@@ -7,6 +7,7 @@ end
 function trigger_func_mapper_starters_capture_login()
     amap.logged_name = multimatches[1][2]
     registerAnonymousEventHandler("gmcp.room.info", function()
+        amap:locate(true)
         tempTimer(1, function() raiseEvent("loginSuccessful") end)
     end, true)
 end

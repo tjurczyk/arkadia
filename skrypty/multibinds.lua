@@ -105,7 +105,7 @@ function scripts.multibinds:run_current(index)
         cecho("<tomato>Brak.<reset>")
     else
         for _, value in pairs(result) do
-            cecho(string.format("<gray>[%s] - %s<reset>\n", scripts.keybind:keybind_tostring("multibind" .. props.index), value.action))
+            cecho(string.format("<gray>[%s] - %s<reset>\n", scripts.keybind:keybind_tostring("multibind" .. value.index), value.action))
         end
     end
     echo("\n\n")

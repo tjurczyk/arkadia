@@ -17,7 +17,7 @@ function scripts_load_v2_config(name)
         scripts.config:load_config{silent=false, migration=true}
         misc_load_dump()
         scripts.config:run_macro('_profile_loaded')
-        tempTimer(4.0, function ()
+        tempTimer(1.0, function ()
             raiseEvent("profileLoaded")
             end
         )

@@ -145,11 +145,15 @@ function scripts.packages:update_display()
                 self.timer = tempTimer(1, function() self:update_display() end, true)
             end
         end
-        self.footer_info:echo("<font color='" .. scripts.ui["footer_info_normal"] .. "'>Paczka:</font> <font color='" .. scripts.ui["footer_info_neutral"] .. "'>" .. self.picked_offer.name .. time_to_deliver .. "</font>")
-        setLabelToolTip(self.footer_info.name, time_to_deliver)
+        if self.footer_info then
+            self.footer_info:echo("<font color='" .. scripts.ui["footer_info_normal"] .. "'>Paczka:</font> <font color='" .. scripts.ui["footer_info_neutral"] .. "'>" .. self.picked_offer.name .. time_to_deliver .. "</font>")
+            setLabelToolTip(self.footer_info.name, time_to_deliver)
+        end
     else
-        self.footer_info:echo("<font color='" .. scripts.ui["footer_info_normal"] .. "'>Paczka: -</font>")
-        resetLabelToolTip(self.footer_info.name)
+        if self.footer_info then
+            self.footer_info:echo("<font color='" .. scripts.ui["footer_info_normal"] .. "'>Paczka: -</font>")
+            resetLabelToolTip(self.footer_info.name)
+        end
     end
 end
 

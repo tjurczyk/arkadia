@@ -1,7 +1,7 @@
 scripts.ui.themes.arkadia = scripts.ui.themes.plain:new()
 
 function scripts.ui.themes.arkadia:apply_app_stylesheet()
-    setBackgroundColor(0,0,0,0)
+    setBackgroundColor(0, 0, 0, 0)
     setAppStyleSheet([[
         QDockWidget::title {
             background-color: #171512;
@@ -53,8 +53,8 @@ function scripts.ui.themes.arkadia:get_border_stylesheet()
     return [[
         background: none;
         border-style: solid;
-        border-width: 24px 49px 24px 49px;
-        border-image: url(]]..scripts.ui.img_path..[[uni-container-borders.png) 58 94 repeat;
+        border-width: 47px 47px 47px 47px;
+        border-image: url(]]..scripts.ui.img_path..[[uni-container-borders.png) 47 47 repeat;
     ]]
 end
 
@@ -66,9 +66,9 @@ function scripts.ui.themes.arkadia:get_notification_stylesheet()
     return [[
         QLabel {
             border-style: solid;
-            border-width: 24px 49px 24px 49px;
             background-color: #171512;
-            border-image: url(]]..scripts.ui.img_path..[[uni-container-borders-short-height.png) 58 94 repeat;
+            border-width: 29px 47px 29px 47px;
+            border-image: url(]]..scripts.ui.img_path..[[uni-container-borders-short-height.png) 29 47 repeat;
             qproperty-wordWrap: true;
         }
     ]]

@@ -29,7 +29,7 @@ function scripts.ui.toggle_button:init()
     self:updateStyleSheet()
     setLabelReleaseCallback(self.id, function()
         self:toggle()
-        self.callback(self.toggled)
+        self.callback(self.toggled, self)
     end)
 end
 

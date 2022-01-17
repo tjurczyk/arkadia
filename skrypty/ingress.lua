@@ -79,6 +79,7 @@ function scripts.ingress:post_process_message(msg)
     if scripts.ui.combat_window.enabled then
         scripts.ui.combat_window:process(msg)
     end
+    raiseEvent("incomingMessage", gmcp.gmcp_msgs.type, msg)
 end
 
 scripts.ingress:init()

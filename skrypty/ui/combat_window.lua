@@ -63,7 +63,7 @@ function scripts.ui.combat_window:process(msg)
                 copy()
                 appendBuffer(scripts.ui.combat_window.name)
                 deleteLine()
-                if currentLine:ends(".") or currentLine:ends("?") or currentLine:ends("!") or currentLine == "ERROR: Invalid line number" then
+                if currentLine:ends(".") or currentLine:ends("?") or currentLine:ends("!") or currentLine == "ERROR: invalid line number" then
                     break
                 end
                 if #lines >= numberOfExtraLines then

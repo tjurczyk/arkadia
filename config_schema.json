@@ -2907,6 +2907,30 @@
         "default_value": "zaslon",
         "field_type": "string",
         "macros_on_modify": []
+    },
+    {
+        "name": "scripts.ui.combat_window.enabled",
+        "default_value": false,
+        "field_type": "boolean",
+        "macros_on_modify": [
+            "_ux"
+        ]
+    },
+    {
+        "name": "scripts.ui.combat_window.font_size",
+        "default_value": 12,
+        "field_type": "number",
+        "macros_on_modify": [
+            "_ux"
+        ]
+    },
+    {
+        "name": "scripts.ui.theme",
+        "default_value": "arkadia",
+        "field_type": "string",
+        "macros_on_modify": [
+            "_ux"
+        ]
     }
   ]
 }

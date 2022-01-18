@@ -3,7 +3,6 @@ function scripts.ui:setup_gauge_mode1()
     local curr_id = 2
 
     scripts.ui.gauge_back = CSSMan.new([[
-    background-color: rgba(]] .. scripts.ui.footer_r .. [[,]] .. scripts.ui.footer_g .. [[,]] .. scripts.ui.footer_b .. [[,0);
     border-style: solid;
     border-color: white;
     border-width: 1px;

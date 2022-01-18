@@ -16,6 +16,10 @@ function scripts.ui:setup()
         scripts.ui.map_loaded = true
     end
 
+    local theme = scripts.ui.themes[scripts.ui.theme] or scripts.ui.themes.arkadia
+    scripts.ui.current_theme = theme:new()
+    scripts.ui.current_theme:apply_app_stylesheet()
+
     scripts.ui:setup_states_window()
     scripts.ui:setup_talk_window()
     
@@ -26,6 +30,8 @@ function scripts.ui:setup()
 
     scripts.ui:init_states_window_navbar()
     setBorderBottom(scripts.ui.footer_height)
+
+    scripts.ui.combat_window:init()
 
     raiseEvent("uiReady")
 end

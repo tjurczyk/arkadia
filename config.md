@@ -1711,3 +1711,28 @@ Dostępne wartości:
 
 Ustawienie komendy do zaslony, domyslnie jest `zaslon`.
 
+---
+
+## `scripts.ui.theme`
+
+Ustawienie wyglądu interefejsu skryptów.
+
+Dostępne wartości:
+* `arkadia`
+* `plain`
+
+---
+
+## `scripts.ui.combat_window.enabled`
+
+Włącza/wyłącza oddzielne okno walki.
+
+Dostępne wartości:
+* `true` - okno włączone
+* `false` - okno wyłączone
+
+---
+
+## `scripts.ui.combat_window.font_size`
+
+Wielkość czionki w oknie walki

@@ -36,7 +36,7 @@ function scripts.packages:start()
 end
 
 function scripts.packages:add(index, name, city, time)
-    local assistant_match = self:get_from_db(name)
+    local assistant_match, multiple = self:get_from_db(name)
     local location
     if assistant_match then
         selectString(name, 1)
@@ -145,18 +145,22 @@ function scripts.packages:update_display()
                 self.timer = tempTimer(1, function() self:update_display() end, true)
             end
         end
-        self.footer_info:echo("<font color='" .. scripts.ui["footer_info_normal"] .. "'>Paczka:</font> <font color='" .. scripts.ui["footer_info_neutral"] .. "'>" .. self.picked_offer.name .. time_to_deliver .. "</font>")
-        setLabelToolTip(self.footer_info.name, time_to_deliver)
+        if self.footer_info then
+            self.footer_info:echo("<font color='" .. scripts.ui["footer_info_normal"] .. "'>Paczka:</font> <font color='" .. scripts.ui["footer_info_neutral"] .. "'>" .. self.picked_offer.name .. time_to_deliver .. "</font>")
+            setLabelToolTip(self.footer_info.name, time_to_deliver)
+        end
     else
-        self.footer_info:echo("<font color='" .. scripts.ui["footer_info_normal"] .. "'>Paczka: -</font>")
-        resetLabelToolTip(self.footer_info.name)
+        if self.footer_info then
+            self.footer_info:echo("<font color='" .. scripts.ui["footer_info_normal"] .. "'>Paczka: -</font>")
+            resetLabelToolTip(self.footer_info.name)
+        end
     end
 end
 
 function scripts.packages:get_from_db(name)
     local result = db:fetch(self.db.packages, db:eq(self.db.packages.name, name))
-    if result and table.size(result) == 1 then
-        return result[1]
+    if result and table.size(result) >= 1 then
+        return result[1], result
     end
 end
 

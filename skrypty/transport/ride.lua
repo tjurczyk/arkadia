@@ -29,12 +29,12 @@ function scripts.transports.ride:init()
     if self.definition.exit_command then
         table.insert(self.handlers, registerAnonymousEventHandler("sysDataSendRequest", function(_, command)
             if self.definition.exit_command ~= command then
-                return
+                return true
             end
             registerAnonymousEventHandler("gmcp.room.info", function(_)
                 self:exit()
             end, true)
-        end))
+        end), true)
     end
     table.insert(self.triggers, tempExactMatchTrigger(self.definition.start, function() self:start() end))
     table.insert(self.triggers, tempRegexTrigger("^Podazasz za .* na zewnatrz\\.", function() self:exit() end))

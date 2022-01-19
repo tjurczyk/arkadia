@@ -1,4 +1,10 @@
-misc = misc or { improve = {}, counter = {}, stats = {} }
+misc = misc or {
+    improve = {
+        ignore_form = false
+    },
+    counter = {},
+    stats = {}
+}
 
 misc.cutting_pre = {}
 misc.cutting_post = {}

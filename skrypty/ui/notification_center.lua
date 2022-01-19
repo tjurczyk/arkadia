@@ -1,7 +1,7 @@
 scripts.ui.notification_center = scripts.ui.notification_center or {
     enabled = true,
     width = 550,
-    height = 70,
+    height = 80,
     gap = 10,
     containers = {},
     timers = {},

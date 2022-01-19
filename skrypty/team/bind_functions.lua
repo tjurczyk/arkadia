@@ -43,7 +43,7 @@ function ateam:za_func_support(teammate, id)
 end
 
 function ateam:za_func_group(id, number)
-    send("opcje grupa " .. tostring(number), false)
+    local restore = scripts.character.options:set_temporary("group_cover", number)
     if not id then
         sendAll("przestan kryc sie za zaslona", string.format("%s cel obrony", self.cover_command), false)
         if ateam.release_guards then
@@ -58,7 +58,7 @@ function ateam:za_func_group(id, number)
     else
         scripts:print_log("Nie ma takiego id")
     end
-    send("opcje grupa 1", false)
+    restore()
 end
 
 function ateam:get_attack_string()

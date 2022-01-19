@@ -16,7 +16,7 @@ function gmcp_handler_improvement()
 
     misc.improve.current_improve_level = improve_level
 
-    if misc.improve["improve2_enabled"] then
+    if misc.improve["improve2_enabled"] and (scripts.character.state.form == 3 or scripts.character.options.form == 0 or misc.improve.ignore_form) then
         -- get previous value to know how many to add
         local prev_val = 0
 
@@ -26,7 +26,11 @@ function gmcp_handler_improvement()
 
         misc.improve:add_improvee2(improve_level - prev_val)
     else
-        scripts:print_log("Nie zapisuje do globalnych, bo jest wylaczony")
+        if misc.improve["improve2_enabled"] then
+            scripts:print_log("Nie zapisuje do globalnych, bo jest wylaczony")
+        else
+            scripts:print_log("Nie zapisuje do globalnych, z powodu nieplnej formy")
+        end
     end
 
     -- snapshot of killed mobs

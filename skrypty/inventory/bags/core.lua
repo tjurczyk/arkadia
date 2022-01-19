@@ -16,6 +16,7 @@ function scripts.inv:construct_bag_id(bag_type, bag_count)
     return bag_full_id
 end
 
+
 function scripts.inv:put_into_bag(things, bag_type, bag_count)
     --[[
       Executes putting into the bag.

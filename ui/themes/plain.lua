@@ -22,7 +22,7 @@ end
 function scripts.ui.themes.plain:get_window_stylesheet()
     return [[
         QWidget { 
-            padding: 10px;
+            padding: 1px;
         }
     ]]
 end
@@ -30,7 +30,7 @@ end
 function scripts.ui.themes.plain:get_button_window_stylesheet()
     return [[
         QWidget { 
-            padding: 50px 10px 10px 10px;
+            padding: 50px 1px 1px 1px;
         }
     ]]
 end

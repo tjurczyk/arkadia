@@ -21,11 +21,7 @@ function scripts.ui.window:init()
 
     setBackgroundColor(self.id, 0, 0, 0, 0)
     self:refresh()
-    self.resize_handler = scripts.event_register:force_register_event_handler(self.resize_handler, "sysUserWindowResizeEvent", function(event, x, y, windowName)
-        if self.id == windowName then
-            self:refresh()
-        end
-    end)
+    scripts.ui.window_manager:register(self)
 end
 
 function scripts.ui.window:refresh()

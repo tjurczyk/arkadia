@@ -1,3 +1,5 @@
+
+
 function misc.improve:add_improvee2(val)
     if not scripts.character_name then
         scripts:print_log("Korzystanie z globalnej bazy postepow po ustawieniu 'scripts.character_name' w configu")

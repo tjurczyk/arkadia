@@ -74,7 +74,7 @@ function scripts.transports:init()
     end
     local alias_cmd = string.format("^(?:%s)$", table.concat(enter_commands, "|"))
     self.enter_alias = tempAlias(alias_cmd, "_find_ride()")
-    self.ride_progress = scripts.event_register:force_register_event_handler(self.ride_progress, "rideProgress", function(_, ride, location) self:update_ride_progress(ride, location) end)
+    --self.ride_progress = scripts.event_register:force_register_event_handler(self.ride_progress, "rideProgress", function(_, ride, location) self:update_ride_progress(ride, location) end)
 end
 
 function _find_ride()

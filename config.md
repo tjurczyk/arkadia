@@ -328,6 +328,12 @@ Włącza oddzielne okno pokazujące zioła. Aktualizowany przez `/pokaz_ziola` o
 
 ---
 
+## `herbs.window.font_size`
+Ustawia wielkość czcionki w oknie ziół.
+
+
+---
+
 ## `scripts.inv.money_bag_1`
 ## `scripts.inv.gems_bag_1`
 ## `scripts.inv.food_bag_1`
@@ -1736,3 +1742,14 @@ Dostępne wartości:
 ## `scripts.ui.combat_window.font_size`
 
 Wielkość czionki w oknie walki
+
+---
+
+## `misc.improve.ignore_form`
+
+Globalny licznik postepów (`/postepy2`, `/postepy3`) nie będzie aktualizowany w przypadku odrabianie śmierci lub formy,
+chyba, że to ustawienia zostanie ustawione na `true`
+
+Dostępne wartości:
+* `true` - postępy będą dodawane nawet podczas odrabiania śmierci i formy
+* `false` - postępy nie będa doawane podczas odrabiania śmierci i formy

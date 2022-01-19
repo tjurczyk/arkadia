@@ -448,6 +448,14 @@
       ]
     },
     {
+      "name": "herbs.window.font_size",
+      "default_value": 12,
+      "field_type": "number",
+      "macros_on_modify": [
+        "_herbs"
+      ]
+    },
+    {
       "name": "scripts.inv.money_bag_1",
       "default_value": "plecak",
       "field_type": "string",
@@ -2931,6 +2939,12 @@
         "macros_on_modify": [
             "_ux"
         ]
+    },
+    {
+        "name": "misc.improve.ignore_form",
+        "default_value": false,
+        "field_type": "boolean",
+        "macros_on_modify": []
     }
   ]
 }

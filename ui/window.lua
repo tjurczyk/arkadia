@@ -8,7 +8,7 @@ function scripts.ui.window:new(id, label, auto_wrap)
     o.label = label
     o.font_size = getFontSize()
     o.font = getFont()
-    o.auto_wrap = auto_wrap ~= nil and auto_wrap or true
+    o.auto_wrap = auto_wrap or auto_wrap == nil
     o:init()
     return o
 end

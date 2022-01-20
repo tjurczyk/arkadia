@@ -5,7 +5,7 @@ scripts.ui.notification_center = scripts.ui.notification_center or {
     gap = 10,
     containers = {},
     timers = {},
-    next_ndex = 1,
+    next_index = 1,
     duration = 10,
     notifications = {}
 }

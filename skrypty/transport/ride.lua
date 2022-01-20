@@ -34,7 +34,7 @@ function scripts.transports.ride:init()
             registerAnonymousEventHandler("gmcp.room.info", function(_)
                 self:exit()
             end, true)
-        end), true)
+        end, true))
     end
     table.insert(self.triggers, tempExactMatchTrigger(self.definition.start, function() self:start() end))
     table.insert(self.triggers, tempRegexTrigger("^Podazasz za .* na zewnatrz\\.", function() self:exit() end))

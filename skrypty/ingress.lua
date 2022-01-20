@@ -3,6 +3,16 @@ scripts.ingress = scripts.ingress or {
     handler = function() end
 }
 
+if not _originalDeleteLine then
+    _originalDeleteLine = deleteLine
+    function deleteLine(window)
+        if window == "main" or window == nil then
+            scripts.ingress.deleteLineCalled = true
+        end
+        _originalDeleteLine(window)
+    end
+end
+
 local prompt_sequence = "> "
 
 function scripts.ingress:init()
@@ -54,6 +64,7 @@ end
 
 
 function scripts.ingress:handle_message()
+    scripts.ingress.deleteLineCalled = false
     local msg = self:handler()
     self:post_process_message(msg)
 end
@@ -77,7 +88,9 @@ function scripts.ingress:post_process_message(msg)
         amap.localization.current_exit = ansi2string(msg):gsub("\n", "")
     end
     if scripts.ui.combat_window.enabled then
-        scripts.ui.combat_window:process(msg)
+        if not self.deleteLineCalled then
+            scripts.ui.combat_window:process(msg)
+        end
     end
     raiseEvent("incomingMessage", gmcp.gmcp_msgs.type, msg)
 end

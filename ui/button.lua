@@ -21,6 +21,8 @@ function scripts.ui.toggle_button:new(id, label, x, y, toggled, callback, window
 end
 
 function scripts.ui.toggle_button:init()
+    deleteLabel(self.id .. "_background")
+    createLabel(self.window, self.id .. "_background", self.x, self.y, self.width, self.height, true, false)
     deleteLabel(self.id)
     createLabel(self.window, self.id, self.x, self.y, self.width, self.height, true, false)
     setLabelCursor(self.id, "PointingHand")

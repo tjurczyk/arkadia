@@ -5,7 +5,7 @@ scripts.ui.notification_center = scripts.ui.notification_center or {
     gap = 10,
     containers = {},
     timers = {},
-    nextIndex = 1,
+    next_ndex = 1,
     duration = 10,
     notifications = {}
 }
@@ -26,9 +26,9 @@ function scripts.ui.notification_center:add_notification(text, duration)
         return
     end
 
-    local notification = { id = self.nextIndex, text = text, duration = duration or self.duration}
+    local notification = { id = self.next_index, text = text, duration = duration or self.duration}
     table.insert(self.notifications, notification)
-    self.nextIndex = self.nextIndex + 1
+    self.next_index = self.next_index + 1
     self:print_notifications()
 end
 

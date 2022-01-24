@@ -17,25 +17,25 @@ scripts.inv["bag_name"] = {
 }
 
 scripts.inv["bag_in_dopelniacz"] = {
-    ["plecak"] = "swojego plecaka",
-    ["torba"] = "swojej torby",
-    ["worek"] = "swojego worka",
-    ["sakiewka"] = "swojej sakiewki",
-    ["mieszek"] = "swojego mieszka",
-    ["sakwa"] = "swojej sakwy",
-    ["wor"] = "swojego wora",
-    ["szkatulka"] = "swojej szkatulki",
+    ["plecak"] = "plecaka",
+    ["torba"] = "torby",
+    ["worek"] = "worka",
+    ["sakiewka"] = "sakiewki",
+    ["mieszek"] = "mieszka",
+    ["sakwa"] = "sakwy",
+    ["wor"] = "wora",
+    ["szkatulka"] = "szkatulki",
 }
 
 scripts.inv["bag_in_biernik"] = {
-    ["plecak"] = "swoj plecak",
-    ["torba"] = "swoja torbe",
-    ["worek"] = "swoj worek",
-    ["sakiewka"] = "swoja sakiewke",
-    ["mieszek"] = "swoj mieszek",
-    ["sakwa"] = "swoja sakwe",
-    ["wor"] = "swoj wor",
-    ["szkatulka"] = "swoja szkatulke",
+    ["plecak"] = "plecak",
+    ["torba"] = "torbe",
+    ["worek"] = "worek",
+    ["sakiewka"] = "sakiewke",
+    ["mieszek"] = "mieszek",
+    ["sakwa"] = "sakwe",
+    ["wor"] = "wor",
+    ["szkatulka"] = "szkatulke",
 }
 
 local pronouns = {

@@ -10,12 +10,13 @@ scripts.ui.combat_window = scripts.ui.combat_window or {
         ["combat.team"] = true,
         ["combat.others"] = true,
         ["hp"] = true
-    }
+    },
+    no_wrap = true
 }
 
 function scripts.ui.combat_window:init()
     if scripts.ui.combat_window.enabled then
-        self.window = scripts.ui.window:new(self.name, "Walka")
+        self.window = scripts.ui.window:new(self.name, "Walka", function() return not self.wrap end)
         self.window:add_buttons(function() self:create_buttons() end)
         self.window:set_font_size(scripts.ui.combat_window.font_size)
         self.handler = scripts.event_register:force_register_event_handler(self.handler, "gmcp.room.info", function()

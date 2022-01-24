@@ -1,6 +1,9 @@
 scripts.ui.window = scripts.ui.window or {}
 
 function scripts.ui.window:new(id, label, auto_wrap)
+    if type(auto_wrap) == "boolean" then
+        auto_wrap = function() return auto_wrap end
+    end
     local o = {}
     setmetatable(o, self)
     self.__index = self
@@ -8,7 +11,7 @@ function scripts.ui.window:new(id, label, auto_wrap)
     o.label = label
     o.font_size = getFontSize()
     o.font = getFont()
-    o.auto_wrap = auto_wrap or auto_wrap == nil
+    o.auto_wrap = auto_wrap or function() return true end
     o:init()
     return o
 end
@@ -25,12 +28,7 @@ function scripts.ui.window:init()
 end
 
 function scripts.ui.window:refresh()
-    if self.auto_wrap then
-        setWindowWrap(self.id, getColumnCount(self.id))
-    else
-        setWindowWrap(self.id, 1000)
-    end
-
+    self:refresh_wrap()
     setUserWindowStyleSheet(self.id, scripts.ui.current_theme:get_window_stylesheet())
 
     if self.buttons_func then
@@ -65,9 +63,12 @@ function scripts.ui.window:set_font_size(font_size)
     self:refresh()
 end
 
-function scripts.ui.window:set_auto_wrap(wrap)
-    self.auto_wrap = wrap
-    self:refresh()
+function scripts.ui.window:refresh_wrap()
+    if self.auto_wrap() then
+        setWindowWrap(self.id, getColumnCount(self.id) - 1)
+    else
+        setWindowWrap(self.id, 1000)
+    end
 end
 
 function scripts.ui.window:on_mouse_enter(callback)

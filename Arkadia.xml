@@ -26210,6 +26210,13 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<packageName></packageName>
 						<regex>^/wep([0-9]+)$</regex>
 					</Alias>
+					<Alias isActive="yes" isFolder="no">
+						<name>/pojemnik</name>
+						<script>alias_func_setup_bag()</script>
+						<command></command>
+						<packageName></packageName>
+						<regex>^/pojemnik$</regex>
+					</Alias>
 				</AliasGroup>
 				<AliasGroup isActive="yes" isFolder="yes">
 					<name>kowal</name>

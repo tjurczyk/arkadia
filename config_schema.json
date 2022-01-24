@@ -2933,6 +2933,14 @@
         ]
     },
     {
+        "name": "scripts.ui.combat_window.no_wrap",
+        "default_value": false,
+        "field_type": "boolean",
+        "macros_on_modify": [
+            "_ux"
+        ]
+    },
+    {
         "name": "scripts.ui.theme",
         "default_value": "arkadia",
         "field_type": "string",

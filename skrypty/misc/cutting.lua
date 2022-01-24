@@ -43,8 +43,8 @@ function alias_func_skrypty_misc_cutting_wycinaj_cialo()
     misc.cutting_mode = 1
     misc:cutting_pre_action()
     dead_bodies_trigg_single = tempRegexTrigger("^.*(Wycinasz|Nie|Slucham).*$", [[ misc.cutting_post_action_single_body() ]])
-    local body_id = scripts.id_to_string_biernik[tonumber(matches[2])]
-    tempTimer(1.3, [[ send("wytnij wszystko z ]] .. body_id .. [[ ciala", false) ]])
+    local body_id = tonumber(matches[2])
+    tempTimer(1.3, [[ send("wytnij wszystko z ]] .. body_id .. [[. ciala", false) ]])
 end
 
 function alias_func_skrypty_misc_cutting_wyrywaj()
@@ -62,7 +62,7 @@ function alias_func_skrypty_misc_cutting_wyrywaj_cialo()
     misc.cutting_mode = 2
     misc:cutting_pre_action()
     dead_bodies_trigg_single = tempRegexTrigger("^.*(Wycinasz|Nie|Slucham).*$", [[ misc.cutting_post_action_single_body() ]])
-    local body_id = scripts.id_to_string_biernik[tonumber(matches[2])]
-    tempTimer(1.3, [[ send("wyrwij wszystko z ]] .. body_id .. [[ ciala", false) ]])
+    local body_id = tonumber(matches[2])
+    tempTimer(1.3, [[ send("wyrwij wszystko z ]] .. body_id .. [[. ciala", false) ]])
 end
 

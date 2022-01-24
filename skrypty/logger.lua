@@ -1,11 +1,13 @@
-function scripts:print_log(msg, new_line)
+function scripts:print_log(msg, new_line, color)
     if msg then
         if new_line then
-            cecho("\n<CadetBlue>(skrypty)<tomato>: " .. msg .. "\n")
-        else
-            cecho("<CadetBlue>(skrypty)<tomato>: " .. msg .. "\n")
+            echo("\n")
+        end
+        for _, line in pairs(string.split(msg, "\n")) do
+            cecho(string.format("<CadetBlue>(skrypty)<%s>: " .. line .. "\n", color or "tomato"))
         end
     end
+    resetFormat()
 end
 
 

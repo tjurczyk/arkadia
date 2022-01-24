@@ -6,7 +6,7 @@ herbs.window = herbs.window or {
 
 function herbs.window:create()
     if herbs.window.enabled and not self.window then
-       self.window = scripts.ui.window:new(self.name, "Ziola", false)
+       self.window = scripts.ui.window:new(self.name, "Ziola", function() return false end)
     end
     if self.window then
         self.window:set_font_size(self.font_size)

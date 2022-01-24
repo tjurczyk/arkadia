@@ -1741,7 +1741,17 @@ Dostępne wartości:
 
 ## `scripts.ui.combat_window.font_size`
 
-Wielkość czionki w oknie walki
+Wielkość czionki w oknie walki.
+
+---
+
+## `scripts.ui.combat_window.no_wrap`
+
+Wyłącza wrap w oknie walki.
+
+Dostępne wartości:
+* `true` - wrap wyłączony
+* `false` - wrap włączony
 
 ---
 

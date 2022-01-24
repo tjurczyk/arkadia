@@ -16,7 +16,7 @@ function gmcp_handler_improvement()
 
     misc.improve.current_improve_level = improve_level
 
-    if misc.improve["improve2_enabled"] then
+    if misc.improve["improve2_enabled"] and (scripts.character.state.form == 3 or scripts.character.options.form == 0 or misc.improve.ignore_form) then
         -- get previous value to know how many to add
         local prev_val = 0
 
@@ -26,7 +26,11 @@ function gmcp_handler_improvement()
 
         misc.improve:add_improvee2(improve_level - prev_val)
     else
-        scripts:print_log("Nie zapisuje do globalnych, bo jest wylaczony")
+        if misc.improve["improve2_enabled"] then
+            scripts:print_log("Nie zapisuje do globalnych, bo jest wylaczony")
+        else
+            scripts:print_log("Nie zapisuje do globalnych, z powodu nieplnej formy")
+        end
     end
 
     -- snapshot of killed mobs
@@ -49,7 +53,7 @@ function gmcp_handler_improvement()
     snapshot["time_passed"] = misc.improve:seconds_to_formatted_string(seconds_passed)
 
     table.insert(misc.improve["level_snapshots"], snapshot)
-    scripts:print_log("[" .. snapshot["time"] .. "] Wlasnie wbiles postepy: " .. misc.improve.levels[improve_level] .. " (czas: " .. snapshot["time_passed"] .. ")")
+    scripts:print_log(string.format("[%s] Wlasnie %s postepy: %s (czas: %s)", snapshot["time"], scripts.utils.gender_form("wbiles", "wbilas"), misc.improve.levels[improve_level], snapshot["time_passed"]))
     misc_on_exit_dump()
 end
 

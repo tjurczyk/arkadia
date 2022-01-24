@@ -27,14 +27,14 @@ function scripts.transports.ride:init()
         table.insert(self.triggers, tempExactMatchTrigger(self.definition.exit, function() self:exit() end))
     end
     if self.definition.exit_command then
-        table.insert(self.handlers, registerAnonymousEventHandler("sysDataSendRequest", function(_, command) 
+        table.insert(self.handlers, registerAnonymousEventHandler("sysDataSendRequest", function(_, command)
             if self.definition.exit_command ~= command then
-                return
+                return true
             end
             registerAnonymousEventHandler("gmcp.room.info", function(_)
                 self:exit()
             end, true)
-        end))
+        end, true))
     end
     table.insert(self.triggers, tempExactMatchTrigger(self.definition.start, function() self:start() end))
     table.insert(self.triggers, tempRegexTrigger("^Podazasz za .* na zewnatrz\\.", function() self:exit() end))
@@ -106,7 +106,7 @@ function scripts.transports.ride:start()
         killTimer(self.progress_timer)
     end
     self:show_progress()
-    self.progress_timer = tempTimer(1, function() self:update_progress() end, true)
+    self.progress_timer = tempTimer(0.25, function() self:update_progress() end, true)
 end
 
 function scripts.transports.ride:get_progress()
@@ -147,7 +147,7 @@ function scripts.transports.ride:show_progress()
     end
     local border_bottom = getBorderBottom()
     local border_right = getBorderRight()
-    
+
     self.progress = Geyser.Gauge:new({
         name = string.format("transport.progress.%s.%s", self.id, self.index),
         x = -border_right - padding * 2 - bar_width - 20,
@@ -172,6 +172,13 @@ function scripts.transports.ride:update_progress()
     end
     local current_stop = self.definition.stops[self.index]
     local label = current_stop.label and "→ " .. current_stop.label or string.format("%s → %s", current_stop.start, current_stop.destination)
+    if self.definition.show_path then
+        local path = getPath(current_stop.start, current_stop.destination)
+        if path then
+            local percentage = math.min(current, total) / total
+            raiseEvent("rideProgress", self, speedWalkPath[math.floor(percentage * #speedWalkPath)])
+        end
+    end
     self.progress:setValue(math.min(current, total), total, string.format("<center>%s %s/%s</center>", label, scripts.utils.str_pad(tostring(current), string.len(tostring(total)), "right"), total))
 end
 

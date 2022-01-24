@@ -17,25 +17,41 @@ scripts.inv["bag_name"] = {
 }
 
 scripts.inv["bag_in_dopelniacz"] = {
-    ["plecak"] = "plecaka",
-    ["torba"] = "torby",
-    ["worek"] = "worka",
-    ["sakiewka"] = "sakiewki",
-    ["mieszek"] = "mieszka",
-    ["sakwa"] = "sakwy",
-    ["wor"] = "wora",
-    ["szkatulka"] = "szkatulki",
+    ["plecak"] = "swojego plecaka",
+    ["torba"] = "swojej torby",
+    ["worek"] = "swojego worka",
+    ["sakiewka"] = "swojej sakiewki",
+    ["mieszek"] = "swojego mieszka",
+    ["sakwa"] = "swojej sakwy",
+    ["wor"] = "swojego wora",
+    ["szkatulka"] = "swojej szkatulki",
 }
 
 scripts.inv["bag_in_biernik"] = {
-    ["plecak"] = "plecak",
-    ["torba"] = "torbe",
-    ["worek"] = "worek",
-    ["sakiewka"] = "sakiewke",
-    ["mieszek"] = "mieszek",
-    ["sakwa"] = "sakwe",
-    ["wor"] = "wor",
-    ["szkatulka"] = "szkatulke",
+    ["plecak"] = "swoj plecak",
+    ["torba"] = "swoja torbe",
+    ["worek"] = "swoj worek",
+    ["sakiewka"] = "swoja sakiewke",
+    ["mieszek"] = "swoj mieszek",
+    ["sakwa"] = "swoja sakwe",
+    ["wor"] = "swoj wor",
+    ["szkatulka"] = "swoja szkatulke",
+}
+
+local pronouns = {
+    m = { biernik = "swoj", dopelniacz = "swojego" },
+    f = { biernik = "swoja", dopelniacz = "swojej" }
+}
+
+scripts.inv["bag_pronouns"] = {
+    ["plecak"] = pronouns.m,
+    ["torba"] = pronouns.f,
+    ["worek"] = pronouns.m,
+    ["sakiewka"] = pronouns.f,
+    ["mieszek"] = pronouns.m,
+    ["sakwa"] = pronouns.f,
+    ["wor"] = pronouns.m,
+    ["szkatulka"] = pronouns.f
 }
 
 scripts.inv["money_bag_1"] = "plecak"

@@ -9,7 +9,8 @@ function scripts.ui:setup_footer_closed()
     })
     scripts.ui.bottom_closed:hide()
     scripts.ui.bottom_closed:setColor(0, 0, 0)
-    scripts.ui.bottom_closed:echo("X")
+    scripts.ui.bottom_closed:echo("˄")
+    setLabelCursor(scripts.ui.bottom_closed.name, "PointingHand")
     scripts.ui.bottom_closed:setClickCallback("show_footer_clicked")
 end
 
@@ -33,6 +34,7 @@ function scripts.ui:setup_footer()
         height = scripts.ui.footer_height,
     })
 
+    scripts.ui.bottom:setStyleSheet(scripts.ui.current_theme:get_footer_stylesheet())
     scripts.ui.bottom:setColor(scripts.ui.footer_r, scripts.ui.footer_g, scripts.ui.footer_b)
 
     scripts.ui.footer_vertical = Geyser.VBox:new({
@@ -68,14 +70,19 @@ function scripts.ui:setup_footer()
     scripts.ui.footer_map:setStyleSheet([[
         margin: ]] .. scripts.ui.footer_map_height_margin ..[[ ]] .. scripts.ui.footer_map_width_margin .. [[;
     ]])
-    scripts.ui.footer_map:setColor(scripts.ui.footer_r, scripts.ui.footer_g, scripts.ui.footer_b)
+    
 
     scripts.ui.footer_main = Geyser.Label:new({
         name = "scripts.ui.footer_main",
         h_stretch_factor = 100 - scripts.ui.footer_map_width_p - scripts.ui.footer_info_width_p,
     }, scripts.ui.footer)
 
-    scripts.ui.footer_main:setColor(scripts.ui.footer_r, scripts.ui.footer_g, scripts.ui.footer_b)
+    local empty = CSSMan.new([[
+        border: 0px;
+    ]])
+
+    scripts.ui.footer_main:setStyleSheet(empty:getCSS())
+    
     scripts.ui:setup_footer_main()
     sendGMCP([[Char.state ()]])
 
@@ -84,7 +91,7 @@ function scripts.ui:setup_footer()
         h_stretch_factor = scripts.ui.footer_info_width_p
     }, scripts.ui.footer)
 
-    scripts.ui.footer_info:setColor(scripts.ui.footer_r, scripts.ui.footer_g, scripts.ui.footer_b)
+    scripts.ui.footer_info:setStyleSheet(empty:getCSS())
 
     scripts.ui.footer_info_box = Geyser.HBox:new({
         name = "scripts.ui.footer_info_box",
@@ -97,19 +104,23 @@ function scripts.ui:setup_footer()
     scripts.ui.footer_info_box_main = Geyser.Label:new({
         name = "scripts.ui.footer_info_box_main",
     }, scripts.ui.footer_info_box)
-    scripts.ui.footer_info_box_main:setColor(scripts.ui.footer_r, scripts.ui.footer_g, scripts.ui.footer_b)
+
+    scripts.ui.footer_info_box_main:setStyleSheet(empty:getCSS())
+    
 
     scripts.ui.footer_info_box_closing = Geyser.Label:new({
         name = "scripts.ui.footer_info_box_closing",
-        width = 12,
-        height = 12,
+        width = 15,
+        height = 15,
         fontSize = 11,
         h_policy = Geyser.Fixed,
         v_policy = Geyser.Fixed,
     }, scripts.ui.footer_info_box)
-    scripts.ui.footer_info_box_closing:setColor(scripts.ui.footer_r, scripts.ui.footer_g, scripts.ui.footer_b)
-    scripts.ui.footer_info_box_closing:echo("X")
+    
+    scripts.ui.footer_info_box_closing:echo("˅")
     scripts.ui.footer_info_box_closing:setClickCallback("hide_footer_clicked")
+    scripts.ui.footer_info_box_closing:setStyleSheet(empty:getCSS())
+    setLabelCursor(scripts.ui.footer_info_box_closing.name, "PointingHand")
 
     scripts.ui:setup_footer_info()
 

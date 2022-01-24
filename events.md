@@ -348,3 +348,19 @@ Argumenty:
 
 Event podniesiony po stworzeniu tablicy kreatorow elementow stopki.
 Mozn go wykorzystac, zeby zarejestrowac swoj wlasny element.
+
+## `rideProgress`
+
+Event podniesiony podczas podrozy dylizansami itp.
+
+Argument:
+  * `arg1`: obiekt podrozy
+  * `arg2`: aktualnie wyliczona lokacja (w przyblizeniu)
+
+## `incomingMessage`
+
+Event podniesiony po przeprocesowaniu wiadomosci przychodzacej.
+
+Argument:
+  * `arg1`: typ wiadomosci
+  * `arg2`: tekst wiadomosci

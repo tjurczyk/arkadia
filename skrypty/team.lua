@@ -10,7 +10,8 @@ ateam = ateam or {
     my_id = nil,
     next_team_id = "A",
     to_support = nil,
-    cover_command = nil,
+    cover_command = "zaslon",
+    cover_command_click = nil,
     is_enemy_on_location = nil,
     attack_mode = 3,
     clicked_second_defense = false,
@@ -105,6 +106,7 @@ function trigger_func_skrypty_team_clear_absent()
     druzyna = string.gsub(druzyna, "[Kk]leczac. na ziemi ", "")
     druzyna = string.gsub(druzyna, "[Ss]kryt. za %w+ ", "")
     druzyna = string.gsub(druzyna, "[Ww]spinajac. sie ", "")
+    druzyna = string.gsub(druzyna, "[Ss]chodzac. w dol ", "")
 
     local disconnected = string.match(druzyna, "statua (%w+)")
     if disconnected then

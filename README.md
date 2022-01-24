@@ -14,6 +14,10 @@ Wersja, której używasz: sprawdź nagłówek komendy `/skrypty`.
 Przeciągnij poniższy link na okienko Mudleta.
 [https://github.com/tjurczyk/arkadia/releases/latest/download/ArkadiaScriptsInstaller.xml](https://github.com/tjurczyk/arkadia/releases/latest/download/ArkadiaScriptsInstaller.xml)
 
+lub wpisz:
+
+```lua installPackage("https://github.com/tjurczyk/arkadia/releases/latest/download/ArkadiaScriptsInstaller.xml")```
+
 
 ### Wymagania
 ---

@@ -328,6 +328,12 @@ Włącza oddzielne okno pokazujące zioła. Aktualizowany przez `/pokaz_ziola` o
 
 ---
 
+## `herbs.window.font_size`
+Ustawia wielkość czcionki w oknie ziół.
+
+
+---
+
 ## `scripts.inv.money_bag_1`
 ## `scripts.inv.gems_bag_1`
 ## `scripts.inv.food_bag_1`
@@ -1129,6 +1135,7 @@ Ponizej jest opcja co ma byc robione:
   "bloki" : 2,
   "bron" : 2,
   "npc" : 2,
+  "npc_spece" : 2
 }
 ```
 
@@ -1147,6 +1154,7 @@ Ponizej jest opcja co ma byc robione:
 ## `scripts.gag_colors.zaslony_nieudane`
 ## `scripts.gag_colors.bron`
 ## `scripts.gag_colors.npc`
+## `scripts.gag_colors.npc_spece`
 
 Opcja kolorow do tagow (czyli tylko kiedy scripts.gag_settings ustawione ne 2)
 
@@ -1692,3 +1700,56 @@ Włącza/wyłącza pasek pokazujący orientacyjny czas do dotarcia do celu podcz
 Dostępne wartości:
 * `true` - pasek będzie widoczny
 * `false` - pasek będzie niewidoczny
+
+---
+
+## `amap.water_animal`
+
+Włącza/wyłącza pojenie zwierzęcia razem z piciem wody na lokacji.
+
+Dostępne wartości:
+* `true` - pojenie włączone
+* `false` - pojenie wyłączone
+
+---
+
+## `ateam.cover_command`
+
+Ustawienie komendy do zaslony, domyslnie jest `zaslon`.
+
+---
+
+## `scripts.ui.theme`
+
+Ustawienie wyglądu interefejsu skryptów.
+
+Dostępne wartości:
+* `arkadia`
+* `plain`
+
+---
+
+## `scripts.ui.combat_window.enabled`
+
+Włącza/wyłącza oddzielne okno walki.
+
+Dostępne wartości:
+* `true` - okno włączone
+* `false` - okno wyłączone
+
+---
+
+## `scripts.ui.combat_window.font_size`
+
+Wielkość czionki w oknie walki
+
+---
+
+## `misc.improve.ignore_form`
+
+Globalny licznik postepów (`/postepy2`, `/postepy3`) nie będzie aktualizowany w przypadku odrabianie śmierci lub formy,
+chyba, że to ustawienia zostanie ustawione na `true`
+
+Dostępne wartości:
+* `true` - postępy będą dodawane nawet podczas odrabiania śmierci i formy
+* `false` - postępy nie będa doawane podczas odrabiania śmierci i formy

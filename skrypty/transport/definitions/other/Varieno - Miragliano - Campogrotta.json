@@ -3,6 +3,7 @@
     "exit_command": "wyjscie",
     "start": "Drzwiczki sie zamykaja, drzenie przebiega przez caly pojazd, ktory powoli rusza.",
     "bind": "wyjrzyj przez okno",
+    "show_path": true,
     "stops": [
         {
             "start": 5468,

@@ -1,10 +1,7 @@
 function scripts.ui:setup_talk_window()
     if scripts.ui.separate_talk_window then
-        openUserWindow("talk_window")
-        setFontSize("talk_window", scripts.ui.separate_talk_window_font_size)
-        setFont("talk_window", getFont())
-        setUserWindowTitle("talk_window", "Okno rozmow")
-        scripts.ui:setup_wrap_talk_window()
+        local window = scripts.ui.window:new("talk_window", "Okno rozmow", scripts.ui.separate_talk_window_no_wrap)
+        window:set_font_size(scripts.ui.separate_talk_window_font_size)
     end
 end
 

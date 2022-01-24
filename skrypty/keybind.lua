@@ -214,7 +214,7 @@ scripts.keybind["configuration"] = {
     },
     ["multibind1"] = {
         ["modifier"] = { "Alt" },
-        ["key"] = "Minus",
+        ["key"] = "1",
         ["keys"] = {},
         ["description"] = "Multibind lokacyjny (1)",
         ["callback"] = "callback_mbind1",
@@ -222,7 +222,7 @@ scripts.keybind["configuration"] = {
     },
     ["multibind2"] = {
         ["modifier"] = { "Alt" },
-        ["key"] = "Minus",
+        ["key"] = "2",
         ["keys"] = {},
         ["description"] = "Multibind lokacyjny (2)",
         ["callback"] = "callback_mbind2",
@@ -230,7 +230,7 @@ scripts.keybind["configuration"] = {
     },
     ["multibind3"] = {
         ["modifier"] = { "Alt" },
-        ["key"] = "Minus",
+        ["key"] = "3",
         ["keys"] = {},
         ["description"] = "Multibind lokacyjny (3)",
         ["callback"] = "callback_mbind3",
@@ -238,7 +238,7 @@ scripts.keybind["configuration"] = {
     },
     ["multibind4"] = {
         ["modifier"] = { "Alt" },
-        ["key"] = "Minus",
+        ["key"] = "4",
         ["keys"] = {},
         ["description"] = "Multibind lokacyjny (4)",
         ["callback"] = "callback_mbind4",

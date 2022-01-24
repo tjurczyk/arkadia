@@ -1,6 +1,6 @@
 function log_cmds_ui(_, command)
     if string.starts(command, "zaslon ") or string.starts(command, "gzzaslon ") then
-        ateam.cover_command = command
+        ateam.cover_command_click = command
     end
 end
 

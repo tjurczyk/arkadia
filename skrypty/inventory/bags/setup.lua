@@ -70,6 +70,7 @@ function scripts.inv.bag_setup:set(bag_type, bag)
                 value=mianownik,
                 silent=true
             }
+            scripts.config:save_config{silent=true}
         end
     end
     scripts:print_log(string.format("Ustawilem <SpringGreen>" .. bag .. "<tomato> jako %s_bag_1.", bag_type))

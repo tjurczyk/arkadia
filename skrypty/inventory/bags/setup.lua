@@ -70,6 +70,16 @@ function scripts.inv.bag_setup:set(bag_type, bag)
                 value=mianownik,
                 silent=true
             }
+            scripts.config:set_var{
+                var=string.format("scripts.inv.pre_%s_bag_1", bag_type),
+                value=string.format("otworz <biernik_%s_bag_1>", bag_type),
+                silent=true
+            }
+            scripts.config:set_var{
+                var=string.format("scripts.inv.post_%s_bag_1", bag_type),
+                value=string.format("zamknij <biernik_%s_bag_1>", bag_type),
+                silent=true
+            }
             scripts.config:save_config{silent=true}
         end
     end

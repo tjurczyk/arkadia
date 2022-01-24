@@ -36,9 +36,9 @@ function scripts.inv:_get_bag_in_form(form, bag_id)
 
     local this_bag_name_in_form = scripts.inv["bag_in_" .. form][this_bag_name]
 
-    local prefix_this_bag_name_in_form = scripts.inv[form .. "_" .. bag_id]
-    if not prefix_this_bag_name_in_form or prefix_this_bag_name_in_form == "" then
-        prefix_this_bag_name_in_form = ""
+    local prefix_this_bag_name_in_form = scripts.inv["bag_pronouns"][this_bag_name][form] .. " " .. scripts.inv[form .. "_" .. bag_id]
+    if not prefix_this_bag_name_in_form or prefix_this_bag_name_in_form:ends(" ") then
+        prefix_this_bag_name_in_form = prefix_this_bag_name_in_form .. ""
     else
         prefix_this_bag_name_in_form = prefix_this_bag_name_in_form .. " "
     end

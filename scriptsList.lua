@@ -236,6 +236,7 @@ return {
     "skrypty/inventory/bags/utils",
     "skrypty/inventory/bags/help",
     "skrypty/inventory/bags/aliases",
+    "skrypty/inventory/bags/setup",
     "skrypty/misc/improve/utils",
     "skrypty/misc/improve/improve",
     "skrypty/misc/improve/gmcp_handler_improvement",

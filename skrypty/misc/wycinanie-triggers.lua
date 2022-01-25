@@ -9,11 +9,10 @@ function trigger_func_skrypty_misc_wycinanie_triggers_wyciete_cialo()
         tempTimer(delay, function() misc:cutting_post_action() end)
         disableTrigger("wycinanie-triggers")
     else
-        local biernik_body = scripts.id_to_string_biernik[misc.currently_cutting]
         if misc.cutting_mode == 1 then
-            tempTimer(delay, function() send ("wytnij wszystko z " .. biernik_body .. " ciala") end)
+            tempTimer(delay, function() send ("wytnij wszystko z " .. misc.currently_cutting .. ". ciala") end)
         else
-            tempTimer(delay, function() send ("wyrwij wszystko z " .. biernik_body .. " ciala") end)
+            tempTimer(delay, function() send ("wyrwij wszystko z " .. misc.currently_cutting .. ". ciala") end)
         end
     end
 end

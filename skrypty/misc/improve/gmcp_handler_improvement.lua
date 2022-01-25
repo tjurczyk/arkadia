@@ -16,7 +16,7 @@ function gmcp_handler_improvement()
 
     misc.improve.current_improve_level = improve_level
 
-    if misc.improve["improve2_enabled"] and (scripts.character.state.form == 3 or scripts.character.options.form == 0 or misc.improve.ignore_form) then
+    if misc.improve["improve2_enabled"] and (scripts.character.state.form == 3 or scripts.character.options.values.form == 0 or misc.improve.ignore_form) then
         -- get previous value to know how many to add
         local prev_val = 0
 

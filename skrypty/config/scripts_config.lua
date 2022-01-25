@@ -47,7 +47,13 @@ function ScriptsConfig:load_config(options)
     local silent = options.silent
     local migration = options.migration
     local file = io.open(self._config_file_path)
-    local config = yajl.to_value(file:read("*a"))
+    local success, config = pcall(yajl.to_value, file:read("*a"))
+    if not success then
+        scripts:print_log(string.format("Plik <yellow>%s<tomato> zawiera bledy. Szczegoly ponizej.", self._config_file_path), true)
+        scripts:print_log(config:gsub("\n at .*", ""), false, "white")
+        echo("\n")
+        return false
+    end
     for var, value in pairs(config) do
         self:set_var{
             var=var,
@@ -90,6 +96,7 @@ function ScriptsConfig:load_config(options)
             end
         end
     end
+    return true
 end
 
 function ScriptsConfig:save_config(options)

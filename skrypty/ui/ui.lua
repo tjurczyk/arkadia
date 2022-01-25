@@ -32,7 +32,7 @@ function scripts.ui:setup()
     setBorderBottom(scripts.ui.footer_height)
 
     scripts.ui.combat_window:init()
-
+    
     raiseEvent("uiReady")
 end
 

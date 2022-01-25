@@ -80,6 +80,11 @@ function scripts.inv.bag_setup:set(bag_type, bag)
                 value=string.format("zamknij <biernik_%s_bag_1>", bag_type),
                 silent=true
             }
+            scripts.config:set_var{
+                var=string.format("scripts.inv.desc_%s_bag_1", bag_type),
+                value=string.format("", bag_type),
+                silent=true
+            }
             scripts.config:save_config{silent=true}
         end
     end

@@ -1,5 +1,5 @@
 function scripts.ui.window_modify(windowName, text, ...)
-    for i = 1, getLineNumber(windowName), 1 do
+    for i = 0, getLineNumber(windowName), 1 do
         moveCursor(windowName, 1, i)
         local position = selectString(windowName, text, 1)
         if position > -1 then

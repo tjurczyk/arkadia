@@ -49,5 +49,6 @@ function trigger_func_skrypty_ui_footer_elements_order_action()
     scripts.ui.order_wait_time = 15
     enableTimer("order_timer")
     raiseEvent("order_state", 5)
+    trigger_func_skrypty_ui_footer_elements_cover_action_success()
 end
 

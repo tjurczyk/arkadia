@@ -905,15 +905,9 @@ Symbol prawego nawiasu w oknie stanów, może być ciąg znaków
 
 ---
 
-## `ateam.options.leader_indicator`
-
-Wlacza/wylacza oznaczenie prowadzacego druzyne
-
----
-
 ## `ateam.options.leader_indicator_symbol`
 
-Ustawia symbol jako oznaczenie prowadzacego druzyne
+Ustawia symbol uzywany do oznaczenia prowadzacego druzyne w oknie kondycji
 
 ---
 

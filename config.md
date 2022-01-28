@@ -905,6 +905,15 @@ Symbol prawego nawiasu w oknie stanów, może być ciąg znaków
 
 ---
 
+## `ateam.options.visible_stealth`
+
+Włacza/wyłącza ramki ukrytych postaci
+
+* `true` - imie postaci w bracketach
+* `false` - niewidoczne
+
+---
+
 ## `scripts.ui.fancy.enabled`
 
 Włacza/wyłącz bardziej graficzny pasek stanów

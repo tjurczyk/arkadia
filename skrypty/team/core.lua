@@ -353,6 +353,14 @@ function ateam:print_obj_team(id, obj)
             deselect(scripts.ui.states_window_name)
         end
 
+        -- stealth
+        local stealth_symbol_left = ""
+        local stealth_symbol_right = ""
+        if ateam.options.visible_stealth and obj["hidden"] then
+            stealth_symbol_left = "<white:team_console_bg>["
+            stealth_symbol_right = "<white:team_console_bg>]"
+        end
+
         -- name section
         local str_name = self.options.own_name
         local str_name_original = obj["desc"]
@@ -363,9 +371,9 @@ function ateam:print_obj_team(id, obj)
         if ateam.paralyzed_names[obj["desc"]] then
             cecho(scripts.ui.states_window_name, "<" .. ateam.options.team_mate_stun_fg_color .. ":" .. ateam.options.team_mate_stun_bg_color .. ">" .. str_name .. " ")
         elseif str_name ~= self.options.own_name then
-            cecho(scripts.ui.states_window_name, "<LimeGreen:team_console_bg>" .. str_name .. " ")
+            cecho(scripts.ui.states_window_name, stealth_symbol_left .. "<LimeGreen:team_console_bg>" .. str_name .. stealth_symbol_right .. " ")
         else
-            cecho(scripts.ui.states_window_name, "<white:team_console_bg>" .. str_name .. " ")
+            cecho(scripts.ui.states_window_name, stealth_symbol_left .. "<white:team_console_bg>" .. str_name .. stealth_symbol_right .. " ")
         end
 
         -- zas section
@@ -580,11 +588,19 @@ function ateam:print_obj_normal(id, obj)
 
         cecho(scripts.ui.enemy_states_window_name, "<"..ateam.options.bracket_hp_color..":team_console_bg>"..ateam.options.bracket_symbol_left.."<reset>" .. str_state .. "<" .. ateam.options.bracket_hp_color..":team_console_bg>"..ateam.options.bracket_symbol_right.." ")
 
+        -- stealth
+        local stealth_symbol_left = ""
+        local stealth_symbol_right = ""
+        if ateam.options.visible_stealth and obj["hidden"] then
+            stealth_symbol_left = "<white:team_console_bg>["
+            stealth_symbol_right = "<white:team_console_bg>]"
+        end
+
         -- name section
         local str_name = obj["desc"]
 
         -- set color for desc
-        cecho(scripts.ui.enemy_states_window_name, "<white:team_console_bg>" .. str_name)
+        cecho(scripts.ui.enemy_states_window_name, stealth_symbol_left .. "<white:team_console_bg>" .. str_name .. stealth_symbol_right)
 
         -- if print_id not nil (numbering normals) then set zab function on it
         if print_id then

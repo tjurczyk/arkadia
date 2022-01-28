@@ -164,6 +164,11 @@ Wartości:
 
 ---
 
+## `scripts.character.bind_paralysis_breaker`
+
+Bindowanie komendy "przerwij" po rozpoczeciu czynnosci, ktora paralizuje ruch, np tropienie, wspinaczka.
+
+---
 ## `scripts.character.combat_state.trigger_blocked_actions_bind`
 
 Bindowanie nieudanej akcji ze wzgledu na niedawne zakonczenie walki.

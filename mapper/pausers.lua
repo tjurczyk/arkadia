@@ -29,6 +29,9 @@ function amap.pausers:on()
     disableKey("temp_bind-")
     disableKey("temp_bind=")
     raiseEvent("amapPauserStarted")
+    if scripts.character.bind_paralysis_breaker == true then
+        scripts.utils.bind_functional("przestan", silent)
+    end
 end
 
 function amap.pausers:off()

@@ -40,7 +40,7 @@ function scripts.ui.themes.plain:get_button_area_bg()
 end
 
 function scripts.ui.themes.plain:get_border_stylesheet()
-    return ""
+    return "background: none; border: 0px;"
 end
 
 function scripts.ui.themes.plain:get_notification_color()
@@ -69,7 +69,7 @@ function scripts.ui.themes.plain:get_notification_close_stylesheet()
     ]]
 end
 
-function scripts.ui.themes.plain:get_button_stylesheet(color)
+function scripts.ui.themes.plain:get_button_stylesheet(color, font_size, variant)
     return [[
         QLabel {
             border: 0;
@@ -78,7 +78,7 @@ function scripts.ui.themes.plain:get_button_stylesheet(color)
             text-transform: uppercase;
             font-weight: 500;
             color: #CCC;
-            font-size: 10px;
+            font-size: ]] .. font_size ..[[px;
         }
 
         QLabel:hover{

@@ -905,6 +905,18 @@ Symbol prawego nawiasu w oknie stanów, może być ciąg znaków
 
 ---
 
+## `ateam.options.leader_indicator`
+
+Wlacza/wylacza oznaczenie prowadzacego druzyne
+
+---
+
+## `ateam.options.leader_indicator_symbol`
+
+Ustawia symbol jako oznaczenie prowadzacego druzyne
+
+---
+
 ## `scripts.ui.fancy.enabled`
 
 Włacza/wyłącz bardziej graficzny pasek stanów

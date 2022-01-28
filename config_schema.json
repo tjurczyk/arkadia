@@ -270,6 +270,18 @@
       "macros_on_modify": []
     },
     {
+      "name": "ateam.options.leader_indicator",
+      "default_value": false,
+      "field_type": "boolean",
+      "macros_on_modify": []
+    },
+    {
+      "name": "ateam.options.leader_indicator_symbol",
+      "default_value": "+",
+      "field_type": "string",
+      "macros_on_modify": []
+    },
+    {
       "name": "ateam.attack_mode",
       "default_value": 3,
       "field_type": "number",

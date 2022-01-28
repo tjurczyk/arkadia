@@ -345,7 +345,7 @@ function ateam:print_obj_team(id, obj)
 
         -- team lead
         local str_lead = " "
-        if obj["team_leader"] and ateam.options.leader_indicator_symbol ~= " " then
+        if obj["team_leader"] and ateam.options.leader_indicator_symbol ~= "" then
             if string.len(ateam.options.leader_indicator_symbol) > 1 then
                 str_lead = "<yellow:team_console_bg>"..string.sub(ateam.options.leader_indicator_symbol,1,1)
             else

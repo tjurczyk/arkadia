@@ -271,7 +271,7 @@
     },
     {
       "name": "ateam.options.leader_indicator_symbol",
-      "default_value": " ",
+      "default_value": "",
       "field_type": "string",
       "macros_on_modify": []
     },

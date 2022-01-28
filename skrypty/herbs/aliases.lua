@@ -62,7 +62,7 @@ end
 
 function herbs:send_get_commands(bag_id, amount, herb_id)
     send("otworz " .. bag_id .. ". woreczek")
-    send(string.format("wez %d %s z %d. woreczka", amount, herbs:get_case(herb_id, amount), bag_id))
+    send(string.format("wez %d %s z %d. swojego woreczka", amount, herbs:get_case(herb_id, amount), bag_id))
     send("zamknij otwarte woreczki")
 end
 
@@ -92,7 +92,7 @@ function herbs:pack_herb_with_herb(bag_number, herb)
     end
 
     -- pack to the bag
-    sendAll("otworz " .. bag_number .. ". woreczek", "wloz ziola do ".. bag_number .. ". woreczka", "zamknij otwarte woreczki")
+    sendAll("otworz " .. bag_number .. ". swojego woreczek", "wloz ziola do ".. bag_number .. ". swojego woreczka", "zamknij otwarte woreczki")
 
     if to_get == 0 then
         scripts:print_log("Zapakowane")

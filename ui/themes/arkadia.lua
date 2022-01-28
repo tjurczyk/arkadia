@@ -87,17 +87,18 @@ function scripts.ui.themes.arkadia:get_notification_close_stylesheet()
     ]]
 end
 
-function scripts.ui.themes.arkadia:get_button_stylesheet(color)
+function scripts.ui.themes.arkadia:get_button_stylesheet(color, font_size, variant)
+    local variant = variant or "m"
     return [[
         QLabel {
             border: 0;
             padding: 0;
             background-color: ]] .. string.format(color, 125) .. [[;
-            background-image : url(]] .. scripts.ui.img_path .. [[btn-universal-m.png);
+            background-image : url(]] .. scripts.ui.img_path .. [[btn-universal-]] .. variant ..[[.png);
             text-transform: uppercase;
             font-weight: 500;
             color: #d1b493;
-            font-size: 10px;
+            font-size: ]] .. font_size .. [[px;
         }
 
         QLabel:hover{

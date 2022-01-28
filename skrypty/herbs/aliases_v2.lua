@@ -1,5 +1,5 @@
 function herbs:put_herb_bag_down(bag_id)
-    sendAll("odbezpiecz " .. tostring(bag_id) .. ". woreczek", "odtrocz " .. tostring(bag_id) .. ". woreczek", "odloz " .. tostring(bag_id) .. ". woreczek")
+    sendAll("odbezpiecz " .. tostring(bag_id) .. ". swoj woreczek", "odtrocz " .. tostring(bag_id) .. ". swoj woreczek", "odloz " .. tostring(bag_id) .. ". swoj woreczek")
 end
 
 function herbs:use_herb(herb_id, action, amount)
@@ -45,7 +45,7 @@ end
 function herbs:repack_from_to_bag(from_bag, to_bag)
     local string_from_bag = tostring(from_bag)
     local string_to_bag = tostring(to_bag)
-    sendAll("otworz " .. string_from_bag .. ". woreczek", "wez ziola z " .. string_from_bag .. ". woreczka", "otworz " .. string_to_bag .. ". woreczek", "wloz ziola do " .. string_to_bag .. ". woreczka", "otworz " .. string_from_bag .. ". woreczek", "wloz ziola do " .. string_from_bag .. ". woreczka", "zamknij otwarte woreczki", true)
+    sendAll("otworz " .. string_from_bag .. ". swoj woreczek", "wez ziola z " .. string_from_bag .. ". swojego woreczka", "otworz " .. string_to_bag .. ". woreczek", "wloz ziola do " .. string_to_bag .. ". woreczka", "otworz " .. string_from_bag .. ". woreczek", "wloz ziola do " .. string_from_bag .. ". swojego woreczka", "zamknij otwarte woreczki", true)
 end
 
 function herbs:do_pre_actions()

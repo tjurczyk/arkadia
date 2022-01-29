@@ -21,7 +21,6 @@ function scripts.ui.window:init()
     setFontSize(self.id, self.font_size)
     setFont(self.id, self.font)
     setUserWindowTitle(self.id, self.label)
-
     setBackgroundColor(self.id, 0, 0, 0, 0)
     self:refresh()
     scripts.ui.window_manager:register(self)

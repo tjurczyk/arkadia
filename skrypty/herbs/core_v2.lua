@@ -310,7 +310,7 @@ end
 
 function herbs:coroutine_collect_herb_bag_condition()
     for i = 1, 200, 1 do
-        send("ocen " .. tostring(i) .. ". woreczek")
+        send("ocen " .. tostring(i) .. ". swoj woreczek")
         coroutine.yield()
         herbs.herb_bag_collect_condition_data["current_bag_id"] = herbs.herb_bag_collect_condition_data["current_bag_id"] + 1
     end
@@ -335,7 +335,7 @@ function herbs:_coroutine_build_db()
     disableTrigger(count_trigg)
 
     for i = 1, herbs.bags_amount, 1 do
-        send("zajrzyj do " .. i .. ". woreczka", true)
+        send("zajrzyj do " .. i .. ". swojego woreczka", true)
         coroutine.yield()
         herbs.current_bag_looking = herbs.current_bag_looking + 1
     end

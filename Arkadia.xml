@@ -25565,7 +25565,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 				<script>timer_func_skrypty_cover_timer()</script>
 				<command></command>
 				<packageName></packageName>
-				<time>00:00:01.000</time>
+				<time>00:00:00.100</time>
 			</Timer>
 			<Timer isActive="no" isFolder="no" isTempTimer="no" isOffsetTimer="no">
 				<name>order_timer</name>

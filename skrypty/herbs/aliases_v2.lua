@@ -45,7 +45,7 @@ end
 function herbs:repack_from_to_bag(from_bag, to_bag)
     local string_from_bag = tostring(from_bag)
     local string_to_bag = tostring(to_bag)
-    sendAll("otworz " .. string_from_bag .. ". swoj woreczek", "wez ziola z " .. string_from_bag .. ". swojego woreczka", "otworz " .. string_to_bag .. ". woreczek", "wloz ziola do " .. string_to_bag .. ". woreczka", "otworz " .. string_from_bag .. ". woreczek", "wloz ziola do " .. string_from_bag .. ". swojego woreczka", "zamknij otwarte woreczki", true)
+    sendAll("otworz " .. string_from_bag .. ". swoj woreczek", "wez ziola z " .. string_from_bag .. ". swojego woreczka", "otworz " .. string_to_bag .. ". swoj woreczek", "wloz ziola do " .. string_to_bag .. ". swojego woreczka", "otworz " .. string_from_bag .. ". swoj woreczek", "wloz ziola do " .. string_from_bag .. ". swojego woreczka", "zamknij otwarte woreczki", true)
 end
 
 function herbs:do_pre_actions()

@@ -61,7 +61,7 @@ function herbs:get_case(herb_id, herb_amount)
 end
 
 function herbs:send_get_commands(bag_id, amount, herb_id)
-    send("otworz " .. bag_id .. ". woreczek")
+    send("otworz " .. bag_id .. ". swoj woreczek")
     send(string.format("wez %d %s z %d. swojego woreczka", amount, herbs:get_case(herb_id, amount), bag_id))
     send("zamknij otwarte woreczki")
 end

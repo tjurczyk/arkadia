@@ -1,7 +1,7 @@
 function ateam:zas_func(id)
     if ateam.enemy_op_ids[tonumber(id)] then
-        local real_id = ateam.enemy_op_ids[tonumber(id)]
-        send(string.format("%s przed ob_%s", self.cover_command, real_id), false)
+        local real_id = self:retrieve_id(id)
+        send(string.format("%s przed %s", self.cover_command, real_id), false)
         if ateam.release_guards then
             send("przestan zaslaniac", false)
         end
@@ -12,8 +12,8 @@ end
 
 function ateam:za_func(id)
     if ateam.team[id] then
-        local real_id = ateam.team[id]
-        sendAll("przestan kryc sie za zaslona", string.format("%s ob_%s", self.cover_command, real_id), false)
+        local real_id = self:retrieve_team_id(id)
+        sendAll("przestan kryc sie za zaslona", string.format("%s %s", self.cover_command, real_id), false)
         if ateam.release_guards then
             send("przestan zaslaniac", false)
         end
@@ -58,7 +58,7 @@ function ateam:za_func_group(id, number)
     else
         scripts:print_log("Nie ma takiego id")
     end
-    restore()
+    scripts.character.options:set_temporary("group_cover", 1)
 end
 
 function ateam:get_attack_string()
@@ -66,18 +66,7 @@ function ateam:get_attack_string()
 end
 
 function ateam:zab_func(id)
-    local id_retrieved = nil
-
-    if id ~= nil and tonumber(id) > 100 then
-        -- TODO: Maybe find a better way to check whether the number is raw?
-        id_retrieved = "ob_" .. id
-    elseif ateam.enemy_op_ids[tonumber(id)] then
-        id_retrieved = "ob_" .. ateam.enemy_op_ids[tonumber(id)]
-    elseif ateam.normal_ids[tonumber(id)] then
-        id_retrieved = "ob_" .. ateam.normal_ids[tonumber(id)]
-    elseif string.starts(id, "ob") == true then
-        id_retrieved = id
-    end
+    local id_retrieved = self:retrieve_id(id)
 
     if id_retrieved then
         local local_str = id_retrieved
@@ -96,9 +85,9 @@ function ateam:zab_func(id)
 end
 
 function ateam:sneaky_zab_func(id)
-    local id_retrieved = nil
+    local id_retrieved = self:retrieve_id(id)
 
-    if tonumber(id) > 100 then
+    if id ~= nil and tonumber(id) > 100 then
         -- TODO: Maybe find a better way to check whether the number is raw?
         id_retrieved = "ob_" .. id
     elseif ateam.enemy_op_ids[tonumber(id)] then
@@ -115,6 +104,64 @@ function ateam:sneaky_zab_func(id)
     else
         scripts:print_log("Nie ma takiego id")
     end
+end
+
+local replace_szata = {
+    ["mezyczna"] = "mezczyzne",
+    ["krasnolud"] = "krasnoluda",
+    ["krasnoludka"] = "krasnoludke",
+    ["elf"] = "elfa",
+    ["elfka"] = "elfke",
+    ["halfling"] = "halflinga",
+    ["niziolek"] = "niziolka",
+    ["polelf"] = "polelfa",
+    ["polelfke"] = "polelfke",
+    ["gnom"] = "gnoma",
+    ["gnomka"] = "gnomke",
+    ["ogr"] = "ogra",
+    ["ogrzyca"] = "ogrzyce"
+}
+
+local szata = function(desc)
+    desc = desc:gsub("czarnoodziany zakapturzony", "czarnoodzianego zakapturzonego")
+    for k,v in pairs(replace_szata) do
+        desc = desc:gsub(" " .. k, " " .. v)
+    end
+    return desc
+end
+
+function ateam:retrieve_id(id)
+    if id ~= nil and tonumber(id) > 100 then
+        -- TODO: Maybe find a better way to check whether the number is raw?
+        id_retrieved = id
+    elseif ateam.enemy_op_ids[tonumber(id)] then
+        id_retrieved = ateam.enemy_op_ids[tonumber(id)]
+    elseif ateam.normal_ids[tonumber(id)] then
+        id_retrieved = ateam.normal_ids[tonumber(id)]
+    elseif string.starts(id, "ob") == true then
+        id_retrieved = id:gsub("ob_", "")
+    end
+
+    if not ateam.objs[id_retrieved].desc:starts("czarnoodzian") then
+        id_retrieved = "ob_" .. id_retrieved
+    else
+        id_retrieved = szata(ateam.objs[id_retrieved].desc)
+    end
+    
+
+    return id_retrieved
+end
+
+function ateam:retrieve_team_id(id)
+    local id_retrieved = ateam.team[id]
+    
+    if not ateam.objs[id_retrieved].desc:starts("czarnoodzian") then
+        id_retrieved = "ob_" .. id_retrieved
+    else
+        id_retrieved = szata(ateam.objs[id_retrieved].desc)
+    end
+
+    return id_retrieved
 end
 
 function ateam:zab2_func(desc)

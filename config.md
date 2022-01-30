@@ -911,6 +911,15 @@ Ustawia symbol uzywany do oznaczenia prowadzacego druzyne w oknie kondycji
 
 ---
 
+## `ateam.options.visible_stealth`
+
+Włacza/wyłącza ramki ukrytych postaci
+
+* `true` - imie postaci w bracketach
+* `false` - niewidoczne
+
+---
+
 ## `scripts.ui.fancy.enabled`
 
 Włacza/wyłącz bardziej graficzny pasek stanów

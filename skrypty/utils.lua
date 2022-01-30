@@ -53,6 +53,9 @@ setmetatable(scripts.counted_string_to_int, {
             return num[key]
         else 
             local parts = key:split(" ")
+            if #parts == 1 then
+                return tens[parts[1]]
+            end
             if #parts == 2 then
                 return tens[parts[1]] + append[parts[2]]
             end

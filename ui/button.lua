@@ -1,4 +1,18 @@
-scripts.ui.toggle_button = scripts.ui.toggle_button or {}
+scripts.ui.toggle_button = scripts.ui.toggle_button or {
+    variant = "m"
+}
+
+local variants = {
+    r = {
+        width = 164,
+        height = 27,
+    },
+    m = {
+        width = 90,
+        height = 27,
+    }
+}
+
 
 function scripts.ui.toggle_button:new(id, label, x, y, toggled, callback, window)
     local o = {}
@@ -14,10 +28,19 @@ function scripts.ui.toggle_button:new(id, label, x, y, toggled, callback, window
     o.r = 70
     o.g = 130
     o.b = 30
-    o.width = 90
-    o.height = 27
+    o.font_size = 10
+    o.variant = self.variant
+    o.width = variants[o.variant].width
+    o.height = variants[o.variant].height
     o:init()
     return o
+end
+
+function scripts.ui.toggle_button:regular(id, label, x, y, toggled, callback, window)
+   self.variant = "r"
+   local button = self:new(id, label, x, y, toggled, callback, window)
+   self.variant = "m"
+   return button
 end
 
 function scripts.ui.toggle_button:init()
@@ -37,12 +60,17 @@ end
 
 function scripts.ui.toggle_button:updateStyleSheet()
     local color = self.toggled and string.format("rgb(%s, %s, %s, %%s)", self.r, self.g, self.b) or "rgb(130, 30, 30, %s)"
-    setLabelStyleSheet(self.id, scripts.ui.current_theme:get_button_stylesheet(color))
+    setLabelStyleSheet(self.id, scripts.ui.current_theme:get_button_stylesheet(color, self.font_size, self.variant))
 end
 
 function scripts.ui.toggle_button:set_text(text)
     clearWindow(self.id)
-    echo(self.id, "<center>" .. text .. "</center>")
+    echo(self.id, string.format("<center>%s</center>", text))
+end
+
+function scripts.ui.toggle_button:set_font_size(size)
+    self.font_size = size
+    self:updateStyleSheet()
 end
 
 function scripts.ui.toggle_button:toggle(state)

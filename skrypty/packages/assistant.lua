@@ -65,7 +65,7 @@ function scripts.packages:add(index, name, city, time)
 end
 
 function scripts.packages:pickup(command)
-    local _, _, index = command:find("wybierz paczke (%d+)")
+    local index = rex.match(command, "^\\s*wybierz paczke (\\d+)")
     if index then
         self.trigger = tempRegexTrigger("^.* przekazuje ci jakas paczke\\.", function ()
             self:package_given(index)

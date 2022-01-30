@@ -26,22 +26,7 @@ function scripts.transports.ride:init()
     if self.definition.exit then
         table.insert(self.triggers, tempExactMatchTrigger(self.definition.exit, function() self:exit() end))
     end
-    if self.definition.exit_command then
-        table.insert(self.handlers, registerAnonymousEventHandler("sysDataSendRequest", function(_, command)
-            if self.definition.exit_command ~= command then
-                return true
-            end
-            registerAnonymousEventHandler("gmcp.room.info", function(_)
-                self:exit()
-            end, true)
-        end, true))
-    end
     table.insert(self.triggers, tempExactMatchTrigger(self.definition.start, function() self:start() end))
-    table.insert(self.triggers, tempRegexTrigger("^Podazasz za .* na zewnatrz\\.", function() self:exit() end))
-    table.insert(self.triggers, tempRegexTrigger("^Jednym susem przesadzasz burte .* i wskakujesz do wody\\.", function() 
-        self:exit()
-        self:abort()
-    end))
 end
 
 function scripts.transports.ride:enter()
@@ -50,6 +35,12 @@ function scripts.transports.ride:enter()
         cecho("\n<" .. scripts.ui:get_bind_color_backward_compatible() .. ">bind <yellow>" .. scripts.keybind:keybind_tostring("special_exit") .. ":<" .. scripts.ui:get_bind_color_backward_compatible() .. "> " .. self.definition.bind .. "\n\n")
         scripts.transports.transport_bind = self.definition.bind
     end
+    registerAnonymousEventHandler("gmcp.room.info", function(_)
+        if not gmcp.room.info.map then
+            return true
+        end
+        self:exit()
+    end, true)
 end
 
 function scripts.transports.ride:exit()

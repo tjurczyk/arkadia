@@ -258,8 +258,7 @@
       "macros_on_modify": []
     },
     {
-      "name": "ateam.options.bracket_
-      _left",
+      "name": "ateam.options.bracket_symbol_left",
       "default_value": "[",
       "field_type": "string",
       "macros_on_modify": []

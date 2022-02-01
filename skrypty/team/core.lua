@@ -343,8 +343,14 @@ function ateam:print_obj_team(id, obj)
             cecho(scripts.ui.states_window_name, "<white:team_console_bg>[  ]")
         end
 
+        -- team lead
+        local str_lead = ""
+        if obj["team_leader"] and ateam.options.leader_indicator_symbol ~= "" then
+            str_lead = "<yellow:team_console_bg>"..ateam.options.leader_indicator_symbol
+        end
+
         -- hp section
-        cecho(scripts.ui.states_window_name, "<"..ateam.options.bracket_hp_color..":team_console_bg>"..ateam.options.bracket_symbol_left.."<reset>" .. states[obj["hp"]] .. "<"..ateam.options.bracket_hp_color..":team_console_bg>"..ateam.options.bracket_symbol_right.." ")
+        cecho(scripts.ui.states_window_name, "<"..ateam.options.bracket_hp_color..":team_console_bg>"..ateam.options.bracket_symbol_left.."<reset>" .. states[obj["hp"]] .. "<"..ateam.options.bracket_hp_color..":team_console_bg>"..ateam.options.bracket_symbol_right.." "..str_lead)
 
         if str_id ~= " @" then
             local hp_to_select = string.split(states[obj["hp"]], ">")[2]

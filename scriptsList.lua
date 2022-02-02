@@ -253,7 +253,7 @@ return {
     "skrypty/utils/installer/installer_people_db_downloader",
     "skrypty/utils/installer/plugins",
     "skrypty/utils/installer/recovery",
-    "skrypty/utils/installer/plugins_updateCheck",
+    "skrypty/utils/installer/plugins_update_check",
     "skrypty/utils/config/conf_loader",
     "skrypty/utils/data_downloader/downloader",
     "skrypty/utils/data_downloader/downloaded_file_handler",

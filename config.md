@@ -905,6 +905,12 @@ Symbol prawego nawiasu w oknie stanów, może być ciąg znaków
 
 ---
 
+## `ateam.options.leader_indicator_symbol`
+
+Ustawia symbol uzywany do oznaczenia prowadzacego druzyne w oknie kondycji
+
+---
+
 ## `ateam.options.visible_stealth`
 
 Włacza/wyłącza ramki ukrytych postaci

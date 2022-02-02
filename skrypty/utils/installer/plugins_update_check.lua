@@ -3,11 +3,20 @@ scripts.plugins_update_check = scripts.plugins_update_check or {
 }
 
 function scripts.plugins_update_check:github_check_version(plugin_name, repo)
-    local config = {["plugin_name"] = plugin_name, ["repo"] = repo, ["storeKey"] = 'github_' .. repo .."_" .. plugin_name}
-    config.url = "https://api.github.com/repos/" .. config.repo .. "/" .. config.plugin_name .. "/commits"
-    config.handlerId = registerAnonymousEventHandler("sysGetHttpDone", function(event, url, response) return self:github_on_GetHttpDone(url, response) end)
-    table.insert(self.plugins, config)
-    getHTTP(config.url)
+    local cfg = {["plugin_name"] = plugin_name, ["repo"] = repo, ["storeKey"] = 'github_' .. repo .."_" .. plugin_name}
+    cfg.url = "https://api.github.com/repos/" .. repo .. "/" .. plugin_name .. "/commits"
+    for i = 1, #self.plugins do
+        local config = self.plugins[i]
+        if config.url == cfg.url then
+            cfg.handlerId = registerAnonymousEventHandler("sysGetHttpDone", function(event, url, response) return self:github_on_GetHttpDone(url, response) end)
+            getHTTP(cfg.url)
+            return
+        end
+    end
+
+    cfg.handlerId = registerAnonymousEventHandler("sysGetHttpDone", function(event, url, response) return self:github_on_GetHttpDone(url, response) end)
+    table.insert(self.plugins, cfg)
+    getHTTP(cfg.url)
 end
 
 function scripts.plugins_update_check:github_on_GetHttpDone(url, response)
@@ -22,8 +31,11 @@ function scripts.plugins_update_check:github_on_GetHttpDone(url, response)
                 cechoLink("<green>tutaj", function() scripts.plugins_update_check:github_update(config, sha) end, "Aktualizuj", true)
                 cecho("<tomato> aby ja pobrac.\n")
             end
-            killAnonymousEventHandler(config.handlerId)
+            if config.handlerId ~= nil then
+                killAnonymousEventHandler(config.handlerId)
+            end
             config.handlerId = nil
+            return
         end
     end
 end

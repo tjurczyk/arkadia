@@ -1598,6 +1598,21 @@ UWAGA! Pliki z katalogu skryptów nie powinny być używane, mogą powodować pr
 
 ---
 
+---
+
+## `scripts.sounds.pop`
+
+Ścieżka do pliku dla dźwięku pop.
+
+Ścieżka może być bezwględna (pełna) np.
+* Windows - musi zaczynać się od litery dysku np. `D:/SoundLibrary/souds/beep.wav`
+* Linux/Mac - musi zaczynać się od `/` np. `/home/user/sounds/beep.wav`
+
+Dopuszczalna jest ścięzką względna do katalogu profilu np.
+* `sounds/pop.wav`
+
+---
+
 ## `scripts.mail_creator.template`
 
 Szablon do użycia przez kreator poczty wywoływany za pomocą `/list`

@@ -2821,6 +2821,13 @@
       "macros_on_modify": []
     },
     {
+        "name": "scripts.sounds.pop",
+        "default_value": "sounds/pop.wav",
+        "field_type": "string",
+        "content_type" : "file_path",
+        "macros_on_modify": []
+    },
+    {
       "name": "scripts.inv.containers.disable_grouped_containers",
       "default_value": false,
       "field_type": "boolean",

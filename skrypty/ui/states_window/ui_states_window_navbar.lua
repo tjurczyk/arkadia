@@ -17,7 +17,7 @@ function scripts.ui:navbar_updates(name, force)
         scripts.ui.states_window_navbar_str = scripts.ui.states_window_navbar_str .. printable_key .. "<white>: " .. printable_val
 
         if k ~= #scripts.ui.cfg["states_window_nav_elements"] then
-            scripts.ui.states_window_navbar_str = scripts.ui.states_window_navbar_str .. "<white> || "
+            scripts.ui.states_window_navbar_str = scripts.ui.states_window_navbar_str .. "<white> | "
         end
     end
 

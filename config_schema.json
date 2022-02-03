@@ -270,6 +270,12 @@
       "macros_on_modify": []
     },
     {
+      "name": "ateam.options.leader_indicator_symbol",
+      "default_value": "",
+      "field_type": "string",
+      "macros_on_modify": []      
+    },
+    {
       "name": "ateam.options.visible_stealth",
       "default_value": false,
       "field_type": "boolean",
@@ -2813,6 +2819,13 @@
       "field_type": "string",
       "content_type" : "file_path",
       "macros_on_modify": []
+    },
+    {
+        "name": "scripts.sounds.pop",
+        "default_value": "sounds/pop.wav",
+        "field_type": "string",
+        "content_type" : "file_path",
+        "macros_on_modify": []
     },
     {
       "name": "scripts.inv.containers.disable_grouped_containers",

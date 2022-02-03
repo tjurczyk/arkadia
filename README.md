@@ -16,7 +16,9 @@ Przeciągnij poniższy link na okienko Mudleta.
 
 lub wpisz:
 
-```lua installPackage("https://github.com/tjurczyk/arkadia/releases/latest/download/ArkadiaScriptsInstaller.xml")```
+```
+lua installPackage("https://github.com/tjurczyk/arkadia/releases/latest/download/ArkadiaScriptsInstaller.xml")
+```
 
 
 ### Wymagania

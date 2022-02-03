@@ -10,7 +10,7 @@ function scripts.inv.bag_setup:start()
     self.coroutine = coroutine.create(function()
         local triggers = {
             tempBeginOfLineTrigger("Masz przy sobie", function() coroutine.resume(self.coroutine) end),
-            tempRegexTrigger(string.format("(?:\\w+) (?:\\w+) (%s)", table.concat(bags_biernik, "|")), function() table.insert(containers, matches[2]) end)
+            tempRegexTrigger(string.format("(?:\\w+) (?:\\w+) (%s)\\b", table.concat(bags_biernik, "|")), function() table.insert(containers, matches[2]) end)
         }
         send("i")
         coroutine.yield()

@@ -1,4 +1,4 @@
-scripts = scripts or { ver = "4.57" }
+scripts = scripts or { ver = "4.58" }
 scripts.event_handlers = scripts.event_handlers or {}
 
 function alias_func_skrypty_help()
@@ -21,9 +21,7 @@ function alias_func_skrypty_fake()
     echo("\n")
 end
 
-function alias_func_skrypty_fake_combat()
-    local s = matches[2]
-
+function alias_func_skrypty_fake_combat(s)
     s = string.gsub(s, "%$", "\n")
     gmcp = {
         gmcp_msgs = {

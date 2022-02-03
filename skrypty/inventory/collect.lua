@@ -72,12 +72,8 @@ function scripts.inv.collect:key_pressed(force, index, put_into_bag)
                 scripts.inv:put_into_bag({ "monety" }, "money", 1)
             end
         end
-        if scripts.inv.collect["current_mode"] == 2 or scripts.inv.collect["current_mode"] == 3
-                or scripts.inv.collect["current_mode"] == 5 or scripts.inv.collect["current_mode"] == 6 then
-            sendAll("wez kamienie z " .. from,
-                "ocen kamienie",
-                false)
-
+        if scripts.inv.collect["current_mode"] == 2 or scripts.inv.collect["current_mode"] == 3 or scripts.inv.collect["current_mode"] == 5 or scripts.inv.collect["current_mode"] == 6 then
+            sendAll("wez kamienie z " .. from, "ocen kamienie", false)
             if put_into_bag then
                 scripts.inv:put_into_bag({ "kamienie" }, "gems", 1)
             end

@@ -1,7 +1,20 @@
 scripts.sounds = scripts.sounds or {}
 scripts.sound_player = scripts.sound_player or {}
 
-scripts.sounds.beep = getMudletHomeDir() .. "/sounds/beep.wav"
+scripts.sounds.list = {
+    beep = "beep.wav",
+    pop = "pop.wav"
+}
+
+lfs.mkdir(getMudletHomeDir() .. "/sounds")
+for k, v in pairs(scripts.sounds.list) do
+    local path = string.format("%s/sounds/%s", getMudletHomeDir(), v)
+    scripts.sounds[k] = path
+    if not lfs.attributes(path) then
+        downloadFile(path, string.format("https://raw.githubusercontent.com/tjurczyk/arkadia-data/master/sounds/%s", v))
+    end
+end
+
 
 function scripts.sounds:init()
     self.handler1 = scripts.event_register:register_singleton_event_handler(self.handler, "setVar", function(_, var, value)
@@ -14,13 +27,10 @@ function scripts.sounds:init()
     end)
 end
 
-local beep = lfs.attributes(scripts.sounds.beep)
-if not beep then
-    downloadFile(scripts.sounds.beep, "https://raw.githubusercontent.com/tjurczyk/arkadia-data/master/sounds/beep.wav")
-    lfs.mkdir(getMudletHomeDir() .. "/sounds")
-end
-
 function scripts.sound_player:play(sound)
+    if sound == "" then
+        return
+    end
     if not lfs.is_absolute_path(sound) then
         sound = getMudletHomeDir() .. "/" .. sound
     end

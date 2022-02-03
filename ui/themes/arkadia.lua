@@ -1,7 +1,6 @@
 scripts.ui.themes.arkadia = scripts.ui.themes.plain:new()
 
 function scripts.ui.themes.arkadia:apply_app_stylesheet()
-    setBackgroundColor(0, 0, 0, 0)
     setAppStyleSheet([[
         QDockWidget::title {
             background-color: #171512;
@@ -22,23 +21,25 @@ function scripts.ui.themes.arkadia:get_footer_stylesheet()
     ]]
 end
 function scripts.ui.themes.arkadia:get_window_stylesheet()
-    return [[
+    local r,g,b,a = getBackgroundColor()
+    return string.format([[
         QWidget { 
             padding: 15px 20px;
-            background-color: #171512;
+            background-color: rgba(%d, %d, %d, %d);
             background-origin: border-box;
         }
-    ]]
+    ]], r, g, b, a)
 end
 
 function scripts.ui.themes.arkadia:get_button_window_stylesheet()
-    return [[
+    local r,g,b,a = getBackgroundColor()
+    return string.format([[
         QWidget { 
             padding: 55px 20px 10px 20px;
-            background-color: #171512;
+            background-color: rgba(%d, %d, %d, %d);
             background-origin: border-box;
         }
-    ]]
+    ]], r, g, b, a)
 end
 
 function scripts.ui.themes.arkadia:get_button_area_bg()

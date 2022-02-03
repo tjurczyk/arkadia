@@ -338,8 +338,7 @@ end
 
 function ateam:por2_func(name)
     if name then
-        sendAll("porownaj sile z " .. name, "porownaj zrecznosc z " .. name,
-            "porownaj wytrzymalosc z " .. name, false)
+        sendAll("porownaj sile z " .. name, "porownaj zrecznosc z " .. name, "porownaj wytrzymalosc z " .. name, false)
     end
 end
 
@@ -355,8 +354,7 @@ function ateam:bind_joining(name)
     end
 
     if table.size(scripts.people.enemy_guilds) > 0 then       
-        local results = #string.split(name, " ") > 1 and scripts.people:search(name) or scripts.people:retrieve_person(name)
-        local can_be_enemy = false
+        local results = #string.split(name, " ") > 1 and scripts.people:search(name) or scripts.people:retrieve_person(name)        
         for _, person in pairs(results) do
             if table.index_of(scripts.people.enemy_guilds, scripts.people:get_guild_name(person.guild)) then
                 scripts:print_log(string.format("%s - cwaniak probuje zaprosic cie do druzyny. Wstyd!", name), true)
@@ -367,6 +365,11 @@ function ateam:bind_joining(name)
 
     if obj_to_join then
         scripts.utils.bind_functional("porzuc druzyne;dolacz do ob_" .. obj_to_join)
+    elseif not self.rebind_timer then
+        self.rebind_timer = tempTimer(0.5, function()
+             self:bind_joining(name)
+             self.rebind_timer = nil
+        end)
     end
 end
 

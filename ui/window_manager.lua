@@ -8,11 +8,17 @@ function scripts.ui.window_manager:init()
             self.windows[windowName]:refresh()
         end
     end)
-    self.ui_handler = scripts.event_register:force_register_event_handler(self.ui_handler, "uiReady", function() self:refresh_wrap() end)
+    self.ui_handler = scripts.event_register:force_register_event_handler(self.ui_handler, "uiReady", function() self:refresh() end)
 end
 
 function scripts.ui.window_manager:register(window)
     self.windows[window.id] = window
+end
+
+function scripts.ui.window_manager:refresh()
+    for k, v in pairs(self.windows) do
+        v:refresh()
+    end
 end
 
 function scripts.ui.window_manager:refresh_wrap()

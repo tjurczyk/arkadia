@@ -905,6 +905,12 @@ Symbol prawego nawiasu w oknie stanów, może być ciąg znaków
 
 ---
 
+## `ateam.options.leader_indicator_symbol`
+
+Ustawia symbol uzywany do oznaczenia prowadzacego druzyne w oknie kondycji
+
+---
+
 ## `ateam.options.visible_stealth`
 
 Włacza/wyłącza ramki ukrytych postaci
@@ -1589,6 +1595,21 @@ Dopuszczalna jest ścięzką względna do katalogu profilu np.
 
 UWAGA! Sciezki powinny zawierac `/`, a nie `\`
 UWAGA! Pliki z katalogu skryptów nie powinny być używane, mogą powodować problemy z aktualizacją!
+
+---
+
+---
+
+## `scripts.sounds.pop`
+
+Ścieżka do pliku dla dźwięku pop.
+
+Ścieżka może być bezwględna (pełna) np.
+* Windows - musi zaczynać się od litery dysku np. `D:/SoundLibrary/souds/beep.wav`
+* Linux/Mac - musi zaczynać się od `/` np. `/home/user/sounds/beep.wav`
+
+Dopuszczalna jest ścięzką względna do katalogu profilu np.
+* `sounds/pop.wav`
 
 ---
 

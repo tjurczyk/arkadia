@@ -21,9 +21,7 @@ function alias_func_skrypty_fake()
     echo("\n")
 end
 
-function alias_func_skrypty_fake_combat()
-    local s = matches[2]
-
+function alias_func_skrypty_fake_combat(s)
     s = string.gsub(s, "%$", "\n")
     gmcp = {
         gmcp_msgs = {

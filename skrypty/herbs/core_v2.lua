@@ -88,7 +88,7 @@ function herbs:v2_do_print(window)
                     cecho(window, use_element["text"])
                 end
                 if iii < #clickable_herb_data["use_elements"] then
-                    cecho(window, " || ")
+                    cecho(window, " | ")
                 end
                 -- add a single space so we don't make the rest of the line clickable
                 -- I don't know how to solve it any other way.
@@ -107,7 +107,7 @@ function herbs:v2_do_print(window)
         cecho(window, " ")
         cechoPopup(window ,"<pale_green>" .. teammate_name, teammate_clickable_data["teammate_actions"], teammate_clickable_data["teammate_hints"], true)
         if idx ~= table.size(ateam.team_names) then
-            cecho(window," <grey>||")
+            cecho(window," <grey>|")
         end
         idx = idx + 1
     end

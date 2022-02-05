@@ -136,15 +136,6 @@ function ateam:print_status()
 
     for k, v in pairs(gmcp.objects.nums) do
 
-        -- count the number of attackers for each object
-        if ateam.options.visible_attacker_count and ateam.objs[v] and ateam.objs[v]["attack_num"] ~= "false" then
-            if not ateam.attacked_counts[ateam.objs[v]["attack_num"]] and ateam.objs[ateam.objs[v]["attack_num"]] then
-                ateam.attacked_counts[ateam.objs[v]["attack_num"]] = 1
-            elseif ateam.objs[ateam.objs[v]["attack_num"]] then
-                ateam.attacked_counts[ateam.objs[v]["attack_num"]] = ateam.attacked_counts[ateam.objs[v]["attack_num"]] + 1
-            end
-        end
-
         if ateam.objs[v] and (ateam.objs[v]["enemy"] == true or ateam.team[ateam.objs[v]["attack_num"]]) then
             -- this is when this is the enemy
 
@@ -354,8 +345,9 @@ function ateam:print_obj_team(id, obj)
         -- count attackers
         if ateam.options.visible_attacker_count then
             local str_attackers = "  "
-            if ateam.attacked_counts[id] and ateam.attacked_counts[id] < 10 and ateam.attacked_counts[id] > 0 then
-                str_attackers = " " .. "<red:team_console_bg>" .. ateam.attacked_counts[id]
+            local val_countenemies = table.size(ateam.team_enemies[id])
+            if val_countenemies < 10 and val_countenemies > 0 then
+                str_attackers = " " .. "<red:team_console_bg>" .. val_countenemies
             end
             cecho(scripts.ui.states_window_name, "<"..ateam.options.bracket_hp_color..":team_console_bg>"..ateam.options.bracket_symbol_left.."<reset>" .. str_attackers .. "<"..ateam.options.bracket_hp_color..":team_console_bg>"..ateam.options.bracket_symbol_right)
         end
@@ -485,8 +477,9 @@ function ateam:print_obj_enemy(id, obj)
         -- count attackers
         if ateam.options.visible_attacker_count then
             local str_attackers = "  "
-            if ateam.attacked_counts[id] and ateam.attacked_counts[id] < 10 and ateam.attacked_counts[id] > 0 then
-                str_attackers = " " .. "<red:team_console_bg>" .. ateam.attacked_counts[id]
+            local val_countenemies = table.size(ateam.attacking_by_team[id])
+            if val_countenemies < 10 and val_countenemies > 0 then
+                str_attackers = " " .. "<red:team_console_bg>" .. val_countenemies
             end
             cecho(scripts.ui.enemy_states_window_name, "<"..ateam.options.bracket_hp_color..":team_console_bg>"..ateam.options.bracket_symbol_left.."<reset>" .. str_attackers .. "<"..ateam.options.bracket_hp_color..":team_console_bg>"..ateam.options.bracket_symbol_right)
         end
@@ -601,8 +594,9 @@ function ateam:print_obj_normal(id, obj)
         -- count attackers
         if ateam.options.visible_attacker_count then
             local str_attackers = "  "
-            if ateam.attacked_counts[id] and ateam.attacked_counts[id] < 10 and ateam.attacked_counts[id] > 0 then
-                str_attackers = " " .. "<red:team_console_bg>" .. ateam.attacked_counts[id]
+            local val_countenemies = table.size(ateam.attacking_by_team[id])
+            if val_countenemies < 10 and val_countenemies > 0 then
+                str_attackers = " " .. "<red:team_console_bg>" .. val_countenemies
             end
             cecho(scripts.ui.enemy_states_window_name, "<"..ateam.options.bracket_hp_color..":team_console_bg>"..ateam.options.bracket_symbol_left.."<reset>" .. str_attackers .. "<"..ateam.options.bracket_hp_color..":team_console_bg>"..ateam.options.bracket_symbol_right)
         end

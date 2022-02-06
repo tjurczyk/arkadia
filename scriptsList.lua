@@ -42,7 +42,6 @@ return {
     "mapper/go_command",
     "mapper/new_location_special_ui",
     "mapper/mail_pauser_check",
-    "mapper/CSSMan",
     "mapper/ui",
     "mapper/help",
     "skrypty/conversation",

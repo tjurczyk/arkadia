@@ -129,7 +129,7 @@ function trigger_func_skrypty_team_clear_absent()
                 raiseEvent("teamChanged")
             end
             if not table.contains(druzyna, ateam.objs[v]["desc"]) then
-                message = message + ateam.objs[v]["desc"] + " "
+                message = message .. ateam.objs[v]["desc"] .. " "
                 local letter = ateam.team[v]
                 ateam.team[v] = nil
                 ateam.team[letter] = nil

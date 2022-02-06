@@ -6,19 +6,21 @@ CSSMan.__index = CSSMan
 function CSSMan.new(stylesheet)
     local obj = { stylesheet = {} }
     setmetatable(obj, CSSMan)
-    local trim = string.trim
+    obj:applyStyleSheet(stylesheet)
+    return obj
+end
 
+function CSSMan:applyStyleSheet(stylesheet)
     assert(type(stylesheet) == "string", "CSSMan.new: no stylesheet provided. A possible error is that you might have used CSSMan.new, not CSSMan:new")
 
+    local trim = string.trim
     for line in stylesheet:gmatch("[^\r\n]+") do
         local attribute, value = line:match("^(.-):(.-);$")
         if attribute and value then
             attribute, value = trim(attribute), trim(value)
-            obj.stylesheet[attribute] = value
+            self.stylesheet[attribute] = value
         end
     end
-
-    return obj
 end
 
 function CSSMan:set(key, value)

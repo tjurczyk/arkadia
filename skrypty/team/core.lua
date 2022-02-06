@@ -345,14 +345,10 @@ function ateam:print_obj_team(id, obj)
         -- count attackers
         if ateam.options.visible_attacker_count then
             local str_attackers = "  "
-            local val_countenemies = table.size(ateam.team_enemies[id])
-            if val_countenemies > 0 then
-                str_attackers = " " .. "<red:team_console_bg>" .. val_countenemies
+            if table.size(ateam.team_enemies[id]) > 0 then
+                str_attackers = scripts.utils.str_pad(tostring(table.size(ateam.team_enemies[id])), 2, "right")
             end
-            if val_countenemies > 9 then
-                str_attackers = "<red:team_console_bg>" .. val_countenemies
-            end
-            cecho(scripts.ui.states_window_name, "<"..ateam.options.bracket_hp_color..":team_console_bg>"..ateam.options.bracket_symbol_left.."<reset>" .. str_attackers .. "<"..ateam.options.bracket_hp_color..":team_console_bg>"..ateam.options.bracket_symbol_right)
+            cecho(scripts.ui.states_window_name, "<"..ateam.options.bracket_hp_color..":team_console_bg>"..ateam.options.bracket_symbol_left.."<reset><red:team_console_bg>"..str_attackers.."<"..ateam.options.bracket_hp_color..":team_console_bg>"..ateam.options.bracket_symbol_right)
         end
 
         -- sneaky id section
@@ -480,14 +476,10 @@ function ateam:print_obj_enemy(id, obj)
         -- count attackers
         if ateam.options.visible_attacker_count then
             local str_attackers = "  "
-            local val_countenemies = table.size(ateam.attacking_by_team[id])
-            if val_countenemies > 0 then
-                str_attackers = " " .. "<red:team_console_bg>" .. val_countenemies
+            if table.size(ateam.attacking_by_team[id]) > 0 then
+                str_attackers = scripts.utils.str_pad(tostring(table.size(ateam.attacking_by_team[id])), 2, "right")
             end
-            if val_countenemies > 9 then
-                str_attackers = "<red:team_console_bg>" .. val_countenemies
-            end
-            cecho(scripts.ui.enemy_states_window_name, "<"..ateam.options.bracket_hp_color..":team_console_bg>"..ateam.options.bracket_symbol_left.."<reset>" .. str_attackers .. "<"..ateam.options.bracket_hp_color..":team_console_bg>"..ateam.options.bracket_symbol_right)
+            cecho(scripts.ui.enemy_states_window_name, "<"..ateam.options.bracket_hp_color..":team_console_bg>"..ateam.options.bracket_symbol_left.."<reset><red:team_console_bg>".. str_attackers.."<"..ateam.options.bracket_hp_color..":team_console_bg>"..ateam.options.bracket_symbol_right)
         end
 
         -- sneaky id section
@@ -600,14 +592,10 @@ function ateam:print_obj_normal(id, obj)
         -- count attackers
         if ateam.options.visible_attacker_count then
             local str_attackers = "  "
-            local val_countenemies = table.size(ateam.attacking_by_team[id])
-            if val_countenemies > 0 then
-                str_attackers = " " .. "<red:team_console_bg>" .. val_countenemies
+            if table.size(ateam.attacking_by_team[id]) > 0 then
+                str_attackers = scripts.utils.str_pad(tostring(table.size(ateam.attacking_by_team[id])), 2, "right")
             end
-            if val_countenemies > 9 then
-                str_attackers = "<red:team_console_bg>" .. val_countenemies
-            end
-            cecho(scripts.ui.enemy_states_window_name, "<"..ateam.options.bracket_hp_color..":team_console_bg>"..ateam.options.bracket_symbol_left.."<reset>" .. str_attackers .. "<"..ateam.options.bracket_hp_color..":team_console_bg>"..ateam.options.bracket_symbol_right)
+            cecho(scripts.ui.enemy_states_window_name, "<"..ateam.options.bracket_hp_color..":team_console_bg>"..ateam.options.bracket_symbol_left.."<reset><red:team_console_bg>"..str_attackers.."<"..ateam.options.bracket_hp_color..":team_console_bg>"..ateam.options.bracket_symbol_right)
         end
         
         -- sneaky id section

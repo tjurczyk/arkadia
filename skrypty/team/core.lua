@@ -111,6 +111,9 @@ function ateam:print_status()
     -- who is attacked by which enemies
     ateam.team_enemies = {}
 
+    -- count attackers of each obj
+    ateam.attacked_counts = {}
+
     -- who attack which enemy, [enemy_id] = {_script's_list_of_ids_of_teams}
     ateam.attacking_by_team = {}
 
@@ -132,6 +135,7 @@ function ateam:print_status()
     end
 
     for k, v in pairs(gmcp.objects.nums) do
+
         if ateam.objs[v] and (ateam.objs[v]["enemy"] == true or ateam.team[ateam.objs[v]["attack_num"]]) then
             -- this is when this is the enemy
 
@@ -338,6 +342,15 @@ function ateam:print_obj_team(id, obj)
             cecho(scripts.ui.states_window_name, "<"..ateam.options.bracket_color..":team_console_bg>"..ateam.options.bracket_symbol_left.."<reset>" .. str_id .. "<"..ateam.options.bracket_color..":team_console_bg>"..ateam.options.bracket_symbol_right)
         end
 
+        -- count attackers
+        if ateam.options.visible_attacker_count then
+            local str_attackers = "  "
+            if table.size(ateam.team_enemies[id]) > 0 then
+                str_attackers = scripts.utils.str_pad(tostring(table.size(ateam.team_enemies[id])), 2, "right")
+            end
+            cecho(scripts.ui.states_window_name, "<"..ateam.options.bracket_hp_color..":team_console_bg>"..ateam.options.bracket_symbol_left.."<reset><red:team_console_bg>"..str_attackers.."<"..ateam.options.bracket_hp_color..":team_console_bg>"..ateam.options.bracket_symbol_right)
+        end
+
         -- sneaky id section
         if ateam.sneaky_attack > 0 then
             cecho(scripts.ui.states_window_name, "<white:team_console_bg>[  ]")
@@ -460,6 +473,15 @@ function ateam:print_obj_enemy(id, obj)
 			ateam.options.bracket_symbol_right))
         end
 
+        -- count attackers
+        if ateam.options.visible_attacker_count then
+            local str_attackers = "  "
+            if table.size(ateam.attacking_by_team[id]) > 0 then
+                str_attackers = scripts.utils.str_pad(tostring(table.size(ateam.attacking_by_team[id])), 2, "right")
+            end
+            cecho(scripts.ui.enemy_states_window_name, "<"..ateam.options.bracket_hp_color..":team_console_bg>"..ateam.options.bracket_symbol_left.."<reset><red:team_console_bg>".. str_attackers.."<"..ateam.options.bracket_hp_color..":team_console_bg>"..ateam.options.bracket_symbol_right)
+        end
+
         -- sneaky id section
         if ateam.sneaky_attack > 0 then
             cecho(scripts.ui.enemy_states_window_name, "<white:team_console_bg>[  ]")
@@ -566,6 +588,15 @@ function ateam:print_obj_normal(id, obj)
 			str_id,
 			ateam.options.bracket_color,
 			ateam.options.bracket_symbol_right))
+
+        -- count attackers
+        if ateam.options.visible_attacker_count then
+            local str_attackers = "  "
+            if table.size(ateam.attacking_by_team[id]) > 0 then
+                str_attackers = scripts.utils.str_pad(tostring(table.size(ateam.attacking_by_team[id])), 2, "right")
+            end
+            cecho(scripts.ui.enemy_states_window_name, "<"..ateam.options.bracket_hp_color..":team_console_bg>"..ateam.options.bracket_symbol_left.."<reset><red:team_console_bg>"..str_attackers.."<"..ateam.options.bracket_hp_color..":team_console_bg>"..ateam.options.bracket_symbol_right)
+        end
         
         -- sneaky id section
         if ateam.sneaky_attack > 0 then

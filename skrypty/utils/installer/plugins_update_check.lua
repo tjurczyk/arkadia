@@ -33,8 +33,8 @@ function scripts.plugins_update_check:github_on_GetHttpDone(url, response)
             end
             if config.handlerId ~= nil then
                 killAnonymousEventHandler(config.handlerId)
+                config.handlerId = nil
             end
-            config.handlerId = nil
             return
         end
     end

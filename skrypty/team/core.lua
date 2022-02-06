@@ -346,8 +346,10 @@ function ateam:print_obj_team(id, obj)
         if ateam.options.visible_attacker_count then
             local str_attackers = "  "
             local val_countenemies = table.size(ateam.team_enemies[id])
-            if val_countenemies < 10 and val_countenemies > 0 then
+            if val_countenemies > 0 then
                 str_attackers = " " .. "<red:team_console_bg>" .. val_countenemies
+            elseif val_countenemies > 9 then
+                str_attackers = "<red:team_console_bg>" .. val_countenemies
             end
             cecho(scripts.ui.states_window_name, "<"..ateam.options.bracket_hp_color..":team_console_bg>"..ateam.options.bracket_symbol_left.."<reset>" .. str_attackers .. "<"..ateam.options.bracket_hp_color..":team_console_bg>"..ateam.options.bracket_symbol_right)
         end
@@ -478,8 +480,10 @@ function ateam:print_obj_enemy(id, obj)
         if ateam.options.visible_attacker_count then
             local str_attackers = "  "
             local val_countenemies = table.size(ateam.attacking_by_team[id])
-            if val_countenemies < 10 and val_countenemies > 0 then
+            if val_countenemies > 0 then
                 str_attackers = " " .. "<red:team_console_bg>" .. val_countenemies
+            elseif val_countenemies > 9 then
+                str_attackers = "<red:team_console_bg>" .. val_countenemies
             end
             cecho(scripts.ui.enemy_states_window_name, "<"..ateam.options.bracket_hp_color..":team_console_bg>"..ateam.options.bracket_symbol_left.."<reset>" .. str_attackers .. "<"..ateam.options.bracket_hp_color..":team_console_bg>"..ateam.options.bracket_symbol_right)
         end
@@ -595,8 +599,10 @@ function ateam:print_obj_normal(id, obj)
         if ateam.options.visible_attacker_count then
             local str_attackers = "  "
             local val_countenemies = table.size(ateam.attacking_by_team[id])
-            if val_countenemies < 10 and val_countenemies > 0 then
+            if val_countenemies > 0 then
                 str_attackers = " " .. "<red:team_console_bg>" .. val_countenemies
+            elseif val_countenemies > 9 then
+                str_attackers = "<red:team_console_bg>" .. val_countenemies
             end
             cecho(scripts.ui.enemy_states_window_name, "<"..ateam.options.bracket_hp_color..":team_console_bg>"..ateam.options.bracket_symbol_left.."<reset>" .. str_attackers .. "<"..ateam.options.bracket_hp_color..":team_console_bg>"..ateam.options.bracket_symbol_right)
         end

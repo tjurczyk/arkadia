@@ -12,7 +12,7 @@ function scripts.ui.themes.plain:apply_app_stylesheet()
 end
 
 function scripts.ui.themes.plain:get_footer_stylesheet()
-    scripts.ui.bottom:setStyleSheet("")
+    return ""
 end
 
 function scripts.ui.themes.plain:get_window_stylesheet()

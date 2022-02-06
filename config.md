@@ -920,6 +920,12 @@ Włacza/wyłącza ramki ukrytych postaci
 
 ---
 
+## `ateam.options.visible_attacker_count`
+
+Włacza/wyłącza wyswietlanie liczby atakujacych wrogow
+
+---
+
 ## `scripts.ui.fancy.enabled`
 
 Włacza/wyłącz bardziej graficzny pasek stanów

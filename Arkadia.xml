@@ -172,7 +172,7 @@
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
 							<string>^Zauwazasz, iz (.*) jest przystosowan[yae] do chwytania (w dowolnej rece lub oburacz|w lewej rece lub oburacz|w prawej rece lub oburacz|w dowolnej rece|oburacz|w lewej rece|w prawej rece)\.$</string>
-							<string>^Za (jego|jej|ich) pomoca mozna zadawac rany (.*).$</string>
+							<string>^Za (jego|jej|ich) pomoca mozna zadawac rany (.*)\.$</string>
 							<string>^Twoje doswiadczenie i umiejetnosci podpowiadaja ci, ze jak na (.*) (jest|sa) (on|one|ono|ona) (.*) (wywazony|wywazona|wywazone) i (.*)\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
@@ -446,7 +446,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>Twoj depozyt zawiera (.*)\.$</string>
+							<string>^Twoj depozyt zawiera (.*)\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -606,7 +606,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>.*konczy prace\.</string>
+							<string>.*konczy prace\.$</string>
 							<string>.*daje ci.*</string>
 						</regexCodeList>
 						<regexCodePropertyList>
@@ -648,7 +648,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>do ciebie: Zobacze (?i)co da sie zrobic\.</string>
+							<string>do ciebie: Zobacze (?i)co da sie zrobic\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -887,7 +887,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 							<string>^Gasisz(|[a-z ]+) lampe</string>
 							<string>nie jest zapalona\.$</string>
 							<string>[ &gt;]*Probujesz zapalic [a-z ]+ jest wyczerpana\.$</string>
-							<string>(?&lt;!fajka) wypala sie i gasnie.$</string>
+							<string>(?&lt;!fajka) wypala sie i gasnie\.$</string>
 							<string>^Woda szybko gasi .* lampe\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
@@ -999,7 +999,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^Bialy, zimny plomien ogarnia (.*), w kilka chwil spopielajac .* calkowicie\.</string>
+						<string>^Bialy, zimny plomien ogarnia (.*), w kilka chwil spopielajac .* calkowicie\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -1797,7 +1797,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
 							<string>^Jest w przyblizeniu [a-zA-Z, ]+pory ([a-zA-Z]+) wedlug rachuby czasu Starszego Ludu\.$</string>
-							<string>^Jest w przyblizeniu [a-zA-Z ]+, ([a-zA-Z]+).*wedlug rachuby czasu Starszego Ludu.</string>
+							<string>^Jest w przyblizeniu [a-zA-Z ]+, ([a-zA-Z]+).*wedlug rachuby czasu Starszego Ludu\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -2209,7 +2209,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^Zauwazasz na .* nieprzeczytane przez ciebie notki.</string>
+						<string>^Zauwazasz na .* nieprzeczytane przez ciebie notki\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -3133,7 +3133,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerFgColor>#000000</colorTriggerFgColor>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
-												<string>^.* lekko rani .* zamaszystym cieciem opalizujacego runicznego topora.$</string>
+												<string>^.* lekko rani .* zamaszystym cieciem opalizujacego runicznego topora\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
 												<integer>1</integer>
@@ -6664,7 +6664,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<regexCodeList>
 											<string>^[ &gt;]*Oszczednym ruchem unikasz ciosu .*, rabiac .* rownoczesnie .*, a twoje uderzenie otwiera szeroka rane .*\.$</string>
 											<string>^[ &gt;]*Oszczednym wypadem do przodu atakujesz .*, dzgajac .* pozostawia gleboka rane w ciele (twej przeciwniczki|twego przeciwnika)\.$</string>
-											<string>^[ &gt;]*Oszczednym ruchem unikasz ciosu [a-z ]+, uderzajac go rownoczesnie sw(oja|ym) [a-z ]+, a twoje uderzenie pozostawia wyrazny slad na ciele twego przeciwnika.$</string>
+											<string>^[ &gt;]*Oszczednym ruchem unikasz ciosu [a-z ]+, uderzajac go rownoczesnie sw(oja|ym) [a-z ]+, a twoje uderzenie pozostawia wyrazny slad na ciele twego przeciwnika\.$</string>
 										</regexCodeList>
 										<regexCodePropertyList>
 											<integer>1</integer>
@@ -6688,7 +6688,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<regexCodeList>
 											<string>^[ &gt;]*Zgrabnym ruchem unikasz ciosu .* i korzystajac z dogodnej pozycji rabiesz .* na odlew .*, gleboko rozrywajac .*\.$</string>
 											<string>^[ &gt;]*Zgrabnym wypadem do przodu atakujesz .* i korzystajac z zaskoczenia dzgasz .*, gleboko wbijajac sie w .* cialo\.$</string>
-											<string>^[ &gt;]*Zgrabnym ruchem unikasz ciosu [a-z ]+ i korzystajac z dogodnej pozycji uderzasz go sw(a|ym) [a-z ]+, pozostawiajac powazne rany na (jego|jej) ciele.$</string>
+											<string>^[ &gt;]*Zgrabnym ruchem unikasz ciosu [a-z ]+ i korzystajac z dogodnej pozycji uderzasz go sw(a|ym) [a-z ]+, pozostawiajac powazne rany na (jego|jej) ciele\.$</string>
 										</regexCodeList>
 										<regexCodePropertyList>
 											<integer>1</integer>
@@ -6712,8 +6712,8 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<regexCodeList>
 											<string>^[ &gt;]*Plynnym ruchem unikasz ciosu .* i uderzajac ze wszystkich sil tniesz go .*, ktor(y|a) gleboko rozrywa jego cialo, powodujac ogromne obrazenia\.$</string>
 											<string>^[ &gt;]*Plynnym wypadem w przod atakujesz .* i napierajac calym cialem dzgasz .*, .* prawie na wylot przez .*, powodujac ogromne obrazenia\.$</string>
-											<string>^[ &gt;]*Plynnym ruchem unikasz ciosu [a-z ]+ i ze wszystkich sil uderzasz (ja|go) sw(ym|oja) [a-z ]+ ktor[ay] miazdzy (jego|jej) cialo, powodujac ogromne obrazenia.$</string>
-											<string>^[ &gt;]*Plynnym ruchem unikasz ciosu [a-z ]+ i ze wszystkich sil uderzasz (go|ja) sw(ym|oja) [a-z ]+, ktor[ay] miazdzy je(j|go) cialo, powodujac ogromne obrazenia.$</string>
+											<string>^[ &gt;]*Plynnym ruchem unikasz ciosu [a-z ]+ i ze wszystkich sil uderzasz (ja|go) sw(ym|oja) [a-z ]+ ktor[ay] miazdzy (jego|jej) cialo, powodujac ogromne obrazenia\.$</string>
+											<string>^[ &gt;]*Plynnym ruchem unikasz ciosu [a-z ]+ i ze wszystkich sil uderzasz (go|ja) sw(ym|oja) [a-z ]+, ktor[ay] miazdzy je(j|go) cialo, powodujac ogromne obrazenia\.$</string>
 										</regexCodeList>
 										<regexCodePropertyList>
 											<integer>1</integer>
@@ -6738,7 +6738,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<regexCodeList>
 											<string>^[ &gt;]*Blyskawicznym polobrotem unikasz ciosu .*, a twoj(|a) .*, dzierzon(y|a) w wyciagnietej rece, zatoczywszy szeroki luk uderza w .* cialo i niemal kompletnie je rozdzierajac, wynurza sie z drugiej strony ciagnac za soba krwawy warkocz smierci\.$</string>
 											<string>^[ &gt;]*Blyskawicznym wypadem do przodu atakujesz .*dzierzon(a|y) w wyciagnietej rece, trafia w .*Gwaltownie wyszarpniet(y|a) orez z glosnym mlasnieciem wychodzi z ciala ciagnac za soba krwawy warkocz smierci\.$</string>
-											<string>^[ &gt;]*Blyskawicznym polobrotem unikasz ciosu [a-z ]+, a twoj(|a) [a-z ]+, dzierzon[ay] w wyciagnietej rece, zatoczywszy szeroki luk uderza w je(j|go) cialo i niemal kompletnie je masakrujac powala (ja|go) na ziemie.$</string>
+											<string>^[ &gt;]*Blyskawicznym polobrotem unikasz ciosu [a-z ]+, a twoj(|a) [a-z ]+, dzierzon[ay] w wyciagnietej rece, zatoczywszy szeroki luk uderza w je(j|go) cialo i niemal kompletnie je masakrujac powala (ja|go) na ziemie\.$</string>
 										</regexCodeList>
 										<regexCodePropertyList>
 											<integer>1</integer>
@@ -16077,7 +16077,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^.*Probujesz zaslonic .* przed ciosami .* jednak nie jestes w stanie tego uczynic.$</string>
+							<string>^.*Probujesz zaslonic .* przed ciosami .* jednak nie jestes w stanie tego uczynic\.$</string>
 							<string>^.*Bezskutecznie rzucasz sie na .*, probujac przebic sie przez .*\.$</string>
 							<string>^.*Rzucasz sie na .* przebijajac sie przez .*\.$</string>
 							<string>^.*unosi .* i szybko przesuwa sie (za ciebie|w twoja strone).*</string>
@@ -19972,7 +19972,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^Czujesz sie (bardziej niezdarn(?:y|a)|mniej wytrzymal(?:y|a)|bardziej zmeczon(?:y|a)|mniej odporn(?:y|a) na trucizne|bardziej glodn(?:y|a)|oslabion(?:y|a)|bardziej niezdarn(?:y|a)|mniej wytrzymal(?:y|a)|mniej inteligentn(?:y|a)|mniej odwazn(?:y|a)|bardziej zmeczon(?:y|a) mentalnie|bardziej glodn(?:y|a)|gorzej|bardziej zmeczon(?:y|a)|bardziej niespokojn(?:y|a)|mniej odporn(?:y|a) na *).$</string>
+						<string>^Czujesz sie (bardziej niezdarn(?:y|a)|mniej wytrzymal(?:y|a)|bardziej zmeczon(?:y|a)|mniej odporn(?:y|a) na trucizne|bardziej glodn(?:y|a)|oslabion(?:y|a)|bardziej niezdarn(?:y|a)|mniej wytrzymal(?:y|a)|mniej inteligentn(?:y|a)|mniej odwazn(?:y|a)|bardziej zmeczon(?:y|a) mentalnie|bardziej glodn(?:y|a)|gorzej|bardziej zmeczon(?:y|a)|bardziej niespokojn(?:y|a)|mniej odporn(?:y|a) na *)\.$</string>
 						<string>Odnosisz wrazenie, ze bedziesz teraz sobie gorzej radzic w zauwazaniu tego, co ukryte.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
@@ -20669,7 +20669,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
 						<string>^[ &gt;]*Probujesz otworzyc brame, ale jest zamknieta!$</string>
-						<string>^[ &gt;]*Probujesz otworzyc brame, ale jest zamknieta od wewnatrz.$</string>
+						<string>^[ &gt;]*Probujesz otworzyc brame, ale jest zamknieta od wewnatrz\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -24757,7 +24757,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<string>Musisz stanac w kolejce i poczekac na audiencje.</string>
 						<string>^[ &gt;]*(Nie mozesz sie tam udac, gdyz |)([Op]*pierzona skrzydlata bestia|[Ss]krzydlaty lwiopodobny potwor|[a-z]+ niebezpieczny gryf) swoim cielskiem zagradza ci droge( ucieczki|) na .*</string>
 						<string>Ogromny stwor blokuje dojscie do bramy.</string>
-						<string>^Ruszasz po granitowej posadzce na .*, jednak powstrzymuje cie buchajacy z peknietego chodnika strumien goracej pary\\.$</string>
+						<string>^Ruszasz po granitowej posadzce na .*, jednak powstrzymuje cie buchajacy z peknietego chodnika strumien goracej pary\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -26937,7 +26937,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<script>alias_func_skrypty_misc_zglebiaj_wiedze()</script>
 						<command></command>
 						<packageName></packageName>
-						<regex>^(?:zglebiaj$)|(?:zglebiaj wiedze$)|(:?zglebiaj wiedze (\d+)$)</regex>
+						<regex>^zglebiaj(?:| wiedze(?:| (\d+)))$</regex>
 					</Alias>
 					<Alias isActive="yes" isFolder="no">
 						<name>otworz ksiazke</name>

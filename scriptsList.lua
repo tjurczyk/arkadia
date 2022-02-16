@@ -251,6 +251,7 @@ return {
     "skrypty/utils/installer/installer_map_dat_downloader",
     "skrypty/utils/installer/installer_people_db_downloader",
     "skrypty/utils/installer/plugins",
+    "skrypty/utils/installer/plugins_update_check",
     "skrypty/utils/installer/recovery",
     "skrypty/utils/installer/plugins_update_check",
     "skrypty/utils/config/conf_loader",

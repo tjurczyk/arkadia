@@ -27,15 +27,15 @@ function scripts.ui.themes.plain:get_window_stylesheet()
     ]]
 end
 
-function scripts.ui.themes.plain:get_button_window_stylesheet()
-    return [[
+function scripts.ui.themes.plain:get_button_window_stylesheet(height)
+    return string.format([[
         QWidget { 
-            padding: 50px 1px 1px 1px;
+            padding: %dpx 1px 1px 1px;
         }
-    ]]
+    ]], height)
 end
 
-function scripts.ui.themes.plain:get_button_area_bg()
+function scripts.ui.themes.plain:get_button_area_bg(height)
     return ""
 end
 

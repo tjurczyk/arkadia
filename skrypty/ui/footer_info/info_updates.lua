@@ -283,3 +283,50 @@ end
 function scripts_ui_info_release_guards_click()
     ateam:switch_releasing_guards()
 end
+
+--
+-- daylight
+--
+function scripts_ui_info_daylight_click()
+    send("czas")
+end
+
+function scripts.ui:info_daylight_update(val)
+    if not scripts.ui.footer_info_daylight then
+        return
+    end
+    if val == true then
+        scripts.ui.footer_info_daylight:updateValue("Dzien")
+    elseif val == false then
+        scripts.ui.footer_info_daylight:updateValue("Noc")
+    else
+        scripts.ui.footer_info_daylight:updateValue("")
+    end
+end
+
+--
+-- season
+--
+function scripts_ui_info_season_click()
+    send("czas")
+end
+
+scripts.ui.info_season_names = scripts.ui.info_season_names or {
+    [0] = "Wiosna",
+    [1] = "Lato",
+    [2] = "Jesien",
+    [3] = "Zima"
+}
+
+function scripts.ui:info_season_update(val)
+    if not scripts.ui.footer_info_season then
+        return
+    end
+
+    if scripts.ui.info_season_names[val] then
+        local label = scripts.ui.info_season_names[val]
+        scripts.ui.footer_info_season:updateValue(label)
+    else
+        scripts.ui.footer_info_season:updateValue("")
+    end
+end

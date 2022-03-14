@@ -267,6 +267,7 @@ return {
     "skrypty/ui/talk_window/ui_talk_window",
     "skrypty/ui/talk_window/talk_history",
     "skrypty/ui/gmcp_handlers/gmcp_state_handler",
+    "skrypty/ui/gmcp_handlers/gmcp_room_time_handler",
     "skrypty/ui/gmcp_handlers/weapon_state",
     "skrypty/ui/gmcp_handlers/guard_state",
     "skrypty/ui/gmcp_handlers/order_state",

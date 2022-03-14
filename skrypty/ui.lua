@@ -261,4 +261,3 @@ end
 function alias_func_skrypty_ui_kondycje()
     showWindow("states_window")
 end
-

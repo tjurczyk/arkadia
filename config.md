@@ -1080,7 +1080,8 @@ Mozliwe opcje to:
 * `combat`         - stan walki + ochloniecia po walce
 * `package`        - aktualnie pobrana paczka pocztowa
 * `placeholder`    - puste miejsce, mozna dac odstep pomiedzy konkretnymi elementami, element moze byc deklarowany pare razy
-
+* `daylight`       - pora dnia (dzień/noc)
+* `season`         - pora roku
 ### Przykład
 ```json
 "scripts.ui.cfg.info_items" : ["weapon", "order", "cover", "killed", "sneaky", "hidden", "attack", "collect","mail", "alert", "lamp", "compass", "combat" ]

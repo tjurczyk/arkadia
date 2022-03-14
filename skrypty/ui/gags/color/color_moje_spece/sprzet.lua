@@ -15,3 +15,7 @@ end
 function trigger_func_skrypty_ui_gags_color_color_moje_spece_bronie_ciernista_kobaltowa_halabarda()
     scripts.gags:gag_prefix("BRON SPEC", "moje_spece")
 end
+
+function trigger_func_skrypty_ui_gags_color_color_moje_spece_bron_truje()
+    scripts.gags:gag_prefix("BRON TRUJE", "moje_spece")
+end

@@ -55,8 +55,8 @@ function scripts.ui:update_bars_mode(mode, redraw)
                 scripts.ui[k_index]:echo(msg)
             elseif mode == "label" and footer_mode == "mode5" then
                 local msg, changed = scripts.ui:process_label_text_mode5(k, label, v, max_value, color)
-                any_changed = any_changed or changed 
-				scripts.ui[k_index]:echo(msg)        
+                any_changed = any_changed or changed
+				scripts.ui[k_index]:echo(msg)
             end
         end
     end

@@ -2,7 +2,7 @@ function scripts.ui:setup_gauge_mode2()
     local curr_row = scripts.ui.footer_main_labels[1]
     local curr_id = 2
 
-    for k, v in pairs(scripts.ui.cfg["footer_items"]) do
+    for k, v in pairs(scripts.ui.cfg.footer_items) do
         scripts.ui[scripts.ui["bar_to_id1"][v]] = Geyser.Label:new({
             name = "scripts.ui." .. scripts.ui["bar_to_id1"][v],
             fontSize = scripts.ui.footer_font_size,

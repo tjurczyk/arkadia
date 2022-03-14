@@ -31,23 +31,23 @@ function scripts.ui.themes.arkadia:get_window_stylesheet()
     ]], r, g, b, a)
 end
 
-function scripts.ui.themes.arkadia:get_button_window_stylesheet()
-    local r,g,b,a = getBackgroundColor()
+function scripts.ui.themes.arkadia:get_button_window_stylesheet(height)
+    local r, g, b, a = getBackgroundColor()
     return string.format([[
         QWidget { 
-            padding: 55px 20px 10px 20px;
+            padding: %dpx 20px 10px 20px;
             background-color: rgba(%d, %d, %d, %d);
             background-origin: border-box;
         }
-    ]], r, g, b, a)
+    ]], height + 5, r, g, b, a)
 end
 
-function scripts.ui.themes.arkadia:get_button_area_bg()
-    return [[
-        background-image: url(]]..scripts.ui.img_path..[[background-02.png);
+function scripts.ui.themes.arkadia:get_button_area_bg(height)
+    return string.format([[
+        background-image: url(%sbackground-02.png);
         background-origin: padding-box;
         border-bottom: 3px solid #403931;
-    ]]
+    ]], scripts.ui.img_path)
 end
 
 function scripts.ui.themes.arkadia:get_border_stylesheet()

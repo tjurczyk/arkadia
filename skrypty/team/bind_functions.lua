@@ -164,7 +164,7 @@ function ateam:retrieve_id(id)
 end
 
 function ateam:retrieve_team_id(id)
-    local id_retrieved = ateam.team[id]
+    local id_retrieved = ateam.team[string.upper(id)]
     
     if not ateam.objs[id_retrieved].desc:starts("czarnoodzian") then
         id_retrieved = "ob_" .. id_retrieved

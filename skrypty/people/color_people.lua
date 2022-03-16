@@ -18,7 +18,7 @@ function scripts.people:process_person_color(text, name, guild, color, suffix_co
 end
 
 function scripts.people:color_person_build(item, color, guild_color)
-    if item.short == "" or scripts.people.already_processed[item["_row_id"]] then
+    if item.short == "" or scripts.people.already_processed[item["_row_id"]] or (item.short:starts("czarnoodzian") and item.guild ~= scripts.people.guilds.NPC) then
         return
     end
 

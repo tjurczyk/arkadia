@@ -110,7 +110,9 @@ local replace_szata = {
     ["gnom"] = "gnoma",
     ["gnomka"] = "gnomke",
     ["ogr"] = "ogra",
-    ["ogrzyca"] = "ogrzyce"
+    ["ogrzyca"] = "ogrzyce",
+    ["mutant"] = "mutanta",
+    ["mutantka"] = "mutantke"
 }
 
 local replace_szata_celownik = {
@@ -129,7 +131,9 @@ local replace_szata_celownik = {
     ["gnoma"] = "gnomowi",
     ["gnomke"] = "gnomce",
     ["ogra"] = "ogrowi",
-    ["ogrzyce"] = "ogrzycy"
+    ["ogrzyce"] = "ogrzycy",
+    ["mutanta"] = "mutantowi",
+    ["mutantke"] = "mutantce"
 }
 
 local szata = function(desc)

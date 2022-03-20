@@ -157,13 +157,13 @@ end
 function scripts.transports.ride:update_progress()
     if not self.progress then return end
     local current, total = self:get_progress()
-    if current > (total * 4) then
-        scripts:print_log("Cos poszlo nie tak. Zglos blad zwiazany z przejazdem srodkiem transportu. ID: " .. self.id)
+    local current_stop = self.definition.stops[self.index]
+    if current > (total * 6) then
+        scripts:print_log("Cos poszlo nie tak. Zglos blad zwiazany z przejazdem srodkiem transportu. ID: " .. self.id .. " - " .. current_stop)
         self:exit()
         self:abort()
         return
     end
-    local current_stop = self.definition.stops[self.index]
     local label = current_stop.label and "→ " .. current_stop.label or string.format("%s → %s", current_stop.start, current_stop.destination)
     if self.definition.show_path then
         local path = getPath(current_stop.start, current_stop.destination)

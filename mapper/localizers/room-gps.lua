@@ -26,10 +26,6 @@ function trigger_func_mapper_localizers_room_gps_mario()
     amap:set_position(5471, true)
 end
 
-function trigger_func_mapper_localizers_room_gps_kasztel_po_wspinaczce()
-    amap:set_position(17089, true)
-end
-
 function trigger_func_mapper_localizers_room_gps_kasyno()
     amap:set_position(5465, true)
 end

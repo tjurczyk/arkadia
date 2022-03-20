@@ -17,7 +17,7 @@ end
 function herbs.window:print()
     if self.window then
         self:clear()
-        herbs:v2_do_print(self.name)
+        herbs:v2_do_print(self.name, true)
     end
 end
 

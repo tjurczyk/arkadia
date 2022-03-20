@@ -54,7 +54,7 @@ function herbs:v2_print_db()
     herbs.window:print()
 end
 
-function herbs:v2_do_print(window)
+function herbs:v2_do_print(window, compact)
     if not herbs.db or table.size(herbs.db) == 0 then
         cecho(window, "\n <orange>Brak zbudowanej bazy ziol, ")
         cechoPopup(window, "<deep_sky_blue>kliknij tutaj aby zrobic '/ziola_buduj'", { [[expandAlias("/ziola_buduj")]] }, { [[/ziola_buduj]] }, true)
@@ -62,10 +62,13 @@ function herbs:v2_do_print(window)
         return
     end
 
-    cecho(window, "\n")
-    cecho(window, " ------+-------------------------+-----------------------------------------------")
-    cecho(window, "\n   <light_slate_blue>ile <grey>|        <light_slate_blue>nazwa <grey>           | <light_slate_blue>             dzialanie <grey>                      ")
-    cecho(window, "\n ------+-------------------------+-----------------------------------------------")
+    if not compact then
+        cecho(window, "\n")
+        cecho(window, " ------+-------------------------+-----------------------------------------------")
+        cecho(window, "\n   <light_slate_blue>ile <grey>|        <light_slate_blue>nazwa <grey>           | <light_slate_blue>             dzialanie <grey>                      ")
+        cecho(window, "\n ------+-------------------------+-----------------------------------------------")
+        echo(window, "\n")
+    end
 
     for _, herb_id in pairs(herbs.sorted_herb_ids) do
         local v = herbs.index[herb_id]
@@ -77,7 +80,7 @@ function herbs:v2_do_print(window)
             local amount_tmp = "    " .. tostring(amount)
             local name_str = string.sub(herb_id .. "                     ", 0, 23)
             local usage_str = string.sub(herbs.herbs_details[herb_id]["details"] .. "                                                                 ", 0, 64)
-            cecho(window,"\n <grey>  " .. string.sub(amount_tmp, #amount_tmp - 2, #amount_tmp) .. " | ")
+            cecho(window,"<grey>  " .. string.sub(amount_tmp, #amount_tmp - 2, #amount_tmp) .. " | ")
             local clickable_herb_data = herbs:get_clickable_herb_data(herb_id)
             cechoPopup(window, name_str, clickable_herb_data["herb_actions"], clickable_herb_data["herb_hints"], true)
             cecho(window, " | ")
@@ -93,25 +96,27 @@ function herbs:v2_do_print(window)
                 -- add a single space so we don't make the rest of the line clickable
                 -- I don't know how to solve it any other way.
             end
-            cecho(window, " ")
+            cecho(window, "\n")
         end
     end
-    cecho(window, "\n --------------------------------------------------------------------------------\n")
+    if not compact then
+        cecho(window, "--------------------------------------------------------------------------------\n")
 
-    if table.size(ateam.team_names) > 0 then
-        cecho(window, "\n  <yellow>Daj ziola<grey>:<pale_green>")
-    end
-    local idx = 1
-    for teammate_name, v in pairs(ateam.team_names) do
-        local teammate_clickable_data = herbs:get_clickable_teammate_data(teammate_name)
-        cecho(window, " ")
-        cechoPopup(window ,"<pale_green>" .. teammate_name, teammate_clickable_data["teammate_actions"], teammate_clickable_data["teammate_hints"], true)
-        if idx ~= table.size(ateam.team_names) then
-            cecho(window," <grey>|")
+        if table.size(ateam.team_names) > 0 then
+            cecho(window, "\n  <yellow>Daj ziola<grey>:<pale_green>")
         end
-        idx = idx + 1
+        local idx = 1
+        for teammate_name, v in pairs(ateam.team_names) do
+            local teammate_clickable_data = herbs:get_clickable_teammate_data(teammate_name)
+            cecho(window, " ")
+            cechoPopup(window ,"<pale_green>" .. teammate_name, teammate_clickable_data["teammate_actions"], teammate_clickable_data["teammate_hints"], true)
+            if idx ~= table.size(ateam.team_names) then
+                cecho(window," <grey>|")
+            end
+            idx = idx + 1
+        end
+        cecho(window, "\n\n")
     end
-    cecho(window, "\n\n")
 end
 
 function herbs:v2_print_db_per_bag(full)

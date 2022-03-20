@@ -1,5 +1,3 @@
-local img_path = getMudletHomeDir() .. "/arkadia/ui/assets/"
-
 scripts.ui.combat_window = scripts.ui.combat_window or {
     font_size = 12,
     enabled = false,
@@ -43,11 +41,12 @@ function scripts.ui.combat_window:create_buttons()
     local base = 30
     for _, value in ipairs(buttons) do
         local label_id = "toggle_" .. value.type
-        local button = scripts.ui.toggle_button:new(label_id, value.label, base, 14, self:should_capture(value.type), function(toggled)
+        local button = scripts.ui.toggle_button:new(label_id, value.label, base, 14, "m", function(toggled)
             scripts.ui.combat_window:toggle_type(value.type, toggled)
             cecho("combat_window", string.format("%s: <%s>%s<reset>\n", value.label, toggled and "green" or "red", toggled and "ON" or "OFF"))
             scripts.state_store:set(self.name, self.captures)
         end, self.name)
+        button:toggle(self:should_capture(value.type))
         base = base + button.width + 10
     end
 end

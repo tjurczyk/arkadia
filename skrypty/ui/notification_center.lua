@@ -57,7 +57,7 @@ function scripts.ui.notification_center:print_single_notification(last_y, notifi
     local window_name = "notification_" .. notification.id
 
     local lines = string.split(notification.text, "<br>")
-    local height = self.height + #lines * getFontSize() * 1.2
+    local height = self.height + #lines * getFontSize() * 1.3
 
     local container = Geyser.Container:new({
         name = window_name,

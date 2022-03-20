@@ -26,10 +26,10 @@ function gmcp_handler_improvement()
 
         misc.improve:add_improvee2(improve_level - prev_val)
     else
-        if misc.improve["improve2_enabled"] then
+        if not misc.improve["improve2_enabled"] then
             scripts:print_log("Nie zapisuje do globalnych, bo jest wylaczony")
         else
-            scripts:print_log("Nie zapisuje do globalnych, z powodu nieplnej formy")
+            scripts:print_log("Nie zapisuje do globalnych, z powodu niepelnej formy")
         end
     end
 

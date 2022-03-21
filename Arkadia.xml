@@ -15946,8 +15946,8 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 								<string>^Trzymasz .* w (prawej|lewej) rece.*</string>
 								<string>Z latwoscia dobywasz ogromnego ognistego trojzebu, czujac pulsujaca moc w zaciskajacych sie na drzewcu rekach.</string>
 								<string>^[ &gt;]*Siegasz do .*, dobywajac z nie[a-z]+ .*\.$</string>
-								<string>^[ &gt;]*Gwaltownym ruchem wyszarpujesz zza plecow.*\.$</string>
-								<string>^[ &gt;]*Jednym plynnym ruchem dobywasz .*</string>
+								<string>Gwaltownym ruchem wyszarpujesz zza plecow</string>
+								<string>Jednym plynnym ruchem dobywasz</string>
 								<string>Szybkim i bezszelestnym ruchem dobywasz</string>
 								<string>Plynnym, pelnym pewnosci ruchem dobywasz</string>
 								<string>Z trudem dobywasz gigantycznego granitowego mlota.</string>
@@ -15972,6 +15972,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 								<string>Juz dzierzysz</string>
 								<string>Z mrozaca krew w zylach gracja dobywasz waskiego zebatego palasza, a twoje spojrzenie staje siezimne jak lod.</string>
 								<string>Chwytasz za rekojesc obosiecznego gwiezdnego topora, unoszac go na wysokosc swej twarzy. W odpowiedzi na twoj dotyk, czarne jak noc zelezce zaczyna mienic sie blaskiem tysiaca gwiazd.</string>
+								<string>Chwytasz partyzane pewnie w swoje rece zataczajac nia kolo nad glowa</string>
 							</regexCodeList>
 							<regexCodePropertyList>
 								<integer>2</integer>
@@ -15980,29 +15981,30 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 								<integer>1</integer>
 								<integer>2</integer>
 								<integer>1</integer>
-								<integer>1</integer>
-								<integer>1</integer>
 								<integer>2</integer>
 								<integer>2</integer>
 								<integer>2</integer>
 								<integer>2</integer>
-								<integer>1</integer>
-								<integer>2</integer>
-								<integer>2</integer>
-								<integer>0</integer>
-								<integer>2</integer>
-								<integer>2</integer>
-								<integer>0</integer>
-								<integer>0</integer>
-								<integer>0</integer>
-								<integer>0</integer>
-								<integer>0</integer>
-								<integer>2</integer>
-								<integer>1</integer>
 								<integer>2</integer>
 								<integer>2</integer>
 								<integer>1</integer>
+								<integer>2</integer>
+								<integer>2</integer>
 								<integer>0</integer>
+								<integer>2</integer>
+								<integer>2</integer>
+								<integer>0</integer>
+								<integer>0</integer>
+								<integer>0</integer>
+								<integer>0</integer>
+								<integer>0</integer>
+								<integer>2</integer>
+								<integer>1</integer>
+								<integer>2</integer>
+								<integer>2</integer>
+								<integer>1</integer>
+								<integer>0</integer>
+								<integer>2</integer>
 								<integer>2</integer>
 								<integer>2</integer>
 								<integer>2</integer>

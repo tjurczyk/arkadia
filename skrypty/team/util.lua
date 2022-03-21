@@ -28,7 +28,7 @@ function ateam:increase_team_id_counter()
     if ateam.next_team_id == "Z" then
         registerAnonymousEventHandler("printStatusDone", function()
             ateam:restart_ateam()
-        end)
+        end, true)
     end
 end
 

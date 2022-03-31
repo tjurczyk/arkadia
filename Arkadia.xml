@@ -25470,6 +25470,26 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						</regexCodePropertyList>
 					</Trigger>
 				</TriggerGroup>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>blocker_exprimental</name>
+					<script>trigger_func_mapper_blockers_experimental_only()</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>Przeciez brama jest otwarta!</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>2</integer>
+					</regexCodePropertyList>
+				</Trigger>
 			</TriggerGroup>
 			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>jedziesz-wozem</name>
@@ -26805,7 +26825,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<script>alias_func_skrypty_misc_postepy_postepy2__val()</script>
 						<command></command>
 						<packageName></packageName>
-						<regex>^/postepy2\+ ([0-9]+)$</regex>
+						<regex>^/postepy2\+ ([0-9]+)(?: ([\d+]))?$</regex>
 					</Alias>
 					<Alias isActive="yes" isFolder="no">
 						<name>postepy2-</name>

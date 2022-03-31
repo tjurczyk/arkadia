@@ -1,21 +1,29 @@
+local function magic_prefix(text)
+    text = string.format("[ %s ] ", text)
+    prefix(text)
+    if selectString(text, 1) > -1 then
+        fg("orange")
+    end
+    resetFormat()
+end
+
 function trigger_func_skrypty_inventory_magic_weapons_widelec_leczy()
-    cecho("<orange>\n Widelec leczy\n")
+    magic_prefix("HP+")
 end
 
 function trigger_func_skrypty_inventory_magic_weapons_amu_leczy()
-    cecho("<orange>\n Amulet leczy\n")
+    magic_prefix("HP+")
 end
 
 function trigger_func_skrypty_inventory_magic_weapons_tasak_dziala()
-    resetFormat()
-    cecho("<orange>\n Tasak dziala\n")
+    magic_prefix("Tasak")
 end
 
 function trigger_func_skrypty_inventory_magic_weapons_gadacz_leczy()
-    cecho("<orange>\n Gadacz leczy\n")
+    magic_prefix("HP+")
 end
 
 function trigger_func_skrypty_inventory_magic_weapons_plaszcz_leczy()
-    cecho("<orange>\n Plaszcz leczy\n")
+    magic_prefix("HP+")
 end
 

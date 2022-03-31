@@ -23,7 +23,11 @@ function alias_func_skrypty_misc_postepy_postepy2_plus()
 end
 
 function alias_func_skrypty_misc_postepy_postepy2__val()
-    misc.improve:add_improvee2(tonumber(matches[2]))
+    if matches[3] then
+        misc.improve:add_improvee2(tonumber(matches[3]), tonumber(matches[2]))
+    else
+        misc.improve:add_improvee2(tonumber(matches[2]))
+    end
 end
 
 function alias_func_skrypty_misc_postepy_postepy2_minus()

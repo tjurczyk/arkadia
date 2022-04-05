@@ -7488,7 +7488,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
 											<string>^Nie .* probujesz walnac (?P&lt;target&gt;.+?) na odlew (?P&lt;weapon&gt;.+?), jednak (bron jakims cudem nie siega celu|przeciwnik w pore wykonuje unik, uciekajac poza zasieg broni)\.$</string>
-											<string>^Nie (zastanawiajac sie dlugo|przebierajac w srodkach|silac sie na wirtuozerie|tracac czasu na zbedne manewry) z calej sily walisz (?P&lt;target&gt;.+?) na odlew (?P&lt;weapon&gt;.+?), jednak bron traci caly impet na .*\.$</string>
+											<string>^Nie (zastanawiajac sie dlugo|przebierajac w srodkach|silac sie na wirtuozerie|tracac czasu na zbedne manewry) z calej sily walisz (?P&lt;target&gt;.+?) na odlew (?P&lt;weapon&gt;.+?), jednak (bron traci caly impet|cios zatrzymuje sie) na .*\.$</string>
 										</regexCodeList>
 										<regexCodePropertyList>
 											<integer>1</integer>

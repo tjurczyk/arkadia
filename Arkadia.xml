@@ -5994,7 +5994,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
 												<string>^Bierzesz potezny zamach krysztalowym swietlistym korbaczem mierzac w (?P&lt;target&gt;.+?), ten jednak cudem unika ciosu swiecacej glowicy\.$</string>
-												<string>^Probujesz zaskoczyc (?P&lt;target&gt;.+?) szybkim ciosem krysztalowego swietlistego korbacza, ten jednak bez trudu paruje cios .*\.$</string>
+												<string>^Probujesz zaskoczyc (?P&lt;target&gt;.+?) szybkim ciosem krysztalowego swietlistego korbacza, ten jednak (bez trudu paruje cios|w ostatniej chwili oslania sie) .*\.$</string>
 												<string>^Trafiasz (?P&lt;target&gt;.+?) zamaszystym uderzeniem krysztalowego swietlistego korbacza w (?P&lt;where&gt;.+), jednak caly impet ciosu wyparowany zostaje przez .*\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>

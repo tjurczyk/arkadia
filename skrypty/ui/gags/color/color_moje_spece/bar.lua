@@ -1,46 +1,39 @@
-function trigger_func_skrypty_ui_gags_color_color_moje_spece_bar_ja_spec()
-    --
-end
-
-function trigger_func_skrypty_ui_gags_color_color_moje_spece_bar_ja_granit()
-    scripts.gags:gag_prefix("GRA OGL", "moje_spece")
-    ateam:may_setup_paralyzed_name(matches[2])
-end
-
-function trigger_func_skrypty_ui_gags_color_color_moje_spece_bar_ja_fin()
-    scripts.gags:gag_prefix("JA FIN", "moje_spece")
+function get_barb_damage_value(dmg)
+        if dmg == "kaleczac"   then return 1
+    elseif dmg == "obijajac"   then return 2
+    elseif dmg == "tlukac"     then return 3
+    elseif dmg == "gruchoczac" then return 4
+    elseif dmg == "druzgoczac" then return 5
+    elseif dmg == "miazdzac"   then return 6
+    else
+        return -1
+    end
 end
 
 function trigger_func_skrypty_ui_gags_color_color_moje_spece_bar_ja_spec_ja_spec_0()
     scripts.gags:gag_own_spec(0, 6)
 end
 
-function trigger_func_skrypty_ui_gags_color_color_moje_spece_bar_ja_spec_ja_spec_1()
-    scripts.gags:gag_own_spec(1, 6)
+function trigger_func_skrypty_ui_gags_color_color_moje_spece_bar_ja_spec()
+    local value = get_barb_damage_value(matches["damage"])
+    scripts.gags:gag_own_spec(value, 6)
+    if string.len(matches["stun"]) > 0 then
+        trigger_func_skrypty_ui_gags_color_color_moje_spece_bar_ja_spec_ja_ogluch()
+    end
 end
 
-function trigger_func_skrypty_ui_gags_color_color_moje_spece_bar_ja_spec_ja_spec_2()
-    scripts.gags:gag_own_spec(2, 6)
+function trigger_func_skrypty_ui_gags_color_color_moje_spece_bar_ja_fin()
+    scripts.gags:gag_prefix("JA FIN", "moje_spece")
 end
 
-function trigger_func_skrypty_ui_gags_color_color_moje_spece_bar_ja_spec_ja_spec_3()
-    scripts.gags:gag_own_spec(3, 6)
-end
-
-function trigger_func_skrypty_ui_gags_color_color_moje_spece_bar_ja_spec_ja_spec_4()
-    scripts.gags:gag_own_spec(4, 6)
-end
-
-function trigger_func_skrypty_ui_gags_color_color_moje_spece_bar_ja_spec_ja_spec_5()
-    scripts.gags:gag_own_spec(5, 6)
-end
-
-function trigger_func_skrypty_ui_gags_color_color_moje_spece_bar_ja_spec_ja_spec_6()
-    scripts.gags:gag_own_spec(6, 6)
+function trigger_func_skrypty_ui_gags_color_color_moje_spece_bar_ja_granit()
+    scripts.gags:gag_prefix("GRA OGL", "moje_spece")
+    ateam:may_setup_paralyzed_name(matches["target"])
 end
 
 function trigger_func_skrypty_ui_gags_color_color_moje_spece_bar_ja_spec_ja_ogluch()
     scripts.gags:gag_own_spec("OGL")
-    ateam:may_setup_paralyzed_name(matches[2])
+    ateam:may_setup_paralyzed_name(matches["target"])
 end
+
 

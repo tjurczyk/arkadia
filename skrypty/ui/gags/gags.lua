@@ -13,6 +13,10 @@ function scripts.gags:is_combat()
     return gmcp and gmcp.gmcp_msgs and table.index_of(combat_types, gmcp.gmcp_msgs.type)
 end
 
+function scripts.gags:is_type(type)
+    return gmcp and gmcp.gmcp_msgs and gmcp.gmcp_msgs.type == type
+end
+
 function scripts.gags:gag(power, total_power, kind)
     self:gag_prefix(string.format("%d/%d", power, total_power), kind)
 end

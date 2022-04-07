@@ -15144,8 +15144,8 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^(?:[A-Z][a-z]+) (?:[a-z]+ ){1,3}rozpada sie!$</string>
-							<string>^(?:[A-Z][a-z]+) (?:[a-z-]+ ?){1,3} ((?:[A-Z][a-z]+ |(?:\w+ ){3,4}))rozpada sie!</string>
+							<string>^(?:[A-Z][a-z]+) (?:[a-z]+ ){1,3}rozpada(?:ja)? sie!$</string>
+							<string>^(?:[A-Z][a-z]+) (?:[a-z-]+ ?){1,3} ((?:[A-Z][a-z]+ |(?:\w+ ){3,4}))rozpada(?:ja)? sie!</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>

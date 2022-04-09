@@ -133,7 +133,7 @@ function amap.db:search_rooms(phrase, top_only)
 end
 
 function amap.db:add_follow_link(room_id, from_link, to_link)
-    local room_to_set = amap.db:get_room_id(room_id)
+    local room_to_set = room_id and amap.db:get_room_id(room_id) or amap.curr.id
 
     if not room_to_set or not from_link or not to_link then
         error("Wrong input")

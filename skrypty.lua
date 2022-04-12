@@ -44,12 +44,12 @@ function alias_func_skrypty_lua_code()
 end
 
 function timer_func_skrypty_hidden_timer()
-    if scripts.ui.info_hidden_value == 14 then
+    if scripts.ui.info_hidden_value >= 15 then
         scripts.ui.info_hidden_value = "ok"
         scripts.ui.states_window_nav_states.hidden_state = 15
         disableTimer("hidden_timer")
     else
-        scripts.ui.info_hidden_value = scripts.ui.info_hidden_value + 1
+        scripts.ui.info_hidden_value = getEpoch() - scripts.ui.info_hidden_epoch
         scripts.ui.states_window_nav_states.hidden_state = scripts.ui.states_window_nav_states.hidden_state + 1
     end
     ateam:print_status()
@@ -62,13 +62,14 @@ end
 
 function timer_func_skrypty_cover_timer()
 --pablo start
-	local teraz = getEpoch() - scripts.ui.cover_epoch
+    
+	local dt = scripts.ui.cover_epoch and getEpoch() - scripts.ui.cover_epoch or 0
     local state
-    if teraz > 5 then
+    if dt > 5 then
         state = "<green>ok"
         disableTimer("cover_timer")
     else
-        state = "<red>"..string.format("%.1f", teraz)
+        state = "<red>"..string.format("%.1f", dt)
     end
     scripts.ui.states_window_nav_states["guard_state"] = state
     raiseEvent("guard_state", state)

@@ -97,3 +97,49 @@ function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenste
 function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_11() scripts.gags:gag(9, 9, "moje_ciosy") end
 function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_12() scripts.gags:gag(9, 9, "moje_ciosy") end
 function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_fin() scripts.gags:gag_prefix("FIN", "moje_ciosy") end
+
+function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_iskrzaca_zdobiona_bulawa()
+    local dmg = matches["damage"]
+    local value = -1
+        if dmg == "powaznie" then value = 1
+    elseif dmg == "lekko" then value = 2
+    elseif dmg == "raniac" then value = 3
+    elseif dmg == "razisz" then value = 4
+    elseif dmg == "razac" then value = 4
+    elseif dmg == "raniac" then value = 5
+    elseif dmg == "ranisz" then value = 6
+    else end
+    scripts.gags:gag(value, 8, "moje_ciosy")
+end
+
+function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_iskrzaca_zdobiona_bulawa_fin()
+    scripts.gags:gag_prefix("FIN", "moje_ciosy")
+end
+
+function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_starozytne_kosciane_berlo()
+    local dmg = matches["damage"]
+    local value = -1
+        if dmg == "ledwie zahaczajac" then value = 1
+    elseif dmg == "bolesnie obijajac" then value = 2
+    elseif dmg == "nieznacznie tlukac" then value = 3
+    elseif dmg == "dotkliwie raniac" then value = 4
+    elseif dmg == "bardzo ciezko lomoczac" then value = 5
+    elseif dmg == "masakrujac" then value = 6
+    else cecho("<red>" .. dmg) end
+    scripts.gags:gag(value, 7, "moje_ciosy")
+end
+
+function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_starozytne_kosciane_berlo_fin()
+    scripts.gags:gag_prefix("FIN", "moje_ciosy")
+end
+
+function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_starozytne_kosciane_berlo_spec()
+    local dmg = matches["damage"]
+    local value = -1
+        if dmg == "znaczne" then value = 1
+    elseif dmg == "lekkie" then value = 2
+    elseif dmg == "powazne" then value = 3
+    elseif dmg == "potworne" then value = 4
+    else end
+    scripts.gags:gag(value, 5, "moje_ciosy")
+end

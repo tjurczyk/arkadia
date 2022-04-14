@@ -5179,7 +5179,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerFgColor>#000000</colorTriggerFgColor>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
-												<string>^Jedynie lekko zahaczasz o \w+ .+? swym czarnoblekitnym pulsujacym morgensternem\.$</string>
+												<string>^Jedynie lekko zahaczasz o (?&lt;where_target&gt;.+?) swym czarnoblekitnym pulsujacym morgensternem\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
 												<integer>1</integer>
@@ -5299,7 +5299,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerFgColor>#000000</colorTriggerFgColor>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
-												<string>^Poteznym ciosem swego czarnoblekitnego pulsujacego morgensterna trafiasz (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+)\. Metalowe kolce bolesnie zaglebiaja sie w jego cialo,pozostawiajac krwawiaca rane\.$</string>
+												<string>^Poteznym ciosem swego czarnoblekitnego pulsujacego morgensterna trafiasz (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+)\. Metalowe kolce bolesnie zaglebiaja sie w jego cialo, pozostawiajac krwawiaca rane\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
 												<integer>1</integer>
@@ -5339,7 +5339,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerFgColor>#000000</colorTriggerFgColor>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
-												<string>^Poteznym ciosem swego czarnoblekitnego pulsujacego morgensterna trafiasz (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+?)\. Metalowe kolce bolesnie zaglebiaja sie w jego cialo, pozostawiajac krwawiaca rane\.$</string>
+												<string>^Potezna kula niebieskiego ognia wylatuje z twego czarnoblekitnego pulsujacego morgensterna i trafia prosto w (?P&lt;target&gt;.+?)\. Sila uderzenia rzuca nim do tylu i widzisz, jak magiczna energia niemal doszczetnie go spala\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
 												<integer>1</integer>
@@ -5359,7 +5359,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerFgColor>#000000</colorTriggerFgColor>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
-												<string>^Potezna kula niebieskiego ognia wylatuje z twego czarnoblekitnego pulsujacego morgensterna i trafia prosto w (?P&lt;target&gt;.+?)\. Sila uderzenia rzuca nim do tylu i widzisz, jak magiczna energia niemal doszczetnie go spala\.$</string>
+												<string>^Nagle z czarnoblekitnego pulsujacego morgensterna wylatuje blekitny strumien energii, przeszywajacy (?P&lt;target&gt;.+?)\. Na jego twarzy pojawia sie grymas potwornego bolu\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
 												<integer>1</integer>
@@ -5368,26 +5368,6 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 											<name>pulsujacy_11</name>
 											<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_11()</script>
-											<triggerType>0</triggerType>
-											<conditonLineDelta>0</conditonLineDelta>
-											<mStayOpen>0</mStayOpen>
-											<mCommand></mCommand>
-											<packageName></packageName>
-											<mFgColor>#ff0000</mFgColor>
-											<mBgColor>#ffff00</mBgColor>
-											<mSoundFile></mSoundFile>
-											<colorTriggerFgColor>#000000</colorTriggerFgColor>
-											<colorTriggerBgColor>#000000</colorTriggerBgColor>
-											<regexCodeList>
-												<string>^Nagle z czarnoblekitnego pulsujacego morgensterna wylatuje blekitny strumien energii, przeszywajacy (?P&lt;target&gt;.+?)\. Na jego twarzy pojawia sie grymas potwornego bolu\.$</string>
-											</regexCodeList>
-											<regexCodePropertyList>
-												<integer>1</integer>
-											</regexCodePropertyList>
-										</Trigger>
-										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-											<name>pulsujacy_12</name>
-											<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_12()</script>
 											<triggerType>0</triggerType>
 											<conditonLineDelta>0</conditonLineDelta>
 											<mStayOpen>0</mStayOpen>
@@ -25350,6 +25330,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<integer>1</integer>
 						<integer>2</integer>
 						<integer>1</integer>
+						<integer>0</integer>
 					</regexCodePropertyList>
 				</Trigger>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">

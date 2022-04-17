@@ -3093,11 +3093,9 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerFgColor>#000000</colorTriggerFgColor>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
-												<string>^.* muska cie w .* opalizujacym runicznym toporem</string>
 												<string>^(.+?) muska (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+?) swoim opalizujacym runicznym toporem obosiecznym\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
-												<integer>1</integer>
 												<integer>1</integer>
 											</regexCodePropertyList>
 										</Trigger>
@@ -5160,7 +5158,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>czarnoblekitny\w+ pulsujacy\w+ morgenstern\w+</string>
+											<string>[Cc]zarnoblekitn\w+ pulsujac\w+ morgenstern</string>
 										</regexCodeList>
 										<regexCodePropertyList>
 											<integer>1</integer>
@@ -5379,10 +5377,12 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerFgColor>#000000</colorTriggerFgColor>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
-												<string>^Celnym uderzeniem trafiasz (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+?)\. Czarnoblekitny pulsujacy morgenstern jarzac sie ostrym swiatlem bez trudu wnika wcialo, wypalajac olbrzymia rane\. Slyszysz skwierczacy syk i czujesz niesamowicie paskudny swad\.$</string>
+												<string>^Celnym uderzeniem trafiasz (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+?)\. Czarnoblekitny pulsujacy morgenstern jarzac sie ostrym swiatlem bez trudu wnika w cialo, wypalajac olbrzymia rane\. Slyszysz skwierczacy syk i czujesz niesamowicie paskudny swad\.$</string>
+												<string> erzeniem trafiasz ponurego lysego krasnoluda chaosu w lewe ramie. Czarnoblekitny pulsujacy morgenstern jarzac sie ostrym swiatlem bez trudu wnika w cialo, wypalajac olbrzymia rane. Slyszyszskwierczacy syk i czujesz niesamowicie paskudny swad.</string>
 											</regexCodeList>
 											<regexCodePropertyList>
 												<integer>1</integer>
+												<integer>0</integer>
 											</regexCodePropertyList>
 										</Trigger>
 										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -5422,7 +5422,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>dlugi\w+ runiczn\w+ korbacz\w+</string>
+											<string>dlugi\w+ runiczn\w+ korbacz</string>
 										</regexCodeList>
 										<regexCodePropertyList>
 											<integer>1</integer>
@@ -5960,7 +5960,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>krysztalow\w+ swietlist\w+ korbacz\w+</string>
+											<string>krysztalow\w+ swietlist\w+ korbacz</string>
 										</regexCodeList>
 										<regexCodePropertyList>
 											<integer>1</integer>
@@ -5982,8 +5982,10 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 												<string>^Bierzesz potezny zamach krysztalowym swietlistym korbaczem mierzac w (?P&lt;target&gt;.+?), ten jednak cudem unika ciosu swiecacej glowicy\.$</string>
 												<string>^Probujesz zaskoczyc (?P&lt;target&gt;.+?) szybkim ciosem krysztalowego swietlistego korbacza, ten jednak (bez trudu paruje cios|w ostatniej chwili oslania sie) .*\.$</string>
 												<string>^Trafiasz (?P&lt;target&gt;.+?) zamaszystym uderzeniem krysztalowego swietlistego korbacza w (?P&lt;where&gt;.+), jednak caly impet ciosu wyparowany zostaje przez .*\.$</string>
+												<string>^Mlynkujac, wyprowadzasz mocne uderzenie krysztalowym swietlistym korbaczem mierzac w (?P&lt;target&gt;.+?), (ale rozpedzona glowica mija cel o wlos|jednak swiecaca glowica nie dosiega celu)\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
+												<integer>1</integer>
 												<integer>1</integer>
 												<integer>1</integer>
 												<integer>1</integer>
@@ -16379,7 +16381,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 									<string>Dobywasz oburacz</string>
 									<string>^Dobywasz .* reka\.$</string>
 									<string>Dobywasz dwurecznego krysztalowego korbacza czujac, ze stales sie panem tej poteznej broni.</string>
-									<string>Dobywasz [a-z ]+ zaciskajac dlon na rekojesci.</string>
+									<string>Dobywasz [a-z ]+ zaciskajac dlon na rekojesci\.</string>
 									<string>Dobywasz kruczoczarnego misternego miecza, a jego lsniace ostrze na krotka chwile rozswietla sie jasnym, czerwonym blaskiem. </string>
 									<string>Dobywasz niematerialnego ulotnego szamszira prawa reka, a bron skreca sie i zwija, rosnac i kurczac sie naprzemiennie, </string>
 									<string>Dobywasz waskiego kunsztownego sihilla, a runa smierci na jego klindze ozywa na chwile.</string>
@@ -16496,6 +16498,8 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 								<string>Z mrozaca krew w zylach gracja dobywasz waskiego zebatego palasza, a twoje spojrzenie staje siezimne jak lod.</string>
 								<string>Chwytasz za rekojesc obosiecznego gwiezdnego topora, unoszac go na wysokosc swej twarzy. W odpowiedzi na twoj dotyk, czarne jak noc zelezce zaczyna mienic sie blaskiem tysiaca gwiazd.</string>
 								<string>Chwytasz partyzane pewnie w swoje rece zataczajac nia kolo nad glowa</string>
+								<string>Chwytasz wielka smolista maczuga i czujesz, jak do twoich dloni przywiera lepka, czarna maz ktora pokrywa te bron na calej powierzchni.</string>
+								<string>Gdy tylko dobywasz czarnoblekitnego pulsujacego morgensterna, runy rozblyskuja srebrzystym swiatlem, a ty czujesz jak bron wibruje w twej dloni. Po chwili to wrazenie ustaje, znaki gasna, jednak caly czas czujesz przeplywajaca przez ciebie energie.</string>
 							</regexCodeList>
 							<regexCodePropertyList>
 								<integer>2</integer>
@@ -16527,6 +16531,8 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 								<integer>2</integer>
 								<integer>1</integer>
 								<integer>0</integer>
+								<integer>2</integer>
+								<integer>2</integer>
 								<integer>2</integer>
 								<integer>2</integer>
 								<integer>2</integer>

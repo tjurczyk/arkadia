@@ -7566,15 +7566,15 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>^[ &gt;]*Plynnym ruchem unikasz ciosu .* i uderzajac ze wszystkich sil tniesz go .*, ktor(y|a) gleboko rozrywa jego cialo, powodujac ogromne obrazenia\.$</string>
+											<string>^[ &gt;]*Plynnym ruchem unikasz ciosu [a-z ]+ i ze wszystkich sil uderzasz (go|ja|je) sw(ym|oja) [a-z ]+, ktor[ay] miazdzy je(j|go) cialo, powodujac ogromne obrazenia.$</string>
+											<string>^[ &gt;]*Plynnym ruchem unikasz ciosu [a-z ]+ i ze wszystkich sil uderzasz (ja|go|je) sw(ym|oja) [a-z ]+ ktor[ay] miazdzy (jego|jej) cialo, powodujac ogromne obrazenia.$</string>
 											<string>^[ &gt;]*Plynnym wypadem w przod atakujesz .* i napierajac calym cialem dzgasz .*, .* prawie na wylot przez .*, powodujac ogromne obrazenia\.$</string>
-											<string>^[ &gt;]*Plynnym ruchem unikasz ciosu [a-z ]+ i ze wszystkich sil uderzasz (ja|go) sw(ym|oja) [a-z ]+ ktor[ay] miazdzy (jego|jej) cialo, powodujac ogromne obrazenia\.$</string>
-											<string>^[ &gt;]*Plynnym ruchem unikasz ciosu [a-z ]+ i ze wszystkich sil uderzasz (go|ja) sw(ym|oja) [a-z ]+, ktor[ay] miazdzy je(j|go) cialo, powodujac ogromne obrazenia\.$</string>
+											<string>^[ &gt;]*Plynnym ruchem unikasz ciosu .* i uderzajac ze wszystkich sil tniesz .*, ktor(y|a) gleboko rozrywa (jego|jej) cialo, powodujac ogromne obrazenia\.$</string>
 										</regexCodeList>
 										<regexCodePropertyList>
 											<integer>1</integer>
 											<integer>1</integer>
-											<integer>0</integer>
+											<integer>1</integer>
 											<integer>1</integer>
 										</regexCodePropertyList>
 									</Trigger>
@@ -15683,8 +15683,8 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^(?:[A-Z][a-z]+) (?:[a-z]+ ){1,3}rozpada sie!$</string>
-							<string>^(?:[A-Z][a-z]+) (?:[a-z-]+ ?){1,3} ((?:[A-Z][a-z]+ |(?:\w+ ){3,4}))rozpada sie!</string>
+							<string>^(?:[A-Z][a-z]+) (?:[a-z]+ ){1,3}rozpada(?:ja)? sie!$</string>
+							<string>^(?:[A-Z][a-z]+) (?:[a-z-]+ ?){1,3} ((?:[A-Z][a-z]+ |(?:\w+ ){3,4}))rozpada(?:ja)? sie!</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -17425,8 +17425,10 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 							<string>(.* wchodzi po kreconych schodach na gore.*)</string>
 							<string>(.* zaczyna wspinac sie na uskok.*)</string>
 							<string>(Wykorzystujac platanine galezi mocno przywierajaca do skalnej sciany .* zaczyna powoli wchodzic do gory.*)</string>
+							<string>(.* przechodzi szybko przez rozmyty row wyschnietej fosy i zabiera sie za wspinaczke po ogromnym gruzowisku.*)</string>
 						</regexCodeList>
 						<regexCodePropertyList>
+							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
@@ -25350,6 +25352,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<integer>1</integer>
 						<integer>2</integer>
 						<integer>1</integer>
+						<integer>7274604</integer>
 					</regexCodePropertyList>
 				</Trigger>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">

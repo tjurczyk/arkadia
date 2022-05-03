@@ -21,6 +21,8 @@ function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_ja_bardzo_ciezko_ra
 end
 
 function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_ja_masakruje()
-    scripts.gags:gag(6, 6, "moje_ciosy")
+    if not string.match(line, "srebrzysta kosa bojowa") then
+        scripts.gags:gag(6, 6, "moje_ciosy")
+    end
 end
 

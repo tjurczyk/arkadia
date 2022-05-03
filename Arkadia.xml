@@ -2448,8 +2448,12 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 							<mSoundFile></mSoundFile>
 							<colorTriggerFgColor>#000000</colorTriggerFgColor>
 							<colorTriggerBgColor>#000000</colorTriggerBgColor>
-							<regexCodeList />
-							<regexCodePropertyList />
+							<regexCodeList>
+								<string>return is_combat_msg()</string>
+							</regexCodeList>
+							<regexCodePropertyList>
+								<integer>4</integer>
+							</regexCodePropertyList>
 							<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 								<name>bronie</name>
 								<script></script>

@@ -16,7 +16,6 @@ function trigger_func_skrypty_ui_gags_color_color_innych_spece_bar_ktos_spec_mni
     scripts.gags:gag_spec("BAR", value, 6, "innych_spece")
 end
 
-function trigger_func_skrypty_ui_gags_color_color_innych_spece_bar_ktos_spec_ktos_spec_6()
-    scripts.gags:gag_spec("BAR", 6, 6, "innych_spece")
+function trigger_func_skrypty_ui_gags_color_color_innych_spece_bar_ktos_fin()
+    scripts.gags:gag_prefix("BAR FIN", "innych_spece")
 end
-

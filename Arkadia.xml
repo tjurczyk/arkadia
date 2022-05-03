@@ -14909,7 +14909,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 									</Trigger>
 									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 										<name>ktos_fin</name>
-										<script>trigger_func_skrypty_ui_gags_color_color_moje_spece_bar_ja_fin()</script>
+										<script>trigger_func_skrypty_ui_gags_color_color_innych_spece_bar_ktos_fin()</script>
 										<triggerType>0</triggerType>
 										<conditonLineDelta>0</conditonLineDelta>
 										<mStayOpen>0</mStayOpen>

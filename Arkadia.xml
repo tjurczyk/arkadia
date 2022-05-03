@@ -1902,7 +1902,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 							<integer>1</integer>
 						</regexCodePropertyList>
 					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>poziomy-zwierzat</name>
 						<script>trigger_func_skrypty_misc_levels_poziomy_zwierzat()</script>
 						<triggerType>0</triggerType>
@@ -2448,12 +2448,8 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 							<mSoundFile></mSoundFile>
 							<colorTriggerFgColor>#000000</colorTriggerFgColor>
 							<colorTriggerBgColor>#000000</colorTriggerBgColor>
-							<regexCodeList>
-								<string>return is_combat_msg()</string>
-							</regexCodeList>
-							<regexCodePropertyList>
-								<integer>4</integer>
-							</regexCodePropertyList>
+							<regexCodeList />
+							<regexCodePropertyList />
 							<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 								<name>bronie</name>
 								<script></script>
@@ -11311,7 +11307,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 									</Trigger>
 									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 										<name>ktos_fin</name>
-										<script>trigger_func_skrypty_ui_gags_color_color_moje_spece_bar_ja_fin()</script>
+										<script>trigger_func_skrypty_ui_gags_color_color_innych_spece_bar_ktos_fin()</script>
 										<triggerType>0</triggerType>
 										<conditonLineDelta>0</conditonLineDelta>
 										<mStayOpen>0</mStayOpen>

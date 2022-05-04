@@ -36,16 +36,25 @@ function scripts.packages:start()
 end
 
 function scripts.packages:add(index, name, city, time)
-    local assistant_match = self:get_from_db(name)
+    local assistant_match, multiple = self:get_from_db(name)
     local location
     if assistant_match then
         selectString(name, 1)
         fg("spring_green")
         resetFormat()
         location = assistant_match.room_id
+        if getPath(amap.curr.id, location) and selectString("               |", 1) then
+            local distance = table.size(speedWalkPath)
+            replace(scripts.utils.str_pad(tostring(distance), 8, "right") .. "       |")
+        end
     else
         location = scripts.people.mail:check_table(name)
     end
+
+    selectString(name, 1)
+    local command = "wybierz paczke " .. index
+    setLink(function() send(command) end, command)
+    
     self.current_offer[index] = { name = name, location = location }
     if city and city ~= "" then
         self.current_offer[index].city = city
@@ -56,12 +65,12 @@ function scripts.packages:add(index, name, city, time)
 end
 
 function scripts.packages:pickup(command)
-    local _, _, index = command:find("wybierz paczke (%d+)")
+    local index = rex.match(command, "^\\s*wybierz paczke (\\d+)")
     if index then
         self.trigger = tempRegexTrigger("^.* przekazuje ci jakas paczke\\.", function ()
             self:package_given(index)
         end, 1)
-        self.trigger_fail = tempRegexTrigger("Ty juz dla nas dostatecznie ciezko zapracowales|Nie ufam ci na tyle, aby powierzyc ci dostarczenie tej przesylki", function() 
+        self.trigger_fail = tempRegexTrigger("Ty juz dla nas dostatecznie ciezko zapracowales|Nie ufam ci na tyle, aby powierzyc ci dostarczenie tej przesylki|Cos ci sie chyba pomylilo, nie ma takiej oferty|Niestety, nie widzisz tu nikogo, od kogo mozna by wziac zlecenie", function() 
             if self.trigger then
                 killTrigger(self.trigger)
                 self.trigger = nil
@@ -131,23 +140,27 @@ function scripts.packages:update_display()
         if self.picked_offer.pickup_time then
             local elapsed = (os.time() - self.picked_offer.pickup_time)
             local total = self.picked_offer.time * 120
-            time_to_deliver = " " .. misc.improve:seconds_to_formatted_string(total - elapsed)
+            time_to_deliver = " " .. misc.improve:seconds_to_formatted_string(math.max(0, total - elapsed))
             if not self.timer then
                 self.timer = tempTimer(1, function() self:update_display() end, true)
             end
         end
-        self.footer_info:echo("<font color='" .. scripts.ui["footer_info_normal"] .. "'>Paczka:</font> <font color='" .. scripts.ui["footer_info_neutral"] .. "'>" .. self.picked_offer.name .. time_to_deliver .. "</font>")
-        setLabelToolTip(self.footer_info.name, time_to_deliver)
+        if self.footer_info then
+            self.footer_info:echo("<font color='" .. scripts.ui["footer_info_normal"] .. "'>Paczka:</font> <font color='" .. scripts.ui["footer_info_neutral"] .. "'>" .. self.picked_offer.name .. time_to_deliver .. "</font>")
+            setLabelToolTip(self.footer_info.name, time_to_deliver)
+        end
     else
-        self.footer_info:echo("<font color='" .. scripts.ui["footer_info_normal"] .. "'>Paczka: -</font>")
-        resetLabelToolTip(self.footer_info.name)
+        if self.footer_info then
+            self.footer_info:echo("<font color='" .. scripts.ui["footer_info_normal"] .. "'>Paczka: -</font>")
+            resetLabelToolTip(self.footer_info.name)
+        end
     end
 end
 
 function scripts.packages:get_from_db(name)
     local result = db:fetch(self.db.packages, db:eq(self.db.packages.name, name))
-    if result and table.size(result) == 1 then
-        return result[1]
+    if result and table.size(result) >= 1 then
+        return result[1], result
     end
 end
 
@@ -161,6 +174,23 @@ end
 
 function trigger_packages_assistant_close()
     setTriggerStayOpen("tablice-open", 0)
+end
+
+function trigger_packages_assistant_replace_terminals()
+    selectCaptureGroup(1)
+    if matches[1] == "==o" then
+        replace("====================o", true)
+    elseif matches[1] == "  |" then
+        replace("                    |", true)
+    elseif matches[1] == "- o" then
+        replace("------------------- o", true)
+    end
+
+    local cursor = selectString("dostarczenie              ", 1)
+    if cursor > -1 then
+        moveCursor(cursor + 18, getLineNumber())
+        replace("dostarczenie       Dystans", true)
+    end
 end
 
 scripts.packages:init()

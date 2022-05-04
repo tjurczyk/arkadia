@@ -33,7 +33,7 @@ end
 
 function scripts.character.profession:get_next_break_point(time)
     local date = os.date("*t", time)
-    local date_diff = 9 - date.wday + (date.wday == 1 and 7 or 0)
+    local date_diff = (9 - date.wday) % 7
     date.day = date.day + date_diff
     date.hour = 2
     date.min = 0
@@ -86,6 +86,6 @@ end
 
 function trigger_func_show_reset_prompt()
     cecho("\n<CadetBlue>(skrypty)<tomato>: Jezeli rozpoczynasz trenowanie nowego zawodu nacisnij ")
-    cechoLink("tutaj", [[reset_profession()]], "/staz 0")
+    cechoLink("tutaj", function() reset_profession() end, "/staz 0")
     scripts:print_log("Jezeli znasz wartosc stazu (240 pelny staz, 10 punktow za tydzien, 1 punkt za +staz) wpisz /staz [liczba]", true)
 end

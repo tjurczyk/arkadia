@@ -25,6 +25,11 @@ function ateam:increase_team_id_counter()
     else
         ateam.next_team_id = string.char(string.byte(ateam.next_team_id) + 1)
     end
+    if ateam.next_team_id == "Z" then
+        registerAnonymousEventHandler("printStatusDone", function()
+            ateam:restart_ateam()
+        end, true)
+    end
 end
 
 function ateam:get_team_member_obj_id(teammate_name)

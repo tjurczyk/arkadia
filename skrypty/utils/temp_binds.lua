@@ -72,5 +72,5 @@ function scripts.temp_binds:pretty_print()
     cecho("+--------------------------------------------------------------------------------+\n")
 end
 
-scripts.utils:enable_keybinds(true)
+scripts.utils.enable_keybinds(true)
 

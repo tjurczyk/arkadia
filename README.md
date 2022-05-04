@@ -7,53 +7,31 @@ Pomoc dostępna pod `/skrypty`<br>
 Pomoc do mappera znajduje się [tutaj](README_MAPPER.md) \
 Wersja, której używasz: sprawdź nagłówek komendy `/skrypty`.
 
-### INSTALACJA
-
-**W celu poprawnego działania skryptów, w ustawieniach trzeba włączyć obsługę GMCP! Bez tego skrypty nie będą działać poprawnie.
-Przed instalacją koniecznie włącz opcję _Enable GMCP_ w ustawieniach (Settings) Mudleta i zrestartuj go.**
-
-#### Mudlet 4.11+
+### Instalacja
 ---
+
+
 Przeciągnij poniższy link na okienko Mudleta.
 [https://github.com/tjurczyk/arkadia/releases/latest/download/ArkadiaScriptsInstaller.xml](https://github.com/tjurczyk/arkadia/releases/latest/download/ArkadiaScriptsInstaller.xml)
 
-#### Mudlet 4.6+ i moduł LUA
----
-Wystarczy wkleić poniższą komendę:
+lub wpisz:
 
-```lua
-lua local a="https://github.com/tjurczyk/arkadia/releases/latest/download/ArkadiaScriptsInstaller.xml"local b=getMudletHomeDir().."ArkadiaScriptsInstaller.xml"downloadFile(b,a)cecho("\n<CadetBlue>(skrypty)<tomato>: Rozpoczynam instalacje skryptow\n")registerAnonymousEventHandler("sysDownloadDone",function(c,d)if d~=b then return true end;installPackage(b)end,true)clearCmdLine()
+```
+lua installPackage("https://github.com/tjurczyk/arkadia/releases/latest/download/ArkadiaScriptsInstaller.xml")
 ```
 
-#### Alternatywny sposób instalacji
+
+### Wymagania
 ---
-Należy pobrać plik:
+**W celu poprawnego działania skryptów, w ustawieniach trzeba włączyć obsługę GMCP! Bez tego skrypty nie będą działać poprawnie.
+Przed instalacją koniecznie włącz opcję _Enable GMCP_ w ustawieniach (Settings) Mudleta i zrestartuj go.**
 
-[https://github.com/tjurczyk/arkadia/releases/latest/download/ArkadiaScriptsInstaller.xml](https://github.com/tjurczyk/arkadia/releases/latest/download/ArkadiaScriptsInstaller.xml)
+**Wymagana wersja Mudleta to 4.12+**
 
-Po jego pobraniu przeciągamy go na otwarte okno Mudleta.
-
-Lub 
-1. W Mudlecie w górnym pasku wybieramy `Package Manager`
-2. Wybieramy na dole `Install`
-3. Wybieramy pobrany plik
-
-#### Ręczna instalacja
----
-Po pobraniu paczki należy rozpakować ją bezpośrednio do katalogu z profilem i zmienić nazwę rozpakowanego katalogu na `arkadia`
-Po czym wykonujemy jeszcze instalację samej paczki w mudlecie
-
-1. W Mudlecie w górnym pasku wybieramy `Package Manager`
-2. Wybieramy na dole `Install`
-3. Z katalogu z profilem wybieramy plik `arkadia/Arkadia.xml`
-4. Odinstalowujemy pakiet `generic_maper`
-4. Restartujemy Mudleta.
 
 Aktualizacja skryptów już po instalacji to: `/aktualizuj_skrypty`.
 
 Od teraz, w `Triggers`, `Aliases`, `Scripts` oraz `Keys` (z górnego paska) mamy katalog `arkadia`. Tego folderu **nie wolno ruszać**. Z każdą aktualizacją, ten katalog jest usuwany i jest instalowany nowy, dlatego też jeśli chce się mieć jakieś własne triggery, aliasy, skrypty i key bindy to **koniecznie** trzeba to robić poza katalogiem `arkadia`. Na przykład na poniższym screenshocie widać, że mam dwa aliasy. Są one równoległe do skryptów, a nie w folderze _arkadia_.
-
-![Własne aliasy](http://kamerdyner.net/~george/img/wlasne_aliasy.png)
 
 Mając zainstalowane skrypty, można przystąpić do dodania swoich ustawień; ten punkt jest opcjonalny jeśli chcemy mieć możliwość modyfikowania ustawień typu:
 
@@ -107,19 +85,7 @@ Skrypty mają swoje ustawienia, które można załadować za pomocą `/laduj imi
 Komenda `/laduj imie` ładuje plik o nazwie `imie.json` z katalogu profilu Mudleta.
 
 Pierwszej konfiguracji można również dokonań za pomocą kreatora, który w przypadku pierwszego uruchomienia pojawi się automatycznie.
-Konfigurator można przywołać komendą `/konfiguruj`.
-
-#### KATALOG PROFILU
-Aby dowiedzieć się gdzie siedzi katalog profilu, należy w linii komend w Mudlecie wykonać komendę:
-
-`lua getMudletHomeDir()`
-
-Zobaczymy coś pokroju:
-
-`/Users/nazwa_uzytkownika/.config/mudlet/profiles/Arkadia`
-
-Z racji różnic Windows, Linux i OS X, profile są w innych miejscach
-i trzeba sobie samemu sprawdzić gdzie dany profil się znajduje.
+Konfigurator można przywołać komendą `/konfiguracja`.
 
 #### Podstawowa konfiguracjia
 Aby stworzyć podstawową konfigurację wystarczy wpisać `/init imie imie_w_wolaczu` np. 
@@ -131,9 +97,6 @@ Trigger do ładowania automatycznego podczas logowania zostanie automatycznie ut
 Pomoc dotyczaca konfiguracji dostepna jest dostępna pod adresem: http://arkadia.kamerdyner.net/config.html 
 
 Dodatkowo opis kluczy konfiguracyjnych dostępny [tutaj](config.md)
-
-##### UWAGA: 
-Czasami jest tak, że tekst wygląda lekko _rozjechany_. To znaczy, można to poznać po tym, że widać, że odstępy między tekstem są większe niż normalnie, wtedy podczas zaznaczania tekstu, tekst 'zsuwa' się ze sobą i odstępy są normalne. Jest to błąd Mudletowy. Wystarczy wtedy chwycić za tekst i zaznaczając go przeciagnac na sam dół aby najechać na dolny pasek - wtedy tekst _dosunie się_ i będzie już równo. Po wykonaniu `/ui_restart`, trzeba zawsze takie coś wykonać.
 
 ---
 

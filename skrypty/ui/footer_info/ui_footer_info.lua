@@ -8,10 +8,10 @@ function scripts.ui:setup_footer_info()
     }, scripts.ui.footer_info_box_main)
 
     scripts.ui.footer_info_core_base_css = CSSMan.new([[
-    background-color: rgba(]] .. scripts.ui.footer_r .. [[,]] .. scripts.ui.footer_g .. [[,]] .. scripts.ui.footer_b .. [[,0);
-    padding-left: 5px;
-    font-family:]].. getFont() ..[[,Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New, monospace;
-  ]])
+        padding-left: 5px;
+        border: 0px;
+        font-family:]].. getFont() ..[[,Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New, monospace;
+    ]])
 
     self.info_columns = {}
     self.info_elements = {}
@@ -31,7 +31,9 @@ function scripts.ui:setup_footer_info()
         ["lamp"] = self.setup_footer_info_lamp,
         ["compass"] = self.setup_footer_info_compass,
         ["combat"] = self.setup_footer_info_combat_state,
-        ["placeholder"] = self.setup_placeholder
+        ["placeholder"] = self.setup_placeholder,
+        ["daylight"] = self.setup_footer_info_daylight,
+        ["season"] = self.setup_footer_info_season
     }
 
     raiseEvent("footerInfoCreators", self.footer_info_elements_creators)
@@ -243,5 +245,37 @@ function scripts.ui:setup_placeholder()
     })
     self.info_placeholders[id]:setStyleSheet(self.footer_info_core_base_css:getCSS())
     self:add_footer_element(self.info_placeholders[id])
+end
+
+
+function scripts.ui:setup_footer_info_daylight()
+    self.footer_info_daylight = Geyser.Label:new({
+        name = "scripts.ui.footer_info_daylight",
+        fontSize = self.footer_font_size,
+    })
+    self.footer_info_daylight:setStyleSheet(self.footer_info_core_base_css:getCSS())
+    self.footer_info_daylight:setClickCallback("scripts_ui_info_daylight_click")
+    function self.footer_info_daylight:updateValue(val)
+        scripts.ui.footer_info_daylight:echo("<font color='" .. scripts.ui["footer_info_normal"] .. "'>Pora dnia:</font> <font color='" .. scripts.ui["footer_info_green"] .. "'>"..val.."</font>")
+    end
+    self.footer_info_daylight:updateValue('')
+    self:add_footer_element(self.footer_info_daylight)
+    setLabelCursor(self.footer_info_daylight.name, "PointingHand")
+end
+
+function scripts.ui:setup_footer_info_season()
+    self.footer_info_season = Geyser.Label:new({
+        name = "scripts.ui.footer_info_season",
+        fontSize = self.footer_font_size,
+    })
+    self.footer_info_season:setStyleSheet(self.footer_info_core_base_css:getCSS())
+    self.footer_info_season:setClickCallback("scripts_ui_info_season_click")
+    function self.footer_info_season:updateValue(val)
+        scripts.ui.footer_info_season:echo("<font color='" .. scripts.ui["footer_info_normal"] .. "'>Pora roku:</font> <font color='" .. scripts.ui["footer_info_green"] .. "'>"..val.."</font>")
+    end
+    self.footer_info_season:updateValue('')
+
+    self:add_footer_element(self.footer_info_season)
+    setLabelCursor(self.footer_info_season.name, "PointingHand")
 end
 

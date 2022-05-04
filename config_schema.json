@@ -270,6 +270,24 @@
       "macros_on_modify": []
     },
     {
+      "name": "ateam.options.leader_indicator_symbol",
+      "default_value": "",
+      "field_type": "string",
+      "macros_on_modify": []      
+    },
+    {
+      "name": "ateam.options.visible_stealth",
+      "default_value": false,
+      "field_type": "boolean",
+      "macros_on_modify": []
+    },
+    {
+      "name": "ateam.options.visible_attacker_count",
+      "default_value": false,
+      "field_type": "boolean",
+      "macros_on_modify": []
+    },
+    {
       "name": "ateam.attack_mode",
       "default_value": 3,
       "field_type": "number",
@@ -443,6 +461,14 @@
       "name": "herbs.window.enabled",
       "default_value": false,
       "field_type": "boolean",
+      "macros_on_modify": [
+        "_herbs"
+      ]
+    },
+    {
+      "name": "herbs.window.font_size",
+      "default_value": 12,
+      "field_type": "number",
       "macros_on_modify": [
         "_herbs"
       ]
@@ -1103,6 +1129,15 @@
       "macros_on_modify": []
     },
     {
+        "name": "scripts.people.enemy_color",
+        "default_value": "red",
+        "field_type": "string",
+        "content_type" : "mudlet_color",
+        "macros_on_modify": [
+          "_people"
+        ]
+    },
+    {
       "name": "scripts.people.enemy_guilds",
       "default_value": [],
       "field_type": "list",
@@ -1688,6 +1723,15 @@
         "_ux"
       ]
     },
+    {
+        "name": "scripts.gag_colors.npc_spece",
+        "default_value": "floral_white",
+        "field_type": "string",
+        "content_type" : "mudlet_color",
+        "macros_on_modify": [
+          "_ux"
+        ]
+      },
     {
         "name": "scripts.gags.own_spec_prefix",
         "default_value": "",
@@ -2777,10 +2821,17 @@
     },
     {
       "name": "scripts.sounds.beep",
-      "default_value": "arkadia/sounds/beep.wav",
+      "default_value": "sounds/beep.wav",
       "field_type": "string",
       "content_type" : "file_path",
       "macros_on_modify": []
+    },
+    {
+        "name": "scripts.sounds.pop",
+        "default_value": "sounds/pop.wav",
+        "field_type": "string",
+        "content_type" : "file_path",
+        "macros_on_modify": []
     },
     {
       "name": "scripts.inv.containers.disable_grouped_containers",
@@ -2871,6 +2922,62 @@
       "default_value": false,
       "field_type": "boolean",
       "macros_on_modify": []
+    },
+    {
+      "name": "scripts.transports.show_progress",
+      "default_value": true,
+      "field_type": "boolean",
+      "macros_on_modify": []
+    },
+    {
+        "name": "amap.water_animal",
+        "default_value": false,
+        "field_type": "boolean",
+        "macros_on_modify": []
+    },
+    {
+        "name": "ateam.cover_command",
+        "default_value": "zaslon",
+        "field_type": "string",
+        "macros_on_modify": []
+    },
+    {
+        "name": "scripts.ui.combat_window.enabled",
+        "default_value": false,
+        "field_type": "boolean",
+        "macros_on_modify": [
+            "_ux"
+        ]
+    },
+    {
+        "name": "scripts.ui.combat_window.font_size",
+        "default_value": 12,
+        "field_type": "number",
+        "macros_on_modify": [
+            "_ux"
+        ]
+    },
+    {
+        "name": "scripts.ui.combat_window.no_wrap",
+        "default_value": false,
+        "field_type": "boolean",
+        "macros_on_modify": [
+            "_ux"
+        ]
+    },
+    {
+        "name": "scripts.ui.theme",
+        "default_value": "arkadia",
+        "field_type": "string",
+        "macros_on_modify": [
+            "_ux"
+        ]
+    },
+    {
+        "name": "misc.improve.ignore_form",
+        "default_value": false,
+        "field_type": "boolean",
+        "macros_on_modify": []
     }
   ]
 }

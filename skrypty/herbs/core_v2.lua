@@ -54,7 +54,7 @@ function herbs:v2_print_db()
     herbs.window:print()
 end
 
-function herbs:v2_do_print(window)
+function herbs:v2_do_print(window, compact)
     if not herbs.db or table.size(herbs.db) == 0 then
         cecho(window, "\n <orange>Brak zbudowanej bazy ziol, ")
         cechoPopup(window, "<deep_sky_blue>kliknij tutaj aby zrobic '/ziola_buduj'", { [[expandAlias("/ziola_buduj")]] }, { [[/ziola_buduj]] }, true)
@@ -62,10 +62,13 @@ function herbs:v2_do_print(window)
         return
     end
 
-    cecho(window, "\n")
-    cecho(window, " ------+-------------------------+-----------------------------------------------")
-    cecho(window, "\n   <light_slate_blue>ile <grey>|        <light_slate_blue>nazwa <grey>           | <light_slate_blue>             dzialanie <grey>                      ")
-    cecho(window, "\n ------+-------------------------+-----------------------------------------------")
+    if not compact then
+        cecho(window, "\n")
+        cecho(window, " ------+-------------------------+-----------------------------------------------")
+        cecho(window, "\n   <light_slate_blue>ile <grey>|        <light_slate_blue>nazwa <grey>           | <light_slate_blue>             dzialanie <grey>                      ")
+        cecho(window, "\n ------+-------------------------+-----------------------------------------------")
+        echo(window, "\n")
+    end
 
     for _, herb_id in pairs(herbs.sorted_herb_ids) do
         local v = herbs.index[herb_id]
@@ -77,7 +80,7 @@ function herbs:v2_do_print(window)
             local amount_tmp = "    " .. tostring(amount)
             local name_str = string.sub(herb_id .. "                     ", 0, 23)
             local usage_str = string.sub(herbs.herbs_details[herb_id]["details"] .. "                                                                 ", 0, 64)
-            cecho(window,"\n <grey>  " .. string.sub(amount_tmp, #amount_tmp - 2, #amount_tmp) .. " | ")
+            cecho(window,"<grey>  " .. string.sub(amount_tmp, #amount_tmp - 2, #amount_tmp) .. " | ")
             local clickable_herb_data = herbs:get_clickable_herb_data(herb_id)
             cechoPopup(window, name_str, clickable_herb_data["herb_actions"], clickable_herb_data["herb_hints"], true)
             cecho(window, " | ")
@@ -88,30 +91,32 @@ function herbs:v2_do_print(window)
                     cecho(window, use_element["text"])
                 end
                 if iii < #clickable_herb_data["use_elements"] then
-                    cecho(window, " || ")
+                    cecho(window, " | ")
                 end
                 -- add a single space so we don't make the rest of the line clickable
                 -- I don't know how to solve it any other way.
             end
-            cecho(window, " ")
+            cecho(window, "\n")
         end
     end
-    cecho(window, "\n --------------------------------------------------------------------------------\n")
+    if not compact then
+        cecho(window, "--------------------------------------------------------------------------------\n")
 
-    if table.size(ateam.team_names) > 0 then
-        cecho(window, "\n  <yellow>Daj ziola<grey>:<pale_green>")
-    end
-    local idx = 1
-    for teammate_name, v in pairs(ateam.team_names) do
-        local teammate_clickable_data = herbs:get_clickable_teammate_data(teammate_name)
-        cecho(window, " ")
-        cechoPopup(window ,"<pale_green>" .. teammate_name, teammate_clickable_data["teammate_actions"], teammate_clickable_data["teammate_hints"], true)
-        if idx ~= table.size(ateam.team_names) then
-            cecho(window," <grey>||")
+        if table.size(ateam.team_names) > 0 then
+            cecho(window, "\n  <yellow>Daj ziola<grey>:<pale_green>")
         end
-        idx = idx + 1
+        local idx = 1
+        for teammate_name, v in pairs(ateam.team_names) do
+            local teammate_clickable_data = herbs:get_clickable_teammate_data(teammate_name)
+            cecho(window, " ")
+            cechoPopup(window ,"<pale_green>" .. teammate_name, teammate_clickable_data["teammate_actions"], teammate_clickable_data["teammate_hints"], true)
+            if idx ~= table.size(ateam.team_names) then
+                cecho(window," <grey>|")
+            end
+            idx = idx + 1
+        end
+        cecho(window, "\n\n")
     end
-    cecho(window, "\n\n")
 end
 
 function herbs:v2_print_db_per_bag(full)
@@ -206,7 +211,7 @@ function herbs:get_clickable_teammate_data(teammate_name)
 end
 
 function herbs:get_clickable_herb_data(herb_name)
-    local herb_actions = { "expandAlias(\"/ziolo " .. herb_name .. "\")" }
+    local herb_actions = { "" }
     local herb_hints = { herb_name }
 
     for k, v in pairs(herbs.settings.get_herb_counts) do
@@ -240,7 +245,7 @@ function herbs:get_clickable_herb_data(herb_name)
             use_element["hints"] = {}
             use_element["actions"] = {}
             table.insert(use_element["hints"], herb_name)
-            table.insert(use_element["actions"], "expandAlias(\"/ziolo " .. herb_name .. "\")")
+            table.insert(use_element["actions"], "")
             for kk, current_count in pairs(herbs.settings.use_herb_counts) do
                 local use_hint = ""
                 local use_action = ""
@@ -282,8 +287,7 @@ end
 function herbs:print_herb_bag_conditions()
     cecho("\n    <green>Woreczki i ich stany:\n\n")
     for bag_id, condition in pairs(herbs.herb_bag_collect_condition_data.bag_id_to_condition) do
-        local string_bag_id = scripts.id_to_string[bag_id]
-        local bag_name_wrapped = string.sub("<LemonChiffon>" .. string_bag_id .. " woreczek<grey> .................................................", 0, 40)
+        local bag_name_wrapped = string.sub("<LemonChiffon>" .. bag_id .. ". woreczek<grey> .................................................", 0, 40)
         cecho("  " .. bag_name_wrapped .. " " .. condition .. "\n")
     end
 
@@ -311,7 +315,7 @@ end
 
 function herbs:coroutine_collect_herb_bag_condition()
     for i = 1, 200, 1 do
-        send("ocen " .. tostring(i) .. ". woreczek")
+        send("ocen " .. tostring(i) .. ". swoj woreczek")
         coroutine.yield()
         herbs.herb_bag_collect_condition_data["current_bag_id"] = herbs.herb_bag_collect_condition_data["current_bag_id"] + 1
     end
@@ -336,7 +340,7 @@ function herbs:_coroutine_build_db()
     disableTrigger(count_trigg)
 
     for i = 1, herbs.bags_amount, 1 do
-        send("zajrzyj do " .. scripts.id_to_string_biernik[i] .. " woreczka", true)
+        send("zajrzyj do " .. i .. ". swojego woreczka", true)
         coroutine.yield()
         herbs.current_bag_looking = herbs.current_bag_looking + 1
     end

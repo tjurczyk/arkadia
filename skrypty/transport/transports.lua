@@ -1,4 +1,9 @@
-scripts.transports = scripts.transports or {triggers = {}, temp_triggers = {}, active_rides = {}}
+scripts.transports = scripts.transports or {
+    triggers = {},
+    temp_triggers = {},
+    active_rides = {},
+    show_progress = true,
+}
 
 local travel_times_file = getMudletHomeDir() .. "/travel-times.json"
 
@@ -8,7 +13,8 @@ local enter_commands = {
     "wejdz na prom",
     "wsiadz na prom",
     "wsiadz do dylizansu",
-    "wsiadz do wozu"
+    "wsiadz do wozu",
+    "wjedz na statek"
 }
 
 
@@ -68,6 +74,7 @@ function scripts.transports:init()
     end
     local alias_cmd = string.format("^(?:%s)$", table.concat(enter_commands, "|"))
     self.enter_alias = tempAlias(alias_cmd, "_find_ride()")
+    --self.ride_progress = scripts.event_register:force_register_event_handler(self.ride_progress, "rideProgress", function(_, ride, location) self:update_ride_progress(ride, location) end)
 end
 
 function _find_ride()
@@ -75,7 +82,7 @@ function _find_ride()
     send(matches[1], false)
 end
 
-function scripts.transports:get(location) 
+function scripts.transports:get(location)
     return location_to_definition[location]
 end
 
@@ -136,6 +143,12 @@ function scripts.transports:store_minimums(minimums)
     local handle = io.open(travel_times_file, "w")
     handle:write(yajl.to_string(minimums))
     handle:close()
+end
+
+function scripts.transports:update_ride_progress(ride, location)
+    if #self.active_rides == 1 and location then
+        amap:set_position(location, true)
+    end
 end
 
 scripts.transports:init()

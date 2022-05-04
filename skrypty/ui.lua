@@ -178,6 +178,7 @@ scripts.ui["states_window_nav_printable_val_map"] = {
         [12] = "<green>12",
         [13] = "<green>13",
         [14] = "<green>14",
+        [15] = "<green>15",
     }
 }
 
@@ -232,6 +233,13 @@ scripts.ui.cfg["footer_mode5_settings"] = {
   }
 }
 
+scripts.ui.img_path = getMudletHomeDir() .. "/arkadia/ui/assets/"
+scripts.ui.themes = scripts.ui.themes or {}
+force_require("ui/themes/plain")
+force_require("ui/themes/arkadia")
+scripts.ui.theme = "arkadia"
+scripts.ui.current_theme = scripts.ui.themes.arkadia:new()
+
 function scripts.ui:decode_states_window_navbar_key(k)
     if not scripts.ui.states_window_elem_map[k] then
         error("wrong input: " .. k)
@@ -253,4 +261,3 @@ end
 function alias_func_skrypty_ui_kondycje()
     showWindow("states_window")
 end
-

@@ -133,13 +133,13 @@ function amap.db:search_rooms(phrase, top_only)
 end
 
 function amap.db:add_follow_link(room_id, from_link, to_link)
-    local room_to_set = amap.db:get_room_id(room_id)
+    local room_to_set = room_id and amap.db:get_room_id(room_id) or amap.curr.id
 
     if not room_to_set or not from_link or not to_link then
         error("Wrong input")
     end
 
-    local curr_data = getRoomUserData(amap.curr.id, "team_follow_link")
+    local curr_data = getRoomUserData(room_to_set, "team_follow_link")
     if curr_data ~= "" then
         local new_data = curr_data .. "#" .. from_link .. "*" .. to_link
         setRoomUserData(room_to_set, "team_follow_link", new_data)

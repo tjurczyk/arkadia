@@ -4,7 +4,6 @@ function trigger_func_mapper_localizers_room_gps_ruiny_rinde_za_krata()
 end
 
 function trigger_func_mapper_localizers_room_gps_ruiny_za_nekromanta()
-    amap:print_log("GPS po nazwie/wyjsciach lokacji: Za woda z nekromanty w Ruinach Rinde", true)
     amap:set_position(1925, true)
 end
 
@@ -25,10 +24,6 @@ end
 function trigger_func_mapper_localizers_room_gps_mario()
     amap:print_log("GPS po nazwie/wyjsciach lokacji: <orange>Mario", true)
     amap:set_position(5471, true)
-end
-
-function trigger_func_mapper_localizers_room_gps_kasztel_po_wspinaczce()
-    amap:set_position(17089, true)
 end
 
 function trigger_func_mapper_localizers_room_gps_kasyno()

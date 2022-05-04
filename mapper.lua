@@ -36,6 +36,7 @@ if not amap then
         next_dir_bind = nil,
         legacy_locate = false,
         disable_team_sneak = false,
+        water_animal = false
     }
 end
 
@@ -316,11 +317,11 @@ amap.special_exits = {
 
 function trigger_func_mapper_jedziesz_wozem(direction)
     amap:follow(amap.polish_to_english[direction], false)
-    registerAnonymousEventHandler("gmcp.room.info", function() amap:locate(true) end, true)
+    registerAnonymousEventHandler("gmcp.room.info", function() amap:locate(true, true) end, true)
 end
 
 function trigger_func_mapper_idziesz()
-        registerAnonymousEventHandler("gmcp.room.info", function() amap:locate(true) end, true)
+        registerAnonymousEventHandler("gmcp.room.info", function() amap:locate(true, true) end, true)
         local exits = {}
         if table.size(gmcp.room.info.exits) ~= 2 then
             -- in rare cases if go command was executed and gmcp does not have 2 exits we have to

@@ -111,6 +111,9 @@ function ateam:print_status()
     -- who is attacked by which enemies
     ateam.team_enemies = {}
 
+    -- count attackers of each obj
+    ateam.attacked_counts = {}
+
     -- who attack which enemy, [enemy_id] = {_script's_list_of_ids_of_teams}
     ateam.attacking_by_team = {}
 
@@ -132,6 +135,7 @@ function ateam:print_status()
     end
 
     for k, v in pairs(gmcp.objects.nums) do
+
         if ateam.objs[v] and (ateam.objs[v]["enemy"] == true or ateam.team[ateam.objs[v]["attack_num"]]) then
             -- this is when this is the enemy
 
@@ -338,19 +342,46 @@ function ateam:print_obj_team(id, obj)
             cecho(scripts.ui.states_window_name, "<"..ateam.options.bracket_color..":team_console_bg>"..ateam.options.bracket_symbol_left.."<reset>" .. str_id .. "<"..ateam.options.bracket_color..":team_console_bg>"..ateam.options.bracket_symbol_right)
         end
 
+        -- count attackers
+        if ateam.options.visible_attacker_count then
+            local str_attackers = "  "
+            if table.size(ateam.team_enemies[id]) > 0 then
+                str_attackers = scripts.utils.str_pad(tostring(table.size(ateam.team_enemies[id])), 2, "right")
+            end
+            cecho(scripts.ui.states_window_name, "<"..ateam.options.bracket_hp_color..":team_console_bg>"..ateam.options.bracket_symbol_left.."<reset><red:team_console_bg>"..str_attackers.."<"..ateam.options.bracket_hp_color..":team_console_bg>"..ateam.options.bracket_symbol_right)
+        end
+
         -- sneaky id section
         if ateam.sneaky_attack > 0 then
             cecho(scripts.ui.states_window_name, "<white:team_console_bg>[  ]")
         end
 
+        -- team lead
+        local str_lead = ""
+        if obj["team_leader"] and ateam.options.leader_indicator_symbol ~= "" then
+            str_lead = "<yellow:team_console_bg>"..ateam.options.leader_indicator_symbol
+        end
+
         -- hp section
-        cecho(scripts.ui.states_window_name, "<"..ateam.options.bracket_hp_color..":team_console_bg>"..ateam.options.bracket_symbol_left.."<reset>" .. states[obj["hp"]] .. "<"..ateam.options.bracket_hp_color..":team_console_bg>"..ateam.options.bracket_symbol_right.." ")
+        if states[obj["hp"]] then
+            cecho(scripts.ui.states_window_name, "<"..ateam.options.bracket_hp_color..":team_console_bg>"..ateam.options.bracket_symbol_left.."<reset>" .. states[obj["hp"]] .. "<"..ateam.options.bracket_hp_color..":team_console_bg>"..ateam.options.bracket_symbol_right.." "..str_lead)
+        else
+            debugc("HP value: " .. tostring(obj["hp"]))
+        end
 
         if str_id ~= " @" then
             local hp_to_select = string.split(states[obj["hp"]], ">")[2]
             local a = selectString(scripts.ui.states_window_name, hp_to_select, 1)
             setLink(scripts.ui.states_window_name, [[ateam:w_func("]] .. ateam.team[id] .. [[")]], "gzwycofaj sie za " .. str_id)
             deselect(scripts.ui.states_window_name)
+        end
+
+        -- stealth
+        local stealth_symbol_left = ""
+        local stealth_symbol_right = ""
+        if ateam.options.visible_stealth and obj["hidden"] then
+            stealth_symbol_left = "<white:team_console_bg>["
+            stealth_symbol_right = "<white:team_console_bg>]"
         end
 
         -- name section
@@ -363,9 +394,9 @@ function ateam:print_obj_team(id, obj)
         if ateam.paralyzed_names[obj["desc"]] then
             cecho(scripts.ui.states_window_name, "<" .. ateam.options.team_mate_stun_fg_color .. ":" .. ateam.options.team_mate_stun_bg_color .. ">" .. str_name .. " ")
         elseif str_name ~= self.options.own_name then
-            cecho(scripts.ui.states_window_name, "<LimeGreen:team_console_bg>" .. str_name .. " ")
+            cecho(scripts.ui.states_window_name, stealth_symbol_left .. "<LimeGreen:team_console_bg>" .. str_name .. stealth_symbol_right .. " ")
         else
-            cecho(scripts.ui.states_window_name, "<white:team_console_bg>" .. str_name .. " ")
+            cecho(scripts.ui.states_window_name, stealth_symbol_left .. "<white:team_console_bg>" .. str_name .. stealth_symbol_right .. " ")
         end
 
         -- zas section
@@ -444,6 +475,15 @@ function ateam:print_obj_enemy(id, obj)
 			str_id,
 			ateam.options.bracket_color,
 			ateam.options.bracket_symbol_right))
+        end
+
+        -- count attackers
+        if ateam.options.visible_attacker_count then
+            local str_attackers = "  "
+            if table.size(ateam.attacking_by_team[id]) > 0 then
+                str_attackers = scripts.utils.str_pad(tostring(table.size(ateam.attacking_by_team[id])), 2, "right")
+            end
+            cecho(scripts.ui.enemy_states_window_name, "<"..ateam.options.bracket_hp_color..":team_console_bg>"..ateam.options.bracket_symbol_left.."<reset><red:team_console_bg>".. str_attackers.."<"..ateam.options.bracket_hp_color..":team_console_bg>"..ateam.options.bracket_symbol_right)
         end
 
         -- sneaky id section
@@ -552,6 +592,15 @@ function ateam:print_obj_normal(id, obj)
 			str_id,
 			ateam.options.bracket_color,
 			ateam.options.bracket_symbol_right))
+
+        -- count attackers
+        if ateam.options.visible_attacker_count then
+            local str_attackers = "  "
+            if table.size(ateam.attacking_by_team[id]) > 0 then
+                str_attackers = scripts.utils.str_pad(tostring(table.size(ateam.attacking_by_team[id])), 2, "right")
+            end
+            cecho(scripts.ui.enemy_states_window_name, "<"..ateam.options.bracket_hp_color..":team_console_bg>"..ateam.options.bracket_symbol_left.."<reset><red:team_console_bg>"..str_attackers.."<"..ateam.options.bracket_hp_color..":team_console_bg>"..ateam.options.bracket_symbol_right)
+        end
         
         -- sneaky id section
         if ateam.sneaky_attack > 0 then
@@ -580,11 +629,19 @@ function ateam:print_obj_normal(id, obj)
 
         cecho(scripts.ui.enemy_states_window_name, "<"..ateam.options.bracket_hp_color..":team_console_bg>"..ateam.options.bracket_symbol_left.."<reset>" .. str_state .. "<" .. ateam.options.bracket_hp_color..":team_console_bg>"..ateam.options.bracket_symbol_right.." ")
 
+        -- stealth
+        local stealth_symbol_left = ""
+        local stealth_symbol_right = ""
+        if ateam.options.visible_stealth and obj["hidden"] then
+            stealth_symbol_left = "<white:team_console_bg>["
+            stealth_symbol_right = "<white:team_console_bg>]"
+        end
+
         -- name section
         local str_name = obj["desc"]
 
         -- set color for desc
-        cecho(scripts.ui.enemy_states_window_name, "<white:team_console_bg>" .. str_name)
+        cecho(scripts.ui.enemy_states_window_name, stealth_symbol_left .. "<white:team_console_bg>" .. str_name .. stealth_symbol_right)
 
         -- if print_id not nil (numbering normals) then set zab function on it
         if print_id then

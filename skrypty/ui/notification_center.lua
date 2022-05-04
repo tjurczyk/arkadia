@@ -1,11 +1,11 @@
 scripts.ui.notification_center = scripts.ui.notification_center or {
     enabled = true,
     width = 550,
-    height = 70,
+    height = 60,
     gap = 10,
     containers = {},
     timers = {},
-    nextIndex = 1,
+    next_index = 1,
     duration = 10,
     notifications = {}
 }
@@ -26,9 +26,9 @@ function scripts.ui.notification_center:add_notification(text, duration)
         return
     end
 
-    local notification = { id = self.nextIndex, text = text, duration = duration or self.duration}
+    local notification = { id = self.next_index, text = text, duration = duration or self.duration}
     table.insert(self.notifications, notification)
-    self.nextIndex = self.nextIndex + 1
+    self.next_index = self.next_index + 1
     self:print_notifications()
 end
 
@@ -40,6 +40,7 @@ function scripts.ui.notification_center:print_notifications()
         container:hide()
     end
     local notification_size = table.size(self.notifications)
+    local last_y = 10
     for i = notification_size, 1, -1 do
         local element = self.notifications[i]
         if not element.timer and element.duration > 0 then
@@ -48,47 +49,42 @@ function scripts.ui.notification_center:print_notifications()
                 self:print_notifications()
             end)
         end
-        self:print_single_notification(notification_size - i + 1, element)
+        last_y = self:print_single_notification(last_y, element)
     end
 end
 
-function scripts.ui.notification_center:print_single_notification(index, notification)
+function scripts.ui.notification_center:print_single_notification(last_y, notification)
     local window_name = "notification_" .. notification.id
+
+    local lines = string.split(notification.text, "<br>")
+    local height = self.height + #lines * getFontSize() * 1.3
 
     local container = Geyser.Container:new({
         name = window_name,
-        x = - 30 - self.width, y = (index - 1) * (self.height + self.gap) + 10,
-        width = self.width, height = self.height
+        x = - 30 - self.width, y = last_y + self.gap,
+        width = self.width, height = height
     })
 
+    deleteLabel("notification_console_" .. notification.id)
     local label = Geyser.Label:new({
         name = "notification_console_" .. notification.id,
         x = 0, y = 0,
         width = "100%", height = "100%",
-        fgColor = "black",
         fontSize = getFontSize() * 0.8
     }, container)
     label:echo(notification.text)
-    label:setStyleSheet([[
-        padding: 5px;
-        border: 1px solid #fff;
-        border-radius: 5px;
-        background: rgba(255, 255, 255, 0.8);
-        qproperty-wordWrap: true;
-    ]])
+    label:setStyleSheet(scripts.ui.current_theme:get_notification_stylesheet())
+    label:setFgColor(scripts.ui.current_theme:get_notification_color())
     label:setFont(getFont())
-
+    deleteLabel("close_" .. notification.id)
     local close_label =  Geyser.Label:new({
         name = "close_" .. notification.id,
         x = -25, y = 5,
-        width = 20, height = 20,
+        width = 27, height = 27,
         message = "<center>X</center>",
         fgColor = "black"
     }, container)
-    close_label:setStyleSheet([[
-        background: rgba(0, 0, 0, 0);
-        color: #000000;
-    ]])
+    close_label:setStyleSheet(scripts.ui.current_theme:get_notification_close_stylesheet())
 
     table.insert(self.containers, container)
 
@@ -96,6 +92,8 @@ function scripts.ui.notification_center:print_single_notification(index, notific
         setLabelClickCallback(element.name, "notification_center_close_notification", notification)
         setLabelCursor(element.name, "PointingHand")
     end
+
+    return container:get_y() + container:get_height()
 end
 
 function notification_center_close_notification(notification)

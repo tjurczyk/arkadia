@@ -1,24 +1,24 @@
 misc["knowledge_desc"] = {
-    ["znikoma"] = "     [1/10]=         |",
-    ["niewielka"] = "   [2/10]==        |",
-    ["czesciowa"] = "   [3/10]===       |",
-    ["niezla"] = "      [4/10]====      |",
-    ["dosc dobra"] = "  [5/10]=====     |",
-    ["dobra"] = "       [6/10]======    |",
-    ["bardzo dobra"] = "[7/10]=======   |",
-    ["doskonala"] = "   [8/10]========  |",
-    ["prawie pelna"] = "[9/10]========= |",
-    ["pelna"] = "      [10/10]==========|",
+    ["znikoma"] = " [1/10]=         |",
+    ["niewielka"] = " [2/10]==        |",
+    ["czesciowa"] = " [3/10]===       |",
+    ["niezla"] = " [4/10]====      |",
+    ["dosc dobra"] = " [5/10]=====     |",
+    ["dobra"] = " [6/10]======    |",
+    ["bardzo dobra"] = " [7/10]=======   |",
+    ["doskonala"] = " [8/10]========  |",
+    ["prawie pelna"] = " [9/10]========= |",
+    ["pelna"] = "[10/10]==========|",
 }
 
 misc.knowledge = misc.knowledge or {}
 
 function misc.knowledge:knowledge_replace(text)
-    selectString(text, 1)
-    local add_text = " " .. misc.knowledge_desc[text]
-    replace(text .. add_text)
-    selectString(misc.knowledge_desc[text], 1)
-    resetFormat()
+    if selectString(text, 1) > -1 then
+        local add_text = " " .. misc.knowledge_desc[text]
+        replace(scripts.utils.str_pad(text, 12) .. add_text, true)
+        resetFormat()
+    end
 end
 
 function misc.knowledge:initial_zglebiaj()
@@ -31,8 +31,9 @@ end
 
 -- rozbija output dostepnych do zglebiania wiedzy na linie
 function misc.knowledge:zglebiaj_replace(text)
-    selectString(text, 1)
-    replace("\n")
+    if selectString(text, 1) > -1 then
+        replace("\n")
+    end
 
     text = string.gsub(text, "czy o ([^?]*)?", ", o %1")
     local available = string.split(text, ",")

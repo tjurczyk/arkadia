@@ -24,8 +24,9 @@ function trigger_func_skrypty_ui_gags_color_color_zaslony_nieudane_nie_wycofanie
     selectCurrentLine()
     local str_replace = "[ NIE WYCOFU ] "
     prefix(str_replace)
-    selectString(str_replace, 1)
-    fg(scripts.gag_colors["zaslony_nieudane"])
+    if selectString(str_replace, 1) > -1 then
+        fg(scripts.gag_colors["zaslony_nieudane"])
+    end
     resetFormat()
 end
 

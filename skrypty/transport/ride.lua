@@ -26,21 +26,7 @@ function scripts.transports.ride:init()
     if self.definition.exit then
         table.insert(self.triggers, tempExactMatchTrigger(self.definition.exit, function() self:exit() end))
     end
-    if self.definition.exit_command then
-        table.insert(self.handlers, registerAnonymousEventHandler("sysDataSendRequest", function(_, command) 
-            if self.definition.exit_command ~= command then
-                return
-            end
-            registerAnonymousEventHandler("gmcp.room.info", function(_)
-                self:exit()
-            end, true)
-        end))
-    end
     table.insert(self.triggers, tempExactMatchTrigger(self.definition.start, function() self:start() end))
-    table.insert(self.triggers, tempRegexTrigger("^Jednym susem przesadzasz burte .* i wskakujesz do wody\\. Po chwili udaje ci sie doplynac z powrotem do brzegu\\.$", function() 
-        self:exit() 
-        self:abort()
-    end))
 end
 
 function scripts.transports.ride:enter()
@@ -49,6 +35,12 @@ function scripts.transports.ride:enter()
         cecho("\n<" .. scripts.ui:get_bind_color_backward_compatible() .. ">bind <yellow>" .. scripts.keybind:keybind_tostring("special_exit") .. ":<" .. scripts.ui:get_bind_color_backward_compatible() .. "> " .. self.definition.bind .. "\n\n")
         scripts.transports.transport_bind = self.definition.bind
     end
+    registerAnonymousEventHandler("gmcp.room.info", function(_)
+        if not gmcp.room.info.map then
+            return true
+        end
+        self:exit()
+    end, true)
 end
 
 function scripts.transports.ride:exit()
@@ -105,7 +97,7 @@ function scripts.transports.ride:start()
         killTimer(self.progress_timer)
     end
     self:show_progress()
-    self.progress_timer = tempTimer(1, function() self:update_progress() end, true)
+    self.progress_timer = tempTimer(0.25, function() self:update_progress() end, true)
 end
 
 function scripts.transports.ride:get_progress()
@@ -141,9 +133,12 @@ function scripts.transports.ride:store_new_minimum(time)
 end
 
 function scripts.transports.ride:show_progress()
+    if not scripts.transports.show_progress then
+        return
+    end
     local border_bottom = getBorderBottom()
     local border_right = getBorderRight()
-    
+
     self.progress = Geyser.Gauge:new({
         name = string.format("transport.progress.%s.%s", self.id, self.index),
         x = -border_right - padding * 2 - bar_width - 20,
@@ -160,9 +155,23 @@ function scripts.transports.ride:show_progress()
 end
 
 function scripts.transports.ride:update_progress()
+    if not self.progress then return end
     local current, total = self:get_progress()
     local current_stop = self.definition.stops[self.index]
+    if current > (total * 6) then
+        scripts:print_log("Cos poszlo nie tak. Zglos blad zwiazany z przejazdem srodkiem transportu. ID: " .. self.id .. " - " .. current_stop)
+        self:exit()
+        self:abort()
+        return
+    end
     local label = current_stop.label and "→ " .. current_stop.label or string.format("%s → %s", current_stop.start, current_stop.destination)
+    if self.definition.show_path then
+        local path = getPath(current_stop.start, current_stop.destination)
+        if path then
+            local percentage = math.min(current, total) / total
+            raiseEvent("rideProgress", self, speedWalkPath[math.floor(percentage * #speedWalkPath)])
+        end
+    end
     self.progress:setValue(math.min(current, total), total, string.format("<center>%s %s/%s</center>", label, scripts.utils.str_pad(tostring(current), string.len(tostring(total)), "right"), total))
 end
 

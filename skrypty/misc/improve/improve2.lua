@@ -1,20 +1,30 @@
-function misc.improve:add_improvee2(val)
+
+
+function misc.improve:add_improvee2(val, id)
     if not scripts.character_name then
         scripts:print_log("Korzystanie z globalnej bazy postepow po ustawieniu 'scripts.character_name' w configu")
         return
     end
+
+    local entry
 
     local hour = getTime(true, "hh:mm:ss")
     local year = getTime(true, "yyyy")
     local month = getTime(true, "MM")
     local day = getTime(true, "dd")
 
-    local entry = db:fetch(misc.improve.db_improvee.improvee, {
-        db:eq(misc.improve.db_improvee.improvee.year, year),
-        db:eq(misc.improve.db_improvee.improvee.month, month),
-        db:eq(misc.improve.db_improvee.improvee.day, day),
-        db:eq(misc.improve.db_improvee.improvee.character, scripts.character_name)
-    })
+    if not id then
+        entry = db:fetch(misc.improve.db_improvee.improvee, {
+            db:eq(misc.improve.db_improvee.improvee.year, year),
+            db:eq(misc.improve.db_improvee.improvee.month, month),
+            db:eq(misc.improve.db_improvee.improvee.day, day),
+            db:eq(misc.improve.db_improvee.improvee.character, scripts.character_name)
+        })
+    else 
+        local sql_query = "SELECT * FROM improvee WHERE character=\"" .. scripts.character_name ..
+        "\" AND _row_id=\"" .. id .. "\" ORDER BY _row_id ASC"
+        entry = db:fetch_sql(misc.improve.db_improvee.improvee, sql_query)
+    end
 
     local ret = true
 

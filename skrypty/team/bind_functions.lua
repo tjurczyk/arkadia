@@ -1,7 +1,7 @@
 function ateam:zas_func(id)
     if ateam.enemy_op_ids[tonumber(id)] then
-        local real_id = ateam.enemy_op_ids[tonumber(id)]
-        send("zaslon przed ob_" .. real_id, false)
+        local real_id = self:retrieve_id(id)
+        send(string.format("%s przed %s", self.cover_command, real_id), false)
         if ateam.release_guards then
             send("przestan zaslaniac", false)
         end
@@ -12,8 +12,8 @@ end
 
 function ateam:za_func(id)
     if ateam.team[id] then
-        local real_id = ateam.team[id]
-        sendAll("przestan kryc sie za zaslona", "zaslon ob_" .. real_id, false)
+        local real_id = self:retrieve_team_id(id)
+        sendAll("przestan kryc sie za zaslona", string.format("%s %s", self.cover_command, real_id), false)
         if ateam.release_guards then
             send("przestan zaslaniac", false)
         end
@@ -23,17 +23,17 @@ function ateam:za_func(id)
 end
 
 function ateam:za_func_def()
-    sendAll("przestan kryc sie za zaslona", "zaslon cel obrony", false)
+    sendAll("przestan kryc sie za zaslona", string.format("%s cel obrony", self.cover_command), false)
     if ateam.release_guards then
         send("przestan zaslaniac", false)
     end
 end
 
 function ateam:za_func_support(teammate, id)
-    if ateam.team[string.upper(teammate)] and ateam.enemy_op_ids[tonumber(id)] then
-        local real_teammate = ateam.team[string.upper(teammate)]
-        local real_id = ateam.enemy_op_ids[tonumber(id)]
-        sendAll("przestan kryc sie za zaslona", "zaslon ob_" .. real_teammate .. " przed ob_" .. real_id, false)
+    local real_id = ateam:retrieve_id(id)
+    local real_teammate_id = ateam:retrieve_team_id(teammate)
+    if real_id and id then
+        sendAll("przestan kryc sie za zaslona", string.format("%s %s przed %s", self.cover_command, real_teammate_id, real_id), false)
         if ateam.release_guards then
             send("przestan zaslaniac", false)
         end
@@ -43,22 +43,22 @@ function ateam:za_func_support(teammate, id)
 end
 
 function ateam:za_func_group(id, number)
-    send("opcje grupa " .. tostring(number), false)
+    local restore = scripts.character.options:set_temporary("group_cover", number)
     if not id then
-        sendAll("przestan kryc sie za zaslona", "zaslon cel obrony", false)
+        sendAll("przestan kryc sie za zaslona", string.format("%s cel obrony", self.cover_command), false)
         if ateam.release_guards then
             send("przestan zaslaniac", false)
         end
     elseif ateam.team[string.upper(id)] then
-        local real_id = ateam.team[string.upper(id)]
-        sendAll("przestan kryc sie za zaslona", "zaslon ob_" .. real_id, false)
+        local real_id = ateam:retrieve_team_id(id)
+        sendAll("przestan kryc sie za zaslona", string.format("%s %s", self.cover_command, real_id), false)
         if ateam.release_guards then
             send("przestan zaslaniac", false)
         end
     else
         scripts:print_log("Nie ma takiego id")
     end
-    send("opcje grupa 1", false)
+    scripts.character.options:set_temporary("group_cover", 1)
 end
 
 function ateam:get_attack_string()
@@ -66,18 +66,7 @@ function ateam:get_attack_string()
 end
 
 function ateam:zab_func(id)
-    local id_retrieved = nil
-
-    if id ~= nil and tonumber(id) > 100 then
-        -- TODO: Maybe find a better way to check whether the number is raw?
-        id_retrieved = "ob_" .. id
-    elseif ateam.enemy_op_ids[tonumber(id)] then
-        id_retrieved = "ob_" .. ateam.enemy_op_ids[tonumber(id)]
-    elseif ateam.normal_ids[tonumber(id)] then
-        id_retrieved = "ob_" .. ateam.normal_ids[tonumber(id)]
-    elseif string.starts(id, "ob") == true then
-        id_retrieved = id
-    end
+    local id_retrieved = self:retrieve_id(id)
 
     if id_retrieved then
         local local_str = id_retrieved
@@ -96,25 +85,98 @@ function ateam:zab_func(id)
 end
 
 function ateam:sneaky_zab_func(id)
-    local id_retrieved = nil
-
-    if tonumber(id) > 100 then
-        -- TODO: Maybe find a better way to check whether the number is raw?
-        id_retrieved = "ob_" .. id
-    elseif ateam.enemy_op_ids[tonumber(id)] then
-        id_retrieved = "ob_" .. ateam.enemy_op_ids[tonumber(id)]
-    elseif ateam.normal_ids[tonumber(id)] then
-        id_retrieved = "ob_" .. ateam.normal_ids[tonumber(id)]
-    elseif string.starts(id, "ob") == true then
-        id_retrieved = id
-    end
-
+    local id_retrieved = self:retrieve_id(id)
     if id_retrieved then
         local local_str = id_retrieved
         send("zaskocz " .. local_str, false)
     else
         scripts:print_log("Nie ma takiego id")
     end
+end
+
+local replace_szata = {
+    ["mezyczna"] = "mezczyzne",
+    ["kobieta"] = "kobiete",
+    ["krasnolud"] = "krasnoluda",
+    ["krasnoludka"] = "krasnoludke",
+    ["elf"] = "elfa",
+    ["elfka"] = "elfke",
+    ["halfling"] = "halflinga",
+    ["halflinka"] = "halflinke",
+    ["niziolek"] = "niziolka",
+    ["niziolka"] = "niziolke",
+    ["polelf"] = "polelfa",
+    ["polelfke"] = "polelfke",
+    ["gnom"] = "gnoma",
+    ["gnomka"] = "gnomke",
+    ["ogr"] = "ogra",
+    ["ogrzyca"] = "ogrzyce",
+    ["mutant"] = "mutanta",
+    ["mutantka"] = "mutantke"
+}
+
+local replace_szata_celownik = {
+    ["mezczyzne"] = "mezczyznie",
+    ["kobiete"] = "kobiecie",
+    ["krasnoluda"] = "krasnoludowi",
+    ["krasnoludke"] = "krasnoludce",
+    ["elfa"] = "elfowi",
+    ["elfke"] = "elfce",
+    ["halflinga"] = "halflingowi",
+    ["halflinke"] = "halflince",
+    ["niziolka"] = "niziolkowi",
+    ["niziolce"] = "niziolce",
+    ["polelfa"] = "polelfowi",
+    ["polelfke"] = "polelfce",
+    ["gnoma"] = "gnomowi",
+    ["gnomke"] = "gnomce",
+    ["ogra"] = "ogrowi",
+    ["ogrzyce"] = "ogrzycy",
+    ["mutanta"] = "mutantowi",
+    ["mutantke"] = "mutantce"
+}
+
+local szata = function(desc)
+    desc = desc:gsub("czarnoodziany zakapturzony", "czarnoodzianego zakapturzonego")
+    desc = desc:gsub("czarnoodziany", "czarnoodzianego")
+    for k,v in pairs(replace_szata) do
+        desc = desc:gsub(" " .. k, " " .. v)
+    end
+    return desc
+end
+
+function ateam:retrieve_id(id)
+    if id ~= nil and tonumber(id) > 100 then
+        -- TODO: Maybe find a better way to check whether the number is raw?
+        id_retrieved = id
+    elseif ateam.enemy_op_ids[tonumber(id)] then
+        id_retrieved = ateam.enemy_op_ids[tonumber(id)]
+    elseif ateam.normal_ids[tonumber(id)] then
+        id_retrieved = ateam.normal_ids[tonumber(id)]
+    elseif string.starts(id, "ob") == true then
+        id_retrieved = id:gsub("ob_", "")
+    end
+
+    if not ateam.objs[id_retrieved].desc:starts("czarnoodzian") then
+        id_retrieved = "ob_" .. id_retrieved
+    else
+        id_retrieved = szata(ateam.objs[id_retrieved].desc)
+    end
+    
+
+    return id_retrieved
+end
+
+function ateam:retrieve_team_id(id)
+    local id_retrieved = ateam.team[string.upper(id)]
+    
+    if not ateam.objs[id_retrieved].desc:starts("czarnoodzian") then
+        id_retrieved = "ob_" .. id_retrieved
+    else
+        id_retrieved = szata(ateam.objs[id_retrieved].desc)
+    end
+
+    return id_retrieved
 end
 
 function ateam:zab2_func(desc)
@@ -151,9 +213,9 @@ function ateam:prze_func(id, check_fatigue)
         return
     end
 
-    if ateam.enemy_op_ids[tonumber(id)] then
-        local real_id = ateam.enemy_op_ids[tonumber(id)]
-        sendAll("przestan kryc sie za zaslona", "przelam obrone ob_" .. real_id, false)
+    local real_id = ateam:retrieve_id(id)
+    if real_id then
+        sendAll("przestan kryc sie za zaslona", "przelam obrone " .. real_id, false)
         expandAlias("/z " .. id, false)
     else
         scripts:print_log("Nie ma takiego id")
@@ -168,16 +230,16 @@ function ateam:def_func_clicked(id)
         if id == "@" then
             send("wskaz siebie jako cel obrony", false)
         else
-            local real_id = ateam.team[id]
-            send("wskaz ob_" .. real_id .. " jako cel obrony", false)
+            local real_id = ateam:retrieve_team_id(id)
+            send("wskaz " .. real_id .. " jako cel obrony", false)
         end
     else
         ateam.clicked_second_defense = false
         if id == "@" then
             send("rozkaz druzynie zaslonic ciebie", false)
         else
-            local real_id = ateam.team[id]
-            send("rozkaz druzynie zaslonic  ob_" .. real_id, false)
+            local real_id = ateam:retrieve_team_id(id)
+            send("rozkaz druzynie zaslonic  " .. real_id, false)
         end
     end
 end
@@ -186,8 +248,8 @@ function ateam:rz_func(id)
     if id == "@" then
         sendAll("wskaz siebie jako cel obrony", "rozkaz druzynie zaslonic ciebie", false)
     elseif ateam.team[id] then
-        local real_id = ateam.team[id]
-        sendAll("wskaz ob_" .. real_id .. " jako cel obrony", "rozkaz druzynie zaslonic ob_" .. real_id, false)
+        local real_id = ateam:retrieve_team_id(id)
+        sendAll("wskaz " .. real_id .. " jako cel obrony", "rozkaz druzynie zaslonic " .. real_id, false)
     else
         scripts:print_log("Nie ma takiego id")
     end
@@ -195,9 +257,8 @@ end
 
 function ateam:ra_func(id)
     if ateam.enemy_op_ids[tonumber(id)] then
-        local real_id = ateam.enemy_op_ids[tonumber(id)]
-        local local_str = "ob_" .. real_id
-        sendAll("wskaz " .. local_str .. " jako cel ataku", "rozkaz druzynie zaatakowac " .. local_str, false)
+        local real_id = ateam:retrieve_id(id)
+        sendAll("wskaz " .. real_id .. " jako cel ataku", "rozkaz druzynie zaatakowac " .. real_id, false)
     else
         scripts:print_log("Nie ma takiego id")
     end
@@ -205,9 +266,8 @@ end
 
 function ateam:rb_func(id)
     if ateam.enemy_op_ids[tonumber(id)] then
-        local real_id = ateam.enemy_op_ids[tonumber(id)]
-        local local_str = "ob_" .. real_id
-        send("rozkaz druzynie zablokowac " .. local_str, false)
+        local real_id = ateam:retrieve_id(id)
+        send("rozkaz druzynie zablokowac " .. real_id, false)
     else
         scripts:print_log("Nie ma takiego id")
     end
@@ -217,28 +277,26 @@ function ateam:wz_func(id)
     if id == "@" then
         send("wskaz siebie jako cel obrony", false)
     elseif ateam.team[id] then
-        local real_id = ateam.team[id]
-        send("wskaz ob_" .. real_id .. " jako cel obrony", false)
+        local real_id = ateam:retrieve_team_id(id)
+        send("wskaz " .. real_id .. " jako cel obrony", false)
     else
         scripts:print_log("Nie ma takiego id")
     end
 end
 
 function ateam:wa_func(id)
-    if ateam.enemy_op_ids[tonumber(id)] then
-        local real_id = ateam.enemy_op_ids[tonumber(id)]
-        local local_str = "ob_" .. real_id
-        send("wskaz " .. local_str .. " jako cel ataku", false)
+    local real_id = ateam:retrieve_id(id)
+    if real_id then
+        send("wskaz " .. real_id .. " jako cel ataku", false)
     else
         scripts:print_log("Nie ma takiego id")
     end
 end
 
 function ateam:w_func(id)
+    local real_id = ateam:retrieve_team_id(id)
     if ateam.team[id] then
-        local real_id = ateam.team[id]
-        local local_str = "ob_" .. real_id
-        send("gzwycofaj sie za " .. local_str, false)
+        send("gzwycofaj sie za " .. real_id, false)
         if ateam.release_guards then
             send("przestan kryc sie za zaslona", false)
         end
@@ -291,8 +349,7 @@ end
 
 function ateam:por2_func(name)
     if name then
-        sendAll("porownaj sile z " .. name, "porownaj zrecznosc z " .. name,
-            "porownaj wytrzymalosc z " .. name, false)
+        sendAll("porownaj sile z " .. name, "porownaj zrecznosc z " .. name, "porownaj wytrzymalosc z " .. name, false)
     end
 end
 
@@ -309,7 +366,6 @@ function ateam:bind_joining(name)
 
     if table.size(scripts.people.enemy_guilds) > 0 then       
         local results = #string.split(name, " ") > 1 and scripts.people:search(name) or scripts.people:retrieve_person(name)
-        local can_be_enemy = false
         for _, person in pairs(results) do
             if table.index_of(scripts.people.enemy_guilds, scripts.people:get_guild_name(person.guild)) then
                 scripts:print_log(string.format("%s - cwaniak probuje zaprosic cie do druzyny. Wstyd!", name), true)
@@ -320,38 +376,44 @@ function ateam:bind_joining(name)
 
     if obj_to_join then
         scripts.utils.bind_functional("porzuc druzyne;dolacz do ob_" .. obj_to_join)
+    elseif not self.rebind_timer then
+        self.rebind_timer = tempTimer(0.5, function()
+             self:bind_joining(name)
+             self.rebind_timer = nil
+        end)
     end
 end
 
 function ateam:give_leader(id)
-    if ateam.team[id] then
-        local real_id = ateam.team[id]
-        sendAll("przekaz prowadzenie ob_" .. real_id, false)
+    local real_id = ateam:retrieve_team_id(id)
+    if real_id then
+        if real_id:starts("czarnoodzian") then
+            real_id = real_id:gsub("czarnoodziany zakapturzony", "czarnoodzianemu zakapturzonemu")
+            real_id = real_id:gsub("czarnoodziany", "czarnoodzianemu")
+            real_id = real_id:gsub("czarnoodziana zakapturzona", "czarnoodzianej zakapturzonej")
+            real_id = real_id:gsub("czarnoodziana", "czarnoodzianej")
+            for k,v in pairs(replace_szata_celownik) do
+                real_id = real_id:gsub(k,v)
+            end
+        end
+        sendAll("przekaz prowadzenie " .. real_id, false)
     else
         scripts:print_log("Nie ma takiego id")
     end
 end
 
 function ateam:zap_func(id)
-    if ateam.normal_ids and ateam.normal_ids[tonumber(id)] then
-        local real_id = ateam.normal_ids[tonumber(id)]
-        send("zapros ob_" .. real_id, false)
+    local id = ateam:retrieve_id(id)
+    if id then
+        send("zapros " .. id, false)
     end
 end
 
 function ateam:block_func(id)
-    local id_retrieved = nil
+    local id_retrieved = ateam:retrieve_id(id)
 
-    if ateam.enemy_op_ids[tonumber(id)] then
-        id_retrieved = ateam.enemy_op_ids[tonumber(id)]
-    elseif ateam.normal_ids[tonumber(id)] then
-        id_retrieved = ateam.normal_ids[tonumber(id)]
-    end
-
-    if id_retrieved then
-        local real_id = id_retrieved
-        local local_str = "ob_" .. real_id
-        send("zablokuj " .. local_str, true)
+    if id_retrieved then     
+        send("zablokuj " .. id_retrieved, true)
     else
         scripts:print_log("Nie ma takiego id")
     end

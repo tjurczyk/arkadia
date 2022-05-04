@@ -7,4 +7,3 @@ if scripts.event_handlers["skrypty/ui/gmcp_handlers/gmcp_state_handler.gmcp.char
 end
 
 scripts.event_handlers["skrypty/ui/gmcp_handlers/gmcp_state_handler.gmcp.char.state.gmcp_state_handler"] = registerAnonymousEventHandler("gmcp.char.state", gmcp_state_handler)
-

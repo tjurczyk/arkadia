@@ -14,10 +14,12 @@ function scripts_load_v2_config(name)
     scripts.config = ScriptsConfig:init(name, false)
     if scripts.config then
         scripts:print_log("laduje config dla profilu '" .. name .. "'", true)
-        scripts.config:load_config{silent=false, migration=true}
+        if not scripts.config:load_config{silent=false, migration=true} then
+            return
+        end
         misc_load_dump()
         scripts.config:run_macro('_profile_loaded')
-        tempTimer(4.0, function ()
+        tempTimer(1.0, function ()
             raiseEvent("profileLoaded")
             end
         )
@@ -47,7 +49,9 @@ function scripts_init_v2_config(name, wolacz)
             scripts:print_log("config nie zostal zainicjowany prawidlowo, to nie powinno sie zdarzyc, zglos na discordzie")
             error("scripts.config is nil in scripts_init_v2_config()")
         end
-        scripts.config:load_config{silent=true}
+        if not scripts.config:load_config{silent=true} then
+            return
+        end
         scripts.config:set_var{
             var="scripts.character_name",
             value=name,
@@ -88,7 +92,9 @@ function migrate_config_to_config_v2(name)
 
     if io.exists(getMudletHomeDir() .. "/" .. name .. ".txt") then
         scripts:print_log("Laduje stary config do migracji")
-        scripts_load_config(name, true)
+        if not scripts_load_config(name, true) then
+            return
+        end
         if load_my_settings then
             load_my_settings()
         end

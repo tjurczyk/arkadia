@@ -2,6 +2,21 @@ scripts.gags = scripts.gags or {
     own_spec_prefix = ""
 }
 
+local combat_types = {
+    "combat.avatar",
+    "combat.team",
+    "combat.others",
+    "room.combat"
+}
+
+function scripts.gags:is_combat()
+    return gmcp and gmcp.gmcp_msgs and table.index_of(combat_types, gmcp.gmcp_msgs.type)
+end
+
+function scripts.gags:is_type(type)
+    return gmcp and gmcp.gmcp_msgs and gmcp.gmcp_msgs.type == type
+end
+
 function scripts.gags:gag(power, total_power, kind)
     self:gag_prefix(string.format("%d/%d", power, total_power), kind)
 end
@@ -27,8 +42,9 @@ function scripts.gags:gag_prefix(gag_prefix, kind)
     selectCurrentLine()
     local str_replace = string.format("[%s] ", gag_prefix)
     prefix(str_replace)
-    selectString(str_replace, 1)
-    fg(scripts.gag_colors[kind])
+    if selectString(str_replace, 1) > -1 then
+        fg(scripts.gag_colors[kind])
+    end
     resetFormat()
 end
 

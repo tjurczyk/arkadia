@@ -1,11 +1,13 @@
 function scripts.ui.window_modify(windowName, text, ...)
-    for i = 1, getLineNumber(windowName), 1 do
+    for i = 0, getLineNumber(windowName), 1 do
         moveCursor(windowName, 1, i)
         local position = selectString(windowName, text, 1)
         if position > -1 then
             for arg_i = 1, arg.n, 1 do
                 arg[arg_i](windowName, { x = position, y = i}, text)
-                selectString(windowName, text, 1)
+                if selectString(windowName, text, 1) == -1 then
+                    break
+                end
             end
         end
     end

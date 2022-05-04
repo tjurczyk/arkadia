@@ -19,6 +19,7 @@ scripts.gag_colors["zaslony_nieudane"] = "dark_slate_blue"
 scripts.gag_colors["bron"] = "gold"
 
 scripts.gag_colors["npc"] = "floral_white"
+scripts.gag_colors["npc_spece"] = "floral_white"
 
 scripts.gag_settings = {
     ["moje_ciosy"] = 2,
@@ -37,6 +38,7 @@ scripts.gag_settings = {
     ["bloki"] = 2,
     ["bron"] = 2,
     ["npc"] = 2,
+    ["npc_spece"] = 2,
 }
 
 function scripts.ui:set_gag_options()

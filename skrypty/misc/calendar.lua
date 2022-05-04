@@ -2,7 +2,7 @@ misc["ishtar_calendar"] = {
     ["Birke"] = "Birke (wczesna wiosna)",
     ["Blathe"] = "Blathe (pozna wiosna)",
     ["Feainn"] = "Feainn (wczesne lato)",
-    ["Lammas"] = "Lemmas (pozne lato)",
+    ["Lammas"] = "Lammas (pozne lato)",
     ["Velen"] = "Velen (wczesna jesien)",
     ["Saovine"] = "Saovine (pozna jesien)",
     ["Yule"] = "Yule (wczesna zima)",
@@ -32,16 +32,16 @@ misc["imperium_calendar"] = {
 
 function misc:replace_string_calendar_ishtar(str)
     local new_calendar_str = misc.ishtar_calendar[str]
-    if new_calendar_str then
-        selectString(str, 1)
+    if new_calendar_str and selectString(str, 1) > -1 then
         replace(new_calendar_str)
     end
 end
 
 function misc:replace_string_calendar_imperium(str)
     local new_calendar_str = misc.imperium_calendar[str]
-    selectString(str, 1)
-    replace(new_calendar_str)
+    if selectString(str, 1) > -1 then
+        replace(new_calendar_str)
+    end
 end
 
 function trigger_func_skrypty_misc_calendar_pory_roku_ishtar()

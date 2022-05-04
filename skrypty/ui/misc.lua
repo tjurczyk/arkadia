@@ -5,20 +5,20 @@ function trigger_func_skrypty_ui_misc_nie_ma_kierunku()
 end
 
 function trigger_func_skrypty_ui_misc_jestes_zbyt_zmeczony()
-    selectString(matches[2], 1)
+    selectCurrentLine()
     fg("tan")
     resetFormat()
 end
 
 function trigger_func_skrypty_ui_misc_tablica_ogloszeniowa()
-    selectString(matches[2], 1)
+    selectCurrentLine()
     fg("cornsilk")
     resetFormat()
 end
 
 function trigger_func_skrypty_ui_misc_klapa_campogrotta()
     raiseEvent("playBeep")
-    selectString(matches[2], 1)
+    selectCurrentLine()
     fg("tomato")
     resetFormat()
 end
@@ -48,17 +48,12 @@ function trigger_func_skrypty_ui_misc_zniszczony_sprzet(owner)
 end
 
 function trigger_func_skrypty_ui_misc_wyverna_trucizna_off()
-    creplaceLine("<LawnGreen>\n\n[  ZDROWIE  ] <grey>" .. matches[2] .. "\n\n")
+    creplaceLine("<LawnGreen>\n\n[  ZDROWIE  ] <grey>" .. line .. "\n\n")
     scripts.ui:info_action_update("")
 end
 
-function trigger_func_skrypty_ui_misc_wyverna_trucizna_on()
-    creplaceLine("<tomato>\n\n[  ZDROWIE  ] <grey>" .. matches[2] .. "\n\n")
-    scripts.ui:info_action_update("ZATRUTY")
-end
-
-function trigger_func_skrypty_ui_misc_ghoul_trucizna()
-    creplaceLine("<tomato>\n\n[  ZDROWIE  ] <grey>" .. matches[1] .. "\n\n")
+function trigger_func_skrypty_ui_misc_trucizna_on()
+    creplaceLine("<tomato>\n\n[  ZDROWIE  ] <grey>" .. line .. "\n\n")
     scripts.ui:info_action_update("ZATRUTY")
 end
 
@@ -141,7 +136,7 @@ function trigger_func_skrypty_ui_misc_wskazuje_dol_trop()
 end
 
 function trigger_func_skrypty_ui_misc_gory_wyjscia_zejscia()
-    selectString(matches[2], 1)
+    selectCurrentLine()
     fg("LawnGreen")
     resetFormat()
 end
@@ -165,16 +160,35 @@ function trigger_func_skrypty_ui_misc_zywiolak_wykopuje_kogos()
 end
 
 function trigger_func_skrypty_ui_misc_powoz_maribor_kierunek()
-    selectCurrentLine()
-    local str_replace = " (Bodrog)"
-    suffix(str_replace)
-    resetFormat()
+    local cursor = selectString("stojacy powoz", 1)
+    if cursor then
+        moveCursor(cursor + 13, getLineNumber())
+        insertText(" (Bodrog)")
+    end
 end
 
 function trigger_func_skrypty_ui_misc_woz_maribor_kierunek()
+    local cursor = selectString("stojacy woz", 1)
+    if cursor then
+        moveCursor(cursor + 11, getLineNumber())
+        insertText(" (Grabowa Buchta)")
+    end
+end
+
+function trigger_func_skrypty_ui_misc_zmeczenie()
+    local level = matches[2]
+    local color = 'green'
+
+    if level == 'bardzo zmeczony' or level == 'bardzo zmeczona' or level == 'nieco wyczerpany' or level == 'nieco wyczerpana' or level == 'wyczerpany' or level == 'wyczerpana' then
+        color = 'ansi_light_yellow'
+    elseif level == 'bardzo wyczerpany' or level == 'bardzo wyczerpana' or level == 'wycienczony' or level == 'wycienczona' or level == 'calkowicie wycienczony' or level == 'calkowicie wycienczona' then
+        color = 'ansi_light_red'
+    end
+
     selectCurrentLine()
-    local str_replace = " (Grabowa Buchta)"
-    suffix(str_replace)
+    selectString(level, 1)
+    fg(color)
+
     resetFormat()
 end
 

@@ -1,5 +1,5 @@
 function trigger_func_skrypty_ui_gags_color_color_npc_goblin(value)
-    scripts.gags:gag(value, 6, "npc")
+    scripts.gags:gag(value, 6, "npc_spece")
 end
 
 function trigger_func_skrypty_ui_gags_color_color_npc_ogluch()
@@ -7,7 +7,7 @@ function trigger_func_skrypty_ui_gags_color_color_npc_ogluch()
         ateam:may_setup_paralyzed_name(matches[2])
     end
 
-    scripts.gags:gag_prefix("OGLUCH", "npc")
+    scripts.gags:gag_prefix("OGLUCH", "npc_spece")
 end
 
 function trigger_func_skrypty_ui_gags_color_color_npc_koniec_oglucha()

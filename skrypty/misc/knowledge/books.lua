@@ -44,6 +44,7 @@ scripts.misc.knowdlege.books = scripts.misc.knowdlege.books or {
         ["pek koralowych tabliczek"] = "zglebiaj wiedze o ryboludziach z peku koralowych tabliczek",
         ["skorzana makabryczna ksiege"] = "zglebiaj wiedze o nieumarlych z skorzanej makabrycznej ksiegi",
         ["pogryziona brazowa ksiege"] = "zglebiaj wiedze o goblinoidach z pogryzionej brazowej ksiegi",
+        ["pozlacana ciezka ksiege"] = "zglebiaj wiedze o smokach i smokowatych z pozlacanej ciezkiej ksiegi"
     },
     ["patterns_alt"] = {
         ["wielkiej opaslej ksiegi"] = {

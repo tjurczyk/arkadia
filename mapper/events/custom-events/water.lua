@@ -10,6 +10,9 @@ end
 
 function amap:drinking_bind()
     send("napij sie do syta wody", false)
+    if amap.water_animal then
+        send("zwnapoj zwierze")
+    end
 end
 
 registerAnonymousEventHandler("amapNewLocation", "amap_check_drinkable_room_event")

@@ -33,6 +33,7 @@ scripts.people["updating_names"] = false
 
 scripts.people["name_color"] = "yellow"
 scripts.people["guild_color"] = "dark_orange"
+scripts.people["enemy_color"] = "red"
 
 scripts.people["people_triggers"] = scripts.people["people_triggers"] or {}
 scripts.people["people_triggers_objects"] = scripts.people["people_triggers_objects"] or {}
@@ -47,12 +48,18 @@ scripts.people.show_binds_setting = 1
 scripts.people.colored_guilds = {}
 scripts.people.colored_people = {}
 
-
 scripts.people.trigger_guilds = {
     "CKN", "ES", "SC", "KS", "KM", "OS",
     "OHM", "SGW", "PE", "WKS", "LE", "KG",
     "KGKS", "MC", "OK", "RA", "GL", "ZT",
     "ZS", "ZH", "GP"
+}
+
+scripts.people.tokens_table = {
+    n1 = {},
+    n2 = {},
+    n3 = {},
+    n4 = {}
 }
 
 function trigger_func_skrypty_people_przedstawienie()
@@ -96,7 +103,7 @@ function alias_func_skrypty_people_pokaz_wrogow()
 end
 
 function alias_func_skrypty_people_dodaj_osobe()
-    scripts.people:add_person_to_db(matches[2])
+    scripts.people:add_person_to_db(matches[2], matches[3])
 end
 
 function alias_func_skrypty_people_usun_osobe()

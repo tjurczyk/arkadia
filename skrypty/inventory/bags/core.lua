@@ -16,6 +16,7 @@ function scripts.inv:construct_bag_id(bag_type, bag_count)
     return bag_full_id
 end
 
+
 function scripts.inv:put_into_bag(things, bag_type, bag_count)
     --[[
       Executes putting into the bag.
@@ -103,7 +104,7 @@ function scripts.inv:decorate_command_with_proper_bag_forms(command)
             local this_bag_name = scripts.inv[this_bag_id]
 
             replaced_bag_macro = scripts.inv[proper_bag_macro]
-
+            
             if replaced_bag_macro == nil then
                 -- this case is not defined, take raw form
                 replaced_bag_macro = ""
@@ -115,15 +116,15 @@ function scripts.inv:decorate_command_with_proper_bag_forms(command)
             if this_form == "desc" then
                 replaced_bag_macro = replaced_bag_macro .. this_bag_name
             elseif this_form == "dopelniacz" then
-                replaced_bag_macro = replaced_bag_macro .. scripts.inv.bag_in_dopelniacz[this_bag_name]
+                replaced_bag_macro = replaced_bag_macro .. scripts.inv:get_bag_in_dopelniacz(this_bag_id)
             elseif this_form == "biernik" then
-                replaced_bag_macro = replaced_bag_macro .. scripts.inv.bag_in_biernik[this_bag_name]
+                replaced_bag_macro = replaced_bag_macro .. scripts.inv:get_bag_in_biernik(this_bag_id)
             end
         end
         replaced_command = string.gsub(replaced_command, bag_macro, replaced_bag_macro, 1)
     end
 
-    return replaced_command
+    return replaced_command:gsub("  ", " ")
 end
 
 

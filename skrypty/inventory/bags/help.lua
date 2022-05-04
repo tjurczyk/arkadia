@@ -3,6 +3,9 @@ function scripts:bags_print_help()
     cecho("|                                                                                |\n")
     cecho("| Opis dzialania pojemnikow: http://arkadia.kamerdyner.net/pojemniki.html        |\n")
     cecho("|                                                                                |\n")
+    cecho("| Aby w latwy sposob ustawic pojemniki nalezy wpisac <yellow>/pojemnik<reset>                   |\n")
+    cecho("| Metoda zadziala, tyko na unikalne pojemniki, nie zadziala na dwa takiego       |\n")
+    cecho("| samego typu.                                                                   |\n")
     cecho("+--------------------------------------------------------------------------------+\n\n")
 
     types = { "money", "gems", "food", "other" }

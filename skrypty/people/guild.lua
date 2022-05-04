@@ -7,6 +7,7 @@ scripts.people.guilds = {
     ["OS"] = 6,
     ["OHM"] = 7,
     ["SGW"] = 8,
+    ["BK"] = 9,
     ["PE"] = 9,
     ["WKS"] = 10,
     ["LE"] = 11,
@@ -35,6 +36,10 @@ end
 function scripts.people:get_guild_name(code)
     if not code then
         error("Wrong input")
+    end
+
+    if code == "PE" then
+        code = "BK"
     end
 
     for k, v in pairs(scripts.people["guilds"]) do

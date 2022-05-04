@@ -328,6 +328,12 @@ Włącza oddzielne okno pokazujące zioła. Aktualizowany przez `/pokaz_ziola` o
 
 ---
 
+## `herbs.window.font_size`
+Ustawia wielkość czcionki w oknie ziół.
+
+
+---
+
 ## `scripts.inv.money_bag_1`
 ## `scripts.inv.gems_bag_1`
 ## `scripts.inv.food_bag_1`
@@ -624,6 +630,14 @@ Dozwolone wartosci:
 
 ---
 
+## `scripts.people.enemy_color`
+
+Wybor koloru dla wrogow.
+
+Kolory, ktore mozna wybrac sa dostepne w `/kolory` lub [tutaj](https://forums.mudlet.org/download/file.php?id=129&sid=be964a7a97580514727bfcb7cfcb5aec&mode=view)
+
+---
+
 ## `scripts.people.enemy_guilds`
 ## `scripts.people.enemy_people`
 
@@ -891,6 +905,27 @@ Symbol prawego nawiasu w oknie stanów, może być ciąg znaków
 
 ---
 
+## `ateam.options.leader_indicator_symbol`
+
+Ustawia symbol uzywany do oznaczenia prowadzacego druzyne w oknie kondycji
+
+---
+
+## `ateam.options.visible_stealth`
+
+Włacza/wyłącza ramki ukrytych postaci
+
+* `true` - imie postaci w bracketach
+* `false` - niewidoczne
+
+---
+
+## `ateam.options.visible_attacker_count`
+
+Włacza/wyłącza wyswietlanie liczby atakujacych wrogow
+
+---
+
 ## `scripts.ui.fancy.enabled`
 
 Włacza/wyłącz bardziej graficzny pasek stanów
@@ -899,6 +934,8 @@ Włacza/wyłącz bardziej graficzny pasek stanów
 * `false` - po staremu [#######]
 
 Wartość bool
+
+---
 
 ## `scripts.ui.footer_start`
 
@@ -1043,7 +1080,8 @@ Mozliwe opcje to:
 * `combat`         - stan walki + ochloniecia po walce
 * `package`        - aktualnie pobrana paczka pocztowa
 * `placeholder`    - puste miejsce, mozna dac odstep pomiedzy konkretnymi elementami, element moze byc deklarowany pare razy
-
+* `daylight`       - pora dnia (dzień/noc)
+* `season`         - pora roku
 ### Przykład
 ```json
 "scripts.ui.cfg.info_items" : ["weapon", "order", "cover", "killed", "sneaky", "hidden", "attack", "collect","mail", "alert", "lamp", "compass", "combat" ]
@@ -1119,6 +1157,7 @@ Ponizej jest opcja co ma byc robione:
   "bloki" : 2,
   "bron" : 2,
   "npc" : 2,
+  "npc_spece" : 2
 }
 ```
 
@@ -1137,6 +1176,7 @@ Ponizej jest opcja co ma byc robione:
 ## `scripts.gag_colors.zaslony_nieudane`
 ## `scripts.gag_colors.bron`
 ## `scripts.gag_colors.npc`
+## `scripts.gag_colors.npc_spece`
 
 Opcja kolorow do tagow (czyli tylko kiedy scripts.gag_settings ustawione ne 2)
 
@@ -1558,9 +1598,25 @@ Ustawienie startowe na konkretnej lokacji po zalogowaniu w 'name' powinna znalez
 * Linux/Mac - musi zaczynać się od `/` np. `/home/user/sounds/beep.wav`
 
 Dopuszczalna jest ścięzką względna do katalogu profilu np.
-* `arkadia/sounds/beep.wav`
+* `sounds/beep.wav`
 
 UWAGA! Sciezki powinny zawierac `/`, a nie `\`
+UWAGA! Pliki z katalogu skryptów nie powinny być używane, mogą powodować problemy z aktualizacją!
+
+---
+
+---
+
+## `scripts.sounds.pop`
+
+Ścieżka do pliku dla dźwięku pop.
+
+Ścieżka może być bezwględna (pełna) np.
+* Windows - musi zaczynać się od litery dysku np. `D:/SoundLibrary/souds/beep.wav`
+* Linux/Mac - musi zaczynać się od `/` np. `/home/user/sounds/beep.wav`
+
+Dopuszczalna jest ścięzką względna do katalogu profilu np.
+* `sounds/pop.wav`
 
 ---
 
@@ -1671,3 +1727,76 @@ Wyłącza z ustawień przemykania opcje przemykania z drużyną.
 Dostępne wartości:
 * `true` - przemykanie z drużyną pominięte
 * `false` - przemykanie z druyżną dostępne
+
+---
+
+## `scripts.transports.show_progress`
+
+Włącza/wyłącza pasek pokazujący orientacyjny czas do dotarcia do celu podczas korzystania ze środków transportu.
+
+Dostępne wartości:
+* `true` - pasek będzie widoczny
+* `false` - pasek będzie niewidoczny
+
+---
+
+## `amap.water_animal`
+
+Włącza/wyłącza pojenie zwierzęcia razem z piciem wody na lokacji.
+
+Dostępne wartości:
+* `true` - pojenie włączone
+* `false` - pojenie wyłączone
+
+---
+
+## `ateam.cover_command`
+
+Ustawienie komendy do zaslony, domyslnie jest `zaslon`.
+
+---
+
+## `scripts.ui.theme`
+
+Ustawienie wyglądu interefejsu skryptów.
+
+Dostępne wartości:
+* `arkadia`
+* `plain`
+
+---
+
+## `scripts.ui.combat_window.enabled`
+
+Włącza/wyłącza oddzielne okno walki.
+
+Dostępne wartości:
+* `true` - okno włączone
+* `false` - okno wyłączone
+
+---
+
+## `scripts.ui.combat_window.font_size`
+
+Wielkość czionki w oknie walki.
+
+---
+
+## `scripts.ui.combat_window.no_wrap`
+
+Wyłącza wrap w oknie walki.
+
+Dostępne wartości:
+* `true` - wrap wyłączony
+* `false` - wrap włączony
+
+---
+
+## `misc.improve.ignore_form`
+
+Globalny licznik postepów (`/postepy2`, `/postepy3`) nie będzie aktualizowany w przypadku odrabianie śmierci lub formy,
+chyba, że to ustawienia zostanie ustawione na `true`
+
+Dostępne wartości:
+* `true` - postępy będą dodawane nawet podczas odrabiania śmierci i formy
+* `false` - postępy nie będa doawane podczas odrabiania śmierci i formy

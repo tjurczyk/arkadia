@@ -2,32 +2,20 @@ function trigger_func_skrypty_ui_gags_color_color_innych_spece_bar_ktos_spec_kto
     scripts.gags:gag_spec("BAR", 0, 6, "innych_spece")
 end
 
-function trigger_func_skrypty_ui_gags_color_color_innych_spece_bar_ktos_spec_ktos_spec_1()
-    scripts.gags:gag_spec("BAR", 1, 6, "innych_spece")
+function trigger_func_skrypty_ui_gags_color_color_innych_spece_bar_ktos_spec_ktos_spec()
+    local value = get_barb_damage_value(matches["damage"])
+    scripts.gags:gag_spec("BAR", value, 6, "innych_spece")
+    if string.len(matches["stun"]) > 0 then
+        scripts.gags:gag_prefix("BAR OGL", "innych_spece")
+        ateam:may_setup_paralyzed_name(matches["target"])
+    end
 end
 
-function trigger_func_skrypty_ui_gags_color_color_innych_spece_bar_ktos_spec_ktos_spec_2()
-    scripts.gags:gag_spec("BAR", 2, 6, "innych_spece")
+function trigger_func_skrypty_ui_gags_color_color_innych_spece_bar_ktos_spec_mnie_spec()
+    local value = get_barb_damage_value(matches["damage"])
+    scripts.gags:gag_spec("BAR", value, 6, "innych_spece")
 end
 
-function trigger_func_skrypty_ui_gags_color_color_innych_spece_bar_ktos_spec_ktos_spec_3()
-    scripts.gags:gag_spec("BAR", 3, 6, "innych_spece")
+function trigger_func_skrypty_ui_gags_color_color_innych_spece_bar_ktos_fin()
+    scripts.gags:gag_prefix("BAR FIN", "innych_spece")
 end
-
-function trigger_func_skrypty_ui_gags_color_color_innych_spece_bar_ktos_spec_ktos_spec_4()
-    scripts.gags:gag_spec("BAR", 4, 6, "innych_spece")
-end
-
-function trigger_func_skrypty_ui_gags_color_color_innych_spece_bar_ktos_spec_ktos_spec_5()
-    scripts.gags:gag_spec("BAR", 5, 6, "innych_spece")
-end
-
-function trigger_func_skrypty_ui_gags_color_color_innych_spece_bar_ktos_spec_ktos_spec_6()
-    scripts.gags:gag_spec("BAR", 6, 6, "innych_spece")
-end
-
-function trigger_func_skrypty_ui_gags_color_color_innych_spece_bar_ktos_spec_ktos_ogluch()
-    scripts.gags:gag_prefix("BAR OGL", "innych_spece")
-    ateam:may_setup_paralyzed_name(matches[2])
-end
-

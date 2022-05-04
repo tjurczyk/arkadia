@@ -38,6 +38,22 @@ scripts.inv["bag_in_biernik"] = {
     ["szkatulka"] = "szkatulke",
 }
 
+local pronouns = {
+    m = { biernik = "swoj", dopelniacz = "swojego" },
+    f = { biernik = "swoja", dopelniacz = "swojej" }
+}
+
+scripts.inv["bag_pronouns"] = {
+    ["plecak"] = pronouns.m,
+    ["torba"] = pronouns.f,
+    ["worek"] = pronouns.m,
+    ["sakiewka"] = pronouns.f,
+    ["mieszek"] = pronouns.m,
+    ["sakwa"] = pronouns.f,
+    ["wor"] = pronouns.m,
+    ["szkatulka"] = pronouns.f
+}
+
 scripts.inv["money_bag_1"] = "plecak"
 scripts.inv["gems_bag_1"] = "plecak"
 scripts.inv["food_bag_1"] = "plecak"

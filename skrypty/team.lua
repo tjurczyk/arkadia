@@ -10,7 +10,8 @@ ateam = ateam or {
     my_id = nil,
     next_team_id = "A",
     to_support = nil,
-    cover_command = nil,
+    cover_command = "zaslon",
+    cover_command_click = nil,
     is_enemy_on_location = nil,
     attack_mode = 3,
     clicked_second_defense = false,
@@ -105,6 +106,7 @@ function trigger_func_skrypty_team_clear_absent()
     druzyna = string.gsub(druzyna, "[Kk]leczac. na ziemi ", "")
     druzyna = string.gsub(druzyna, "[Ss]kryt. za %w+ ", "")
     druzyna = string.gsub(druzyna, "[Ww]spinajac. sie ", "")
+    druzyna = string.gsub(druzyna, "[Ss]chodzac. w dol ", "")
 
     local disconnected = string.match(druzyna, "statua (%w+)")
     if disconnected then
@@ -115,8 +117,16 @@ function trigger_func_skrypty_team_clear_absent()
     end
     druzyna = string.split(druzyna, ", ")
 
+    local descs = {}
     for k, v in pairs(ateam.team) do
         if type(v) == "number" then
+            if descs[ateam.objs[v]["desc"]] then
+                local old_id = descs[ateam.objs[v]["desc"]]
+                local letter = ateam.team[old_id]
+                ateam.team[old_id] = nil
+                ateam.team[letter] = nil
+                raiseEvent("teamChanged")
+            end
             if not table.contains(druzyna, ateam.objs[v]["desc"]) then
                 scripts:print_log(ateam.objs[v]["desc"] .. " nie jest juz w druzynie.", true)
                 local letter = ateam.team[v]
@@ -124,16 +134,13 @@ function trigger_func_skrypty_team_clear_absent()
                 ateam.team[letter] = nil
                 raiseEvent("teamChanged")
             end
+            descs[ateam.objs[v]["desc"]] = v
         end
     end
 end
 
 function trigger_func_skrypty_team_invite_bind()
     ateam:bind_joining(matches[2])
-end
-
-function trigger_func_skrypty_team_killer_stop_watch()
-    misc.improve["improve_start_timestamp"] = getEpoch()
 end
 
 function alias_func_skrypty_team_kk()
@@ -304,3 +311,6 @@ function alias_func_skrypty_team_puszczanie_zaslon()
     ateam:switch_releasing_guards()
 end
 
+function alias_func_skrypty_team_last_activity()
+    ateam:check_team_last_activity()
+end

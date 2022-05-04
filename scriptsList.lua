@@ -372,7 +372,6 @@ return {
     "skrypty/ui/gags/color/color_innych_spece/str",
     "skrypty/ui/gags/color/color_innych_spece/fan",
     "skrypty/ui/gags/color/color_innych_spece/kor",
-    "skrypty/ui/gags/color/color_innych_spece/bar",
     "skrypty/ui/gags/color/color_innych_spece/gla",
     "skrypty/ui/gags/color/color_innych_spece/noz",
     "skrypty/ui/gags/color/color_innych_spece/par",

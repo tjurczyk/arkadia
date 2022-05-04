@@ -1,23 +1,48 @@
-function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_ognisty_trojzab_1()
-    scripts.gags:gag(1, 5, "moje_ciosy")
+-- Ognisty trojzab
+
+function trigger_func_skrypty_ui_gags_moje_ciosy_ognisty_trojzab(value)
+    scripts.gags:gag(value, 5, "moje_ciosy")
 end
 
-function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_ognisty_trojzab_2()
-    scripts.gags:gag(2, 5, "moje_ciosy")
+function trigger_func_skrypty_ui_gags_innych_ciosy_ognisty_trojzab(value)
+    local target = rex.match(line, "\\b(?:ciebie|cie|ci)\\b") and "innych_ciosy_we_mnie" or "innych_ciosy"
+    scripts.gags:gag(value, 5, target)
 end
 
-function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_ognisty_trojzab_3()
-    scripts.gags:gag(3, 5, "moje_ciosy")
+-- Srebrzysta kosa
+
+function trigger_func_skrypty_ui_gags_moje_ciosy_kosa(value)
+    scripts.gags:gag(value, 7, "moje_ciosy")
 end
 
-function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_ognisty_trojzab_4()
-    scripts.gags:gag(4, 5, "moje_ciosy")
+function trigger_func_skrypty_ui_gags_innych_ciosy_kosa(value)
+
+    if value == 2 and string.match(line, "lekko") then
+        return
+    end
+
+    local target = rex.match(line, "\\b(?:ciebie|cie|ci)\\b") and "innych_ciosy_we_mnie" or "innych_ciosy"
+    scripts.gags:gag(value, 7, target)
 end
 
-function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_ognisty_trojzab_5()
-    scripts.gags:gag(5, 5, "moje_ciosy")
+-- Adamantytowa partyzana
+
+function trigger_func_skrypty_ui_gags_moje_ciosy_partyzana(value)
+    scripts.gags:gag(value, 7, "moje_ciosy")
 end
 
-function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_ognisty_trojzab_fin()
-    scripts.gags:gag_prefix("FIN", "moje_ciosy")
+function trigger_func_skrypty_ui_gags_innych_ciosy_partyzana(value)
+    local target = rex.match(line, "\\b(?:ciebie|cie|ci)\\b") and "innych_ciosy_we_mnie" or "innych_ciosy"
+    scripts.gags:gag(value, 7, target)
+end
+
+-- Kobaltowa halabarda
+
+function trigger_func_skrypty_ui_gags_moje_ciosy_kobaltowa(value)
+    scripts.gags:gag(value, 5, "moje_ciosy")
+end
+
+function trigger_func_skrypty_ui_gags_innych_ciosy_kobaltowa(value)
+    local target = rex.match(line, "\\b(?:ciebie|cie|ci)\\b") and "innych_ciosy_we_mnie" or "innych_ciosy"
+    scripts.gags:gag(value, 5, target)
 end

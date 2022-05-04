@@ -16510,6 +16510,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 									<string>Zaciskasz dlon na rekojesci szponiastej dwusegmentowej maczugi powodujac, ze jej najezona ostrzami glowica kolysze sie ociezale na boki.</string>
 									<string>Zaciskasz dlon na misternym snieznobialym harpunie i przez chwile czujesz, jak bron wibruje od zgromadzonej w niej mocy.</string>
 									<string>Zaciskasz dlonie na rekojesci lodowatej dlugiej maczugi.</string>
+									<string>Zaciskasz dlon na starozytnym koscianym berle i przez chwile czujesz, jak zamknieta w szponiastej glowicy kula wibruje od zgromadzonej w niej mocy.</string>
 								</regexCodeList>
 								<regexCodePropertyList>
 									<integer>3</integer>
@@ -16517,6 +16518,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 									<integer>3</integer>
 									<integer>3</integer>
 									<integer>2</integer>
+									<integer>3</integer>
 								</regexCodePropertyList>
 							</Trigger>
 						</TriggerGroup>

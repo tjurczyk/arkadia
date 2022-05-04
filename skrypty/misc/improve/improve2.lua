@@ -13,8 +13,6 @@ function misc.improve:add_improvee2(val, id)
     local month = getTime(true, "MM")
     local day = getTime(true, "dd")
 
-    display(id)
-
     if not id then
         entry = db:fetch(misc.improve.db_improvee.improvee, {
             db:eq(misc.improve.db_improvee.improvee.year, year),

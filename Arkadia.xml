@@ -2483,7 +2483,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 									<colorTriggerFgColor>#000000</colorTriggerFgColor>
 									<colorTriggerBgColor>#000000</colorTriggerBgColor>
 									<regexCodeList>
-										<string>mistern\w* obosieczny\w* topor\w*</string>
+										<string>mistern\w+ obosieczn\w+ topor\w+</string>
 									</regexCodeList>
 									<regexCodePropertyList>
 										<integer>1</integer>
@@ -2712,7 +2712,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
 												<string>^.* z szerokiego zamachu tnie misternym obosiecznym toporem</string>
-												<string>^.* wykorzystuje .* misternego obosieczneg topora .*pozostawiajac gleboka rane\.$</string>
+												<string>^(.+?) wykorzystuje blad (?P&lt;target&gt;.+?) i wbija mu sterczacy z rekojesci misternego obosiecznego topora szpikulec w (?P&lt;where&gt;.+?), pozostawiajac gleboka rane\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
 												<integer>1</integer>
@@ -2733,7 +2733,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerFgColor>#000000</colorTriggerFgColor>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
-												<string>^Rozpedzone ostrze dzierzonego przez (?!ciebie).* misternego obosiecznego topora</string>
+												<string>^Rozpedzone ostrze dzierzonego przez (?!ciebie).+? misternego obosiecznego topora</string>
 												<string>^Naglym pchnieciem .* wbija .* misternego obosiecznego topora .* powodujac paskudny krwotok\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
@@ -14681,7 +14681,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>bierze potezny zamach i wyprowadza.*ktory ma zmasakrowac.*Jednak [a-z]+ bron jakims cudem mija cel, nie czyniac</string>
+											<string>^(?P&lt;attacker&gt;.+?) bierze potezny zamach i wyprowadza .+? cios, ktory ma zmasakrowac (?P&lt;target&gt;.+?)\. Jednak jego bron malo nie wypadajac mu z reki, mija cel o dobre pol metra, nie czyniac przeciwnikowi najmniejszej krzywdy\.$</string>
 										</regexCodeList>
 										<regexCodePropertyList>
 											<integer>1</integer>

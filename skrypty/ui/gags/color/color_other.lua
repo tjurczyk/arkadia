@@ -2,17 +2,19 @@ function get_kill_count(linijka)
     local bestigory = {"poteznego","rogatego","gigantycznego","ogromnego","gargantuicznego","przerazajacego","muskularnego","umiesnionego"}
     local Oneadj_two_word_mobs = {"kamiennego trolla","lodowego trolla"}
     local l_keys = string.split(linijka, " ")
+   
     if table.size(l_keys) == 3 and l_keys[3] == "zwierzoczleka" and (table.contains(bestigory, l_keys[1]:lower()) or table.contains(Bestigor.Adjectives, l_keys[2]:lower())) then
-        local retrieved = db:fetch_sql(misc.counter2.db_log.counter2_log, "select count(*) as day from counter2_log where text like '%zwierzoczleka%' and (text like '%poteznego%' or  text like '%rogatego%' or  text like '%gigantycznego%' or  text like '%ogromnego%' or text like '%gargantuicznego%' or text like '%przerazajacego%' or text like '%muskularnego%' or text like '%umiesnionego%')")
+        local retrieved = db:fetch_sql(misc.counter2.db_log.counter2_log, "select count(*) as day from counter2_log where character='" .. scripts.character_name .. "' AND text like '%zwierzoczleka%' and (text like '%poteznego%' or  text like '%rogatego%' or  text like '%gigantycznego%' or  text like '%ogromnego%' or text like '%gargantuicznego%' or text like '%przerazajacego%' or text like '%muskularnego%' or text like '%umiesnionego%')")
         for k, v in pairs(retrieved) do
             if v["day"] then return v["day"] end
             break
         end
-    elseif table.size(l_keys)==3 and table.contains(misc.counter.utils.Oneadj_two_word_mobs, l_keys[2] .. " " .. l_keys[3])  then
-            l_key = l_keys[2] .. " " .. l_keys[3]
-            local retrieved = db:fetch_sql(misc.counter2.db_log.counter2_log, "select count(*) as day from counter2_log where text like '%'"..l_key)
+    elseif table.size(l_keys)==3 and table.contains(Oneadj_two_word_mobs, l_keys[2] .. " " .. l_keys[3]) then
+            local opis = l_keys[2] .. " " .. l_keys[3]
+            local sql_query = "select count(*) as day from counter2_log where character='" .. scripts.character_name .. "' AND text like '%".. opis .. "%'"
+            local retrieved = db:fetch_sql(misc.counter2.db_log.counter2_log, sql_query)
             for k, v in pairs(retrieved) do
-                if v["amount"] then return v["amount"] end
+                if v["day"] then return v["day"] end
                 break
             end
     else
@@ -38,6 +40,7 @@ function trigger_func_skrypty_ui_gags_color_color_other_zabiles_color()
     selectCurrentLine()
     creplaceLine("\n\n<tomato>[  " .. matches[3]:upper() .. "  ] <grey>" .. matches[2] .. counter_str .. "\n\n")
     scripts.inv.collect:killed_action()
+    raiseEvent("killed_action", matches[4])
     resetFormat()
 end
 

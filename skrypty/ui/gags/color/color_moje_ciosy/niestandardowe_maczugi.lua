@@ -143,3 +143,20 @@ function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_starozytne_kosciane
     else end
     scripts.gags:gag(value, 5, "moje_ciosy")
 end
+
+function trigger_func_skrypty_ui_gags_color_color_innych_ciosy_starozytne_kosciane_berlo()
+    local dmg = matches["damage"]
+    local value = -1
+        if dmg == "ledwie zahaczajac" then value = 1
+    elseif dmg == "bolesnie obijajac" then value = 2
+    elseif dmg == "nieznacznie tlukac" then value = 3
+    elseif dmg == "dotkliwie raniac" then value = 4
+    elseif dmg == "bardzo ciezko lomoczac" then value = 5
+    elseif dmg == "masakrujac" then value = 6
+    else cecho("<red>" .. dmg) end
+    scripts.gags:gag(value, 7, "innych_ciosy")
+end
+
+function trigger_func_skrypty_ui_gags_color_color_innych_ciosy_starozytne_kosciane_berlo_fin()
+    scripts.gags:gag_prefix("FIN", "innych_ciosy")
+end

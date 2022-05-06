@@ -61,6 +61,6 @@ function trigger_func_skrypty_ui_gags_innych_ciosy_adamantytowy_mlot(value)
         return
     end
 
-    local target = rex.match(getCurrentLine(), "\\b(?:ciebie|cie|ci)\\b") and "innych_ciosy_we_mnie" or "innych_ciosy"
+    local target = rex.match(line, "\\b(?:ciebie|cie|ci)\\b") and "innych_ciosy_we_mnie" or "innych_ciosy"
     scripts.gags:gag(value, 6, target)
 end

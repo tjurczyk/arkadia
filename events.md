@@ -284,9 +284,9 @@ Argumenty:
 ## `hidden_state`
 
 Argumenty:
-  * `arg1`: status ukrycia
+  * `arg1`: czas liczony od ukrycia
 
-Event podniesiony kiedy zmienia sie status ukrycia
+Event podniesiony po ukryciu sie
 
 ---
 
@@ -302,7 +302,7 @@ Argumenty:
 ## `guard_state`
 
 Argumenty:
-  * `arg1`: status zaslony (czas pozostaly lub OK)
+  * `arg1`: czas liczony od zaslony
 
 Event podniesiony kiedy zmienia sie status uzycia zaslony
 
@@ -311,7 +311,7 @@ Event podniesiony kiedy zmienia sie status uzycia zaslony
 ## `order_state`
 
 Argumenty:
-  * `arg1`: status rozkazu (czas pozostaly lub OK)
+  * `arg1`: czas liczony od wydania rozkazu
 
 Event podniesiony kiedy zmienia sie status wydania rozkazu
 
@@ -364,3 +364,10 @@ Event podniesiony po przeprocesowaniu wiadomosci przychodzacej.
 Argument:
   * `arg1`: typ wiadomosci
   * `arg2`: tekst wiadomosci
+
+## `killed_action`
+
+Event podniesiony po zabiciu.
+
+Argument:
+  * `arg1`: opis zabitego

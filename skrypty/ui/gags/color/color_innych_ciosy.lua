@@ -127,3 +127,12 @@ function trigger_func_skrypty_ui_gags_color_color_innych_ciosy_ktos_masakruje()
     color_hit(6)
 end
 
+function trigger_func_skrypty_ui_gags_innych_ciosy_pajeczaki(value)
+
+    if value == 3 and string.match(line, "powaznie") then
+        return
+    end
+
+    local target = string.match(line, " cie ") and "innych_ciosy_we_mnie" or "innych_ciosy"
+    scripts.gags:gag(value, 6, target)
+end

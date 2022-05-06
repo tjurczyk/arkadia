@@ -40,6 +40,7 @@ function trigger_func_skrypty_ui_gags_color_color_other_zabiles_color()
     selectCurrentLine()
     creplaceLine("\n\n<tomato>[  " .. matches[3]:upper() .. "  ] <grey>" .. matches[2] .. counter_str .. "\n\n")
     scripts.inv.collect:killed_action()
+    raiseEvent("killed_action", matches[4])
     resetFormat()
 end
 

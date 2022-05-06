@@ -20446,12 +20446,14 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^.*Zrecznie zaslaniasz .*</string>
-							<string>^.*Z wprawa stajesz pomiedzy.*, przyjmujac na siebie nadchodzace ciosy\.$</string>
-							<string>^.*Stajesz u boku .*, gotow w kazdej chwili zaslonic .*\.$</string>
-							<string>[ &gt;]*Unosisz swoja .*i szybko przesuwasz sie za .*, kryjac sie przed atakami</string>
+							<string>^[ &gt;]*Zrecznie zaslaniasz ([\[a-zA-Z (),!\]]+) przed ciosami ([a-zA-Z (),!\]]+)\.$</string>
+							<string>^[ &gt;]*Z wprawa stajesz pomiedzy ([\[a-zA-Z (),!\]]+) a ([\[a-zA-Z (),!\]]+), przyjmujac na siebie nadchodzace ciosy\.$</string>
+							<string>^[ &gt;]*Stajesz u boku ([a-zA-Z (),!\]]+), gotow w kazdej chwili zaslonic .* przed nadchodzacym niebezpieczenstwem\.$</string>
+							<string>^[ &gt;]*Unosisz swoja .+? i szybko przesuwasz sie za .+?, kryjac sie przed atakami</string>
+							<string>^[ &gt;]*Zdecydowanym krokiem wysuwasz sie przed [\[a-zA-Z (),!\]]+, zimnym spojrzeniem dajac wszystkim do zrozumienia, ze moga sie do (niego|niej) zblizyc jedynie po twoim trupie\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
+							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
@@ -29974,29 +29976,8 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 			<packageName></packageName>
 			<time>00:00:00.000</time>
 			<Timer isActive="no" isFolder="no" isTempTimer="no" isOffsetTimer="no">
-				<name>hidden_timer</name>
-				<script>timer_func_skrypty_hidden_timer()</script>
-				<command></command>
-				<packageName></packageName>
-				<time>00:00:01.000</time>
-			</Timer>
-			<Timer isActive="no" isFolder="no" isTempTimer="no" isOffsetTimer="no">
 				<name>lamp_info_timer</name>
 				<script>timer_func_skrypty_lamp_info_timer()</script>
-				<command></command>
-				<packageName></packageName>
-				<time>00:00:01.000</time>
-			</Timer>
-			<Timer isActive="no" isFolder="no" isTempTimer="no" isOffsetTimer="no">
-				<name>cover_timer</name>
-				<script>timer_func_skrypty_cover_timer()</script>
-				<command></command>
-				<packageName></packageName>
-				<time>00:00:01.000</time>
-			</Timer>
-			<Timer isActive="no" isFolder="no" isTempTimer="no" isOffsetTimer="no">
-				<name>order_timer</name>
-				<script>timer_func_skrypty_order_timer()</script>
 				<command></command>
 				<packageName></packageName>
 				<time>00:00:01.000</time>

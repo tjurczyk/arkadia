@@ -2,7 +2,7 @@ function hidden_state(name, seconds)
 end
 
 function timer_func_skrypty_hidden_timer()
-    local dt = getEpoch() - scripts.ui.info_hidden_epoch
+    local dt = getEpoch() - scripts.ui.hidden_state_epoch
     if dt >= 15 then
         stopNamedTimer("arkadia", "hidden_timer")
         scripts.ui.states_window_nav_states["hidden_state"] = ""
@@ -21,7 +21,7 @@ if scripts.event_handlers["skrypty/ui/gmcp_handlers/hidden_state.hidden_state.hi
     killAnonymousEventHandler(scripts.event_handlers["skrypty/ui/gmcp_handlers/hidden_state.hidden_state.hidden_state"])
 end
 
-scripts.ui.info_hidden_epoch = 0
+scripts.ui.hidden_state_epoch = 0
 scripts.event_handlers["skrypty/ui/gmcp_handlers/hidden_state.hidden_state.hidden_state"] = registerAnonymousEventHandler("hidden_state", hidden_state)
 
 registerNamedTimer("arkadia", "hidden_timer", 0.1, timer_func_skrypty_hidden_timer, true)

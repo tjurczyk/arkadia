@@ -2,7 +2,7 @@ function order_state(name, seconds)
 end
 
 function timer_func_skrypty_order_timer()
-    local dt = getEpoch() - scripts.ui.order_epoch
+    local dt = getEpoch() - scripts.ui.order_state_epoch
     if dt >= 15 then
         stopNamedTimer("arkadia", "order_timer")
         scripts.ui.states_window_nav_states["order_state"] = scripts.ui["states_window_nav_printable_val_map"]["order_state"]["ok"]
@@ -20,7 +20,7 @@ if scripts.event_handlers["skrypty/ui/gmcp_handlers/order_state.order_state.orde
     killAnonymousEventHandler(scripts.event_handlers["skrypty/ui/gmcp_handlers/order_state.order_state.order_state"])
 end
 
-scripts.ui.order_epoch = 0
+scripts.ui.order_state_epoch = 0
 scripts.event_handlers["skrypty/ui/gmcp_handlers/order_state.order_state.order_state"] = registerAnonymousEventHandler("order_state", order_state)
 
 registerNamedTimer("arkadia", "order_timer", 0.1, timer_func_skrypty_order_timer, true)

@@ -43,46 +43,6 @@ function alias_func_skrypty_lua_code()
     if r ~= nil then display(r) end
 end
 
-function timer_func_skrypty_hidden_timer()
-    if scripts.ui.info_hidden_value >= 15 then
-        scripts.ui.info_hidden_value = "ok"
-        scripts.ui.states_window_nav_states.hidden_state = 15
-        disableTimer("hidden_timer")
-    else
-        scripts.ui.info_hidden_value = getEpoch() - scripts.ui.info_hidden_epoch
-        scripts.ui.states_window_nav_states.hidden_state = scripts.ui.states_window_nav_states.hidden_state + 1
-    end
-    ateam:print_status()
-    raiseEvent("hidden_state", scripts.ui.info_hidden_value)
-end
-
 function timer_func_skrypty_lamp_info_timer()
     scripts.inv.lamp:process_lamp_counter()
-end
-
-function timer_func_skrypty_cover_timer()
---pablo start
-    
-	local dt = scripts.ui.cover_epoch and getEpoch() - scripts.ui.cover_epoch or 0
-    local state
-    if dt > 5 then
-        state = "<green>ok"
-        disableTimer("cover_timer")
-    else
-        state = "<red>"..string.format("%.1f", dt)
-    end
-    scripts.ui.states_window_nav_states["guard_state"] = state
-    raiseEvent("guard_state", state)
-end
-
-function timer_func_skrypty_order_timer()
-    if scripts.ui.order_wait_time == 1 then
-        scripts.ui.order_wait_time = "ok"
-        scripts.ui.states_window_nav_states["order_state"] = "ok"
-        disableTimer("order_timer")
-    else
-        scripts.ui.order_wait_time = scripts.ui.order_wait_time - 1
-        scripts.ui.states_window_nav_states["order_state"] = scripts.ui.states_window_nav_states["order_state"] - 1
-    end
-    raiseEvent("order_state", scripts.ui.order_wait_time)
 end

@@ -3,7 +3,7 @@ function scripts.ui:navbar_updates(name, force)
         return
     end
 
-    scripts.ui.states_window_navbar_str = ""
+    local navbar_str = ""
 
     for k, v in pairs(scripts.ui.cfg["states_window_nav_elements"]) do
         local key = scripts.ui:decode_states_window_navbar_key(v)
@@ -11,20 +11,17 @@ function scripts.ui:navbar_updates(name, force)
         local printable_val = scripts.ui:navbar_get_printable_elem(key)
        
         if printable_val == nil then
-            printable_val = scripts.ui.states_window_nav_states[name]
--- pablo start
-            if type(printable_val) == "boolean" then
-                printable_val = "?"
-            end
--- pablo end
+            printable_val = scripts.ui.states_window_nav_states[key]
         end
-
-        scripts.ui.states_window_navbar_str = scripts.ui.states_window_navbar_str .. printable_key .. "<white>: " .. printable_val
+        
+        navbar_str = navbar_str .. printable_key .. "<white>: " .. printable_val
 
         if k ~= #scripts.ui.cfg["states_window_nav_elements"] then
-            scripts.ui.states_window_navbar_str = scripts.ui.states_window_navbar_str .. "<white> | "
+            navbar_str = navbar_str .. "<white> | "
         end
     end
+
+    scripts.ui.states_window_navbar_str = navbar_str
 
     ateam:print_status()
 end

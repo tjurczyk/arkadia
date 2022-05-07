@@ -1,8 +1,14 @@
 function ui_new_location_event(...)
     if not amap["went_sneaky"] then
-        trigger_func_skrypty_ui_footer_elements_hidden_off()
+        scripts.ui.info_hidden_value = ""
+        scripts.ui.states_window_nav_states["hidden_state"] = ""
+        disableTimer("hidden_timer")
+        raiseEvent("hidden_state", "")
     else
-        trigger_func_skrypty_ui_footer_elements_hidden_on()
+        scripts.ui.info_hidden_value = 0
+        scripts.ui.states_window_nav_states["hidden_state"] = 0
+        enableTimer("hidden_timer")
+        raiseEvent("hidden_state", 0)
     end
 
     amap["went_sneaky"] = false

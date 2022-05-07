@@ -1,16 +1,11 @@
 function trigger_func_skrypty_ui_footer_elements_hidden_on()
-    scripts.ui.info_hidden_value = 0
-    scripts.ui.states_window_nav_states["hidden_state"] = 0
-    enableTimer("hidden_timer")
-    raiseEvent("hidden_state", 0)
+    scripts.ui.hidden_state_epoch = getEpoch()
+    resumeNamedTimer("arkadia", "hidden_timer")
 end
 
 function trigger_func_skrypty_ui_footer_elements_hidden_off()
     amap["went_sneaky"] = false
-    scripts.ui.info_hidden_value = ""
-    scripts.ui.states_window_nav_states["hidden_state"] = ""
-    disableTimer("hidden_timer")
-    raiseEvent("hidden_state", "")
+    scripts.ui.hidden_state_epoch = 0
 end
 
 function trigger_func_skrypty_ui_footer_elements_weapon_on()
@@ -28,26 +23,17 @@ end
 
 function trigger_func_skrypty_ui_footer_elements_cover_action_success()
     ateam.cover_command_click = nil
-    disableTimer("cover_timer")
-    scripts.ui.cover_wait_time = 5
-    scripts.ui.states_window_nav_states["guard_state"] = 5
-    enableTimer("cover_timer")
-    raiseEvent("guard_state", 5)
+    scripts.ui.guard_state_epoch = getEpoch()
+    resumeNamedTimer("arkadia", "cover_timer")
 end
 
 function trigger_func_skrypty_ui_footer_elements_cover_action_fail()
-    disableTimer("cover_timer")
-    scripts.ui.cover_wait_time = 5
-    scripts.ui.states_window_nav_states["guard_state"] = 5
-    enableTimer("cover_timer")
-    raiseEvent("guard_state", 5)
+    scripts.ui.guard_state_epoch = getEpoch()
+    resumeNamedTimer("arkadia", "cover_timer")
 end
 
 function trigger_func_skrypty_ui_footer_elements_order_action()
-    disableTimer("order_timer")
-    scripts.ui.states_window_nav_states["order_state"] = 15
-    scripts.ui.order_wait_time = 15
-    enableTimer("order_timer")
-    raiseEvent("order_state", 5)
+    scripts.ui.order_state_epoch = getEpoch()
+    resumeNamedTimer("arkadia", "order_timer")
 end
 

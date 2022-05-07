@@ -23,34 +23,35 @@ function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_jatagan_masakrujesz
     scripts.gags:gag(6, 6, "moje_ciosy")
 end
 
-function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_espadon_1()
-    scripts.gags:gag(1, 7, "moje_ciosy")
+-- Espadon
+
+function trigger_func_skrypty_ui_gags_moje_ciosy_espadon(value)
+    scripts.gags:gag(value, 7, "moje_ciosy")
 end
 
-function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_espadon_2()
-    scripts.gags:gag(2, 7, "moje_ciosy")
+function trigger_func_skrypty_ui_gags_innych_ciosy_espadon(value)
+    local target = rex.match(line, "\\b(?:ciebie|cie|ci)\\b") and "innych_ciosy_we_mnie" or "innych_ciosy"
+    scripts.gags:gag(value, 7, target)
 end
 
-function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_espadon_3()
-    scripts.gags:gag(3, 7, "moje_ciosy")
+-- Kruczoczarny miecz
+
+function trigger_func_skrypty_ui_gags_moje_ciosy_kruczoczarny_miecz(value)
+    scripts.gags:gag(value, 5, "moje_ciosy")
 end
 
-function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_espadon_4()
-    scripts.gags:gag(4, 7, "moje_ciosy")
+function trigger_func_skrypty_ui_gags_innych_ciosy_kruczoczarny_miecz(value)
+    local target = rex.match(line, "\\b(?:ciebie|cie|ci)\\b") and "innych_ciosy_we_mnie" or "innych_ciosy"
+    scripts.gags:gag(value, 5, target)
 end
 
-function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_espadon_5()
-    scripts.gags:gag(5, 7, "moje_ciosy")
+-- Arlekiny
+
+function trigger_func_skrypty_ui_gags_moje_ciosy_arlekiny(value)
+    scripts.gags:gag(value, 6, "moje_ciosy")
 end
 
-function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_espadon_6()
-    scripts.gags:gag(6, 7, "moje_ciosy")
-end
-
-function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_espadon_7()
-    scripts.gags:gag(7, 7, "moje_ciosy")
-end
-
-function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_espadon_fin()
-    scripts.gags:gag_prefix("FIN", "moje_ciosy")
+function trigger_func_skrypty_ui_gags_innych_ciosy_arlekiny(value)
+    local target = rex.match(line, "\\b(?:ciebie|cie|ci)\\b") and "innych_ciosy_we_mnie" or "innych_ciosy"
+    scripts.gags:gag(value, 6, target)
 end

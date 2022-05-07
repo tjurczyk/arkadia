@@ -19,6 +19,14 @@ function trigger_func_skrypty_ui_gags_color_color_innych_ciosy_ktos_lekko_rani()
         return
     end
 
+    if string.match(line, "adamantytowym mlotem bojowym") then
+        return
+    end    
+
+    if string.match(line, "srebrzystej kosy bojowej") then
+        return
+    end 
+
     color_hit(2)
 end
 
@@ -31,7 +39,8 @@ function trigger_func_skrypty_ui_gags_color_color_innych_ciosy_ktos_rani()
         ["i"] = true,
         ["mocno"] = true,
         ["krwawo"] = true,
-        ["smiertelnie"] = true
+        ["smiertelnie"] = true,
+        ["espadona"] = true
     }
 
     if ignore_list[matches[3]] then
@@ -46,7 +55,7 @@ function trigger_func_skrypty_ui_gags_color_color_innych_ciosy_ktos_rani()
         return
     end
 
-    if string.match(line, "upiornym ciemnym mlocie") then
+    if rex.match(line, "upiorn\\w+ ciemn\\w+") then
         return
     end
 
@@ -101,7 +110,8 @@ function trigger_func_skrypty_ui_gags_color_color_innych_ciosy_ktos_masakruje()
         ["pelnego"] = true,
         ["paskudnie"] = true,
         ["Twardym"] = true,
-        ["desperacki"] = true
+        ["desperacki"] = true,
+        ["espadonem"] = true
     }
 
     for k, v in pairs(ignore_list) do
@@ -110,6 +120,19 @@ function trigger_func_skrypty_ui_gags_color_color_innych_ciosy_ktos_masakruje()
         end
     end
 
+    if string.match(line, "srebrzysta kosa bojowa") then
+        return
+    end
+
     color_hit(6)
 end
 
+function trigger_func_skrypty_ui_gags_innych_ciosy_pajeczaki(value)
+
+    if value == 3 and string.match(line, "powaznie") then
+        return
+    end
+
+    local target = string.match(line, " cie ") and "innych_ciosy_we_mnie" or "innych_ciosy"
+    scripts.gags:gag(value, 6, target)
+end

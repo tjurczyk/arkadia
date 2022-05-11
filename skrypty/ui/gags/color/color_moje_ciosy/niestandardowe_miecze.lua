@@ -30,7 +30,7 @@ function trigger_func_skrypty_ui_gags_moje_ciosy_espadon(value)
 end
 
 function trigger_func_skrypty_ui_gags_innych_ciosy_espadon(value)
-    local target = rex.match(getCurrentLine(), "\\b(?:ciebie|cie|ci)\\b") and "innych_ciosy_we_mnie" or "innych_ciosy"
+    local target = rex.match(line, "\\b(?:ciebie|cie|ci)\\b") and "innych_ciosy_we_mnie" or "innych_ciosy"
     scripts.gags:gag(value, 7, target)
 end
 

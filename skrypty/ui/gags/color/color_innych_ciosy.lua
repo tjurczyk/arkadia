@@ -19,13 +19,13 @@ function trigger_func_skrypty_ui_gags_color_color_innych_ciosy_ktos_lekko_rani()
         return
     end
 
-    if string.match(line, "adamantytowym mlotem bojowym") then
+    if rex.match(line, "adamantytow\\w+ mlot\\w+ bojow\\w+") then
         return
-    end    
+    end
 
     if string.match(line, "srebrzystej kosy bojowej") then
         return
-    end 
+    end
 
     color_hit(2)
 end

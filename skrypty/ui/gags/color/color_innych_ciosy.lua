@@ -124,6 +124,10 @@ function trigger_func_skrypty_ui_gags_color_color_innych_ciosy_ktos_masakruje()
         return
     end
 
+    if line:starts("Ostrze poszczerbionego oburecznego miecza") then
+        return
+    end
+
     color_hit(6)
 end
 

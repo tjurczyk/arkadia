@@ -38,22 +38,22 @@ end
 
 -- Kobaltowa halabarda
 
-function trigger_func_skrypty_ui_gags_moje_ciosy_kobaltowa(value)
-    scripts.gags:gag(value, 6, "moje_ciosy")
+function trigger_func_skrypty_ui_gags_ciosy_kobaltowa(value)
+    if scripts.gags:is_type("combat.avatar") then
+        scripts.gags:gag(value, 6, "moje_ciosy")
+    else
+        local target = rex.match(line, "\\b(?:ciebie|cie|ci)\\b") and "innych_ciosy_we_mnie" or "innych_ciosy"
+        scripts.gags:gag(value, 6, target)
+    end
 end
 
-function trigger_func_skrypty_ui_gags_innych_ciosy_kobaltowa(value)
-    local target = rex.match(line, "\\b(?:ciebie|cie|ci)\\b") and "innych_ciosy_we_mnie" or "innych_ciosy"
-    scripts.gags:gag(value, 6, target)
-end
+function trigger_func_skrypty_ui_gags_kobaltowa_spec(value)
+    if scripts.gags:is_type("combat.avatar") then
+        scripts.gags:gag(value, 3, "moje_ciosy")
+    else
+        local target = rex.match(line, "\\b(?:ciebie|cie|ci)\\b") and "innych_ciosy_we_mnie" or "innych_ciosy"
+        scripts.gags:gag(value, 3, target)        
+    end
 
-function trigger_func_skrypty_ui_gags_moje_spece_kobaltowa(value)
-    scripts.gags:gag(value, 3, "moje_ciosy")
-    magic_prefix("-MANA")
-end
-
-function trigger_func_skrypty_ui_gags_innych_spece_kobaltowa(value)
-    local target = rex.match(line, "\\b(?:ciebie|cie|ci)\\b") and "innych_ciosy_we_mnie" or "innych_ciosy"
-    scripts.gags:gag(value, 3, target)
     magic_prefix("-MANA")
 end

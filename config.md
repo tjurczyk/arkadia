@@ -78,6 +78,14 @@ Kolory, ktore mozna wybrac sa dostepne w `/kolory` lub [tutaj](https://forums.mu
 
 ---
 
+## `ateam.options.countdown`
+
+Opcja zmieniajaca sposob odliczania w zaslonie/rozkazie
+* `false` - wyłączone. Czas jest odliczany.
+* `true` - włączone. Czas jest liczony od wydarzenia.
+
+---
+
 ## `ateam.attack_mode`
 
 Domyslna opcja do /z oraz /zz

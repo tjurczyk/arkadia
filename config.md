@@ -80,9 +80,9 @@ Kolory, ktore mozna wybrac sa dostepne w `/kolory` lub [tutaj](https://forums.mu
 
 ## `ateam.options.countdown`
 
-Opcja zmieniajaca sposob odliczania w zaslonie/rozkazie
-* `false` - wyłączone. Czas jest odliczany.
-* `true` - włączone. Czas jest liczony od wydarzenia.
+Opcja zmieniająca sposób odliczania w zaslonie/rozkazie
+* `false` - wyłączone. Czas jest liczony od wydarzenia.
+* `true` - włączone. Czas jest odliczany.
 
 ---
 

@@ -289,7 +289,7 @@
     },
     {
       "name": "ateam.options.countdown",
-      "default_value": false,
+      "default_value": true,
       "field_type": "boolean",
       "macros_on_modify": []
     },

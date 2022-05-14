@@ -288,6 +288,12 @@
       "macros_on_modify": []
     },
     {
+      "name": "ateam.options.countdown",
+      "default_value": false,
+      "field_type": "boolean",
+      "macros_on_modify": []
+    },
+    {
       "name": "ateam.attack_mode",
       "default_value": 3,
       "field_type": "number",

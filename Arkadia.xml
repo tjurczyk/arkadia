@@ -6338,11 +6338,31 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>lodowata\w+ dluga\w+ maczuga\w+</string>
+											<string>lodowata dluga maczug</string>
 										</regexCodeList>
 										<regexCodePropertyList>
-											<integer>1</integer>
+											<integer>0</integer>
 										</regexCodePropertyList>
+										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+											<name>lodowata_0</name>
+											<script>scripts.gags:gag_prefix("unk", "innych_uniki")</script>
+											<triggerType>0</triggerType>
+											<conditonLineDelta>0</conditonLineDelta>
+											<mStayOpen>0</mStayOpen>
+											<mCommand></mCommand>
+											<packageName></packageName>
+											<mFgColor>#ff0000</mFgColor>
+											<mBgColor>#ffff00</mBgColor>
+											<mSoundFile></mSoundFile>
+											<colorTriggerFgColor>#000000</colorTriggerFgColor>
+											<colorTriggerBgColor>#000000</colorTriggerBgColor>
+											<regexCodeList>
+												<string>^Wykonujesz obszerny zamach lodowata dluga maczuga, usilujac trafic (?P&lt;target&gt;.+?), jednak twoj przeciwnik spokojnie odskakuje na bok, unikajac tego ciosu\.$</string>
+											</regexCodeList>
+											<regexCodePropertyList>
+												<integer>1</integer>
+											</regexCodePropertyList>
+										</Trigger>
 										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 											<name>lodowata</name>
 											<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_lodowata_dluga_maczuga()</script>
@@ -14016,8 +14036,10 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<string>^(?P&lt;attacker&gt;[a-zA-Z ]+?) wykorzystujac brak broni u przeciwnika, wyprowadza cios .+? mierzac w (?P&lt;target&gt;.+?) i prawie traci rownowage po je(?:go|j) zrecznym uniku\.$</string>
 											<string>^(?P&lt;attacker&gt;[a-zA-Z ]+?) slamazarnym wymachem .+? probuje wytracic .+? z (rak|reki)\. Przeciwnik nie daje sie jednak zaskoczyc, zbijajac uderzenie na bok\.$</string>
 											<string>^(?P&lt;attacker&gt;[a-zA-Z ]+?) wykorzystujac brak broni u przeciwnika, z wyuczona wprawa wyprowadza cios .+? mierzac w (?P&lt;target&gt;.+?)\. Wypracowane uderzenie zostaje jednak sparowane przez (?:jej|niego) .*\.$</string>
+											<string>^(?P&lt;attacker&gt;[a-zA-Z ]+?) slamazarnym wymachem .+? probuje wytracic .+? z (rak|reki)\. Przeciwnik nie daje sie jednak zaskoczyc,cofajac sie w pore\.$</string>
 										</regexCodeList>
 										<regexCodePropertyList>
+											<integer>1</integer>
 											<integer>1</integer>
 											<integer>1</integer>
 											<integer>1</integer>
@@ -20342,7 +20364,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 									<integer>3</integer>
 									<integer>3</integer>
 									<integer>3</integer>
-									<integer>3</integer>
+									<integer>2</integer>
 									<integer>3</integer>
 								</regexCodePropertyList>
 							</Trigger>

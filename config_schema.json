@@ -362,6 +362,12 @@
       "macros_on_modify": []
     },
     {
+      "name": "ateam.special_follow_bind_beep",
+      "default_value": false,
+      "field_type": "boolean",
+      "macros_on_modify": []
+    },    
+    {
       "name": "misc.attack_beep.mode",
       "default_value": 1,
       "field_type": "number",

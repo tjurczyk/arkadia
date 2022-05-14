@@ -1,3 +1,5 @@
+ateam.special_follow_bind_beep = false
+
 function scripts.utils.bind_functional(command, silent, remove_on_new_location)
     scripts.utils.functional_key = command
 
@@ -43,14 +45,14 @@ function scripts.utils.execute_functional()
     end
 end
 
-function scripts.utils.bind_functional_team_follow(line, command, delay, silent)
+function scripts.utils.bind_functional_team_follow(command, silent)
     if ateam.special_follow_bind_mode == 0 then
         -- it's disabled
         return
     end
 
     -- check whether the line contains the team leader name
-    if not line or ateam.special_follow_bind_mode == 2 then
+    if ateam.special_follow_bind_mode == 2 then
         scripts.utils.bind_functional(command, silent)
         raiseEvent("ateamTeamFollowBind")
         return
@@ -61,6 +63,10 @@ function scripts.utils.bind_functional_team_follow(line, command, delay, silent)
             if ateam and ateam.objs and ateam.objs[k]["team_leader"] and ateam.objs[k]["desc"] ~= nil and string.find(line, ateam.objs[k]["desc"]) then
                 scripts.utils.bind_functional(command, silent)
                 raiseEvent("ateamTeamFollowBind")
+            
+                if ateam.special_follow_bind_beep then
+                    raiseEvent("playBeep")
+                end
             end
         end
     end

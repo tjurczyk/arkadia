@@ -187,6 +187,18 @@ Wartości:
 
 ---
 
+## `ateam.special_follow_bind_beep`
+
+Odtwarzanie beepa dla bindowanych przejsc specjalnych.
+Bindowanie przejsc musi byc ustawione 'tylko na podstawie osoby prowadzacej'.
+
+Wartości:
+
+* `false` - wylaczone
+* `true` - wlaczone
+
+---
+
 ## `misc.attack_beep.mode`
 
 Startowa opcja odglosu ataku na postac.

@@ -7992,7 +7992,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>^Dziki taniec z ostrzami smuklych mieczy pozwala rozpedzic (.+?) obie bronie do niewyobrazalnych predkosci\. Jednak gdy rzuca sie on do ataku na (.+?), brzeszczoty jego mieczy tna zaledwiepowietrze\.$</string>
+											<string>^Dziki taniec z ostrzami smuklych mieczy pozwala rozpedzic (.+?) obie bronie do niewyobrazalnych predkosci\. Jednak gdy rzuca sie on do ataku na (.+?), brzeszczoty jego mieczy tna zaledwie powietrze\.$</string>
 										</regexCodeList>
 										<regexCodePropertyList>
 											<integer>1</integer>

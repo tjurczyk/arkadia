@@ -13040,6 +13040,13 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<string>^[ &gt;]*.* pewnym ruchem uderza .*\.$</string>
 											<string>^[ &gt;]*.* bez chwili namyslu uderza .*\.$</string>
 											<string>^[ &gt;]*.* dziko hallakujac uderza .*\.$</string>
+                      <string>^[ &gt;]*.* niezbyt dokladnie uderza .*\.$</string>
+                      <string>^[ &gt;]*.* z grymasem wysilku uderza .*\.$</string>
+                      <string>^[ &gt;]*.* zaciskajac z wysilku zeby uderza .*\.$</string>
+                      <string>^[ &gt;]*.* robiac szeroki zamach uderza .*\.$</string>
+                      <string>^[ &gt;]*.* wrzeszczac na cale gardlo uderza .*\.$</string>
+                      <string>^[ &gt;]*.* bez wysilku uderza .*\.$</string>
+                      <string>^[ &gt;]*.* korzystajac z zamieszania uderza .*\.$</string>
 										</regexCodeList>
 										<regexCodePropertyList>
 											<integer>1</integer>
@@ -13051,6 +13058,13 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<integer>1</integer>
 											<integer>1</integer>
 											<integer>1</integer>
+                      <integer>1</integer>
+                      <integer>1</integer>
+                      <integer>1</integer>
+                      <integer>1</integer>
+                      <integer>1</integer>
+                      <integer>1</integer>
+                      <integer>1</integer>
 										</regexCodePropertyList>
 										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 											<name>ktos_spec_0</name>

@@ -29446,6 +29446,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<string>Tylko i wylacznie mieszkancy osady moga tam wejsc.</string>
 						<string>Probujesz przecisnac sie przez otwor na dach, ale ze wzgledu na brak miejsca, zmuszony jestes wrocic na dol.</string>
 						<string>Straznik ignoruje twoja prosbe.</string>
+						<string>Nie mozesz tam przejsc, gdy stoi tu obsada statku.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -29482,6 +29483,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<integer>2</integer>
 						<integer>2</integer>
 						<integer>2</integer>
+            <integer>2</integer>
 					</regexCodePropertyList>
 				</Trigger>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">

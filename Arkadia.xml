@@ -6453,8 +6453,8 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 												</regexCodePropertyList>
 											</Trigger>
 											<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-												<name>adamantytowy_3</name>
-												<script>trigger_func_skrypty_ui_gags_moje_ciosy_adamantytowy_mlot(3)</script>
+												<name>adamantytowy_4</name>
+												<script>trigger_func_skrypty_ui_gags_moje_ciosy_adamantytowy_mlot(4)</script>
 												<triggerType>0</triggerType>
 												<conditonLineDelta>0</conditonLineDelta>
 												<mStayOpen>0</mStayOpen>
@@ -6473,8 +6473,8 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 												</regexCodePropertyList>
 											</Trigger>
 											<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-												<name>adamantytowy_4</name>
-												<script>trigger_func_skrypty_ui_gags_moje_ciosy_adamantytowy_mlot(4)</script>
+												<name>adamantytowy_5</name>
+												<script>trigger_func_skrypty_ui_gags_moje_ciosy_adamantytowy_mlot(5)</script>
 												<triggerType>0</triggerType>
 												<conditonLineDelta>0</conditonLineDelta>
 												<mStayOpen>0</mStayOpen>
@@ -6493,8 +6493,8 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 												</regexCodePropertyList>
 											</Trigger>
 											<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-												<name>adamantytowy_5</name>
-												<script>trigger_func_skrypty_ui_gags_moje_ciosy_adamantytowy_mlot(5)</script>
+												<name>adamantytowy_6</name>
+												<script>trigger_func_skrypty_ui_gags_moje_ciosy_adamantytowy_mlot(6)</script>
 												<triggerType>0</triggerType>
 												<conditonLineDelta>0</conditonLineDelta>
 												<mStayOpen>0</mStayOpen>
@@ -6602,7 +6602,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 												<colorTriggerFgColor>#000000</colorTriggerFgColor>
 												<colorTriggerBgColor>#000000</colorTriggerBgColor>
 												<regexCodeList>
-													<string>wykonuje potezny cios</string>
+													<string>lekko rani</string>
 												</regexCodeList>
 												<regexCodePropertyList>
 													<integer>0</integer>
@@ -6622,7 +6622,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 												<colorTriggerFgColor>#000000</colorTriggerFgColor>
 												<colorTriggerBgColor>#000000</colorTriggerBgColor>
 												<regexCodeList>
-													<string>wykonuje zamaszysty cios</string>
+													<string>wykonuje potezny cios</string>
 												</regexCodeList>
 												<regexCodePropertyList>
 													<integer>0</integer>
@@ -6631,6 +6631,26 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 												<name>adamantytowy_innych_5</name>
 												<script>trigger_func_skrypty_ui_gags_innych_ciosy_adamantytowy_mlot(5)</script>
+												<triggerType>0</triggerType>
+												<conditonLineDelta>0</conditonLineDelta>
+												<mStayOpen>0</mStayOpen>
+												<mCommand></mCommand>
+												<packageName></packageName>
+												<mFgColor>#ff0000</mFgColor>
+												<mBgColor>#ffff00</mBgColor>
+												<mSoundFile></mSoundFile>
+												<colorTriggerFgColor>#000000</colorTriggerFgColor>
+												<colorTriggerBgColor>#000000</colorTriggerBgColor>
+												<regexCodeList>
+													<string>wykonuje zamaszysty cios adamantytowym</string>
+												</regexCodeList>
+												<regexCodePropertyList>
+													<integer>0</integer>
+												</regexCodePropertyList>
+											</Trigger>
+											<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+												<name>adamantytowy_innych_6</name>
+												<script>trigger_func_skrypty_ui_gags_innych_ciosy_adamantytowy_mlot(6)</script>
 												<triggerType>0</triggerType>
 												<conditonLineDelta>0</conditonLineDelta>
 												<mStayOpen>0</mStayOpen>
@@ -8996,6 +9016,166 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											</Trigger>
 										</TriggerGroup>
 									</TriggerGroup>
+									<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+										<name>poszczerbiony_miecz</name>
+										<script></script>
+										<triggerType>0</triggerType>
+										<conditonLineDelta>0</conditonLineDelta>
+										<mStayOpen>0</mStayOpen>
+										<mCommand></mCommand>
+										<packageName></packageName>
+										<mFgColor>#ff0000</mFgColor>
+										<mBgColor>#ffff00</mBgColor>
+										<mSoundFile></mSoundFile>
+										<colorTriggerFgColor>#000000</colorTriggerFgColor>
+										<colorTriggerBgColor>#000000</colorTriggerBgColor>
+										<regexCodeList>
+											<string>oszczerbion\w+ obureczn\w+ miec\w+</string>
+										</regexCodeList>
+										<regexCodePropertyList>
+											<integer>1</integer>
+										</regexCodePropertyList>
+										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+											<name>szczerba_0</name>
+											<script>trigger_func_skrypty_ui_gags_ciosy_szczerba(0)</script>
+											<triggerType>0</triggerType>
+											<conditonLineDelta>0</conditonLineDelta>
+											<mStayOpen>0</mStayOpen>
+											<mCommand></mCommand>
+											<packageName></packageName>
+											<mFgColor>#ff0000</mFgColor>
+											<mBgColor>#ffff00</mBgColor>
+											<mSoundFile></mSoundFile>
+											<colorTriggerFgColor>#000000</colorTriggerFgColor>
+											<colorTriggerBgColor>#000000</colorTriggerBgColor>
+											<regexCodeList>
+												<string>jednak twoj poszczerbiony obureczny miecz ze swistem przecina</string>
+											</regexCodeList>
+											<regexCodePropertyList>
+												<integer>0</integer>
+											</regexCodePropertyList>
+										</Trigger>
+										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+											<name>szczerba_1</name>
+											<script>trigger_func_skrypty_ui_gags_ciosy_szczerba(1)</script>
+											<triggerType>0</triggerType>
+											<conditonLineDelta>0</conditonLineDelta>
+											<mStayOpen>0</mStayOpen>
+											<mCommand></mCommand>
+											<packageName></packageName>
+											<mFgColor>#ff0000</mFgColor>
+											<mBgColor>#ffff00</mBgColor>
+											<mSoundFile></mSoundFile>
+											<colorTriggerFgColor>#000000</colorTriggerFgColor>
+											<colorTriggerBgColor>#000000</colorTriggerBgColor>
+											<regexCodeList>
+												<string>Koncowka swojego poszczerbionego oburecznego miecza</string>
+											</regexCodeList>
+											<regexCodePropertyList>
+												<integer>2</integer>
+											</regexCodePropertyList>
+										</Trigger>
+										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+											<name>szczerba_2</name>
+											<script>trigger_func_skrypty_ui_gags_ciosy_szczerba(2)</script>
+											<triggerType>0</triggerType>
+											<conditonLineDelta>0</conditonLineDelta>
+											<mStayOpen>0</mStayOpen>
+											<mCommand></mCommand>
+											<packageName></packageName>
+											<mFgColor>#ff0000</mFgColor>
+											<mBgColor>#ffff00</mBgColor>
+											<mSoundFile></mSoundFile>
+											<colorTriggerFgColor>#000000</colorTriggerFgColor>
+											<colorTriggerBgColor>#000000</colorTriggerBgColor>
+											<regexCodeList>
+												<string>Z lekkiego wymachu</string>
+											</regexCodeList>
+											<regexCodePropertyList>
+												<integer>2</integer>
+											</regexCodePropertyList>
+										</Trigger>
+										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+											<name>szczerba_3</name>
+											<script>trigger_func_skrypty_ui_gags_ciosy_szczerba(3)</script>
+											<triggerType>0</triggerType>
+											<conditonLineDelta>0</conditonLineDelta>
+											<mStayOpen>0</mStayOpen>
+											<mCommand></mCommand>
+											<packageName></packageName>
+											<mFgColor>#ff0000</mFgColor>
+											<mBgColor>#ffff00</mBgColor>
+											<mSoundFile></mSoundFile>
+											<colorTriggerFgColor>#000000</colorTriggerFgColor>
+											<colorTriggerBgColor>#000000</colorTriggerBgColor>
+											<regexCodeList>
+												<string>Mocnym wymachem z nad glowy</string>
+											</regexCodeList>
+											<regexCodePropertyList>
+												<integer>2</integer>
+											</regexCodePropertyList>
+										</Trigger>
+										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+											<name>szczerba_4</name>
+											<script>trigger_func_skrypty_ui_gags_ciosy_szczerba(4)</script>
+											<triggerType>0</triggerType>
+											<conditonLineDelta>0</conditonLineDelta>
+											<mStayOpen>0</mStayOpen>
+											<mCommand></mCommand>
+											<packageName></packageName>
+											<mFgColor>#ff0000</mFgColor>
+											<mBgColor>#ffff00</mBgColor>
+											<mSoundFile></mSoundFile>
+											<colorTriggerFgColor>#000000</colorTriggerFgColor>
+											<colorTriggerBgColor>#000000</colorTriggerBgColor>
+											<regexCodeList>
+												<string>Plynnym, zdecydowanym ruchem</string>
+											</regexCodeList>
+											<regexCodePropertyList>
+												<integer>2</integer>
+											</regexCodePropertyList>
+										</Trigger>
+										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+											<name>szczerba_5</name>
+											<script>trigger_func_skrypty_ui_gags_ciosy_szczerba(5)</script>
+											<triggerType>0</triggerType>
+											<conditonLineDelta>0</conditonLineDelta>
+											<mStayOpen>0</mStayOpen>
+											<mCommand></mCommand>
+											<packageName></packageName>
+											<mFgColor>#ff0000</mFgColor>
+											<mBgColor>#ffff00</mBgColor>
+											<mSoundFile></mSoundFile>
+											<colorTriggerFgColor>#000000</colorTriggerFgColor>
+											<colorTriggerBgColor>#000000</colorTriggerBgColor>
+											<regexCodeList>
+												<string>Ostrze poszczerbionego oburecznego miecza na moment rozblyska</string>
+											</regexCodeList>
+											<regexCodePropertyList>
+												<integer>2</integer>
+											</regexCodePropertyList>
+										</Trigger>
+										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+											<name>szczerba_spec</name>
+											<script>trigger_func_skrypty_ui_gags_spece_szczerba(matches[2])</script>
+											<triggerType>0</triggerType>
+											<conditonLineDelta>0</conditonLineDelta>
+											<mStayOpen>0</mStayOpen>
+											<mCommand></mCommand>
+											<packageName></packageName>
+											<mFgColor>#ff0000</mFgColor>
+											<mBgColor>#ffff00</mBgColor>
+											<mSoundFile></mSoundFile>
+											<colorTriggerFgColor>#000000</colorTriggerFgColor>
+											<colorTriggerBgColor>#000000</colorTriggerBgColor>
+											<regexCodeList>
+												<string>obureczny miecz zaczyna nagle jarzyc sie niesamowitym, czerwonym blaskiem, skierowanym w strone (.*)[,!]</string>
+											</regexCodeList>
+											<regexCodePropertyList>
+												<integer>1</integer>
+											</regexCodePropertyList>
+										</Trigger>
+									</TriggerGroup>
 								</TriggerGroup>
 								<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 									<name>drzewce</name>
@@ -9892,7 +10072,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<integer>1</integer>
 										</regexCodePropertyList>
 										<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-											<name>innych</name>
+											<name>ciosy</name>
 											<script></script>
 											<triggerType>0</triggerType>
 											<conditonLineDelta>0</conditonLineDelta>
@@ -9907,8 +10087,28 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<regexCodeList />
 											<regexCodePropertyList />
 											<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-												<name>kobaltowa_innych_1</name>
-												<script>trigger_func_skrypty_ui_gags_innych_ciosy_kobaltowa(1)</script>
+												<name>kobaltowa_0</name>
+												<script>trigger_func_skrypty_ui_gags_ciosy_kobaltowa(0)</script>
+												<triggerType>0</triggerType>
+												<conditonLineDelta>0</conditonLineDelta>
+												<mStayOpen>0</mStayOpen>
+												<mCommand></mCommand>
+												<packageName></packageName>
+												<mFgColor>#ff0000</mFgColor>
+												<mBgColor>#ffff00</mBgColor>
+												<mSoundFile></mSoundFile>
+												<colorTriggerFgColor>#000000</colorTriggerFgColor>
+												<colorTriggerBgColor>#000000</colorTriggerBgColor>
+												<regexCodeList>
+													<string>doslownie o wlos</string>
+												</regexCodeList>
+												<regexCodePropertyList>
+													<integer>0</integer>
+												</regexCodePropertyList>
+											</Trigger>
+											<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+												<name>kobaltowa_1</name>
+												<script>trigger_func_skrypty_ui_gags_ciosy_kobaltowa(1)</script>
 												<triggerType>0</triggerType>
 												<conditonLineDelta>0</conditonLineDelta>
 												<mStayOpen>0</mStayOpen>
@@ -9927,8 +10127,8 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 												</regexCodePropertyList>
 											</Trigger>
 											<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-												<name>kobaltowa_innych_2</name>
-												<script>trigger_func_skrypty_ui_gags_innych_ciosy_kobaltowa(2)</script>
+												<name>kobaltowa_2</name>
+												<script>trigger_func_skrypty_ui_gags_ciosy_kobaltowa(2)</script>
 												<triggerType>0</triggerType>
 												<conditonLineDelta>0</conditonLineDelta>
 												<mStayOpen>0</mStayOpen>
@@ -9947,8 +10147,8 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 												</regexCodePropertyList>
 											</Trigger>
 											<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-												<name>kobaltowa_innych_3</name>
-												<script>trigger_func_skrypty_ui_gags_innych_ciosy_kobaltowa(3)</script>
+												<name>kobaltowa_3</name>
+												<script>trigger_func_skrypty_ui_gags_ciosy_kobaltowa(3)</script>
 												<triggerType>0</triggerType>
 												<conditonLineDelta>0</conditonLineDelta>
 												<mStayOpen>0</mStayOpen>
@@ -9967,8 +10167,8 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 												</regexCodePropertyList>
 											</Trigger>
 											<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-												<name>kobaltowa_innych_4</name>
-												<script>trigger_func_skrypty_ui_gags_innych_ciosy_kobaltowa(4)</script>
+												<name>kobaltowa_4</name>
+												<script>trigger_func_skrypty_ui_gags_ciosy_kobaltowa(4)</script>
 												<triggerType>0</triggerType>
 												<conditonLineDelta>0</conditonLineDelta>
 												<mStayOpen>0</mStayOpen>
@@ -9987,8 +10187,28 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 												</regexCodePropertyList>
 											</Trigger>
 											<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-												<name>kobaltowa_innych_5</name>
-												<script>trigger_func_skrypty_ui_gags_innych_ciosy_kobaltowa(5)</script>
+												<name>kobaltowa_5</name>
+												<script>trigger_func_skrypty_ui_gags_ciosy_kobaltowa(5)</script>
+												<triggerType>0</triggerType>
+												<conditonLineDelta>0</conditonLineDelta>
+												<mStayOpen>0</mStayOpen>
+												<mCommand></mCommand>
+												<packageName></packageName>
+												<mFgColor>#ff0000</mFgColor>
+												<mBgColor>#ffff00</mBgColor>
+												<mSoundFile></mSoundFile>
+												<colorTriggerFgColor>#000000</colorTriggerFgColor>
+												<colorTriggerBgColor>#000000</colorTriggerBgColor>
+												<regexCodeList>
+													<string>tniesz bolesnie</string>
+												</regexCodeList>
+												<regexCodePropertyList>
+													<integer>0</integer>
+												</regexCodePropertyList>
+											</Trigger>
+											<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+												<name>kobaltowa_6</name>
+												<script>trigger_func_skrypty_ui_gags_ciosy_kobaltowa(6)</script>
 												<triggerType>0</triggerType>
 												<conditonLineDelta>0</conditonLineDelta>
 												<mStayOpen>0</mStayOpen>
@@ -10006,9 +10226,25 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 													<integer>0</integer>
 												</regexCodePropertyList>
 											</Trigger>
+										</TriggerGroup>
+										<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+											<name>spec</name>
+											<script></script>
+											<triggerType>0</triggerType>
+											<conditonLineDelta>0</conditonLineDelta>
+											<mStayOpen>0</mStayOpen>
+											<mCommand></mCommand>
+											<packageName></packageName>
+											<mFgColor>#ff0000</mFgColor>
+											<mBgColor>#ffff00</mBgColor>
+											<mSoundFile></mSoundFile>
+											<colorTriggerFgColor>#000000</colorTriggerFgColor>
+											<colorTriggerBgColor>#000000</colorTriggerBgColor>
+											<regexCodeList />
+											<regexCodePropertyList />
 											<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-												<name>kobaltowa_innych_fin</name>
-												<script>trigger_func_skrypty_ui_gags_innych_ciosy_bron_fin()</script>
+												<name>kobaltowa_spec_1</name>
+												<script>trigger_func_skrypty_ui_gags_kobaltowa_spec(1)</script>
 												<triggerType>0</triggerType>
 												<conditonLineDelta>0</conditonLineDelta>
 												<mStayOpen>0</mStayOpen>
@@ -10020,15 +10256,97 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 												<colorTriggerFgColor>#000000</colorTriggerFgColor>
 												<colorTriggerBgColor>#000000</colorTriggerBgColor>
 												<regexCodeList>
-													<string>z nienaturalnie chlodnym obliczem</string>
-													<string>ostrzem swojej ciernistej kobaltowej halabardy</string>
+													<string>ostrze ledwie</string>
 												</regexCodeList>
 												<regexCodePropertyList>
 													<integer>0</integer>
+												</regexCodePropertyList>
+											</Trigger>
+											<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+												<name>kobaltowa_spec_2</name>
+												<script>trigger_func_skrypty_ui_gags_kobaltowa_spec(2)</script>
+												<triggerType>0</triggerType>
+												<conditonLineDelta>0</conditonLineDelta>
+												<mStayOpen>0</mStayOpen>
+												<mCommand></mCommand>
+												<packageName></packageName>
+												<mFgColor>#ff0000</mFgColor>
+												<mBgColor>#ffff00</mBgColor>
+												<mSoundFile></mSoundFile>
+												<colorTriggerFgColor>#000000</colorTriggerFgColor>
+												<colorTriggerBgColor>#000000</colorTriggerBgColor>
+												<regexCodeList>
+													<string>tnie cialo</string>
+												</regexCodeList>
+												<regexCodePropertyList>
+													<integer>0</integer>
+												</regexCodePropertyList>
+											</Trigger>
+											<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+												<name>kobaltowa_spec_3</name>
+												<script>trigger_func_skrypty_ui_gags_kobaltowa_spec(3)</script>
+												<triggerType>0</triggerType>
+												<conditonLineDelta>0</conditonLineDelta>
+												<mStayOpen>0</mStayOpen>
+												<mCommand></mCommand>
+												<packageName></packageName>
+												<mFgColor>#ff0000</mFgColor>
+												<mBgColor>#ffff00</mBgColor>
+												<mSoundFile></mSoundFile>
+												<colorTriggerFgColor>#000000</colorTriggerFgColor>
+												<colorTriggerBgColor>#000000</colorTriggerBgColor>
+												<regexCodeList>
+													<string>gleboko w cialo</string>
+												</regexCodeList>
+												<regexCodePropertyList>
 													<integer>0</integer>
 												</regexCodePropertyList>
 											</Trigger>
 										</TriggerGroup>
+										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+											<name>kobaltowa_fin</name>
+											<script>trigger_func_skrypty_ui_gags_moje_ciosy_bron_fin()</script>
+											<triggerType>0</triggerType>
+											<conditonLineDelta>0</conditonLineDelta>
+											<mStayOpen>0</mStayOpen>
+											<mCommand></mCommand>
+											<packageName></packageName>
+											<mFgColor>#ff0000</mFgColor>
+											<mBgColor>#ffff00</mBgColor>
+											<mSoundFile></mSoundFile>
+											<colorTriggerFgColor>#000000</colorTriggerFgColor>
+											<colorTriggerBgColor>#000000</colorTriggerBgColor>
+											<regexCodeList>
+												<string>Czujesz ogarniajacy cie chlod, gdy z szerokiego</string>
+												<string>Ostrze twojej ciernistej kobaltowej halabardy niemal przepolawia</string>
+											</regexCodeList>
+											<regexCodePropertyList>
+												<integer>2</integer>
+												<integer>2</integer>
+											</regexCodePropertyList>
+										</Trigger>
+										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+											<name>kobaltowa_innych_fin</name>
+											<script>trigger_func_skrypty_ui_gags_innych_ciosy_bron_fin()</script>
+											<triggerType>0</triggerType>
+											<conditonLineDelta>0</conditonLineDelta>
+											<mStayOpen>0</mStayOpen>
+											<mCommand></mCommand>
+											<packageName></packageName>
+											<mFgColor>#ff0000</mFgColor>
+											<mBgColor>#ffff00</mBgColor>
+											<mSoundFile></mSoundFile>
+											<colorTriggerFgColor>#000000</colorTriggerFgColor>
+											<colorTriggerBgColor>#000000</colorTriggerBgColor>
+											<regexCodeList>
+												<string>z nienaturalnie chlodnym obliczem</string>
+												<string>ostrzem swojej ciernistej kobaltowej halabardy</string>
+											</regexCodeList>
+											<regexCodePropertyList>
+												<integer>0</integer>
+												<integer>0</integer>
+											</regexCodePropertyList>
+										</Trigger>
 									</TriggerGroup>
 								</TriggerGroup>
 							</TriggerGroup>
@@ -13368,26 +13686,6 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										</regexCodePropertyList>
 									</Trigger>
 									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-										<name>ciernista-kobaltowa-halabarda</name>
-										<script>trigger_func_skrypty_ui_gags_color_color_moje_spece_bronie_ciernista_kobaltowa_halabarda()</script>
-										<triggerType>0</triggerType>
-										<conditonLineDelta>0</conditonLineDelta>
-										<mStayOpen>0</mStayOpen>
-										<mCommand></mCommand>
-										<packageName></packageName>
-										<mFgColor>#ff0000</mFgColor>
-										<mBgColor>#ffff00</mBgColor>
-										<mSoundFile></mSoundFile>
-										<colorTriggerFgColor>#000000</colorTriggerFgColor>
-										<colorTriggerBgColor>#000000</colorTriggerBgColor>
-										<regexCodeList>
-											<string>^Z kamienna, pozbawiona emocji twarza, wykonujesz zamaszysty cios ciernista kobaltowa halabarda i chociaz jej srebrzyste ostrze ledwie tylko zacina</string>
-										</regexCodeList>
-										<regexCodePropertyList>
-											<integer>1</integer>
-										</regexCodePropertyList>
-									</Trigger>
-									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 										<name>waski-zebaty-palasz</name>
 										<script>trigger_func_skrypty_ui_gags_color_color_moje_spece_bron_truje()</script>
 										<triggerType>0</triggerType>
@@ -13459,11 +13757,9 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 									<colorTriggerBgColor>#000000</colorTriggerBgColor>
 									<regexCodeList>
 										<string>^[ &gt;]*(.+?) lekko rani (?!(?:cie|.* opalizujacego runicznego))</string>
-										<string>^[ &gt;]*Z lekkiego wymachu (.*?) trafia .*? lekko (go|ja) raniac</string>
 										<string>^[ &gt;]*(.+?) lekko kaleczy (.*?), trafiajac (go|ja) w</string>
 									</regexCodeList>
 									<regexCodePropertyList>
-										<integer>1</integer>
 										<integer>1</integer>
 										<integer>1</integer>
 									</regexCodePropertyList>
@@ -17448,46 +17744,6 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
 											<string>^Nagle lustrzana powierzchnia lsniacej plomienistej tarczy .*? rozblyskuje jasnoczerwonym, palacym swiatlem\.</string>
-										</regexCodeList>
-										<regexCodePropertyList>
-											<integer>1</integer>
-										</regexCodePropertyList>
-									</Trigger>
-									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-										<name>ciernista-kobaltowa-halabarda</name>
-										<script>trigger_func_skrypty_ui_gags_color_color_innych_spece_bronie_ciernista_kobaltowa_halabarda()</script>
-										<triggerType>0</triggerType>
-										<conditonLineDelta>0</conditonLineDelta>
-										<mStayOpen>0</mStayOpen>
-										<mCommand></mCommand>
-										<packageName></packageName>
-										<mFgColor>#ff0000</mFgColor>
-										<mBgColor>#ffff00</mBgColor>
-										<mSoundFile></mSoundFile>
-										<colorTriggerFgColor>#000000</colorTriggerFgColor>
-										<colorTriggerBgColor>#000000</colorTriggerBgColor>
-										<regexCodeList>
-											<string>^.+? tnie cialo bezlitosnego wojowniczego mezczyzne jednym z ostrzy ciernistej kobaltowej halabardy, a mroczna energia emanujaca z broni, wydaje sie wysysac z ofiary czastke jej duszy\.</string>
-										</regexCodeList>
-										<regexCodePropertyList>
-											<integer>1</integer>
-										</regexCodePropertyList>
-									</Trigger>
-									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-										<name>szczerba</name>
-										<script>trigger_func_szczerba(matches[2])</script>
-										<triggerType>0</triggerType>
-										<conditonLineDelta>0</conditonLineDelta>
-										<mStayOpen>0</mStayOpen>
-										<mCommand></mCommand>
-										<packageName></packageName>
-										<mFgColor>#ff0000</mFgColor>
-										<mBgColor>#ffff00</mBgColor>
-										<mSoundFile></mSoundFile>
-										<colorTriggerFgColor>#000000</colorTriggerFgColor>
-										<colorTriggerBgColor>#000000</colorTriggerBgColor>
-										<regexCodeList>
-											<string>obureczny miecz zaczyna nagle jarzyc sie niesamowitym, czerwonym blaskiem, skierowanym w strone (.*)[,!]</string>
 										</regexCodeList>
 										<regexCodePropertyList>
 											<integer>1</integer>

@@ -1,4 +1,4 @@
-local function magic_prefix(text)
+function magic_prefix(text)
     text = string.format("[ %s ] ", text)
     prefix(text)
     if selectString(text, 1) > -1 then

@@ -64,7 +64,7 @@ function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_lodowata_dluga_macz
     elseif dmg == "mocno obijajac cialo" then value = 6
     elseif dmg == "pozostawiajac paskudnie wygladajaca rane" then value = 7
     elseif dmg == "niemalze zabijajac" then value = 8
-    elseif dmg == "masakrujac przeciwnika i zakanczajac ta walke" then value = 9
+    elseif dmg == "masakrujac" or dmg == "masakrujac przeciwnika i zakanczajac ta walke" then value = 9
     else end
     scripts.gags:gag(value, 9, "moje_ciosy")
 end

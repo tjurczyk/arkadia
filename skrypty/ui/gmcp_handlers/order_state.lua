@@ -2,13 +2,14 @@ function order_state(name, seconds)
 end
 
 function timer_func_skrypty_order_timer()
+    local limit = 15
     local dt = getEpoch() - scripts.ui.order_state_epoch
-    if dt >= 15 then
+    if dt >= limit then
         stopNamedTimer("arkadia", "order_timer")
         scripts.ui.states_window_nav_states["order_state"] = scripts.ui["states_window_nav_printable_val_map"]["order_state"]["ok"]
         scripts.ui:info_order_ready_update("ok")
     else
-        local val = string.format("%.1f", dt)
+        local val = string.format("%.1f", ateam.options.countdown and (limit - dt) or dt)
         scripts.ui.states_window_nav_states["order_state"] = "<red>" .. val
         scripts.ui:info_order_ready_update(val)
     end

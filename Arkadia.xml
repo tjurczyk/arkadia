@@ -13031,34 +13031,30 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>zbierajac sie w sobie uderza</string>
-											<string>blyskawicznie uderza</string>
-											<string>w zamieszaniu uderza</string>
-											<string>z doskoku uderza</string>
-											<string>z szybkiego doskoku uderza</string>
-											<string>szybko skladajac sie do ciosu uderza</string>
-											<string>pewnym ruchem uderza</string>
 											<string>bez chwili namyslu uderza</string>
-											<string>dziko hallakujac uderza</string>
-											<string>niezbyt dokladnie uderza</string>
-											<string>z grymasem wysilku uderza</string>
-											<string>zaciskajac z wysilku zeby uderza</string>
-											<string>robiac szeroki zamach uderza</string>
-											<string>wrzeszczac na cale gardlo uderza</string>
 											<string>bez wysilku uderza</string>
-											<string>korzystajac z zamieszania uderza</string>
-											<string>zaciskajac z wysilku zeby uderza</string>
-											<string>zaciskajac z wysilku zeby uderza</string>
 											<string>bez zastanowienia uderza</string>
-											<string>plynnym ruchem uderza</string>
-											<string>w szalenczym porywie uderza</string>
-											<string>niezbyt celnie uderza</string>
 											<string>blyskawicznie skladajac sie do ciosu uderza</string>
+											<string>blyskawicznie uderza</string>
+											<string>dziko hallakujac uderza</string>
+											<string>korzystajac z zamieszania uderza</string>
+											<string>niezbyt celnie uderza</string>
+											<string>niezbyt dokladnie uderza</string>
+											<string>pewnym ruchem uderza</string>
+											<string>plynnym ruchem uderza</string>
+											<string>robiac szeroki zamach uderza</string>
+											<string>szybko skladajac sie do ciosu uderza</string>
+											<string>w szalenczym porywie uderza</string>
+											<string>w zamieszaniu uderza</string>
+											<string>wrzeszczac na cale gardlo uderza</string>
+											<string>z doskoku uderza</string>
+											<string>z grymasem wysilku uderza</string>
 											<string>z lekkiego wymachu uderza</string>
+											<string>z szybkiego doskoku uderza</string>
+											<string>zaciskajac z wysilku zeby uderza</string>
+											<string>zbierajac sie w sobie uderza</string>
 										</regexCodeList>
 										<regexCodePropertyList>
-											<integer>0</integer>
-											<integer>0</integer>
 											<integer>0</integer>
 											<integer>0</integer>
 											<integer>0</integer>

@@ -17086,10 +17086,13 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<string>korzystajac z zamieszania uderza</string>
 											<string>niezbyt celnie uderza</string>
 											<string>niezbyt dokladnie uderza</string>
+											<string>oszczednym ruchem uderza</string>
 											<string>pewnym ruchem uderza</string>
 											<string>plynnym ruchem uderza</string>
 											<string>robiac szeroki zamach uderza</string>
+											<string>robiac oszczedny zamach uderza</string>
 											<string>szybko skladajac sie do ciosu uderza</string>
+											<string>w pospiechu uderza</string>
 											<string>w szalenczym porywie uderza</string>
 											<string>w zamieszaniu uderza</string>
 											<string>wrzeszczac na cale gardlo uderza</string>
@@ -17101,6 +17104,9 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<string>zbierajac sie w sobie uderza</string>
 										</regexCodeList>
 										<regexCodePropertyList>
+											<integer>0</integer>
+											<integer>0</integer>
+											<integer>0</integer>
 											<integer>0</integer>
 											<integer>0</integer>
 											<integer>0</integer>
@@ -29279,9 +29285,9 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
 						<string>^[ &gt;]*Jestes tak zmeczon(y|a), ze nie mozesz dalej podazac w tym kierunku\.$</string>
-						<string>.*stoi ci na drodze\.$</string>
+						<string>stoi ci na drodze.</string>
 						<string>Bierzesz rozbieg i probujesz przeskoczyc wyrwe, jednak zle wymierzasz odleglosc</string>
-						<string>.*krypty zablokowane jest przez kamienna plyte\.$</string>
+						<string>krypty zablokowane jest przez kamienna plyte.</string>
 						<string>Jesli chcesz, by brama zostala otwarta, musisz do niej zapukac lub w nia uderzyc.</string>
 						<string>Przejscie blokuje obalony pien</string>
 						<string>Brama jest zamknieta noca.</string>
@@ -29293,55 +29299,55 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<string>Droge zastepuje ci barczysty straznik mowiac: Prosze okazac kwit magazynowy lub wskazac towar do przechowania.</string>
 						<string>Forsowanie zamknietych drzwi nie jest najlepszym pomyslem.</string>
 						<string>Geste krzaki i porzucone narzedzia zupelnie blokuja dalsza podroz w tym kierunku. Niestety, musisz zawrocic.</string>
-						<string>.*grzyboczlek stoi ci na drodze\.$</string>
+						<string>grzyboczlek stoi ci na drodze.</string>
 						<string>^[ &gt;]*Idziesz na polnocny-zachod, lecz zawracasz zrezygnowan(y|a), gdyz przejscie zostalo zasypane\.$</string>
 						<string>^[ &gt;]*Idziesz na poludniowy-wschod, lecz zawracasz zrezygnowan(y|a), gdyz przejscie zostalo zasypane\.$</string>
 						<string>Jest zbyt ciemno, zeby moc znalezc stad jakies wyjscie.</string>
 						<string>Juz po chwili dostrzegasz jednak, ze przejscie zatrzymuje sie na poteznej skalnej scianie.</string>
 						<string>Karczmarz zagradza ci wejscie do kuchni.</string>
-						<string>^[ &gt;]*Ktos inny juz to zaczal robic\. Otwor nie jest dosc szeroki by udalo sie to dwom osobom na raz\.$</string>
+						<string>Ktos inny juz to zaczal robic. Otwor nie jest dosc szeroki by udalo sie to dwom osobom na raz.</string>
 						<string>Masz zbyt wielkie obawy by tam wejsc.</string>
-						<string>.*mezczyzna stoi ci na drodze\.$</string>
-						<string>.* hardo do ciebie: A ty gdzie\? Tam maja wstep tylko mahakamscy kowale\.$</string>
+						<string>mezczyzna stoi ci na drodze.</string>
+						<string>hardo do ciebie: A ty gdzie? Tam maja wstep tylko mahakamscy kowale.</string>
 						<string>Moze najpierw wyjdz z wody</string>
 						<string>Musisz stanac w kolejce i poczekac na audiencje.</string>
 						<string>^[ &gt;]*(Nie mozesz sie tam udac, gdyz |)([Op]*pierzona skrzydlata bestia|[Ss]krzydlaty lwiopodobny potwor|[a-z]+ niebezpieczny gryf) swoim cielskiem zagradza ci droge( ucieczki|) na .*</string>
 						<string>Ogromny stwor blokuje dojscie do bramy.</string>
-						<string>^Ruszasz po granitowej posadzce na .*, jednak powstrzymuje cie buchajacy z peknietego chodnika strumien goracej pary\.$</string>
-						<string>^Musisz najpierw przywiazac do kolowrotu jakas line lub sznur\.$</string>
+						<string>^Ruszasz po granitowej posadzce na [a-z-]+, jednak powstrzymuje cie buchajacy z peknietego chodnika strumien goracej pary\.$</string>
+						<string>Musisz najpierw przywiazac do kolowrotu jakas line lub sznur.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
-						<integer>1</integer>
+						<integer>0</integer>
 						<integer>2</integer>
-						<integer>1</integer>
-						<integer>2</integer>
-						<integer>2</integer>
+						<integer>0</integer>
 						<integer>2</integer>
 						<integer>2</integer>
 						<integer>2</integer>
 						<integer>2</integer>
-						<integer>2</integer>
-						<integer>1</integer>
-						<integer>2</integer>
-						<integer>2</integer>
-						<integer>2</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
 						<integer>2</integer>
 						<integer>2</integer>
 						<integer>2</integer>
 						<integer>1</integer>
 						<integer>2</integer>
+						<integer>2</integer>
+						<integer>2</integer>
+						<integer>0</integer>
 						<integer>1</integer>
 						<integer>1</integer>
+						<integer>2</integer>
+						<integer>2</integer>
+						<integer>2</integer>
+						<integer>0</integer>
+						<integer>2</integer>
+						<integer>0</integer>
+						<integer>0</integer>
 						<integer>2</integer>
 						<integer>2</integer>
 						<integer>1</integer>
 						<integer>2</integer>
 						<integer>1</integer>
-						<integer>283547928</integer>
+						<integer>2</integer>
 					</regexCodePropertyList>
 				</Trigger>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">

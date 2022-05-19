@@ -2,13 +2,14 @@ function hidden_state(name, seconds)
 end
 
 function timer_func_skrypty_hidden_timer()
+    local limit = 15
     local dt = getEpoch() - scripts.ui.hidden_state_epoch
-    if dt >= 15 then
+    if dt >= limit then
         stopNamedTimer("arkadia", "hidden_timer")
         scripts.ui.states_window_nav_states["hidden_state"] = ""
         scripts.ui:info_hidden_update("")
     else
-        local val = string.format("%i", dt)
+        local val = string.format("%i", ateam.options.countdown and (limit - dt) or dt)
         scripts.ui.states_window_nav_states["hidden_state"] = "<red>" .. val
         scripts.ui:info_hidden_update(val)
     end

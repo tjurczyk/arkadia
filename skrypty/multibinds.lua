@@ -70,7 +70,7 @@ function scripts.multibinds:clear_location_index(room_id, index)
 end
 
 function scripts.multibinds:get_for_location(room_id)
-    local result = db:fetch(self.db.multibinds, db:eq(self.db.multibinds.room_id, room_id))
+    local result = db:fetch(self.db.multibinds, db:eq(self.db.multibinds.room_id, room_id), {self.db.multibinds.index})
     return result
 end
 

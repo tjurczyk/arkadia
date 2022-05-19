@@ -29534,7 +29534,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 					<regexCodeList>
 						<string>^Probujesz sie ruszyc na .*, jednak pajecze sieci, w ktore sie w miedzyczasie zaplatal.s, uniemozliwiaja ci to\.$</string>
 						<string>Ogromne stwory przysiadaja przed brama, blokujac do niej dostepu.</string>
-						<string>^Ruszasz w dalsza droge ale nagle stajesz w pol kroku\. Masz dziwne odczucie, ze w tym miejscu grozi ci jakies niebezpieczenstwo\.$</string>
+						<string>Ruszasz w dalsza droge ale nagle stajesz w pol kroku. Masz dziwne odczucie, ze w tym miejscu grozi ci jakies niebezpieczenstwo.</string>
 						<string>Nagle czujesz, ze cos oplata twa noge... ziemia w zawrotnym tepie zamienia sie miejscami z niebem. Zwisasz teraz, przywiazany za noge rzemieniem, dyndajac jak kukielka.</string>
 						<string>Probujesz otworzyc polyskujace wrota, ale nie udaje ci sie to.</string>
 						<string>Probujesz isc naprzod, ale sliski lod sprawia, ze wywracasz sie na nim.</string>
@@ -29542,7 +29542,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 					<regexCodePropertyList>
 						<integer>1</integer>
 						<integer>2</integer>
-						<integer>1</integer>
+						<integer>2</integer>
 						<integer>2</integer>
 						<integer>2</integer>
 						<integer>2</integer>

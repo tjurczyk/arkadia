@@ -29369,7 +29369,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<string>Po chwili wahania decydujesz sie nie schodzic.</string>
 						<string>Po przejsciu paru krokow zauwazasz, ze majaczy przed toba potezna skalna sciana.</string>
 						<string>Pociagasz za klamke, ale drzwi sa zamkniete.</string>
-						<string>.*potepieniec stoi ci na drodze\.$</string>
+						<string>potepieniec stoi ci na drodze.</string>
 						<string>Pozostalosci po snieznej lawinie uniemozliwiaja dalsza wedrowke w wybranym kierunku.</string>
 						<string>^[ &gt;]*Przeciez nie bedziesz [ws]chodzic po drabinie majac obie rece zajete trzymaniem broni!$</string>
 						<string>Przygladasz sie uwaznie miejscu, na ktorego chcesz sie wspiac i oceniajac trudnosc wspinaczki stwierdzasz ze najpierw musisz troche odpoczac.</string>
@@ -29385,7 +29385,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<string>Wejscie tylko dla glow klanow.</string>
 						<string>Wydaje ci sie, ze kowal jest bardzo znany z tego, ze nigdy nie ma go w kuzni. W tej wiosce konia nie podkujesz i musisz poszukac gdzie indziej.</string>
 						<string>^[ &gt;]*(Zapracowana mloda krasnoludka|Frina) mowi twardo: Gdzie sie pcha\?!$</string>
-						<string>.*zastawia przejscie do poludniowej nawy.*</string>
+						<string>zastawia przejscie do poludniowej nawy</string>
 						<string>Zboj zagradza ci przejscie na poludnie.</string>
 						<string>Zimne spojrzenia obecnych tu osob powstrzymuja cie skutecznie.</string>
 						<string>Zbyt szybko probujesz ruszyc dalej, momentalnie tracac rownowage na waskim przejsciu</string>
@@ -29402,7 +29402,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<integer>2</integer>
 						<integer>2</integer>
 						<integer>2</integer>
-						<integer>1</integer>
+						<integer>0</integer>
 						<integer>2</integer>
 						<integer>1</integer>
 						<integer>2</integer>
@@ -29418,7 +29418,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<integer>2</integer>
 						<integer>2</integer>
 						<integer>1</integer>
-						<integer>1</integer>
+						<integer>0</integer>
 						<integer>2</integer>
 						<integer>2</integer>
 						<integer>2</integer>

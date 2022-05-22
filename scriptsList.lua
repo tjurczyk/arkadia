@@ -298,7 +298,6 @@ return {
     "skrypty/ui/gags/gags",
     "skrypty/ui/gags/color/color_moje_ciosy",
     "skrypty/ui/gags/color/color_innych_ciosy",
-    "skrypty/ui/gags/color/color_innych_ciosy_we_mnie",
     "skrypty/ui/gags/color/color_zaslony_udane",
     "skrypty/ui/gags/color/color_zaslony_nieudane",
     "skrypty/ui/gags/color/color_moje_uniki",

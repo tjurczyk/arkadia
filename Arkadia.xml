@@ -14742,10 +14742,13 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<string>korzystajac z zamieszania uderza</string>
 											<string>niezbyt celnie uderza</string>
 											<string>niezbyt dokladnie uderza</string>
+											<string>oszczednym ruchem uderza</string>
 											<string>pewnym ruchem uderza</string>
 											<string>plynnym ruchem uderza</string>
 											<string>robiac szeroki zamach uderza</string>
+											<string>robiac oszczedny zamach uderza</string>
 											<string>szybko skladajac sie do ciosu uderza</string>
+											<string>w pospiechu uderza</string>
 											<string>w szalenczym porywie uderza</string>
 											<string>w zamieszaniu uderza</string>
 											<string>wrzeszczac na cale gardlo uderza</string>
@@ -14757,6 +14760,9 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<string>zbierajac sie w sobie uderza</string>
 										</regexCodeList>
 										<regexCodePropertyList>
+											<integer>0</integer>
+											<integer>0</integer>
+											<integer>0</integer>
 											<integer>0</integer>
 											<integer>0</integer>
 											<integer>0</integer>
@@ -26935,9 +26941,9 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
 						<string>^[ &gt;]*Jestes tak zmeczon(y|a), ze nie mozesz dalej podazac w tym kierunku\.$</string>
-						<string>.*stoi ci na drodze\.$</string>
+						<string>stoi ci na drodze.</string>
 						<string>Bierzesz rozbieg i probujesz przeskoczyc wyrwe, jednak zle wymierzasz odleglosc</string>
-						<string>.*krypty zablokowane jest przez kamienna plyte\.$</string>
+						<string>krypty zablokowane jest przez kamienna plyte.</string>
 						<string>Jesli chcesz, by brama zostala otwarta, musisz do niej zapukac lub w nia uderzyc.</string>
 						<string>Przejscie blokuje obalony pien</string>
 						<string>Brama jest zamknieta noca.</string>
@@ -26949,55 +26955,55 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<string>Droge zastepuje ci barczysty straznik mowiac: Prosze okazac kwit magazynowy lub wskazac towar do przechowania.</string>
 						<string>Forsowanie zamknietych drzwi nie jest najlepszym pomyslem.</string>
 						<string>Geste krzaki i porzucone narzedzia zupelnie blokuja dalsza podroz w tym kierunku. Niestety, musisz zawrocic.</string>
-						<string>.*grzyboczlek stoi ci na drodze\.$</string>
+						<string>grzyboczlek stoi ci na drodze.</string>
 						<string>^[ &gt;]*Idziesz na polnocny-zachod, lecz zawracasz zrezygnowan(y|a), gdyz przejscie zostalo zasypane\.$</string>
 						<string>^[ &gt;]*Idziesz na poludniowy-wschod, lecz zawracasz zrezygnowan(y|a), gdyz przejscie zostalo zasypane\.$</string>
 						<string>Jest zbyt ciemno, zeby moc znalezc stad jakies wyjscie.</string>
 						<string>Juz po chwili dostrzegasz jednak, ze przejscie zatrzymuje sie na poteznej skalnej scianie.</string>
 						<string>Karczmarz zagradza ci wejscie do kuchni.</string>
-						<string>^[ &gt;]*Ktos inny juz to zaczal robic\. Otwor nie jest dosc szeroki by udalo sie to dwom osobom na raz\.$</string>
+						<string>Ktos inny juz to zaczal robic. Otwor nie jest dosc szeroki by udalo sie to dwom osobom na raz.</string>
 						<string>Masz zbyt wielkie obawy by tam wejsc.</string>
-						<string>.*mezczyzna stoi ci na drodze\.$</string>
-						<string>.* hardo do ciebie: A ty gdzie\? Tam maja wstep tylko mahakamscy kowale\.$</string>
+						<string>mezczyzna stoi ci na drodze.</string>
+						<string>hardo do ciebie: A ty gdzie? Tam maja wstep tylko mahakamscy kowale.</string>
 						<string>Moze najpierw wyjdz z wody</string>
 						<string>Musisz stanac w kolejce i poczekac na audiencje.</string>
 						<string>^[ &gt;]*(Nie mozesz sie tam udac, gdyz |)([Op]*pierzona skrzydlata bestia|[Ss]krzydlaty lwiopodobny potwor|[a-z]+ niebezpieczny gryf) swoim cielskiem zagradza ci droge( ucieczki|) na .*</string>
 						<string>Ogromny stwor blokuje dojscie do bramy.</string>
-						<string>^Ruszasz po granitowej posadzce na .*, jednak powstrzymuje cie buchajacy z peknietego chodnika strumien goracej pary\.$</string>
-						<string>^Musisz najpierw przywiazac do kolowrotu jakas line lub sznur\.$</string>
+						<string>^Ruszasz po granitowej posadzce na [a-z-]+, jednak powstrzymuje cie buchajacy z peknietego chodnika strumien goracej pary\.$</string>
+						<string>Musisz najpierw przywiazac do kolowrotu jakas line lub sznur.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
-						<integer>1</integer>
+						<integer>0</integer>
 						<integer>2</integer>
-						<integer>1</integer>
-						<integer>2</integer>
-						<integer>2</integer>
+						<integer>0</integer>
 						<integer>2</integer>
 						<integer>2</integer>
 						<integer>2</integer>
 						<integer>2</integer>
-						<integer>2</integer>
-						<integer>1</integer>
-						<integer>2</integer>
-						<integer>2</integer>
-						<integer>2</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
 						<integer>2</integer>
 						<integer>2</integer>
 						<integer>2</integer>
 						<integer>1</integer>
 						<integer>2</integer>
+						<integer>2</integer>
+						<integer>2</integer>
+						<integer>0</integer>
 						<integer>1</integer>
 						<integer>1</integer>
+						<integer>2</integer>
+						<integer>2</integer>
+						<integer>2</integer>
+						<integer>0</integer>
+						<integer>2</integer>
+						<integer>0</integer>
+						<integer>0</integer>
 						<integer>2</integer>
 						<integer>2</integer>
 						<integer>1</integer>
 						<integer>2</integer>
 						<integer>1</integer>
-						<integer>283547928</integer>
+						<integer>2</integer>
 					</regexCodePropertyList>
 				</Trigger>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -27019,7 +27025,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<string>Po chwili wahania decydujesz sie nie schodzic.</string>
 						<string>Po przejsciu paru krokow zauwazasz, ze majaczy przed toba potezna skalna sciana.</string>
 						<string>Pociagasz za klamke, ale drzwi sa zamkniete.</string>
-						<string>.*potepieniec stoi ci na drodze\.$</string>
+						<string>potepieniec stoi ci na drodze.</string>
 						<string>Pozostalosci po snieznej lawinie uniemozliwiaja dalsza wedrowke w wybranym kierunku.</string>
 						<string>^[ &gt;]*Przeciez nie bedziesz [ws]chodzic po drabinie majac obie rece zajete trzymaniem broni!$</string>
 						<string>Przygladasz sie uwaznie miejscu, na ktorego chcesz sie wspiac i oceniajac trudnosc wspinaczki stwierdzasz ze najpierw musisz troche odpoczac.</string>
@@ -27035,7 +27041,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<string>Wejscie tylko dla glow klanow.</string>
 						<string>Wydaje ci sie, ze kowal jest bardzo znany z tego, ze nigdy nie ma go w kuzni. W tej wiosce konia nie podkujesz i musisz poszukac gdzie indziej.</string>
 						<string>^[ &gt;]*(Zapracowana mloda krasnoludka|Frina) mowi twardo: Gdzie sie pcha\?!$</string>
-						<string>.*zastawia przejscie do poludniowej nawy.*</string>
+						<string>zastawia przejscie do poludniowej nawy</string>
 						<string>Zboj zagradza ci przejscie na poludnie.</string>
 						<string>Zimne spojrzenia obecnych tu osob powstrzymuja cie skutecznie.</string>
 						<string>Zbyt szybko probujesz ruszyc dalej, momentalnie tracac rownowage na waskim przejsciu</string>
@@ -27052,7 +27058,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<integer>2</integer>
 						<integer>2</integer>
 						<integer>2</integer>
-						<integer>1</integer>
+						<integer>0</integer>
 						<integer>2</integer>
 						<integer>1</integer>
 						<integer>2</integer>
@@ -27068,7 +27074,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<integer>2</integer>
 						<integer>2</integer>
 						<integer>1</integer>
-						<integer>1</integer>
+						<integer>0</integer>
 						<integer>2</integer>
 						<integer>2</integer>
 						<integer>2</integer>
@@ -27094,35 +27100,35 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>.*do ciebie: Nikt z bronia nie wejdzie na teren Uniwersytetu\. Prosze zostawic ja na stojaku\.$</string>
+						<string>do ciebie: Nikt z bronia nie wejdzie na teren Uniwersytetu. Prosze zostawic ja na stojaku.</string>
 						<string>Wspinasz sie po pionowej scianie skalnej, jednak w polowie drogi twoja noga zeslizguje sie, a ty, nie mogac zlapac sie niczego mogacego powstrzymac twe obsuniecie, spadasz spowrotem na dol.</string>
 						<string>Wrota stajni sa zamkniete na noc.</string>
 						<string>Wszystkie stragany sa juz uprzatniete.</string>
 						<string>^[ &gt;]*Droge na .* blokuje nieprzebyty masyw skalny\.$</string>
-						<string>^[ &gt;]*Czujny gladkolicy mezczyzna staje na drodze blokujac przejscie\.</string>
+						<string>Czujny gladkolicy mezczyzna staje na drodze blokujac przejscie.</string>
 						<string>^[ &gt;]*.* zjawa.* swym niematerialnym cialem blokuje ci dalsza droge w glab swiatyni\.$</string>
-						<string>^[ &gt;]*.*do ciebie: Obcych nie wpuszczamy na teren zamku uzbrojonych\. Zeby wejsc musisz oddac cala swoja bron\.$</string>
-						<string>.*do ciebie: Nikt z zakryta twarza nie wejdzie na teren .*\.$</string>
+						<string>do ciebie: Obcych nie wpuszczamy na teren zamku uzbrojonych. Zeby wejsc musisz oddac cala swoja bron.</string>
+						<string>do ciebie: Nikt z zakryta twarza nie wejdzie na teren</string>
 						<string>Drabina w tej chwili jest zajmowana przez kogos innego, musisz chwile poczekac, az sie zwolni.</string>
 						<string>Straznik zastawia ci droge, tlumaczac, ze o tej porze nie ma odwiedzin.</string>
 						<string>By plynac musisz miec wolne rece.</string>
-						<string>.*do ciebie: Nikt z bronia nie wejdzie na teren palacu. Prosze zostawic ja na stojaku.</string>
+						<string>do ciebie: Nikt z bronia nie wejdzie na teren palacu. Prosze zostawic ja na stojaku.</string>
 						<string>Przeciez sarkofag jest zamkniety!</string>
 						<string>Musisz najpierw zejsc z podestu</string>
 						<string>Woda wydaje ci sie tak zimna, ze jednak decydujesz sie nie przeskakiwac przez sciane wody. Moze lepiej najpierw oswoic sie z chlodna woda...</string>
 						<string>Podejscie pod mury silnie bronionego zamku nie jest najlepszym pomyslem.</string>
-						<string>Ruszasz razno na [a-z]+, lecz po kilku krokach grzezniesz w krzakach.</string>
+						<string>Ruszasz razno na [a-z-]+, lecz po kilku krokach grzezniesz w krzakach.</string>
 						<string>Wstep tylko dla czlonkow Zgromadzenia.</string>
 						<string>^[ &gt;]*(\w+\s+){1,4}zagradza ci droge\.$</string>
 						<string>Drzwi sa zamkniete, musisz sie wrocic.</string>
 						<string>Mimo wlozenia wszystkich sil w wioslowanie nie jestes w stanie pokonac niezwykle silnego pradu wody.</string>
 						<string>Przeciez lezysz na lozku! Moze lepiej najpierw z niego wstac?</string>
 						<string>Rezygnujesz z przeplyniecia</string>
-						<string>.* mowi do ciebie: Nikt z zakryta twarza nie stanie przed obliczem ksiecia\.$</string>
+						<string>mowi do ciebie: Nikt z zakryta twarza nie stanie przed obliczem ksiecia.</string>
 						<string>W chwili gdy ruszasz w strone zachodniej czesci pomieszczenia, zylki na zbrojach stojacych w niszach krasnoludow rozpalaja sie na zielono. Postaci jakby niepomne tego, ze zostaly wykonane z kamienia, wystepuja ze swoich wnek, blokujac ci przejscie dalej.</string>
 						<string>^(?!Rzucasz).* staje ci na drodze\.$</string>
-						<string>^.* mowi do ciebie: Nikt z bronia nie stanie przed obliczem ksiecia\. Prosze zostawic ja na stojaku\.$</string>
-						<string>^.* staje na drodze.* blokujac .*</string>
+						<string>mowi do ciebie: Nikt z bronia nie stanie przed obliczem ksiecia. Prosze zostawic ja na stojaku.</string>
+						<string>staje na drodze .+ blokujac </string>
 						<string>Podejscie pod mury silnie bronionego garnizonu nie jest najlepszym pomyslem...</string>
 						<string>Podchodzisz pod drzwi na polnocy, zza ktorych rozlega sie czyjs ponury glos: 'Zmiataj stad, nim ktos ci sprezentuje sztylet pod zebrami!'</string>
 						<string>Tylko i wylacznie mieszkancy osady moga tam wejsc.</string>
@@ -27131,26 +27137,19 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<string>Nie mozesz tam przejsc, gdy stoi tu obsada statku.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
-						<integer>1</integer>
-						<integer>2</integer>
-						<integer>2</integer>
-						<integer>2</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>2</integer>
-						<integer>2</integer>
-						<integer>2</integer>
-						<integer>1</integer>
-						<integer>2</integer>
+						<integer>0</integer>
 						<integer>2</integer>
 						<integer>2</integer>
 						<integer>2</integer>
 						<integer>1</integer>
 						<integer>2</integer>
 						<integer>1</integer>
+						<integer>0</integer>
+						<integer>0</integer>
+						<integer>2</integer>
+						<integer>2</integer>
+						<integer>2</integer>
+						<integer>0</integer>
 						<integer>2</integer>
 						<integer>2</integer>
 						<integer>2</integer>
@@ -27158,7 +27157,14 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<integer>1</integer>
 						<integer>2</integer>
 						<integer>1</integer>
+						<integer>2</integer>
+						<integer>2</integer>
+						<integer>2</integer>
+						<integer>2</integer>
+						<integer>0</integer>
+						<integer>2</integer>
 						<integer>1</integer>
+						<integer>0</integer>
 						<integer>1</integer>
 						<integer>3</integer>
 						<integer>2</integer>
@@ -27184,7 +27190,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 					<regexCodeList>
 						<string>^Probujesz sie ruszyc na .*, jednak pajecze sieci, w ktore sie w miedzyczasie zaplatal.s, uniemozliwiaja ci to\.$</string>
 						<string>Ogromne stwory przysiadaja przed brama, blokujac do niej dostepu.</string>
-						<string>^Ruszasz w dalsza droge ale nagle stajesz w pol kroku\. Masz dziwne odczucie, ze w tym miejscu grozi ci jakies niebezpieczenstwo\.$</string>
+						<string>Ruszasz w dalsza droge ale nagle stajesz w pol kroku. Masz dziwne odczucie, ze w tym miejscu grozi ci jakies niebezpieczenstwo.</string>
 						<string>Nagle czujesz, ze cos oplata twa noge... ziemia w zawrotnym tepie zamienia sie miejscami z niebem. Zwisasz teraz, przywiazany za noge rzemieniem, dyndajac jak kukielka.</string>
 						<string>Probujesz otworzyc polyskujace wrota, ale nie udaje ci sie to.</string>
 						<string>Probujesz isc naprzod, ale sliski lod sprawia, ze wywracasz sie na nim.</string>
@@ -27192,7 +27198,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 					<regexCodePropertyList>
 						<integer>1</integer>
 						<integer>2</integer>
-						<integer>1</integer>
+						<integer>2</integer>
 						<integer>2</integer>
 						<integer>2</integer>
 						<integer>2</integer>

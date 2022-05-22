@@ -14,6 +14,10 @@ end
 
 
 function trigger_func_skrypty_ui_gags_color_color_innych_ciosy_ktos_ledwo_muska()
+    if rex.match(line, "upiorn\\w+ ciemn\\w+") then
+        return
+    end
+
     color_hit(1)
 end
 

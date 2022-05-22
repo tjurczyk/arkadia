@@ -3,7 +3,7 @@ function trigger_func_skrypty_ui_gags_color_moje_ciosy(value)
         return
     end
 
-    if rex.match("srebrzyst\\w+ kos\\w+ bojow\\w+") then
+    if rex.match(line, "srebrzyst\\w+ kos\\w+ bojow\\w+") then
         return
     end
 

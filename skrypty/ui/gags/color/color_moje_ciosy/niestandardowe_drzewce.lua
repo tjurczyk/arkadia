@@ -22,13 +22,13 @@ end
 
 -- Adamantytowa partyzana
 
-function trigger_func_skrypty_ui_gags_moje_ciosy_partyzana(value)
-    scripts.gags:gag(value, 7, "moje_ciosy")
-end
-
-function trigger_func_skrypty_ui_gags_innych_ciosy_partyzana(value)
-    local target = rex.match(line, "\\b(?:ciebie|cie|ci)\\b") and "innych_ciosy_we_mnie" or "innych_ciosy"
-    scripts.gags:gag(value, 7, target)
+function trigger_func_skrypty_ui_gags_ciosy_partyzana(value)
+    if scripts.gags:is_type("combat.avatar") then
+        scripts.gags:gag(value, 7, "moje_ciosy")
+    else
+        local target = rex.match(line, "\\b(?:ciebie|cie|ci)\\b") and "innych_ciosy_we_mnie" or "innych_ciosy"
+        scripts.gags:gag(value, 7, target)
+    end
 end
 
 -- Kobaltowa halabarda

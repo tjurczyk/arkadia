@@ -12395,7 +12395,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>^(?P&lt;attacker&gt;.+?) (krzywi wargi w pelnym satysfakcji usmiechu i )?dostrzegajac luke w obronie(?:| przeciwni(?:ka|czki)) rzuca sie do ataku\. .* trafia (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+?) (?P&lt;damage&gt;bardzo ciezko raniac|ledwo muskajac|lekko raniac|masakrujac|powaznie raniac|raniac) (?:go |)(?P&lt;weapon&gt;.*)\.$</string>
+											<string>^(?P&lt;attacker&gt;.+?) (?:(?:usmiecha sie przebiegle wyczuwajac zblizajace sie zwyciestwo|wykonuje szybki, szalony piruet|wykrzywia twarz w grymasie nienawisci|zaciska mocniej palce na rekojesci broni |krzywi wargi w pelnym satysfakcji usmiechu) i )?dostrzegajac luke w obronie(?:| przeciwni(?:ka|czki)) rzuca sie do ataku\. .* trafia (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+?) (?P&lt;damage&gt;bardzo ciezko raniac|ledwo muskajac|lekko raniac|masakrujac|powaznie raniac|raniac) (?:go |)(?P&lt;weapon&gt;.*)\.$</string>
 										</regexCodeList>
 										<regexCodePropertyList>
 											<integer>1</integer>

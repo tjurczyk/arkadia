@@ -6,6 +6,9 @@ if not package.path:find(luaDirectory, 1, true) then
     package.path = string.format("%s;%s", luaDirectory, package.path)
 end
 
+local result, prio = pcall(getModulePriority, "Arkadia")
+local base_prio = result and prio or 0
+
 function load_scripts(force)
     if not force and scripts_loaded then
         return
@@ -91,7 +94,7 @@ function load_plugin(plugin_name)
         if io.exists(module_path) then
             if not pcall(getModulePriority, plugin_name) then
                 installModule(module_path)
-                setModulePriority(plugin_name, getModulePriority("Arkadia") + table.size(scripts.plugins))
+                setModulePriority(plugin_name, base_prio + table.size(scripts.plugins))
             end
             if is_git_repo then
                 enableModuleSync(plugin_name)

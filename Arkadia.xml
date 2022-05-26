@@ -8308,6 +8308,46 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											</regexCodePropertyList>
 										</Trigger>
 									</TriggerGroup>
+									<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+										<name>obosieczny gwiezdny topor</name>
+										<script></script>
+										<triggerType>0</triggerType>
+										<conditonLineDelta>0</conditonLineDelta>
+										<mStayOpen>0</mStayOpen>
+										<mCommand></mCommand>
+										<packageName></packageName>
+										<mFgColor>#ff0000</mFgColor>
+										<mBgColor>#ffff00</mBgColor>
+										<mSoundFile></mSoundFile>
+										<colorTriggerFgColor>#000000</colorTriggerFgColor>
+										<colorTriggerBgColor>#000000</colorTriggerBgColor>
+										<regexCodeList>
+											<string>obosiecznego gwiezdnego topora</string>
+										</regexCodeList>
+										<regexCodePropertyList>
+											<integer>0</integer>
+										</regexCodePropertyList>
+										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+											<name>gwiezdny</name>
+											<script>trigger_func_skrypty_ui_gags_ciosy_obosieczny_gwiezdny_topor()</script>
+											<triggerType>0</triggerType>
+											<conditonLineDelta>0</conditonLineDelta>
+											<mStayOpen>0</mStayOpen>
+											<mCommand></mCommand>
+											<packageName></packageName>
+											<mFgColor>#ff0000</mFgColor>
+											<mBgColor>#ffff00</mBgColor>
+											<mSoundFile></mSoundFile>
+											<colorTriggerFgColor>#000000</colorTriggerFgColor>
+											<colorTriggerBgColor>#000000</colorTriggerBgColor>
+											<regexCodeList>
+												<string>^(?:(?:Ostrze|Zelezce) twojego|Ostrza dzierzonego przez (?P&lt;attacker&gt;.+?)) obosiecznego gwiezdnego topora (?:rozblyskuj[ae] nagle blaskiem tysiecy gwiazd, gdy ostrze broni )?(?P&lt;damage&gt;niemal przecina w pol|tnie (?:lekko|plytko|gladko|gleboko|szeroko)) (?P&lt;target&gt;.+?)(?:|, z sila i blaskiem spadajacej z nieba gwiazdy|, zostawiajac w powietrzu smuge mlecznobialego swiatla, blaknaca tak szybko, jak sie pojawila)\.$</string>
+											</regexCodeList>
+											<regexCodePropertyList>
+												<integer>1</integer>
+											</regexCodePropertyList>
+										</Trigger>
+									</TriggerGroup>
 								</TriggerGroup>
 							</TriggerGroup>
 							<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">

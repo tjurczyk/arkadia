@@ -120,7 +120,9 @@ function load_plugin(plugin_name)
         end
 
         if plugin_loaded then
-            table.insert(scripts.plugins, plugin_name)
+            if not table.contains(scripts.plugins, plugin_name) then
+                table.insert(scripts.plugins, plugin_name)
+            end
             cecho("\n<CadetBlue>(skrypty)<tomato>: Plugin " .. plugin_name .. " zaladowany\n")
         else
             cecho("\n<CadetBlue>(skrypty)<tomato>: Plugin " .. plugin_name .. " nie zostal zaladowany. Brak pliku init.lua lub " .. plugin_name .. "\n")

@@ -6,6 +6,9 @@ if not package.path:find(luaDirectory, 1, true) then
     package.path = string.format("%s;%s", luaDirectory, package.path)
 end
 
+local result, prio = pcall(getModulePriority, "Arkadia")
+local base_prio = result and prio or 0
+
 function load_scripts(force)
     if not force and scripts_loaded then
         return
@@ -87,17 +90,16 @@ function load_plugin(plugin_name)
         end
         local module_path = file_path .. "/" .. plugin_name .. ".xml"
         local is_git_repo = io.exists(file_path .. "/.git")
-        if io.exists(module_path) and not is_git_repo then
-            uninstallPackage(plugin_name)
-            installPackage(module_path)
-            plugin_loaded = true
-        elseif io.exists(module_path) and is_git_repo then
+        uninstallPackage(plugin_name)
+        if io.exists(module_path) then
             if not pcall(getModulePriority, plugin_name) then
                 installModule(module_path)
-                setModulePriority(plugin_name, getModulePriority("Arkadia") + table.size(scripts.plugins))
+                setModulePriority(plugin_name, base_prio + table.size(scripts.plugins))
             end
-            enableModuleSync(plugin_name)
-            registerAnonymousEventHandler("sysExitEvent", function() disableModuleSync(plugin_name) end)
+            if is_git_repo then
+                enableModuleSync(plugin_name)
+                registerAnonymousEventHandler("sysExitEvent", function() disableModuleSync(plugin_name) end)
+            end
             plugin_loaded = true
         end
 
@@ -112,13 +114,15 @@ function load_plugin(plugin_name)
                 if plugin_schema.macro_to_reload_elements then
                     scripts.config_schema.macro_to_reload_elements = table.update(scripts.config_schema.macro_to_reload_elements, plugin_schema.macro_to_reload_elements)
                 end
+                file:close()
             end
-            file:close()
         else
         end
 
         if plugin_loaded then
-            table.insert(scripts.plugins, plugin_name)
+            if not table.contains(scripts.plugins, plugin_name) then
+                table.insert(scripts.plugins, plugin_name)
+            end
             cecho("\n<CadetBlue>(skrypty)<tomato>: Plugin " .. plugin_name .. " zaladowany\n")
         else
             cecho("\n<CadetBlue>(skrypty)<tomato>: Plugin " .. plugin_name .. " nie zostal zaladowany. Brak pliku init.lua lub " .. plugin_name .. "\n")

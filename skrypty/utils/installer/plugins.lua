@@ -81,7 +81,7 @@ function scripts.plugins_installer:uninstall(plugin_name)
         scripts:print_log("Chyba nie chcesz odinstalowac w ten sposob repozytorium pluginu? :)")
         return
     end
-    uninstallPackage(plugin_name)
+    uninstallModule(plugin_name)
     for k, plugin_name_to_check in pairs(scripts.plugins) do
         if plugin_name_to_check == plugin_name then
             table.remove(scripts.plugins, k)

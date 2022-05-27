@@ -54,3 +54,13 @@ function scripts.gags:delete_line(kind)
         return true
     end
 end
+
+function scripts.gags:who_hits()
+    local who
+    if self:is_type("combat.avatar") then
+        who = rex.match(line, "\\b(?:ciebie|cie|ci)\\b") and "innych_ciosy_we_mnie" or "moje_ciosy"
+    else
+        who = "innych_ciosy"
+    end
+    return who
+end

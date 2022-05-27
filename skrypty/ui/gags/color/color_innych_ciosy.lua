@@ -1,6 +1,6 @@
 local function color_hit(value)
     local target
-    if line:match(" cie ") then
+    if scripts.gags:is_type("combat.avatar") then
         target = "innych_ciosy_we_mnie"
 
         selectString(matches[1] .. "cie", 1)
@@ -14,6 +14,16 @@ end
 
 
 function trigger_func_skrypty_ui_gags_color_color_innych_ciosy_ktos_ledwo_muska()
+    local ignore_list = {
+        "opalizujacym runicznym",
+    }
+
+    for _, v in pairs(ignore_list) do
+        if line:match(v) then
+            return
+        end
+    end
+
     if rex.match(line, "upiorn\\w+ ciemn\\w+") then
         return
     end
@@ -83,13 +93,23 @@ function trigger_func_skrypty_ui_gags_color_color_innych_ciosy_ktos_powaznie_ran
 end
 
 function trigger_func_skrypty_ui_gags_color_color_innych_ciosy_ktos_bardzo_ciezko_rani()
+    local ignore_list = {
+        " i ",
+    }
+
+    for _, v in pairs(ignore_list) do
+        if line:match(v) then
+            return
+        end
+    end
     color_hit(5)
 end
 
 function trigger_func_skrypty_ui_gags_color_color_innych_ciosy_ktos_masakruje()
         local ignore_list = {
             " i ",
-            "srebrzysta kosa bojowa"
+            "srebrzysta kosa bojowa",
+            "opalizujacym runicznym toporem"
         }
 
         for _, v in pairs(ignore_list) do

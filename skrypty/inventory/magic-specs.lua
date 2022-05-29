@@ -27,3 +27,9 @@ function trigger_func_skrypty_inventory_magic_weapons_plaszcz_leczy()
     magic_prefix("HP+")
 end
 
+function trigger_func_skrypty_inventory_magic_jewelry_amulet_nekro_tilea()
+    magic_prefix("HP+")
+end
+
+
+

@@ -6567,9 +6567,11 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerFgColor>#000000</colorTriggerFgColor>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
-												<string>muska</string>
+												<string>Lekko muskasz</string>
+												<string>muska </string>
 											</regexCodeList>
 											<regexCodePropertyList>
+												<integer>2</integer>
 												<integer>0</integer>
 											</regexCodePropertyList>
 										</Trigger>

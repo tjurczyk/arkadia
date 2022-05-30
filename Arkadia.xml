@@ -27081,8 +27081,10 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<string>Aby kierowac lodzia, musisz usiasc przy wioslach.</string>
 						<string>Mimo wlozenia wszystkich sil w wioslowanie nie jestes w stanie pokonac niezwykle silnego pradu wody.</string>
 						<string>Przestajesz wioslowac.</string>
+						<string>Nie mozesz sie tam udac, gdyz wielki pustynny robak lapie cie jednym ze szczekoczulkow i przyciaga do siebie.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
+						<integer>2</integer>
 						<integer>2</integer>
 						<integer>2</integer>
 						<integer>2</integer>

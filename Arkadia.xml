@@ -2837,10 +2837,10 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerFgColor>#000000</colorTriggerFgColor>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
-												<string>^Wyprowadzasz potezny zamach opalizujacym runicznym toporem obosiecznym</string>
+												<string>Wyprowadzasz potezny zamach opalizujacym runicznym toporem obosiecznym, jednak zle wymierzasz cios i bron zaledwie muska </string>
 											</regexCodeList>
 											<regexCodePropertyList>
-												<integer>1</integer>
+												<integer>2</integer>
 											</regexCodePropertyList>
 										</Trigger>
 										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -2857,7 +2857,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerFgColor>#000000</colorTriggerFgColor>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
-												<string>^Twoj opalizujacy runiczny topor obosieczny trafia .* zaglebiajac sie lekko</string>
+												<string>^Twoj opalizujacy runiczny topor obosieczny trafia (?P&lt;target&gt;.+?) zaglebiajac sie lekko w je(?:go|j) (?P&lt;where&gt;.+?)\. Posoka powoli splywajaca po ostrzu zdaje sie gotowac\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
 												<integer>1</integer>
@@ -2877,10 +2877,10 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerFgColor>#000000</colorTriggerFgColor>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
-												<string>^Zamaszystym cieciem opalizujacego runicznego topora obosiecznego trafiasz</string>
+												<string>Zamaszystym cieciem opalizujacego runicznego topora obosiecznego trafiasz</string>
 											</regexCodeList>
 											<regexCodePropertyList>
-												<integer>1</integer>
+												<integer>2</integer>
 											</regexCodePropertyList>
 										</Trigger>
 										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -2897,10 +2897,10 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerFgColor>#000000</colorTriggerFgColor>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
-												<string>^Poteznym uderzeniem swojego opalizujacego runicznego topora obosiecznego</string>
+												<string>Poteznym uderzeniem swojego opalizujacego runicznego topora obosiecznego</string>
 											</regexCodeList>
 											<regexCodePropertyList>
-												<integer>1</integer>
+												<integer>2</integer>
 											</regexCodePropertyList>
 										</Trigger>
 										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -2917,10 +2917,10 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerFgColor>#000000</colorTriggerFgColor>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
-												<string>^Ze swistem twoj opalizujacy runiczny topor obosieczny .*</string>
+												<string>Ze swistem twoj opalizujacy runiczny topor obosieczny opada w kierunku </string>
 											</regexCodeList>
 											<regexCodePropertyList>
-												<integer>1</integer>
+												<integer>2</integer>
 											</regexCodePropertyList>
 										</Trigger>
 										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -2937,7 +2937,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerFgColor>#000000</colorTriggerFgColor>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
-												<string>^Muskasz .* swoim opalizujacym runicznym toporem obosiecznym</string>
+												<string>^Muskasz (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+?) swoim opalizujacym runicznym toporem obosiecznym\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
 												<integer>1</integer>
@@ -2957,7 +2957,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerFgColor>#000000</colorTriggerFgColor>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
-												<string>^Trafiasz .* w .* zamaszystym ciosem swojego opalizujacego runicznego topora obosiecznego</string>
+												<string>^Trafiasz (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+?) zamaszystym ciosem swojego opalizujacego runicznego topora obosiecznego, kaleczac go\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
 												<integer>1</integer>
@@ -2977,7 +2977,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerFgColor>#000000</colorTriggerFgColor>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
-												<string>Lekko ranisz .*, trafiajac .* w .* zamaszystym cieciem swojego opalizujacego runicznego topora obosiecznego</string>
+												<string>^Lekko ranisz (?P&lt;target&gt;.+?), trafiajac go w (?P&lt;where&gt;.+?) zamaszystym cieciem swojego opalizujacego runicznego topora obosiecznego\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
 												<integer>1</integer>
@@ -2997,7 +2997,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerFgColor>#000000</colorTriggerFgColor>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
-												<string>^Wykonujesz potezny zamach opalizujacym runicznym toporem obosiecznym</string>
+												<string>^Wykonujesz potezny zamach opalizujacym runicznym toporem obosiecznym, raniac (?P&lt;target&gt;.+?) w (?&lt;where&gt;.+?)$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
 												<integer>1</integer>
@@ -3017,7 +3017,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerFgColor>#000000</colorTriggerFgColor>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
-												<string>^Wykonujesz zamaszysty cios opalizujacym runicznym toporem obosiecznym</string>
+												<string>^Wykonujesz zamaszysty cios opalizujacym runicznym toporem obosiecznym, celujac w (?P&lt;target&gt;.+?)\. Ostrze wnika w cialo, pozostawiajac krwawa bruzde\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
 												<integer>1</integer>
@@ -3037,7 +3037,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerFgColor>#000000</colorTriggerFgColor>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
-												<string>^Potezne ciecie twojego opalizujacego runicznego topora obosiecznego</string>
+												<string>^Potezne ciecie twojego opalizujacego runicznego topora obosiecznego trafia w (?P&lt;target&gt;.+?), otwierajac krwawiaca rane na je(?:go|j) ciele\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
 												<integer>1</integer>
@@ -3057,7 +3057,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerFgColor>#000000</colorTriggerFgColor>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
-												<string>^Bezlitosnie masakrujesz (?&lt;target&gt;.+?) opalizujacym runicznym toporem obosiecznym</string>
+												<string>^Bezlitosnie masakrujesz (?&lt;target&gt;.+?) opalizujacym runicznym toporem obosiecznym, trafiajac (go|ja) w (?P&lt;where&gt;)\. Wyglada na to, ze kolejne takie uderzenie bedzie juz ostatnim w tej walce\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
 												<integer>1</integer>
@@ -3093,11 +3093,9 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerFgColor>#000000</colorTriggerFgColor>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
-												<string>^.* muska cie w .* opalizujacym runicznym toporem</string>
-												<string>^(.+?) muska (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+?) swoim opalizujacym runicznym toporem obosiecznym\.$</string>
+												<string>^(?P&lt;attacker&gt;.+?) (?&lt;!ledwo )muska (?P&lt;target&gt;.+) w (?P&lt;where&gt;.*) opalizujacym runicznym toporem obosiecznym\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
-												<integer>1</integer>
 												<integer>1</integer>
 											</regexCodePropertyList>
 										</Trigger>
@@ -3115,7 +3113,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerFgColor>#000000</colorTriggerFgColor>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
-												<string>^.* trafia .* zamaszystym ciosem opalizujacego runicznego topora</string>
+												<string>^(?P&lt;attacker&gt;.+?) trafia (?P&lt;target&gt;.+) w (?P&lt;where&gt;.+?) zamaszystym ciosem opalizujacego runicznego topora obosiecznego, kaleczac (?:go|ja)\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
 												<integer>1</integer>
@@ -3157,7 +3155,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerFgColor>#000000</colorTriggerFgColor>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
-												<string>^.* wykonuje potezny zamach opalizujacym runicznym toporem</string>
+												<string>^(?P&lt;attacker&gt;.+?) wykonuje potezny zamach opalizujacym runicznym toporem obosiecznym, raniac (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+?)\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
 												<integer>1</integer>
@@ -3179,7 +3177,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerFgColor>#000000</colorTriggerFgColor>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
-												<string>^.* wykonuje zamaszysty cios opalizujacym runicznym toporem</string>
+												<string>^(?P&lt;attacker&gt;.+?) wykonuje zamaszysty cios opalizujacym runicznym toporem obosiecznym, celujac w (?P&lt;target&gt;.+?)\. Ostrze wnika w cialo, pozostawiajac krwawa bruzde\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
 												<integer>1</integer>
@@ -3219,7 +3217,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerFgColor>#000000</colorTriggerFgColor>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
-												<string>^.+? bezlitosnie masakruje (?P&lt;target&gt;.+?) opalizujacym runicznym toporem</string>
+												<string>^(?P&lt;attacker&gt;.+?) bezlitosnie masakruje (?P&lt;target&gt;.*) opalizujacym runicznym toporem obosiecznym. Wyglada na to, ze kolejne uderzenie Dargotha bedzie juzostatnim w tej walce\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
 												<integer>1</integer>
@@ -3239,7 +3237,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerFgColor>#000000</colorTriggerFgColor>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
-												<string>^.* wyprowadza potezny zamach opalizujacym runicznym toporem</string>
+												<string>^(?P&lt;attacker&gt;.+?) wyprowadza potezny zamach opalizujacym runicznym toporem obosiecznym, jednak zle wymierza cios i bron zaledwie muska (?P&lt;target&gt;.*)\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
 												<integer>1</integer>
@@ -3259,7 +3257,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerFgColor>#000000</colorTriggerFgColor>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
-												<string>^Opalizujacy runiczny topor .* trafia .*, zaglebiajac sie lekko</string>
+												<string>^Opalizujacy runiczny topor obosieczny (?P&lt;attacker&gt;.+?) trafia (?P&lt;target&gt;.*), zaglebiajac sie lekko w je(?:go|j) (?P&lt;where&gt;.+?)\. Posoka powoli splywajaca po ostrzu zdaje sie gotowac\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
 												<integer>1</integer>
@@ -3279,7 +3277,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerFgColor>#000000</colorTriggerFgColor>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
-												<string>^.* zamaszystym cieciem opalizujacego runicznego topora\. Bron zaglebia sie w </string>
+												<string>^(?P&lt;attacker&gt;.+?) zamaszystym cieciem opalizujacego runicznego topora obosiecznego trafia (?P&lt;target&gt;.*)\. Bron zaglebia sie w je(?:go|j) (?P&lt;where&gt;.+?), a wyplywajaca z rany posoka zdaje sie odsuwac od otoczonego czerwona aura ostrza\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
 												<integer>1</integer>
@@ -3319,11 +3317,9 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerFgColor>#000000</colorTriggerFgColor>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
-												<string>^Ze swistem opalizujacego runicznego topora</string>
-												<string>^(.+?) poteznym ciosem opalizujacego runicznego topora obosiecznego trafia (?P&lt;target&gt;.+?) prosto w (?P&lt;where&gt;.+?)\. Krew zalewa (jej|mu) niewidzace juz nic oczy\.$</string>
+												<string>^(?P&lt;attacker&gt;.+?) poteznym ciosem opalizujacego runicznego topora obosiecznego trafia (?P&lt;target&gt;.*) prosto w (?P&lt;where&gt;.+?)\. Krew zalewa mu niewidzace juz nic oczy\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
-												<integer>1</integer>
 												<integer>1</integer>
 											</regexCodePropertyList>
 										</Trigger>
@@ -8305,6 +8301,46 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											</regexCodeList>
 											<regexCodePropertyList>
 												<integer>0</integer>
+											</regexCodePropertyList>
+										</Trigger>
+									</TriggerGroup>
+									<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+										<name>obosieczny gwiezdny topor</name>
+										<script></script>
+										<triggerType>0</triggerType>
+										<conditonLineDelta>0</conditonLineDelta>
+										<mStayOpen>0</mStayOpen>
+										<mCommand></mCommand>
+										<packageName></packageName>
+										<mFgColor>#ff0000</mFgColor>
+										<mBgColor>#ffff00</mBgColor>
+										<mSoundFile></mSoundFile>
+										<colorTriggerFgColor>#000000</colorTriggerFgColor>
+										<colorTriggerBgColor>#000000</colorTriggerBgColor>
+										<regexCodeList>
+											<string>obosiecznego gwiezdnego topora</string>
+										</regexCodeList>
+										<regexCodePropertyList>
+											<integer>0</integer>
+										</regexCodePropertyList>
+										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+											<name>gwiezdny</name>
+											<script>trigger_func_skrypty_ui_gags_ciosy_obosieczny_gwiezdny_topor()</script>
+											<triggerType>0</triggerType>
+											<conditonLineDelta>0</conditonLineDelta>
+											<mStayOpen>0</mStayOpen>
+											<mCommand></mCommand>
+											<packageName></packageName>
+											<mFgColor>#ff0000</mFgColor>
+											<mBgColor>#ffff00</mBgColor>
+											<mSoundFile></mSoundFile>
+											<colorTriggerFgColor>#000000</colorTriggerFgColor>
+											<colorTriggerBgColor>#000000</colorTriggerBgColor>
+											<regexCodeList>
+												<string>^(?:(?:Ostrze|Zelezce) twojego|Ostrza dzierzonego przez (?P&lt;attacker&gt;.+?)) obosiecznego gwiezdnego topora (?:rozblyskuj[ae] nagle blaskiem tysiecy gwiazd, gdy ostrze broni )?(?P&lt;damage&gt;niemal przecina w pol|tnie (?:lekko|plytko|gladko|gleboko|szeroko)) (?P&lt;target&gt;.+?)(?:|, z sila i blaskiem spadajacej z nieba gwiazdy|, zostawiajac w powietrzu smuge mlecznobialego swiatla, blaknaca tak szybko, jak sie pojawila)\.$</string>
+											</regexCodeList>
+											<regexCodePropertyList>
+												<integer>1</integer>
 											</regexCodePropertyList>
 										</Trigger>
 									</TriggerGroup>

@@ -364,3 +364,7 @@ Event podniesiony po przeprocesowaniu wiadomosci przychodzacej.
 Argument:
   * `arg1`: typ wiadomosci
   * `arg2`: tekst wiadomosci
+
+## `weaponBroken`
+
+Event podniesiony kiedy bron dzierzona przez gracza peknie.

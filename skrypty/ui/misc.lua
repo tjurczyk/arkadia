@@ -26,9 +26,10 @@ end
 function trigger_func_skrypty_ui_misc_zniszczona_bron(owner)
     creplaceLine("<tomato>\n\n[  SPRZET  ] " .. matches[1] .. "\n\n")
     resetFormat()
-
+    
     if not owner then
         raiseEvent("playBeep")
+        raiseEvent("weaponBroken")
         scripts.ui:info_action_update("ZNI. BRON")
         scripts.utils.bind_functional("odloz zlamana bron")
         scripts.ui.info_action_bind = "odloz zlamana bron"

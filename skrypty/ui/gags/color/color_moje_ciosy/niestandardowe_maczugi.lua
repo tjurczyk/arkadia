@@ -26,6 +26,21 @@ function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_dwusegmentowa_fin()
     scripts.gags:gag_prefix("FIN", "moje_ciosy")
 end
 
+function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_dwusegmentowa()
+    local target = "moje_ciosy"
+    if matches["attacker"] then
+        target = matches["target"] == "cie" and "innych_ciosy_we_mnie" or "innych_ciosy"
+    end
+
+    local dmg = matches["damage"]
+    local value = -1
+        if dmg == "unika" then value = 0    
+    elseif dmg == "broczaca" then value = 4
+    elseif dmg == "masakrujac" then value = 5
+    end
+    scripts.gags:gag(value, 7, target)
+end
+
 
 function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_krysztalowy_swietlisty_korbacz_0()
     scripts.gags:gag(0, 7, "moje_ciosy")

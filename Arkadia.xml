@@ -5130,7 +5130,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											</regexCodeList>
 											<regexCodePropertyList>
 												<integer>1</integer>
-												<integer>0</integer>
+												<integer>1</integer>
 											</regexCodePropertyList>
 										</Trigger>
 										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -5147,7 +5147,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerFgColor>#000000</colorTriggerFgColor>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
-												<string>^Z oszczednego zamachu uderzasz glowica szponiastej dwusegmentowej maczugi w (?P&lt;where_target&gt;.+?), nie zadajac jednak powaznych ran\.$</string>
+												<string>^Z oszczednego zamachu uderzasz glowica szponiastej dwusegmentowej maczugi w (?P&lt;where_target&gt;.+?), nie zadajac jednak (powaznych ran|powazniejszych obrazen)\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
 												<integer>1</integer>
@@ -5187,7 +5187,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerFgColor>#000000</colorTriggerFgColor>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
-												<string>^Z powodzeniem trafiasz (?P&lt;target&gt;.+?) celnym ciosem swej szponiastej dwusegmentowej maczugi w (?P&lt;where&gt;.+?), orzac na jego skorze broczaca krwia rane\.$</string>
+												<string>^Z powodzeniem trafiasz (?P&lt;target&gt;.+?) celnym ciosem swej szponiastej dwusegmentowej maczugi w (?P&lt;where&gt;.+?), (zadajac nieduze obrazenia|orzac na jego skorze broczaca krwia rane)\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
 												<integer>1</integer>
@@ -5207,7 +5207,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerFgColor>#000000</colorTriggerFgColor>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
-												<string>^Rozpedzona glowica dzierzonej przez ciebie szponiastej dwusegmentowej maczugi z impetem wbija sie w (?P&lt;where_target&gt;.+?), raniac (go|ja)\.$</string>
+												<string>^Rozpedzona glowica dzierzonej przez ciebie szponiastej dwusegmentowej maczugi z impetem (?:uderza|wbija sie) w (?P&lt;where_target&gt;.+?), raniac (go|ja)\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
 												<integer>1</integer>
@@ -5227,7 +5227,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerFgColor>#000000</colorTriggerFgColor>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
-												<string>^Celnie uderzasz szponiasta dwusegmentowa maczuga w (?P&lt;target&gt;.+?), z satysfakcja obserwujac jak lukowate ostrza glowicy krwawo wgryzaja sie w (jego|jej) cialo\.$</string>
+												<string>^Celnie uderzasz szponiasta dwusegmentowa maczuga w (?P&lt;target&gt;.+?), z satysfakcja obserwujac (widoczne obrazenia|jak lukowate ostrza glowicy krwawo wgryzaja sie w (?:jego|jej) cialo)\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
 												<integer>1</integer>
@@ -5287,7 +5287,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerFgColor>#000000</colorTriggerFgColor>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
-												<string>^Miazdzysz korpus (?P&lt;target&gt;.+?) swa szponiasta dwusegmentowa maczuga, a stalowe ostrza masywnej glowicy rozdzieraja straszliwa rane, niemalze doszczetnie (?P&lt;damage&gt;masakrujac) (jego|jej) slaniajace sie cialo\.$</string>
+												<string>^Miazdzysz (?P&lt;where_target&gt;.+?) swa szponiasta dwusegmentowa maczuga, a stalowe ostrza masywnej glowicy rozdzieraja straszliwa rane, niemalze doszczetnie (?P&lt;damage&gt;masakrujac) (jego|jej) slaniajace sie cialo\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
 												<integer>1</integer>
@@ -5308,8 +5308,10 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
 												<string>^Wkladajac w zamach cala swa sile wyprowadzasz potezny cios szponiasta dwusegmentowa maczuga, ktorej glowica grajac zlowrozebnie brzekiem stalowych ogniw zalobna melodie przecina z furkotem powietrze, z morderczym impetem dosiegajac (?P&lt;target&gt;.+?)\. Potwornie zmasakrowane cialo bezwladnie osuwa sie w ciagle rosnaca kaluze krwi\.$</string>
+												<string>^Druzgoczacym zamachem szponiastej dwusegmentowej maczugi powalasz (?P&lt;target&gt;.+?) na ziemie i z ponurym grymasem, bezlitosnie wymierzasz smiertelny cios w je(?:go|j) (?P&lt;where&gt;.+?), raz na zawsze konczac walke\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
+												<integer>1</integer>
 												<integer>1</integer>
 											</regexCodePropertyList>
 										</Trigger>
@@ -8426,6 +8428,71 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 												<string>^(?:(?:Ostrze|Zelezce) twojego|Ostrza dzierzonego przez (?P&lt;attacker&gt;.+?)) obosiecznego gwiezdnego topora (?:rozblyskuj[ae] nagle blaskiem tysiecy gwiazd, gdy ostrze broni )?(?P&lt;damage&gt;niemal przecina w pol|tnie (?:lekko|plytko|gladko|gleboko|szeroko)) (?P&lt;target&gt;.+?)(?:|, z sila i blaskiem spadajacej z nieba gwiazdy|, zostawiajac w powietrzu smuge mlecznobialego swiatla, blaknaca tak szybko, jak sie pojawila)\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
+												<integer>1</integer>
+											</regexCodePropertyList>
+										</Trigger>
+									</TriggerGroup>
+									<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+										<name>kunsztowny mithrylowy topor bojowy</name>
+										<script></script>
+										<triggerType>0</triggerType>
+										<conditonLineDelta>0</conditonLineDelta>
+										<mStayOpen>0</mStayOpen>
+										<mCommand></mCommand>
+										<packageName></packageName>
+										<mFgColor>#ff0000</mFgColor>
+										<mBgColor>#ffff00</mBgColor>
+										<mSoundFile></mSoundFile>
+										<colorTriggerFgColor>#000000</colorTriggerFgColor>
+										<colorTriggerBgColor>#000000</colorTriggerBgColor>
+										<regexCodeList>
+											<string>kunsztown\w+ mithrylow\w+</string>
+										</regexCodeList>
+										<regexCodePropertyList>
+											<integer>1</integer>
+										</regexCodePropertyList>
+										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+											<name>mithrylowy_spece</name>
+											<script>local target = "moje_ciosy"
+    local dmg = matches["damage"]
+    local value = -1
+
+        if dmg == "tniesz"    then value = 4
+    elseif dmg == "uskakuje"  then value = 0
+    elseif dmg == "dotyka"    then value = 1
+    elseif dmg == "rabiesz"   then value = 2
+    elseif dmg == "trafia"    then value = 5
+    elseif dmg == "kosci"     then value = 3
+    elseif dmg == "druzgocze" then value = 6
+    end
+
+scripts.gags:gag(value, 6, target)</script>
+											<triggerType>0</triggerType>
+											<conditonLineDelta>0</conditonLineDelta>
+											<mStayOpen>0</mStayOpen>
+											<mCommand></mCommand>
+											<packageName></packageName>
+											<mFgColor>#ff0000</mFgColor>
+											<mBgColor>#ffff00</mBgColor>
+											<mSoundFile></mSoundFile>
+											<colorTriggerFgColor>#000000</colorTriggerFgColor>
+											<colorTriggerBgColor>#000000</colorTriggerBgColor>
+											<regexCodeList>
+												<string>^Twoj kunsztowny mithrylowy topor bojowy (?P&lt;damage&gt;dotyka) (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+?) robiac ladna, swieza rane\.$</string>
+												<string>^Dobrze wymierzonym ciosem swego kunsztownego mithrylowego topora bojowego (?P&lt;damage&gt;rabiesz) (?P&lt;where_target&gt;.+?)\.$</string>
+												<string>^Swoim kunsztownym mithrylowym toporem bojowym (?P&lt;damage&gt;tniesz) gleboko (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+?), a do twych uszu dochodzi zgrzyt ostrza o kosci\.$</string>
+												<string>^Tniesz gleboko swym kunsztownym mithrylowym toporem bojowym w (?P&lt;where_target&gt;.+?) i slyszysz glosny odglos druzgotanych (?P&lt;damage&gt;kosci)\.$</string>
+												<string>^Przy wtorze swistu powietrza (?P&lt;target&gt;.+?) (?P&lt;damage&gt;uskakuje) przed morderczym ciosem twojego kunsztownego mithrylowego topora bojowego\.$</string>
+												<string>^(?P&lt;target&gt;.+?) niemal przewraca sie pod impetem twojego ciosu, gdy twoj kunsztowny mithrylowy topor bojowy (?P&lt;damage&gt;trafia) go w (?P&lt;where&gt;.+?)\.$</string>
+												<string>^Twoj kunsztowny mithrylowy topor bojowy brutalnie (?P&lt;damage&gt;druzgocze) (?P&lt;where_target&gt;.+?) ze smiercionosna sila\. (?P&lt;target&gt;.+?) pada na ziemie jako zmasakrowane i niemal nierozpoznawalne cialo\.$</string>
+											</regexCodeList>
+											<regexCodePropertyList>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
 												<integer>1</integer>
 											</regexCodePropertyList>
 										</Trigger>

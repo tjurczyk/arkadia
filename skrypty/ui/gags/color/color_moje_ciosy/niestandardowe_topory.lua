@@ -16,3 +16,20 @@ function trigger_func_skrypty_ui_gags_ciosy_obosieczny_gwiezdny_topor()
     else end
     scripts.gags:gag(value, 6, target)
 end
+
+-- Misterny obosieczny topor bojowy
+
+function trigger_func_skrypty_ui_gags_ciosy_kunsztowny_mithrylowy_topor_bojowy()
+    local target = "moje_ciosy"
+    local dmg = matches["damage"]
+    local value = -1
+        if dmg == "uskakuje"  then value = 0
+    elseif dmg == "dotyka"    then value = 1
+    elseif dmg == "rabiesz"   then value = 2
+    elseif dmg == "kosci"     then value = 3
+    elseif dmg == "tniesz"    then value = 4
+    elseif dmg == "trafia"    then value = 5
+    elseif dmg == "druzgocze" then value = 6
+    end
+    scripts.gags:gag(value, 6, target)
+end

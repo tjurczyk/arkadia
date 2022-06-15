@@ -7454,8 +7454,8 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											</regexCodePropertyList>
 										</Trigger>
 										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-											<name>trojzab_fin</name>
-											<script>trigger_func_skrypty_ui_gags_ciosy_bron_fin()</script>
+											<name>trojzab_6</name>
+											<script>trigger_func_skrypty_ui_gags_ciosy_ognisty_trojzab(6)</script>
 											<triggerType>0</triggerType>
 											<conditonLineDelta>0</conditonLineDelta>
 											<mStayOpen>0</mStayOpen>
@@ -11736,7 +11736,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 									<colorTriggerFgColor>#000000</colorTriggerFgColor>
 									<colorTriggerBgColor>#000000</colorTriggerBgColor>
 									<regexCodeList>
-										<string>rani </string>
+										<string> rani </string>
 									</regexCodeList>
 									<regexCodePropertyList>
 										<integer>0</integer>
@@ -15369,11 +15369,13 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<string>^[ &gt;]*[a-zA-Z (),!]+ ale tobie w pore udaje sie uskoczyc przed rozpedzona bronia\.$</string>
 										<string>jednak udaje ci sie uniknac tego ciosu.</string>
 										<string>jednak udaje ci sie uniknac tego ataku.</string>
+										<string>zrecznie unikasz ciosu.</string>
 									</regexCodeList>
 									<regexCodePropertyList>
 										<integer>1</integer>
 										<integer>1</integer>
 										<integer>1</integer>
+										<integer>0</integer>
 										<integer>0</integer>
 										<integer>0</integer>
 									</regexCodePropertyList>
@@ -15436,11 +15438,15 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<string>^[ &gt;]*Nie silac sie na wirtuozerie probujesz walnac.*jednak .* w pore wykonuje unik.*</string>
 										<string>^[ &gt;]*Nie udaje ci sie trafic .*</string>
 										<string>twych mieczy tna zaledwie powietrze.</string>
+										<string>robi szybki unik</string>
+										<string>zbaczajac z toru i chybiajac celu.</string>
 									</regexCodeList>
 									<regexCodePropertyList>
 										<integer>1</integer>
 										<integer>1</integer>
 										<integer>1</integer>
+										<integer>0</integer>
+										<integer>0</integer>
 										<integer>0</integer>
 									</regexCodePropertyList>
 								</Trigger>
@@ -15668,6 +15674,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 									<string>^[ &gt;]*[a-zA-Z (),!]+ gdy jego uderzenie zeslizguje sie po (twym|twych|twej) [a-z ]+\.$</string>
 									<string>^[ &gt;]*[a-zA-Z (),!]+ by wyprowadzic cios zdolnyprzebic (twoj|twoja|twe) [a-z ]+\.$</string>
 									<string>nie czyniac ci zadnej szkody.</string>
+									<string>lecz zatrzymuja sie one na</string>
 								</regexCodeList>
 								<regexCodePropertyList>
 									<integer>1</integer>
@@ -15676,6 +15683,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 									<integer>1</integer>
 									<integer>1</integer>
 									<integer>1</integer>
+									<integer>0</integer>
 									<integer>0</integer>
 								</regexCodePropertyList>
 							</Trigger>
@@ -15807,6 +15815,8 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 									<string>^Wykonujesz zamaszyste ciecie .* oslania sie</string>
 									<string>^Zamierzasz sie .* lecz udaje sie mu sparowac</string>
 									<string>^Usmiechajac sie szyderczo, rzucasz sie do ataku</string>
+									<string>uderzenie zostaje zablokowane</string>
+									<string> w ostatniej chwili zaslania sie</string>
 								</regexCodeList>
 								<regexCodePropertyList>
 									<integer>1</integer>
@@ -15827,6 +15837,8 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 									<integer>1</integer>
 									<integer>1</integer>
 									<integer>1</integer>
+									<integer>0</integer>
+									<integer>0</integer>
 								</regexCodePropertyList>
 							</Trigger>
 							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">

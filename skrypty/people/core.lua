@@ -24,6 +24,11 @@ function scripts.people:process_someone(short, name)
     local name_short = short
     name_short = name_short:gsub(" ", "_")
 
+    local host = getConnectionInfo()
+    if host ~= "arkadia.rpg.pl" then
+        return
+    end
+
     getHTTP("http://158.69.205.60/cgi-bin/people_listener.py?people_string=" .. name_short .. "!" .. title)
 end
 

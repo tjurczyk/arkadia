@@ -32,19 +32,34 @@ end
 
 function scripts.people.mail:check_package_person(name)
     local lowered_name = string.lower(name)
-
+    local color
+   
     if string.sub(lowered_name, #lowered_name) == " " then
         -- if it has a space at the end, get rid of it
         lowered_name = string.sub(lowered_name, 0, #lowered_name - 1)
     end
 
     local results = db:fetch(scripts.people.db.people, db:like(scripts.people.db.people.title, "%" .. lowered_name .. "%"))
+    local is_single = table.size(results) == 1
+    local room =  is_single and results[1]["room_id"] or -1
+    if not is_single then
+        local assistant_match, multiple = scripts.packages:get_from_db(lowered_name)
+        if assistant_match and not multiple then
+            room = assistant_match.room_id
+            is_single = true
+            color = "spring_green"
+        end
+    end
 
-    if amap and table.size(results) == 1 and results[1]["room_id"] ~= -1 then
+    if amap and room ~= -1 then
+        if selectString(name, 1) > -1 then
+            fg(color or "green")
+            resetFormat()
+        end
         if scripts.people.mail.show_automatically then
-            amap.path_display:start(results[1]["room_id"])
+            amap.path_display:start(room)
         else
-            scripts:print_url("\n<orange>Kilknij tutaj, zeby pokazac sciezke.", function() amap.path_display:start(results[1]["room_id"]) end, "Prowadz do " .. results[1]["room_id"])
+            scripts:print_url("\n<orange>Kilknij tutaj, zeby pokazac sciezke.", function() amap.path_display:start(room) end, "Prowadz do " .. room)
         end
         return true
     end

@@ -146,7 +146,7 @@ function scripts.packages:update_display()
             end
         end
         if self.footer_info then
-            self.footer_info:echo("<font color='" .. scripts.ui["footer_info_normal"] .. "'>Paczka:</font> <font color='" .. scripts.ui["footer_info_neutral"] .. "'>" .. self.picked_offer.name .. time_to_deliver .. "</font>")
+            self.footer_info:echo("<font color='" .. scripts.ui["footer_info_normal"] .. "'>Paczka:</font> <font color='" .. scripts.ui["footer_info_neutral"] .. "'>" .. time_to_deliver .. " " .. self.picked_offer.name .. "</font>")
             setLabelToolTip(self.footer_info.name, time_to_deliver)
         end
     else

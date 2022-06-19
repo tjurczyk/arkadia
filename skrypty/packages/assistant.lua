@@ -158,9 +158,9 @@ function scripts.packages:update_display()
 end
 
 function scripts.packages:get_from_db(name)
-    local result = db:fetch(self.db.packages, db:eq(self.db.packages.name, name))
+    local result = db:fetch_sql(self.db.packages, "SELECT * FROM packages WHERE name = '" .. name .. "' COLLATE NOCASE")
     if result and table.size(result) >= 1 then
-        return result[1], result
+        return result[1], table.size(result) > 0 and table.size(result) > 1
     end
 end
 

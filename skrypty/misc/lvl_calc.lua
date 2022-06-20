@@ -73,8 +73,8 @@ misc.lvl_calc.stat_to_number = {
     ["blyskotliwa"] = 7,
     ["genialny"] = 8,
     ["genialna"] = 8,
-    ["epicko inteligenty"] = 9,
-    ["epicko inteligenta"] = 9,
+    ["epicko inteligentny"] = 9,
+    ["epicko inteligentna"] = 9,
     ["thorzliwy"] = 1,
     ["thorzliwa"] = 1,
     ["strachliwy"] = 2,
@@ -155,7 +155,7 @@ function misc.lvl_calc:cechy()
 
     self.trigger1 = tempRegexTrigger("^Jestes ([a-z ]+) i ([a-z ]+) ci brakuje, zebys mogl(|a) wyzej ocenic sw(a|oj) ([a-z]+)\\.$", function() self:cechy_replace(matches[2], matches[3]) end, 5)
     self.trigger2 = tempRegexTrigger("^Tw.* osiagn.* (nadludzki poziom)\\.$", function() self:cechy_replace(matches[2]) end, 5)
-    self.trigger3 = tempRegexTrigger("^Obecnie do waznych cech zaliczasz", function() 
+    self.trigger3 = tempRegexTrigger("^Obecnie do waznych cech zaliczasz", function()
         misc.lvl_calc:calculate_lvl()
         killTrigger(self.trigger1)
         killTrigger(self.trigger2)
@@ -174,7 +174,7 @@ function misc.lvl_calc:cechy()
 end
 
 function misc.lvl_calc:cechy_replace(m1, m2)
-    local value, step= misc.lvl_calc:collect_stat(m1, m2)
+    local value, step = misc.lvl_calc:collect_stat(m1, m2)
 
     if selectString(m1, 1) > -1 then
         creplace(m1..' <green>['..value..'/10]')
@@ -233,7 +233,9 @@ function misc.lvl_calc:calculate_lvl()
 end
 
 function misc.lvl_calc:collect_stat(stat, val_to_next)
+    display(stat)
     local value = misc.lvl_calc.stat_to_number[stat]
+    display(value)
     local step_value = nil
     table.insert(misc.lvl_calc["current_stats"], value)
     if val_to_next then

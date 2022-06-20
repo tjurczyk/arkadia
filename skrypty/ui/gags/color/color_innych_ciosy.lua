@@ -109,7 +109,8 @@ function trigger_func_skrypty_ui_gags_color_color_innych_ciosy_ktos_masakruje()
         local ignore_list = {
             " i ",
             "srebrzysta kosa bojowa",
-            "opalizujacym runicznym toporem"
+            "opalizujacym runicznym toporem",
+            "Ruszasz do przodu"
         }
 
         for _, v in pairs(ignore_list) do

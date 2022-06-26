@@ -233,9 +233,7 @@ function misc.lvl_calc:calculate_lvl()
 end
 
 function misc.lvl_calc:collect_stat(stat, val_to_next)
-    display(stat)
     local value = misc.lvl_calc.stat_to_number[stat]
-    display(value)
     local step_value = nil
     table.insert(misc.lvl_calc["current_stats"], value)
     if val_to_next then

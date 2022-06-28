@@ -340,3 +340,6 @@ function alias_func_skrypty_misc_porownaj_ze_wszystkimi()
     end
 end
 
+function trigger_sciagnij_kaptur()
+    scripts.utils.bind_functional("sciagnij kaptur")
+end

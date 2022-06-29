@@ -23307,7 +23307,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>Mozesz podazac traktem na (.*) albo (.*). Natomiast aby zejsc z wytyczonej drogi musisz udac sie na (.*)\.$</string>
+							<string>Mozesz podazac traktem na (.*) albo (.*). Natomiast (?:aby|jesli chcesz) zejsc z wytyczonej drogi (?:musisz|mozesz) udac sie na (.*)\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>

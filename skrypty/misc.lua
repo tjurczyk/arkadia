@@ -104,6 +104,10 @@ function trigger_func_skrypty_misc_gonienie_panika()
     end
 end
 
+function trigger_func_skrypty_misc_gonienie_elfka()
+    misc:enemy_escape_print_arrow(matches[2], "red")
+end
+
 function trigger_func_skrypty_misc_nosi_na_sobie()
     local color = scripts.inv.magics_color
 

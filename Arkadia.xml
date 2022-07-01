@@ -18640,9 +18640,9 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList />
 					<regexCodePropertyList />
-					<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>dotknij_slupa</name>
-						<script>trigger_func_skrypty_ui_special_exits_follow("dotknij slupa")
+						<script>trigger_func_skrypty_ui_special_exits_follow("dotknij slupa;e;e;wespnij sie po linie")
 </script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
@@ -21383,7 +21383,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>wskocz_do_studni</name>
-						<script>trigger_func_skrypty_ui_special_exits_follow("wskocz do studni;dotknij slupa;e;e;wespnij sie po linie")</script>
+						<script>trigger_func_skrypty_ui_special_exits_follow("wskocz do studni")</script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
 						<mStayOpen>0</mStayOpen>

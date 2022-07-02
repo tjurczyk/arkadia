@@ -2132,6 +2132,28 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 					</regexCodePropertyList>
 				</Trigger>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>gonienie-elfka</name>
+					<script>trigger_func_skrypty_misc_gonienie_elfka()</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>^Kolorowowlosa rozesmiana elfka wybiega smiejac sie na caly glos na (.*)\.$</string>
+						<string>^Kolorowowlosa rozesmiana elfka wybiega chichoczac na (.*)\.$</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>1</integer>
+						<integer>1</integer>
+					</regexCodePropertyList>
+				</Trigger>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>nosi-na-sobie</name>
 					<script>trigger_func_skrypty_misc_nosi_na_sobie()</script>
 					<triggerType>0</triggerType>
@@ -18618,9 +18640,9 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList />
 					<regexCodePropertyList />
-					<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>dotknij_slupa</name>
-						<script>trigger_func_skrypty_ui_special_exits_follow("dotknij slupa")
+						<script>trigger_func_skrypty_ui_special_exits_follow("dotknij slupa;e;e;wespnij sie po linie")
 </script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
@@ -19145,7 +19167,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>przejdz_po_plytkach</name>
-						<script>trigger_func_skrypty_ui_special_exits_follow("przejdz po " .. matches[3] .. " plytkach na " .. matches[2])</script>
+						<script>trigger_func_skrypty_ui_special_exits_follow("przejdz po " .. matches[2] .. " plytkach")</script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
 						<mStayOpen>0</mStayOpen>
@@ -19157,7 +19179,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>podaza na (\w+), stapajac po (\w+) plytkach.</string>
+							<string>podaza na druga strone mostu, stapajac po (\w+) plytkach.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -21361,7 +21383,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>wskocz_do_studni</name>
-						<script>trigger_func_skrypty_ui_special_exits_follow("wskocz do studni;dotknij slupa;e;e;wespnij sie po linie")</script>
+						<script>trigger_func_skrypty_ui_special_exits_follow("wskocz do studni")</script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
 						<mStayOpen>0</mStayOpen>
@@ -23307,7 +23329,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>Mozesz podazac traktem na (.*) albo (.*). Natomiast aby zejsc z wytyczonej drogi musisz udac sie na (.*)\.$</string>
+							<string>Mozesz podazac traktem na (.*) albo (.*). Natomiast (?:aby|jesli chcesz) zejsc z wytyczonej drogi (?:musisz|mozesz) udac sie na (.*)\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -27021,6 +27043,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<string>Ogromny stwor blokuje dojscie do bramy.</string>
 						<string>^Ruszasz po granitowej posadzce na [a-z-]+, jednak powstrzymuje cie buchajacy z peknietego chodnika strumien goracej pary\.$</string>
 						<string>Musisz najpierw przywiazac do kolowrotu jakas line lub sznur.</string>
+						<string>Nie udaje ci sie przecisnac przez geste krzaki.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -27053,6 +27076,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<integer>1</integer>
 						<integer>2</integer>
 						<integer>1</integer>
+						<integer>2</integer>
 						<integer>2</integer>
 					</regexCodePropertyList>
 				</Trigger>

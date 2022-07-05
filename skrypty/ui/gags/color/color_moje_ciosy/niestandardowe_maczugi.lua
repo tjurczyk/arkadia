@@ -110,7 +110,6 @@ function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenste
 function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_9() scripts.gags:gag(9, 9, "moje_ciosy") end
 function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_10() scripts.gags:gag(9, 9, "moje_ciosy") end
 function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_11() scripts.gags:gag(9, 9, "moje_ciosy") end
-function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_12() scripts.gags:gag(9, 9, "moje_ciosy") end
 function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_fin() scripts.gags:gag_prefix("FIN", "moje_ciosy") end
 
 function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_iskrzaca_zdobiona_bulawa()

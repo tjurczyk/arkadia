@@ -7,6 +7,9 @@ function trigger_func_skrypty_ui_gags_color_moje_ciosy(value)
         return
     end
 
+    local exception = "czarnoblekitnego pulsujacego morgensterna."
+    if line:sub(-#exception) == exception then return end
+
     selectString(matches[1], 1)
     setFgColor(45, 185, 45)
     resetFormat()

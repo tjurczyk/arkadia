@@ -150,11 +150,13 @@ function misc.lvl_calc:cechy()
     end
     self.is_running = true
 
+    misc.lvl_calc.prev_stats = misc.lvl_calc.current_stats
+    misc.lvl_calc.prev_val_to_next = misc.lvl_calc.current_val_to_next
     misc.lvl_calc.current_stats = {}
     misc.lvl_calc.current_val_to_next = {}
 
     self.trigger1 = tempRegexTrigger("^Jestes ([a-z ]+) i ([a-z ]+) ci brakuje, zebys mogl(|a) wyzej ocenic sw(a|oj) ([a-z]+)\\.$", function() self:cechy_replace(matches[2], matches[3]) end, 5)
-    self.trigger2 = tempRegexTrigger("^Tw.* osiagn.* (nadludzki poziom)\\.$", function() self:cechy_replace(matches[2]) end, 5)
+    self.trigger2 = tempRegexTrigger("^Twoja \\w+? osiagnela (nadludzki poziom)\\.$", function() self:cechy_replace(matches[2]) end, 5)
     self.trigger3 = tempRegexTrigger("^Obecnie do waznych cech zaliczasz", function()
         misc.lvl_calc:calculate_lvl()
         killTrigger(self.trigger1)
@@ -173,19 +175,31 @@ function misc.lvl_calc:cechy()
  
 end
 
+local function calc_stat_sum(stat, step)
+    local sum = (stat - 1) * 5 + step
+    if stat == 10 then sum = sum + 1 end
+    return sum
+end
+
 function misc.lvl_calc:cechy_replace(m1, m2)
     local value, step = misc.lvl_calc:collect_stat(m1, m2)
 
     if selectString(m1, 1) > -1 then
         creplace(m1..' <green>['..value..'/10]')
     end
-    if m1 and step and selectString(m2, 1) > -1 then
+    if m2 and selectString(m2, 1) > -1 then
         creplace(m2..' <green>['..step..'/5]')
     end
-
-    local sum = (value -1 ) * 5
-    if step then sum = sum + step end
-    cecho(' <green>['..sum..']')
+    
+    local index = #misc.lvl_calc.current_stats
+    local sum = calc_stat_sum(misc.lvl_calc.current_stats[index], misc.lvl_calc.current_val_to_next[index])
+    cecho(' <green>['..sum..']<reset>')
+    if misc.lvl_calc.prev_stats[index] then
+        local old_sum = calc_stat_sum(misc.lvl_calc.prev_stats[index], misc.lvl_calc.prev_val_to_next[index])
+        local diff = sum - old_sum
+        if diff > 0 then cecho(" (<green>+<yellow>".. diff..")")
+        elseif diff < 0 then cecho(" (<red>-<yellow>".. (-diff)..")") end
+    end
 end
 
 function misc.lvl_calc:calculate_lvl()
@@ -198,12 +212,7 @@ function misc.lvl_calc:calculate_lvl()
     -- Calculate full number of stats
     local full_stat = 0
     for k, v in pairs(misc.lvl_calc.current_stats) do
-        full_stat = full_stat + (tonumber(v) - 1) * 5
-    end
-
-    -- add current stat lvls
-    for k, v in pairs(misc.lvl_calc.current_val_to_next) do
-        full_stat = full_stat + tonumber(v)
+        full_stat = full_stat + calc_stat_sum(tonumber(v), misc.lvl_calc.current_val_to_next[k])
     end
 
     -- find current lvl
@@ -226,7 +235,7 @@ function misc.lvl_calc:calculate_lvl()
                 misc.lvl_calc.real_lvl_string[curr_lvl + 1] .. "<tomato>)"
     else
         local extra = (full_stat - misc.lvl_calc.stat_to_real_lvl[curr_lvl])
-        msg = string.format("Twoj aktualny poziom to <green> %s (%s) i masz + <green>%s<tomato> podcech", misc.lvl_calc.real_lvl_string[curr_lvl + 1], tostring(full_stat), tostring(extra))
+        msg = string.format("Twoj aktualny poziom to <green>%s (%s) i masz + <green>%s<tomato> podcech", misc.lvl_calc.real_lvl_string[curr_lvl + 1], tostring(full_stat), tostring(extra))
     end
 
     scripts:print_log(msg, true)
@@ -234,12 +243,12 @@ end
 
 function misc.lvl_calc:collect_stat(stat, val_to_next)
     local value = misc.lvl_calc.stat_to_number[stat]
-    local step_value = nil
+    local step_value = 0
     table.insert(misc.lvl_calc["current_stats"], value)
     if val_to_next then
         step_value = misc.lvl_calc.val_to_next_to_number[val_to_next]
-        table.insert(misc.lvl_calc["current_val_to_next"], step_value)
     end
+    table.insert(misc.lvl_calc["current_val_to_next"], step_value)
 
     return value, step_value
 end

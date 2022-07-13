@@ -177,7 +177,6 @@ end
 
 local function calc_stat_sum(stat, step)
     local sum = (stat - 1) * 5 + step
-    if stat == 10 then sum = sum + 1 end
     return sum
 end
 

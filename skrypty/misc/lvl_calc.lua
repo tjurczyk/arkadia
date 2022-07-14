@@ -175,9 +175,8 @@ function misc.lvl_calc:cechy()
  
 end
 
-local function calc_stat_sum(stat, step)
-    local sum = (stat - 1) * 5 + step
-    return sum
+function misc.lvl_calc:calc_stat_sum(stat, step)
+    return (stat - 1) * 5 + step
 end
 
 function misc.lvl_calc:cechy_replace(m1, m2)
@@ -191,10 +190,10 @@ function misc.lvl_calc:cechy_replace(m1, m2)
     end
     
     local index = #misc.lvl_calc.current_stats
-    local sum = calc_stat_sum(misc.lvl_calc.current_stats[index], misc.lvl_calc.current_val_to_next[index])
+    local sum = self:calc_stat_sum(misc.lvl_calc.current_stats[index], misc.lvl_calc.current_val_to_next[index])
     cecho(' <green>['..sum..']<reset>')
     if misc.lvl_calc.prev_stats[index] then
-        local old_sum = calc_stat_sum(misc.lvl_calc.prev_stats[index], misc.lvl_calc.prev_val_to_next[index])
+        local old_sum = self:calc_stat_sum(misc.lvl_calc.prev_stats[index], misc.lvl_calc.prev_val_to_next[index])
         local diff = sum - old_sum
         if diff > 0 then cecho(" (<green>+<yellow>".. diff..")")
         elseif diff < 0 then cecho(" (<red>-<yellow>".. (-diff)..")") end
@@ -211,7 +210,7 @@ function misc.lvl_calc:calculate_lvl()
     -- Calculate full number of stats
     local full_stat = 0
     for k, v in pairs(misc.lvl_calc.current_stats) do
-        full_stat = full_stat + calc_stat_sum(tonumber(v), misc.lvl_calc.current_val_to_next[k])
+        full_stat = full_stat + self:calc_stat_sum(tonumber(v), misc.lvl_calc.current_val_to_next[k])
     end
 
     -- find current lvl

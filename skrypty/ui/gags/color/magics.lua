@@ -4,6 +4,10 @@ function trigger_func_skrypty_ui_gags_moje_ciosy_misterny(value)
     scripts.gags:gag(value, 6, "moje_ciosy")
 end
 
+function trigger_func_skrypty_ui_gags_moje_ciosy_misterny_fin()
+    scripts.gags:gag_prefix("FIN", "moje_ciosy")
+end
+
 function trigger_func_skrypty_ui_gags_misterny_innych(value)
     local target = rex.match(getCurrentLine(), "\\b(?:ciebie|cie|ci)\\b") and "innych_ciosy_we_mnie" or "innych_ciosy"
     scripts.gags:gag(value, 6, target)
@@ -19,14 +23,20 @@ function trigger_func_skrypty_ui_gags_moje_ciosy_opal(value)
     scripts.gags:gag(value, 7, "moje_ciosy")
 end
 
+function trigger_func_skrypty_ui_gags_moje_ciosy_opal_fin(value)
+    scripts.gags:gag_prefix("FIN", "moje_ciosy")
+end
+
 
 function trigger_func_skrypty_ui_gags_opal_innych(value)
-    local target = rex.match(getCurrentLine(), "\\b(?:ciebie|cie|ci)\\b") and "innych_ciosy_we_mnie" or "innych_ciosy"
+    local target = matches["target"]
+    target = (target == "ciebie" or target == "cie" or target == "ci") and "innych_ciosy_we_mnie" or "innych_ciosy"
     scripts.gags:gag(value, 7, target)
 end
 
 function trigger_func_skrypty_ui_gags_opal_spec_innych(value)
-    local target = rex.match(getCurrentLine(), "\\b(?:ciebie|cie|ci)\\b") and "innych_ciosy_we_mnie" or "innych_ciosy"
+    local target = matches["target"]
+    target = (target == "ciebie" or target == "cie" or target == "ci")  and "innych_ciosy_we_mnie" or "innych_ciosy"
     scripts.gags:gag(value, 5, target)
 end
 

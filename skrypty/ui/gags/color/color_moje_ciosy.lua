@@ -1,7 +1,8 @@
 function trigger_func_skrypty_ui_gags_color_moje_ciosy(value)
     local ignore_list = {
         "opalizujacego runicznego",
-        "czarnoblekitnego pulsujacego morgensterna"
+        "czarnoblekitnego pulsujacego morgensterna",
+	"czarnego smuklego topora",
     }
 
     for _, v in pairs(ignore_list) do
@@ -13,10 +14,6 @@ function trigger_func_skrypty_ui_gags_color_moje_ciosy(value)
     if rex.match(line, "srebrzyst\\w+ kos\\w+ bojow\\w+") then
         return
     end
-
-    local exception = "czarnoblekitnego pulsujacego morgensterna."
-    if line:sub(-#exception) == exception then return end
-
     selectString(matches[1], 1)
     setFgColor(45, 185, 45)
     resetFormat()

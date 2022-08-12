@@ -1,10 +1,10 @@
 function get_barb_damage_value(dmg)
-        if dmg == "kaleczac"   then return 1
-    elseif dmg == "obijajac"   then return 2
-    elseif dmg == "tlukac"     then return 3
-    elseif dmg == "gruchoczac" then return 4
-    elseif dmg == "druzgoczac" then return 5
-    elseif dmg == "miazdzac"   then return 6
+        if dmg == "kaleczac" or dmg == "muskajac" then return 1
+    elseif dmg == "obijajac" or dmg == "lekko raniac" then return 2
+    elseif dmg == "tlukac"   or dmg == "raniac"  then return 3
+    elseif dmg == "gruchoczac" or dmg == "powaznie raniac" then return 4
+    elseif dmg == "druzgoczac" or dmg == "bardzo ciezko raniac" then return 5
+    elseif dmg == "miazdzac" or dmg == "masakrujac"   then return 6
     else
         return -1
     end

@@ -185,74 +185,29 @@ function trigger_func_skrypty_misc_tropienie_pewny_rasa()
 end
 
 function trigger_func_skrypty_misc_porownanie_wszystkich()
-    local mod = {
-        ["jestes"] = -1,
-        ["jest"] = 1
-    }
-
     local level = {
-        ["rownie dobrze zbudowany"] = 0,
-        ["niewiele lepiej zbudowany"] = 1,
-        ["troche lepiej zbudowany"] = 2,
-        ["lepiej zbudowany"] = 3,
-        ["znacznie lepiej zbudowany"] = 4,
-        ["duzo lepiej zbudowany"] = 5,
-        ["rownie silny"] = 0,
-        ["niewiele silniejszy"] = 1,
-        ["troche silniejszy"] = 2,
-        ["silniejszy"] = 3,
-        ["znacznie silniejszy"] = 4,
-        ["duzo silniejszy"] = 5,
-        ["rownie zreczny"] = 0,
-        ["niewiele zreczniejszy"] = 1,
-        ["troche zreczniejszy"] = 2,
-        ["zreczniejszy"] = 3,
-        ["znacznie zreczniejszy"] = 4,
-        ["duzo zreczniejszy"] = 5,
-
-        -- because I suck at lua regexps, obviously
-
-        ["rownie dobrze zbudowana"] = 0,
-        ["niewiele lepiej zbudowana"] = 1,
-        ["troche lepiej zbudowana"] = 2,
-        ["lepiej zbudowana"] = 3,
-        ["znacznie lepiej zbudowana"] = 4,
-        ["duzo lepiej zbudowana"] = 5,
-        ["rownie silna"] = 0,
-        ["niewiele silniejsza"] = 1,
-        ["troche silniejsza"] = 2,
-        ["silniejsza"] = 3,
-        ["znacznie silniejsza"] = 4,
-        ["duzo silniejsza"] = 5,
-        ["rownie zreczna"] = 0,
-        ["niewiele zreczniejsza"] = 1,
-        ["troche zreczniejsza"] = 2,
-        ["zreczniejsza"] = 3,
-        ["znacznie zreczniejsza"] = 4,
-        ["duzo zreczniejsza"] = 5,
-        ["rownie dobrze zbudowane"] = 0,
-        ["niewiele lepiej zbudowane"] = 1,
-        ["troche lepiej zbudowane"] = 2,
-        ["lepiej zbudowane"] = 3,
-        ["znacznie lepiej zbudowane"] = 4,
-        ["duzo lepiej zbudowane"] = 5,
-        ["rownie silne"] = 0,
-        ["niewiele silniejsze"] = 1,
-        ["troche silniejsze"] = 2,
-        ["silniejsze"] = 3,
-        ["znacznie silniejsze"] = 4,
-        ["duzo silniejsze"] = 5,
-        ["rownie zreczne"] = 0,
-        ["niewiele zreczniejsze"] = 1,
-        ["troche zreczniejsze"] = 2,
-        ["zreczniejsze"] = 3,
-        ["znacznie zreczniejsze"] = 4,
-        ["duzo zreczniejsze"] = 5
+        ["rownie dobrze zbudowan"] = 0,
+        ["niewiele lepiej zbudowan"] = 1,
+        ["troche lepiej zbudowan"] = 2,
+        ["lepiej zbudowan"] = 3,
+        ["znacznie lepiej zbudowan"] = 4,
+        ["duzo lepiej zbudowan"] = 5,
+        ["rownie siln"] = 0,
+        ["niewiele silniejsz"] = 1,
+        ["troche silniejsz"] = 2,
+        ["silniejsz"] = 3,
+        ["znacznie silniejsz"] = 4,
+        ["duzo silniejsz"] = 5,
+        ["rownie zreczn"] = 0,
+        ["niewiele zreczniejsz"] = 1,
+        ["troche zreczniejsz"] = 2,
+        ["zreczniejsz"] = 3,
+        ["znacznie zreczniejsz"] = 4,
+        ["duzo zreczniejsz"] = 5,
     }
 
-    local target = matches[2]
-    local desc = matches[3]
-    local res = mod[target] * level[desc]
+    local res = level[matches['desc']]
+    if matches['mod'] ~= "" then res = -res end
     table.insert(scripts.comparing_all.current_compare_results, res)
     deleteLine()
 

@@ -38,7 +38,8 @@ end
 function amap_db_check_bind()
     if amap.curr.id then
         if getRoomUserData(amap.curr.id, "bind") ~= "" then
-            cecho("\n<" .. scripts.ui:get_bind_color_backward_compatible() .. ">bind <yellow>" .. scripts.keybind:keybind_tostring("special_exit") .. ":<" .. scripts.ui:get_bind_color_backward_compatible() .. "> " .. tostring(getRoomUserData(amap.curr.id, "bind_printable")) .. "\n\n")
+            local text = tostring(getRoomUserData(amap.curr.id, "bind_printable"))
+            scripts.utils.echobind(text, function() amap.db:execute_bind() end, text, "special_exit", 1)
         end
     end
 end

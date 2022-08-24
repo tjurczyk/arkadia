@@ -1,10 +1,25 @@
 ateam.special_follow_bind_beep = false
 
+function scripts.utils.echobind(text, command, hint, functional_key, newline_cnt)
+    newline_cnt = newline_cnt or 2
+    local c = "<"..scripts.ui:get_bind_color_backward_compatible() .. ">"
+    cecho(string.rep("\n", newline_cnt) .. c .. "bind <yellow>" .. scripts.keybind:keybind_tostring(functional_key) .. c .. ": ")
+    if type(command) == "function" then
+        cechoLink(c .. text, command, hint, true)
+    else
+        cechoLink(c .. text, function()
+            local sep = string.split(text, "[;#]")
+            for k, v in pairs(sep) do expandAlias(v, true) end
+        end, hint, true)
+    end
+    cecho("\n\n")
+end
+
 function scripts.utils.bind_functional(command, silent, remove_on_new_location)
     scripts.utils.functional_key = command
 
     if not silent then
-        cecho("\n\n<" .. scripts.ui:get_bind_color_backward_compatible() .. ">bind <yellow>" .. scripts.keybind:keybind_tostring("functional_key") .. "<" .. scripts.ui:get_bind_color_backward_compatible() .. ">: " .. command .. "\n\n")
+        scripts.utils.echobind(command, nil, command, "functional_key", 2)
     end
 
     if remove_on_new_location then
@@ -16,7 +31,7 @@ function scripts.utils.bind_functional_call(func, text, remove_on_new_location)
     scripts.utils.functional_key = func
 
     if text then
-        cecho("\n\n<" .. scripts.ui:get_bind_color_backward_compatible() .. ">bind <yellow>" .. scripts.keybind:keybind_tostring("functional_key") .. "<" .. scripts.ui:get_bind_color_backward_compatible() .. ">: " .. text .. "\n\n")
+        scripts.utils.echobind(text, func, text, "functional_key", 2)
     end
 
     if remove_on_new_location then

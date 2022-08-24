@@ -72,15 +72,13 @@ function trigger_func_skrypty_inventory_lampa_pusta_butelka()
     selectCurrentLine()
     fg("yellow")
     resetFormat()
-    cecho("\n\n")
-    scripts.utils.bind_functional_call(function() scripts.inv.lamp:empty_bottle() end, "<green> >> Odloz olej, wez butelke do reki i napelnij lampe", false)
+    scripts.utils.bind_functional_call(function() scripts.inv.lamp:empty_bottle() end, " >> Odloz olej, wez butelke do reki i napelnij lampe", false)
 end
 
 function trigger_func_skrypty_inventory_lampa_brak_butelki()
     selectCurrentLine()
     fg("yellow")
     resetFormat()
-    cecho("\n\n")
-    scripts.utils.bind_functional_call(function() scripts.inv.lamp:take_bottle() end, "<green> >> Wez butelke do reki.", false)
+    scripts.utils.bind_functional_call(function() scripts.inv.lamp:take_bottle() end, " >> Wez butelke do reki.", false)
 end
 

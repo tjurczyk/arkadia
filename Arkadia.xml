@@ -2319,15 +2319,9 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>Wydaje ci sie, ze (jest|jestes) (.*) jak (.*)</string>
-						<string>Masz wrazenie, ze (jest|jestes) (.*) niz (.*)</string>
-						<string>Wydaje ci sie, ze (jest|jestes) (.*) (?:jak|niz) (.*)</string>
-						<string>Masz wrazenie, ze (jest|jestes) (.*) (?:jak|niz) (.*)</string>
+						<string>^(?:Wydaje ci sie|Masz wrazenie), ze jest(?'mod'|es) (?'desc'.*)(?:a|e|y) (?:jak|niz) (?'osoba'.*)\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
 						<integer>1</integer>
 					</regexCodePropertyList>
 				</Trigger>

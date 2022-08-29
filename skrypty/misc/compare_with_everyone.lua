@@ -1,7 +1,8 @@
 local function format(v)
-    return v > 0 and "+" .. tostring(v) or tostring(v)
+    if v>0 then return "+" .. v end
+    if v<0 then return v end
+    return " 0"
 end
-
 
 function misc:comparing_after(results)
     cecho("\n\n")

@@ -6,7 +6,7 @@ function trigger_func_mapper_gates_wks_gate()
     end
 
     amap.gate_bind = "popros o otwarcie bramy"
-    cecho("\n<" .. scripts.ui:get_bind_color_backward_compatible() .. ">[bind <yellow>" .. scripts.keybind:keybind_tostring("opening_gate") .. "<" .. scripts.ui:get_bind_color_backward_compatible() .. ">] Otworz brame\n")
+    scripts.utils.echobind(gate_bind, nil, "Otworz brame", "opening_gate", 1)
 end
 
 function trigger_func_mapper_gates_gates()
@@ -22,6 +22,6 @@ function trigger_func_mapper_gates_gates()
     end
 
     amap.gate_bind = open_str
-    cecho("\n<" .. scripts.ui:get_bind_color_backward_compatible() .. ">[bind <yellow>" .. scripts.keybind:keybind_tostring("opening_gate") .. "<" .. scripts.ui:get_bind_color_backward_compatible() .. ">] Otworz brame\n")
+    scripts.utils.echobind(open_str, nil, "Otworz brame", "opening_gate")
 end
 

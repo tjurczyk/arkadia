@@ -32,7 +32,7 @@ end
 function scripts.transports.ride:enter()
     self.on_board = true
     if self.definition.bind then
-        cecho("\n<" .. scripts.ui:get_bind_color_backward_compatible() .. ">bind <yellow>" .. scripts.keybind:keybind_tostring("special_exit") .. ":<" .. scripts.ui:get_bind_color_backward_compatible() .. "> " .. self.definition.bind .. "\n\n")
+        scripts.utils.echobind(self.definition.bind, nil, self.definition.bind, "special_exit", 1)
         scripts.transports.transport_bind = self.definition.bind
     end
     registerAnonymousEventHandler("gmcp.room.info", function(_)

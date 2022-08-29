@@ -60,7 +60,7 @@ function trigger_func_skrypty_ui_gags_color_color_other_przelamanie()
     resetFormat()
 
     if team_break then
-        cecho("<" .. scripts.ui:get_bind_color_backward_compatible() .. ">  [" .. scripts.keybind:keybind_tostring("attack_target") .. "<" .. scripts.ui:get_bind_color_backward_compatible() .. ">] zabij cel ataku\n")
+        scripts.utils.echobind("zabij cel ataku", nil, "zabij cel ataku", "attack_target", 0)
     end
 end
 

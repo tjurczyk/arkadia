@@ -6,7 +6,7 @@ function trigger_func_pulapka_brokilon()
     selectCurrentLine()
     fg("orange_red")
     resetFormat()
-    scripts.utils.bind_functional_call("przetnij rzemien",  "przetnij rzemien")
+    scripts.utils.bind_functional("przetnij rzemien",  "przetnij rzemien")
 end
 
 function trigger_func_strzaly()
@@ -22,7 +22,7 @@ function trigger_func_rusalka()
     fg("orange_red")
     resetFormat()
     scripts.messages:show("UROK RUSALKI", "orange_red")
-    scripts.utils.bind_functional_call("/zz rusalke",  "/zz rusalke")
+    scripts.utils.bind_functional("/zz rusalke",  "/zz rusalke")
 end
 
 function trigger_func_rusalka2()
@@ -30,5 +30,5 @@ function trigger_func_rusalka2()
     selectCurrentLine()
     fg("orange_red")
     resetFormat()
-    scripts.utils.bind_functional_call("/zz rusalke",  "/zz rusalke")
+    scripts.utils.bind_functional("/zz rusalke",  "/zz rusalke")
 end

@@ -6,9 +6,16 @@ function misc.improve:print_improve()
         average_str = " : sred " .. misc.improve:seconds_to_formatted_string(average)
     end
 
+    local today = string.split(getTime(true, "yyyy MM dd"), " ")
+    local sql_query = "SELECT val FROM improvee WHERE character='" .. scripts.character_name .. "' and year = "..today[1].." and month = "..today[2].." and day = "..today[3].." ORDER BY _row_id ASC"
+    local retrieved = db:fetch_sql(misc.improve.db_improvee.improvee, sql_query)
+    local value = table.size(retrieved) > 0 and retrieved[1]["val"] or 0
+
+    local postepy_suma = "Dzisiaj: "..value
+
     cecho("+---------------------------------- <green>Postepy<grey> ---------------------------------+\n")
     cecho("|                                                                            |\n")
-    cecho("| <yellow>Aktualny czas   : " .. time .. "<grey>   " .. scripts.utils.str_pad(average_str, 20) .. "                    |\n")
+    cecho("| <yellow>Aktualny czas   : " .. time .. "<grey>   " .. scripts.utils.str_pad(average_str, 20) .. postepy_suma .. string.rep(" ", 20-string.len(postepy_suma)) .."|\n")
     cecho("|                                                                            |\n")
 
     local sum_me_killed = 0

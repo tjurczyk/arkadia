@@ -90,7 +90,7 @@ end
 
 function scripts.inv.collect:killed_action()
     if scripts.inv.collect["current_mode"] ~= 7 or table.size(scripts.inv.collect.extra) > 0 then
-        cecho("\n<" .. scripts.ui:get_bind_color_backward_compatible() .. ">[bind <yellow>" .. scripts.keybind:keybind_tostring("collect_from_body") .. "<" .. scripts.ui:get_bind_color_backward_compatible() .. "> wez z ciala\n")
+        scripts.utils.echobind("wez z ciala", function() scripts.inv.collect:key_pressed(false) end, "wez z ciala", "collect_from_body", 1)
         scripts.inv.collect.check_body = true
     end
 end
@@ -102,7 +102,7 @@ function scripts.inv.collect:team_killed_action(name)
     end
 
     if ateam.team_names[name] then
-        cecho("\n<" .. scripts.ui:get_bind_color_backward_compatible() .. ">[bind <yellow>ctrl+3]<" .. scripts.ui:get_bind_color_backward_compatible() .. "> wez z ciala\n")
+        scripts.utils.echobind("wez z ciala", function() scripts.inv.collect:key_pressed(false) end, "wez z ciala", "collect_from_body", 1)
         scripts.inv.collect.check_body = true
     end
 end

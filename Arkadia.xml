@@ -2419,7 +2419,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>Nikt z zakryta twarza nie wejdzie na teren straznicy.</string>
+						<string>do ciebie: Nikt z zakryta twarza nie wejdzie</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>0</integer>
@@ -18569,6 +18569,26 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 							<integer>0</integer>
 						</regexCodePropertyList>
 					</Trigger>
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>dotknij_statui</name>
+						<script>trigger_func_skrypty_ui_special_exits_follow("dotknij statui")</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>wyciagna swa reke i dotyka statui. O dziwo kamien nie stawia zadnego oporu.</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>0</integer>
+						</regexCodePropertyList>
+					</Trigger>
 					<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>furtka</name>
 						<script>trigger_func_skrypty_ui_special_exits_follow("furtka")</script>
@@ -18916,8 +18936,12 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 							<string>znika w kepie wawrzynow.</string>
 							<string>zaczyna przeciskac sie przez krzaki na</string>
 							<string>znika w kepie krzakow.</string>
+							<string>ostroznie przedziera sie przez sciane galezi rosnacych tu krzakow.</string>
+							<string>wbiega w krzaki w pospiechu i ze wszystkich sil przedziera sie przez ich galezie.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
+							<integer>0</integer>
+							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -19088,8 +19112,10 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
 							<string>podaza na druga strone mostu, stapajac po (\w+) plytkach.</string>
+							<string>podaza na druga strone pieczary, stapajac po (\w+) plytkach.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
+							<integer>1</integer>
 							<integer>1</integer>
 						</regexCodePropertyList>
 					</Trigger>
@@ -19351,8 +19377,10 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<regexCodeList>
 							<string>spycha jedno z czolen na wode</string>
 							<string>wchodzi do niezbyt glebokiej wody po piers i przeprawia sie na przeciwlegly brzeg.</string>
+							<string>wchodzi na lod skuwajacy rzeke i ostroznie stawiajac kroki przeprawia sie na przeciwlegly brzeg.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
+							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
 						</regexCodePropertyList>
@@ -20486,6 +20514,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 							<string>przechodzi szybko przez rozmyty row wyschnietej fosy i zabiera sie za wspinaczke po ogromnym gruzowisku.</string>
 							<string>lapie sie za liny i zaczyna wspinac sie do gory.</string>
 							<string>zaczyna wspinac sie po skarpie na gore.</string>
+							<string>^Niepewnie lapiac sie bardziej wystajacych kamieni \w+ zaczyna wolno wspinac sie na gore\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>0</integer>
@@ -20501,6 +20530,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
+							<integer>1</integer>
 						</regexCodePropertyList>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -21051,8 +21081,10 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<regexCodeList>
 							<string>bierze dluzszy rozbieg i w kilku susach wdrapuje sie po obalonym konarze.</string>
 							<string>podaza przeskakujac przez mur.</string>
+							<string>zaczyna wspinac sie na mur.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
+							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
 						</regexCodePropertyList>
@@ -21502,6 +21534,8 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 							<string>uwaznie stawiajac kazdy swoj krok zsuwa sie posrod skal.</string>
 							<string>lapie za liny i zaczyna schodzic na dol.</string>
 							<string>zaczyna schodzic po skarpie na dol.</string>
+							<string>^Wykorzystujac platanine galezi mocno przywierajaca do skalnej sciany \w+ zaczyna powoli schodzic na dol\.$</string>
+							<string>^Niepewnie lapiac sie bardziej wystajacych kamieni \w+ zaczyna wolno opuszczac sie w dol\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>0</integer>
@@ -21521,6 +21555,8 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
+							<integer>1</integer>
+							<integer>1</integer>
 						</regexCodePropertyList>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -26952,6 +26988,8 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<string>^Ruszasz po granitowej posadzce na [a-z-]+, jednak powstrzymuje cie buchajacy z peknietego chodnika strumien goracej pary\.$</string>
 						<string>Musisz najpierw przywiazac do kolowrotu jakas line lub sznur.</string>
 						<string>Nie udaje ci sie przecisnac przez geste krzaki.</string>
+						<string>Ruszasz w dalsza droge ale nagle stajesz w pol kroku. Twoja znajomosc wykrywania pulapek podpowiada ci, ze w tym miejscu moze kryc sie jakies niebezpieczenstwo.</string>
+						<string>Wrota sa zatopione w lodzie, nie da sie ich otworzyc.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -26984,6 +27022,8 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<integer>1</integer>
 						<integer>2</integer>
 						<integer>1</integer>
+						<integer>2</integer>
+						<integer>2</integer>
 						<integer>2</integer>
 						<integer>2</integer>
 					</regexCodePropertyList>
@@ -27090,7 +27130,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<string>Czujny gladkolicy mezczyzna staje na drodze blokujac przejscie.</string>
 						<string>^[ &gt;]*.* zjawa.* swym niematerialnym cialem blokuje ci dalsza droge w glab swiatyni\.$</string>
 						<string>do ciebie: Obcych nie wpuszczamy na teren zamku uzbrojonych. Zeby wejsc musisz oddac cala swoja bron.</string>
-						<string>do ciebie: Nikt z zakryta twarza nie wejdzie na teren</string>
+						<string>do ciebie: Nikt z zakryta twarza nie wejdzie</string>
 						<string>Drabina w tej chwili jest zajmowana przez kogos innego, musisz chwile poczekac, az sie zwolni.</string>
 						<string>Straznik zastawia ci droge, tlumaczac, ze o tej porze nie ma odwiedzin.</string>
 						<string>By plynac musisz miec wolne rece.</string>

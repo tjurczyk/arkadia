@@ -14,6 +14,7 @@ scripts.inv["bag_name"] = {
     ["sakwa"] = 6,
     ["wor"] = 7,
     ["szkatulka"] = 8,
+    ["kaletka"] = 9
 }
 
 scripts.inv["bag_in_dopelniacz"] = {
@@ -25,6 +26,7 @@ scripts.inv["bag_in_dopelniacz"] = {
     ["sakwa"] = "sakwy",
     ["wor"] = "wora",
     ["szkatulka"] = "szkatulki",
+    ["kaletka"] = "kaletki"
 }
 
 scripts.inv["bag_in_biernik"] = {
@@ -36,6 +38,7 @@ scripts.inv["bag_in_biernik"] = {
     ["sakwa"] = "sakwe",
     ["wor"] = "wor",
     ["szkatulka"] = "szkatulke",
+    ["kaletka"] = "kaletke"
 }
 
 local pronouns = {
@@ -51,7 +54,9 @@ scripts.inv["bag_pronouns"] = {
     ["mieszek"] = pronouns.m,
     ["sakwa"] = pronouns.f,
     ["wor"] = pronouns.m,
-    ["szkatulka"] = pronouns.f
+    ["szkatulka"] = pronouns.f,
+    ["kaletka"] = pronouns.f
+    
 }
 
 scripts.inv["money_bag_1"] = "plecak"

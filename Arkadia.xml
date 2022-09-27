@@ -18778,6 +18778,26 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						</regexCodePropertyList>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>polnocny-wschod_polnocny-zachod</name>
+						<script>trigger_func_skrypty_ui_special_exits_follow(matches[2])</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>przechodzi na (.*) po desce nad metna woda\.$</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>1</integer>
+						</regexCodePropertyList>
+					</Trigger>
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>przecisnij_sie_do_baszty</name>
 						<script>trigger_func_skrypty_ui_special_exits_follow("przecisnij sie do baszty")</script>
 						<triggerType>0</triggerType>
@@ -19037,7 +19057,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 							<integer>0</integer>
 						</regexCodePropertyList>
 					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>przeczolgaj_sie_na_polnoc</name>
 						<script>trigger_func_skrypty_ui_special_exits_follow("przeczolgaj sie na polnoc")</script>
 						<triggerType>0</triggerType>
@@ -19057,7 +19077,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 							<integer>0</integer>
 						</regexCodePropertyList>
 					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>przeczolgaj_sie_na_poludnie</name>
 						<script>trigger_func_skrypty_ui_special_exits_follow("przeczolgaj sie na poludnie")</script>
 						<triggerType>0</triggerType>
@@ -19111,8 +19131,8 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>podaza na druga strone mostu, stapajac po (\w+) plytkach.</string>
-							<string>podaza na druga strone pieczary, stapajac po (\w+) plytkach.</string>
+							<string>podaza na druga strone mostu, stapajac po (\w+) plytkach\.$</string>
+							<string>podaza na druga strone pieczary, stapajac po (\w+) plytkach\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -19157,6 +19177,26 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>0</integer>
+						</regexCodePropertyList>
+					</Trigger>
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>przejdz_przez_portal_kurhany</name>
+						<script>trigger_func_skrypty_ui_special_exits_follow("przejdz przez " .. matches[2])</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>podaza na druga strone krypty przez (.+)\.$</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>1</integer>
 						</regexCodePropertyList>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -19296,6 +19336,26 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
 							<string>majstruje cos przy scianie.</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>0</integer>
+						</regexCodePropertyList>
+					</Trigger>
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>przekrec_galke_odsun_kredens</name>
+						<script>trigger_func_skrypty_ui_special_exits_follow("przekrec galke;odsun kredens")</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>przesuwa lekko rzezbiony kredens, znikajac w czarnej otchlani jaka sie za nim odslania.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>0</integer>
@@ -20515,6 +20575,8 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 							<string>lapie sie za liny i zaczyna wspinac sie do gory.</string>
 							<string>zaczyna wspinac sie po skarpie na gore.</string>
 							<string>^Niepewnie lapiac sie bardziej wystajacych kamieni \w+ zaczyna wolno wspinac sie na gore\.$</string>
+							<string>^Kamien po kamieniu \w+ zaczyna wspinac sie na polke skalna\.$</string>
+							<string>zaczyna wspinac sie po rumowisku.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>0</integer>
@@ -20531,6 +20593,8 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>1</integer>
+							<integer>1</integer>
+							<integer>0</integer>
 						</regexCodePropertyList>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -21782,8 +21846,10 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
 							<string>schodzi po starym pniu.</string>
+							<string>schodzi po starym pniu w polmrok wawozu.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
+							<integer>0</integer>
 							<integer>0</integer>
 						</regexCodePropertyList>
 					</Trigger>
@@ -23539,7 +23605,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<name>ruiny-za-nekromanta</name>
 						<script>trigger_func_mapper_localizers_room_gps_ruiny_za_nekromanta()</script>
 						<triggerType>0</triggerType>
-						<conditonLineDelta>2</conditonLineDelta>
+						<conditonLineDelta>0</conditonLineDelta>
 						<mStayOpen>0</mStayOpen>
 						<mCommand></mCommand>
 						<packageName></packageName>
@@ -23549,11 +23615,9 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>Wyciagasz dlon w strone blasku i trafiasz w pustke. Woda rozlewa sie na boki odrzucajac twe cialo na twardepodloze...</string>
-							<string>Niebo.</string>
+							<string>Wyciagasz dlon w strone blasku i trafiasz w pustke. Woda rozlewa sie na boki odrzucajac twe cialo na twarde podloze...</string>
 						</regexCodeList>
 						<regexCodePropertyList>
-							<integer>2</integer>
 							<integer>2</integer>
 						</regexCodePropertyList>
 					</Trigger>
@@ -26990,6 +27054,9 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<string>Nie udaje ci sie przecisnac przez geste krzaki.</string>
 						<string>Ruszasz w dalsza droge ale nagle stajesz w pol kroku. Twoja znajomosc wykrywania pulapek podpowiada ci, ze w tym miejscu moze kryc sie jakies niebezpieczenstwo.</string>
 						<string>Wrota sa zatopione w lodzie, nie da sie ich otworzyc.</string>
+						<string>Nie dasz rady otworzyc zelaznego wlazu, musisz sprobowac go uniesc.</string>
+						<string>Na dachu brakuje juz miejsca dla ciebie i czy chcesz czy nie, zepchniety zostajesz do pomieszczenia ponizej.</string>
+						<string>Podchodzisz pod drzwi na polnocy, ktore nagle otwieraja sie z hukiem i wylatuje przez nie pijany mezczyznaomal na ciebie nie wpadajac. Zaraz potem drzwi zatrzaskuja sie.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -27022,6 +27089,9 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<integer>1</integer>
 						<integer>2</integer>
 						<integer>1</integer>
+						<integer>2</integer>
+						<integer>2</integer>
+						<integer>2</integer>
 						<integer>2</integer>
 						<integer>2</integer>
 						<integer>2</integer>

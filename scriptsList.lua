@@ -1,4 +1,4 @@
-return {    
+return {
     "skrypty",
     "mapper",
     "skrypty/http_client",

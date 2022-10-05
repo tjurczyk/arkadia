@@ -1,3 +1,14 @@
+function scripts:print_log_nobr(msg, new_line, color)
+    local color = color or "tomato"
+    if msg then
+        if new_line then
+            echo("\n")
+        end
+        cecho(string.format("<CadetBlue>(skrypty)<%s>: %s", color, msg))
+    end
+    resetFormat()
+end
+
 function scripts:print_log(msg, new_line, color)
     local color = color or "tomato"
     if msg then

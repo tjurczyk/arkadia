@@ -1820,3 +1820,11 @@ chyba, że to ustawienia zostanie ustawione na `true`
 Dostępne wartości:
 * `true` - postępy będą dodawane nawet podczas odrabiania śmierci i formy
 * `false` - postępy nie będa doawane podczas odrabiania śmierci i formy
+
+## `amap.map_update.automatic`
+
+Flaga czy mapa ma być aktualizowana automatycznie.
+
+Dostępne wartości:
+* `true` - mapa będzie aktualizowana automatycznie
+* `false` - mapa nie będzie aktualizowana automatycznie

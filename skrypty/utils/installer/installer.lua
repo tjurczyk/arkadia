@@ -95,20 +95,13 @@ function scripts.installer:get_version_from_file()
     end
 end
 
-function scripts.installer:download_mapper(branch, key)
-    scripts.installer.tree = "master3"
-    scripts.installer.mode = "map"
-    if branch then
-        scripts.installer.tree = branch
-    end
-
-    local full_name = "map_master3.dat"
-
-    if key then
-        downloadFile(getMudletHomeDir() .. "/" .. full_name, "http://arkadia.kamerdyner.net/" .. key .. "/" .. full_name)
-    else
-        downloadFile(getMudletHomeDir() .. "/" .. full_name, "http://arkadia.kamerdyner.net/" .. scripts.installer.tree .. "/" .. full_name)
-    end
+function scripts.installer:download_mapper(callback)
+    scripts.utils.downloader:downloadFile(getMudletHomeDir() .. "/map_master3.dat", "https://github.com/Delwing/arkadia-mapa/releases/latest/download/map_master3.dat", function()
+        scripts.installer:load_map()
+        if callback then
+            callback()
+        end
+    end, "Pobieram plik mapy")
 end
 
 function scripts.installer:download_people_db()
@@ -142,6 +135,7 @@ function scripts.installer:save_map(branch)
 
     if saveMap(getMudletHomeDir() .. full_name) then
         scripts:print_log("Mapa zapisana")
+        raiseEvent("mapSave")
     else
         scripts:print_log("Problem z zapisaniem mapy")
     end

@@ -11,7 +11,7 @@ function alias_func_skrypty_installer_download_map()
 end
 
 function alias_func_skrypty_installer_download_map_key()
-    scripts.installer:download_mapper(matches[2], matches[3])
+    scripts.installer:download_mapper()
 end
 
 function alias_func_skrypty_installer_load_map()

@@ -473,6 +473,9 @@ function ScriptsConfig:_set_mudlet_var(options)
     end
 
     if var_partials[#var_partials] then
+        if type(parent) == "boolean" then
+            display(options)
+        end
         parent[var_partials[#var_partials]] = value
     end
 

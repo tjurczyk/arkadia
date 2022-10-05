@@ -2990,6 +2990,12 @@
         "default_value": false,
         "field_type": "boolean",
         "macros_on_modify": []
+    },
+    {
+        "name": "amap.map_update.automatic",
+        "default_value": false,
+        "field_type": "boolean",
+        "macros_on_modify": []
     }
   ]
 }

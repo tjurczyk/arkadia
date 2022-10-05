@@ -30423,6 +30423,55 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 					<regex>^/lok_team_fo-(| ([0-9]+))$</regex>
 				</Alias>
 			</AliasGroup>
+			<AliasGroup isActive="yes" isFolder="yes">
+				<name>gps</name>
+				<script></script>
+				<command></command>
+				<packageName></packageName>
+				<regex></regex>
+				<Alias isActive="yes" isFolder="no">
+					<name>add_gps</name>
+					<script>alias_func_map_sync_add_gps()</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>/dodaj_gps (.*)$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>add_gps_area</name>
+					<script>alias_func_map_sync_add_gps_area()</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>/dodaj_gps_obszar (.*)$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>add_gps_within_rooms</name>
+					<script>alias_func_map_sync_add_gps_within_rooms()</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>/dodaj_gps_lokacje ([0-9,]+) (.*)$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>remove_gps</name>
+					<script>alias_func_map_sync_remove_gps()</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/usun_gps ([0-9_]+)$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>show_gps</name>
+					<script>alias_func_map_sync_show_gps()</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/gps$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>show_gps_room</name>
+					<script>alias_func_map_sync_show_gps_room()</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/gps ([0-9]+)$</regex>
+				</Alias>
+			</AliasGroup>
 			<Alias isActive="yes" isFolder="no">
 				<name>print_help</name>
 				<script>alias_func_mapper_print_help()</script>

@@ -111,7 +111,7 @@ function trigger_func_skrypty_team_clear_absent()
     local disconnected = string.match(druzyna, "statua (%w+)")
     if disconnected then
         local id = scripts.utils:get_best_fuzzy_match(disconnected, druzyna_old, 0.6)
-        if id ~= -1 then
+        if druzyna ~= nil and id ~= -1 then
             druzyna = druzyna:gsub("statua " .. disconnected, druzyna_old[id])
         end
     end

@@ -76,6 +76,7 @@ end
 
 function load_plugin(plugin_name)
     local file_path = plugins_dir .. '/' .. plugin_name
+    current_plugin_path = file_path
     if plugin_name ~= "." and plugin_name ~= ".." and lfs.attributes(file_path, 'mode') == 'directory' then
         local plugin_loaded = false
         if io.exists(file_path .. "/init.lua") then

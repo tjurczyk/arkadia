@@ -6,7 +6,7 @@ function trigger_func_mapper_gates_wks_gate()
     end
 
     amap.gate_bind = "popros o otwarcie bramy"
-    scripts.utils.echobind(gate_bind, nil, "Otworz brame", "opening_gate", 1)
+    scripts.utils.echobind(amap.gate_bind, nil, "Otworz brame", "opening_gate", 1)
 end
 
 function trigger_func_mapper_gates_gates()

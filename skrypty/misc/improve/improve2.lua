@@ -135,7 +135,7 @@ end
 function misc.improve:remove_improvee2_val(id, val)
     local sql_query = "SELECT * FROM improvee WHERE character=\"" .. scripts.character_name .. "\" AND _row_id=\"" .. id .. "\" ORDER BY _row_id desc LIMIT 1"
     local retrieved = db:fetch_sql(misc.improve.db_improvee.improvee, sql_query)
-    if table.getn(retrieved) == 1 then
+    if retieved ~= nil and table.size(retrieved) == 1 then
         retrieved = retrieved[1]
         retrieved.val = math.max(0, retrieved.val - val)
         if not db:update(misc.improve.db_improvee.improvee, retrieved) then

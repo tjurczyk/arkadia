@@ -34,6 +34,12 @@ Event podniesiony po zaladowaniu calego UI
 
 ---
 
+## `mapSave`
+
+Event podniesiony po zapisaniu mapy.
+
+---
+
 ## `colorPeopleBuild`
 
 Event podniesiony po zbudowaniu triggerów na kolorwanie postaci.

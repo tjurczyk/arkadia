@@ -8,6 +8,13 @@ function amap:open_map()
 end
 tempTimer(1, function() amap:open_map() end)
 
+function amap:map_sync()
+    if table.contains(getPackages(),"map_sync") then
+        uninstallPackage("map_sync")
+        scripts:print_log("Map Sync nie jest juz potrzebny.")
+    end
+end
+
 function amap:draw_mode_manual()
     amap.mode = "draw"
     amap.ui:mapper_mode(false)
@@ -117,3 +124,4 @@ function amap:move_backward()
     amap_step_back_perform()
 end
 
+amap:map_sync()

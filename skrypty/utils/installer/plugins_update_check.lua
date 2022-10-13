@@ -3,6 +3,9 @@ scripts.plugins_update_check = scripts.plugins_update_check or {
 }
 
 function scripts.plugins_update_check:github_check_version(plugin_name, repo)
+    if lfs.isdir(scripts.plugins_installer.plugin_directory .. plugin_name .. "/.git/") then
+        return
+    end
     local cfg = {["plugin_name"] = plugin_name, ["repo"] = repo, ["storeKey"] = 'github_' .. repo .."_" .. plugin_name}
     cfg.url = "https://api.github.com/repos/" .. repo .. "/" .. plugin_name .. "/commits"
     cfg.handlerId = registerAnonymousEventHandler("sysGetHttpDone", function(event, url, response) return self:github_on_GetHttpDone(url, response) end)

@@ -29380,6 +29380,13 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 					<regex>^/pobierz_mape$</regex>
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
+					<name>download_map map_sync</name>
+					<script>alias_func_skrypty_installer_download_map()</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/_mapsync$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
 					<name>download_map_key</name>
 					<script>alias_func_skrypty_installer_download_map_key()</script>
 					<command></command>

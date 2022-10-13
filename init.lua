@@ -160,5 +160,3 @@ function alias_func_reload()
 end
 
 load_scripts(false)
-
-

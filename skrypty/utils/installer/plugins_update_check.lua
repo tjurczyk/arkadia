@@ -26,6 +26,9 @@ function scripts.plugins_update_check:github_on_GetHttpDone(url, response)
             local contents = yajl.to_value(response)
             local sha = contents[1].sha
             local State = scripts.state_store:get(config.storeKey) or {}
+            if State.sha == nil then
+                scripts.state_store:set(config.storeKey, {sha = sha})
+            end
             if State.sha ~= nil and sha ~= State.sha then
                 cecho("\n<CadetBlue>(skrypty)<tomato>: Plugin '<light_slate_blue>".. config.plugin_name .. "<tomato>' posiada nowa aktualizacje. Kliknij ")
                 cechoLink("<green>tutaj", function() scripts.plugins_update_check:github_update(config, sha) end, "Aktualizuj", true)

@@ -22869,7 +22869,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^ \|.*?(?&lt;index&gt;\d+)?\. (?&lt;name&gt;.*?)(?:, (?&lt;city&gt;[\w ]+?))?\s+(?&lt;gold&gt;\d+)\/\s?(?&lt;silver&gt;\d+)\/\s?(?&lt;copper&gt;\d+)\s+(?:nieogr|(?&lt;time&gt;\d+))</string>
+							<string>^ \|.*?(?&lt;index&gt;\d+)?\. (?&lt;name&gt;.*?)(?:, (?&lt;city&gt;[\w' ]+?))?\s+(?&lt;gold&gt;\d+)\/\s?(?&lt;silver&gt;\d+)\/\s?(?&lt;copper&gt;\d+)\s+(?:nieogr|(?&lt;time&gt;\d+))</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -29378,13 +29378,6 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 					<command></command>
 					<packageName></packageName>
 					<regex>^/pobierz_mape$</regex>
-				</Alias>
-				<Alias isActive="yes" isFolder="no">
-					<name>download_map map_sync</name>
-					<script>alias_func_skrypty_installer_download_map()</script>
-					<command></command>
-					<packageName></packageName>
-					<regex>^/_mapsync$</regex>
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
 					<name>download_map_key</name>

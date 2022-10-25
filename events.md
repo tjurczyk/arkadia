@@ -374,3 +374,8 @@ Argument:
 ## `weaponBroken`
 
 Event podniesiony kiedy bron dzierzona przez gracza peknie.
+
+## `weaponKnockedOffNekroTilea``
+
+Event podnoszony gdy wyleci ci na ziemie bron u Nekromanty w Tilei
+

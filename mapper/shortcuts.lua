@@ -16,19 +16,16 @@ function amap.shortcuts:save_shortcuts()
 end
 
 function amap.shortcuts:print_shortcuts()
-	if table.size(amap.shortcuts.db) == 0 then
-		amap:print_log("Nie masz jeszcze skrotow")
-		return
-	end
+    if table.size(amap.shortcuts.db) == 0 then
+        amap:print_log("Nie masz jeszcze skrotow")
+        return
+    end
 
-	cecho("<green>Skrot                 Lokacja    Opis\n")
-	local skroty = {}
-	for _,n in pairs(amap.shortcuts.db) do table.insert(skroty, n ) end
-	table.sort(skroty, function(a,b) return a.s_name < b.s_name end)
-	for _, v in pairs(skroty) do
-		local str_name = string.sub(v["s_name"] .. "                     ", 1, 22)
-		local str_room = string.sub(v["s_id"] .. "      ", 1, 6)
-	    echo(str_name .. str_room .. "     " .. v["s_desc"] .. "\n")
+    cecho("<green>Skrot                 Lokacja    Opis\n")
+    for _, t in spairs(amap.shortcuts.db) do
+        local str_name = string.sub(t.s_name .. "                     ", 1, 22)
+        local str_room = string.sub(t.s_id .. "      ", 1, 6)
+        echo(str_name .. str_room .. "     " .. t.s_desc .. "\n")
     end
 end
 
@@ -86,4 +83,3 @@ end
 function alias_func_mapper_shortcuts_delete_all_shortcuts()
     amap.shortcuts:delete_shortcuts()
 end
-

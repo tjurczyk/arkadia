@@ -383,3 +383,9 @@ Event podnoszony gdy wyleci ci na ziemie bron u Nekromanty w Tilei
 
 ---
 
+## `improveLevelGained`
+
+Argumenty:
+  * `arg1`: jak duży postęp właśnie wpadł (nieznaczne=1, itd.)
+
+Event podnoszony gdy wiemy o ile postępów urośliśmy.

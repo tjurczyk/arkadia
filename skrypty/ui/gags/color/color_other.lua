@@ -82,6 +82,7 @@ end
 
 function trigger_func_skrypty_ui_gags_color_color_other_nekro_tilea()
     raiseEvent("playBeep")
+    raiseEvent("weaponKnockedOffNekroTilea")
     creplaceLine("<green>\n\n[    BRON    ]<cornsilk> Wez bron i dobadz jej\n\n")
     resetFormat()
     scripts.utils.bind_functional(scripts.inv.weapons.wield)

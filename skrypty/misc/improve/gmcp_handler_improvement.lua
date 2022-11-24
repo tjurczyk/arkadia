@@ -23,8 +23,9 @@ function gmcp_handler_improvement()
         if table.size(misc.improve["level_snapshots"]) > 0 then
             prev_val = misc.improve.level_snapshots[#misc.improve.level_snapshots]["level"]
         end
-
-        misc.improve:add_improvee2(improve_level - prev_val)
+        local amount_to_add=improve_level - prev_val
+        misc.improve:add_improvee2(amount_to_add)
+        raiseEvent("improveLevelGained", amount_to_add)
     else
         if not misc.improve["improve2_enabled"] then
             scripts:print_log("Nie zapisuje do globalnych, bo jest wylaczony")

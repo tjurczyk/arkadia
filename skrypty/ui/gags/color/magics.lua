@@ -54,6 +54,9 @@ function trigger_func_skrypty_ui_gags_ciosy_bronie_z_kamieniami(value)
     if line:match("brak broni u przeciwnika") then
         return
     end
+    if line:match("ykorzystujac dogodny moment wyprowadza") then
+        return
+    end
 
     local target = scripts.gags:who_hits()
     scripts.gags:gag(value, 6, target)

@@ -91,18 +91,13 @@ function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_runiczny_korbacz_6(
 function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_runiczny_korbacz_fin() scripts.gags:gag_prefix("JA FIN", "moje_ciosy") end
 function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_runiczny_korbacz_spec() scripts.gags:gag_prefix("BRON SPEC", "moje_spece") end
 
-function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_0() scripts.gags:gag(0, 9, "moje_ciosy") end
-function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_1() scripts.gags:gag(1, 9, "moje_ciosy") end
-function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_2() scripts.gags:gag(2, 9, "moje_ciosy") end
-function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_3() scripts.gags:gag(3, 9, "moje_ciosy") end
-function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_4() scripts.gags:gag(4, 9, "moje_ciosy") end
-function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_5() scripts.gags:gag(5, 9, "moje_ciosy") end
-function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_6() scripts.gags:gag(6, 9, "moje_ciosy") end
-function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_7() scripts.gags:gag(7, 9, "moje_ciosy") end
-function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_8() scripts.gags:gag(8, 9, "moje_ciosy") end
-function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_9() scripts.gags:gag(9, 9, "moje_ciosy") end
-function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_10() scripts.gags:gag(9, 9, "moje_ciosy") end
-function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_11() scripts.gags:gag(9, 9, "moje_ciosy") end
+function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_0() scripts.gags:gag(0, 6, "moje_ciosy") end
+function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_1() scripts.gags:gag(1, 6, "moje_ciosy") end
+function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_2() scripts.gags:gag(2, 6, "moje_ciosy") end
+function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_3() scripts.gags:gag(3, 6, "moje_ciosy") end
+function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_4() scripts.gags:gag(4, 6, "moje_ciosy") end
+function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_5() scripts.gags:gag(5, 6, "moje_ciosy") end
+function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_6() scripts.gags:gag(6, 6, "moje_ciosy") end
 function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_fin() scripts.gags:gag_prefix("FIN", "moje_ciosy") end
 
 function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_iskrzaca_zdobiona_bulawa()

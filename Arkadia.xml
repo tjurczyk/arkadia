@@ -27495,6 +27495,8 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<string>Nie dasz rady otworzyc zelaznego wlazu, musisz sprobowac go uniesc.</string>
 						<string>Na dachu brakuje juz miejsca dla ciebie i czy chcesz czy nie, zepchniety zostajesz do pomieszczenia ponizej.</string>
 						<string>Podchodzisz pod drzwi na polnocy, ktore nagle otwieraja sie z hukiem i wylatuje przez nie pijany mezczyznaomal na ciebie nie wpadajac. Zaraz potem drzwi zatrzaskuja sie.</string>
+						<string>Nie mozesz sie tam udac, gdyz znajdujesz sie w wodzie.</string>
+						<string>Najpierw trzeba otworzyc klape.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -27527,6 +27529,8 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<integer>1</integer>
 						<integer>2</integer>
 						<integer>1</integer>
+						<integer>2</integer>
+						<integer>2</integer>
 						<integer>2</integer>
 						<integer>2</integer>
 						<integer>2</integer>
@@ -27635,7 +27639,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<string>Wrota stajni sa zamkniete na noc.</string>
 						<string>Wszystkie stragany sa juz uprzatniete.</string>
 						<string>^[ &gt;]*Droge na .* blokuje nieprzebyty masyw skalny\.$</string>
-						<string>Czujny gladkolicy mezczyzna staje na drodze blokujac przejscie.</string>
+						<string>staje na drodze blokujac przejscie.</string>
 						<string>^[ &gt;]*.* zjawa.* swym niematerialnym cialem blokuje ci dalsza droge w glab swiatyni\.$</string>
 						<string>do ciebie: Obcych nie wpuszczamy na teren zamku uzbrojonych. Zeby wejsc musisz oddac cala swoja bron.</string>
 						<string>do ciebie: Nikt z zakryta twarza nie wejdzie</string>
@@ -27672,7 +27676,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<integer>2</integer>
 						<integer>2</integer>
 						<integer>1</integer>
-						<integer>2</integer>
+						<integer>0</integer>
 						<integer>1</integer>
 						<integer>0</integer>
 						<integer>0</integer>
@@ -27724,7 +27728,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<string>Nagle czujesz, ze cos oplata twa noge... ziemia w zawrotnym tepie zamienia sie miejscami z niebem. Zwisasz teraz, przywiazany za noge rzemieniem, dyndajac jak kukielka.</string>
 						<string>Probujesz otworzyc polyskujace wrota, ale nie udaje ci sie to.</string>
 						<string>Probujesz isc naprzod, ale sliski lod sprawia, ze wywracasz sie na nim.</string>
-						<string>^Zbyt raptowanie probujesz znowu ruszyc na .*, przez co tylko jeszcze bardziej placzesz sobienogi w gestwinie pajeczych sieci\.$</string>
+						<string>^Zbyt raptowanie probujesz znowu ruszyc na .*, przez co tylko jeszcze bardziej placzesz sobie nogi w gestwinie pajeczych sieci\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -28024,7 +28028,6 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 							<string>Probujesz otworzyc brame, ale jest zamknieta!</string>
 							<string>Probujesz otworzyc brame, ale jest zamknieta od wewnatrz.</string>
 							<string>Probujesz wejsc w zakryte pajeczynami przejscie, lecz duzy szarawy golem odpycha cie brutalnie.</string>
-							<string>Probujesz isc naprzod, ale sliski lod sprawia, ze wywracasz sie na nim.</string>
 							<string>Probujesz przecisnac sie przez otwor na dach, ale ze wzgledu na brak miejsca,</string>
 							<string>Probujesz isc w glab korytarza, lecz zwalisty szarawy golem zastepuje ci droge.</string>
 							<string>Probujesz przecisnac sie przez otwor na dach, ale ze wzgledu na brak miejsca, zmuszony jestes wrocic na dol.</string>
@@ -28033,7 +28036,6 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 							<integer>1</integer>
 							<integer>2</integer>
 							<integer>1</integer>
-							<integer>2</integer>
 							<integer>2</integer>
 							<integer>2</integer>
 							<integer>2</integer>

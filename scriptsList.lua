@@ -360,6 +360,7 @@ return {
     "skrypty/ui/gags/color/color_moje_ciosy/niestandardowe_drzewce",
     "skrypty/ui/gags/color/color_moje_ciosy/niestandardowe_maczugi",
     "skrypty/ui/gags/color/color_moje_ciosy/niestandardowe_topory",
+    "skrypty/ui/gags/color/color_moje_ciosy/niestandardowe_sztylety",
     "skrypty/ui/gags/color/color_moje_spece/str",
     "skrypty/ui/gags/color/color_moje_spece/mie",
     "skrypty/ui/gags/color/color_moje_spece/fan",

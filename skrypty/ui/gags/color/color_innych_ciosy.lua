@@ -51,6 +51,7 @@ function trigger_func_skrypty_ui_gags_color_color_innych_ciosy_ktos_rani()
         local ignore_list = {
             "lekko",
             "powaznie",
+            "potwornie",
             "ciezko",
             " i ",
             "mocno",

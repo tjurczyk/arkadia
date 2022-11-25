@@ -17069,8 +17069,10 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 									<string>.* pochyla kosmaty leb i rzuca sie do przodu, z pelnym impetem trafiajac w ([ a-zA-Z]+). Uderzenie oglusza i powala ofiare\.$</string>
 									<string>.* znienacka kopie ([ a-zA-Z]+) w noge i kiedy ten traci rytm walki, przywala mu piescia prosto w nos\.$</string>
 									<string>^Gigantyczny drapiezny troll pochyla leb i szarzuje, by uderzyc ([ a-zA-Z]+) kreconymi rogami prosto w klatke piersiowa\\. Potezny cios odrzuca ofiare i wyrywa jej oddech z piersi\\.$</string>
+									<string>^(?:Saurgl|Posepny okrutny rycerz chaosu) pochyla glowe i szarzuje, by uderzyc ([ a-zA-Z]+) dlugimi, ostro zakonczonymi rogami wyrastajacymi mu spod czarnego helmu\. Potezny cios odrzuca ofiare i wyrywa jej oddech z piersi\.$</string>
 								</regexCodeList>
 								<regexCodePropertyList>
+									<integer>1</integer>
 									<integer>1</integer>
 									<integer>1</integer>
 									<integer>1</integer>
@@ -22827,6 +22829,26 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
 						<string>^(|&gt; )(.*) z duma przedstawia sie jako (.*)\.$</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>1</integer>
+					</regexCodePropertyList>
+				</Trigger>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>przedstawienie_klub</name>
+					<script>trigger_func_skrypty_people_przedstawianie_klub()</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>^(?:|&gt; )(.*) przedstawia sie slowami: (.*)\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>

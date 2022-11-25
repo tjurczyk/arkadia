@@ -78,6 +78,10 @@ function trigger_func_skrypty_people_przedstawianie_korki()
     scripts.people:process_someone(matches[3], matches[4])
 end
 
+function trigger_func_skrypty_people_przedstawianie_klub()
+    scripts.people:process_someone(matches[2], matches[3])
+end
+
 function trigger_func_skrypty_people_paczka()
     scripts.people.mail:check_package_person(matches[2])
 end

@@ -189,6 +189,45 @@ function herbs:v2_print_db_per_bag(full)
     end
 end
 
+function herbs:v2_print_single(herbs_arr)
+    if not herbs_arr then
+        error("Wrong input")
+    end
+
+    cecho("\n")
+    cecho(" --------------------------- <green>Ziola w tym woreczku<grey> -------------------------------")
+    cecho("\n   <light_slate_blue>ile <grey>|        <light_slate_blue>nazwa <grey>           | <light_slate_blue>             dzialanie <grey>                      ")
+    cecho("\n ------+-------------------------+-----------------------------------------------")
+    echo("\n")
+
+    for herb_id, herb_value in pairs(herbs_arr) do
+        local amount = 0
+        amount  = herb_value["amount"]
+        local amount_tmp = "    " .. tostring(amount)
+        local name_str = string.sub(herb_id .. "                     ", 0, 23)
+
+        cecho("<grey>  " .. string.sub(amount_tmp, #amount_tmp - 2, #amount_tmp) .. " | ")
+        local clickable_herb_data = herbs:get_clickable_herb_data(herb_id)
+        cechoPopup(name_str, clickable_herb_data["herb_actions"], clickable_herb_data["herb_hints"], true)
+        cecho(" | ")
+
+        for iii, use_element in pairs(clickable_herb_data["use_elements"]) do
+            if use_element["actions"] then
+                cechoPopup(use_element["text"], use_element["actions"], use_element["hints"], true)
+            else
+                cecho(use_element["text"])
+            end
+            if iii < #clickable_herb_data["use_elements"] then
+                cecho(" | ")
+            end
+            -- add a single space so we don't make the rest of the line clickable
+            -- I don't know how to solve it any other way.
+        end
+        cecho("\n")
+    end
+    cecho("--------------------------------------------------------------------------------\n")
+end
+
 function herbs:get_clickable_teammate_data(teammate_name)
     local teammate_actions = { "" }
     local teammate_hints = { teammate_name }

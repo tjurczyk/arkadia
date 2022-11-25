@@ -1,31 +1,3 @@
-function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_dwusegmentowa_1()
-    scripts.gags:gag(1, 6, "moje_ciosy")
-end
-
-function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_dwusegmentowa_2()
-    scripts.gags:gag(2, 6, "moje_ciosy")
-end
-
-function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_dwusegmentowa_3()
-    scripts.gags:gag(3, 6, "moje_ciosy")
-end
-
-function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_dwusegmentowa_4()
-    scripts.gags:gag(4, 6, "moje_ciosy")
-end
-
-function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_dwusegmentowa_5()
-    scripts.gags:gag(5, 6, "moje_ciosy")
-end
-
-function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_dwusegmentowa_6()
-    scripts.gags:gag(6, 6, "moje_ciosy")
-end
-
-function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_dwusegmentowa_fin()
-    scripts.gags:gag_prefix("FIN", "moje_ciosy")
-end
-
 function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_dwusegmentowa()
     local target = "moje_ciosy"
     if matches["attacker"] then
@@ -34,9 +6,14 @@ function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_dwusegmentowa()
 
     local dmg = matches["damage"]
     local value = -1
-        if dmg == "unika" or dmg == "nie zadajac" then value = 0    
-    elseif dmg == "broczaca" then value = 4
-    elseif dmg == "masakrujac" then value = 5
+        if dmg == "unika" then value = 0
+    elseif dmg == "nie zadajac" or dmg == "ledwie muskajac" then value = 1
+    elseif dmg == "broczaca krwia rane" or dmg == "nieduze obrazenia" then value = 2
+    elseif dmg == "krwawo wgryzaja" or dmg == "widoczne obrazenia" then value = 3
+    elseif dmg == "raniac" then value = 4
+    elseif dmg == "paskudnie kaleczac" then value = 5
+    elseif dmg == "krwawo rozrywa" or dmg == "potwornie rani" then value = 6
+    elseif dmg == "masakrujac" then value = 7
     end
     scripts.gags:gag(value, 7, target)
 end
@@ -114,18 +91,13 @@ function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_runiczny_korbacz_6(
 function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_runiczny_korbacz_fin() scripts.gags:gag_prefix("JA FIN", "moje_ciosy") end
 function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_runiczny_korbacz_spec() scripts.gags:gag_prefix("BRON SPEC", "moje_spece") end
 
-function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_0() scripts.gags:gag(0, 9, "moje_ciosy") end
-function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_1() scripts.gags:gag(1, 9, "moje_ciosy") end
-function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_2() scripts.gags:gag(2, 9, "moje_ciosy") end
-function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_3() scripts.gags:gag(3, 9, "moje_ciosy") end
-function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_4() scripts.gags:gag(4, 9, "moje_ciosy") end
-function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_5() scripts.gags:gag(5, 9, "moje_ciosy") end
-function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_6() scripts.gags:gag(6, 9, "moje_ciosy") end
-function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_7() scripts.gags:gag(7, 9, "moje_ciosy") end
-function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_8() scripts.gags:gag(8, 9, "moje_ciosy") end
-function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_9() scripts.gags:gag(9, 9, "moje_ciosy") end
-function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_10() scripts.gags:gag(9, 9, "moje_ciosy") end
-function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_11() scripts.gags:gag(9, 9, "moje_ciosy") end
+function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_0() scripts.gags:gag(0, 6, "moje_ciosy") end
+function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_1() scripts.gags:gag(1, 6, "moje_ciosy") end
+function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_2() scripts.gags:gag(2, 6, "moje_ciosy") end
+function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_3() scripts.gags:gag(3, 6, "moje_ciosy") end
+function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_4() scripts.gags:gag(4, 6, "moje_ciosy") end
+function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_5() scripts.gags:gag(5, 6, "moje_ciosy") end
+function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_6() scripts.gags:gag(6, 6, "moje_ciosy") end
 function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_fin() scripts.gags:gag_prefix("FIN", "moje_ciosy") end
 
 function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_iskrzaca_zdobiona_bulawa()
@@ -176,4 +148,24 @@ function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_starozytne_kosciane
     elseif dmg == "potworne" then value = 4
     else end
     scripts.gags:gag(value, 5, "moje_ciosy")
+end
+
+-- Czarny smukly morgenstern
+
+function trigger_func_skrypty_ui_gags_ciosy_czarny_smukly_morg()
+    local target = "moje_ciosy"
+    if matches["attacker"] then
+        target = matches["target"] == "cie" and "innych_ciosy_we_mnie" or "innych_ciosy"
+    end
+
+    local dmg = matches["damage"]
+    local value = -1
+        if dmg == "krotki wypad" then value = 1
+    elseif dmg == "Lekko kaleczysz" or dmg == "lekko kaleczy" then value = 2
+    elseif dmg == "raniac" then value = 3
+    elseif dmg == "powazne" then value = 4
+    elseif dmg == "ciezko" then value = 5
+    elseif dmg == "krwawa miazge" then value = 6
+    end
+    scripts.gags:gag(value, 6, target)
 end

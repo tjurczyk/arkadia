@@ -29,7 +29,7 @@ function trigger_func_skrypty_herbs_rozwiaz_rzemyk()
         coroutine.resume(herbs["build_db_coroutine_id"])
     else
         local segregated = herbs:check_single_bag(matches[2])
-        herbs:print_single(segregated)
+        herbs:v2_print_single(segregated)
     end
 end
 

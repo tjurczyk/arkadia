@@ -11,6 +11,9 @@ function trigger_func_skrypty_misc_ships_buses_i_wsiada_do_dylizansu()
 end
 
 function trigger_func_skrypty_misc_ships_buses_powoz_zatrzymuje_sie()
+    if line:match("powoli rusza w droge") then
+        return
+    end
     scripts.utils.bind_ship("wem;wsiadz do wozu;wsiadz do powozu;wlm", false, false)
 end
 

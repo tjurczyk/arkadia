@@ -27497,6 +27497,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<string>Podchodzisz pod drzwi na polnocy, ktore nagle otwieraja sie z hukiem i wylatuje przez nie pijany mezczyznaomal na ciebie nie wpadajac. Zaraz potem drzwi zatrzaskuja sie.</string>
 						<string>Nie mozesz sie tam udac, gdyz znajdujesz sie w wodzie.</string>
 						<string>Najpierw trzeba otworzyc klape.</string>
+						<string>Podchodzisz pod drzwi na polnocy,</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -27529,6 +27530,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<integer>1</integer>
 						<integer>2</integer>
 						<integer>1</integer>
+						<integer>2</integer>
 						<integer>2</integer>
 						<integer>2</integer>
 						<integer>2</integer>
@@ -29818,13 +29820,6 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 					<command></command>
 					<packageName></packageName>
 					<regex>^/pobierz_mape$</regex>
-				</Alias>
-				<Alias isActive="yes" isFolder="no">
-					<name>download_map map_sync</name>
-					<script>alias_func_skrypty_installer_download_map()</script>
-					<command></command>
-					<packageName></packageName>
-					<regex>^/_mapsync$</regex>
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
 					<name>download_map_key</name>

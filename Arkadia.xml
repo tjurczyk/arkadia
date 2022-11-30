@@ -15908,17 +15908,15 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 									<colorTriggerFgColor>#000000</colorTriggerFgColor>
 									<colorTriggerBgColor>#000000</colorTriggerBgColor>
 									<regexCodeList>
-										<string>^[ &gt;]*[a-zA-Z (),!]+ lecz tobie udaje sie uniknac tego ciosu\.$</string>
-										<string>^[ &gt;]*[a-zA-Z (),!]+ lecz tobie udaje sie go uniknac\.$</string>
-										<string>^[ &gt;]*[a-zA-Z (),!]+ ale tobie w pore udaje sie uskoczyc przed rozpedzona bronia\.$</string>
+										<string>lecz tobie udaje sie uniknac tego ciosu.</string>
+										<string>lecz tobie udaje sie go uniknac.</string>
+										<string>ale tobie w pore udaje sie uskoczyc przed rozpedzona bronia.</string>
 										<string>jednak udaje ci sie uniknac tego ciosu.</string>
-										<string>jednak udaje ci sie uniknac tego ataku.</string>
 										<string>zrecznie unikasz ciosu.</string>
 									</regexCodeList>
 									<regexCodePropertyList>
-										<integer>1</integer>
-										<integer>1</integer>
-										<integer>1</integer>
+										<integer>0</integer>
+										<integer>0</integer>
 										<integer>0</integer>
 										<integer>0</integer>
 										<integer>0</integer>
@@ -15938,14 +15936,16 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 									<colorTriggerFgColor>#000000</colorTriggerFgColor>
 									<colorTriggerBgColor>#000000</colorTriggerBgColor>
 									<regexCodeList>
-										<string>^[ &gt;]*[a-zA-Z (),!]+ nie udaje sie trafic ciebie [a-zA-Z ]+\.$</string>
-										<string>^[ &gt;]*[a-zA-Z (),!]+ prawie cie trafiajac\.$</string>
-										<string>^[ &gt;]*[a-zA-Z (),!]+ nieumiejetnie probujac trafic cie\.$</string>
+										<string>nie udaje sie trafic ciebie</string>
+										<string>prawie cie trafiajac.</string>
+										<string>nieumiejetnie probujac trafic cie.</string>
+										<string>przecina powietrze tuz przed twoja glowa.</string>
 									</regexCodeList>
 									<regexCodePropertyList>
-										<integer>1</integer>
-										<integer>1</integer>
-										<integer>1</integer>
+										<integer>0</integer>
+										<integer>0</integer>
+										<integer>0</integer>
+										<integer>0</integer>
 									</regexCodePropertyList>
 								</Trigger>
 							</TriggerGroup>
@@ -16019,25 +16019,9 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 									</regexCodePropertyList>
 								</Trigger>
 							</TriggerGroup>
-						</TriggerGroup>
-						<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-							<name>color_zaslony_udane</name>
-							<script></script>
-							<triggerType>0</triggerType>
-							<conditonLineDelta>0</conditonLineDelta>
-							<mStayOpen>0</mStayOpen>
-							<mCommand></mCommand>
-							<packageName></packageName>
-							<mFgColor>#ff0000</mFgColor>
-							<mBgColor>#ffff00</mBgColor>
-							<mSoundFile></mSoundFile>
-							<colorTriggerFgColor>#000000</colorTriggerFgColor>
-							<colorTriggerBgColor>#000000</colorTriggerBgColor>
-							<regexCodeList />
-							<regexCodePropertyList />
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>zaslaniasz_ty</name>
-								<script>trigger_func_skrypty_ui_gags_color_color_zaslony_udane_zaslaniasz_ty()</script>
+							<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+								<name>color_moje_parowanie</name>
+								<script></script>
 								<triggerType>0</triggerType>
 								<conditonLineDelta>0</conditonLineDelta>
 								<mStayOpen>0</mStayOpen>
@@ -16048,22 +16032,154 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 								<mSoundFile></mSoundFile>
 								<colorTriggerFgColor>#000000</colorTriggerFgColor>
 								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList>
-									<string>(^[ &gt;]*Zrecznie zaslaniasz ([\[a-zA-Z (),!\]]+) przed ciosami ([a-zA-Z (),!\]]+)\.$)</string>
-									<string>(^[ &gt;]*Z wprawa stajesz pomiedzy ([\[a-zA-Z (),!\]]+) a ([\[a-zA-Z (),!\]]+), przyjmujac na siebie nadchodzace ciosy\.$)</string>
-									<string>(^[ &gt;]*Stajesz u boku ([a-zA-Z (),!\]]+), gotow w kazdej chwili zaslonic .* przed nadchodzacym niebezpieczenstwem\.$)</string>
-									<string>(^[ &gt;]*Zdecydowanym krokiem wysuwasz sie przed [\[a-zA-Z (),!\]]+, zimnym spojrzeniem dajac wszystkim do zrozumienia, ze moga sie do (niego|niej) zblizyc jedynie po twoim trupie\.$)</string>
-								</regexCodeList>
-								<regexCodePropertyList>
-									<integer>1</integer>
-									<integer>1</integer>
-									<integer>1</integer>
-									<integer>1</integer>
-								</regexCodePropertyList>
-							</Trigger>
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>zaslania_kogos</name>
-								<script>trigger_func_skrypty_ui_gags_color_color_zaslony_udane_zaslania_kogos()</script>
+								<regexCodeList />
+								<regexCodePropertyList />
+								<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+									<name>ja_paruje</name>
+									<script>trigger_func_skrypty_ui_gags_color_color_moje_parowanie_ja_paruje()</script>
+									<triggerType>0</triggerType>
+									<conditonLineDelta>0</conditonLineDelta>
+									<mStayOpen>0</mStayOpen>
+									<mCommand></mCommand>
+									<packageName></packageName>
+									<mFgColor>#ff0000</mFgColor>
+									<mBgColor>#ffff00</mBgColor>
+									<mSoundFile></mSoundFile>
+									<colorTriggerFgColor>#000000</colorTriggerFgColor>
+									<colorTriggerBgColor>#000000</colorTriggerBgColor>
+									<regexCodeList>
+										<string>w ciebie, lecz tobie udaje sie (?:go sparowac|je zbic z linii ataku|zbic je z linii ataku)</string>
+										<string>lecz sprawnie parujesz go</string>
+										<string>zbijasz na bok niespodziewany cios</string>
+										<string>lecz tobie w ostatniej chwili udaje sie odruchowo zaslonic</string>
+										<string>W pore zakleszczasz cios</string>
+										<string>ty jednak bez trudu parujesz cios</string>
+									</regexCodeList>
+									<regexCodePropertyList>
+										<integer>1</integer>
+										<integer>0</integer>
+										<integer>0</integer>
+										<integer>0</integer>
+										<integer>2</integer>
+										<integer>0</integer>
+									</regexCodePropertyList>
+								</Trigger>
+								<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+									<name>ja_zbroja_paruje</name>
+									<script>trigger_func_skrypty_ui_gags_color_color_moje_parowanie_ja_zbroja_paruje()</script>
+									<triggerType>0</triggerType>
+									<conditonLineDelta>0</conditonLineDelta>
+									<mStayOpen>0</mStayOpen>
+									<mCommand></mCommand>
+									<packageName></packageName>
+									<mFgColor>#ff0000</mFgColor>
+									<mBgColor>#ffff00</mBgColor>
+									<mSoundFile></mSoundFile>
+									<colorTriggerFgColor>#000000</colorTriggerFgColor>
+									<colorTriggerBgColor>#000000</colorTriggerBgColor>
+									<regexCodeList>
+										<string>trafia cie .+? caly impet uderzenia zostaje wyparowan. przez</string>
+										<string>trafia cie .+? caly impet ciosu wyparowan. zostaje przez</string>
+										<string>zeslizguj. sie po (?:twym|twych|twej)</string>
+										<string>lecz uderzenie zatrzymuje sie na (?:twym|twych|twej)</string>
+										<string>by wyprowadzic cios zdolny przebic (?:twoj|twoja|twe|twa)</string>
+										<string>lecz zatrzymuja sie one na (?:twym|twych|twej)</string>
+										<string>wyrzuca w przod swoja zwierzeca glowe, lecz caly impet zatrzymuje sie na</string>
+										<string>nie czyniac ci zadnej szkody.</string>
+									</regexCodeList>
+									<regexCodePropertyList>
+										<integer>1</integer>
+										<integer>1</integer>
+										<integer>1</integer>
+										<integer>1</integer>
+										<integer>1</integer>
+										<integer>1</integer>
+										<integer>0</integer>
+										<integer>0</integer>
+									</regexCodePropertyList>
+								</Trigger>
+								<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+									<name>ja_tarcza_paruje</name>
+									<script>trigger_func_skrypty_ui_gags_color_color_moje_parowanie_ja_tarcza_paruje()</script>
+									<triggerType>0</triggerType>
+									<conditonLineDelta>0</conditonLineDelta>
+									<mStayOpen>0</mStayOpen>
+									<mCommand></mCommand>
+									<packageName></packageName>
+									<mFgColor>#ff0000</mFgColor>
+									<mBgColor>#ffff00</mBgColor>
+									<mSoundFile></mSoundFile>
+									<colorTriggerFgColor>#000000</colorTriggerFgColor>
+									<colorTriggerBgColor>#000000</colorTriggerBgColor>
+									<regexCodeList>
+										<string>w ciebie, lecz .+? sie oslonic</string>
+										<string>naciera na ciebie, lecz jego .+? z hukiem trafia w</string>
+										<string>lecz ty zbijasz go</string>
+										<string>zbijajac uderzenie i momentalnie przechodzac do przeciwnatarcia.</string>
+										<string>Szkarlatne luski dzwiecza cicho, gdy oslaniasz sie swoja rogata tarcza przed uderzeniem</string>
+										<string>w ciebie, lecz widmowe pedy wyrastajace nagle z okraglego migotliwego puklerza zatrzymuja ten cios.</string>
+										<string>jednak udaje ci sie (?:sparowac ten cios|zablokowac ten atak)</string>
+									</regexCodeList>
+									<regexCodePropertyList>
+										<integer>1</integer>
+										<integer>1</integer>
+										<integer>0</integer>
+										<integer>0</integer>
+										<integer>2</integer>
+										<integer>0</integer>
+										<integer>1</integer>
+									</regexCodePropertyList>
+								</Trigger>
+								<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+									<name>baron-tarcza2</name>
+									<script>trigger_func_skrypty_ui_gags_color_color_moje_parowanie_baron_tarcza2()</script>
+									<triggerType>0</triggerType>
+									<conditonLineDelta>0</conditonLineDelta>
+									<mStayOpen>0</mStayOpen>
+									<mCommand></mCommand>
+									<packageName></packageName>
+									<mFgColor>#ff0000</mFgColor>
+									<mBgColor>#ffff00</mBgColor>
+									<mSoundFile></mSoundFile>
+									<colorTriggerFgColor>#000000</colorTriggerFgColor>
+									<colorTriggerBgColor>#000000</colorTriggerBgColor>
+									<regexCodeList>
+										<string>^[ &gt;]*Blekitno-srebrna herbowa tarcza rozblyskuje nagle bardzo ostrym blekitnym swiatlem, skierowanym w strone.*</string>
+									</regexCodeList>
+									<regexCodePropertyList>
+										<integer>1</integer>
+									</regexCodePropertyList>
+								</Trigger>
+								<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+									<name>ja_paruje_lewak</name>
+									<script>trigger_func_skrypty_ui_gags_color_color_moje_parowanie_ja_paruje_lewak()</script>
+									<triggerType>0</triggerType>
+									<conditonLineDelta>0</conditonLineDelta>
+									<mStayOpen>0</mStayOpen>
+									<mCommand></mCommand>
+									<packageName></packageName>
+									<mFgColor>#ff0000</mFgColor>
+									<mBgColor>#ffff00</mBgColor>
+									<mSoundFile></mSoundFile>
+									<colorTriggerFgColor>#000000</colorTriggerFgColor>
+									<colorTriggerBgColor>#000000</colorTriggerBgColor>
+									<regexCodeList>
+										<string>Szlachetna stal dzierzonego przez ciebie zdobionego dlugiego lewaka spiewa dzwiecznie, gdy udaje ci sie sparowac nadchodzacy cios</string>
+										<string>Wprawnie przyjmujesz cios</string>
+										<string>Blyskawicznie skladajac zastawe parujesz cios</string>
+										<string>Skladasz wprawnie zastawe, by sparowac cios</string>
+									</regexCodeList>
+									<regexCodePropertyList>
+										<integer>2</integer>
+										<integer>2</integer>
+										<integer>2</integer>
+										<integer>2</integer>
+									</regexCodePropertyList>
+								</Trigger>
+							</TriggerGroup>
+							<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+								<name>color_innych_parowanie</name>
+								<script></script>
 								<triggerType>0</triggerType>
 								<conditonLineDelta>0</conditonLineDelta>
 								<mStayOpen>0</mStayOpen>
@@ -16074,353 +16190,101 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 								<mSoundFile></mSoundFile>
 								<colorTriggerFgColor>#000000</colorTriggerFgColor>
 								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList>
-									<string>(^[ &gt;]*(?!Na rozkaz)([a-zA-Z (),!]+)(?: zrecznie)? zaslania ([a-zA-Z (),!]+) przed ciosami ([a-zA-Z (),!]+)\.$)</string>
-									<string>(^[ &gt;]*([\[a-zA-Z (),!\]]+) z wprawa staje pomiedzy toba .*, przyjmujac na siebie nadchodzace ciosy\.$)</string>
-									<string>(^[ &gt;]*([a-zA-Z (),!]+) zrecznie zaslania ([a-zA-Z (),!]+) przed twoimi ciosami\.$)</string>
-									<string>(^[ &gt;]*([\[a-zA-Z (),!\]]+) staje u .*boku, gotow w kazdej chwili zaslonic .* przed nadchodzacym niebezpieczenstwem\.$)</string>
-									<string>(^[ &gt;]*([a-zA-Z (),!]+) z wprawa staje pomiedzy .* a .*, przyjmujac na siebie nadchodzace ciosy\.$)</string>
-									<string>(^[ &gt;]*[\[a-zA-Z (),!\]]+ z mrozacym krew w zylach spojrzeniem zdecydowanym krokiem wysuwa sie przed [\[a-zA-Z (),!\]]+ i opierajac dlon na trzonku [a-z ]+, daje do zrozumienia, ze kazdy kto zechce sie do (niej|niego) zblizyc, uczyni to jedynie po (jego|jej) trupie\.$)</string>
-								</regexCodeList>
-								<regexCodePropertyList>
-									<integer>1</integer>
-									<integer>1</integer>
-									<integer>1</integer>
-									<integer>1</integer>
-									<integer>1</integer>
-									<integer>1</integer>
-								</regexCodePropertyList>
-							</Trigger>
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>wycofanie-za-ciebie</name>
-								<script>trigger_func_skrypty_ui_gags_color_color_zaslony_udane_wycofanie_za_ciebie()</script>
-								<triggerType>0</triggerType>
-								<conditonLineDelta>0</conditonLineDelta>
-								<mStayOpen>0</mStayOpen>
-								<mCommand></mCommand>
-								<packageName></packageName>
-								<mFgColor>#ff0000</mFgColor>
-								<mBgColor>#ffff00</mBgColor>
-								<mSoundFile></mSoundFile>
-								<colorTriggerFgColor>#000000</colorTriggerFgColor>
-								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList>
-									<string>^[ &gt;]*.* unosi swoja .* i szybko przesuwa sie za ciebie, kryjac.*</string>
-								</regexCodeList>
-								<regexCodePropertyList>
-									<integer>1</integer>
-								</regexCodePropertyList>
-							</Trigger>
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>wycofanie_sie_ty</name>
-								<script>trigger_func_skrypty_ui_gags_color_color_zaslony_udane_wycofanie_sie_ty()</script>
-								<triggerType>0</triggerType>
-								<conditonLineDelta>0</conditonLineDelta>
-								<mStayOpen>0</mStayOpen>
-								<mCommand></mCommand>
-								<packageName></packageName>
-								<mFgColor>#ff0000</mFgColor>
-								<mBgColor>#ffff00</mBgColor>
-								<mSoundFile></mSoundFile>
-								<colorTriggerFgColor>#000000</colorTriggerFgColor>
-								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList>
-									<string>[ &gt;]*Unosisz swoja .* i szybko przesuwasz sie za .*, kryjac sie przed atakami</string>
-								</regexCodeList>
-								<regexCodePropertyList>
-									<integer>1</integer>
-								</regexCodePropertyList>
-							</Trigger>
-						</TriggerGroup>
-						<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-							<name>color_moje_parowanie</name>
-							<script></script>
-							<triggerType>0</triggerType>
-							<conditonLineDelta>0</conditonLineDelta>
-							<mStayOpen>0</mStayOpen>
-							<mCommand></mCommand>
-							<packageName></packageName>
-							<mFgColor>#ff0000</mFgColor>
-							<mBgColor>#ffff00</mBgColor>
-							<mSoundFile></mSoundFile>
-							<colorTriggerFgColor>#000000</colorTriggerFgColor>
-							<colorTriggerBgColor>#000000</colorTriggerBgColor>
-							<regexCodeList />
-							<regexCodePropertyList />
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>ja_paruje_cios</name>
-								<script>trigger_func_skrypty_ui_gags_color_color_moje_parowanie_ja_paruje_cios()</script>
-								<triggerType>0</triggerType>
-								<conditonLineDelta>0</conditonLineDelta>
-								<mStayOpen>0</mStayOpen>
-								<mCommand></mCommand>
-								<packageName></packageName>
-								<mFgColor>#ff0000</mFgColor>
-								<mBgColor>#ffff00</mBgColor>
-								<mSoundFile></mSoundFile>
-								<colorTriggerFgColor>#000000</colorTriggerFgColor>
-								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList>
-									<string>^[ &gt;]*[a-zA-Z (),!]+ w ciebie, lecz tobie udaje sie zbic je z linii ataku .*\.$</string>
-									<string>^[ &gt;]*[a-zA-Z (),!]+ lecz sprawnie parujesz go .*\.$</string>
-									<string>^[ &gt;]*[a-zA-Z (),!]+ zbijasz na bok niespodziewany cios .*\.$</string>
-									<string>^[ &gt;]*[a-zA-Z (),!]+ lecz tobie w ostatniej chwili udaje sie odruchowo zaslonic .*\.$</string>
-									<string>^W pore zakleszczasz cios .* pomiedzy stalowe ogniwa swej szponiastej dwusegmentowej maczugi, powstrzymujac ten niefortunny atak\.$</string>
-								</regexCodeList>
-								<regexCodePropertyList>
-									<integer>1</integer>
-									<integer>1</integer>
-									<integer>1</integer>
-									<integer>1</integer>
-									<integer>1</integer>
-								</regexCodePropertyList>
-							</Trigger>
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>ja_paruje</name>
-								<script>trigger_func_skrypty_ui_gags_color_color_moje_parowanie_ja_paruje()</script>
-								<triggerType>0</triggerType>
-								<conditonLineDelta>0</conditonLineDelta>
-								<mStayOpen>0</mStayOpen>
-								<mCommand></mCommand>
-								<packageName></packageName>
-								<mFgColor>#ff0000</mFgColor>
-								<mBgColor>#ffff00</mBgColor>
-								<mSoundFile></mSoundFile>
-								<colorTriggerFgColor>#000000</colorTriggerFgColor>
-								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList>
-									<string>(^[ &gt;]*([a-zA-Z (),!]+) wykonuje zamach [a-zA-Z ]+ mierzac w ciebie, lecz tobie udaje sie go sparowac [a-zA-Z ]+\.$)</string>
-									<string>(^[ &gt;]*([a-zA-Z (),!]+) wykonuje zamaszyste ciecie .* mierzac w ciebie, lecz tobie udaje sie je zbic z linii ataku .*\.$)</string>
-									<string>ty jednak bez trudu parujesz cios</string>
-								</regexCodeList>
-								<regexCodePropertyList>
-									<integer>1</integer>
-									<integer>1</integer>
-									<integer>0</integer>
-								</regexCodePropertyList>
-							</Trigger>
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>ja_zbroja_paruje</name>
-								<script>trigger_func_skrypty_ui_gags_color_color_moje_parowanie_ja_zbroja_paruje()</script>
-								<triggerType>0</triggerType>
-								<conditonLineDelta>0</conditonLineDelta>
-								<mStayOpen>0</mStayOpen>
-								<mCommand></mCommand>
-								<packageName></packageName>
-								<mFgColor>#ff0000</mFgColor>
-								<mBgColor>#ffff00</mBgColor>
-								<mSoundFile></mSoundFile>
-								<colorTriggerFgColor>#000000</colorTriggerFgColor>
-								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList>
-									<string>(^[ &gt;]*[a-zA-Z (),!]+ trafia cie *[a-zA-Z (),!]+, lecz caly impet uderzenia zostaje wyparowan. przez [a-z ]+\.$)</string>
-									<string>.*wyrzuca w przod swoja zwierzeca glowe, lecz caly impet zatrzymuje sie na .*</string>
-									<string>^[ &gt;]*Pazury .* zeslizguja sie po .*\.$</string>
-									<string>^[ &gt;]*[a-zA-Z (),!]+ lecz uderzenie zatrzymuje sie na (twym|twych|twej) [a-z ]+\.$</string>
-									<string>^[ &gt;]*[a-zA-Z (),!]+ gdy jego uderzenie zeslizguje sie po (twym|twych|twej) [a-z ]+\.$</string>
-									<string>^[ &gt;]*[a-zA-Z (),!]+ by wyprowadzic cios zdolnyprzebic (twoj|twoja|twe) [a-z ]+\.$</string>
-									<string>nie czyniac ci zadnej szkody.</string>
-									<string>lecz zatrzymuja sie one na</string>
-								</regexCodeList>
-								<regexCodePropertyList>
-									<integer>1</integer>
-									<integer>1</integer>
-									<integer>1</integer>
-									<integer>1</integer>
-									<integer>1</integer>
-									<integer>1</integer>
-									<integer>0</integer>
-									<integer>0</integer>
-								</regexCodePropertyList>
-							</Trigger>
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>ja_tarcza_paruje</name>
-								<script>trigger_func_skrypty_ui_gags_color_color_moje_parowanie_ja_tarcza_paruje()</script>
-								<triggerType>0</triggerType>
-								<conditonLineDelta>0</conditonLineDelta>
-								<mStayOpen>0</mStayOpen>
-								<mCommand></mCommand>
-								<packageName></packageName>
-								<mFgColor>#ff0000</mFgColor>
-								<mBgColor>#ffff00</mBgColor>
-								<mSoundFile></mSoundFile>
-								<colorTriggerFgColor>#000000</colorTriggerFgColor>
-								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList>
-									<string>^[ &gt;]*[a-zA-Z (),!]+ w ciebie, lecz .* sie oslonic .*\.$</string>
-									<string>^[ &gt;]*[a-zA-Z (),!]+ naciera na ciebie, lecz jego .* z hukiem trafia w .* (tarcze|puklerz|pawez).*\.$</string>
-									<string>^[ &gt;]*[a-zA-Z (),!]+ lecz ty zbijasz go .*\.$</string>
-									<string>^[ &gt;]*[a-zA-Z (),!.]+ W pore mozesz wiec nadstawic .*, zbijajac uderzenie i momentalnie przechodzac do przeciwnatarcia\.$</string>
-									<string>Szkarlatne luski dzwiecza cicho, gdy oslaniasz sie swoja rogata tarcza przed uderzeniem</string>
-									<string>w ciebie, lecz widmowe pedy wyrastajace nagle z okraglego migotliwego puklerza zatrzymuja ten cios.</string>
-									<string>jednak udaje ci sie sparowac ten cios</string>
-									<string>jednak udaje ci sie zablokowac ten atak</string>
-								</regexCodeList>
-								<regexCodePropertyList>
-									<integer>1</integer>
-									<integer>1</integer>
-									<integer>1</integer>
-									<integer>1</integer>
-									<integer>0</integer>
-									<integer>0</integer>
-									<integer>0</integer>
-									<integer>0</integer>
-								</regexCodePropertyList>
-							</Trigger>
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>baron-tarcza2</name>
-								<script>trigger_func_skrypty_ui_gags_color_color_moje_parowanie_baron_tarcza2()</script>
-								<triggerType>0</triggerType>
-								<conditonLineDelta>0</conditonLineDelta>
-								<mStayOpen>0</mStayOpen>
-								<mCommand></mCommand>
-								<packageName></packageName>
-								<mFgColor>#ff0000</mFgColor>
-								<mBgColor>#ffff00</mBgColor>
-								<mSoundFile></mSoundFile>
-								<colorTriggerFgColor>#000000</colorTriggerFgColor>
-								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList>
-									<string>^[ &gt;]*Blekitno-srebrna herbowa tarcza rozblyskuje nagle bardzo ostrym blekitnym swiatlem, skierowanym w strone.*</string>
-								</regexCodeList>
-								<regexCodePropertyList>
-									<integer>1</integer>
-								</regexCodePropertyList>
-							</Trigger>
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>ja_paruje_lewak</name>
-								<script>trigger_func_skrypty_ui_gags_color_color_moje_parowanie_ja_paruje_lewak()</script>
-								<triggerType>0</triggerType>
-								<conditonLineDelta>0</conditonLineDelta>
-								<mStayOpen>0</mStayOpen>
-								<mCommand></mCommand>
-								<packageName></packageName>
-								<mFgColor>#ff0000</mFgColor>
-								<mBgColor>#ffff00</mBgColor>
-								<mSoundFile></mSoundFile>
-								<colorTriggerFgColor>#000000</colorTriggerFgColor>
-								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList>
-									<string>Szlachetna stal dzierzonego przez ciebie zdobionego dlugiego lewaka spiewa dzwiecznie, gdy udaje ci sie sparowac nadchodzacy cios</string>
-									<string>Wprawnie przyjmujesz cios .* na szeroki jelec swego zdobionego dlugiego lewaka.</string>
-									<string>Blyskawicznie skladajac zastawe parujesz cios .* swym zdobionym dlugim lewakiem</string>
-									<string>Skladasz wprawnie zastawe, by sparowac cios .* swym zdobionym dlugim lewakiem</string>
-								</regexCodeList>
-								<regexCodePropertyList>
-									<integer>0</integer>
-									<integer>1</integer>
-									<integer>1</integer>
-									<integer>1</integer>
-								</regexCodePropertyList>
-							</Trigger>
-						</TriggerGroup>
-						<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-							<name>color_innych_parowanie</name>
-							<script></script>
-							<triggerType>0</triggerType>
-							<conditonLineDelta>0</conditonLineDelta>
-							<mStayOpen>0</mStayOpen>
-							<mCommand></mCommand>
-							<packageName></packageName>
-							<mFgColor>#ff0000</mFgColor>
-							<mBgColor>#ffff00</mBgColor>
-							<mSoundFile></mSoundFile>
-							<colorTriggerFgColor>#000000</colorTriggerFgColor>
-							<colorTriggerBgColor>#000000</colorTriggerBgColor>
-							<regexCodeList />
-							<regexCodePropertyList />
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>ktos_paruje</name>
-								<script>trigger_func_skrypty_ui_gags_color_color_innych_parowanie_ktos_paruje()</script>
-								<triggerType>0</triggerType>
-								<conditonLineDelta>0</conditonLineDelta>
-								<mStayOpen>0</mStayOpen>
-								<mCommand></mCommand>
-								<packageName></packageName>
-								<mFgColor>#ff0000</mFgColor>
-								<mBgColor>#ffff00</mBgColor>
-								<mSoundFile></mSoundFile>
-								<colorTriggerFgColor>#000000</colorTriggerFgColor>
-								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList>
-									<string>(^[ &gt;]*Wykonujesz zamaszyste ciecie [a-z ]+ mierzac w [a-zA-Z (),!]+, lecz [a-z]+ zbija .* linii ataku .*\.$)</string>
-									<string>(^[ &gt;]*Nagle .* wykonuje zamaszysty cios .* celujac w .*, lecz [a-z]+ (sprawnie |)paruje go .*\.$)</string>
-									<string>(^[ &gt;]*.* wykonuje zamaszyste ciecie .* mierzac w .*, lecz [a-z]+ zbija je z linii ataku .*\.)</string>
-									<string>(^[ &gt;]*Wyprowadzasz szybkie pchniecie .* w .*, lecz [a-z]+ zbija je z linii ataku .*\.$)</string>
-									<string>(^[ &gt;]*.* wykonuje zamaszyste ciecie .* mierzac w .*, lecz .* oslania sie .*\.$)</string>
-									<string>(^[ &gt;]*Trafiasz .*, lecz caly impet uderzenia zostaje .*\.$)</string>
-									<string>(^[ &gt;]*Wykonujesz zamach .* mierzac w .*, lecz .* paruje .*\.$)</string>
-									<string>(^[ &gt;]*Robisz zamach .* mierzac w .*, lecz .* oslania sie .*\.$)</string>
-									<string>^[ &gt;]*Szkarlatne luski rogatej tarczy .* dzwiecza cicho, gdy .* oslania sie nia przed uderzeniem.*</string>
-									<string>Szybkim pchnieciem .* zbija na bok niespodziewany cios .*</string>
-									<string>Szlachetna stal dzierzonego przez ^(ciebie) zdobionego dlugiego lewaka spiewa dzwiecznie, gdy udaje.*</string>
-									<string>.* wprawnie przyjmuje cios .* na szeroki jelec swojego zdobionego dlugiego lewaka\.$</string>
-									<string>.* sklada wprawnie zastawe by sparowac cios .* swym zdobionym dlugim lewakiem\.$</string>
-									<string>^Wykonujesz zamaszyste ciecie .* mierzac w .*, lecz ono oslania sie .*\.$</string>
-									<string>^Wyprowadzasz szybkie pchniecie .* w .* lecz .* oslania sie .*\.$</string>
-									<string>^Wykonujesz zamaszyste ciecie .* oslania sie</string>
-									<string>^Zamierzasz sie .* lecz udaje sie mu sparowac</string>
-									<string>^Usmiechajac sie szyderczo, rzucasz sie do ataku</string>
-									<string>uderzenie zostaje zablokowane</string>
-									<string> w ostatniej chwili zaslania sie</string>
-									<string>lecz (ten|ta) zbija go</string>
-									<string>jednak w ostatniej chwili oslania sie</string>
-									<string>oslania sie w pore</string>
-									<string>jednak bez trudu paruje cios</string>
-								</regexCodeList>
-								<regexCodePropertyList>
-									<integer>1</integer>
-									<integer>1</integer>
-									<integer>1</integer>
-									<integer>1</integer>
-									<integer>1</integer>
-									<integer>1</integer>
-									<integer>1</integer>
-									<integer>1</integer>
-									<integer>1</integer>
-									<integer>1</integer>
-									<integer>1</integer>
-									<integer>1</integer>
-									<integer>1</integer>
-									<integer>1</integer>
-									<integer>1</integer>
-									<integer>1</integer>
-									<integer>1</integer>
-									<integer>1</integer>
-									<integer>0</integer>
-									<integer>0</integer>
-									<integer>1</integer>
-									<integer>0</integer>
-									<integer>0</integer>
-									<integer>0</integer>
-								</regexCodePropertyList>
-							</Trigger>
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>ktos_zbroja_paruje</name>
-								<script>trigger_func_skrypty_ui_gags_color_color_innych_parowanie_ktos_zbroja_paruje()</script>
-								<triggerType>0</triggerType>
-								<conditonLineDelta>0</conditonLineDelta>
-								<mStayOpen>0</mStayOpen>
-								<mCommand></mCommand>
-								<packageName></packageName>
-								<mFgColor>#ff0000</mFgColor>
-								<mBgColor>#ffff00</mBgColor>
-								<mSoundFile></mSoundFile>
-								<colorTriggerFgColor>#000000</colorTriggerFgColor>
-								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList>
-									<string>^[ &gt;]*[a-zA-Z (),!]+ trafia (?!cie )(.+?) w .*, lecz caly impet uderzenia zostaje .*</string>
-									<string>^[ &gt;]*[a-zA-Z (),!]+ lecz uderzenie zatrzymuje sie na (jego|jej) [a-z ]+\.$</string>
-									<string>^[ &gt;]*[a-zA-Z (),!]+ (gdy jego uderzenie|lecz) zeslizguje sie po (jego|jej) [a-z ]+\.$</string>
-									<string>jednak caly impet ciosu wyparowany zostaje przez</string>
-								</regexCodeList>
-								<regexCodePropertyList>
-									<integer>1</integer>
-									<integer>1</integer>
-									<integer>1</integer>
-									<integer>0</integer>
-								</regexCodePropertyList>
-							</Trigger>
+								<regexCodeList />
+								<regexCodePropertyList />
+								<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+									<name>ktos_paruje</name>
+									<script>trigger_func_skrypty_ui_gags_color_color_innych_parowanie_ktos_paruje()</script>
+									<triggerType>0</triggerType>
+									<conditonLineDelta>0</conditonLineDelta>
+									<mStayOpen>0</mStayOpen>
+									<mCommand></mCommand>
+									<packageName></packageName>
+									<mFgColor>#ff0000</mFgColor>
+									<mBgColor>#ffff00</mBgColor>
+									<mSoundFile></mSoundFile>
+									<colorTriggerFgColor>#000000</colorTriggerFgColor>
+									<colorTriggerBgColor>#000000</colorTriggerBgColor>
+									<regexCodeList>
+										<string>zbija je z linii ataku</string>
+										<string>lecz (?:ten|ta) paruje go</string>
+										<string>zbija na bok niespodziewany cios</string>
+										<string>^Szlachetna stal dzierzonego przez (?!ciebie)</string>
+										<string>wprawnie przyjmuje cios</string>
+										<string>sklada wprawnie zastawe by sparowac cios</string>
+										<string>, lecz uderzenie zostaje zablokowane</string>
+										<string>jednak bez trudu paruje cios</string>
+									</regexCodeList>
+									<regexCodePropertyList>
+										<integer>0</integer>
+										<integer>1</integer>
+										<integer>0</integer>
+										<integer>1</integer>
+										<integer>0</integer>
+										<integer>0</integer>
+										<integer>0</integer>
+										<integer>0</integer>
+									</regexCodePropertyList>
+								</Trigger>
+								<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+									<name>ktos_zbroja</name>
+									<script>trigger_func_skrypty_ui_gags_color_color_innych_parowanie_ktos_zbroja_paruje()</script>
+									<triggerType>0</triggerType>
+									<conditonLineDelta>0</conditonLineDelta>
+									<mStayOpen>0</mStayOpen>
+									<mCommand></mCommand>
+									<packageName></packageName>
+									<mFgColor>#ff0000</mFgColor>
+									<mBgColor>#ffff00</mBgColor>
+									<mSoundFile></mSoundFile>
+									<colorTriggerFgColor>#000000</colorTriggerFgColor>
+									<colorTriggerBgColor>#000000</colorTriggerBgColor>
+									<regexCodeList>
+										<string>[tT]rafia(?:sz|) (?!cie ).+? caly impet uderzenia zostaje wyparowany przez</string>
+										<string>[tT]rafia(?:sz|) (?!cie ).+? caly impet ciosu wyparowan. zostaje przez</string>
+										<string>, lecz udaje sie (?:mu|jej) sparowac cios</string>
+										<string>zeslizguj. sie po (?!twym|twych|twej)</string>
+										<string>by wyprowadzic cios zdolny przebic (?!twoj|twoja|twe|twa)</string>
+									</regexCodeList>
+									<regexCodePropertyList>
+										<integer>1</integer>
+										<integer>1</integer>
+										<integer>1</integer>
+										<integer>1</integer>
+										<integer>1</integer>
+									</regexCodePropertyList>
+								</Trigger>
+								<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+									<name>ktos_tarcza</name>
+									<script>trigger_func_skrypty_ui_gags_color_color_innych_parowanie_ktos_tarcza_paruje()</script>
+									<triggerType>0</triggerType>
+									<conditonLineDelta>0</conditonLineDelta>
+									<mStayOpen>0</mStayOpen>
+									<mCommand></mCommand>
+									<packageName></packageName>
+									<mFgColor>#ff0000</mFgColor>
+									<mBgColor>#ffff00</mBgColor>
+									<mSoundFile></mSoundFile>
+									<colorTriggerFgColor>#000000</colorTriggerFgColor>
+									<colorTriggerBgColor>#000000</colorTriggerBgColor>
+									<regexCodeList>
+										<string>lecz (?:ten|ta) oslania sie</string>
+										<string>lecz (?:ten|ta) zbija go</string>
+										<string>Szkarlatne luski rogatej tarczy</string>
+										<string> w ostatniej chwili (?:za|o)slania sie</string>
+										<string>w (?!ciebie).+?, lecz widmowe pedy wyrastajace nagle z okraglego migotliwego puklerza zatrzymuja ten cios\.$</string>
+										<string>naciera na (?!ciebie).+?, lecz jego .+? z hukiem trafia w</string>
+									</regexCodeList>
+									<regexCodePropertyList>
+										<integer>1</integer>
+										<integer>1</integer>
+										<integer>2</integer>
+										<integer>1</integer>
+										<integer>1</integer>
+										<integer>1</integer>
+									</regexCodePropertyList>
+								</Trigger>
+							</TriggerGroup>
 						</TriggerGroup>
 						<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 							<name>color_cele</name>
@@ -17452,6 +17316,118 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 								<colorTriggerBgColor>#000000</colorTriggerBgColor>
 								<regexCodeList>
 									<string>.* przekazuje ci prowadzenie druzyny\.$</string>
+								</regexCodeList>
+								<regexCodePropertyList>
+									<integer>1</integer>
+								</regexCodePropertyList>
+							</Trigger>
+						</TriggerGroup>
+						<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+							<name>color_zaslony_udane</name>
+							<script></script>
+							<triggerType>0</triggerType>
+							<conditonLineDelta>0</conditonLineDelta>
+							<mStayOpen>0</mStayOpen>
+							<mCommand></mCommand>
+							<packageName></packageName>
+							<mFgColor>#ff0000</mFgColor>
+							<mBgColor>#ffff00</mBgColor>
+							<mSoundFile></mSoundFile>
+							<colorTriggerFgColor>#000000</colorTriggerFgColor>
+							<colorTriggerBgColor>#000000</colorTriggerBgColor>
+							<regexCodeList />
+							<regexCodePropertyList />
+							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+								<name>zaslaniasz_ty</name>
+								<script>trigger_func_skrypty_ui_gags_color_color_zaslony_udane_zaslaniasz_ty()</script>
+								<triggerType>0</triggerType>
+								<conditonLineDelta>0</conditonLineDelta>
+								<mStayOpen>0</mStayOpen>
+								<mCommand></mCommand>
+								<packageName></packageName>
+								<mFgColor>#ff0000</mFgColor>
+								<mBgColor>#ffff00</mBgColor>
+								<mSoundFile></mSoundFile>
+								<colorTriggerFgColor>#000000</colorTriggerFgColor>
+								<colorTriggerBgColor>#000000</colorTriggerBgColor>
+								<regexCodeList>
+									<string>(^[ &gt;]*Zrecznie zaslaniasz ([\[a-zA-Z (),!\]]+) przed ciosami ([a-zA-Z (),!\]]+)\.$)</string>
+									<string>(^[ &gt;]*Z wprawa stajesz pomiedzy ([\[a-zA-Z (),!\]]+) a ([\[a-zA-Z (),!\]]+), przyjmujac na siebie nadchodzace ciosy\.$)</string>
+									<string>(^[ &gt;]*Stajesz u boku ([a-zA-Z (),!\]]+), gotow w kazdej chwili zaslonic .* przed nadchodzacym niebezpieczenstwem\.$)</string>
+									<string>(^[ &gt;]*Zdecydowanym krokiem wysuwasz sie przed [\[a-zA-Z (),!\]]+, zimnym spojrzeniem dajac wszystkim do zrozumienia, ze moga sie do (niego|niej) zblizyc jedynie po twoim trupie\.$)</string>
+								</regexCodeList>
+								<regexCodePropertyList>
+									<integer>1</integer>
+									<integer>1</integer>
+									<integer>1</integer>
+									<integer>1</integer>
+								</regexCodePropertyList>
+							</Trigger>
+							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+								<name>zaslania_kogos</name>
+								<script>trigger_func_skrypty_ui_gags_color_color_zaslony_udane_zaslania_kogos()</script>
+								<triggerType>0</triggerType>
+								<conditonLineDelta>0</conditonLineDelta>
+								<mStayOpen>0</mStayOpen>
+								<mCommand></mCommand>
+								<packageName></packageName>
+								<mFgColor>#ff0000</mFgColor>
+								<mBgColor>#ffff00</mBgColor>
+								<mSoundFile></mSoundFile>
+								<colorTriggerFgColor>#000000</colorTriggerFgColor>
+								<colorTriggerBgColor>#000000</colorTriggerBgColor>
+								<regexCodeList>
+									<string>(^[ &gt;]*(?!Na rozkaz)([a-zA-Z (),!]+)(?: zrecznie)? zaslania ([a-zA-Z (),!]+) przed ciosami ([a-zA-Z (),!]+)\.$)</string>
+									<string>(^[ &gt;]*([\[a-zA-Z (),!\]]+) z wprawa staje pomiedzy toba .*, przyjmujac na siebie nadchodzace ciosy\.$)</string>
+									<string>(^[ &gt;]*([a-zA-Z (),!]+) zrecznie zaslania ([a-zA-Z (),!]+) przed twoimi ciosami\.$)</string>
+									<string>(^[ &gt;]*([\[a-zA-Z (),!\]]+) staje u .*boku, gotow w kazdej chwili zaslonic .* przed nadchodzacym niebezpieczenstwem\.$)</string>
+									<string>(^[ &gt;]*([a-zA-Z (),!]+) z wprawa staje pomiedzy .* a .*, przyjmujac na siebie nadchodzace ciosy\.$)</string>
+									<string>(^[ &gt;]*[\[a-zA-Z (),!\]]+ z mrozacym krew w zylach spojrzeniem zdecydowanym krokiem wysuwa sie przed [\[a-zA-Z (),!\]]+ i opierajac dlon na trzonku [a-z ]+, daje do zrozumienia, ze kazdy kto zechce sie do (niej|niego) zblizyc, uczyni to jedynie po (jego|jej) trupie\.$)</string>
+								</regexCodeList>
+								<regexCodePropertyList>
+									<integer>1</integer>
+									<integer>1</integer>
+									<integer>1</integer>
+									<integer>1</integer>
+									<integer>1</integer>
+									<integer>1</integer>
+								</regexCodePropertyList>
+							</Trigger>
+							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+								<name>wycofanie-za-ciebie</name>
+								<script>trigger_func_skrypty_ui_gags_color_color_zaslony_udane_wycofanie_za_ciebie()</script>
+								<triggerType>0</triggerType>
+								<conditonLineDelta>0</conditonLineDelta>
+								<mStayOpen>0</mStayOpen>
+								<mCommand></mCommand>
+								<packageName></packageName>
+								<mFgColor>#ff0000</mFgColor>
+								<mBgColor>#ffff00</mBgColor>
+								<mSoundFile></mSoundFile>
+								<colorTriggerFgColor>#000000</colorTriggerFgColor>
+								<colorTriggerBgColor>#000000</colorTriggerBgColor>
+								<regexCodeList>
+									<string>^[ &gt;]*.* unosi swoja .* i szybko przesuwa sie za ciebie, kryjac.*</string>
+								</regexCodeList>
+								<regexCodePropertyList>
+									<integer>1</integer>
+								</regexCodePropertyList>
+							</Trigger>
+							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+								<name>wycofanie_sie_ty</name>
+								<script>trigger_func_skrypty_ui_gags_color_color_zaslony_udane_wycofanie_sie_ty()</script>
+								<triggerType>0</triggerType>
+								<conditonLineDelta>0</conditonLineDelta>
+								<mStayOpen>0</mStayOpen>
+								<mCommand></mCommand>
+								<packageName></packageName>
+								<mFgColor>#ff0000</mFgColor>
+								<mBgColor>#ffff00</mBgColor>
+								<mSoundFile></mSoundFile>
+								<colorTriggerFgColor>#000000</colorTriggerFgColor>
+								<colorTriggerBgColor>#000000</colorTriggerBgColor>
+								<regexCodeList>
+									<string>[ &gt;]*Unosisz swoja .* i szybko przesuwasz sie za .*, kryjac sie przed atakami</string>
 								</regexCodeList>
 								<regexCodePropertyList>
 									<integer>1</integer>

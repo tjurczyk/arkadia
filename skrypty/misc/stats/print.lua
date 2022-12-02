@@ -191,3 +191,100 @@ function misc.stats:print_stats()
     cecho("+-------------------------------------------------------+\n")
 end
 
+-- Alternatywne wyswietlanie statow
+function misc.stats:print_stats2()
+    cecho("+--------------------- <green>Statystyki<grey> ----------------------+\n")
+    cecho("|                                                       |\n")
+    local all_hits_str = ".................. " .. string.sub(misc.stats.hits .. "                  ", 0, 18)
+    cecho("| <yellow>WSZYSTKIE<grey> ciosy: " .. all_hits_str .. "|\n")
+
+    ------------------------
+    -- OGOLEM
+    ------------------------
+    local stat_taken = 0
+    local stat_dodged = 0
+    local stat_parry = 0
+    local stat_shield = 0
+    local stat_armor = 0
+    if misc.stats.all_hit > 0 then
+        stat_taken = misc.stats.all_hit / misc.stats.hits * 100 -- otrzymane
+        stat_dodged = misc.stats.dodged / misc.stats.hits * 100 -- unikniete
+        stat_parry = misc.stats.weapon_par / misc.stats.hits * 100 -- sparowane bronia
+        stat_shield = misc.stats.shield_par / misc.stats.hits * 100 -- osloniete tarcza
+        stat_armor = misc.stats.armor_par / misc.stats.hits * 100 -- wyparowane przez zbroje
+    end
+
+    cecho("|                                                       |\n")
+    cecho("| <yellow>STATYSTYKI OGOLNE<grey>                                     |\n")
+    cecho("|                                                       |\n")
+    cecho("|   » <light_slate_blue>Otrzymane: <grey>" .. ".................... " .. string.sub(misc.stats.all_hit .. "/" .. misc.stats.hits .. " (" .. string.format("%.0f", stat_taken) .. "%)" .. "            ", 0, 18) .. "|\n")
+    cecho("|                                                       |\n")
+    cecho("|   » <light_slate_blue>Uniki: <grey>" .. "........................ " .. string.sub(misc.stats.dodged .. "/" .. misc.stats.hits .. " (" .. string.format("%.0f", stat_dodged) .. "%)" .. "            ", 0, 18) .. "|\n")
+    cecho("|   » <light_slate_blue>Parowanie: <grey>" .. ".................... " .. string.sub(misc.stats.weapon_par .. "/" .. misc.stats.hits .. " (" .. string.format("%.0f", stat_parry) .. "%)" .. "            ", 0, 18) .. "|\n")
+    cecho("|   » <light_slate_blue>Tarcza: <grey>" .. "....................... " .. string.sub(misc.stats.shield_par .. "/" .. misc.stats.hits .. " (" .. string.format("%.0f", stat_shield) .. "%)" .. "            ", 0, 18) .. "|\n")
+    cecho("|   » <light_slate_blue>Zbroja: <grey>" .. "....................... " .. string.sub(misc.stats.armor_par .. "/" .. misc.stats.hits .. " (" .. string.format("%.0f", stat_armor) .. "%)" .. "            ", 0, 18) .. "|\n")
+    cecho("|                                                       |\n")
+    ------------------------
+    -- ZBROJA
+    ------------------------  
+    local stat_armor_head = 0
+    local stat_armor_head_all = misc.stats.armor_par_categories["glowe"] + misc.stats.armor_hit_categories["glowe"]
+    if stat_armor_head_all > 0 then
+        stat_armor_head = misc.stats.armor_par_categories["glowe"] / stat_armor_head_all * 100 -- % stat glowa
+    end
+    local stat_armor_lshoulder = 0
+    local stat_armor_lshoulder_all = misc.stats.armor_par_categories["lewe ramie"] + misc.stats.armor_hit_categories["lewe ramie"]
+    if stat_armor_lshoulder_all > 0 then
+        stat_armor_lshoulder = misc.stats.armor_par_categories["lewe ramie"] / stat_armor_lshoulder_all * 100 -- % stat lewe ramie
+    end
+    local stat_armor_rshoulder = 0
+    local stat_armor_rshoulder_all = misc.stats.armor_par_categories["prawe ramie"] + misc.stats.armor_hit_categories["prawe ramie"]
+    if stat_armor_rshoulder_all > 0 then
+        stat_armor_rshoulder = misc.stats.armor_par_categories["prawe ramie"] / stat_armor_rshoulder_all * 100 -- % stat lewe ramie
+    end
+    local stat_armor_chest = 0
+    local stat_armor_chest_all = misc.stats.armor_par_categories["korpus"] + misc.stats.armor_hit_categories["korpus"]
+    if stat_armor_chest_all > 0 then
+        stat_armor_chest = misc.stats.armor_par_categories["korpus"] / stat_armor_chest_all * 100 -- % stat korpus
+    end
+    local stat_armor_legs = 0
+    local stat_armor_legs_all = misc.stats.armor_par_categories["nogi"] + misc.stats.armor_hit_categories["nogi"]
+    if stat_armor_legs_all > 0 then
+        stat_armor_legs = misc.stats.armor_par_categories["nogi"] / stat_armor_legs_all * 100 -- % stat nogi
+    end
+
+    cecho("| <yellow>STATYSTYKI ZBROI<grey>                                      |\n")
+    cecho("|                                                       |\n")
+    cecho("|   » <light_slate_blue>Glowa: <grey>" .. "....................... " .. string.sub(misc.stats.armor_par_categories["glowe"] .. "/" .. stat_armor_head_all .. " (" .. string.format("%.0f", stat_armor_head) .. "%)" .. "            ", 0, 19) .. "|\n")
+    cecho("|   » <light_slate_blue>Lewe ramie: <grey>" .. ".................. " .. string.sub(misc.stats.armor_par_categories["lewe ramie"].. "/" .. stat_armor_lshoulder_all .. " (" .. string.format("%.0f", stat_armor_lshoulder) .. "%)" .. "            ", 0, 19) .. "|\n")
+    cecho("|   » <light_slate_blue>Prawe ramie: <grey>" .. "................. " .. string.sub(misc.stats.armor_par_categories["prawe ramie"].. "/" .. stat_armor_rshoulder_all .. " (" .. string.format("%.0f", stat_armor_rshoulder) .. "%)" .. "            ", 0, 19) .. "|\n")
+    cecho("|   » <light_slate_blue>Korpus: <grey>" .. "...................... " .. string.sub(misc.stats.armor_hit_categories["korpus"] .. "/" .. stat_armor_chest_all .. " (" .. string.format("%.0f", stat_armor_chest) .. "%)" .. "            ", 0, 19) .. "|\n")
+    cecho("|   » <light_slate_blue>Nogi: <grey>" .. "........................ " .. string.sub(misc.stats.armor_par_categories["nogi"] .. "/" .. stat_armor_legs_all .. " (" .. string.format("%.0f", stat_armor_legs) .. "%)" .. "            ", 0, 19) .. "|\n")
+    cecho("|                                                       |\n")
+    ------------------------
+    -- CZESCI CIALA
+    ------------------------  
+    local stat_hit_head = 0
+    local stat_hit_lshoulder = 0
+    local stat_hit_rshoulder = 0
+    local stat_hit_chest = 0
+    local stat_hit_legs = 0
+    local stat_all_hits = (misc.stats.all_hit + misc.stats.armor_par)
+    if stat_all_hits > 0 then
+        stat_hit_head = stat_armor_head_all / stat_all_hits * 100
+        stat_hit_lshoulder = stat_armor_lshoulder_all / stat_all_hits * 100
+        stat_hit_rshoulder = stat_armor_rshoulder_all / stat_all_hits * 100
+        stat_hit_chest = stat_armor_chest_all / stat_all_hits * 100
+        stat_hit_legs = stat_armor_legs_all / stat_all_hits * 100
+    end
+    cecho("| <yellow>STATYSTYKI<grey> ciosy na czesci ciala                      |\n")
+    cecho("|                                                       |\n")
+    cecho("|   » <light_slate_blue>Glowa: <grey>" .. "....................... " .. string.sub(stat_armor_head_all .. "/" .. stat_all_hits .. " (" .. string.format("%.0f", stat_hit_head) .. "%)" .. "            ", 0, 19) .. "|\n")
+    cecho("|   » <light_slate_blue>Lewe ramie: <grey>" .. ".................. " .. string.sub(stat_armor_lshoulder_all.. "/" .. stat_all_hits .. " (" .. string.format("%.0f", stat_hit_lshoulder) .. "%)" .. "            ", 0, 19) .. "|\n")
+    cecho("|   » <light_slate_blue>Prawe ramie: <grey>" .. "................. " .. string.sub(stat_armor_rshoulder_all.. "/" .. stat_all_hits .. " (" .. string.format("%.0f", stat_hit_rshoulder) .. "%)" .. "            ", 0, 19) .. "|\n")
+    cecho("|   » <light_slate_blue>Korpus: <grey>" .. "...................... " .. string.sub(stat_armor_chest_all .. "/" .. stat_all_hits .. " (" .. string.format("%.0f", stat_hit_chest) .. "%)" .. "            ", 0, 19) .. "|\n")
+    cecho("|   » <light_slate_blue>Nogi: <grey>" .. "........................ " .. string.sub(stat_armor_legs_all .. "/" .. stat_all_hits .. " (" .. string.format("%.0f", stat_hit_legs) .. "%)" .. "            ", 0, 19) .. "|\n")
+    cecho("|                                                       |\n")
+    cecho("+-------------------------------------------------------+\n")
+end
+

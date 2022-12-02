@@ -15940,8 +15940,10 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<string>prawie cie trafiajac.</string>
 										<string>nieumiejetnie probujac trafic cie.</string>
 										<string>przecina powietrze tuz przed twoja glowa.</string>
+										<string>na ciebie, lecz udaje ci sie uniknac</string>
 									</regexCodeList>
 									<regexCodePropertyList>
+										<integer>0</integer>
 										<integer>0</integer>
 										<integer>0</integer>
 										<integer>0</integer>
@@ -16011,8 +16013,10 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<string>^[ &gt;]*[a-zA-Z (),!]+ probuje trafic .*, lecz .* uskakuje przed tym ciosem\.$</string>
 										<string>^Nagle (?:\w ?)+ wykonuje zamaszysty cios (?:\w ?)+ celujac w (?:\w ?)+, lecz .* udaje sie go uniknac\.$</string>
 										<string>(?:jego|jej) mieczy tna zaledwie powietrze.</string>
+										<string>lecz (?:temu|tej) udaje sie uniknac (?:ataku|ciosu).</string>
 									</regexCodeList>
 									<regexCodePropertyList>
+										<integer>1</integer>
 										<integer>1</integer>
 										<integer>1</integer>
 										<integer>1</integer>
@@ -16245,8 +16249,12 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<string>, lecz udaje sie (?:mu|jej) sparowac cios</string>
 										<string>zeslizguj. sie po (?!twym|twych|twej)</string>
 										<string>by wyprowadzic cios zdolny przebic (?!twoj|twoja|twe|twa)</string>
+										<string>lecz zatrzymuja sie one na (?:jego|jej)</string>
+										<string>lecz uderzenie zatrzymuje sie na (?:jego|jej)</string>
 									</regexCodeList>
 									<regexCodePropertyList>
+										<integer>1</integer>
+										<integer>1</integer>
 										<integer>1</integer>
 										<integer>1</integer>
 										<integer>1</integer>
@@ -29643,6 +29651,13 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 					<command></command>
 					<packageName></packageName>
 					<regex>^/stat$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>staty - alternative</name>
+					<script>misc.stats:print_stats2()</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/stat2$</regex>
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
 					<name>staty_verbose</name>

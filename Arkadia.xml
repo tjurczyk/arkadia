@@ -24406,6 +24406,46 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 								</regexCodePropertyList>
 							</Trigger>
 							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+								<name>gps_viadaza</name>
+								<script>trigger_func_mapper_localizers_ships_buses_buses_campo_varieno_gps_viadaza()</script>
+								<triggerType>0</triggerType>
+								<conditonLineDelta>0</conditonLineDelta>
+								<mStayOpen>0</mStayOpen>
+								<mCommand></mCommand>
+								<packageName></packageName>
+								<mFgColor>#ff0000</mFgColor>
+								<mBgColor>#ffff00</mBgColor>
+								<mSoundFile></mSoundFile>
+								<colorTriggerFgColor>#000000</colorTriggerFgColor>
+								<colorTriggerBgColor>#000000</colorTriggerBgColor>
+								<regexCodeList>
+									<string>incrocio alla Viadaza!</string>
+								</regexCodeList>
+								<regexCodePropertyList>
+									<integer>0</integer>
+								</regexCodePropertyList>
+							</Trigger>
+							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+								<name>gps_urbimo</name>
+								<script>trigger_func_mapper_localizers_ships_buses_buses_campo_varieno_gps_urbimo()</script>
+								<triggerType>0</triggerType>
+								<conditonLineDelta>0</conditonLineDelta>
+								<mStayOpen>0</mStayOpen>
+								<mCommand></mCommand>
+								<packageName></packageName>
+								<mFgColor>#ff0000</mFgColor>
+								<mBgColor>#ffff00</mBgColor>
+								<mSoundFile></mSoundFile>
+								<colorTriggerFgColor>#000000</colorTriggerFgColor>
+								<colorTriggerBgColor>#000000</colorTriggerBgColor>
+								<regexCodeList>
+									<string>incrocio alla Urbimo!</string>
+								</regexCodeList>
+								<regexCodePropertyList>
+									<integer>0</integer>
+								</regexCodePropertyList>
+							</Trigger>
+							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 								<name>gps_varieno</name>
 								<script>trigger_func_mapper_localizers_ships_buses_buses_campo_varieno_gps_varieno()</script>
 								<triggerType>0</triggerType>
@@ -28225,8 +28265,10 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
 						<string>Przeciez brama jest otwarta!</string>
+						<string>Jestes zbyt wyczerpany mentalnie.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
+						<integer>2</integer>
 						<integer>2</integer>
 					</regexCodePropertyList>
 				</Trigger>

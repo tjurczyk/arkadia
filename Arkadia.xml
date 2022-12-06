@@ -17443,6 +17443,26 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 									<integer>1</integer>
 								</regexCodePropertyList>
 							</Trigger>
+							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+								<name>wycofanie-kogos</name>
+								<script>trigger_func_skrypty_ui_gags_color_color_zaslony_udane_wycofanie_kogos()</script>
+								<triggerType>0</triggerType>
+								<conditonLineDelta>0</conditonLineDelta>
+								<mStayOpen>0</mStayOpen>
+								<mCommand></mCommand>
+								<packageName></packageName>
+								<mFgColor>#ff0000</mFgColor>
+								<mBgColor>#ffff00</mBgColor>
+								<mSoundFile></mSoundFile>
+								<colorTriggerFgColor>#000000</colorTriggerFgColor>
+								<colorTriggerBgColor>#000000</colorTriggerBgColor>
+								<regexCodeList>
+									<string>(?:unosi swoja .+? i |)szybko przesuwa sie za .+?, (?:kryjac sie przed atakami .+?|uciekajac przed twoimi ciosami)\.$</string>
+								</regexCodeList>
+								<regexCodePropertyList>
+									<integer>1</integer>
+								</regexCodePropertyList>
+							</Trigger>
 						</TriggerGroup>
 						<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 							<name>color_zaslony_nieudane</name>
@@ -21510,8 +21530,10 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
 							<string>zaczyna wspinac sie na brame.</string>
+							<string>zaczyna ostroznie wspinac sie po sliskich belkach bramy.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
+							<integer>0</integer>
 							<integer>0</integer>
 						</regexCodePropertyList>
 					</Trigger>

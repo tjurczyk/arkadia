@@ -4,7 +4,7 @@ function trigger_func_skrypty_ui_gags_color_color_innych_spece_kor_ktos_spec_0()
 end
 
 function trigger_func_skrypty_ui_gags_color_color_innych_spece_kor_ktos_spec()
-    local target = matches["target"] == "cie" and "innych_spece_we_mnie" or "innych_spece"
+    local target = (matches["target"] == "cie" or matches["target"] == "twego") and "innych_spece_we_mnie" or "innych_spece"
     local dmg = matches["damage"]
     local value = -1
     if dmg == "powol" then value = 1

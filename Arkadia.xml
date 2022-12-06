@@ -12654,8 +12654,8 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
 											<string>^(?P&lt;attacker&gt;[a-zA-Z ]+?) wykorzystujac brak broni u przeciwnika, wyprowadza cios .+? mierzac w (?P&lt;target&gt;.+?) i prawie traci rownowage po je(?:go|j) zrecznym uniku\.$</string>
-											<string>^(?P&lt;attacker&gt;[a-zA-Z ]+?) slamazarnym wymachem .+? probuje wytracic .+? z (rak|reki)\. Przeciwnik nie daje sie jednak zaskoczyc, zbijajac uderzenie na bok\.$</string>
-											<string>^(?P&lt;attacker&gt;[a-zA-Z ]+?) wykorzystujac brak broni u przeciwnika, z wyuczona wprawa wyprowadza cios .+? mierzac w (?P&lt;target&gt;.+?)\. Wypracowane uderzenie zostaje jednak sparowane przez (?:jej|niego) .*\.$</string>
+											<string>^(?P&lt;attacker&gt;[a-zA-Z ]+?) slamazarnym wymachem .+? probuje wytracic .+? z (rak|reki)\. Przeciwnik nie daje sie jednak zaskoczyc, (?:zbijajac uderzenie na bok|cofajac sie w pore)\.$</string>
+											<string>^(?P&lt;attacker&gt;[a-zA-Z ]+?) wykorzystujac brak broni u przeciwnika, (?:blyskawicznie|w mgnieniu oka|z wyuczona wprawa) wyprowadza cios .+? mierzac w (?P&lt;target&gt;.+?)\. Wypracowane uderzenie zostaje jednak sparowane przez (?:jej|niego) .*\.$</string>
 										</regexCodeList>
 										<regexCodePropertyList>
 											<integer>1</integer>
@@ -12697,7 +12697,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>^(?P&lt;attacker&gt;[a-zA-Z (),!]+?) wykorzystujac oslabienie (?P&lt;target&gt;.+?) dosiega go chlodnym i precyzyjnym pchnieciem .+?\. Widzisz, jak przeciwnik rozpaczliwie probuje sie cofnac, lecz znuzenie i rany bezlitosnie daja mu o sobie znac\. Na koncu jego oczy rozszerzaja sie ze zdumienia i zaraz potem zachodza mgla\.$</string>
+											<string>^(?P&lt;attacker&gt;[a-zA-Z (),!]+?) wykorzystujac oslabienie (?P&lt;target&gt;.+?) dosiega (?:go|ja) chlodnym i precyzyjnym pchnieciem .+?\. Widzisz, jak przeciwnik rozpaczliwie probuje sie cofnac, lecz znuzenie i rany bezlitosnie daja (?:mu|jej) o sobie znac\. Na koncu (?:jego|jej) oczy rozszerzaja sie ze zdumienia i zaraz potem zachodza mgla\.$</string>
 										</regexCodeList>
 										<regexCodePropertyList>
 											<integer>1</integer>
@@ -13408,8 +13408,10 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
 											<string>^(?P&lt;attacker&gt;\w+(?: \w+ \w+|)) (?P&lt;damage&gt;powol|oszczed|zgrab|plyn|blyskawicz)nym (?:wypadem do przodu atakuje|(?:polobrotem|ruchem) unika ciosu) (?P&lt;target&gt;.+?)(?:,| korzystajac| i | dzgajac)</string>
+											<string>^(?P&lt;attacker&gt;\w+(?: \w+ \w+|)) (?P&lt;damage&gt;powol|oszczed|zgrab|plyn|blyskawicz)nym (?:polobrotem|ruchem) unika (?P&lt;target&gt;twego) ciosu(?:,| korzystajac| i | dzgajac)</string>
 										</regexCodeList>
 										<regexCodePropertyList>
+											<integer>1</integer>
 											<integer>1</integer>
 										</regexCodePropertyList>
 									</Trigger>

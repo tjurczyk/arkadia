@@ -28,7 +28,15 @@ function trigger_func_skrypty_ui_gags_color_color_zaslony_udane_wycofanie_sie_ty
     if scripts.gags:delete_line("zaslony_udane") then
         return
     end
-    
+
     scripts.gags:gag_prefix(" WYCOFUJESZ ", "zaslony_udane")
+end
+
+function trigger_func_skrypty_ui_gags_color_color_zaslony_udane_wycofanie_kogos()
+    if scripts.gags:delete_line("zaslony_udane") then
+        return
+    end
+
+    scripts.gags:gag_prefix(" WYC ", "zaslony_udane")
 end
 

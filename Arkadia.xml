@@ -12654,8 +12654,8 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
 											<string>^(?P&lt;attacker&gt;[a-zA-Z ]+?) wykorzystujac brak broni u przeciwnika, wyprowadza cios .+? mierzac w (?P&lt;target&gt;.+?) i prawie traci rownowage po je(?:go|j) zrecznym uniku\.$</string>
-											<string>^(?P&lt;attacker&gt;[a-zA-Z ]+?) slamazarnym wymachem .+? probuje wytracic .+? z (rak|reki)\. Przeciwnik nie daje sie jednak zaskoczyc, zbijajac uderzenie na bok\.$</string>
-											<string>^(?P&lt;attacker&gt;[a-zA-Z ]+?) wykorzystujac brak broni u przeciwnika, z wyuczona wprawa wyprowadza cios .+? mierzac w (?P&lt;target&gt;.+?)\. Wypracowane uderzenie zostaje jednak sparowane przez (?:jej|niego) .*\.$</string>
+											<string>^(?P&lt;attacker&gt;[a-zA-Z ]+?) slamazarnym wymachem .+? probuje wytracic .+? z (rak|reki)\. Przeciwnik nie daje sie jednak zaskoczyc, (?:zbijajac uderzenie na bok|cofajac sie w pore)\.$</string>
+											<string>^(?P&lt;attacker&gt;[a-zA-Z ]+?) wykorzystujac brak broni u przeciwnika, (?:blyskawicznie|w mgnieniu oka|z wyuczona wprawa) wyprowadza cios .+? mierzac w (?P&lt;target&gt;.+?)\. Wypracowane uderzenie zostaje jednak sparowane przez (?:jej|niego) .*\.$</string>
 										</regexCodeList>
 										<regexCodePropertyList>
 											<integer>1</integer>
@@ -12697,7 +12697,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>^(?P&lt;attacker&gt;[a-zA-Z (),!]+?) wykorzystujac oslabienie (?P&lt;target&gt;.+?) dosiega go chlodnym i precyzyjnym pchnieciem .+?\. Widzisz, jak przeciwnik rozpaczliwie probuje sie cofnac, lecz znuzenie i rany bezlitosnie daja mu o sobie znac\. Na koncu jego oczy rozszerzaja sie ze zdumienia i zaraz potem zachodza mgla\.$</string>
+											<string>^(?P&lt;attacker&gt;[a-zA-Z (),!]+?) wykorzystujac oslabienie (?P&lt;target&gt;.+?) dosiega (?:go|ja) chlodnym i precyzyjnym pchnieciem .+?\. Widzisz, jak przeciwnik rozpaczliwie probuje sie cofnac, lecz znuzenie i rany bezlitosnie daja (?:mu|jej) o sobie znac\. Na koncu (?:jego|jej) oczy rozszerzaja sie ze zdumienia i zaraz potem zachodza mgla\.$</string>
 										</regexCodeList>
 										<regexCodePropertyList>
 											<integer>1</integer>
@@ -13408,8 +13408,10 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
 											<string>^(?P&lt;attacker&gt;\w+(?: \w+ \w+|)) (?P&lt;damage&gt;powol|oszczed|zgrab|plyn|blyskawicz)nym (?:wypadem do przodu atakuje|(?:polobrotem|ruchem) unika ciosu) (?P&lt;target&gt;.+?)(?:,| korzystajac| i | dzgajac)</string>
+											<string>^(?P&lt;attacker&gt;\w+(?: \w+ \w+|)) (?P&lt;damage&gt;powol|oszczed|zgrab|plyn|blyskawicz)nym (?:polobrotem|ruchem) unika (?P&lt;target&gt;twego) ciosu(?:,| korzystajac| i | dzgajac)</string>
 										</regexCodeList>
 										<regexCodePropertyList>
+											<integer>1</integer>
 											<integer>1</integer>
 										</regexCodePropertyList>
 									</Trigger>
@@ -17436,6 +17438,26 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 								<colorTriggerBgColor>#000000</colorTriggerBgColor>
 								<regexCodeList>
 									<string>[ &gt;]*Unosisz swoja .* i szybko przesuwasz sie za .*, kryjac sie przed atakami</string>
+								</regexCodeList>
+								<regexCodePropertyList>
+									<integer>1</integer>
+								</regexCodePropertyList>
+							</Trigger>
+							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+								<name>wycofanie-kogos</name>
+								<script>trigger_func_skrypty_ui_gags_color_color_zaslony_udane_wycofanie_kogos()</script>
+								<triggerType>0</triggerType>
+								<conditonLineDelta>0</conditonLineDelta>
+								<mStayOpen>0</mStayOpen>
+								<mCommand></mCommand>
+								<packageName></packageName>
+								<mFgColor>#ff0000</mFgColor>
+								<mBgColor>#ffff00</mBgColor>
+								<mSoundFile></mSoundFile>
+								<colorTriggerFgColor>#000000</colorTriggerFgColor>
+								<colorTriggerBgColor>#000000</colorTriggerBgColor>
+								<regexCodeList>
+									<string>(?:unosi swoja .+? i |)szybko przesuwa sie za .+?, (?:kryjac sie przed atakami .+?|uciekajac przed twoimi ciosami)\.$</string>
 								</regexCodeList>
 								<regexCodePropertyList>
 									<integer>1</integer>
@@ -21508,8 +21530,10 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
 							<string>zaczyna wspinac sie na brame.</string>
+							<string>zaczyna ostroznie wspinac sie po sliskich belkach bramy.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
+							<integer>0</integer>
 							<integer>0</integer>
 						</regexCodePropertyList>
 					</Trigger>
@@ -24400,6 +24424,46 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 								<colorTriggerBgColor>#000000</colorTriggerBgColor>
 								<regexCodeList>
 									<string>Fermata - incrocio alla Miragliano</string>
+								</regexCodeList>
+								<regexCodePropertyList>
+									<integer>0</integer>
+								</regexCodePropertyList>
+							</Trigger>
+							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+								<name>gps_viadaza</name>
+								<script>trigger_func_mapper_localizers_ships_buses_buses_campo_varieno_gps_viadaza()</script>
+								<triggerType>0</triggerType>
+								<conditonLineDelta>0</conditonLineDelta>
+								<mStayOpen>0</mStayOpen>
+								<mCommand></mCommand>
+								<packageName></packageName>
+								<mFgColor>#ff0000</mFgColor>
+								<mBgColor>#ffff00</mBgColor>
+								<mSoundFile></mSoundFile>
+								<colorTriggerFgColor>#000000</colorTriggerFgColor>
+								<colorTriggerBgColor>#000000</colorTriggerBgColor>
+								<regexCodeList>
+									<string>incrocio alla Viadaza!</string>
+								</regexCodeList>
+								<regexCodePropertyList>
+									<integer>0</integer>
+								</regexCodePropertyList>
+							</Trigger>
+							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+								<name>gps_urbimo</name>
+								<script>trigger_func_mapper_localizers_ships_buses_buses_campo_varieno_gps_urbimo()</script>
+								<triggerType>0</triggerType>
+								<conditonLineDelta>0</conditonLineDelta>
+								<mStayOpen>0</mStayOpen>
+								<mCommand></mCommand>
+								<packageName></packageName>
+								<mFgColor>#ff0000</mFgColor>
+								<mBgColor>#ffff00</mBgColor>
+								<mSoundFile></mSoundFile>
+								<colorTriggerFgColor>#000000</colorTriggerFgColor>
+								<colorTriggerBgColor>#000000</colorTriggerBgColor>
+								<regexCodeList>
+									<string>incrocio alla Urbimo!</string>
 								</regexCodeList>
 								<regexCodePropertyList>
 									<integer>0</integer>
@@ -28225,8 +28289,10 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
 						<string>Przeciez brama jest otwarta!</string>
+						<string>Jestes zbyt wyczerpany mentalnie.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
+						<integer>2</integer>
 						<integer>2</integer>
 					</regexCodePropertyList>
 				</Trigger>

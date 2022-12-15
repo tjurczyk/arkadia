@@ -61,24 +61,23 @@ end
 
 
 function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_lodowata_dluga_maczuga()
+    local target = "moje_ciosy"
+    if matches["attacker"] then
+        target = matches["target"] == "cie" and "innych_ciosy_we_mnie" or "innych_ciosy"
+    end
+
     local dmg = matches["damage"]
     local value = -1
-        if dmg == "ledwo muskajac" then value = 1
-    elseif dmg == "pozostawiajac lekkiego, zmrozonego siniaka" then value = 2
-    elseif dmg == "pozostawiajac sporego, fioletowego siniaka" then value = 3
-    elseif dmg == "lekko raniac" then value = 4
-    elseif dmg == "ciezko raniac" then value = 4
-    elseif dmg == "raniac" then value = 5
-    elseif dmg == "mocno obijajac cialo" then value = 6
-    elseif dmg == "pozostawiajac paskudnie wygladajaca rane" then value = 7
-    elseif dmg == "niemalze zabijajac" then value = 8
-    elseif dmg == "masakrujac" or dmg == "masakrujac przeciwnika i zakanczajac ta walke" then value = 9
-    else end
-    scripts.gags:gag(value, 9, "moje_ciosy")
-end
-
-function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_lodowata_dluga_maczuga_fin()
-    scripts.gags:gag_prefix("FIN", "moje_ciosy")
+        if dmg == "ledwo muskajac" or dmg == "pozostawiajac lekkiego, zmrozonego siniaka" then value = 1
+    elseif dmg == "lekko raniac" or dmg == "pozostawiajac sporego, fioletowego siniaka" then value = 2
+    elseif dmg == "raniac" or dmg == "mocno obijajac cialo" then value = 3
+    elseif dmg == "ciezko raniac" or dmg == "pozostawiajac paskudnie wygladajaca rane" then value = 4
+    elseif dmg == "niemalze zabijajac" then value = 5
+    elseif dmg == "masakrujac przeciwnika i zakanczajac ta walke" then
+        scripts.gags:gag_prefix("FIN", target)
+        return
+    end
+    scripts.gags:gag(value, 5, target)
 end
 
 function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_runiczny_korbacz_0() scripts.gags:gag(0, 7, "moje_ciosy") end

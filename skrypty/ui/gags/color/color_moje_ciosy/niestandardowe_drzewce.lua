@@ -35,6 +35,27 @@ function trigger_func_skrypty_ui_gags_kobaltowa_spec(value)
     magic_prefix("-MANA")
 end
 
+-- Laska druchii
+
+function trigger_func_skrypty_ui_gags_ciosy_dluga_ciemna_laska()
+    local target = "moje_ciosy"
+    if matches["attacker"] and matches["attacker"] ~= "" then
+        target = matches["target"] == "" and "innych_ciosy_we_mnie" or "innych_ciosy"
+    end
+
+    local dmg = matches["damage"]
+    local value = -1
+        if dmg == "nieznaczne" then value = 1
+    elseif dmg == "lekkie" then value = 2
+    elseif dmg == "znaczne" then value = 3
+    elseif dmg == "powazne" then value = 4
+    elseif dmg == "potworne" then value = 5
+    elseif dmg == "straszliwe" then value = 6
+
+    end
+    scripts.gags:gag(value, 6, target)
+end
+
 -- Czarna smukla glewia
 
 function trigger_func_skrypty_ui_gags_ciosy_czarna_smukla_glewia()

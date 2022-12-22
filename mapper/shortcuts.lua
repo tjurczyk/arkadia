@@ -22,10 +22,10 @@ function amap.shortcuts:print_shortcuts()
     end
 
     cecho("<green>Skrot                 Lokacja    Opis\n")
-    for k, v in pairs(amap.shortcuts.db) do
-        local str_name = string.sub(v["s_name"] .. "                     ", 1, 22)
-        local str_room = string.sub(v["s_id"] .. "      ", 1, 6)
-        echo(str_name .. str_room .. "     " .. v["s_desc"] .. "\n")
+    for _, t in spairs(amap.shortcuts.db) do
+        local str_name = string.sub(t.s_name .. "                     ", 1, 22)
+        local str_room = string.sub(t.s_id .. "      ", 1, 6)
+        echo(str_name .. str_room .. "     " .. t.s_desc .. "\n")
     end
 end
 
@@ -83,4 +83,3 @@ end
 function alias_func_mapper_shortcuts_delete_all_shortcuts()
     amap.shortcuts:delete_shortcuts()
 end
-

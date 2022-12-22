@@ -1,3 +1,4 @@
+misc.improve = misc.improve or {}
 misc.improve["current_improve_level"] = misc.improve["current_improve_level"] or 0
 misc.improve["level_snapshots"] = misc.improve["level_snapshots"] or {}
 misc.improve["improve2_enabled"] = true

@@ -778,26 +778,6 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 							<integer>2</integer>
 						</regexCodePropertyList>
 					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-						<name>plaszcz leczy</name>
-						<script>trigger_func_skrypty_inventory_magic_weapons_plaszcz_leczy()</script>
-						<triggerType>0</triggerType>
-						<conditonLineDelta>0</conditonLineDelta>
-						<mStayOpen>0</mStayOpen>
-						<mCommand></mCommand>
-						<packageName></packageName>
-						<mFgColor>#ff0000</mFgColor>
-						<mBgColor>#ffff00</mBgColor>
-						<mSoundFile></mSoundFile>
-						<colorTriggerFgColor>#000000</colorTriggerFgColor>
-						<colorTriggerBgColor>#000000</colorTriggerBgColor>
-						<regexCodeList>
-							<string>Czujesz jak uzdrawiajaca energia przepelnia twe cialo.</string>
-						</regexCodeList>
-						<regexCodePropertyList>
-							<integer>2</integer>
-						</regexCodePropertyList>
-					</Trigger>
 				</TriggerGroup>
 				<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>magic-jewelry</name>
@@ -4598,10 +4578,10 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>lodowata\w+ dluga\w+ maczuga\w+</string>
+											<string>lodowata dluga maczug</string>
 										</regexCodeList>
 										<regexCodePropertyList>
-											<integer>1</integer>
+											<integer>0</integer>
 										</regexCodePropertyList>
 										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 											<name>lodowata</name>
@@ -4618,14 +4598,16 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
 												<string>^Dostrzegajac dogodna okazje do ataku, rzucasz sie do przodu i wykonujesz szybki zamach lodowata dluga maczuga\. Twa bron trafia zaskoczon(?:ego|a) (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+?), (?P&lt;damage&gt;.*)\.$</string>
+												<string>^Dostrzegajac dogodna okazje do ataku, (?P&lt;attacker&gt;.+?) rzuca sie do przodu i wykonuje szybki zamach lodowata dluga maczuga\. (?:Twa|Jego|Jej) bron trafia zaskoczon(?:ego|a) (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+?), (?P&lt;damage&gt;.*)\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
+												<integer>1</integer>
 												<integer>1</integer>
 											</regexCodePropertyList>
 										</Trigger>
 										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 											<name>lodowata_fin</name>
-											<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_lodowata_dluga_maczuga_fin()</script>
+											<script>trigger_func_skrypty_ui_gags_ciosy_bron_fin()</script>
 											<triggerType>0</triggerType>
 											<conditonLineDelta>0</conditonLineDelta>
 											<mStayOpen>0</mStayOpen>
@@ -4638,8 +4620,10 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
 												<string>^Korzystajac z tego, ze (?P&lt;target&gt;.+?) ledwo trzyma sie na nogach, unosisz lodowata dluga maczuge wysoko nad glowe, by zadac cios, ktory zakonczy te walke\. Czujesz jak w reakcji na twe mysli bron zaczyna promieniowac odczuwalnym chlodem\. Szybkim, ukosnym ruchem reki opuszczasz orez, uderzajac przeciwni(?:czke|ka) w .+\. W chwili gdy bron dotyka ciala przeciwnika magiczne zimno otula twe serce, pozbawiajac cie litosci\. Z mordercza precyzja ponawiasz ciosy, wybierajac najbardziej wrazliwe czesci ciala ofiary i zaprzestajac natarcia dopiero wtedy, gdy twoj wrog zupelnie przestaje sie ruszac\.$</string>
+												<string>^Korzystajac z tego, ze (?P&lt;target&gt;.+?) ledwo trzyma sie na nogach, (?P&lt;attacker&gt;.+?) unosi lodowata dluga maczug. wysoko nad glowe, by zadac cios, ktory zakonczy te walke\. Po krotkiej chwili, szybkim, ukosnym ruchem reki opuszcza on(?:|a) orez, uderzajac przeciwni(?:ka|czke) w (?P&lt;where&gt;.+?)\. Nastepnie, bez cienia litosci z mordercza precyzja ponawia ciosy, wybierajac najbardziej wrazliwe czesci ciala ofiary i zaprzestajac natarcia dopiero wtedy, gdy jego wrog zupelnie przestaje sie ruszac\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
+												<integer>1</integer>
 												<integer>1</integer>
 											</regexCodePropertyList>
 										</Trigger>
@@ -7626,6 +7610,46 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											</regexCodePropertyList>
 										</Trigger>
 									</TriggerGroup>
+									<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+										<name>laska_druchii</name>
+										<script></script>
+										<triggerType>0</triggerType>
+										<conditonLineDelta>0</conditonLineDelta>
+										<mStayOpen>0</mStayOpen>
+										<mCommand></mCommand>
+										<packageName></packageName>
+										<mFgColor>#ff0000</mFgColor>
+										<mBgColor>#ffff00</mBgColor>
+										<mSoundFile></mSoundFile>
+										<colorTriggerFgColor>#000000</colorTriggerFgColor>
+										<colorTriggerBgColor>#000000</colorTriggerBgColor>
+										<regexCodeList>
+											<string>dluga ciemna lask</string>
+										</regexCodeList>
+										<regexCodePropertyList>
+											<integer>0</integer>
+										</regexCodePropertyList>
+										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+											<name>dluga_ciemna_laska</name>
+											<script>trigger_func_skrypty_ui_gags_ciosy_dluga_ciemna_laska()</script>
+											<triggerType>0</triggerType>
+											<conditonLineDelta>0</conditonLineDelta>
+											<mStayOpen>0</mStayOpen>
+											<mCommand></mCommand>
+											<packageName></packageName>
+											<mFgColor>#ff0000</mFgColor>
+											<mBgColor>#ffff00</mBgColor>
+											<mSoundFile></mSoundFile>
+											<colorTriggerFgColor>#000000</colorTriggerFgColor>
+											<colorTriggerBgColor>#000000</colorTriggerBgColor>
+											<regexCodeList>
+												<string>^(?P&lt;attacker&gt;.*?)(?:[Ww]znosi(?:sz|)|[Zz]atacza(?:sz|) szeroki luk) dluga ciemna lask.(?: wysoko ponad glowe|), kierujac wienczaca ja czaszke w (?:twoja |)strone(?P&lt;target&gt;.*?)\. Czerep momentalnie rozwiera swe szczeki, uwalniajac .+?, ktor. ogarnia (?:wycelowana ofiare|przeciwni(?:ka|czke)|cie), powodujac (?P&lt;damage&gt;nieznaczne|lekkie|znaczne|powazne|potworne|straszliwe) obrazenia.</string>
+											</regexCodeList>
+											<regexCodePropertyList>
+												<integer>1</integer>
+											</regexCodePropertyList>
+										</Trigger>
+									</TriggerGroup>
 								</TriggerGroup>
 								<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 									<name>topory</name>
@@ -9033,6 +9057,162 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<regexCodeList>
 												<string>^Przyskakujesz do (?P&lt;target&gt;.+?) i poteznie uderzasz od dolu\. Cios, zbyt gwaltowny by ofiara mogla chociaz pomyslec o obronie, blyskawicznie dosiega ciala przeciwni(?:ka|czki)\. Widzisz jak masywne ostrze czarnego smuklego kordelasa bez najmniejszych problemow otwiera dluga, poszarpana bruzde\. Wykorzystujac szanse, z calej sily napierasz na bron, wbijajac ja coraz mocniej i glebiej\.\.\.$</string>
 												<string>^(?P&lt;attacker&gt;.+?) przyskakuje do (?P&lt;target&gt;.+?) i poteznie uderza od dolu\. Cios, zbyt gwaltowny by ofiara mogla chociaz pomyslec o obronie, blyskawicznie dosiega ciala atakowane(?:go|j)\. Widzisz jak masywne ostrze czarnego smuklego kordelasa bez najmniejszych problemow otwiera dluga, poszarpana bruzde\. Wykorzystujac szanse, .+ z calej sily napiera na bron, wbijajac ja coraz mocniej i glebiej\.\.\.$</string>
+											</regexCodeList>
+											<regexCodePropertyList>
+												<integer>1</integer>
+												<integer>1</integer>
+											</regexCodePropertyList>
+										</Trigger>
+									</TriggerGroup>
+									<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+										<name>antyczny_sztylet</name>
+										<script></script>
+										<triggerType>0</triggerType>
+										<conditonLineDelta>0</conditonLineDelta>
+										<mStayOpen>0</mStayOpen>
+										<mCommand></mCommand>
+										<packageName></packageName>
+										<mFgColor>#ff0000</mFgColor>
+										<mBgColor>#ffff00</mBgColor>
+										<mSoundFile></mSoundFile>
+										<colorTriggerFgColor>#000000</colorTriggerFgColor>
+										<colorTriggerBgColor>#000000</colorTriggerBgColor>
+										<regexCodeList>
+											<string>antyczn\w+ zdobion\w+ sztyle\w+</string>
+										</regexCodeList>
+										<regexCodePropertyList>
+											<integer>1</integer>
+										</regexCodePropertyList>
+										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+											<name>antyczty_sztylet_moje</name>
+											<script>trigger_func_skrypty_ui_gags_ciosy_antyczny_sztylet()</script>
+											<triggerType>0</triggerType>
+											<conditonLineDelta>0</conditonLineDelta>
+											<mStayOpen>0</mStayOpen>
+											<mCommand></mCommand>
+											<packageName></packageName>
+											<mFgColor>#ff0000</mFgColor>
+											<mBgColor>#ffff00</mBgColor>
+											<mSoundFile></mSoundFile>
+											<colorTriggerFgColor>#000000</colorTriggerFgColor>
+											<colorTriggerBgColor>#000000</colorTriggerBgColor>
+											<regexCodeList>
+												<string>^(?:Jak gdyby kierowane wlasna wola, o|O)strze twojego antycznego zdobionego sztyletu trafia (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+?), pozostawiajac na je(?:go|j) ciele (?P&lt;damage&gt;.+)\.$</string>
+												<string>^(?:Jak gdyby kierowane wlasna wola, o|O)strze antycznego zdobionego sztyletu dzierzonego przez (?P&lt;attacker&gt;.+?) trafia (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+?) pozostawiajac na je(?:go|j) ciele (?P&lt;damage&gt;.+)\.$</string>
+											</regexCodeList>
+											<regexCodePropertyList>
+												<integer>1</integer>
+												<integer>1</integer>
+											</regexCodePropertyList>
+										</Trigger>
+										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+											<name>antycznty_sztylet_fin</name>
+											<script>trigger_func_skrypty_ui_gags_ciosy_bron_fin()</script>
+											<triggerType>0</triggerType>
+											<conditonLineDelta>0</conditonLineDelta>
+											<mStayOpen>0</mStayOpen>
+											<mCommand></mCommand>
+											<packageName></packageName>
+											<mFgColor>#ff0000</mFgColor>
+											<mBgColor>#ffff00</mBgColor>
+											<mSoundFile></mSoundFile>
+											<colorTriggerFgColor>#000000</colorTriggerFgColor>
+											<colorTriggerBgColor>#000000</colorTriggerBgColor>
+											<regexCodeList>
+												<string>^Trzymany przez (?P&lt;attacker&gt;.+?) antyczny zdobiony sztylet jak gdyby z wlasnej woli wypryskuje do przodu w blyskawicznym, prawie nieuchwytnym dla oka uderzeniu, zaglebiajac sie az po rekojesc w ciele (?P&lt;target&gt;.+?)\. Ofiara nieruchomieje, bardzo powoli osuwajac sie na ziemie\.$</string>
+												<string>[Bb]lyskawicznie skracajac dystans przyskakuje(?:sz|) do (?P&lt;target&gt;.+?) i z calej sily tnie(?:sz|) swym antycznym zdobionym sztyletem\. Potezne, smiertelne uderzenie powoduje, ze ostrze (?:twojej|jego|jej) broni rozblyskuje chciwym blaskiem\.$</string>
+											</regexCodeList>
+											<regexCodePropertyList>
+												<integer>1</integer>
+												<integer>1</integer>
+											</regexCodePropertyList>
+										</Trigger>
+									</TriggerGroup>
+									<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+										<name>lodowy_sztylet</name>
+										<script></script>
+										<triggerType>0</triggerType>
+										<conditonLineDelta>0</conditonLineDelta>
+										<mStayOpen>0</mStayOpen>
+										<mCommand></mCommand>
+										<packageName></packageName>
+										<mFgColor>#ff0000</mFgColor>
+										<mBgColor>#ffff00</mBgColor>
+										<mSoundFile></mSoundFile>
+										<colorTriggerFgColor>#000000</colorTriggerFgColor>
+										<colorTriggerBgColor>#000000</colorTriggerBgColor>
+										<regexCodeList>
+											<string>lodow\w+ lsniac\w+ sztyle\w+</string>
+										</regexCodeList>
+										<regexCodePropertyList>
+											<integer>1</integer>
+										</regexCodePropertyList>
+										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+											<name>lodowy_sztylet</name>
+											<script>trigger_func_skrypty_ui_gags_ciosy_lodowy_sztylet()</script>
+											<triggerType>0</triggerType>
+											<conditonLineDelta>0</conditonLineDelta>
+											<mStayOpen>0</mStayOpen>
+											<mCommand></mCommand>
+											<packageName></packageName>
+											<mFgColor>#ff0000</mFgColor>
+											<mBgColor>#ffff00</mBgColor>
+											<mSoundFile></mSoundFile>
+											<colorTriggerFgColor>#000000</colorTriggerFgColor>
+											<colorTriggerBgColor>#000000</colorTriggerBgColor>
+											<regexCodeList>
+												<string>^Skrzace sie ostrze (?:twojego |)lodowego lsniacego sztyletu (?P&lt;attacker&gt;.*?)samym tylko czubkiem trafia w (?P&lt;where_target&gt;.+?), pozostawiajac na (?:jego|jej) skorze (?P&lt;damage&gt;niewielka szrame)\.$</string>
+												<string>^Rozpedzony lodowy lsniacy sztylet wbija sie plytko w (?P&lt;where_target&gt;.+?) pozostawiajac po sobie niewielka, (?P&lt;damage&gt;lekko zmrozona rane)\.$</string>
+												<string>^Wycie mroznego wichru dalekiej polnocy dzwieczy ci w uszach, gdy (?:twoj |)lodowy lsniacy sztylet (?P&lt;attacker&gt;.*?)(?P&lt;damage&gt;rozcina) (?P&lt;where_target&gt;.+?)\. Twarz (?:przeciwni(?:ka|czki)|zranion(?:ego|ej)) wykrzywia grymas bolu, gdy (?:niebieskawa |)fala (?:obezwladniajacego |)chlodu (?:przeplywa przez|rozplywa sie po) (?:jego|jej) ci(?:alo|ele)\.$</string>
+												<string>^Przed oczyma staje ci obraz snieznej burzy, gdy (?P&lt;attacker&gt;.*?)wbija(?:sz|) swoj lodowy lsniacy sztylet gleboko w (?P&lt;where_target&gt;.+?)\. Na ciele (?:przeciwni(?:ka|czki)|ofiary) krysztalki lodu mieszaja sie ze (?P&lt;damage&gt;szkarlatna krwia) (?:saczaca sie|wyplywajaca) z rany\.$</string>
+												<string>^Blyskawiczne pchniecie (?:twoim |)lodow\w+ lsniac\w+ sztylet\w+ (?P&lt;attacker&gt;.*?)w (?P&lt;where_target&gt;.+?) pozostawia (?:po sobie|na je(?:go|j) ciele) buchajaca krwia, (?P&lt;damage&gt;powazna rane)\. W powietrzu unosza sie smuzki bialej pary, powstajacej gdy ciepla posoka miesza sie z (?:lodowatym|mroznym) ostrzem (?:twej|tej) zabojczej broni\.$</string>
+												<string>^Wzbierajaca w ostrzu (?:twojego |)lodowego lsniacego sztyletu (?P&lt;attacker&gt;.*?)fala chlodu przenika na wskros cialo (?P&lt;target&gt;.+?), gdy (?:wbijasz (?:mu|jej) swa potezna bron|mrozna bron wbija (?:mu|jej) sie) prosto w (?P&lt;where&gt;.+?)\. Z otwartej w ten sposob rany wyplywa strumien (?P&lt;damage&gt;jaskrawoczerwonej krwi)\.$</string>
+											</regexCodeList>
+											<regexCodePropertyList>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+											</regexCodePropertyList>
+										</Trigger>
+										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+											<name>lodowy_sztylet_spec</name>
+											<script>trigger_func_skrypty_ui_gags_ciosy_lodowy_sztylet_spec()</script>
+											<triggerType>0</triggerType>
+											<conditonLineDelta>0</conditonLineDelta>
+											<mStayOpen>0</mStayOpen>
+											<mCommand></mCommand>
+											<packageName></packageName>
+											<mFgColor>#ff0000</mFgColor>
+											<mBgColor>#ffff00</mBgColor>
+											<mSoundFile></mSoundFile>
+											<colorTriggerFgColor>#000000</colorTriggerFgColor>
+											<colorTriggerBgColor>#000000</colorTriggerBgColor>
+											<regexCodeList>
+												<string>(?P&lt;attacker&gt;.*?)[Zz] sila snieznej lawiny wbija(?:sz|) swoj lodowy lsniacy sztylet w (?P&lt;where_target&gt;.+?)\. Mrozne ostrze wnika gleboko, a rozchodzace sie z niego fale chlodu zadaja jedynie (?P&lt;damage&gt;nieznaczne|nieduze|bolesne|znaczne|bardzo rozlegle|potworne) obrazenia\.$</string>
+											</regexCodeList>
+											<regexCodePropertyList>
+												<integer>1</integer>
+											</regexCodePropertyList>
+										</Trigger>
+										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+											<name>lodowy_sztylet_fin</name>
+											<script>trigger_func_skrypty_ui_gags_ciosy_bron_fin()</script>
+											<triggerType>0</triggerType>
+											<conditonLineDelta>0</conditonLineDelta>
+											<mStayOpen>0</mStayOpen>
+											<mCommand></mCommand>
+											<packageName></packageName>
+											<mFgColor>#ff0000</mFgColor>
+											<mBgColor>#ffff00</mBgColor>
+											<mSoundFile></mSoundFile>
+											<colorTriggerFgColor>#000000</colorTriggerFgColor>
+											<colorTriggerBgColor>#000000</colorTriggerBgColor>
+											<regexCodeList>
+												<string>^Wykorzystujac nieudolnosc i oslabienie swego przeciwni(?:ka|czki), blyskawicznie wyrzucasz reke dzierzaca lodowy lsniacy sztylet w (?:jego|jej) kierunku i wbijasz smukle, mrozne ostrze az po sama garde\. Z ust (?P&lt;target&gt;.+?) wydobywa sie niemal bezglosny jek, gdy obezwladniajace zimno popycha (?:go|ja) w ramiona smierci\.$</string>
+												<string>^Wykorzystujac nieudolnosc i oslabienie swego przeciwni(?:ka|czki) (?P&lt;attacker&gt;.+?) blyskawicznie wyrzuca reke dzierzaca lodowy lsniacy sztylet i wbija smukle, mrozne ostrze w (?P&lt;where_target&gt;.+?) az po sama garde\. Z je(?:go|j) ust wydostaje sie niemal bezglosny jek, gdy obezwladniajace zimno popycha (?:go|ja) prosto w ramiona smierci\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
 												<integer>1</integer>
@@ -17457,7 +17637,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 								<colorTriggerFgColor>#000000</colorTriggerFgColor>
 								<colorTriggerBgColor>#000000</colorTriggerBgColor>
 								<regexCodeList>
-									<string>(?:unosi swoja .+? i |)szybko przesuwa sie za .+?, (?:kryjac sie przed atakami .+?|uciekajac przed twoimi ciosami)\.$</string>
+									<string>(?:unosi swoja .+? i |)szybko przesuwa sie za (?!ciebie).+?, (?:kryjac sie przed atakami .+?|uciekajac przed twoimi ciosami)\.$</string>
 								</regexCodeList>
 								<regexCodePropertyList>
 									<integer>1</integer>
@@ -27543,7 +27723,6 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<string>Droge zastepuje ci barczysty straznik mowiac: Prosze okazac kwit magazynowy lub wskazac towar do przechowania.</string>
 						<string>Forsowanie zamknietych drzwi nie jest najlepszym pomyslem.</string>
 						<string>Geste krzaki i porzucone narzedzia zupelnie blokuja dalsza podroz w tym kierunku. Niestety, musisz zawrocic.</string>
-						<string>grzyboczlek stoi ci na drodze.</string>
 						<string>^[ &gt;]*Idziesz na polnocny-zachod, lecz zawracasz zrezygnowan(y|a), gdyz przejscie zostalo zasypane\.$</string>
 						<string>^[ &gt;]*Idziesz na poludniowy-wschod, lecz zawracasz zrezygnowan(y|a), gdyz przejscie zostalo zasypane\.$</string>
 						<string>Jest zbyt ciemno, zeby moc znalezc stad jakies wyjscie.</string>
@@ -27551,7 +27730,6 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<string>Karczmarz zagradza ci wejscie do kuchni.</string>
 						<string>Ktos inny juz to zaczal robic. Otwor nie jest dosc szeroki by udalo sie to dwom osobom na raz.</string>
 						<string>Masz zbyt wielkie obawy by tam wejsc.</string>
-						<string>mezczyzna stoi ci na drodze.</string>
 						<string>hardo do ciebie: A ty gdzie? Tam maja wstep tylko mahakamscy kowale.</string>
 						<string>Moze najpierw wyjdz z wody</string>
 						<string>Musisz stanac w kolejce i poczekac na audiencje.</string>
@@ -27568,6 +27746,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<string>Nie mozesz sie tam udac, gdyz znajdujesz sie w wodzie.</string>
 						<string>Najpierw trzeba otworzyc klape.</string>
 						<string>Podchodzisz pod drzwi na polnocy,</string>
+						<string>Probujesz znalezc dogodne przejscie przez strumien, lecz woda jest w tym miejscu zbyt gleboka.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -27585,7 +27764,6 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<integer>2</integer>
 						<integer>2</integer>
 						<integer>2</integer>
-						<integer>0</integer>
 						<integer>1</integer>
 						<integer>1</integer>
 						<integer>2</integer>
@@ -27594,12 +27772,12 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<integer>0</integer>
 						<integer>2</integer>
 						<integer>0</integer>
-						<integer>0</integer>
 						<integer>2</integer>
 						<integer>2</integer>
 						<integer>1</integer>
 						<integer>2</integer>
 						<integer>1</integer>
+						<integer>2</integer>
 						<integer>2</integer>
 						<integer>2</integer>
 						<integer>2</integer>
@@ -27631,7 +27809,6 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<string>Po chwili wahania decydujesz sie nie schodzic.</string>
 						<string>Po przejsciu paru krokow zauwazasz, ze majaczy przed toba potezna skalna sciana.</string>
 						<string>Pociagasz za klamke, ale drzwi sa zamkniete.</string>
-						<string>potepieniec stoi ci na drodze.</string>
 						<string>Pozostalosci po snieznej lawinie uniemozliwiaja dalsza wedrowke w wybranym kierunku.</string>
 						<string>^[ &gt;]*Przeciez nie bedziesz [ws]chodzic po drabinie majac obie rece zajete trzymaniem broni!$</string>
 						<string>Przygladasz sie uwaznie miejscu, na ktorego chcesz sie wspiac i oceniajac trudnosc wspinaczki stwierdzasz ze najpierw musisz troche odpoczac.</string>
@@ -27664,7 +27841,6 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<integer>2</integer>
 						<integer>2</integer>
 						<integer>2</integer>
-						<integer>0</integer>
 						<integer>2</integer>
 						<integer>1</integer>
 						<integer>2</integer>

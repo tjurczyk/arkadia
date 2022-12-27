@@ -1,5 +1,5 @@
 function trigger_func_skrypty_ui_gags_color_color_moje_spece_mie_ja_spec_end()
-    scripts.gags:gag_own_spec("FIN")
+    scripts.gags:gag_own_spec(scripts.gags.fin_prefix)
 end
 
 function trigger_func_skrypty_ui_gags_color_color_moje_spece_mie_ja_spec_obszar_ja_spec_obszar_0()
@@ -31,7 +31,7 @@ function trigger_func_skrypty_ui_gags_color_color_moje_spece_mie_ja_spec_obszar_
 end
 
 function trigger_func_skrypty_ui_gags_color_color_moje_spece_mie_ja_spec_obszar_ja_spec_obszar_fin()
-    scripts.gags:gag_own_spec("FIN")
+    scripts.gags:gag_own_spec(scripts.gags.fin_prefix)
 end
 
 function trigger_func_skrypty_ui_gags_color_color_moje_spece_mie_ja_spec_ja_spec_0()

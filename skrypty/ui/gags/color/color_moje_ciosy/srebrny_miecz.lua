@@ -19,6 +19,6 @@ scripts.gags:gag(5, 5, "moje_ciosy")
 end
 
 function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_srebrny_miecz_srebrny_fin()
-    scripts.gags:gag_prefix("FIN", "moje_ciosy")
+    scripts.gags:gag_prefix(scripts.gags.fin_prefix, "moje_ciosy")
 end
 

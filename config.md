@@ -1210,6 +1210,12 @@ Prefix dla gagow wlasnych ciosow specjalnych.
 
 ---
 
+## `scripts.gags.fin_prefix`
+
+Prefix dla ciosu konczacego.
+
+---
+
 ## Keybindy
 
 Ponizej znajduje sie konfiguracja keybindow w skryptach.

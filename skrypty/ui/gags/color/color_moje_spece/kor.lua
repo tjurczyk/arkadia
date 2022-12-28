@@ -10,7 +10,7 @@ function trigger_func_skrypty_ui_gags_color_color_moje_spece_kor_ja_spec()
     elseif dmg == "Zgrab" then value = 3
     elseif dmg == "Plyn" then value = 4
     elseif dmg == "Blyskawicz" then value = 5
-        scripts.gags:gag_own_spec("FIN")
+        scripts.gags:gag_own_spec(scripts.gags.fin_prefix)
         return
     end
     scripts.gags:gag_own_spec(value, 5)

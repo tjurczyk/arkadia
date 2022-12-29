@@ -158,7 +158,7 @@ function scripts.packages:update_display()
 end
 
 function scripts.packages:get_from_db(name)
-    local result = db:fetch_sql(self.db.packages, "SELECT * FROM packages WHERE name = '" .. name .. "' COLLATE NOCASE")
+    local result = db:fetch_sql(self.db.packages, "SELECT * FROM packages WHERE name = \"" .. name .. "\" COLLATE NOCASE")
     if result and table.size(result) >= 1 then
         return result[1], table.size(result) > 0 and table.size(result) > 1
     end
@@ -193,4 +193,20 @@ function trigger_packages_assistant_replace_terminals()
     end
 end
 
+
 scripts.packages:init()
+
+feedTriggers(" Tablica zawiera liste adresatow przesylek, ktore mozesz tutaj pobrac:\n")
+feedTriggers(" o==============================================================================================o\n")
+feedTriggers(" |                Adresat badz                     Cena          Czas na                        |\n")
+feedTriggers(" |               urzad pocztowy                  zl/sr/md      dostarczenie       Dystans       |\n")
+feedTriggers(" o -------------------------------------------------------------------------------------------- o\n")
+feedTriggers(" |   1. Vernick Kraelm                            0/ 4/ 2        nieogr.                6       |\n")
+feedTriggers(" |   2. Vernick Kraelm                            0/ 5/ 0        8 godzin               6       |\n")
+feedTriggers(" |   3. Karczma 'Dom Rybaka', Obawa               0/19/ 8        nieogr.                        |\n")
+feedTriggers(" |   4. Cartus Menx, wioska bobolakow             8/ 6/ 3       13 godzin              93       |\n")
+feedTriggers(" |   5. Larne Darsk, Guleta                      14/18/ 2        nieogr.              260       |\n")
+feedTriggers(" |   6. Spycimir Abdaniec, Guleta                15/17/10        nieogr.              261       |\n")
+feedTriggers(" o -------------------------------------------------------------------------------------------- o\n")
+feedTriggers(" |      Symbolem * oznaczono przesylki ciezkie.                                                 |\n")
+feedTriggers(" o==============================================================================================o\n")

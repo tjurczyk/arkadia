@@ -1750,6 +1750,11 @@
         "field_type": "string"
     },
     {
+        "name": "scripts.gags.fin_prefix",
+        "default_value": "FIN",
+        "field_type": "string"
+    },
+    {
       "name": "scripts.keybind.configuration.fight_support.modifier",
       "default_value": [
         "Control"

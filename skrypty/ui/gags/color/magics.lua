@@ -5,7 +5,7 @@ function trigger_func_skrypty_ui_gags_moje_ciosy_misterny(value)
 end
 
 function trigger_func_skrypty_ui_gags_moje_ciosy_misterny_fin()
-    scripts.gags:gag_prefix("FIN", "moje_ciosy")
+    scripts.gags:gag_prefix(scripts.gags.fin_prefix, "moje_ciosy")
 end
 
 function trigger_func_skrypty_ui_gags_misterny_innych(value)
@@ -24,7 +24,7 @@ function trigger_func_skrypty_ui_gags_moje_ciosy_opal(value)
 end
 
 function trigger_func_skrypty_ui_gags_moje_ciosy_opal_fin(value)
-    scripts.gags:gag_prefix("FIN", "moje_ciosy")
+    scripts.gags:gag_prefix(scripts.gags.fin_prefix, "moje_ciosy")
 end
 
 
@@ -84,18 +84,18 @@ end
 -- Finishery
 
 function trigger_func_skrypty_ui_gags_moje_ciosy_bron_fin()
-    scripts.gags:gag_prefix("FIN", "moje_ciosy")
+    scripts.gags:gag_prefix(scripts.gags.fin_prefix, "moje_ciosy")
 end
 
 function trigger_func_skrypty_ui_gags_innych_ciosy_bron_fin()
-    scripts.gags:gag_prefix("FIN", "innych_ciosy")
+    scripts.gags:gag_prefix(scripts.gags.fin_prefix, "innych_ciosy")
 end
 
 function trigger_func_skrypty_ui_gags_ciosy_bron_fin()
     if scripts.gags:is_type("combat.avatar") then
-        scripts.gags:gag_prefix("FIN", "moje_ciosy")
+        scripts.gags:gag_prefix(scripts.gags.fin_prefix, "moje_ciosy")
     else
-        scripts.gags:gag_prefix("FIN", "innych_ciosy")
+        scripts.gags:gag_prefix(scripts.gags.fin_prefix, "innych_ciosy")
     end
 
 end

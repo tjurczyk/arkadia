@@ -156,6 +156,14 @@ Argumenty:
 
 ---
 
+## `assistantPackageDestination`
+
+Event podniesiony kiedy wybrana paczka ma dostepny cel podrozy
+Argumenty:
+  * `arg1`: docelowa lokacja do ktorej wybrana zostala paczka
+
+---
+
 ## `ateamAttackingDifferentTarget`
 
 Event ten jest podniesiony w momencie, kiedy postac atakuje innego przeciwnika niz aktualny cel ataku.

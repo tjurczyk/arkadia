@@ -28,8 +28,10 @@ function scripts.packages:start()
     if not self.picked_offer then
         self:clear()
         self.current_offer = {}
-        self.handlers.send_command = scripts.event_register:force_register_event_handler(self.handlers.send_command, "sysDataSendRequest", function(_, command) return self:pickup(command) end)
-        self.handlers.location = scripts.event_register:force_register_event_handler(self.handlers.location, "amapNewLocation", function() self:clear() end, true)
+        self.handlers.send_command = scripts.event_register:force_register_event_handler(self.handlers.send_command,
+            "sysDataSendRequest", function(_, command) return self:pickup(command) end)
+        self.handlers.location = scripts.event_register:force_register_event_handler(self.handlers.location,
+            "amapNewLocation", function() self:clear() end, true)
         self.picked_offer = nil
         self.view_time = os.time()
     end
@@ -54,7 +56,7 @@ function scripts.packages:add(index, name, city, time)
     selectString(name, 1)
     local command = "wybierz paczke " .. index
     setLink(function() send(command) end, command)
-    
+
     self.current_offer[index] = { name = name, location = location }
     if city and city ~= "" then
         self.current_offer[index].city = city
@@ -67,10 +69,11 @@ end
 function scripts.packages:pickup(command)
     local index = rex.match(command, "^\\s*wybierz paczke (\\d+)")
     if index then
-        self.trigger = tempRegexTrigger("^.* przekazuje ci jakas paczke\\.", function ()
+        self.trigger = tempRegexTrigger("^.* przekazuje ci jakas paczke\\.", function()
             self:package_given(index)
         end, 1)
-        self.trigger_fail = tempRegexTrigger("Ty juz dla nas dostatecznie ciezko zapracowales|Nie ufam ci na tyle, aby powierzyc ci dostarczenie tej przesylki|Cos ci sie chyba pomylilo, nie ma takiej oferty|Niestety, nie widzisz tu nikogo, od kogo mozna by wziac zlecenie", function() 
+        self.trigger_fail = tempRegexTrigger("Ty juz dla nas dostatecznie ciezko zapracowales|Nie ufam ci na tyle, aby powierzyc ci dostarczenie tej przesylki|Cos ci sie chyba pomylilo, nie ma takiej oferty|Niestety, nie widzisz tu nikogo, od kogo mozna by wziac zlecenie"
+            , function()
             if self.trigger then
                 killTrigger(self.trigger)
                 self.trigger = nil
@@ -83,8 +86,10 @@ function scripts.packages:package_given(index)
     if self.trigger_fail then
         killTrigger(self.trigger_fail)
     end
-    self.delivery_trigger = tempRegexTrigger("^(Oddajesz|Zwracasz) pocztowa paczke", function() self:package_delivered(matches[2] == "Oddajesz") end, 1)
+    self.delivery_trigger = tempRegexTrigger("^(Oddajesz|Zwracasz) pocztowa paczke",
+        function() self:package_delivered(matches[2] == "Oddajesz") end, 1)
     self.picked_offer = self.current_offer[index]
+    raiseEvent("assistantPackageDestination", self.picked_offer.location)
     if scripts.people.mail.show_automatically and self.picked_offer.location then
         amap.path_display:start(self.picked_offer.location)
     end
@@ -146,7 +151,11 @@ function scripts.packages:update_display()
             end
         end
         if self.footer_info then
-            self.footer_info:echo("<font color='" .. scripts.ui["footer_info_normal"] .. "'>Paczka:</font> <font color='" .. scripts.ui["footer_info_neutral"] .. "'>" .. time_to_deliver .. " " .. self.picked_offer.name .. "</font>")
+            self.footer_info:echo("<font color='" ..
+                scripts.ui["footer_info_normal"] ..
+                "'>Paczka:</font> <font color='" ..
+                scripts.ui["footer_info_neutral"] ..
+                "'>" .. time_to_deliver .. " " .. self.picked_offer.name .. "</font>")
             setLabelToolTip(self.footer_info.name, time_to_deliver)
         end
     else
@@ -192,6 +201,5 @@ function trigger_packages_assistant_replace_terminals()
         replace("dostarczenie       Dystans", true)
     end
 end
-
 
 scripts.packages:init()

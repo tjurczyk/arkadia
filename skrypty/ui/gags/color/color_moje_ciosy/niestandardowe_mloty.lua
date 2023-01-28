@@ -54,7 +54,7 @@ function trigger_func_skrypty_ui_gags_ciosy_czarny_smukly_mlot()
 
     local dmg = matches["damage"]
     local value = -1
-        if dmg == "zahaczyc" or dmg == "zahacza" then value = 1
+    if dmg == "zahaczyc" or dmg == "zahacza" then value = 1
     elseif dmg == "krwawy slad" then value = 2
     elseif dmg == "miazdzac" then value = 3
     elseif dmg == "powaznie" then value = 4

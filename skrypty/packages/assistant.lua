@@ -54,7 +54,6 @@ function scripts.packages:add(index, name, city, time)
     selectString(name, 1)
     local command = "wybierz paczke " .. index
     setLink(function() send(command) end, command)
-
     self.current_offer[index] = { name = name, location = location }
     if city and city ~= "" then
         self.current_offer[index].city = city
@@ -147,11 +146,7 @@ function scripts.packages:update_display()
             end
         end
         if self.footer_info then
-            self.footer_info:echo("<font color='" ..
-                scripts.ui["footer_info_normal"] ..
-                "'>Paczka:</font> <font color='" ..
-                scripts.ui["footer_info_neutral"] ..
-                "'>" .. time_to_deliver .. " " .. self.picked_offer.name .. "</font>")
+            self.footer_info:echo("<font color='" .. scripts.ui["footer_info_normal"] .. "'>Paczka:</font> <font color='" .. scripts.ui["footer_info_neutral"] .. "'>" .. time_to_deliver .. " " .. self.picked_offer.name .. "</font>")
             setLabelToolTip(self.footer_info.name, time_to_deliver)
         end
     else

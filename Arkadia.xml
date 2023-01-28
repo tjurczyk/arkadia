@@ -18427,8 +18427,12 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<mSoundFile></mSoundFile>
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
-						<regexCodeList />
-						<regexCodePropertyList />
+						<regexCodeList>
+							<string>kruczoczarny misterny miecz mowi do</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>0</integer>
+						</regexCodePropertyList>
 						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 							<name>moj_gadacz</name>
 							<script>trigger_func_skrypty_ui_misc_moj_gadacz()</script>
@@ -18443,10 +18447,30 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 							<colorTriggerFgColor>#000000</colorTriggerFgColor>
 							<colorTriggerBgColor>#000000</colorTriggerBgColor>
 							<regexCodeList>
-								<string>Twoj kruczoczarny misterny miecz mowi do</string>
+								<string>Twoj kruczoczarny misterny miecz</string>
 							</regexCodeList>
 							<regexCodePropertyList>
 								<integer>2</integer>
+							</regexCodePropertyList>
+						</Trigger>
+						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+							<name>innych_gadacz</name>
+							<script>trigger_func_skrypty_ui_misc_innych_gadacz()</script>
+							<triggerType>0</triggerType>
+							<conditonLineDelta>0</conditonLineDelta>
+							<mStayOpen>0</mStayOpen>
+							<mCommand></mCommand>
+							<packageName></packageName>
+							<mFgColor>#ff0000</mFgColor>
+							<mBgColor>#ffff00</mBgColor>
+							<mSoundFile></mSoundFile>
+							<colorTriggerFgColor>#000000</colorTriggerFgColor>
+							<colorTriggerBgColor>#000000</colorTriggerBgColor>
+							<regexCodeList>
+								<string>Trzymany przez</string>
+							</regexCodeList>
+							<regexCodePropertyList>
+								<integer>1</integer>
 							</regexCodePropertyList>
 						</Trigger>
 					</TriggerGroup>

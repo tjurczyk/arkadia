@@ -149,10 +149,10 @@
       ]
     },
     {
-        "name": "scripts.config_watch.enabled",
-        "default_value": true,
-        "field_type": "boolean"
-      },
+      "name": "scripts.config_watch.enabled",
+      "default_value": true,
+      "field_type": "boolean"
+    },
     {
       "name": "ateam.attack_commands",
       "default_value": [
@@ -180,12 +180,12 @@
       ]
     },
     {
-        "name": "ateam.options.own_name",
-        "default_value": "JA",
-        "field_type": "string",
-        "macros_on_modify": [
-            "_ateam"
-        ]
+      "name": "ateam.options.own_name",
+      "default_value": "JA",
+      "field_type": "string",
+      "macros_on_modify": [
+        "_ateam"
+      ]
     },
     {
       "name": "ateam.options.alphabetical_sort_team",
@@ -197,7 +197,7 @@
       "name": "ateam.options.team_mate_stun_bg_color",
       "default_value": "goldenrod",
       "field_type": "string",
-      "content_type" : "mudlet_color",
+      "content_type": "mudlet_color",
       "macros_on_modify": [
         "_ateam"
       ]
@@ -206,7 +206,7 @@
       "name": "ateam.options.team_mate_stun_fg_color",
       "default_value": "black",
       "field_type": "string",
-      "content_type" : "mudlet_color",
+      "content_type": "mudlet_color",
       "macros_on_modify": [
         "_ateam"
       ]
@@ -215,7 +215,7 @@
       "name": "ateam.options.enemy_stun_bg_color",
       "default_value": "orchid",
       "field_type": "string",
-      "content_type" : "mudlet_color",
+      "content_type": "mudlet_color",
       "macros_on_modify": [
         "_ateam"
       ]
@@ -224,7 +224,7 @@
       "name": "ateam.options.enemy_stun_fg_color",
       "default_value": "black",
       "field_type": "string",
-      "content_type" : "mudlet_color",
+      "content_type": "mudlet_color",
       "macros_on_modify": [
         "_ateam"
       ]
@@ -233,28 +233,28 @@
       "name": "ateam.options.broken_defense_bg_color",
       "default_value": "LightPink",
       "field_type": "string",
-      "content_type" : "mudlet_color",
+      "content_type": "mudlet_color",
       "macros_on_modify": []
     },
     {
       "name": "ateam.options.broken_defense_fg_color",
       "default_value": "black",
       "field_type": "string",
-      "content_type" : "mudlet_color",
+      "content_type": "mudlet_color",
       "macros_on_modify": []
     },
     {
       "name": "ateam.options.bracket_color",
       "default_value": "white",
       "field_type": "string",
-      "content_type" : "mudlet_color",
+      "content_type": "mudlet_color",
       "macros_on_modify": []
     },
     {
       "name": "ateam.options.bracket_hp_color",
       "default_value": "white",
       "field_type": "string",
-      "content_type" : "mudlet_color",
+      "content_type": "mudlet_color",
       "macros_on_modify": []
     },
     {
@@ -273,7 +273,7 @@
       "name": "ateam.options.leader_indicator_symbol",
       "default_value": "",
       "field_type": "string",
-      "macros_on_modify": []      
+      "macros_on_modify": []
     },
     {
       "name": "ateam.options.visible_stealth",
@@ -372,7 +372,7 @@
       "default_value": false,
       "field_type": "boolean",
       "macros_on_modify": []
-    },    
+    },
     {
       "name": "misc.attack_beep.mode",
       "default_value": 1,
@@ -1097,13 +1097,30 @@
     {
       "name": "scripts.people.trigger_guilds",
       "default_value": [
-        "CKN", "ES", "SC", "KS", "KM", "OS",
-        "OHM", "SGW", "PE", "WKS", "LE", "KG",
-        "KGKS", "MC", "OK", "RA", "GL", "ZT",
-        "ZS", "ZH", "GP"
+        "CKN",
+        "ES",
+        "SC",
+        "KS",
+        "KM",
+        "OS",
+        "OHM",
+        "SGW",
+        "PE",
+        "WKS",
+        "LE",
+        "KG",
+        "KGKS",
+        "MC",
+        "OK",
+        "RA",
+        "GL",
+        "ZT",
+        "ZS",
+        "ZH",
+        "GP"
       ],
       "field_type": "list",
-      "content_type" : "guild",
+      "content_type": "guild",
       "macros_on_modify": [
         "_people"
       ]
@@ -1120,7 +1137,7 @@
       "name": "scripts.people.name_color",
       "default_value": "yellow",
       "field_type": "string",
-      "content_type" : "mudlet_color",
+      "content_type": "mudlet_color",
       "macros_on_modify": [
         "_people"
       ]
@@ -1129,7 +1146,7 @@
       "name": "scripts.people.guild_color",
       "default_value": "dark_orange",
       "field_type": "string",
-      "content_type" : "mudlet_color",
+      "content_type": "mudlet_color",
       "macros_on_modify": [
         "_people"
       ]
@@ -1141,19 +1158,19 @@
       "macros_on_modify": []
     },
     {
-        "name": "scripts.people.enemy_color",
-        "default_value": "red",
-        "field_type": "string",
-        "content_type" : "mudlet_color",
-        "macros_on_modify": [
-          "_people"
-        ]
+      "name": "scripts.people.enemy_color",
+      "default_value": "red",
+      "field_type": "string",
+      "content_type": "mudlet_color",
+      "macros_on_modify": [
+        "_people"
+      ]
     },
     {
       "name": "scripts.people.enemy_guilds",
       "default_value": [],
       "field_type": "list",
-      "content_type" : "guild",
+      "content_type": "guild",
       "macros_on_modify": [
         "_people"
       ]
@@ -1405,13 +1422,13 @@
       ]
     },
     {
-        "name": "scripts.ui.footer_actions_height",
-        "default_value": 25,
-        "field_type": "number",
-        "macros_on_modify": [
-          "_ux"
-        ]
-      },
+      "name": "scripts.ui.footer_actions_height",
+      "default_value": 25,
+      "field_type": "number",
+      "macros_on_modify": [
+        "_ux"
+      ]
+    },
     {
       "name": "scripts.ui.footer_map_width_p",
       "default_value": 14,
@@ -1553,25 +1570,25 @@
       ]
     },
     {
-        "name": "scripts.ui.multibinds.font_size",
-        "default_value": 10,
-        "field_type": "number",
-        "macros_on_modify": [
-          "_ux"
-        ]
+      "name": "scripts.ui.multibinds.font_size",
+      "default_value": 10,
+      "field_type": "number",
+      "macros_on_modify": [
+        "_ux"
+      ]
     },
     {
       "name": "scripts.ui.bind_color",
       "default_value": "LawnGreen",
       "field_type": "string",
-      "content_type" : "mudlet_color",
+      "content_type": "mudlet_color",
       "macros_on_modify": []
     },
     {
       "name": "scripts.inv.magics_color",
       "default_value": "tomato",
       "field_type": "string",
-      "content_type" : "mudlet_color",
+      "content_type": "mudlet_color",
       "macros_on_modify": [
         "_magics"
       ]
@@ -1580,7 +1597,7 @@
       "name": "scripts.inv.magic_keys_color",
       "default_value": "green_yellow",
       "field_type": "string",
-      "content_type" : "mudlet_color",
+      "content_type": "mudlet_color",
       "macros_on_modify": [
         "_magics"
       ]
@@ -1589,7 +1606,7 @@
       "name": "scripts.tcolor_color",
       "default_value": "orange",
       "field_type": "string",
-      "content_type" : "mudlet_color",
+      "content_type": "mudlet_color",
       "macros_on_modify": []
     },
     {
@@ -1611,7 +1628,9 @@
         "ogluchy": 2,
         "bloki": 2,
         "bron": 2,
-        "npc": 2
+        "npc": 2,
+        "moj_gadacz": 0,
+        "innych_gadacz": 0
       },
       "field_type": "map",
       "macros_on_modify": [
@@ -1622,7 +1641,7 @@
       "name": "scripts.gag_colors.moje_ciosy",
       "default_value": "alice_blue",
       "field_type": "string",
-      "content_type" : "mudlet_color",
+      "content_type": "mudlet_color",
       "macros_on_modify": [
         "_ux"
       ]
@@ -1631,7 +1650,7 @@
       "name": "scripts.gag_colors.moje_spece",
       "default_value": "green_yellow",
       "field_type": "string",
-      "content_type" : "mudlet_color",
+      "content_type": "mudlet_color",
       "macros_on_modify": [
         "_ux"
       ]
@@ -1640,7 +1659,7 @@
       "name": "scripts.gag_colors.innych_ciosy",
       "default_value": "LightGrey",
       "field_type": "string",
-      "content_type" : "mudlet_color",
+      "content_type": "mudlet_color",
       "macros_on_modify": [
         "_ux"
       ]
@@ -1649,7 +1668,7 @@
       "name": "scripts.gag_colors.innych_ciosy_we_mnie",
       "default_value": "pink",
       "field_type": "string",
-      "content_type" : "mudlet_color",
+      "content_type": "mudlet_color",
       "macros_on_modify": [
         "_ux"
       ]
@@ -1658,7 +1677,7 @@
       "name": "scripts.gag_colors.innych_spece",
       "default_value": "slate_grey",
       "field_type": "string",
-      "content_type" : "mudlet_color",
+      "content_type": "mudlet_color",
       "macros_on_modify": [
         "_ux"
       ]
@@ -1667,7 +1686,7 @@
       "name": "scripts.gag_colors.moje_uniki",
       "default_value": "SteelBlue",
       "field_type": "string",
-      "content_type" : "mudlet_color",
+      "content_type": "mudlet_color",
       "macros_on_modify": [
         "_ux"
       ]
@@ -1676,7 +1695,7 @@
       "name": "scripts.gag_colors.innych_uniki",
       "default_value": "dark_slate_grey",
       "field_type": "string",
-      "content_type" : "mudlet_color",
+      "content_type": "mudlet_color",
       "macros_on_modify": [
         "_ux"
       ]
@@ -1685,7 +1704,7 @@
       "name": "scripts.gag_colors.moje_parowanie",
       "default_value": "SteelBlue",
       "field_type": "string",
-      "content_type" : "mudlet_color",
+      "content_type": "mudlet_color",
       "macros_on_modify": [
         "_ux"
       ]
@@ -1694,7 +1713,7 @@
       "name": "scripts.gag_colors.innych_parowanie",
       "default_value": "dark_slate_gray",
       "field_type": "string",
-      "content_type" : "mudlet_color",
+      "content_type": "mudlet_color",
       "macros_on_modify": [
         "_ux"
       ]
@@ -1703,7 +1722,7 @@
       "name": "scripts.gag_colors.zaslony_udane",
       "default_value": "deep_sky_blue",
       "field_type": "string",
-      "content_type" : "mudlet_color",
+      "content_type": "mudlet_color",
       "macros_on_modify": [
         "_ux"
       ]
@@ -1712,7 +1731,7 @@
       "name": "scripts.gag_colors.zaslony_nieudane",
       "default_value": "dark_slate_blue",
       "field_type": "string",
-      "content_type" : "mudlet_color",
+      "content_type": "mudlet_color",
       "macros_on_modify": [
         "_ux"
       ]
@@ -1721,7 +1740,7 @@
       "name": "scripts.gag_colors.bron",
       "default_value": "gold",
       "field_type": "string",
-      "content_type" : "mudlet_color",
+      "content_type": "mudlet_color",
       "macros_on_modify": [
         "_ux"
       ]
@@ -1730,29 +1749,29 @@
       "name": "scripts.gag_colors.npc",
       "default_value": "floral_white",
       "field_type": "string",
-      "content_type" : "mudlet_color",
+      "content_type": "mudlet_color",
       "macros_on_modify": [
         "_ux"
       ]
     },
     {
-        "name": "scripts.gag_colors.npc_spece",
-        "default_value": "floral_white",
-        "field_type": "string",
-        "content_type" : "mudlet_color",
-        "macros_on_modify": [
-          "_ux"
-        ]
-      },
-    {
-        "name": "scripts.gags.own_spec_prefix",
-        "default_value": "",
-        "field_type": "string"
+      "name": "scripts.gag_colors.npc_spece",
+      "default_value": "floral_white",
+      "field_type": "string",
+      "content_type": "mudlet_color",
+      "macros_on_modify": [
+        "_ux"
+      ]
     },
     {
-        "name": "scripts.gags.fin_prefix",
-        "default_value": "FIN",
-        "field_type": "string"
+      "name": "scripts.gags.own_spec_prefix",
+      "default_value": "",
+      "field_type": "string"
+    },
+    {
+      "name": "scripts.gags.fin_prefix",
+      "default_value": "FIN",
+      "field_type": "string"
     },
     {
       "name": "scripts.keybind.configuration.fight_support.modifier",
@@ -1760,7 +1779,7 @@
         "Control"
       ],
       "field_type": "list",
-      "content_type" : "key_modifiers",
+      "content_type": "key_modifiers",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -1795,7 +1814,7 @@
         "Control"
       ],
       "field_type": "list",
-      "content_type" : "key_modifiers",
+      "content_type": "key_modifiers",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -1831,7 +1850,7 @@
         "Alt"
       ],
       "field_type": "list",
-      "content_type" : "key_modifiers",
+      "content_type": "key_modifiers",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -1864,7 +1883,7 @@
       "name": "scripts.keybind.configuration.functional_key.modifier",
       "default_value": [],
       "field_type": "list",
-      "content_type" : "key_modifiers",
+      "content_type": "key_modifiers",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -1897,7 +1916,7 @@
       "name": "scripts.keybind.configuration.attack_bind_objs.modifier",
       "default_value": [],
       "field_type": "list",
-      "content_type" : "key_modifiers",
+      "content_type": "key_modifiers",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -1934,7 +1953,7 @@
       "name": "scripts.keybind.configuration.break_attack_target.modifier",
       "default_value": [],
       "field_type": "list",
-      "content_type" : "key_modifiers",
+      "content_type": "key_modifiers",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -1967,7 +1986,7 @@
       "name": "scripts.keybind.configuration.block_attack_target.modifier",
       "default_value": [],
       "field_type": "list",
-      "content_type" : "key_modifiers",
+      "content_type": "key_modifiers",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -2002,7 +2021,7 @@
         "Control"
       ],
       "field_type": "list",
-      "content_type" : "key_modifiers",
+      "content_type": "key_modifiers",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -2037,7 +2056,7 @@
         "Control"
       ],
       "field_type": "list",
-      "content_type" : "key_modifiers",
+      "content_type": "key_modifiers",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -2070,7 +2089,7 @@
       "name": "scripts.keybind.configuration.empty_bottle.modifier",
       "default_value": [],
       "field_type": "list",
-      "content_type" : "key_modifiers",
+      "content_type": "key_modifiers",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -2103,7 +2122,7 @@
       "name": "scripts.keybind.configuration.enter_ship.modifier",
       "default_value": [],
       "field_type": "list",
-      "content_type" : "key_modifiers",
+      "content_type": "key_modifiers",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -2138,7 +2157,7 @@
         "Control"
       ],
       "field_type": "list",
-      "content_type" : "key_modifiers",
+      "content_type": "key_modifiers",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -2173,7 +2192,7 @@
         "Control"
       ],
       "field_type": "list",
-      "content_type" : "key_modifiers",
+      "content_type": "key_modifiers",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -2208,7 +2227,7 @@
         "Alt"
       ],
       "field_type": "list",
-      "content_type" : "key_modifiers",
+      "content_type": "key_modifiers",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -2243,7 +2262,7 @@
         "Alt"
       ],
       "field_type": "list",
-      "content_type" : "key_modifiers",
+      "content_type": "key_modifiers",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -2276,7 +2295,7 @@
       "name": "scripts.keybind.configuration.temp5.modifier",
       "default_value": [],
       "field_type": "list",
-      "content_type" : "key_modifiers",
+      "content_type": "key_modifiers",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -2309,7 +2328,7 @@
       "name": "scripts.keybind.configuration.temp6.modifier",
       "default_value": [],
       "field_type": "list",
-      "content_type" : "key_modifiers",
+      "content_type": "key_modifiers",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -2342,7 +2361,7 @@
       "name": "scripts.keybind.configuration.temp7.modifier",
       "default_value": [],
       "field_type": "list",
-      "content_type" : "key_modifiers",
+      "content_type": "key_modifiers",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -2375,7 +2394,7 @@
       "name": "scripts.keybind.configuration.temp8.modifier",
       "default_value": [],
       "field_type": "list",
-      "content_type" : "key_modifiers",
+      "content_type": "key_modifiers",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -2408,7 +2427,7 @@
       "name": "scripts.keybind.configuration.temp9.modifier",
       "default_value": [],
       "field_type": "list",
-      "content_type" : "key_modifiers",
+      "content_type": "key_modifiers",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -2441,7 +2460,7 @@
       "name": "scripts.keybind.configuration.temp10.modifier",
       "default_value": [],
       "field_type": "list",
-      "content_type" : "key_modifiers",
+      "content_type": "key_modifiers",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -2476,7 +2495,7 @@
         "Alt"
       ],
       "field_type": "list",
-      "content_type" : "key_modifiers",
+      "content_type": "key_modifiers",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -2511,7 +2530,7 @@
         "Alt"
       ],
       "field_type": "list",
-      "content_type" : "key_modifiers",
+      "content_type": "key_modifiers",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -2546,7 +2565,7 @@
         "Alt"
       ],
       "field_type": "list",
-      "content_type" : "key_modifiers",
+      "content_type": "key_modifiers",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -2581,7 +2600,7 @@
         "Alt"
       ],
       "field_type": "list",
-      "content_type" : "key_modifiers",
+      "content_type": "key_modifiers",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -2616,7 +2635,7 @@
         "Control"
       ],
       "field_type": "list",
-      "content_type" : "key_modifiers",
+      "content_type": "key_modifiers",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -2651,7 +2670,7 @@
         "Control"
       ],
       "field_type": "list",
-      "content_type" : "key_modifiers",
+      "content_type": "key_modifiers",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -2686,7 +2705,7 @@
         "Control"
       ],
       "field_type": "list",
-      "content_type" : "key_modifiers",
+      "content_type": "key_modifiers",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -2719,7 +2738,7 @@
       "name": "scripts.keybind.configuration.walk_mode.modifier",
       "default_value": [],
       "field_type": "list",
-      "content_type" : "key_modifiers",
+      "content_type": "key_modifiers",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -2808,14 +2827,14 @@
       "name": "amap.ui.location_marker.color",
       "default_value": "pale_violet_red",
       "field_type": "string",
-      "content_type" : "mudlet_color",
+      "content_type": "mudlet_color",
       "macros_on_modify": []
     },
     {
       "name": "amap.ui.location_marker.color2",
       "default_value": "alice_blue",
       "field_type": "string",
-      "content_type" : "mudlet_color",
+      "content_type": "mudlet_color",
       "macros_on_modify": []
     },
     {
@@ -2840,15 +2859,15 @@
       "name": "scripts.sounds.beep",
       "default_value": "sounds/beep.wav",
       "field_type": "string",
-      "content_type" : "file_path",
+      "content_type": "file_path",
       "macros_on_modify": []
     },
     {
-        "name": "scripts.sounds.pop",
-        "default_value": "sounds/pop.wav",
-        "field_type": "string",
-        "content_type" : "file_path",
-        "macros_on_modify": []
+      "name": "scripts.sounds.pop",
+      "default_value": "sounds/pop.wav",
+      "field_type": "string",
+      "content_type": "file_path",
+      "macros_on_modify": []
     },
     {
       "name": "scripts.inv.containers.disable_grouped_containers",
@@ -2947,60 +2966,60 @@
       "macros_on_modify": []
     },
     {
-        "name": "amap.water_animal",
-        "default_value": false,
-        "field_type": "boolean",
-        "macros_on_modify": []
+      "name": "amap.water_animal",
+      "default_value": false,
+      "field_type": "boolean",
+      "macros_on_modify": []
     },
     {
-        "name": "ateam.cover_command",
-        "default_value": "zaslon",
-        "field_type": "string",
-        "macros_on_modify": []
+      "name": "ateam.cover_command",
+      "default_value": "zaslon",
+      "field_type": "string",
+      "macros_on_modify": []
     },
     {
-        "name": "scripts.ui.combat_window.enabled",
-        "default_value": false,
-        "field_type": "boolean",
-        "macros_on_modify": [
-            "_ux"
-        ]
+      "name": "scripts.ui.combat_window.enabled",
+      "default_value": false,
+      "field_type": "boolean",
+      "macros_on_modify": [
+        "_ux"
+      ]
     },
     {
-        "name": "scripts.ui.combat_window.font_size",
-        "default_value": 12,
-        "field_type": "number",
-        "macros_on_modify": [
-            "_ux"
-        ]
+      "name": "scripts.ui.combat_window.font_size",
+      "default_value": 12,
+      "field_type": "number",
+      "macros_on_modify": [
+        "_ux"
+      ]
     },
     {
-        "name": "scripts.ui.combat_window.no_wrap",
-        "default_value": false,
-        "field_type": "boolean",
-        "macros_on_modify": [
-            "_ux"
-        ]
+      "name": "scripts.ui.combat_window.no_wrap",
+      "default_value": false,
+      "field_type": "boolean",
+      "macros_on_modify": [
+        "_ux"
+      ]
     },
     {
-        "name": "scripts.ui.theme",
-        "default_value": "arkadia",
-        "field_type": "string",
-        "macros_on_modify": [
-            "_ux"
-        ]
+      "name": "scripts.ui.theme",
+      "default_value": "arkadia",
+      "field_type": "string",
+      "macros_on_modify": [
+        "_ux"
+      ]
     },
     {
-        "name": "misc.improve.ignore_form",
-        "default_value": false,
-        "field_type": "boolean",
-        "macros_on_modify": []
+      "name": "misc.improve.ignore_form",
+      "default_value": false,
+      "field_type": "boolean",
+      "macros_on_modify": []
     },
     {
-        "name": "amap.map_update.automatic",
-        "default_value": false,
-        "field_type": "boolean",
-        "macros_on_modify": []
+      "name": "amap.map_update.automatic",
+      "default_value": false,
+      "field_type": "boolean",
+      "macros_on_modify": []
     }
   ]
 }

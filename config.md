@@ -1177,7 +1177,9 @@ Ponizej jest opcja co ma byc robione:
   "bloki" : 2,
   "bron" : 2,
   "npc" : 2,
-  "npc_spece" : 2
+  "npc_spece" : 2,
+  "moj_gadacz": 0,
+  "innych_gadacz": 0
 }
 ```
 

@@ -19949,7 +19949,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>przejdz_za_glazy</name>
-						<script>trigger_func_skrypty_ui_special_exits_follow("przejdz za glazy")</script>
+						<script>trigger_func_skrypty_ui_special_exits_follow("przecisnij sie za glazy")</script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
 						<mStayOpen>0</mStayOpen>

@@ -1,5 +1,5 @@
 amap.path_display = amap.path_display or {
-    highlighter = Highlight:new({}, {255, 255, 255}, {150, 100, 255})
+    highlighter = Highlight:new({}, color_table[amap.path_display_color], {150, 100, 255})
 }
 
 function amap.path_display:start(destination)

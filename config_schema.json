@@ -2804,6 +2804,13 @@
       "macros_on_modify": []
     },
     {
+      "name": "amap.path_display_color",
+      "default_value": "alice_blue",
+      "field_type": "string",
+      "content_type": "mudlet_color",
+      "macros_on_modify": []
+    },
+    {
       "name": "amap.blockers.is_experimental",
       "default_value": false,
       "field_type": "boolean",

@@ -17324,9 +17324,11 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 								<colorTriggerBgColor>#000000</colorTriggerBgColor>
 								<regexCodeList>
 									<string>(^[ &gt;]*Bol w (prawej|lewej) dloni staje sie mniej odczuwalny\.$)</string>
+									<string>Nagle czujesz,  jak dziwna sila opanowuje twe czlonki.  Nie jestes w stanie kontrolowac swojego zachowania!</string>
 								</regexCodeList>
 								<regexCodePropertyList>
 									<integer>1</integer>
+									<integer>0</integer>
 								</regexCodePropertyList>
 							</Trigger>
 							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">

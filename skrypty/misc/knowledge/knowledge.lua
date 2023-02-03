@@ -62,7 +62,7 @@ function misc.knowledge:zglebiaj_wiedze(index)
 end
 
 function alias_func_skrypty_misc_zglebiaj_wiedze()
-    local number = string.trim(matches[3])
+    local number = string.trim(matches[2])
     if (number == nil or number == '') then
         misc.knowledge:initial_zglebiaj()
     else

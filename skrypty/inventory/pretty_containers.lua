@@ -36,9 +36,9 @@ local jewelery = { "pierscien(?!iowa)", "naszyjnik", "bransolet", "spink", "tali
 local gems = { "obsydia(ny|now|n)", "labrado(ry|row|r)", "oliwi(ny|now|n)", "gaga(ty|tow|t)", "fluory(ty|tow|t)", "burszty(ny|now|n)", "ametys(ty|tow|t)", "kwar(ce|cow|c)", "rubi(ny|now|n)", "piry(ty|tow|t)", "serpenty(ny|now|n)", "per(ly|le|la|el)", "serpenty(ny|now|n)", "malachi(ty|tow|t)", "karneo(le|low|l)", "lazury(ty|tow|t)", "nefry(ty|tow|t)", "aleksandry(ty|tow|t)", "celesty(ny|now|n)", "monacy(ty|tow|t)", "azury(ty|tow|t)", "jaspi(sy|sow|s)", "onyk(sy|sow|s)", "turmali(ny|now|n)", "awentury(ny|now|n)", "turku(sy|sow|s)", "opa(li|le|l)", "kryszta(ly|low|l)", "hematy(ty|tow|t)", "rodoli(ty|tow|t)", "aga(ty|tow|t)", "jaskrawozolt.* cytry(ny|now|n(?!e))", "apaty(ty|tow|t)", "kyani(ty|tow|t)", "akwamary(ny|now|n)", "ioli(ty|tow|t)", "diopsy(dy|dow|d)", "cyrko(ny|now|n)", "zoisy(ty|tow|t)", "grana(ty|tow|t)", "almandy(ny|now|n)", "ortokla(zy|zow|z)", "topa(zy|zow|z)", "tytani(ty|tow|t)", "diamen(ty|tow|t)", "szafi(ry|row|r)", "szmaragd", "chryzoberyl", "spinel", "chryzopraz", "rodochrozyt", "heliodor"}
 
 scripts.inv.pretty_containers.fixed_groups = {
-    ["sklerotyzowan.* mlecznoszar.* tarcz.*"] = "inne",
-    ["nakrapian.* chitynow.* pancerz.*"] = "inne",
-    ["fragment.* koralowej plaskorzezby z rybim ogonem"] = "klucze"
+    ["sklerotyzowan\\w+ mlecznoszar\\w+ tarcz"] = "inne",
+    ["nakrapian\\w+ chitynow\\w+ pancerz"] = "inne",
+    ["koralowej plaskorzezby z rybim ogonem"] = "klucze"
 }
 
 scripts.inv.pretty_containers.group_definitions = {

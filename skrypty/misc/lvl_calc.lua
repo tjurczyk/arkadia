@@ -191,7 +191,7 @@ function misc.lvl_calc:cechy_replace(m1, m2)
     
     local index = #misc.lvl_calc.current_stats
     local sum = self:calc_stat_sum(misc.lvl_calc.current_stats[index], misc.lvl_calc.current_val_to_next[index])
-    prefix('<green>['..sum..']<reset> ', cecho)
+    cecho(' <green>['..sum..']<reset>')
     if misc.lvl_calc.prev_stats[index] then
         local old_sum = self:calc_stat_sum(misc.lvl_calc.prev_stats[index], misc.lvl_calc.prev_val_to_next[index])
         local diff = sum - old_sum

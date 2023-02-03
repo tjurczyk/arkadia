@@ -7,15 +7,13 @@ function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_dwusegmentowa()
     local dmg = matches["damage"]
     local value = -1
         if dmg == "unika" then value = 0
-    elseif dmg == "nie zadajac" or dmg == "ledwie muskajac" or dmg =="broczaca" or dmg == "oszczednego" then value = 1
+    elseif dmg == "nie zadajac" or dmg == "ledwie muskajac" then value = 1
     elseif dmg == "broczaca krwia rane" or dmg == "nieduze obrazenia" then value = 2
     elseif dmg == "krwawo wgryzaja" or dmg == "widoczne obrazenia" then value = 3
-    elseif dmg == "raniac" or dmg == "z impetem" then value = 4
-    elseif dmg == "paskudnie kaleczac" or dmg == "celnie" then value = 5
-    elseif dmg == "krwawo rozrywa" or dmg == "potwornie rani" or dmg == "mocarnie" then value = 6
+    elseif dmg == "raniac" then value = 4
+    elseif dmg == "paskudnie kaleczac" then value = 5
+    elseif dmg == "krwawo rozrywa" or dmg == "potwornie rani" then value = 6
     elseif dmg == "masakrujac" then value = 7
-    else
-        debugc("trigger_func_skrypty_ui_gags_color_color_moje_ciosy_dwusegmentowa() unknown damage '"..dmg.."' ".. matches[1])
     end
     scripts.gags:gag(value, 7, target)
 end
@@ -75,7 +73,7 @@ function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_lodowata_dluga_macz
     elseif dmg == "raniac" or dmg == "mocno obijajac cialo" then value = 3
     elseif dmg == "ciezko raniac" or dmg == "pozostawiajac paskudnie wygladajaca rane" then value = 4
     elseif dmg == "niemalze zabijajac" then value = 5
-    elseif dmg == "masakrujac" or dmg == "masakrujac przeciwnika i zakanczajac ta walke" then
+    elseif dmg == "masakrujac przeciwnika i zakanczajac ta walke" then
         trigger_func_skrypty_ui_gags_ciosy_bron_fin()
         return
     end

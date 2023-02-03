@@ -44,17 +44,6 @@ function scripts.gags:gag_prefix(gag_prefix, kind)
     prefix(str_replace)
     if selectString(str_replace, 1) > -1 then
         fg(scripts.gag_colors[kind])
-
-        if scripts.debug then
-            local i = 2
-            local hint = ""
-            repeat
-                local dbFunc = debug.getinfo(i)
-                hint = hint .. (dbFunc.name or dbFunc.short_src or dbFunc.short or "") .. " "
-                i = i + 1
-            until i > 4
-            setLink(function() end, hint)
-        end
     end
     resetFormat()
 end
@@ -74,22 +63,4 @@ function scripts.gags:who_hits()
         who = "innych_ciosy"
     end
     return who
-end
-
--- Same as who_hits but relies on values in matches
-function scripts.gags:who_hits_attacker_target()
-    if self:is_type("combat.avatar") then
-        if matches["attacker"] then return "innych_ciosy_we_mnie" else return "moje_ciosy" end
-    else return "innych_ciosy" end
-end
-
-function scripts.gags:attacker_target(value, total_power)
-    if total_power == nil then total_power = 6 end
-    local target = self:who_hits_attacker_target()
-    self:gag(value, total_power, target)
-end
-
-function scripts.gags:attacker_target_fin()
-    local target = self:who_hits_attacker_target()
-    self:gag_prefix(self.fin_prefix, target)
 end

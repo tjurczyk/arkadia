@@ -1,4 +1,4 @@
--- Antyczny zdobiony sztylet
+-- Antyczny sztylet
 
 function trigger_func_skrypty_ui_gags_ciosy_antyczny_sztylet()
     local target = "moje_ciosy"
@@ -8,8 +8,7 @@ function trigger_func_skrypty_ui_gags_ciosy_antyczny_sztylet()
 
     local dmg = matches["damage"]
     local value = -1
-        if dmg == "zadnej" then value = 0
-    elseif dmg == "podluzna, niezbyt szeroka bruzde" then value = 1
+        if dmg == "podluzna, niezbyt szeroka bruzde" then value = 1
     elseif dmg == "podluzna, dosyc szeroka bruzde" then value = 2
     elseif dmg == "poszarpana, dosyc szeroka bruzde" then value = 3
     elseif dmg == "poszarpana, bardzo gleboka bruzde" then value = 4
@@ -58,6 +57,7 @@ function trigger_func_skrypty_ui_gags_ciosy_lodowy_sztylet_spec()
     scripts.gags:gag(value, 6, target)
 end
 
+
 -- Czarny smukly kordelas
 
 function trigger_func_skrypty_ui_gags_ciosy_czarny_smukly_kordelas()
@@ -75,93 +75,4 @@ function trigger_func_skrypty_ui_gags_ciosy_czarny_smukly_kordelas()
     elseif dmg == "poszarpana rane" then value = 6
     end
     scripts.gags:gag(value, 6, target)
-end
-
--- Polyskujacy zdobiony sztylet
-
-function trigger_func_skrypty_ui_gags_ciosy_polyskujacy_zdobiony_sztylet_moje()
-    local target = "moje_ciosy"
-    local dmg = matches["damage"]
-    local value = -1
-        if dmg == "mija" then value = 0
-    elseif dmg == "muskajac"  then value = 1
-    elseif dmg == "raniac"  then value = 2
-    elseif dmg == "trafiasz" then value = 3
-    elseif dmg == "zaglebiajac" then value = 4
-    elseif dmg == "powazne" then value = 5
-    elseif dmg == "zaglebiajac" then value = 6
-    elseif dmg == "celne" then
-        return scripts.gags:gag_prefix(scripts.gags.fin_prefix, target)
-    end
-    scripts.gags:gag(value, 6, target)
-end
-
--- Snieznobialy lsniacy sztylet
-
-function trigger_func_skrypty_ui_gags_ciosy_nieznobialy_lsniacy_sztylet_moje()
-    local target = "moje_ciosy"
-    local dmg = matches["damage"]
-    local value = -1
-        if dmg == "nie udaje" or dmg == "zadnych" then value = 0
-    elseif dmg == "niewielka" then value = 1
-    elseif dmg == "powazna" then value = 2
-    elseif dmg == "wbijajac" then value = 3
-    elseif dmg == "idealne" then
-        return scripts.gags:gag_prefix(scripts.gags.fin_prefix, target)
-    end
-    scripts.gags:gag(value, 5, target)
-end
-
--- Stalowe smocze pazury
-
-function trigger_func_skrypty_ui_gags_ciosy_stalowe_smocze_pazury_moje()
-    local target = "moje_ciosy"
-    local dmg = matches["damage"]
-    local value = -1
-        if dmg == "wyparowuje" then value = 0
-    elseif dmg == "lekko" then value = 1
-    elseif dmg == "celnie"  then value = 2
-    elseif dmg == "bolesny" then value = 3
-    elseif dmg == "paskudna" then value = 4
-    elseif dmg == "tniesz" or dmg == "ciezko" then value = 5
-    elseif dmg == "gleboko" then value = 6
-    elseif dmg == "." then
-        return scripts.gags:gag_prefix(scripts.gags.fin_prefix, target)
-    end
-    scripts.gags:gag(value, 6, target)
-end
-
--- Szylkretowy falisty sztylet
-
-function trigger_func_skrypty_ui_gags_ciosy_szylkretowy_falisty_sztylet_moje()
-    local target = "moje_ciosy"
-    local dmg = matches["damage"]
-    local value = -1
-    
-        if dmg == "mija"  then value = 0
-    elseif dmg == "nieznaczne"  then value = 1
-    elseif dmg == "nieduze"  then value = 2
-    elseif dmg == "znaczne" then value = 3
-    elseif dmg == "bolesne" then value = 4
-    elseif dmg == "powazne" then value = 5
-    elseif dmg == "bardzo rozlegle" then value = 6
-    elseif dmg == "potworne" then
-        return scripts.gags:gag_prefix(scripts.gags.fin_prefix, target)
-    end
-    scripts.gags:gag(value, 6, target)
-end
-
--- Tileanskie sprezynowe stiletto
-
-function trigger_func_skrypty_ui_gags_ciosy_tileanskie_sprezynowe_stiletto_moje()
-    local target = "moje_ciosy"
-    local dmg = matches["damage"]
-    local value = -1
-        if dmg == "obrazen." then value = 1
-    elseif dmg == "rany!"  then value = 2
-    elseif dmg == "krew!"  then value = 3
-    elseif dmg == "trzewiach!"  then value = 4
-    elseif dmg == "przeciwnikowi!" then value = 5
-    end
-    scripts.gags:gag_spec("STILLETTO ", value, 5, target)
 end

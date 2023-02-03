@@ -67,10 +67,10 @@ end
 function scripts.packages:pickup(command)
     local index = rex.match(command, "^\\s*wybierz paczke (\\d+)")
     if index then
-        self.trigger = tempRegexTrigger("^.* przekazuje ci jakas paczke\\.", function ()
+        self.trigger = tempRegexTrigger("^.* przekazuje ci jakas paczke\\.", function()
             self:package_given(index)
         end, 1)
-        self.trigger_fail = tempRegexTrigger("Ty juz dla nas dostatecznie ciezko zapracowales|Nie ufam ci na tyle, aby powierzyc ci dostarczenie tej przesylki|Cos ci sie chyba pomylilo, nie ma takiej oferty|Niestety, nie widzisz tu nikogo, od kogo mozna by wziac zlecenie", function() 
+        self.trigger_fail = tempRegexTrigger("Ty juz dla nas dostatecznie ciezko zapracowales|Nie ufam ci na tyle, aby powierzyc ci dostarczenie tej przesylki|Cos ci sie chyba pomylilo, nie ma takiej oferty|Niestety, nie widzisz tu nikogo, od kogo mozna by wziac zlecenie", function()
             if self.trigger then
                 killTrigger(self.trigger)
                 self.trigger = nil
@@ -85,6 +85,7 @@ function scripts.packages:package_given(index)
     end
     self.delivery_trigger = tempRegexTrigger("^(Oddajesz|Zwracasz) pocztowa paczke", function() self:package_delivered(matches[2] == "Oddajesz") end, 1)
     self.picked_offer = self.current_offer[index]
+    raiseEvent("assistantPackageDestination", self.picked_offer.location)
     if scripts.people.mail.show_automatically and self.picked_offer.location then
         amap.path_display:start(self.picked_offer.location)
     end
@@ -158,7 +159,7 @@ function scripts.packages:update_display()
 end
 
 function scripts.packages:get_from_db(name)
-    local result = db:fetch_sql(self.db.packages, "SELECT * FROM packages WHERE name = '" .. name .. "' COLLATE NOCASE")
+    local result = db:fetch_sql(self.db.packages, "SELECT * FROM packages WHERE name = \"" .. name .. "\" COLLATE NOCASE")
     if result and table.size(result) >= 1 then
         return result[1], table.size(result) > 0 and table.size(result) > 1
     end
@@ -192,5 +193,6 @@ function trigger_packages_assistant_replace_terminals()
         replace("dostarczenie       Dystans", true)
     end
 end
+
 
 scripts.packages:init()

@@ -41,6 +41,6 @@ function trigger_func_skrypty_ui_gags_color_color_innych_spece_str_ktos_spec_5()
 end
 
 function trigger_func_skrypty_ui_gags_color_color_innych_spece_str_ktos_spec_end()
-    scripts.gags:gag_prefix("STR FIN", "innych_spece")
+    scripts.gags:gag_prefix("STR "..scripts.gags.fin_prefix, "innych_spece")
 end
 

@@ -27,6 +27,6 @@ function trigger_func_skrypty_ui_gags_color_color_moje_spece_str_ja_spec_5()
 end
 
 function trigger_func_skrypty_ui_gags_color_color_moje_spece_str_ja_spec_end()
-    scripts.gags:gag_own_spec("FIN")
+    scripts.gags:gag_own_spec(scripts.gags.fin_prefix)
 end
 

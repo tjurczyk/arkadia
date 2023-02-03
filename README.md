@@ -3,6 +3,8 @@
 
 ## Arkadia Skrypty
 
+Adres serwera: arkadia.rpg.pl, port: 23 lub 20023
+
 Pomoc dostępna pod `/skrypty`<br>
 Pomoc do mappera znajduje się [tutaj](README_MAPPER.md) \
 Wersja, której używasz: sprawdź nagłówek komendy `/skrypty`.

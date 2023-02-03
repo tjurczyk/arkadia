@@ -291,6 +291,7 @@ return {
     "skrypty/inventory/equipment/damaged",
     "skrypty/misc/ships/ships",
     "skrypty/misc/ships/buses",
+    "skrypty/ui/misc/gadacz",
     "skrypty/ui/misc/gryf",
     "skrypty/ui/misc/lilith",
     "skrypty/ui/misc/ptakopodobny",

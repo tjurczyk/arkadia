@@ -14,8 +14,8 @@ function load_scripts(force)
         return
     end
 
-    if mudletOlderThan(4, 15) then
-        cecho("\n\n<red>Zaktualizuj Mudlet. Skrypty moga nie dzialac poprawnie! Wymagana wersja 4.15+\n\n")
+    if mudletOlderThan(4, 16) then
+        cecho("\n\n<red>Zaktualizuj Mudlet. Skrypty moga nie dzialac poprawnie! Wymagana wersja 4.16+\n\n")
     end
 
     cecho("\n<CadetBlue>(skrypty)<tomato>: Laduje pliki skryptow\n")

@@ -1,100 +1,17 @@
-function trigger_func_skrypty_ui_gags_color_color_moje_spece_noz_ja_spec_0()
-    scripts.gags:gag_own_spec(0, 8)
+function trigger_func_skrypty_ui_gags_color_color_moje_spece_noz_ja_spec()
+    local dmg = matches["damage"]
+    local value = -1
+        if dmg == "mija" or dmg == "unika" or dmg == "nieskoordynowany" then value = 0
+    elseif dmg == "nieznaczne" or dmg == "drasniecie" then value = 1
+    elseif dmg == "wbijasz" or dmg == "bolesny" then value = 2
+    elseif dmg == "bolesna" or dmg == "krwawa" or dmg=="znaczne" then value = 3
+    elseif dmg == "krwawiaca" or dmg == "ranisz" or dmg=="powazne" then value = 4
+    elseif dmg == "zaglebiasz" or dmg == "tryska krew" then value = 5
+    elseif dmg == "przypadasz" or dmg == "rozlegle" or dmg == "bardzo powazne" then value = 6
+    elseif dmg == "osuwa" or dmg == "zachodzac" or dmg == "doskakujesz" or dmg == "masakruje" then
+        scripts.gags:gag_own_spec(scripts.gags.fin_prefix)
+        return
+    end
+  --scripts.gags:gag(value, 8, "moje_ciosy")
+  scripts.gags:gag_own_spec(value, 6)
 end
-
-function trigger_func_skrypty_ui_gags_color_color_moje_spece_noz_ja_spec_1()
-    scripts.gags:gag_own_spec(0, 8)
-end
-
-function trigger_func_skrypty_ui_gags_color_color_moje_spece_noz_ja_spec_2()
-    scripts.gags:gag_own_spec(0, 8)
-end
-
-function trigger_func_skrypty_ui_gags_color_color_moje_spece_noz_ja_spec_3()
-    scripts.gags:gag_own_spec(1, 8)
-end
-
-function trigger_func_skrypty_ui_gags_color_color_moje_spece_noz_ja_spec_4()
-    scripts.gags:gag_own_spec(1, 8)
-end
-
-function trigger_func_skrypty_ui_gags_color_color_moje_spece_noz_ja_spec_5()
-    scripts.gags:gag_own_spec(1, 8)
-end
-
-function trigger_func_skrypty_ui_gags_color_color_moje_spece_noz_ja_spec_6()
-    scripts.gags:gag_own_spec(2, 8)
-end
-
-function trigger_func_skrypty_ui_gags_color_color_moje_spece_noz_ja_spec_7()
-    scripts.gags:gag_own_spec(2, 8)
-end
-
-function trigger_func_skrypty_ui_gags_color_color_moje_spece_noz_ja_spec_8()
-    scripts.gags:gag_own_spec(2, 8)
-end
-
-function trigger_func_skrypty_ui_gags_color_color_moje_spece_noz_ja_spec_9()
-    scripts.gags:gag_own_spec(3, 8)
-end
-
-function trigger_func_skrypty_ui_gags_color_color_moje_spece_noz_ja_spec_10()
-    scripts.gags:gag_own_spec(3, 8)
-end
-
-function trigger_func_skrypty_ui_gags_color_color_moje_spece_noz_ja_spec_11()
-    scripts.gags:gag_own_spec(4, 8)
-end
-
-function trigger_func_skrypty_ui_gags_color_color_moje_spece_noz_ja_spec_12()
-    scripts.gags:gag_own_spec(4, 8)
-end
-
-function trigger_func_skrypty_ui_gags_color_color_moje_spece_noz_ja_spec_13()
-    scripts.gags:gag_own_spec(5, 8)
-end
-
-function trigger_func_skrypty_ui_gags_color_color_moje_spece_noz_ja_spec_14()
-    scripts.gags:gag_own_spec(5, 8)
-end
-
-function trigger_func_skrypty_ui_gags_color_color_moje_spece_noz_ja_spec_15()
-    scripts.gags:gag_own_spec(5, 8)
-end
-
-function trigger_func_skrypty_ui_gags_color_color_moje_spece_noz_ja_spec_16()
-    scripts.gags:gag_own_spec(5, 8)
-end
-
-function trigger_func_skrypty_ui_gags_color_color_moje_spece_noz_ja_spec_17()
-    scripts.gags:gag_own_spec(6, 8)
-end
-
-function trigger_func_skrypty_ui_gags_color_color_moje_spece_noz_ja_spec_18()
-    scripts.gags:gag_own_spec(6, 8)
-end
-
-function trigger_func_skrypty_ui_gags_color_color_moje_spece_noz_ja_spec_19()
-    scripts.gags:gag_own_spec(7, 8)
-end
-
-function trigger_func_skrypty_ui_gags_color_color_moje_spece_noz_ja_spec_20()
-    scripts.gags:gag_own_spec(7, 8)
-end
-
-function trigger_func_skrypty_ui_gags_color_color_moje_spece_noz_ja_spec_21()
-    scripts.gags:gag_own_spec(8, 8)
-end
-
-function trigger_func_skrypty_ui_gags_color_color_moje_spece_noz_ja_spec_22()
-    scripts.gags:gag_own_spec(8, 8)
-end
-
-function trigger_func_skrypty_ui_gags_color_color_moje_spece_noz_ja_spec_23()
-    scripts.gags:gag_own_spec(8, 8)
-end
-
-function trigger_func_skrypty_ui_gags_color_color_moje_spece_noz_ja_spec_24()
-    scripts.gags:gag_own_spec(8, 8)
-end
-

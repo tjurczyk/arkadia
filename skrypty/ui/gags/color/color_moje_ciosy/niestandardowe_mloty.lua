@@ -37,7 +37,7 @@ end
 -- Adamantytowy mlot
 
 function trigger_func_skrypty_ui_gags_ciosy_adamantytowy_mlot(value)
-    if line:match("ostrzegajac luke w obronie") then
+    if line:match("ostrzegajac luke w obronie przeciwnika") then
         return
     end
     local target = scripts.gags:who_hits()

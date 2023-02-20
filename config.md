@@ -1557,6 +1557,14 @@ Komenda do zmiany w trakcie gry: `/opoz [wartosc]`
 
 ---
 
+## `amap.path_display_color`
+
+Kolor podswietlania sciezki lazika
+
+Dostepne kolory mozna zobaczyc w `/kolory` lub [tutaj](https://forums.mudlet.org/download/file.php?id=129&sid=be964a7a97580514727bfcb7cfcb5aec&mode=view)
+
+---
+
 ## `amap.blockers.is_experimental`
 
 Eksperymentalne blockery, z zalozenia dzialaja w szerzszej liczbie przypadkow

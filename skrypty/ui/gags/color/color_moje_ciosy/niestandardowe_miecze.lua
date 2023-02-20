@@ -1,7 +1,20 @@
--- Jatagan
+-- Jasniejacy zdobiony jatagan
 
 function trigger_func_skrypty_ui_gags_moje_ciosy_jatagan(value)
     scripts.gags:gag(value, 6, "moje_ciosy")
+end
+
+function trigger_func_skrypty_ui_gags_jasniejacy_zdobiony_jatagan_inni()
+    target = matches["target"] == "cie" and "innych_ciosy_we_mnie" or "innych_ciosy"
+    local dmg = matches["damage"]
+    local value = -1
+        if dmg == "ledwo muska" then value = 1
+    elseif dmg == "lekko rani" then value = 2
+    elseif dmg == "rani" then value = 3
+    elseif dmg == "powaznie rani" then value = 4
+    elseif dmg == "bardzo ciezko rani" then value = 5
+    elseif dmg == "masakruje" then value = 6 end
+    scripts.gags:gag(value, 6, target)
 end
 
 -- Espadon

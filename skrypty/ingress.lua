@@ -1,6 +1,7 @@
 scripts.ingress = scripts.ingress or {
     prompt = false,
-    handler = function() end
+    handler = function() end,
+    interceptors = {}
 }
 
 if not _originalDeleteLine then
@@ -18,7 +19,14 @@ local prompt_sequence = "> "
 function scripts.ingress:init()
     self.options_handler = scripts.event_register:force_register_event_handler(self.options_handler, "gmcp.char.options", function() self:set_prompt() end)
     self.msg_handler = scripts.event_register:force_register_event_handler(self.msg_handler, "gmcp.gmcp_msgs", function()
-        self:handle_message()
+        gmcp.gmcp_msgs.decoded = dec(gmcp.gmcp_msgs.text)
+        local handled = false
+        for _, callback in pairs(self.interceptors[gmcp.gmcp_msgs.type] or {}) do
+            handled = handled or callback(gmcp.gmcp_msgs.decoded)
+        end
+        if not handled then
+            self:handle_message()
+        end
     end)
     self:set_handler()
 end
@@ -45,13 +53,12 @@ function scripts.ingress:set_handler()
 end
 
 function scripts.ingress:no_prompt_handler()
-    local msg = dec(gmcp.gmcp_msgs.text)
-    feedTriggers(msg)
-    return msg
+    feedTriggers(gmcp.gmcp_msgs.decoded)
+    return gmcp.gmcp_msgs.decoded
 end
 
 function scripts.ingress:prompt_handler()
-    local msg = dec(gmcp.gmcp_msgs.text)
+    local msg = gmcp.gmcp_msgs.decoded
     local plain = ansi2string(msg)
     local feed_msg = msg
     if plain == prompt_sequence then
@@ -76,7 +83,7 @@ function scripts.ingress:post_process_message(msg)
         if scripts.ui.separate_talk_window_timestamp and string.trim(scripts.ui.separate_talk_window_timestamp) ~= "" then
             timestamp = string.format("[%s] ", os.date(scripts.ui.separate_talk_window_timestamp))
         end
-        decho("talk_window", timestamp .. scripts.ui.separate_talk_window_prefix .. ansi2decho(dec(gmcp.gmcp_msgs.text)))
+        decho("talk_window", timestamp .. scripts.ui.separate_talk_window_prefix .. ansi2decho(gmcp.gmcp_msgs.decoded))
     end
     if gmcp.gmcp_msgs.type == "comm" then
         scripts.ui.talk_history:add(msg)
@@ -93,6 +100,16 @@ function scripts.ingress:post_process_message(msg)
         end
     end
     raiseEvent("incomingMessage", gmcp.gmcp_msgs.type, msg)
+end
+
+function scripts.ingress:register_interceptor(type, callback)
+    self.interceptors[type] = self.interceptors[type] or {}
+    table.insert(self.interceptors[type], callback)
+    return callback
+end
+
+function scripts.ingress:remove_interceptor(type, callback)
+    table.remove(self.interceptors[type], table.index_of(self.interceptors[type], callback))
 end
 
 scripts.ingress:init()

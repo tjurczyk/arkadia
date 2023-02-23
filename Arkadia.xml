@@ -408,8 +408,8 @@
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
 							<string>^W skrzyniach zauwazasz miedzy innymi (?'content'.*)\.$</string>
-							<string>^W .* (skrzyni|kufrze|skrzynce) zauwazasz miedzy innymi (?'content'.*)\.$</string>
-							<string>^Otwarty.* kosz(?:|yk) zawiera (?'content'.*)\.$</string>
+							<string>^W .+? (skrzyni|kufrze|skrzynce) zauwazasz miedzy innymi (?'content'.*)\.$</string>
+							<string>^Otwarty.+? kosz(?:|yk) zawiera (?'content'.*)\.$</string>
 							<string>^Na stojakach zauwazasz miedzy innymi (?'content'.*)\.$</string>
 							<string>^Debowy wysoki sekretarzyk zawiera (?'content'.*)\.$</string>
 							<string>.* (?:skrzynia|kufer|komoda|stojak|biblioteczka|kuferek|skrzynka|regal|szkatula|regal|szkatula)(?:| z okuciami| depozytowa) zawiera (?'content'.*)\.$</string>
@@ -417,8 +417,10 @@
 							<string>^Otwart[ay] [a-z ]+ (?:koszyk|szafa|sejf) zawiera (?'content'.*)\.$</string>
 							<string>^Narozna etazerka zawiera: (?'content'.*)\.$</string>
 							<string>^Dostrzegasz na (?:nim|niej) jeszcze (?'content'.*)\.$</string>
+							<string>^Drewniany okuty stelaz zawiera (?'content'.*)\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
+							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
@@ -2518,7 +2520,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>^[ &gt;]*Chwytasz .* reka za podkrzyze swego srebrnego wiedzminskiego miecza dwurecznego.*Cios trafia zaskoczonego przeciwnika, zaledwie go jednak muskajac\.$</string>
+											<string>^[ &gt;]*Chwytasz \w+ reka za podkrzyze swego srebrnego wiedzminskiego miecza dwurecznego, by wykonac nim blyskawiczne pchniecie, mierzac w (?'target'.+?)\. Cios trafia zaskoczon(?:a|ego) przeciwni(?:czke|ka), zaledwie (?:ja|go) jednak muskajac\.$</string>
 										</regexCodeList>
 										<regexCodePropertyList>
 											<integer>1</integer>
@@ -2640,7 +2642,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>^[ &gt;]*Dostrzegajac szanse na skuteczny atak na .*, chwytasz srebrny wiedzminski miecz dwureczny za podkrzyze i wykonujesz serie szybkich ciec i pchniec, z ktorych kazde rani i wyraznie meczy przeciwnika.*</string>
+											<string>^[ &gt;]*Dostrzegajac szanse na skuteczny atak na (?'target'.+?), chwytasz srebrny wiedzminski miecz dwureczny za podkrzyze i wykonujesz serie szybkich ciec i pchniec, z ktorych kazde rani i wyraznie meczy przeciwni</string>
 										</regexCodeList>
 										<regexCodePropertyList>
 											<integer>1</integer>
@@ -10522,7 +10524,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>^Bierzesz ogromny zamach swoim gigantycznym granitowym mlotem i uderzasz nim w glowe (?'target'.+?)\. Przeciwnik mruga oczami, nie bardzo wiedzac, co sie dzieje\. Porzadnie go zamroczylo\.$</string>
+											<string>^Bierzesz ogromny zamach swoim gigantycznym granitowym mlotem i uderzasz nim w glowe (?'target'.+?)\. Przeciwnik mruga oczami, nie bardzo wiedzac, co sie dzieje\. Porzadnie (?:go|ja) zamroczylo\.$</string>
 										</regexCodeList>
 										<regexCodePropertyList>
 											<integer>1</integer>

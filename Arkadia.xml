@@ -2488,168 +2488,6 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 								<regexCodeList />
 								<regexCodePropertyList />
 								<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-									<name>wiedzminski</name>
-									<script></script>
-									<triggerType>0</triggerType>
-									<conditonLineDelta>0</conditonLineDelta>
-									<mStayOpen>0</mStayOpen>
-									<mCommand></mCommand>
-									<packageName></packageName>
-									<mFgColor>#ff0000</mFgColor>
-									<mBgColor>#ffff00</mBgColor>
-									<mSoundFile></mSoundFile>
-									<colorTriggerFgColor>#000000</colorTriggerFgColor>
-									<colorTriggerBgColor>#000000</colorTriggerBgColor>
-									<regexCodeList>
-										<string>return scripts.gags:is_type("combat.avatar")</string>
-									</regexCodeList>
-									<regexCodePropertyList>
-										<integer>4</integer>
-									</regexCodePropertyList>
-									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-										<name>ja_ledwo_muska</name>
-										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_wiedzminski_ja_ledwo_muska()</script>
-										<triggerType>0</triggerType>
-										<conditonLineDelta>0</conditonLineDelta>
-										<mStayOpen>0</mStayOpen>
-										<mCommand></mCommand>
-										<packageName></packageName>
-										<mFgColor>#ff0000</mFgColor>
-										<mBgColor>#ffff00</mBgColor>
-										<mSoundFile></mSoundFile>
-										<colorTriggerFgColor>#000000</colorTriggerFgColor>
-										<colorTriggerBgColor>#000000</colorTriggerBgColor>
-										<regexCodeList>
-											<string>^[ &gt;]*Chwytasz \w+ reka za podkrzyze swego srebrnego wiedzminskiego miecza dwurecznego, by wykonac nim blyskawiczne pchniecie, mierzac w (?'target'.+?)\. Cios trafia zaskoczon(?:a|ego) przeciwni(?:czke|ka), zaledwie (?:ja|go) jednak muskajac\.$</string>
-										</regexCodeList>
-										<regexCodePropertyList>
-											<integer>1</integer>
-										</regexCodePropertyList>
-									</Trigger>
-									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-										<name>ja_lekko_rani</name>
-										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_wiedzminski_ja_lekko_rani()</script>
-										<triggerType>0</triggerType>
-										<conditonLineDelta>0</conditonLineDelta>
-										<mStayOpen>0</mStayOpen>
-										<mCommand></mCommand>
-										<packageName></packageName>
-										<mFgColor>#ff0000</mFgColor>
-										<mBgColor>#ffff00</mBgColor>
-										<mSoundFile></mSoundFile>
-										<colorTriggerFgColor>#000000</colorTriggerFgColor>
-										<colorTriggerBgColor>#000000</colorTriggerBgColor>
-										<regexCodeList>
-											<string>^[ &gt;]*Wykonujesz zwinny polobrot, ciagnac sztych swego srebrnego wiedzminskiego miecza dwurecznego tuz za soba by uderzyc nim.*</string>
-											<string>^[ &gt;]*Wykonujesz nagle pchniecie swym srebrnym wiedzminskim mieczem dwurecznym, lekko raniac .*\.$</string>
-										</regexCodeList>
-										<regexCodePropertyList>
-											<integer>1</integer>
-											<integer>1</integer>
-										</regexCodePropertyList>
-									</Trigger>
-									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-										<name>ja_rani</name>
-										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_wiedzminski_ja_rani()</script>
-										<triggerType>0</triggerType>
-										<conditonLineDelta>0</conditonLineDelta>
-										<mStayOpen>0</mStayOpen>
-										<mCommand></mCommand>
-										<packageName></packageName>
-										<mFgColor>#ff0000</mFgColor>
-										<mBgColor>#ffff00</mBgColor>
-										<mSoundFile></mSoundFile>
-										<colorTriggerFgColor>#000000</colorTriggerFgColor>
-										<colorTriggerBgColor>#000000</colorTriggerBgColor>
-										<regexCodeList>
-											<string>^[ &gt;]*Klinga dzierzonego przez ciebie srebrnego wiedzminskiego miecza dwurecznego ze swistem przeszywa powietrze, gdy z wymachu .*</string>
-										</regexCodeList>
-										<regexCodePropertyList>
-											<integer>1</integer>
-										</regexCodePropertyList>
-									</Trigger>
-									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-										<name>ja_powaznie_rani</name>
-										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_wiedzminski_ja_powaznie_rani()</script>
-										<triggerType>0</triggerType>
-										<conditonLineDelta>0</conditonLineDelta>
-										<mStayOpen>0</mStayOpen>
-										<mCommand></mCommand>
-										<packageName></packageName>
-										<mFgColor>#ff0000</mFgColor>
-										<mBgColor>#ffff00</mBgColor>
-										<mSoundFile></mSoundFile>
-										<colorTriggerFgColor>#000000</colorTriggerFgColor>
-										<colorTriggerBgColor>#000000</colorTriggerBgColor>
-										<regexCodeList>
-											<string>^[ &gt;]*Ze sporego wymachu zza glowy wyprowadzasz silny cios srebrnym wiedzminskim mieczem dwurecznym, mierzac w.*</string>
-										</regexCodeList>
-										<regexCodePropertyList>
-											<integer>1</integer>
-										</regexCodePropertyList>
-									</Trigger>
-									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-										<name>ja_bardzo_ciezko_rani</name>
-										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_wiedzminski_ja_bardzo_ciezko_rani()</script>
-										<triggerType>0</triggerType>
-										<conditonLineDelta>0</conditonLineDelta>
-										<mStayOpen>0</mStayOpen>
-										<mCommand></mCommand>
-										<packageName></packageName>
-										<mFgColor>#ff0000</mFgColor>
-										<mBgColor>#ffff00</mBgColor>
-										<mSoundFile></mSoundFile>
-										<colorTriggerFgColor>#000000</colorTriggerFgColor>
-										<colorTriggerBgColor>#000000</colorTriggerBgColor>
-										<regexCodeList>
-											<string>^[ &gt;]*Gwaltownym ruchem wykonujesz precyzyjne .* swym srebrnym wiedzminskim mieczem dwurecznym, celujac w.*</string>
-										</regexCodeList>
-										<regexCodePropertyList>
-											<integer>1</integer>
-										</regexCodePropertyList>
-									</Trigger>
-									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-										<name>ja_masakruje</name>
-										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_wiedzminski_ja_masakruje()</script>
-										<triggerType>0</triggerType>
-										<conditonLineDelta>0</conditonLineDelta>
-										<mStayOpen>0</mStayOpen>
-										<mCommand></mCommand>
-										<packageName></packageName>
-										<mFgColor>#ff0000</mFgColor>
-										<mBgColor>#ffff00</mBgColor>
-										<mSoundFile></mSoundFile>
-										<colorTriggerFgColor>#000000</colorTriggerFgColor>
-										<colorTriggerBgColor>#000000</colorTriggerBgColor>
-										<regexCodeList>
-											<string>^[ &gt;]*Ukladasz wygodnie obie rece na rekojesci srebrnego wiedzminskiego miecza dwurecznego, poprawiajac w ten sposob uchwyt broni.*</string>
-										</regexCodeList>
-										<regexCodePropertyList>
-											<integer>1</integer>
-										</regexCodePropertyList>
-									</Trigger>
-									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-										<name>ja_masakruje1</name>
-										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_wiedzminski_ja_masakruje1()</script>
-										<triggerType>0</triggerType>
-										<conditonLineDelta>0</conditonLineDelta>
-										<mStayOpen>0</mStayOpen>
-										<mCommand></mCommand>
-										<packageName></packageName>
-										<mFgColor>#ff0000</mFgColor>
-										<mBgColor>#ffff00</mBgColor>
-										<mSoundFile></mSoundFile>
-										<colorTriggerFgColor>#000000</colorTriggerFgColor>
-										<colorTriggerBgColor>#000000</colorTriggerBgColor>
-										<regexCodeList>
-											<string>^[ &gt;]*Dostrzegajac szanse na skuteczny atak na (?'target'.+?), chwytasz srebrny wiedzminski miecz dwureczny za podkrzyze i wykonujesz serie szybkich ciec i pchniec, z ktorych kazde rani i wyraznie meczy przeciwni</string>
-										</regexCodeList>
-										<regexCodePropertyList>
-											<integer>1</integer>
-										</regexCodePropertyList>
-									</Trigger>
-								</TriggerGroup>
-								<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 									<name>srebrny_miecz</name>
 									<script></script>
 									<triggerType>0</triggerType>
@@ -5900,11 +5738,31 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>polyskliw\w+ smukl\w+ espado\w+</string>
+											<string>polyskliw\w+ smukl\w+ espadon</string>
 										</regexCodeList>
 										<regexCodePropertyList>
 											<integer>1</integer>
 										</regexCodePropertyList>
+										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+											<name>espadon_0</name>
+											<script>trigger_func_skrypty_ui_gags_ciosy_espadon(0)</script>
+											<triggerType>0</triggerType>
+											<conditonLineDelta>0</conditonLineDelta>
+											<mStayOpen>0</mStayOpen>
+											<mCommand></mCommand>
+											<packageName></packageName>
+											<mFgColor>#ff0000</mFgColor>
+											<mBgColor>#ffff00</mBgColor>
+											<mSoundFile></mSoundFile>
+											<colorTriggerFgColor>#000000</colorTriggerFgColor>
+											<colorTriggerBgColor>#000000</colorTriggerBgColor>
+											<regexCodeList>
+												<string>^Probujesz dosiegnac (?'target'\w+(?: \w+){0,4}) polyskliwym smuklym espadonem, jednak twoja bron nieznacznie chybia celu\.$</string>
+											</regexCodeList>
+											<regexCodePropertyList>
+												<integer>1</integer>
+											</regexCodePropertyList>
+										</Trigger>
 										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 											<name>espadon_1</name>
 											<script>trigger_func_skrypty_ui_gags_ciosy_espadon(1)</script>
@@ -6468,6 +6326,52 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											</Trigger>
 										</Trigger>
 									</TriggerGroup>
+									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+										<name>gorejacy_dlugi_talwar</name>
+										<script></script>
+										<triggerType>0</triggerType>
+										<conditonLineDelta>0</conditonLineDelta>
+										<mStayOpen>0</mStayOpen>
+										<mCommand></mCommand>
+										<packageName></packageName>
+										<mFgColor>#ff0000</mFgColor>
+										<mBgColor>#ffff00</mBgColor>
+										<mSoundFile></mSoundFile>
+										<colorTriggerFgColor>#000000</colorTriggerFgColor>
+										<colorTriggerBgColor>#000000</colorTriggerBgColor>
+										<regexCodeList>
+											<string>gorejac\w+ dlug\w+ talwar</string>
+										</regexCodeList>
+										<regexCodePropertyList>
+											<integer>1</integer>
+										</regexCodePropertyList>
+										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+											<name>gorejacy_dlugi_talwar_innych</name>
+											<script>trigger_func_skrypty_ui_gags_ciosy_gorejacy_dlugi_talwar()</script>
+											<triggerType>0</triggerType>
+											<conditonLineDelta>0</conditonLineDelta>
+											<mStayOpen>0</mStayOpen>
+											<mCommand></mCommand>
+											<packageName></packageName>
+											<mFgColor>#ff0000</mFgColor>
+											<mBgColor>#ffff00</mBgColor>
+											<mSoundFile></mSoundFile>
+											<colorTriggerFgColor>#000000</colorTriggerFgColor>
+											<colorTriggerBgColor>#000000</colorTriggerBgColor>
+											<regexCodeList>
+												<string>^Dostrzegajac slabosc (?'target'\w+(?: \w+){0,4}), (?'attacker'\w+(?: \w+ \w+|)) do nie(go|j), by wbic swoj gorejacy dlugi talwar w (?'where'.*)\.$</string>
+												<string>^Gdy (?'attacker'\w+(?: \w+ \w+|)) uderza (?'target'\w+(?: \w+){0,4}) gorejacym dlugim talwarem w (?'where'.+?), klinga je(?:go|j) miecza rozpala sie do czerwonosci, parzac (?:cie|przeciwni(?:czke|ka)) nieznacznie\.$</string>
+												<string>^Gdy z silnego zamachu (?'attacker'\w+(?: \w+ \w+|)) tnie (?'target'\w+(?: \w+){0,4}) w (?'where'.+?), brzeszczot je(?:go|j) gorejacego dlugiego talwara wybucha krwistoczerwonym jezorem ognia, mocno parzac (?:cie|przeciwni(?:czke|ka))\.$</string>
+												<string>^Widzac, ze na ostrzu gorejacego dlugiego talwara zaczynaja pelzac ogniste plomyki, (?'attacker'\w+(?: \w+ \w+|)) wykonuje szybki zamach, trafiajac (?'target'\w+(?: \w+){0,4}) w (?'where'.+?), pozostawiajac tam spore oparzenie\.$</string>
+											</regexCodeList>
+											<regexCodePropertyList>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+											</regexCodePropertyList>
+										</Trigger>
+									</Trigger>
 									<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 										<name>szamszir</name>
 										<script></script>
@@ -6710,6 +6614,284 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											</regexCodePropertyList>
 										</Trigger>
 									</TriggerGroup>
+									<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+										<name>srebrny wiedzminski miecz dwureczny</name>
+										<script></script>
+										<triggerType>0</triggerType>
+										<conditonLineDelta>0</conditonLineDelta>
+										<mStayOpen>0</mStayOpen>
+										<mCommand></mCommand>
+										<packageName></packageName>
+										<mFgColor>#ff0000</mFgColor>
+										<mBgColor>#ffff00</mBgColor>
+										<mSoundFile></mSoundFile>
+										<colorTriggerFgColor>#000000</colorTriggerFgColor>
+										<colorTriggerBgColor>#000000</colorTriggerBgColor>
+										<regexCodeList />
+										<regexCodePropertyList />
+										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+											<name>wiedzminski_ja</name>
+											<script></script>
+											<triggerType>0</triggerType>
+											<conditonLineDelta>0</conditonLineDelta>
+											<mStayOpen>0</mStayOpen>
+											<mCommand></mCommand>
+											<packageName></packageName>
+											<mFgColor>#ff0000</mFgColor>
+											<mBgColor>#ffff00</mBgColor>
+											<mSoundFile></mSoundFile>
+											<colorTriggerFgColor>#000000</colorTriggerFgColor>
+											<colorTriggerBgColor>#000000</colorTriggerBgColor>
+											<regexCodeList>
+												<string>return scripts.gags:is_type("combat.avatar")</string>
+											</regexCodeList>
+											<regexCodePropertyList>
+												<integer>0</integer>
+											</regexCodePropertyList>
+											<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+												<name>ja_ledwo_muska</name>
+												<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_wiedzminski_ja_ledwo_muska()</script>
+												<triggerType>0</triggerType>
+												<conditonLineDelta>0</conditonLineDelta>
+												<mStayOpen>0</mStayOpen>
+												<mCommand></mCommand>
+												<packageName></packageName>
+												<mFgColor>#ff0000</mFgColor>
+												<mBgColor>#ffff00</mBgColor>
+												<mSoundFile></mSoundFile>
+												<colorTriggerFgColor>#000000</colorTriggerFgColor>
+												<colorTriggerBgColor>#000000</colorTriggerBgColor>
+												<regexCodeList>
+													<string>^[ &gt;]*Chwytasz \w+ reka za podkrzyze swego srebrnego wiedzminskiego miecza dwurecznego, by wykonac nim blyskawiczne pchniecie, mierzac w (?'target'.+?)\. Cios trafia zaskoczon(?:a|ego) przeciwni(?:czke|ka), zaledwie (?:ja|go) jednak muskajac\.$</string>
+												</regexCodeList>
+												<regexCodePropertyList>
+													<integer>1</integer>
+												</regexCodePropertyList>
+											</Trigger>
+											<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+												<name>ja_lekko_rani</name>
+												<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_wiedzminski_ja_lekko_rani()</script>
+												<triggerType>0</triggerType>
+												<conditonLineDelta>0</conditonLineDelta>
+												<mStayOpen>0</mStayOpen>
+												<mCommand></mCommand>
+												<packageName></packageName>
+												<mFgColor>#ff0000</mFgColor>
+												<mBgColor>#ffff00</mBgColor>
+												<mSoundFile></mSoundFile>
+												<colorTriggerFgColor>#000000</colorTriggerFgColor>
+												<colorTriggerBgColor>#000000</colorTriggerBgColor>
+												<regexCodeList>
+													<string>^[ &gt;]*Wykonujesz zwinny polobrot, ciagnac sztych swego srebrnego wiedzminskiego miecza dwurecznego tuz za soba by uderzyc nim.*</string>
+													<string>^[ &gt;]*Wykonujesz nagle pchniecie swym srebrnym wiedzminskim mieczem dwurecznym, lekko raniac .*\.$</string>
+												</regexCodeList>
+												<regexCodePropertyList>
+													<integer>1</integer>
+													<integer>1</integer>
+												</regexCodePropertyList>
+											</Trigger>
+											<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+												<name>ja_rani</name>
+												<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_wiedzminski_ja_rani()</script>
+												<triggerType>0</triggerType>
+												<conditonLineDelta>0</conditonLineDelta>
+												<mStayOpen>0</mStayOpen>
+												<mCommand></mCommand>
+												<packageName></packageName>
+												<mFgColor>#ff0000</mFgColor>
+												<mBgColor>#ffff00</mBgColor>
+												<mSoundFile></mSoundFile>
+												<colorTriggerFgColor>#000000</colorTriggerFgColor>
+												<colorTriggerBgColor>#000000</colorTriggerBgColor>
+												<regexCodeList>
+													<string>^[ &gt;]*Klinga dzierzonego przez ciebie srebrnego wiedzminskiego miecza dwurecznego ze swistem przeszywa powietrze, gdy z wymachu .*</string>
+												</regexCodeList>
+												<regexCodePropertyList>
+													<integer>1</integer>
+												</regexCodePropertyList>
+											</Trigger>
+											<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+												<name>ja_powaznie_rani</name>
+												<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_wiedzminski_ja_powaznie_rani()</script>
+												<triggerType>0</triggerType>
+												<conditonLineDelta>0</conditonLineDelta>
+												<mStayOpen>0</mStayOpen>
+												<mCommand></mCommand>
+												<packageName></packageName>
+												<mFgColor>#ff0000</mFgColor>
+												<mBgColor>#ffff00</mBgColor>
+												<mSoundFile></mSoundFile>
+												<colorTriggerFgColor>#000000</colorTriggerFgColor>
+												<colorTriggerBgColor>#000000</colorTriggerBgColor>
+												<regexCodeList>
+													<string>^[ &gt;]*Ze sporego wymachu zza glowy wyprowadzasz silny cios srebrnym wiedzminskim mieczem dwurecznym, mierzac w.*</string>
+												</regexCodeList>
+												<regexCodePropertyList>
+													<integer>1</integer>
+												</regexCodePropertyList>
+											</Trigger>
+											<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+												<name>ja_bardzo_ciezko_rani</name>
+												<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_wiedzminski_ja_bardzo_ciezko_rani()</script>
+												<triggerType>0</triggerType>
+												<conditonLineDelta>0</conditonLineDelta>
+												<mStayOpen>0</mStayOpen>
+												<mCommand></mCommand>
+												<packageName></packageName>
+												<mFgColor>#ff0000</mFgColor>
+												<mBgColor>#ffff00</mBgColor>
+												<mSoundFile></mSoundFile>
+												<colorTriggerFgColor>#000000</colorTriggerFgColor>
+												<colorTriggerBgColor>#000000</colorTriggerBgColor>
+												<regexCodeList>
+													<string>^[ &gt;]*Gwaltownym ruchem wykonujesz precyzyjne .* swym srebrnym wiedzminskim mieczem dwurecznym, celujac w.*</string>
+												</regexCodeList>
+												<regexCodePropertyList>
+													<integer>1</integer>
+												</regexCodePropertyList>
+											</Trigger>
+											<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+												<name>ja_masakruje1</name>
+												<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_wiedzminski_ja_masakruje1()</script>
+												<triggerType>0</triggerType>
+												<conditonLineDelta>0</conditonLineDelta>
+												<mStayOpen>0</mStayOpen>
+												<mCommand></mCommand>
+												<packageName></packageName>
+												<mFgColor>#ff0000</mFgColor>
+												<mBgColor>#ffff00</mBgColor>
+												<mSoundFile></mSoundFile>
+												<colorTriggerFgColor>#000000</colorTriggerFgColor>
+												<colorTriggerBgColor>#000000</colorTriggerBgColor>
+												<regexCodeList>
+													<string>^[ &gt;]*Dostrzegajac szanse na skuteczny atak na (?'target'.+?), chwytasz srebrny wiedzminski miecz dwureczny za podkrzyze i wykonujesz serie szybkich ciec i pchniec, z ktorych kazde rani i wyraznie meczy przeciwni</string>
+												</regexCodeList>
+												<regexCodePropertyList>
+													<integer>1</integer>
+												</regexCodePropertyList>
+											</Trigger>
+											<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+												<name>ja_masakruje</name>
+												<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_wiedzminski_ja_masakruje()</script>
+												<triggerType>0</triggerType>
+												<conditonLineDelta>0</conditonLineDelta>
+												<mStayOpen>0</mStayOpen>
+												<mCommand></mCommand>
+												<packageName></packageName>
+												<mFgColor>#ff0000</mFgColor>
+												<mBgColor>#ffff00</mBgColor>
+												<mSoundFile></mSoundFile>
+												<colorTriggerFgColor>#000000</colorTriggerFgColor>
+												<colorTriggerBgColor>#000000</colorTriggerBgColor>
+												<regexCodeList>
+													<string>^[ &gt;]*Ukladasz wygodnie obie rece na rekojesci srebrnego wiedzminskiego miecza dwurecznego, poprawiajac w ten sposob uchwyt broni.*</string>
+												</regexCodeList>
+												<regexCodePropertyList>
+													<integer>1</integer>
+												</regexCodePropertyList>
+											</Trigger>
+										</Trigger>
+										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+											<name>wiedzminski</name>
+											<script>trigger_func_skrypty_ui_gags_ciosy_srebrny_wiedzminski_miecz_dwureczny()</script>
+											<triggerType>0</triggerType>
+											<conditonLineDelta>0</conditonLineDelta>
+											<mStayOpen>0</mStayOpen>
+											<mCommand></mCommand>
+											<packageName></packageName>
+											<mFgColor>#ff0000</mFgColor>
+											<mBgColor>#ffff00</mBgColor>
+											<mSoundFile></mSoundFile>
+											<colorTriggerFgColor>#000000</colorTriggerFgColor>
+											<colorTriggerBgColor>#000000</colorTriggerBgColor>
+											<regexCodeList>
+												<string>^Widzisz jak (?'attacker'\w+(?: \w+){0,4}) chwyta (?:prawa|lewa) reka za podkrzyze swego srebrnego wiedzminskiego miecza dwurecznego, by wykonac nim blyskawiczne ciecie, mierzac w (?'where_target'.+?)\. Cios trafia zaskoczonego przeciwnika, zaledwie go jednak muskajac\.$</string>
+												<string>^(?'attacker'\w+(?: \w+){0,4}) wykonuje nagle pchniecie swym srebrnym wiedzminskim mieczem dwurecznym, lekko raniac (?'target'.+?) w (?'where'.*)\.$</string>
+												<string>^(?'attacker'\w+(?: \w+){0,4}) wykonuje zwinny polobrot, ciagnac sztych swego srebrnego wiedzminskiego miecza dwurecznego tuz za soba by uderzyc nim w (?'target'\w+(?: \w+){0,4})\. Precyzyjny cios tnie cel prosto w (?'where'.+?), pozostawiajac lekkie rany\.$</string>
+												<string>^Widzisz jak (?'attacker'\w+(?: \w+){0,4}) chwyta (?:prawa|lewa) reka za podkrzyze swego srebrnego wiedzminskiego miecza dwurecznego, by wykonac nim blyskawiczne (?:ciecie|pchniecie), mierzac w (?'where_target'.+?)\. Cios trafia zaskoczonego przeciwnika, jednak caly jego impet wyparowany zostaje przez .*\.$</string>
+												<string>^Widzisz jak (?'attacker'\w+(?: \w+){0,4}) chwyta (?:prawa|lewa) reka za podkrzyze swego srebrnego wiedzminskiego miecza dwurecznego, by wykonac nim blyskawiczne (?:ciecie|pchniecie), mierzac w (?'where_target'.+?)\. Cios trafia zaskoczonego przeciwnika, zaledwie go jednak muskajac\.$</string>
+												<string>^Widzisz jak (?'attacker'\w+(?: \w+){0,4}) chwyta (?:prawa|lewa) reka za podkrzyze swego srebrnego wiedzminskiego miecza dwurecznego, by wykonac nim blyskawiczne (?:ciecie|pchniecie) w ciebie, mierzac w (?'where'.+?). Kierunek ataku zupelnie cie zaskakuje i cios trafia cie, zaledwie jednak muskajac\.$</string>
+												<string>^(?'attacker'\w+(?: \w+){0,4}) wykonuje nagle pchniecie swym srebrnym wiedzminskim mieczem dwurecznym, lekko raniac (?'target'\w+(?: \w+){0,4}) w (?'where'.*)\.$</string>
+												<string>^(?'attacker'\w+(?: \w+){0,4}) wykonuje zwinny polobrot, ciagnac sztych swego srebrnego wiedzminskiego miecza dwurecznego tuz za soba by uderzyc nim w (?'target'\w+(?: \w+){0,4})\. Precyzyjny cios tnie cel prosto w (?'where'.+?), pozostawiajac lekkie rany\.$</string>
+											</regexCodeList>
+											<regexCodePropertyList>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+											</regexCodePropertyList>
+										</Trigger>
+									</TriggerGroup>
+									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+										<name>waski_kunsztowny_sihill</name>
+										<script>trigger_func_skrypty_ui_gags_ciosy_waski_kunsztowny_sihill()</script>
+										<triggerType>0</triggerType>
+										<conditonLineDelta>0</conditonLineDelta>
+										<mStayOpen>0</mStayOpen>
+										<mCommand></mCommand>
+										<packageName></packageName>
+										<mFgColor>#ff0000</mFgColor>
+										<mBgColor>#ffff00</mBgColor>
+										<mSoundFile></mSoundFile>
+										<colorTriggerFgColor>#000000</colorTriggerFgColor>
+										<colorTriggerBgColor>#000000</colorTriggerBgColor>
+										<regexCodeList>
+											<string>^(?'attacker'\w+(?: \w+){0,4}) zgrabnym ruchem zwodzi (?'target'\w+(?: \w+){0,4}) i gwaltownie skracajac dystans wbija w (?:jego|jej|twoje) cialo smiertelne ostrze waskiego kunsztownego sihilla\. Gwaltowny bryzg krwi znaczy dlonie i twarz zabojcy purpurowymi cetkami\.$</string>
+											<string>^(?'attacker'\w+(?: \w+){0,4}) niezbyt czysto trafia (?'target'\w+(?: \w+){0,4}) waskim kunsztownym sihillem, pozostawiajac na (?:jego|jej|twoim) ciele zaledwie (?'damage'nieznaczne) drasniecie\.$</string>
+											<string>^(?'attacker'\w+(?: \w+){0,4}) wykonuje oszczedne (?:ciecie|pchniecie), (?'damage'lekko raniac) (?'target'\w+(?: \w+){0,4}) w (?'where'.+?) koncowka waskiego kunsztownego sihilla\.$</string>
+											<string>^(?'attacker'\w+(?: \w+){0,4}) wykonuje zamaszysty cios waskim kunsztownym sihillem, z przenikliwym sykiem przecinajac powietrze tuz (?'damage'obok) (?'target'\w+(?: \w+){0,4})\.$</string>
+											<string>^(?'attacker'\w+(?: \w+){0,4}) precyzyjnym i mocnym sztychem waskiego kunsztownego sihilla dosiega (?'where_target'.+?) gleboko (?:go|ja) (?'damage'raniac)\.$</string>
+											<string>^(?'attacker'\w+(?: \w+){0,4}) (?'damage'niezgrabnym) ruchem probuje zaskoczyc (?'target'\w+(?: \w+){0,4}), ale jego wyrzucony przed siebie waski kunsztowny sihill dzga tylko powietrze\.$</string>
+											<string>^(?'attacker'\w+(?: \w+){0,4}) powolnym wypadem do przodu atakuje (?'target'\w+(?: \w+){0,4}) dzgajac (?:go|ja) swym waskim kunsztownym sihillem, lecz niedogodna pozycja nie pozwala (?:jej|mu) na zbyt silny cios i zadaje tylko nieznaczne obrazenia\.$</string>
+											<string>^(?'attacker'\w+(?: \w+){0,4}) atakuje waskim kunsztownym sihillem z niemozliwie wygietego przegubu dloni, zadajac zaskoczone(j|mu) (?'target'\w+(?: \w+){0,4}) ogromne obrazenia\.$</string>
+											<string>^(?'attacker'\w+(?: \w+){0,4}) zgrabnym wypadem do przodu atakuje (?'target'\w+(?: \w+){0,4}) i korzystajac z zaskoczenia dzga (?:go|ja) mocno swym waskim kunsztownym sihillem, gleboko wbijajac sie w je(?:go|j) cialo\.$</string>
+										</regexCodeList>
+										<regexCodePropertyList>
+											<integer>1</integer>
+											<integer>1</integer>
+											<integer>1</integer>
+											<integer>1</integer>
+											<integer>1</integer>
+											<integer>1</integer>
+											<integer>1</integer>
+											<integer>1</integer>
+											<integer>1</integer>
+										</regexCodePropertyList>
+									</Trigger>
+									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+										<name>rapiery</name>
+										<script>trigger_func_skrypty_ui_gags_ciosy_rapier()</script>
+										<triggerType>0</triggerType>
+										<conditonLineDelta>0</conditonLineDelta>
+										<mStayOpen>0</mStayOpen>
+										<mCommand></mCommand>
+										<packageName></packageName>
+										<mFgColor>#ff0000</mFgColor>
+										<mBgColor>#ffff00</mBgColor>
+										<mSoundFile></mSoundFile>
+										<colorTriggerFgColor>#000000</colorTriggerFgColor>
+										<colorTriggerBgColor>#000000</colorTriggerBgColor>
+										<regexCodeList>
+											<string>^(?'attacker'\w+(?: \w+){0,4}) omijajac zastawe (?'target'\w+(?: \w+){0,4}) uderza (?'weapon'\w+ \w+ rapierem) trafiajac (:?go|ja) w (?'where'.+?)\. Gwaltownym szarpnieciem uwalnia ostrze pozostawiajac w ciele przeciwni(?:czki|ka) (?'damage'gleboka) rane\.$</string>
+											<string>^(?'attacker'\w+(?: \w+){0,4}) skraca dystans (?:gwaltownym wypadem|szybkim wykrokiem) i tnac (?'weapon'\w+ \w+ rapierem) na ukos trafia (?'target'\w+(?: \w+){0,4}) w (?'where'.+?) koncowka ostrza otwierajac w je(?:go|j) ciele (?'damage'poszarpana) rane\.$</string>
+											<string>^(?'attacker'\w+(?: \w+){0,4}) zatacza ostrzem (?'weapon' \w+ \w+ rapiera) szybki luk i wykorzystujac dezorientacje (?'target'\w+(?: \w+){0,4}) celnym pchnieciem trafia (?:go|ja) w (?'where'.+?)\. Napina miesnie i gwaltownie wyszarpuje klinge w bok, pozostawiajac (?'damage'poszarpana, krwawiaca) rane\.$</string>
+											<string>^(?'attacker'\w+(?: \w+){0,4}) skraca dystans i blyskawicznym, wezowym ruchem (?'damage'przebija) (?'target'\w+(?: \w+){0,4}) swoim (?'weapon'\w+ \w+ rapierem)! Nie czekajac az je(?:go|j) przeciwnik otrzasnie sie z szoku cofa ostrze i tnac na odlew trafia (?:go|ja) w (?'where'.+?) od razu przyjmujac pozycje do zadania nastepnego ciosu\.$</string>
+											<string>^(?'attacker'\w+(?: \w+){0,4}) przechodzi od statycznej zastawy do gwaltownego ataku wyprowadzajac blyskawiczne uderzenie\. Pchnieciem trafia (?'target'\w+(?: \w+){0,4}) w (?'where'.+?) otwierajac koncowka ostrza (?'weapon'\w+ \w+ rapiera) (?'damage'krwawiaca) rane\.$</string>
+											<string>^(?'attacker'\w+(?: \w+){0,4}) myli (?'target'cie|.+?) (?:szybka parada|zawila finta) i zachodzac (?:go |ja |)od (?:lewej|prawej) strony tnie na odlew ?\w+ \w+ rapierem\. Koncowka ostrza trafia (?:cie )?w .+? otwierajac plytka, choc dosyc (?'damage'dluga) rane\.$</string>
+										</regexCodeList>
+										<regexCodePropertyList>
+											<integer>1</integer>
+											<integer>1</integer>
+											<integer>1</integer>
+											<integer>1</integer>
+											<integer>1</integer>
+											<integer>1</integer>
+										</regexCodePropertyList>
+									</Trigger>
 								</TriggerGroup>
 								<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 									<name>drzewce</name>
@@ -7908,7 +8090,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 												<string>^Swoim kunsztownym mithrylowym toporem bojowym (?'damage'tnie)sz gleboko (?'target'.+?) w (?'where'.+?), a do twych uszu dochodzi zgrzyt ostrza o kosci\.$</string>
 												<string>^Tniesz gleboko swym kunsztownym mithrylowym toporem bojowym w (?'where_target'.+?) i slyszysz glosny odglos druzgotanych (?'damage'kosci)\.$</string>
 												<string>^Przy wtorze swistu powietrza (?'target'.+?) (?'damage'uskakuje) przed morderczym ciosem twojego kunsztownego mithrylowego topora bojowego\.$</string>
-												<string>^(?'target'.+?) niemal przewraca sie pod impetem twojego ciosu, gdy twoj kunsztowny mithrylowy topor bojowy (?'damage'trafia) go w (?'where'.+?)\.$</string>
+												<string>^(?'target''\w+(?: \w+){0,4}) niemal przewraca sie pod impetem twojego ciosu, gdy twoj kunsztowny mithrylowy topor bojowy (?'damage'trafia) go w (?'where'.+?)\.$</string>
 												<string>^Twoj kunsztowny mithrylowy topor bojowy brutalnie (?'damage'druzgocze) (?'where_target'.+?) ze smiercionosna sila\. (?'target'.+?) pada na ziemie jako zmasakrowane i niemal nierozpoznawalne cialo\.$</string>
 												<string>^Kunsztowny mithrylowy topor bojowy (?'attacker'.+?) (?'damage'dotyka) (?'target'.+?) w (?'where'.+?) robiac ladna, swieza rane\.$</string>
 												<string>^Swoim kunsztownym mithrylowym toporem bojowym (?'attacker'.+?) (?'damage'tnie) gleboko (?'target'.+?) w (?'where'.+?), a do twych uszu dochodzi zgrzyt ostrza o kosci\.$</string>
@@ -7916,8 +8098,10 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 												<string>^Kunsztowny mithrylowy topor bojowy (?'attacker'.+?) brutalnie (?'damage'druzgocze) (?'where_target'.+?) ze smiercionosna sila\. (?'target'.+?) pada na ziemie jako zmasakrowane i niemal nierozpoznawalne cialo\.$</string>
 												<string>^Przeprowadzasz (?'damage'ciezkie) uderzenie swoim kunsztownym mithrylowym toporem bojowym trafiajac (?'target'.+?) w (?'where_target'.+?)\.$</string>
 												<string>^Robisz szeroki zamach swoim kunsztownym mithrylowym toporem bojowym i widzisz jak przecinajac ze swistem powietrze (?'damage'rani) on (?'target'.+?) w (?'where_target'.+?)\.$</string>
+												<string>^(?'attacker'\w+(?: \w+){0,4}) tnie gleboko w (?'where_target'.+?), a ty slyszysz glosny odglos druzgotanych (?'damage'kosci)\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
+												<integer>1</integer>
 												<integer>1</integer>
 												<integer>1</integer>
 												<integer>1</integer>
@@ -8782,7 +8966,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 												<colorTriggerFgColor>#000000</colorTriggerFgColor>
 												<colorTriggerBgColor>#000000</colorTriggerBgColor>
 												<regexCodeList>
-													<string>^Potezne ciecie opalizujacego runicznego topora dosiega</string>
+													<string>^Potezne ciecie opalizujacego runicznego topora (?'attacker'\w+(?: \w+){0,4}) dosiega</string>
 												</regexCodeList>
 												<regexCodePropertyList>
 													<integer>1</integer>
@@ -9026,6 +9210,64 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 									<colorTriggerBgColor>#000000</colorTriggerBgColor>
 									<regexCodeList />
 									<regexCodePropertyList />
+									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+										<name>snieznobialy_lsniacy_sztylet</name>
+										<script>trigger_func_skrypty_ui_gags_ciosy_nieznobialy_lsniacy_sztylet_moje()</script>
+										<triggerType>0</triggerType>
+										<conditonLineDelta>0</conditonLineDelta>
+										<mStayOpen>0</mStayOpen>
+										<mCommand></mCommand>
+										<packageName></packageName>
+										<mFgColor>#ff0000</mFgColor>
+										<mBgColor>#ffff00</mBgColor>
+										<mSoundFile></mSoundFile>
+										<colorTriggerFgColor>#000000</colorTriggerFgColor>
+										<colorTriggerBgColor>#000000</colorTriggerBgColor>
+										<regexCodeList>
+											<string>^(?'attacker'\w+(?: \w+){0,4}) trafia snieznobialym lsniacym sztyletem w (?'where_target'.+?) pozostawiajac (?'damage'niewielka) rane\.$</string>
+											<string>^(?'attacker'\w+(?: \w+){0,4}) wyprowadza szybkie pchniecie swoim snieznobialym lsniacym sztyletem mierzac w (?'where_target'.+?) jednak (?'damage'nie udaje) (?:jej|mu) sie trafic\.$</string>
+											<string>^(?'attacker'\w+(?: \w+){0,4}) trafia swoim snieznobialym lsniacym sztyletem w (?'where_target'.+?), jednak nie zadaje (?:mu|jej) (?'damage'zadnych) obrazen\.$</string>
+											<string>^(?'attacker'\w+(?: \w+){0,4}) mocnym pchnieciem snieznobialym lsniacym sztyletem trafia (?'target'.+?) w (?'where'.+?) zadajac (?:jej|mu) (?'damage'powazna) rane\.$</string>
+											<string>^(?'attacker'\w+(?: \w+){0,4}) wyprowadza szybkie pchniecie snieznobialym lsniacym sztyletem i trafia (?'target'.+?) w (?'where'.+?), (?'damage'wbijajac) (?:jej|mu) go az po rekojesc\.$</string>
+											<string>^(?'attacker'\w+(?: \w+){0,4}) wyprowadza (?'damage'idealne) pchniecie snieznobialym lsniacym sztyletem trafiajac (?'target'.+?) w (?'where'.+?)\. Krew szeroko tryska z rany\.$</string>
+										</regexCodeList>
+										<regexCodePropertyList>
+											<integer>1</integer>
+											<integer>1</integer>
+											<integer>1</integer>
+											<integer>1</integer>
+											<integer>1</integer>
+											<integer>1</integer>
+										</regexCodePropertyList>
+									</Trigger>
+									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+										<name>lodowy_lsniacy_sztylet</name>
+										<script>trigger_func_skrypty_ui_gags_ciosy_lodowy_lsniacy_sztylet_moje()</script>
+										<triggerType>0</triggerType>
+										<conditonLineDelta>0</conditonLineDelta>
+										<mStayOpen>0</mStayOpen>
+										<mCommand></mCommand>
+										<packageName></packageName>
+										<mFgColor>#ff0000</mFgColor>
+										<mBgColor>#ffff00</mBgColor>
+										<mSoundFile></mSoundFile>
+										<colorTriggerFgColor>#000000</colorTriggerFgColor>
+										<colorTriggerBgColor>#000000</colorTriggerBgColor>
+										<regexCodeList>
+											<string>^(?'attacker'\w+(?: \w+){0,4}) z sila snieznej lawiny wbija swoj lodowy lsniacy sztylet w (?'where_target'.+?)\. Mrozne ostrze wnika gleboko, a rozchodzace sie z niego fale chlodu zadaja (?'damage'.*) obrazenia\.$</string>
+											<string>^Przeciagle wycie upiornych wilkow polnocy rozbrzmiewa w twych uszach, gdy spowity mrozna energia lodowy lsniacy sztylet ((?'attacker'.+?) )?(?'damage'mija) (?'target'.+?) o wlos\.$</string>
+											<string>^Skrzace sie ostrze lodowego lsniacego sztyletu (?'attacker'.+?) samym tylko czubkiem trafia w (?'where_target'.+?), pozostawiajac na je(?:go|j) skorze niewielka (?'damage'szrame)\.$</string>
+											<string>^Wycie mroznego wichru dalekiej polnocy dzwieczy ci w uszach, gdy lodowy lsniacy sztylet (?'attacker'.+?) (?'damage'rozcina) (?'where_target'.+?)\. Twarz zranionego wykrzywia grymas bolu, gdy niebieskawa fala chlodu rozplywa sie po jego ciele\.$</string>
+											<string>^Rozpedzony lodowy lsniacy sztylet (?'attacker'\w+(?: \w+){0,4}) wbija sie plytko w (?'where_target'.+?), pozostawiajac po sobie niewielka, lekko (?'damage'zmrozona) rane\.$</string>
+										</regexCodeList>
+										<regexCodePropertyList>
+											<integer>1</integer>
+											<integer>1</integer>
+											<integer>1</integer>
+											<integer>1</integer>
+											<integer>1</integer>
+										</regexCodePropertyList>
+									</Trigger>
 									<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 										<name>czarny_smukly_kordelas</name>
 										<script></script>
@@ -9047,7 +9289,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										</regexCodePropertyList>
 										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 											<name>czarny_kordelas</name>
-											<script>trigger_func_skrypty_ui_gags_ciosy_czarny_smukly_kordelas()</script>
+											<script></script>
 											<triggerType>0</triggerType>
 											<conditonLineDelta>0</conditonLineDelta>
 											<mStayOpen>0</mStayOpen>
@@ -9059,19 +9301,45 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerFgColor>#000000</colorTriggerFgColor>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
-												<string>^Uderzasz (?P&lt;target&gt;.+?) czarnym smuklym kordelasem (?P&lt;damage&gt;trafiajac) (?:go|ja) w (?P&lt;where&gt;.+?)\.$</string>
-												<string>^Wykonujesz krotki (?P&lt;damage&gt;zamach) i ranisz (?P&lt;target&gt;.+?) ostrzem czarnego smuklego kordelasa trafiajac (?:go|ja) w (?P&lt;where&gt;.+?)\.$</string>
-												<string>^Tniesz na odlew i trafiasz (?P&lt;target&gt;.+?) czarnym smuklym kordelasem w (?P&lt;where&gt;.+?) (?P&lt;damage&gt;powaznie) (?:go|ja) raniac\.$</string>
-												<string>^Wzmacniajac cios gwaltownym zamachem trafiasz (?P&lt;target&gt;.+?) ostrzem czarnego smuklego kordelasa w (?P&lt;where&gt;.+?) (?P&lt;damage&gt;bardzo ciezko) (?:go|ja) raniac\.$</string>
-												<string>^Zwijasz sie w polpiruecie i uderzasz (?P&lt;target&gt;.+?) ostrzem czarnego smuklego kordelasa\. Widzisz jak czubek w sztyletu wbija sie w (?P&lt;where&gt;.+?) przeciwni(?:ka|czki) otwierajac paskudna, (?P&lt;damage&gt;poszarpana rane)\.$</string>
+												<string>return scripts.gags:is_type("combat.avatar")</string>
 											</regexCodeList>
 											<regexCodePropertyList>
-												<integer>1</integer>
-												<integer>1</integer>
-												<integer>1</integer>
-												<integer>1</integer>
-												<integer>1</integer>
+												<integer>4</integer>
 											</regexCodePropertyList>
+											<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+												<name>czarny_smukly_kordelas_moje</name>
+												<script>trigger_func_skrypty_ui_gags_ciosy_czarny_smukly_kordelas_moje()</script>
+												<triggerType>0</triggerType>
+												<conditonLineDelta>0</conditonLineDelta>
+												<mStayOpen>0</mStayOpen>
+												<mCommand></mCommand>
+												<packageName></packageName>
+												<mFgColor>#ff0000</mFgColor>
+												<mBgColor>#ffff00</mBgColor>
+												<mSoundFile></mSoundFile>
+												<colorTriggerFgColor>#000000</colorTriggerFgColor>
+												<colorTriggerBgColor>#000000</colorTriggerBgColor>
+												<regexCodeList>
+													<string>^Naglym wypadem trafiasz (?'target'.+?) czarnym smuklym kordelasem w (?'where'.+?) lekko (?:go|ja) (?'damage'raniac)\.$</string>
+													<string>^(?'damage'Uderzasz) (?'target'.+?) czarnym smuklym kordelasem trafiajac (?:go|ja) w (?'where'.*)\.$</string>
+													<string>^Wykonujesz krotki zamach i (?'damage'ranisz) (?'target'.+?) ostrzem czarnego smuklego kordelasa trafiajac (?:go|ja) w (?'where'.*)\.$</string>
+													<string>^Zwijasz sie w polpiruecie i uderzasz (?'target'.+?) ostrzem czarnego smuklego kordelasa\. Widzisz, jak czubek sztyletu wbija sie w (?'where'.+?) przeciwnika otwierajac paskudna, (?'damage'poszarpana) rane\.$</string>
+													<string>^Tniesz na odlew i trafiasz (?'target'.+?) czarnym smuklym kordelasem w (?'where'.+?) (?'damage'powaznie) (?:go|ja) raniac\.$</string>
+													<string>^Przyskakujesz do (?'target'.+?) i (?'damage'poteznie) uderzasz od dolu\. Cios, zbyt gwaltowny by ofiara mogla chociaz pomyslec o obronie, blyskawicznie dosiega ciala przeciwnika\. Widzisz jak masywne ostrze czarnego smuklego kordelasa bez najmniejszych problemow otwiera dluga, poszarpana bruzde\. Wykorzystujac szanse, z calej sily napierasz na bron, wbijajac ja coraz mocniej i glebiej\.\.\.$</string>
+													<string>^Wzmacniajac cios gwaltownym zamachem trafiasz (?'target'.+?) ostrzem czarnego smuklego kordelasa w (?'where'.+?) bardzo (?'damage'ciezko) (?:go|ja) raniac\.$</string>
+													<string>^Ostrze twojego czarnego smuklego kordelasa trafia (?'target'.+?), jednak (?'damage'nie wyrzadza) (?:jej|mu) wiekszej krzywdy\.$</string>
+												</regexCodeList>
+												<regexCodePropertyList>
+													<integer>1</integer>
+													<integer>1</integer>
+													<integer>1</integer>
+													<integer>1</integer>
+													<integer>1</integer>
+													<integer>1</integer>
+													<integer>1</integer>
+													<integer>1</integer>
+												</regexCodePropertyList>
+											</Trigger>
 										</Trigger>
 										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 											<name>czarny_kordelas_innych</name>
@@ -9087,13 +9355,15 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerFgColor>#000000</colorTriggerFgColor>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
-												<string>^(?'attacker'\w+(?: \w+){0,4}) uderza (?'target'.+?) czarnym smuklym kordelasem (?'damage'trafiajac) (?:go|ja) w (?'where'.+?)\.$</string>
+												<string>^(?'attacker'\w+(?: \w+){0,4}) uderza (?'target'.+?) czarnym smuklym kordelasem (?'damage'trafiajac) (?:go|ja) w (?'where'.*)\.$</string>
 												<string>^(?'attacker'\w+(?: \w+){0,4}) wykonuje krotki (?'damage'zamach) i rani (?'target'.+?) trafiajac (?:go|ja) w (?'where'.+?) ostrzem czarnego smuklego kordelasa\.$</string>
 												<string>^(?'attacker'\w+(?: \w+){0,4}) tnie na odlew i trafia (?'target'.+?) czarnym smuklym kordelasem w (?'where'.+?) (?'damage'powaznie) (?:go|ja) raniac\.$</string>
 												<string>^(?'attacker'\w+(?: \w+){0,4}) wzmacniajac cios gwaltownym zamachem trafia (?'target'.+?) czarnym smuklym kordelasem w (?'where'.+?) (?'damage'bardzo ciezko) (?:go|ja) raniac\.$</string>
 												<string>^(?'attacker'\w+(?: \w+){0,4}) naglym wypadem trafia (?'target'.+?) czarnym smuklym kordelasem w (?'where'.+?) lekko (?:go|ja|cie) (?'damage'raniac)\.$</string>
+												<string>^(?'attacker'\w+(?: \w+){0,4}) uderza czarnym smuklym kordelasem (?'damage'trafiajac) (?'target'cie) w (?'where'.*)\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
+												<integer>1</integer>
 												<integer>1</integer>
 												<integer>1</integer>
 												<integer>1</integer>
@@ -9115,11 +9385,9 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerFgColor>#000000</colorTriggerFgColor>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
-												<string>^Przyskakujesz do (?P&lt;target&gt;.+?) i poteznie uderzasz od dolu\. Cios, zbyt gwaltowny by ofiara mogla chociaz pomyslec o obronie, blyskawicznie dosiega ciala przeciwni(?:ka|czki)\. Widzisz jak masywne ostrze czarnego smuklego kordelasa bez najmniejszych problemow otwiera dluga, poszarpana bruzde\. Wykorzystujac szanse, z calej sily napierasz na bron, wbijajac ja coraz mocniej i glebiej\.\.\.$</string>
-												<string>^(?P&lt;attacker&gt;.+?) przyskakuje do (?P&lt;target&gt;.+?) i poteznie uderza od dolu\. Cios, zbyt gwaltowny by ofiara mogla chociaz pomyslec o obronie, blyskawicznie dosiega ciala atakowane(?:go|j)\. Widzisz jak masywne ostrze czarnego smuklego kordelasa bez najmniejszych problemow otwiera dluga, poszarpana bruzde\. Wykorzystujac szanse, .+ z calej sily napiera na bron, wbijajac ja coraz mocniej i glebiej\.\.\.$</string>
+												<string>^(?'attacker'\w+(?: \w+){0,4}) przyskakuje do (?'target'.+?) i poteznie uderza od dolu\. Cios, zbyt gwaltowny by ofiara mogla chociaz pomyslec o obronie, blyskawicznie dosiega ciala atakowane(?:go|j)\. Widzisz jak masywne ostrze czarnego smuklego kordelasa bez najmniejszych problemow otwiera dluga, poszarpana bruzde\. Wykorzystujac szanse, .+ z calej sily napiera na bron, wbijajac ja coraz mocniej i glebiej\.\.\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
-												<integer>1</integer>
 												<integer>1</integer>
 											</regexCodePropertyList>
 										</Trigger>
@@ -9190,8 +9458,8 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											</regexCodePropertyList>
 										</Trigger>
 									</TriggerGroup>
-									<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-										<name>lodowy_sztylet</name>
+									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+										<name>sztylety_moje</name>
 										<script></script>
 										<triggerType>0</triggerType>
 										<conditonLineDelta>0</conditonLineDelta>
@@ -9204,14 +9472,14 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>lodow\w+ lsniac\w+ sztyle\w+</string>
+											<string>return scripts.gags:is_type("combat.avatar")</string>
 										</regexCodeList>
 										<regexCodePropertyList>
-											<integer>1</integer>
+											<integer>4</integer>
 										</regexCodePropertyList>
 										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-											<name>lodowy_sztylet</name>
-											<script>trigger_func_skrypty_ui_gags_ciosy_lodowy_sztylet()</script>
+											<name>lodowy_lsniacy_sztylet_moje</name>
+											<script>trigger_func_skrypty_ui_gags_ciosy_lodowy_lsniacy_sztylet_moje()</script>
 											<triggerType>0</triggerType>
 											<conditonLineDelta>0</conditonLineDelta>
 											<mStayOpen>0</mStayOpen>
@@ -9223,12 +9491,80 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerFgColor>#000000</colorTriggerFgColor>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
-												<string>^Skrzace sie ostrze (?:twojego |)lodowego lsniacego sztyletu (?P&lt;attacker&gt;.*?)samym tylko czubkiem trafia w (?P&lt;where_target&gt;.+?), pozostawiajac na (?:jego|jej) skorze (?P&lt;damage&gt;niewielka szrame)\.$</string>
-												<string>^Rozpedzony lodowy lsniacy sztylet wbija sie plytko w (?P&lt;where_target&gt;.+?) pozostawiajac po sobie niewielka, (?P&lt;damage&gt;lekko zmrozona rane)\.$</string>
-												<string>^Wycie mroznego wichru dalekiej polnocy dzwieczy ci w uszach, gdy (?:twoj |)lodowy lsniacy sztylet (?P&lt;attacker&gt;.*?)(?P&lt;damage&gt;rozcina) (?P&lt;where_target&gt;.+?)\. Twarz (?:przeciwni(?:ka|czki)|zranion(?:ego|ej)) wykrzywia grymas bolu, gdy (?:niebieskawa |)fala (?:obezwladniajacego |)chlodu (?:przeplywa przez|rozplywa sie po) (?:jego|jej) ci(?:alo|ele)\.$</string>
-												<string>^Przed oczyma staje ci obraz snieznej burzy, gdy (?P&lt;attacker&gt;.*?)wbija(?:sz|) swoj lodowy lsniacy sztylet gleboko w (?P&lt;where_target&gt;.+?)\. Na ciele (?:przeciwni(?:ka|czki)|ofiary) krysztalki lodu mieszaja sie ze (?P&lt;damage&gt;szkarlatna krwia) (?:saczaca sie|wyplywajaca) z rany\.$</string>
-												<string>^Blyskawiczne pchniecie (?:twoim |)lodow\w+ lsniac\w+ sztylet\w+ (?P&lt;attacker&gt;.*?)w (?P&lt;where_target&gt;.+?) pozostawia (?:po sobie|na je(?:go|j) ciele) buchajaca krwia, (?P&lt;damage&gt;powazna rane)\. W powietrzu unosza sie smuzki bialej pary, powstajacej gdy ciepla posoka miesza sie z (?:lodowatym|mroznym) ostrzem (?:twej|tej) zabojczej broni\.$</string>
-												<string>^Wzbierajaca w ostrzu (?:twojego |)lodowego lsniacego sztyletu (?P&lt;attacker&gt;.*?)fala chlodu przenika na wskros cialo (?P&lt;target&gt;.+?), gdy (?:wbijasz (?:mu|jej) swa potezna bron|mrozna bron wbija (?:mu|jej) sie) prosto w (?P&lt;where&gt;.+?)\. Z otwartej w ten sposob rany wyplywa strumien (?P&lt;damage&gt;jaskrawoczerwonej krwi)\.$</string>
+												<string>^Blyskawiczne pchniecie twoim lodowym lsniacym sztyletem w (?'where_target'.+?) pozostawia po sobie buchajaca krwia, (?'damage'powazna rane)\. W powietrzu unosza sie smuzki bialej pary, powstajacej gdy ciepla posoka miesza sie z lodowatym ostrzem twej zabojczej broni\.$</string>
+												<string>^Przed oczyma staje ci obraz snieznej burzy, gdy wbijasz swoj lodowy lsniacy sztylet gleboko w (?'where_target'.+?)\. Na ciele przeciwni(?:czki|ka) krysztalki lodu mieszaja sie ze (?'damage'szkarlatna) krwia saczaca sie z rany\.$</string>
+												<string>^Rozpedzony lodowy lsniacy sztylet wbija sie plytko w (?'where_target'.+?), pozostawiajac po sobie niewielka, lekko (?'damage'zmrozona) rane\.$</string>
+												<string>^Skrzace sie ostrze twojego lodowego lsniacego sztyletu samym tylko czubkiem trafia w (?'where_target'.+?), pozostawiajac na je(?:go|j) skorze niewielka (?'damage'szrame)\.$</string>
+												<string>^Twoj lodowy lsniacy sztylet ze swistem przeslizguje sie tuz obok (?'target'.+?) ciagnac za soba cieniutka (?'damage'smuge) bialych krysztalkow lodu\.$</string>
+												<string>^Wycie mroznego wichru dalekiej polnocy dzwieczy ci w uszach, gdy twoj lodowy lsniacy sztylet rozcina (?'where_target'.+?)\. Twarz przeciwni(?:ka|czki) wykrzywia (?'damage'grymas) bolu, gdy fala obezwladniajacego chlodu przeplywa przez je(?:go|j) cialo\.$</string>
+												<string>^Wykorzystujac nieudolnosc i oslabienie swego przeciwnika, (?'damage'blyskawicznie) wyrzucasz reke dzierzaca lodowy lsniacy sztylet w jego kierunku i wbijasz smukle, mrozne ostrze az po sama garde\. Z ust (?'target'.+?) wydobywa sie niemal bezglosny jek, gdy obezwladniajace zimno popycha go w ramiona smierci\.$</string>
+												<string>^Wzbierajaca w ostrzu twojego lodowego lsniacego sztyletu fala chlodu przenika na wskros cialo (?'target'.+?), gdy wbijasz (?:jej|mu) swa potezna bron prosto w (?'where'.+?)\. Z otwartej w ten sposob rany wyplywa (?'damage'strumien) jaskrawoczerwonej krwi\.$</string>
+												<string>^Z sila snieznej lawiny wbijasz swoj lodowy lsniacy sztylet w (?'where_target'.+?)\. Mrozne ostrze wnika gleboko, a rozchodzace sie z niego fale chlodu zadaja (?'damage'.+?) obrazenia\.$</string>
+											</regexCodeList>
+											<regexCodePropertyList>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+											</regexCodePropertyList>
+										</Trigger>
+										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+											<name>polyskujacy_zdobiony_sztylet_moje</name>
+											<script>trigger_func_skrypty_ui_gags_ciosy_polyskujacy_zdobiony_sztylet_moje()</script>
+											<triggerType>0</triggerType>
+											<conditonLineDelta>0</conditonLineDelta>
+											<mStayOpen>0</mStayOpen>
+											<mCommand></mCommand>
+											<packageName></packageName>
+											<mFgColor>#ff0000</mFgColor>
+											<mBgColor>#ffff00</mBgColor>
+											<mSoundFile></mSoundFile>
+											<colorTriggerFgColor>#000000</colorTriggerFgColor>
+											<colorTriggerBgColor>#000000</colorTriggerBgColor>
+											<regexCodeList>
+												<string>^Trafiasz (?'target'.+?) w (?'where'.+?) trzymanym w rece sztyletem, (.+?) (?:go|ja) (?'damage'.*)\.$</string>
+												<string>^Probujesz trafic (?'target'.+?) trzymanym w rece polyskujacym zdobionym sztyletem, ale twoj cios nieznacznie (?'damage'mija) cel\.$</string>
+												<string>^Blyskawicznym ruchem wyrzucasz przed siebie trzymajaca zdobiony sztylet reke, (?'damage'raniac) (?'target'.+?) ta dziwna bronia w (?'where'.+?)\.$</string>
+												<string>^Wkladajac w pchniecie cala swoja sile blyskawicznym ruchem wbijasz sztylet w cialo (?'target'.+?)\. Uswiadamiasz sobie, jak (?'damage'celne) bylo twoje uderzenie dopiero w chwili, gdy nieruchome juz cialo osuwa sie na ziemie\. Jakby cieszac sie z wlasnie zadanej smierci klejnoty zdobiace bron rozblyskuja na chwile silniejszym swiatlem\.$</string>
+												<string>^Wykorzystujac luke w obronie przeciwnika przyskakujesz do (?'target'.+?) i z rozmachem (?'damage'trafiasz) (?:go|ja) w (?'where'.+?) trzymanym w rece sztyletem\.$</string>
+												<string>^Szybkim zwodem dezorientujesz (?'target'.+?) po czym blyskawicznie uderzasz (?:go|ja) zdobionym sztyletem w (?'where'.+?), zadajac (?'damage'powazne) obrazenia\.$</string>
+												<string>^Wykonujesz szybki polobrot i wyprowadzasz cios, ktorego (?'target'.+?) nie jest w stanie ani uniknac, ani sparowac\. Ostrze sztyletu trafia w (?'where'.+?) przeciwnika, (?'damage'zaglebiajac) sie w ciele\.$</string>
+											</regexCodeList>
+											<regexCodePropertyList>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+											</regexCodePropertyList>
+										</Trigger>
+										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+											<name>snieznobialy_lsniacy_sztylet_moje</name>
+											<script>trigger_func_skrypty_ui_gags_ciosy_nieznobialy_lsniacy_sztylet_moje()</script>
+											<triggerType>0</triggerType>
+											<conditonLineDelta>0</conditonLineDelta>
+											<mStayOpen>0</mStayOpen>
+											<mCommand></mCommand>
+											<packageName></packageName>
+											<mFgColor>#ff0000</mFgColor>
+											<mBgColor>#ffff00</mBgColor>
+											<mSoundFile></mSoundFile>
+											<colorTriggerFgColor>#000000</colorTriggerFgColor>
+											<colorTriggerBgColor>#000000</colorTriggerBgColor>
+											<regexCodeList>
+												<string>^Trafiasz snieznobialym lsniacym sztyletem w (?'where_target'.+?) pozostawiajac (?'damage'niewielka) rane\.$</string>
+												<string>^Wyprowadzasz szybkie pchniecie swoim snieznobialym lsniacym sztyletem mierzac w (?'where_target'.+?), jednak (?'damage'nie udaje) ci sie (?:go|jej) trafic\.$</string>
+												<string>^Trafiasz (?'target'.+?) swoim snieznobialym lsniacym sztyletem w (?'where'.+?), jednak nie zadajesz (?:mu|jej) (?'damage'zadnych) obrazen\.$</string>
+												<string>^Mocnym pchnieciem snieznobialym lsniacym sztyletem trafiasz (?'target'.+?) w (?'where'.+?) zadajac (?:jej|mu) (?'damage'powazna) rane\.$</string>
+												<string>^Wyprowadzasz szybkie pchniecie snieznobialym lsniacym sztyletem i trafiasz (?'target'.+?) w (?'where'.+?), (?'damage'wbijajac) (?:jej|mu) go az po rekojesc\.$</string>
+												<string>^Twoje (?'damage'idealne) pchniecie snieznobialym lsniacym sztyletem trafia (?'target'.+?) w (?'where'.+?)\. Krew szeroko tryska z rany\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
 												<integer>1</integer>
@@ -9240,8 +9576,8 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											</regexCodePropertyList>
 										</Trigger>
 										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-											<name>lodowy_sztylet_spec</name>
-											<script>trigger_func_skrypty_ui_gags_ciosy_lodowy_sztylet_spec()</script>
+											<name>stalowe_smocze_pazury_moje</name>
+											<script>trigger_func_skrypty_ui_gags_ciosy_stalowe_smocze_pazury_moje()</script>
 											<triggerType>0</triggerType>
 											<conditonLineDelta>0</conditonLineDelta>
 											<mStayOpen>0</mStayOpen>
@@ -9253,15 +9589,49 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerFgColor>#000000</colorTriggerFgColor>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
-												<string>(?P&lt;attacker&gt;.*?)[Zz] sila snieznej lawiny wbija(?:sz|) swoj lodowy lsniacy sztylet w (?P&lt;where_target&gt;.+?)\. Mrozne ostrze wnika gleboko, a rozchodzace sie z niego fale chlodu zadaja jedynie (?P&lt;damage&gt;nieznaczne|nieduze|bolesne|znaczne|bardzo rozlegle|potworne) obrazenia\.$</string>
+												<string>^Doskakujesz do (?'target'.+?) i z grymasem na twarzy blyskawicznie (?'damage'tniesz) (?:go|ja) swymi stalowymi smoczymi pazurami w (?'where'.*)\.$</string>
+												<string>^Nagle skrecasz swe cialo i wezowym ruchem omijasz zaslone (?'target'.+?)\. Jedynie swist powietrza zdradza zadany z blyskawiczna szybkoscia cios, gdy stalowe smocze pazury rania (?'damage'gleboko) (.+?) w (?'where'.*)\.$</string>
+												<string>^Odchylasz sie nieco w tyl i z zimnym usmiechem na ustach wyprowadzasz swymi stalowymi smoczymi pazurami zaskakujace ciecie od dolu, (?'damage'lekko) zahaczajac (?'target'.+?) w (?'where'.*)\.$</string>
+												<string>^Ostrza stalowych smoczych pazurow z jazgotem zsuwaja sie po (.+?), gdy (?'target'.+?) (?'damage'wyparowuje) twoj cios\.$</string>
+												<string>^Wykonujesz blyskawiczny obrot wyrzucajac w przod swoja uzbrojona w stalowe smocze pazury dlon\. Blysk zimnej stali przecina powietrze, gdy (?'damage'lekko) ranisz (?'target'.+?) w (?'where'.*)\.$</string>
+												<string>^Wykonujesz blyskawiczny obrot wyrzucajac w przod swoja uzbrojona w stalowe smocze pazury dlon\. Blysk zimnej stali przecina powietrze, a ostrza wbijaja sie  w (?'where_target'.+?) pozostawiajac (?'damage'paskudna) szrame\.$</string>
+												<string>^Poziomym cieciem swoich stalowych smoczych pazurow godzisz w (?'target'.+?), trafiajac w (?'where'.+?) i wywolujac (?'damage'bolesny) grymas na jego twarzy\.$</string>
+												<string>^Wykonujesz plynny polobrot dla zmylenia (?'target'.+?), zyskujac tym samym czas niezbedny do zadania bardziej precyzyjnego ciosu\. Poziomym cieciem swoichstalowych smoczych pazurow godzisz w ni(a|ego), (?'damage'celnie) trafiajac w (?'where'.*)\.$</string>
+											</regexCodeList>
+											<regexCodePropertyList>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+											</regexCodePropertyList>
+										</Trigger>
+										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+											<name>tileanskie_sprezynowe_stiletto_moje</name>
+											<script>trigger_func_skrypty_ui_gags_ciosy_tileanskie_sprezynowe_stiletto_moje()</script>
+											<triggerType>0</triggerType>
+											<conditonLineDelta>0</conditonLineDelta>
+											<mStayOpen>0</mStayOpen>
+											<mCommand></mCommand>
+											<packageName></packageName>
+											<mFgColor>#ff0000</mFgColor>
+											<mBgColor>#ffff00</mBgColor>
+											<mSoundFile></mSoundFile>
+											<colorTriggerFgColor>#000000</colorTriggerFgColor>
+											<colorTriggerBgColor>#000000</colorTriggerBgColor>
+											<regexCodeList>
+												<string>^Trafiasz (?'target'.+?) tileanskim sprezynowym stilettem w (?'where'.+?), raniac (?:go|ja)\. Zwalniasz sprezyne, a potrojne .* (?'damage'.*)$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
 												<integer>1</integer>
 											</regexCodePropertyList>
 										</Trigger>
 										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-											<name>lodowy_sztylet_fin</name>
-											<script>trigger_func_skrypty_ui_gags_ciosy_bron_fin()</script>
+											<name>szylkretowy_falisty_sztylet</name>
+											<script>trigger_func_skrypty_ui_gags_ciosy_szylkretowy_falisty_sztylet_moje()</script>
 											<triggerType>0</triggerType>
 											<conditonLineDelta>0</conditonLineDelta>
 											<mStayOpen>0</mStayOpen>
@@ -9273,15 +9643,15 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerFgColor>#000000</colorTriggerFgColor>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
-												<string>^Wykorzystujac nieudolnosc i oslabienie swego przeciwni(?:ka|czki), blyskawicznie wyrzucasz reke dzierzaca lodowy lsniacy sztylet w (?:jego|jej) kierunku i wbijasz smukle, mrozne ostrze az po sama garde\. Z ust (?P&lt;target&gt;.+?) wydobywa sie niemal bezglosny jek, gdy obezwladniajace zimno popycha (?:go|ja) w ramiona smierci\.$</string>
-												<string>^Wykorzystujac nieudolnosc i oslabienie swego przeciwni(?:ka|czki) (?P&lt;attacker&gt;.+?) blyskawicznie wyrzuca reke dzierzaca lodowy lsniacy sztylet i wbija smukle, mrozne ostrze w (?P&lt;where_target&gt;.+?) az po sama garde\. Z je(?:go|j) ust wydostaje sie niemal bezglosny jek, gdy obezwladniajace zimno popycha (?:go|ja) prosto w ramiona smierci\.$</string>
+												<string>^Z (moca szkwalu|naporem spienionej fali|sila sztormu|szybkoscia zaglicy|potega wzburzonego morza|zajadloscia morskiego weza) wbijasz swoj szylkretowy falisty sztylet w (?'where_target'.+?), zostawiajac na ciele ofiary (?'damage'nieznaczne|nieduze|znaczne|bolesne|potworne|powazne|bardzo rozlegle) obrazenia\.$</string>
+												<string>^Perla osadzona w glowicy szylkretowego falistego sztyletu wydaje sie na chwile blaknac, gdy jego ostrze (?'damage'mija) (?'target'.*)\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
 												<integer>1</integer>
 												<integer>1</integer>
 											</regexCodePropertyList>
 										</Trigger>
-									</TriggerGroup>
+									</Trigger>
 								</TriggerGroup>
 							</TriggerGroup>
 							<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -11502,31 +11872,33 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<string>^Blyskawicznie wyrzucasz przed siebie reke dzierzaca (?'weapon'.+?), trafiajac (?'target'.+?) w (?'where'.+?)\. Ofiara krzywi sie z bolu, a ty wyszarpujesz szybko swa bron, pozostawiajac (?'damage'krwawiaca) rane\.$</string>
 											<string>^Celujac w (?'where_target'.+?) (?'damage'zaglebiasz) (?'weapon'.+?) az po rekojesc, a gdy wyciagasz (?:go|ja|je) z rany zauwazasz, ze cala jest czerwona od krwi\.$</string>
 											<string>^Korzystajac z nieuwagi (?'target'.+?) klujesz je(?:go|j) cialo (?'weapon'.+?) zostawiajac tylko lekkie (?'damage'drasniecie)\.$</string>
-											<string>^Mruzysz oczy, nie spuszczajac ani na chwile wzroku z (?'target'.+?), a gdy t(?:a|en|o) przygotowuje sie do zadania ciosu, blyskawicznie wyrzucasz przed siebie reke dzierzaca (?'weapon'.+?), trafiajac go w (?'where'.+?)\. Ofiara chwieje sie przez chwile, a ty wyszarpujesz szybko swa bron, pozostawiajac po ciosie (?'damage'rozlegle) obrazenia\.$</string>
+											<string>^Mruzysz oczy, nie spuszczajac ani na chwile wzroku z (?'target'.+?), a gdy t(?:a|en|o) przygotowuje sie do zadania ciosu, blyskawicznie wyrzucasz przed siebie reke dzierzaca (?'weapon'.+?), trafiajac (?:go|ja|je) w (?'where'.+?)\. Ofiara chwieje sie przez chwile, a ty wyszarpujesz szybko swa bron, pozostawiajac po ciosie (?'damage'rozlegle) obrazenia\.$</string>
 											<string>^Obracajac w reku (?'weapon'.+?) wykonujesz nagly zwod i trafiasz (?'target'.+?) pozostawiajac tylko (?'damage'nieznaczne) obrazenia\.$</string>
 											<string>^Odskakujesz do tylu, a (?'weapon'.+?), ktor[aey] trzymasz w rece, zatacza(ja)? szeroki luk by ostatecznie trafic (?'target'.+?), zadajac jednak tylko (?'damage'nieznaczne) obrazenia\.$</string>
 											<string>^Poziomym cieciem swoje(?:go|j) (?'weapon'.+?) godzisz w (?'target'.+?), trafiajac w (?'where'.+?) i wywolujac (?'damage'bolesny) grymas na .*\.$</string>
 											<string>^Sprezasz sie do skoku probujac ugodzic (?'target'.+?) sw(a|ym|ymi) (?'weapon'.+?), lecz tracisz koncentracje i twoj niecelny cios (?'damage'mija) cel o wlos\.$</string>
 											<string>^Unikajac uderzenia (?'target'.+?) blyskawicznie (?'damage'doskakujesz) do nie(?:go|j) i .*$</string>
 											<string>^Uwaznie sledzisz ruchy (?'target'.+?) i trafiajac (?:go|ja) w (?'where'.+?) sw(a|ym|ymi) (?'weapon'.+?) zostawiasz (?'damage'bolesna) rane\.$</string>
-											<string>^Uwaznie sledzisz ruchy (?'target'.+?), a gdy t(?:a|en|o) na chwile odslania sie, doskakujesz don i trafiasz go w (?'where'.+?) sw(a|ym|ymi) (?'weapon'.+?), zadajac (?'damage'znaczne) obrazenia\.$</string>
+											<string>^Uwaznie sledzisz ruchy (?'target'.+?), a gdy t(?:a|en|o) na chwile odslania sie, doskakujesz don i trafiasz (?:go|ja) w (?'where'.+?) sw(a|ym|ymi) (?'weapon'.+?), zadajac (?'damage'znaczne) obrazenia\.$</string>
 											<string>^Wykonujesz pare oszczednych unikow starajac sie zmeczyc (?'target'.+?) i gdy t(?:a|en) przystaje na chwile by zlapac oddech, (?'damage'wbijasz) swoj(|a|e) (?'weapon'.+?)\.$</string>
 											<string>^Wykonujesz szybki wypad by trafic (?'target'.+?) sw(a|ym|ymi)? (?'weapon'.+?) pozostawiajac na je(?:go|j) ciele (?'damage'nieznaczne) drasniecie\.$</string>
 											<string>^Wykorzystujac chwilowa dekoncentracje (?'target'.+?), wbijasz swoj(|a|e) (?'weapon'.+?) w je(go|j) cialo pozostawiajac lekkie (?'damage'drasniecie)\.$</string>
-											<string>^Wykorzystujac dekoncentracje i oslabienie (?'target'.+?), silnym kopnieciem podcinasz (?:go|ja), rownoczesnie wyrzucajac do przodu swa reke z (?'weapon'.+?)\. Przeciwnik traci rownowage i (?'damage'osuwa) sie na twa bron.*$</string>
-											<string>^Wykorzystujac dogodna chwile doskakujesz do (?'target'.+?), (a|ale udaje mu sie w pore zorientowac i) twoj(|a|e) (?'weapon'.+?) zostawia po sobie tylko lekkie (?'damage'drasniecie)\.$</string>
+											<string>^Wykorzystujac dekoncentracje i oslabienie (?'target'.+?), silnym kopnieciem podcinasz (?:go|ja|je), rownoczesnie wyrzucajac do przodu swa reke z (?'weapon'.+?)\. Przeciwnik traci rownowage i (?'damage'osuwa) sie na twa bron.*$</string>
+											<string>^Wykorzystujac dogodna chwile doskakujesz do (?'target'.+?), (a|ale udaje (jej|mu) sie w pore zorientowac i) twoj(|a|e) (?'weapon'.+?) zostawia po sobie tylko lekkie (?'damage'drasniecie)\.$</string>
 											<string>^Wykorzystujac dogodna sytuacje rzucasz sie na (?'target'.+?), pragnac pchnac (?:go|ja) (?'weapon'.+?), jednak twoj (?'damage'nieskoordynowany) ruch nie jest w stanie nikogo zaskoczyc\.$</string>
 											<string>^Wypatrujac luke w obronie (?'target'.+?) blyskawicznie skracasz dystans i trafiasz (?:go|ja) w (?'where'.+?), a twoj(?:|a|e) (?'weapon'.+?) zostawia po sobie (?'damage'krwawa) bruzde\.$</string>
 											<string>^Wyprowadzasz szybkie pchniecie (?'weapon'.+?) i wbijasz (?:go|je|ja) az po rekojesc w (?'where_target'.+?)\. Wyszarpujesz swa bron, a z potwornej rany momentalnie (?'damage'tryska krew)\.$</string>
 											<string>^Zaciskasz mocniej palce na (?'weapon'.+?) i paskudnie (?'damage'ranisz) (?'target'.+?), trafiajac (?:go|ja) w (?'where'.*)\.$</string>
-											<string>^Zaciskasz mocniej palce na (?'weapon'.+?) i z naglego doskoku dopadasz do (?'target'.+?), trafiajac (?:go|ja) w (?'where'.*)\..*(?'damage'powazne) obrazenia\.$</string>
+											<string>^Zaciskasz mocniej palce na (?'weapon'.+?) i z naglego doskoku dopadasz do (?'target'.+?), trafiajac (?:go|ja|je) w (?'where'.*)\..*(?'damage'powazne) obrazenia\.$</string>
 											<string>^Zamierzasz sie na (?'target'.+?) sw(?:a|ym|ymi) (?'weapon'.+?), jednak on(|a|o) z latwoscia (?'damage'unika) twojego ciosu\.$</string>
 											<string>^Zrecznym ruchem parujesz cios (?'target'.+?), rownoczesnie (?'damage'zachodzac) .*$</string>
 											<string>^Zwinnym, kocim ruchem (?'damage'przypadasz) do ziemi, by nagle doskoczyc do (?'target'.+?) i .*\.$</string>
-											<string>^Zwinnie uchylasz sie przed ciosem (?'target'.+?) i wykorzystujac jego chwilowo odwrocona uwage szybkim ruchem wyprowadzasz sw(?:a|ym|ymi) (?'weapon'.+?)pchniecie, celujac w (?'where'.+?) przeciwnika\. Bron celnie trafia, wytracajac przeciwnika z rownowagi i zadajac mu (?'damage'bardzo powazne) obrazenia\.$</string>
+											<string>^Zwinnie uchylasz sie przed ciosem (?'target'.+?) i wykorzystujac (?:jego|jej) chwilowo odwrocona uwage szybkim ruchem wyprowadzasz sw(?:a|ym|ymi) (?'weapon'.+?)pchniecie, celujac w (?'where'.+?) przeciwnika\. Bron celnie trafia, wytracajac przeciwnika z rownowagi i zadajac mu (?'damage'bardzo powazne) obrazenia\.$</string>
 											<string>^Wykonujesz szybki, zwodniczy ruch i patrzac zimno w oczy (?'target'.+?) zadajesz niespodziewany dla ofiary cios ktory ostatecznie (?:go|ja) (?'damage'masakruje)\.$</string>
+											<string>^Wyczekujesz odpowiedniej chwili, a gdy (?'target'.+?) rzuca sie do ataku, w ostatnim momencie unikasz je(?:go|j) ciosu i silnym kopnieciem wytracasz (?:go|ja|je) z rownowagi\. Nie czekajac, az dojdzie do siebie, wyprowadzasz szybkie pchniecie (?'weapon'.+?) i (?'damage'bardzo ciezko) ranisz swego przeciwnika\.$</string>
 										</regexCodeList>
 										<regexCodePropertyList>
+											<integer>1</integer>
 											<integer>1</integer>
 											<integer>1</integer>
 											<integer>1</integer>
@@ -12142,7 +12514,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 									<colorTriggerFgColor>#000000</colorTriggerFgColor>
 									<colorTriggerBgColor>#000000</colorTriggerBgColor>
 									<regexCodeList>
-										<string>^(?'attacker'\w+(?: \w+){0,4}) (?'damage'ledwo muska|lekko rani|bardzo ciezko rani|powaznie rani|rani|masakruje|smiertelnie rani) (?'target_weapon'.+?), trafiajac (?:cie|go|ja) w (?'where'.*)\.$</string>
+										<string>^(?'attacker'\w+(?: \w+){0,4}) (?'damage'ledwo muska|lekko rani|bardzo ciezko rani|powaznie rani|rani|masakruje|smiertelnie rani) (?'target_weapon'.+?), trafiajac (?:cie|go|ja|je) w (?'where'.*)\.$</string>
 									</regexCodeList>
 									<regexCodePropertyList>
 										<integer>1</integer>
@@ -12959,7 +13331,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>^(?'attacker'\w+(?: \w+ \w+|)) (?'damage'powol|oszczed|zgrab|plyn|blyskawicz)nym (?:wypadem do przodu atakuje|(?:polobrotem|ruchem) unika ciosu) (?'target'.+?)(?:,| korzystajac| i | dzgajac)</string>
+											<string>^(?'attacker'\w+(?: \w+ \w+|)) (?'damage'powol|oszczed|zgrab|plyn|blyskawicz)nym (?:wypadem do przodu atakuje|(?:polobrotem|ruchem) unika ciosu) (?'target'\w+(?: \w+){0,4})(?:,| korzystajac| i | dzgajac)</string>
 											<string>^(?'attacker'\w+(?: \w+ \w+|)) (?'damage'powol|oszczed|zgrab|plyn|blyskawicz)nym (?:polobrotem|ruchem) unika (?'target'twego) ciosu(?:,| korzystajac| i | dzgajac)</string>
 										</regexCodeList>
 										<regexCodePropertyList>
@@ -12997,7 +13369,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>^(?'attacker'\w+(?: \w+){0,4}) bierze ogromny zamach swoim gigantycznym granitowym mlotem i wyprowadza potworny cios w glowe (?'target'.+?)\. Przeciwnik mruga oczami, nie bardzo wiedzac, co sie dzieje\. Porzadnie go zamroczylo\.$</string>
+											<string>^(?'attacker'\w+(?: \w+){0,4}) bierze ogromny zamach swoim gigantycznym granitowym mlotem i wyprowadza potworny cios w glowe (?'target'.+?)\. Przeciwnik mruga oczami, nie bardzo wiedzac, co sie dzieje\. Porzadnie (?:go|ja) zamroczylo\.$</string>
 										</regexCodeList>
 										<regexCodePropertyList>
 											<integer>1</integer>

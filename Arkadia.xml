@@ -9268,6 +9268,28 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<integer>1</integer>
 										</regexCodePropertyList>
 									</Trigger>
+									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+										<name>zabkowany_zakrzywiony_sztylet</name>
+										<script>trigger_func_skrypty_ui_gags_ciosy_zabkowany_zakrzywiony_sztylet()</script>
+										<triggerType>0</triggerType>
+										<conditonLineDelta>0</conditonLineDelta>
+										<mStayOpen>0</mStayOpen>
+										<mCommand></mCommand>
+										<packageName></packageName>
+										<mFgColor>#ff0000</mFgColor>
+										<mBgColor>#ffff00</mBgColor>
+										<mSoundFile></mSoundFile>
+										<colorTriggerFgColor>#000000</colorTriggerFgColor>
+										<colorTriggerBgColor>#000000</colorTriggerBgColor>
+										<regexCodeList>
+											<string>^(?'attacker'\w+(?: \w+){0,4}) wyprowadza szybkie pchniecie zabkowanym zakrzywionym sztyletem, jednak tym razem (?'target'.+?) okazuje sie od niego (?'damage'szybszy)\.$</string>
+											<string>^(?'attacker'\w+(?: \w+){0,4}) trafia (?'target'.+?) w (?'where'.+?), (?'damage'delikatnie) znaczac koncem ostrza zabkowanego zakrzywionego sztyletu krwawa prege na je(?:go|j) skorze\.$</string>
+										</regexCodeList>
+										<regexCodePropertyList>
+											<integer>1</integer>
+											<integer>1</integer>
+										</regexCodePropertyList>
+									</Trigger>
 									<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 										<name>czarny_smukly_kordelas</name>
 										<script></script>
@@ -9647,6 +9669,38 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 												<string>^Perla osadzona w glowicy szylkretowego falistego sztyletu wydaje sie na chwile blaknac, gdy jego ostrze (?'damage'mija) (?'target'.*)\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
+												<integer>1</integer>
+												<integer>1</integer>
+											</regexCodePropertyList>
+										</Trigger>
+										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+											<name>zabkowany_zakrzywiony_sztylet_moje</name>
+											<script>trigger_func_skrypty_ui_gags_ciosy_zabkowany_zakrzywiony_sztylet()</script>
+											<triggerType>0</triggerType>
+											<conditonLineDelta>0</conditonLineDelta>
+											<mStayOpen>0</mStayOpen>
+											<mCommand></mCommand>
+											<packageName></packageName>
+											<mFgColor>#ff0000</mFgColor>
+											<mBgColor>#ffff00</mBgColor>
+											<mSoundFile></mSoundFile>
+											<colorTriggerFgColor>#000000</colorTriggerFgColor>
+											<colorTriggerBgColor>#000000</colorTriggerBgColor>
+											<regexCodeList>
+												<string>^Trafiasz (?'target'.+?) w (?'where'.+?), (?'damage'delikatnie) znaczac koncem ostrza zabkowanego zakrzywionego sztyletu krwawa (?:bruzde|prege) na jego (?:ciele|skorze)\.$</string>
+												<string>^Trafiasz (?'target'.+?) zabkowanym zakrzywionym sztyletem w (?'where'.+?), znaczac ostrzem na je(?:go|j) ciele gleboka, (?'damage'krwawa) bruzde o poszarpanych brzegach\.$</string>
+												<string>^Trafiasz (?'target'.+?) zabkowanym zakrzywionym sztyletem, (?'damage'raniac) (?:go|ja) dotkliwie w (?'where'.*)\.$</string>
+												<string>^Wbijasz zabkowany zakrzywiony sztylet (?'damage'gleboko) w (?'where_target'.+?) i ciagnac go lekko w gore czujesz, jak ostre stalowe zeby szarpia tkanki przeciwnika\.$</string>
+												<string>^Wbijasz zabkowany zakrzywiony sztylet w (?'where_target'.+?), zostawiajac brzydka, (?'damage'poszarpana) rane\.$</string>
+												<string>^Wyprowadzasz szybkie pchniecie zabkowanym zakrzywionym sztyletem, jednak tym razem (?'target'.+?) okazuje sie od ciebie (?'damage'szybsz)[ay]\.$</string>
+												<string>^Plynnym ruchem obracasz zabkowany zakrzywiony sztylet, by zadac (?'target'.+?) (?'damage'mordercze) uderzenie od gory, nieomal (?:go|ja) rozplatujac\.$</string>
+											</regexCodeList>
+											<regexCodePropertyList>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
 												<integer>1</integer>
 												<integer>1</integer>
 											</regexCodePropertyList>
@@ -18529,6 +18583,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 								<string>Nieznacznym, wprawnym poruszeniem nadgarstk</string>
 								<string>Z trudem dobywasz snieznobialego lsniacego sztyletu, gdy przed oczami przebiegaja ci obrazy krwi, smierci i zniszczenia. Twoje cialo ogarnia niesamowity chlod.</string>
 								<string>Dobywajac szylkretowego falistego sztyletu, czujesz niebywala jednosc z ta na pozor zwyczajna bronia.</string>
+								<string>Nie jestes w stanie powstrzymac lekkiego usmieszku, na mysl o tym czego mozna dokonac tak grozna bronia jak ta.</string>
 							</regexCodeList>
 							<regexCodePropertyList>
 								<integer>2</integer>
@@ -18560,6 +18615,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 								<integer>2</integer>
 								<integer>1</integer>
 								<integer>0</integer>
+								<integer>2</integer>
 								<integer>2</integer>
 								<integer>2</integer>
 								<integer>2</integer>

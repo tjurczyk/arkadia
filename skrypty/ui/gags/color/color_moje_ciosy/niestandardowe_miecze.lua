@@ -1,7 +1,20 @@
--- Jatagan
+-- Jasniejacy zdobiony jatagan
 
 function trigger_func_skrypty_ui_gags_moje_ciosy_jatagan(value)
     scripts.gags:gag(value, 6, "moje_ciosy")
+end
+
+function trigger_func_skrypty_ui_gags_jasniejacy_zdobiony_jatagan_inni()
+    target = matches["target"] == "cie" and "innych_ciosy_we_mnie" or "innych_ciosy"
+    local dmg = matches["damage"]
+    local value = -1
+        if dmg == "ledwo muska" then value = 1
+    elseif dmg == "lekko rani" then value = 2
+    elseif dmg == "rani" then value = 3
+    elseif dmg == "powaznie rani" then value = 4
+    elseif dmg == "bardzo ciezko rani" then value = 5
+    elseif dmg == "masakruje" then value = 6 end
+    scripts.gags:gag(value, 6, target)
 end
 
 -- Espadon
@@ -85,6 +98,100 @@ function trigger_func_skrypty_ui_gags_ciosy_czarny_smukly_miecz()
     elseif dmg == "powaznie" then value = 4
     elseif dmg == "bardzo ciezko" then value = 5
     elseif dmg == "rozplatujac" then value = 6
+    end
+    scripts.gags:gag(value, 6, target)
+end
+
+-- Srebrny wiedzminski miecz dwureczny
+
+function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_wiedzminski_ja_ledwo_muska()
+    scripts.gags:gag(1, 7, "moje_ciosy")
+end
+
+function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_wiedzminski_ja_lekko_rani()
+    scripts.gags:gag(2, 7, "moje_ciosy")
+end
+
+function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_wiedzminski_ja_rani()
+    scripts.gags:gag(3, 7, "moje_ciosy")
+end
+
+function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_wiedzminski_ja_powaznie_rani()
+    scripts.gags:gag(4, 7, "moje_ciosy")
+end
+
+function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_wiedzminski_ja_bardzo_ciezko_rani()
+    scripts.gags:gag(5, 7, "moje_ciosy")
+end
+
+function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_wiedzminski_ja_masakruje()
+    scripts.gags:gag(6, 7, "moje_ciosy")
+end
+
+function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_wiedzminski_ja_masakruje1()
+    scripts.gags:gag(7, 7, "moje_ciosy")
+end
+
+function trigger_func_skrypty_ui_gags_ciosy_srebrny_wiedzminski_miecz_dwureczny()
+    local target = "moje_ciosy"
+    if matches["attacker"] then
+        target = matches["target"] == "cie" and "innych_ciosy_we_mnie" or "innych_ciosy"
+    end
+    local dmg = matches["damage"]
+    local value = -1
+    scripts.gags:gag(value, 6, target)
+end
+
+-- Waski kunsztowny sihill
+function trigger_func_skrypty_ui_gags_ciosy_waski_kunsztowny_sihill()
+    local target = "moje_ciosy"
+    if matches["attacker"] then
+        target = (matches["target"] == "cie" or matches["target"] == "ciebie") and "innych_ciosy_we_mnie" or "innych_ciosy"
+    end
+
+    local dmg = matches["damage"]
+    local value = -1
+        if dmg == "obok" then value = 0
+    elseif dmg == "nieznaczne"  then value = 1
+    elseif dmg == "lekko raniac" then value = 2
+    elseif dmg == "wbija" then value = 4
+    end
+    scripts.gags:gag(value, 6, target)
+end
+
+-- Gorejacy dlugi talwar
+function trigger_func_skrypty_ui_gags_ciosy_gorejacy_dlugi_talwar()
+    local target = "moje_ciosy"
+    if matches["attacker"] then
+        target = (matches["target"] == "cie" or matches["target"] == "ciebie") and "innych_ciosy_we_mnie" or "innych_ciosy"
+    end
+
+    local dmg = matches["damage"]
+    local value = -1
+        if dmg == "" then value = 0
+    elseif dmg == ""  then value = 1
+    elseif dmg == "" then value = 2
+    elseif dmg == "" then value = 4
+    elseif dmg == "" then value = 4
+    end
+    scripts.gags:gag(value, 6, target)
+end
+
+-- Rapier
+
+function trigger_func_skrypty_ui_gags_ciosy_rapier()
+    local target = "moje_ciosy"
+    if matches["attacker"] then
+        target = (matches["target"] == "cie" or matches["target"] == "ciebie") and "innych_ciosy_we_mnie" or "innych_ciosy"
+    end
+
+    local dmg = matches["damage"]
+    local value = -1
+        if dmg == "dluga" then value = 1
+    elseif dmg == "gleboka"  then value = 2
+    elseif dmg == "krwawiaca" then value = 3
+    elseif dmg == "poszarpana, krwawiaca" then value = 4
+    elseif dmg == "przebija" then value = 5
     end
     scripts.gags:gag(value, 6, target)
 end

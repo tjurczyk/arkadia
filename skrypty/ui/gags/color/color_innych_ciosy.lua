@@ -12,119 +12,16 @@ local function color_hit(value)
     scripts.gags:gag(value, 6, target)
 end
 
-
-function trigger_func_skrypty_ui_gags_color_color_innych_ciosy_ktos_ledwo_muska()
-    local ignore_list = {
-        "opalizujacym runicznym",
-    }
-
-    for _, v in pairs(ignore_list) do
-        if line:match(v) then
-            return
-        end
-    end
-
-    if rex.match(line, "upiorn\\w+ ciemn\\w+") then
-        return
-    end
-
-    color_hit(1)
-end
-
-function trigger_func_skrypty_ui_gags_color_color_innych_ciosy_ktos_lekko_rani()
-    local ignore_list = {
-        "srebrzystej kosy",
-        "opalizujacego runicznego",
-        "adamantytowego mlota"
-    }
-
-    for _, v in pairs(ignore_list) do
-        if line:match(v) then
-            return
-        end
-    end
-
-    color_hit(2)
-end
-
-function trigger_func_skrypty_ui_gags_color_color_innych_ciosy_ktos_rani()
-        local ignore_list = {
-            "lekko",
-            "powaznie",
-            "potwornie",
-            "ciezko",
-            " i ",
-            "mocno",
-            "smiertelnie"
-        }
-
-        for _, v in pairs(ignore_list) do
-            if line:match(v) then
-                return
-            end
-        end
-
-    if line:starts("Dostrzegajac szanse na skuteczny atak") then
-        return
-    end
-
-    if line:starts("W slepiach") then
-        return
-    end
-
-    if rex.match(line, "upiorn\\w+ ciemn\\w+") then
-        return
-    end
-
-    color_hit(3)
-end
-
-function trigger_func_skrypty_ui_gags_color_color_innych_ciosy_ktos_powaznie_rani()
-    local ignore_list = {
-        "poteznym ciosem"
-    }
-
-    for _, v in pairs(ignore_list) do
-        if line:match(v) then
-            return
-        end
-    end
-
-    color_hit(4)
-end
-
-function trigger_func_skrypty_ui_gags_color_color_innych_ciosy_ktos_bardzo_ciezko_rani()
-    local ignore_list = {
-        " i ",
-    }
-
-    for _, v in pairs(ignore_list) do
-        if line:match(v) then
-            return
-        end
-    end
-    color_hit(5)
-end
-
-function trigger_func_skrypty_ui_gags_color_color_innych_ciosy_ktos_masakruje()
-        local ignore_list = {
-            " i ",
-            "srebrzysta kosa bojowa",
-            "opalizujacym runicznym toporem",
-            "Ruszasz do przodu"
-        }
-
-        for _, v in pairs(ignore_list) do
-            if line:match(v) then
-                return
-            end
-        end
-
-    if line:starts("Ostrze poszczerbionego oburecznego miecza") then
-        return
-    end
-
-    color_hit(6)
+function trigger_func_skrypty_ui_gags_color_color_innych_ciosy_ktos()
+    damage = matches['damage']
+    value = 0
+        if damage == "ledwo muska" then value = 1
+    elseif damage == "lekko rani" then value = 2
+    elseif damage == "rani" then value = 3
+    elseif damage == "powaznie rani" then value = 4
+    elseif damage == "bardzo ciezko rani" then value = 5
+    elseif damage == "masakruje" or damage == "smiertelnie rani" then value = 6 end
+    color_hit(value)
 end
 
 function trigger_func_skrypty_ui_gags_innych_ciosy_pajeczaki(value)

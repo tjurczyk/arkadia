@@ -81,6 +81,16 @@ function trigger_func_skrypty_ui_gags_ciosy_jasniejace_bronie(value)
     scripts.gags:gag(value, 7, target)
 end
 
+-- czarnoblekitny pulsujacy morgenstern
+
+function trigger_func_skrypty_ui_gags_ciosy_czarnoblekitny_pulsujacy_morgenstern(value)
+    scripts.gags:attacker_target(value)
+end
+
+function trigger_func_skrypty_ui_gags_ciosy_czarnoblekitny_pulsujacy_morgenstern_fin()
+    scripts.gags:attacker_target_fin()
+end
+
 -- Finishery
 
 function trigger_func_skrypty_ui_gags_moje_ciosy_bron_fin()

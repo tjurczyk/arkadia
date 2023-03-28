@@ -8,6 +8,7 @@ misc.counter.utils.two_word_mobs = {
     "smoczego ogra",
     "trolla jaskiniowego",
     "konia bojowego",
+    "tancerza wojny",
     "zywiolaka wody",
     "zywiolaka powietrza",
     "zywiolaka ognia",

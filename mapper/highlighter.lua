@@ -66,7 +66,9 @@ function Highlight:set_locations(location_table)
 end
 
 function Highlight:refresh()
+    local status = self.enabled
     self:off()
+    self.enabled = status
     if self.enabled then
         self:on()
     end

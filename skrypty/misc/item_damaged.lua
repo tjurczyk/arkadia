@@ -14,8 +14,10 @@ misc["item_damaged_desc"] = {
     ["w dobrym stanie."] = "[6/7]",
     ["liczne walki wyryly na niej swoje pietno."] = "[5/7]",
     ["liczne walki wyryly na nim swoje pietno."] = "[5/7]",
+    ["liczne walki wyryly na nich swoje pietno."] = "[5/7]",
     ["w zlym stanie."] = "[4/7]",
     ["w bardzo zlym stanie."] = "[3/7]",
+    ["wymagaja natychmiastowej konserwacji."] = "[2/7]",
     ["wymaga natychmiastowej konserwacji."] = "[2/7]",
     ["moze peknac w kazdej chwili."] = "[1/7]",
 }
@@ -36,9 +38,11 @@ misc["item_damaged_color"] = {
     ["w dobrym stanie."] = "green",
     ["liczne walki wyryly na niej swoje pietno."] = "yellow",
     ["liczne walki wyryly na nim swoje pietno."] = "yellow",
+    ["liczne walki wyryly na nich swoje pietno."] = "yellow",
     ["w zlym stanie."] = "red",
     ["w bardzo zlym stanie."] = "red",
     ["wymaga natychmiastowej konserwacji."] = "red",
+    ["wymagaja natychmiastowej konserwacji."] = "red",
     ["moze peknac w kazdej chwili."] = "red",
 }
 

@@ -67,6 +67,13 @@
         "func_args": []
       }
     ],
+    "_path" : [
+      {
+        "macro_type": "func_call",
+        "func_name": "amap.path_display_refresh",
+        "funct_args": []
+      }
+    ],
     "_all": [
       {
         "macro_type": "func_call",
@@ -100,6 +107,10 @@
       {
         "macro_type": "macro",
         "macro_name": "_ux"
+      },
+      {
+        "macro_type": "macro",
+        "macro_name": "_path"
       }
     ],
     "_profile_loaded": [
@@ -2802,6 +2813,15 @@
       "default_value": 2,
       "field_type": "number",
       "macros_on_modify": []
+    },
+    {
+      "name": "amap.path_display_color",
+      "default_value": "alice_blue",
+      "field_type": "string",
+      "content_type": "mudlet_color",
+      "macros_on_modify": [
+        "_path"
+      ]
     },
     {
       "name": "amap.blockers.is_experimental",

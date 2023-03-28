@@ -201,7 +201,7 @@ function scripts:print_start_message()
   scripts.latest:is_latest(function(release_info)
     scripts:print_log_nobr("Dostepna jest nowa wersja (" .. release_info.tag_name .. "). Wpisz ")
     scripts:print_url("<CadetBlue>/aktualizuj_skrypty", "scripts.installer:update_scripts_to_latest_release()",
-      "/aktualizuj_skrypty", true)
+      "/aktualizuj_skrypty")
     cecho("<tomato> zeby zaktualizowac")
     cecho("\n<SlateGray>" .. release_info.body .. "\n\n<reset>")
   end)

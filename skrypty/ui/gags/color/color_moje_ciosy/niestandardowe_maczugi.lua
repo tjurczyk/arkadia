@@ -15,7 +15,7 @@ function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_dwusegmentowa()
     elseif dmg == "krwawo rozrywa" or dmg == "potwornie rani" or dmg == "mocarnie" then value = 6
     elseif dmg == "masakrujac" then value = 7
     else
-        debugc("trigger_func_skrypty_ui_gags_color_color_moje_ciosy_dwusegmentowa() unknown damage '"..dmg.."' ".. matches[1])
+        debugc("trigger_func_skrypty_ui_gags_color_color_moje_ciosy_dwusegmentowa() unknown damage '" .. tostring(dmg) .. "' " .. matches[1])
     end
     scripts.gags:gag(value, 7, target)
 end

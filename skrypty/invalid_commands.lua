@@ -7,15 +7,6 @@ end
 function scripts.invalid_commands:deny_invalid_send(command)
     local is_command = string.sub(command,1,1) == "/" and string.sub(command,2,2) ~= " "
     if is_command then
-        if scripts.last_send ~= command then
-            denyCurrentSend()
-            scripts:print_log("Na pewno chcesz wyslac ta komende? Ponow komende by wyslac.")
-            scripts.last_send = command
-            return
-	end
-    end
-    scripts.last_send = command
-    if is_command then
         denyCurrentSend()
         scripts:print_log("Nieprawidlowy alias")
     end

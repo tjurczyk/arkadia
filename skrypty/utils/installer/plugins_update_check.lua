@@ -38,6 +38,8 @@ function scripts.plugins_update_check:github_on_GetHttpDone(url, response)
 end
 
 function scripts.plugins_update_check:github_update(config, update_sha)
+    --
+    
     scripts.plugins_installer:install_from_url("https://codeload.github.com/" .. config.repo .. "/" .. config.plugin_name .. "/zip/master")
     local State = scripts.state_store:get(config.storeKey) or {}
     State.sha = update_sha

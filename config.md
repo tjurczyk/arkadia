@@ -1664,6 +1664,8 @@ Dostępne wartości:
 * `plain` - bez szablonu
 * `plain_border` - zwykla, prostokatna ramka
 * `parchment` - pergamin
+* `parchment2` - pergamin
+* `parchment3` - pergamin
 
 Dla zaawansowanych - dodatkowe szablony można stworzyć na podstawie dodając je do tablicy `scripts.mail_creator.templates` analogicznie jak już te istniejące.
 

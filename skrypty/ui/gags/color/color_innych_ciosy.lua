@@ -3,8 +3,9 @@ local function color_hit(value)
     if scripts.gags:is_type("combat.avatar") then
         target = "innych_ciosy_we_mnie"
 
-        selectString(matches[1] .. "cie", 1)
-        setFgColor(255, 153, 51)
+        if selectString(matches["damage"] .. " cie", 1) > -1 then
+            setFgColor(255, 153, 51)
+        end
         resetFormat()
     else
         target = "innych_ciosy"
@@ -13,8 +14,8 @@ local function color_hit(value)
 end
 
 function trigger_func_skrypty_ui_gags_color_color_innych_ciosy_ktos()
-    damage = matches['damage']
-    value = 0
+    local damage = matches['damage']
+    local value = 0
         if damage == "ledwo muska" then value = 1
     elseif damage == "lekko rani" then value = 2
     elseif damage == "rani" then value = 3

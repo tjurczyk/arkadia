@@ -12568,9 +12568,11 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 									<colorTriggerFgColor>#000000</colorTriggerFgColor>
 									<colorTriggerBgColor>#000000</colorTriggerBgColor>
 									<regexCodeList>
-										<string>^(?'attacker'\w+(?: \w+){0,4}) (?'damage'ledwo muska|lekko rani|bardzo ciezko rani|powaznie rani|rani|masakruje|smiertelnie rani) (?:(?:cie|go|ja|je) )?(?'target_weapon'.+?), trafiajac (?:(?:cie|go|ja|je) )?w (?'where'.*)\.$</string>
+										<string>^(?'attacker'\w+(?: \w+){0,4}) (?'damage'ledwo muska|lekko rani|bardzo ciezko rani|powaznie rani|rani|masakruje|smiertelnie rani) (?'target'cie) (?'weapon'.+?), trafiajac cie w (?'where'.*)\.$</string>
+										<string>^(?'attacker'\w+(?: \w+){0,4}) (?'damage'ledwo muska|lekko rani|bardzo ciezko rani|powaznie rani|rani|masakruje|smiertelnie rani) (?'target_weapon'.+?), trafiajac (?:go|ja|je) w (?'where'.*)\.$</string>
 									</regexCodeList>
 									<regexCodePropertyList>
+										<integer>1</integer>
 										<integer>1</integer>
 									</regexCodePropertyList>
 								</Trigger>

@@ -9,6 +9,11 @@ end
 
 function scripts.plugins_installer:install_from_url(url)
     local repo_owner, repo, format, branch = url:match("https://codeload%.github%.com/(.*)/(.*)/(.*)/(.*)")
+    if not repo_owner then
+        repo_owner, repo, branch = rex.match(url, "https://api\\.github\\.com/repos/(.*)/(.*)/zipball(?:/(.*))?")
+        format = "zip"
+        branch = branch or "default"
+    end
 
     local plugin_name, file_name, extension
     if repo then
@@ -48,25 +53,27 @@ function scripts.plugins_installer:handle_download(_, filename, plugin_name, bra
         return true
     end
 
+    local reference = os.time() .. plugin_name
+
     scripts.event_register:kill_event_handler(self.plugin_download_handler)
     scripts.event_register:register_event_handler("sysUnzipDone", function(event, ...)
-        self:handle_unzip(event, plugin_name, branch, ...)
+        self:handle_unzip(event, plugin_name, reference, ...)
     end, true)
     scripts.event_register:register_event_handler("sysUnzipError", function(event, ...)
-        self:handle_unzip(event, plugin_name, branch, ...)
+        self:handle_unzip(event, plugin_name, reference, ...)
     end, true)
-    local directory = branch and "" or plugin_name
-    unzipAsync(self.plugin_zip, self.plugin_directory .. directory)
+    unzipAsync(self.plugin_zip, self.plugin_directory .. "/" .. reference)
 end
 
-function scripts.plugins_installer:handle_unzip(event, plugin_name, branch, ...)
+function scripts.plugins_installer:handle_unzip(event, plugin_name, reference, ...)
     if event == "sysUnzipDone" then
-        if branch then
-            local base_name = self.plugin_directory .. plugin_name
-            if lfs.isdir(base_name) then
+        if reference then
+            local base_name = self.plugin_directory .. reference
+            local files = lfs.list_files(base_name)
+            if table.size(files) == 1 then
+                os.rename(base_name .. "/" .. files[1], self.plugin_directory .. plugin_name)
                 scripts.installer.delete_dir(base_name)
             end
-            os.rename(base_name .. "-" .. branch, base_name)
         end
         scripts:print_log("Plugin " .. plugin_name .. " rozpakowany")
         load_plugin(plugin_name)

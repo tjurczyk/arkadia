@@ -45,7 +45,7 @@ function scripts.plugins_installer:install_from_url(url)
     end)
     self.plugin_zip = self.plugin_directory .. file_name
     downloadFile(self.plugin_zip, url)
-    scripts:print_log("Pobieram plugin " .. plugin_name .. "(" .. url .. ")")
+    scripts:print_log("Pobieram plugin " .. plugin_name .. " (" .. url .. ")")
 end
 
 function scripts.plugins_installer:handle_download(_, filename, plugin_name, branch)
@@ -73,6 +73,10 @@ function scripts.plugins_installer:handle_unzip(event, plugin_name, reference, .
             if table.size(files) == 1 then
                 os.rename(base_name .. "/" .. files[1], self.plugin_directory .. plugin_name)
                 scripts.installer.delete_dir(base_name)
+            elseif table.size(files) > 1 then
+                os.rename(self.plugin_directory .. plugin_name, self.plugin_directory .. plugin_name .. "_todelete")
+                os.rename(base_name, self.plugin_directory .. plugin_name)
+                scripts.installer.delete_dir(self.plugin_directory .. plugin_name .. "_todelete")
             end
         end
         scripts:print_log("Plugin " .. plugin_name .. " rozpakowany")

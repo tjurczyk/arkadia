@@ -279,6 +279,15 @@ Baza jest budowana następująco:
 
 ---
 
+## DŹWIĘKI
+
+Każdy event podnoszony przez skrypty może zostać udźwiękowiony. Aby to zrobić należy umieścić dźwięk w katalogu `sounds` znajdującym się w katalogu profilu.
+
+Np. event `playerAttacked` powinien mieć dźwięk `sounds/playerAttacked.wav` kub `sounds/playerAttacked.mp3`.
+
+Lista dostępnych eventów dostępna jest pod linkiem: [events.md](events.md)
+
+---
 
 ## ROZSZERZNIE SKRYPTÓW
 

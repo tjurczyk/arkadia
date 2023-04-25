@@ -1,4 +1,6 @@
-scripts.sounds = scripts.sounds or {}
+scripts.sounds = scripts.sounds or {
+    events = {}
+}
 scripts.sound_player = scripts.sound_player or {}
 
 scripts.sounds.list = {
@@ -6,13 +8,25 @@ scripts.sounds.list = {
     pop = "pop.wav"
 }
 
-lfs.mkdir(getMudletHomeDir() .. "/sounds")
+scripts.sounds.dir = getMudletHomeDir() .. "/sounds"
+lfs.mkdir(scripts.sounds.dir)
+
 for k, v in pairs(scripts.sounds.list) do
-    local path = string.format("%s/sounds/%s", getMudletHomeDir(), v)
+    local path = string.format("%s/%s", scripts.sounds.dir, v)
     scripts.sounds[k] = path
     if not lfs.attributes(path) then
         downloadFile(path, string.format("https://raw.githubusercontent.com/tjurczyk/arkadia-data/master/sounds/%s", v))
     end
+end
+
+-- backward compatibility with play beep
+for _, eventName in pairs({"playerAttacked", "stunEnd"}) do
+    scripts.sounds.events[eventName] = scripts.event_register:register_singleton_event_handler(scripts.sounds.events[eventName], eventName, function() scripts.sounds:play_beep() end)
+end
+
+-- backward compatibility with play beep sequences
+for _, eventName in pairs({"tryingToBlock", "hasBlocked", "stunStart"}) do
+    scripts.sounds.events[eventName] = scripts.event_register:register_singleton_event_handler(scripts.sounds.events[eventName], eventName, function() scripts.sounds:play_beep_sequence() end)
 end
 
 
@@ -25,16 +39,28 @@ function scripts.sounds:init()
     self.handler2 = scripts.event_register:register_singleton_event_handler(self.handler, "playBeep", function()
         self:play_beep()
     end)
+
+
+    for _,sound in pairs(lfs.list_files(self.dir)) do
+        local name, extension = sound:gmatch("(.+)%.(.+)$")()
+        scripts:print_log("Registering " .. name)
+        self.events[name] = scripts.event_register:force_register_event_handler(self.events[name], name, function()
+            scripts.sound_player:play(string.format("%s/%s", self.dir, sound))
+        end)
+    end
 end
 
-function scripts.sound_player:play(sound)
+function scripts.sound_player:play(sound, sequence)
     if sound == "" then
         return
     end
     if not lfs.is_absolute_path(sound) then
         sound = getMudletHomeDir() .. "/" .. sound
     end
-    playSoundFile(sound)
+    local repetitions = sequence or 1
+    for i = 1, repetitions, 1 do
+        tempTimer((i - 1) * 0.3, function() playSoundFile(sound) end)
+    end
 end
 
 
@@ -43,11 +69,7 @@ function scripts.sounds:play_beep()
 end
 
 function scripts.sounds:play_beep_sequence()
-    raiseEvent("playBeep")
-    tempTimer(0.3, function() raiseEvent("playBeep") end)
-    tempTimer(0.6, function() raiseEvent("playBeep") end)
-    tempTimer(0.9, function() raiseEvent("playBeep") end)
-    tempTimer(1.2, function() raiseEvent("playBeep") end)
+    scripts.sound_player:play(scripts.sounds.beep, 5)
 end
 
 function scripts.sounds:verify_beep(beep)

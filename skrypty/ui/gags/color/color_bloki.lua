@@ -3,7 +3,7 @@ function trigger_func_skrypty_ui_gags_color_color_bloki_blokowanie_proba_ciebie(
         return
     end
 
-    scripts.sounds:play_beep_sequence()
+    raiseEvent("tryingToBlock", matches[3])
     creplaceLine("<red>\n\n[    BLOK    ] " .. matches[3] .. " przymierza sie do odciecia ci drogi ucieczki.\n\n")
     resetFormat()
 end
@@ -13,7 +13,7 @@ function trigger_func_skrypty_ui_gags_color_color_bloki_blokuje_cie()
         return
     end
 
-    scripts.sounds:play_beep_sequence()
+    raiseEvent("hasBlocked", matches[2])
     creplaceLine("<red>\n\n[    BLOK    ] " .. matches[2])
     resetFormat()
 end

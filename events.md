@@ -397,3 +397,30 @@ Argumenty:
   * `arg1`: jak duży postęp właśnie wpadł (nieznaczne=1, itd.)
 
 Event podnoszony gdy wiemy o ile postępów urośliśmy.
+
+## `stunStart`
+
+Event podniesiony na początku ogłuszenia postaci gracza.
+
+## `stunEnd`
+
+Event podniesiony na koniec ogłuszenia postaci gracza.
+
+## `tryingToBlock`
+
+Argumenty:
+  * `arg1`: opis/imię blokującego
+
+Event podniesiony podczas próby bloku na postać gracza.
+
+## `hasBlocked`
+
+Argumenty:
+  * `arg1`: opis/imię blokującego
+
+  Event podniesiony kiedy postać gracza została zablokowana.
+
+## `playerAttacked`
+  * `arg1`: opis/imię atakującego
+
+Event podniesiony kiedy postać gracza została zaatkowana. Event podnoszony jest zgodnie z ustawieniem `misc.attack_beep.mode`.

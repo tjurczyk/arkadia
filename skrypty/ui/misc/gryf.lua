@@ -1,5 +1,5 @@
 function trigger_func_skrypty_ui_misc_gryf_ogluch()
-    scripts.sounds:play_beep_sequence()
+    raiseEvent("stunStart")
     creplaceLine("<red>\n\n[   OGLUCH   ] ----- JESTES OGLUSZONY -----\n\n")
     scripts.ui:info_action_update("OGLUSZONY")
     resetFormat()
@@ -7,6 +7,7 @@ function trigger_func_skrypty_ui_misc_gryf_ogluch()
 end
 
 function trigger_func_skrypty_ui_misc_gryf_powrot_z_oglucha_gryfa()
+    raiseEvent("stunEnd")
     disableTrigger("powrot-z-oglucha-gryfa")
     scripts.utils.bind_functional(scripts.inv.weapons.wield)
     scripts.ui:info_action_update("DOBADZ")

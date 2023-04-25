@@ -3,7 +3,7 @@ function trigger_func_skrypty_ui_gags_color_color_ogluchy_ogluch()
         return
     end
 
-    scripts.sounds:play_beep_sequence()
+    raiseEvent("stunStart")
     selectCurrentLine()
     prefix("<red>[OGLUCH] ", cecho)    
     cecho("<red>\n\n[   OGLUCH   ] ----- JESTES OGLUSZONY -----\n\n")
@@ -16,7 +16,7 @@ function trigger_func_skrypty_ui_gags_color_color_ogluchy_powrot_z_oglucha()
         return
     end
 
-    raiseEvent("playBeep")
+    raiseEvent("stunEnd")
     creplaceLine("<LawnGreen>\n\n[   OGLUCH   ] ----- KONIEC OGLUCHA -----\n\n")
     resetFormat()
     scripts.ui:info_action_update("")

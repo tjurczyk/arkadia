@@ -43,7 +43,6 @@ function scripts.sounds:init()
 
     for _,sound in pairs(lfs.list_files(self.dir)) do
         local name, extension = sound:gmatch("(.+)%.(.+)$")()
-        scripts:print_log("Registering " .. name)
         self.events[name] = scripts.event_register:force_register_event_handler(self.events[name], name, function()
             scripts.sound_player:play(string.format("%s/%s", self.dir, sound))
         end)

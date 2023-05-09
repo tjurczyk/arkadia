@@ -15,7 +15,9 @@ scripts.ui.combat_window = scripts.ui.combat_window or {
 function scripts.ui.combat_window:init()
     if scripts.ui.combat_window.enabled then
         self.window = scripts.ui.window:new(self.name, "Walka", function() return not self.wrap end)
-        self.window:add_buttons(function() self:create_buttons() end)
+        if not scripts.ui.combat_window.hide_buttons then
+            self.window:add_buttons(function() self:create_buttons() end)
+        end
         self.window:set_font_size(scripts.ui.combat_window.font_size)
         self.handler = scripts.event_register:force_register_event_handler(self.handler, "gmcp.room.info", function()
             moveCursor(self.name, 0, getLastLineNumber(self.name) - 2)

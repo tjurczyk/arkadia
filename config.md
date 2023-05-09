@@ -1830,6 +1830,16 @@ Dostępne wartości:
 
 ---
 
+## `scripts.ui.combat_window.hide_buttons`
+
+Wyłącza przyciski w oknie walki. Wymaga restartu!
+
+Dostępne wartości:
+* `true` - przyciski wyłączone
+* `false` - przyciski włączone
+
+---
+
 ## `misc.improve.ignore_form`
 
 Globalny licznik postepów (`/postepy2`, `/postepy3`) nie będzie aktualizowany w przypadku odrabianie śmierci lub formy,

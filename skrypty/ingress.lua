@@ -90,6 +90,7 @@ function scripts.ingress:post_process_message(msg)
     end
     if gmcp.gmcp_msgs.type == "room.short" then
         amap.localization.current_short = ansi2string(msg):gsub("\n", "")
+        amap.localization.current_exit) = ""
     end
     if gmcp.gmcp_msgs.type == "room.exits" then
         amap.localization.current_exit = ansi2string(msg):gsub("\n", "")

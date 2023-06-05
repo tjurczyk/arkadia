@@ -383,7 +383,7 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^Otwart(y|a|e) .* (plecak|torba|sakwa|sakiewka|worek)(?: ze? .*)? zawiera (.*)\.$</string>
+							<string>^Otwart(y|a|e) .* (plecak|torba|sakwa|sakiewka|worek)(?: z .*)? zawiera (.*)\.$</string>
 							<string>(^[ &gt;]*(Uwaznie) ogladasz zawartosc .*\. W srodku dostrzegasz (.*)\.$)</string>
 							<string>^Rozwiazujesz na chwile rzemyk, sprawdzajac zawartosc swojej .* sakiewki.*\. ((W) srodku dostrzegasz (.*)\.$)</string>
 						</regexCodeList>

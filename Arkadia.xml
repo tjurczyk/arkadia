@@ -4136,7 +4136,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 												<string>^Z oszczednego zamachu (?'attacker'.+) uderza (?:cie glowica swej|glowica) szponiastej dwusegmentowej maczugi w (?'where_target'.+), (?'damage'nie zadajac) jednak powazniejszych ran\.$</string>
 												<string>^(?'attacker'\w+(?: \w+){0,4}) z powodzeniem trafia (?'target'.+?) celnym ciosem swej szponiastej dwusegmentowej maczugi w (?'where'.+?), (?:zadajac|orzac na (?:jego|jej) skorze) (?'damage'nieduze obrazenia|broczaca krwia rane)\.$</string>
 												<string>^(?'attacker'.+) celnie uderza szponiasta dwusegmentowa maczuga w (?'target'.+), z satysfakcja obserwujac jak lukowate ostrza glowicy (?'damage'krwawo wgryzaja) sie w (?:jego|jej) cialo\.$</string>
-												<string>^Rozpedzona glowica dzierzonej przez (?'attacker'(?!ciebie).+) szponiastej dwusegmentowej maczugi z impetem wbija (?:ci )?sie w (?'target'.+), (?'damage'raniac) (?:cie|go|ja)\.$</string>
+												<string>^Rozpedzona glowica dzierzonej przez (?'attacker'(?!ciebie).+) szponiastej dwusegmentowej maczugi z impetem (?:uderza|wbija (?:ci )?sie) w (?'target'.+), (?'damage'raniac) (?:cie|go|ja)\.$</string>
 												<string>^Z mocnego rozmachu (?'attacker'.+) uderza swa szponiasta dwusegmentowa maczuga w (?'target'.+)\. Najezona ostrzami glowica rozrywa krwawa rane na (?:jego|jej) ciele, (?'damage'paskudnie kaleczac) (?:mu|jej) (?'where'.+)\.$</string>
 												<string>^(?'attacker'\w+(?: \w+){0,4}) brutalnie odrzuca od siebie (?'target'.+) mocarnym ciosem swej szponiastej dwusegmentowej maczugi, a jej najezona ostrzami glowica (?'damage'krwawo rozrywa) (?:jego|jej) (?'where'.+), niemal rzucajac (?:go|ja) na ziemie\.$</string>
 												<string>^(?'attacker'\w+(?: \w+){0,4}) miazdzy (?'target'.+) szponiasta dwusegmentowa maczuga, a stalowe ostrza jej masywnej glowicy rozdzieraja straszliwa rane, niemalze doszczetnie (?'damage'masakrujac) (?:jego|jej) slaniajace sie cialo\.$</string>
@@ -4525,8 +4525,10 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<regexCodeList>
 												<string>(?'attacker'.+?) wykonuje obszerny zamach lodowata dluga maczuga, usilujac trafic (?'target'.+?), jednak \w+ w pore odkrywa zamiary przeciwnika i spokojnie (?'damage'odskakuje) na bok, unikajac tego ciosu\.$</string>
 												<string>^Wykonujesz obszerny zamach lodowata dluga maczuga, usilujac trafic (?'target'.+?), jednak twoj(?:|a) przeciwni(?:czka|k) spokojnie (?'damage'odskakuje) na bok, unikajac tego ciosu\.$</string>
+												<string>^Wykonujesz obszerny zamach lodowata dluga maczuga, usilujac trafic (?'target'.+?), jednak twoj(?:|a) przeciwni(?:czka|k) w pore (?'damage'paruje) ten cios .*\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
+												<integer>1</integer>
 												<integer>1</integer>
 												<integer>1</integer>
 											</regexCodePropertyList>
@@ -4886,8 +4888,10 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
 												<string>glebokie rany</string>
+												<string>masakruje</string>
 											</regexCodeList>
 											<regexCodePropertyList>
+												<integer>0</integer>
 												<integer>0</integer>
 											</regexCodePropertyList>
 										</Trigger>
@@ -5804,8 +5808,10 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
 												<string>ciemna, gesta krew</string>
+												<string>pozostawia niewielkie zadrapanie</string>
 											</regexCodeList>
 											<regexCodePropertyList>
+												<integer>0</integer>
 												<integer>0</integer>
 											</regexCodePropertyList>
 										</Trigger>

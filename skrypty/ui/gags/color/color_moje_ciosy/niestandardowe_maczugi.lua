@@ -6,7 +6,7 @@ function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_dwusegmentowa()
 
     local dmg = matches["damage"]
     local value = -1
-        if dmg == "unika" then value = 0
+        if dmg == "unika" or dmg == "powstrzymujac" then value = 0
     elseif dmg == "nie zadajac" or dmg == "ledwie muskajac" or dmg =="broczaca" or dmg == "oszczednego" then value = 1
     elseif dmg == "broczaca krwia rane" or dmg == "nieduze obrazenia" then value = 2
     elseif dmg == "krwawo wgryzaja" or dmg == "widoczne obrazenia" then value = 3
@@ -70,7 +70,7 @@ function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_lodowata_dluga_macz
 
     local dmg = matches["damage"]
     local value = -1
-        if dmg == "odskakuje" then value = 0
+        if dmg == "odskakuje" or dmg == "paruje" then value = 0
     elseif dmg == "ledwo muskajac" or dmg == "pozostawiajac lekkiego, zmrozonego siniaka" then value = 1
     elseif dmg == "lekko raniac" or dmg == "pozostawiajac sporego, fioletowego siniaka" then value = 2
     elseif dmg == "raniac" or dmg == "mocno obijajac cialo" then value = 3

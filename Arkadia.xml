@@ -4627,43 +4627,6 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 												<integer>1</integer>
 											</regexCodePropertyList>
 										</Trigger>
-										<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-											<name>ciezka_okretowa_kotwica</name>
-											<script>-- bolesnie ledwie nieznacznie
-    local target = "moje_ciosy"
-    local dmg = matches["damage"]
-    local value = -1
-        if dmg == "przecina" then value = 0
-    elseif dmg == "ledwie zahaczajac" then value = 1
-    elseif dmg == "nieznacznie raniac"  then value = 2
-    elseif dmg == "dotkliwie lomoczac"  then value = 2
-    elseif dmg == "bolesnie obijajac" then value = 4
-    elseif dmg == "bardzo ciezko" or dmg == "uderzasz" then value = 5
-    elseif dmg == "" then value = 6
-    elseif dmg == "" then
-        return scripts.gags:gag_prefix(scripts.gags.fin_prefix, target)
-    end
-    scripts.gags:gag(value, 6, target)
-</script>
-											<triggerType>0</triggerType>
-											<conditonLineDelta>0</conditonLineDelta>
-											<mStayOpen>0</mStayOpen>
-											<mCommand></mCommand>
-											<packageName></packageName>
-											<mFgColor>#ff0000</mFgColor>
-											<mBgColor>#ffff00</mBgColor>
-											<mSoundFile></mSoundFile>
-											<colorTriggerFgColor>#000000</colorTriggerFgColor>
-											<colorTriggerBgColor>#000000</colorTriggerBgColor>
-											<regexCodeList>
-												<string>^Krecac nad glowa lancuchem, (?'attacker'\w+(?: \w+){0,4}) wyprowadza \w+ uderzenie ciezka okretowa kotwica, (?'damage'\w+ \w+) (?'target'.+?) w (?'where'.+?)\.$</string>
-												<string>^Krecac nad glowa lancuchem, (?'attacker'\w+(?: \w+){0,4}) wyprowadza \w+ uderzenie ciezka okretowa kotwica, (?'damage'\w+ \w+) (?'target'.+?) w (?'where'.+?)\.$</string>
-											</regexCodeList>
-											<regexCodePropertyList>
-												<integer>1</integer>
-												<integer>0</integer>
-											</regexCodePropertyList>
-										</Trigger>
 									</TriggerGroup>
 									<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 										<name>czarny_smukly_morgenstern</name>

@@ -65,7 +65,7 @@ function scripts.tokens:process_token(what, callback, additional_checks)
     end
 end
 
-function scripts.tokens:highlight(what, color, bold, underline, italicize)
+function scripts.tokens:highlight(what, color, bold, underline, italicize, hint)
     local c, k = 1, 1
     while k > 0 do
         k = line:find(what:gsub("%-", "%%-"), k)
@@ -77,6 +77,7 @@ function scripts.tokens:highlight(what, color, bold, underline, italicize)
             if bold      then setBold(true) end
             if underline then setUnderline(true) end
             if italicize then setItalics(true) end
+            if hint then setLink(function() end, hint) end
             resetFormat()
         else return end
         end

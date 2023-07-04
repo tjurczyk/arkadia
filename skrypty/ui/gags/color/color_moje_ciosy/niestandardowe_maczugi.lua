@@ -70,12 +70,14 @@ function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_lodowata_dluga_macz
 
     local dmg = matches["damage"]
     local value = -1
-        if dmg == "ledwo muskajac" or dmg == "pozostawiajac lekkiego, zmrozonego siniaka" then value = 1
+        if dmg == "odskakuje" then value = 0
+    elseif dmg == "ledwo muskajac" or dmg == "pozostawiajac lekkiego, zmrozonego siniaka" then value = 1
     elseif dmg == "lekko raniac" or dmg == "pozostawiajac sporego, fioletowego siniaka" then value = 2
     elseif dmg == "raniac" or dmg == "mocno obijajac cialo" then value = 3
     elseif dmg == "ciezko raniac" or dmg == "pozostawiajac paskudnie wygladajaca rane" then value = 4
     elseif dmg == "niemalze zabijajac" then value = 5
-    elseif dmg == "masakrujac" or dmg == "masakrujac przeciwnika i zakanczajac ta walke" then
+    elseif dmg == "masakrujac" then value = 6
+    elseif dmg == "masakrujac przeciwnika i zakanczajac ta walke" or dmg == "mordercza" then
         trigger_func_skrypty_ui_gags_ciosy_bron_fin()
         return
     end
@@ -151,6 +153,23 @@ function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_starozytne_kosciane
     scripts.gags:gag(value, 5, "moje_ciosy")
 end
 
+-- Ciezka okretowa kotwica
+
+function trigger_func_skrypty_ui_gags_ciosy_ciezka_okretowa_kotwica_moje()
+    local target = "moje_ciosy"
+    local dmg = matches["damage"]
+    local value = -1
+        if dmg == "przecina" then value = 0
+    elseif dmg == "cofa" then value = 1
+    elseif dmg == "plytka"  then value = 2
+    elseif dmg == "brzydka"  then value = 3
+    elseif dmg == "dotkliwe" then value = 5
+    elseif dmg == "wbijajac" then
+        return scripts.gags:gag_prefix(scripts.gags.fin_prefix, target)
+    end
+    scripts.gags:gag(value, 6, target)
+end
+
 -- Czarny smukly morgenstern
 
 function trigger_func_skrypty_ui_gags_ciosy_czarny_smukly_morg()
@@ -161,7 +180,8 @@ function trigger_func_skrypty_ui_gags_ciosy_czarny_smukly_morg()
 
     local dmg = matches["damage"]
     local value = -1
-        if dmg == "krotki wypad" then value = 1
+        if dmg == "unik" then value = 0
+    elseif dmg == "krotki wypad" then value = 1
     elseif dmg == "Lekko kaleczysz" or dmg == "lekko kaleczy" then value = 2
     elseif dmg == "raniac" then value = 3
     elseif dmg == "powazne" then value = 4
@@ -170,3 +190,10 @@ function trigger_func_skrypty_ui_gags_ciosy_czarny_smukly_morg()
     end
     scripts.gags:gag(value, 6, target)
 end
+
+-- Najezony potezny morgenstern
+
+function trigger_func_skrypty_ui_gags_najezony_potezny_morgenstern_moje()
+    scripts.gags:gag(0, 1, "moje_ciosy")
+end
+

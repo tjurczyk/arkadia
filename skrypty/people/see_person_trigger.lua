@@ -5,7 +5,7 @@ function see_person_trigger()
 
     for k, v in pairs(gmcp.objects.data) do
         if v["desc"] then
-            if table.size(string.split(v["desc"], " ")) > 1 then
+            if string.find(v["desc"], " ") then
                 -- only if desc is not a name
                 if not scripts.people.already_processed_desc[v["desc"]] then
                     -- create a trigger iff the one with this desc doesn't exist

@@ -5,7 +5,7 @@ scripts.inv.containers = scripts.inv.containers or {
 }
 
 function scripts.inv.containers:display_contents(content, container)
-    if container == "depozyt" and scripts.boxes.valid_banks[amap.curr.id] then
+    if scripts.boxes.current_box == nil and scripts.boxes.valid_banks[amap.curr.id] and container == "depozyt" then
 	    scripts.boxes.current_box = scripts.boxes.valid_banks[amap.curr.id]
         scripts.boxes:update_box(content)
     end

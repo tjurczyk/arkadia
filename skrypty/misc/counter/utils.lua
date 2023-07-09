@@ -2,16 +2,24 @@ misc.counter.utils = misc.counter.utils or {}
 
 misc.counter.utils.two_word_mobs = {
     "czarnego orka",
+    "dzikiego orka",
+    "konia bojowego",
+    "konia bojowego",
     "krasnoluda chaosu",
     "rycerza chaosu",
-    "smoka chaosu",
     "smoczego ogra",
-    "trolla jaskiniowego",
-    "konia bojowego",
+    "smoka chaosu",
+    "straznika wiezy",
+    "szkielet goblina",
+    "szkielet krasnoluda",
+    "szkielet orka",
     "tancerza wojny",
-    "zywiolaka wody",
-    "zywiolaka powietrza",
+    "trolla gorskiego",
+    "trolla jaskiniowego",
+    "zjawe kobiety",
     "zywiolaka ognia",
+    "zywiolaka powietrza",
+    "zywiolaka wody",
     "zywiolaka ziemi"
 }
 

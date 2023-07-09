@@ -154,7 +154,9 @@ function trigger_func_skrypty_ui_gags_ciosy_waski_kunsztowny_sihill()
         if dmg == "obok" then value = 0
     elseif dmg == "nieznaczne"  then value = 1
     elseif dmg == "lekko raniac" then value = 2
+    elseif dmg == "raniac" then value = 3
     elseif dmg == "wbija" then value = 4
+    elseif dmg == "bryzg" then return trigger_func_skrypty_ui_gags_ciosy_bron_fin()
     end
     scripts.gags:gag(value, 6, target)
 end
@@ -169,10 +171,10 @@ function trigger_func_skrypty_ui_gags_ciosy_gorejacy_dlugi_talwar()
     local dmg = matches["damage"]
     local value = -1
         if dmg == "" then value = 0
-    elseif dmg == ""  then value = 1
-    elseif dmg == "" then value = 2
-    elseif dmg == "" then value = 4
-    elseif dmg == "" then value = 4
+    elseif dmg == "parzac"  then value = 1
+    elseif dmg == "spore" then value = 2
+    elseif dmg == "wybucha" then value = 3
+    elseif dmg == "olbrzymim" then trigger_func_skrypty_ui_gags_ciosy_bron_fin()
     end
     scripts.gags:gag(value, 6, target)
 end
@@ -190,8 +192,9 @@ function trigger_func_skrypty_ui_gags_ciosy_rapier()
         if dmg == "dluga" then value = 1
     elseif dmg == "gleboka"  then value = 2
     elseif dmg == "krwawiaca" then value = 3
-    elseif dmg == "poszarpana, krwawiaca" then value = 4
-    elseif dmg == "przebija" then value = 5
+    elseif dmg == "poszarpana" then value = 4
+    elseif dmg == "poszarpana, krwawiaca" then value = 5
+    elseif dmg == "przebija" then value = 6
     end
     scripts.gags:gag(value, 6, target)
 end

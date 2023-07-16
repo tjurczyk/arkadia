@@ -43,10 +43,11 @@ function misc:replace_string_calendar(str, calendar)
 end
 
 function trigger_func_skrypty_misc_calendar_pory_roku_ishtar()
-    misc:replace_string_calendar(matches[2], misc["ishtar_calendar"])
+    if matches['month'] ~= "" then misc:replace_string_calendar(matches['month'], misc["ishtar_calendar"]) end
 end
 
 function trigger_func_skrypty_misc_calendar_pory_roku_imperium()
-    misc:replace_string_calendar_imperium(matches[2])
+    local month = matches['month'] ~= "" and matches['month'] or matches['holiday']
+    misc:replace_string_calendar(month, misc["imperium_calendar"])
 end
 

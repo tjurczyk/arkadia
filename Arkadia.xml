@@ -1760,11 +1760,9 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^Jest w przyblizeniu [a-zA-Z, ]+pory ([a-zA-Z]+) wedlug rachuby czasu Starszego Ludu\.$</string>
-							<string>^Jest w przyblizeniu [a-zA-Z ]+, ([a-zA-Z]+).*wedlug rachuby czasu Starszego Ludu\.$</string>
+							<string>^Jest w przyblizeniu (?'hour'\w+)(?: (?:|w|po|przed|nad|poznym) (?'daytime'dzien|nocy|poludniu|poludniem|poludnie|rano|ranem|wieczorem)|),(.*,)? ((?'holiday'(noc \w+|[A-Z].+?))|(?'day'.+?) dzien pory (?'month'\w+)) wedlug rachuby czasu Starszego Ludu\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
-							<integer>1</integer>
 							<integer>1</integer>
 						</regexCodePropertyList>
 					</Trigger>
@@ -1782,7 +1780,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^Jest w przyblizeniu .*(?: miesiaca)? ([a-zA-Z]+) wedlug Kalendarza Imperialnego\.$</string>
+							<string>^Jest w przyblizeniu (?'hour'\w+) (?:|w|po|przed|nad|poznym)\s*(?'daytime'dzien|nocy|poludniu|poludniem|poludnie|rano|ranem|wieczorem).*, ((?:dzien|noc) (?'holiday'\w+)|(?'day'.+?) dzien miesiaca (?'month'\w+)) wedlug Kalendarza Imperialnego\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>

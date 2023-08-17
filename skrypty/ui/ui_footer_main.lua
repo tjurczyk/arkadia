@@ -20,6 +20,8 @@ function scripts.ui:setup_footer_main()
     if scripts.ui.cfg["footer_mode"] == "mode2" or scripts.ui.cfg["footer_mode"] == "mode3"
             or scripts.ui.cfg["footer_mode"] == "mode4"  or scripts.ui.cfg["footer_mode"] == "mode5"then
         scripts.ui:setup_gauge_mode2()
+    elseif scripts.ui.cfg["footer_mode"] == "mode6" then
+        scripts.ui:setup_gauge_mode6()
     elseif scripts.ui.cfg["footer_mode"] == "mode1" then
         scripts.ui:setup_gauge_mode1()
     end

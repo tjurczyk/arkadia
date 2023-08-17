@@ -30264,6 +30264,13 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 					<packageName></packageName>
 					<regex>^/ikona (.*)</regex>
 				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>skrypty_ui_mode6_pomoc</name>
+					<script>alias_func_skrypty_ui_mode6()</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/mode6(| ([0-9]+))$</regex>
+				</Alias>
 			</AliasGroup>
 			<Alias isActive="yes" isFolder="no">
 				<name>fake</name>

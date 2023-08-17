@@ -4,7 +4,8 @@ function scripts.ui:update_footer_main()
     if scripts.ui.cfg["footer_mode"] == "mode1" then
         scripts.ui:update_bars_mode("gauge")
     elseif scripts.ui.cfg["footer_mode"] == "mode2" or scripts.ui.cfg["footer_mode"] == "mode3" or
-            scripts.ui.cfg["footer_mode"] == "mode4" or scripts.ui.cfg["footer_mode"] == "mode5" then
+            scripts.ui.cfg["footer_mode"] == "mode4" or scripts.ui.cfg["footer_mode"] == "mode5" or
+            scripts.ui.cfg["footer_mode"] == "mode6" then
         scripts.ui:update_bars_mode("label")
     end
 end
@@ -33,7 +34,7 @@ function scripts.ui:update_bars_mode(mode, redraw)
         end
 
         local label = scripts.ui.state_key_to_label_pre[k]
-        
+
         if scripts.ui.footer_bar[k] and scripts.ui[k_index] then
 
             local max_value = scripts.ui.footer_bar[k].max
@@ -57,6 +58,10 @@ function scripts.ui:update_bars_mode(mode, redraw)
                 local msg, changed = scripts.ui:process_label_text_mode5(k, label, v, max_value, color)
                 any_changed = any_changed or changed
 				scripts.ui[k_index]:echo(msg)
+            elseif mode == "label" and footer_mode == "mode6" then
+                local msg, changed = scripts.ui:process_label_text_mode6(k, label, v, max_value, color)
+                any_changed = any_changed or changed
+                scripts.ui[k_index]:echo(msg)
             end
         end
     end
@@ -66,6 +71,12 @@ function scripts.ui:update_bars_mode(mode, redraw)
         if refresh_timer then killTimer(refresh_timer) end
         refresh_timer = tempTimer(change_indicator_duration + 1, [[ scripts.ui:update_bars_mode("label", true) ]])
     end
+
+    if not redraw and any_changed and mode == "label" and footer_mode == "mode6" then
+        local change_indicator_duration = scripts.ui.cfg.footer_mode6_settings.change_indicator_duration
+        if refresh_timer then killTimer(refresh_timer) end
+        refresh_timer = tempTimer(change_indicator_duration + 1, [[ scripts.ui:update_bars_mode("label", true) ]])
+  end
 end
 
 function scripts.ui:process_label_text_mode2(prefix, val, max, color)

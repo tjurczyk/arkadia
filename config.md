@@ -1045,6 +1045,7 @@ Dozwolone wartosci:
 * `mode3` - pasek z wartosciami tekstowymi (dostarczony przez Daracana)
 * `mode4` - pasek z wartosciami tekstowymi (inversionz, dostarczony przez Kazura)
 * `mode5` - pasek z wartosciami tekstowymi i belkami (dostarczony przez Zendrina)
+* `mode6` - pasek z wartosciami tekstowymi i belkami (polaczenie mode4 i mode5)
 
 `mode4` wymaga wgrania czcionek inversionz. Trzeba pobrac z <https://www.dafont.com/search.php?q=inversionz> i wrzucic do katalogu "fonts" w mudlet-data.
 

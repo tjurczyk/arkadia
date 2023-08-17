@@ -92,3 +92,18 @@ function scripts.utils.rgb_to_hsl(r, g, b)
 
    return h * 360, s, l
 end
+
+function scripts.utils.color_gradient_calculate_steps(start_color, end_color, steps)
+   local color_steps = {}
+   local r1, g1, b1 = scripts.utils.hex_to_rgb(start_color)
+   local r2, g2, b2 = scripts.utils.hex_to_rgb(end_color)
+   local x = 1
+   for i = 1, steps do
+     local p = (i - 1) / (steps - 1)
+     local r = (1.0 - p) * r1 + p * r2
+     local g = (1.0 - p) * g1 + p * g2
+     local b = (1.0 - p) * b1 + p * b2
+     color_steps[i] = scripts.utils.rgb_to_hex(r, g, b)
+   end
+   return color_steps
+ end

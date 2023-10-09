@@ -318,6 +318,7 @@ function amap:check_room_on_direction_of(room, dir, force)
                 if not string.starts(v, "echo") then
                     if amap.short_to_long[v] then
                         was_regular = true
+                        amap.dir_from_key = amap.short_to_long[v]
                     end
                     send(v, true)
                 else

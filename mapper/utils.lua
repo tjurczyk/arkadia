@@ -222,6 +222,23 @@ function amap:parse_trigger_exits(text)
     return final_dirs
 end
 
+function amap:parse_trigger_exits2(text, standard_exits)
+    local dirs = text:split("|")
+    local final_dirs = standard_exits
+    
+    for i, dir in pairs(dirs) do
+        if amap.long_to_short[amap.polish_to_english_Ms[dir]] then
+            final_dirs[amap.long_to_short[amap.polish_to_english_Ms[dir]]] = true
+            --table.insert(final_dirs, amap.long_to_short[amap.polish_to_english[dir]])
+        else
+            final_dirs[dir] = true
+            --table.insert(final_dirs, dir)
+        end
+    end
+
+    return final_dirs
+end
+
 function amap:log_failed_follow(msg)
     local file = io.open(getMudletHomeDir() .. "/" .. "failed_follows_log.txt", "a+")
     io.output(file)

@@ -101,6 +101,19 @@ amap.polish_to_english = {
     ["gore"] = "up"
 }
 
+amap.polish_to_english_Ms = {
+    ["polnocy"] = "north",
+    ["poludniu"] = "south",
+    ["wschodzie"] = "east",
+    ["zachodzie"] = "west",
+    ["polnocnym-wschodzie"] = "northeast",
+    ["polnocnym-zachodzie"] = "northwest",
+    ["poludniowym-wschodzie"] = "southeast",
+    ["poludniowym-zachodzie"] = "southwest",
+    ["dole"] = "down",
+    ["gorze"] = "up",
+}
+
 amap.english_to_polish = {
     ["north"] = "polnoc",
     ["south"] = "poludnie",

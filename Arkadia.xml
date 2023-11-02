@@ -23981,30 +23981,30 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^((Jest|Sa) tutaj .* widoczn(e|ych) wyjsc(|ia|ie):) (.*)\.$</string>
-							<string>^((W) (gestych) (ciemnosciach) dostrzegasz .* (?:wiodacy|rozwidlajacy sie) na) (.*)\.$</string>
-							<string>^((Korytarze) (jaskini) (ciagna) sie na) (.*)\.$</string>
-							<string>^((Trakt) (wiedzie) (na)) ([^.]+)\.$</string>
-							<string>(([tT]rakt) (rozgalezia) (sie)) na (.*)\.$</string>
-							<string>^((Szlak|Sciezka) (prowadzi) (tutaj)) w .* kieru.*: (.*)\.$</string>
-							<string>^((Linia) (brzegowa) (ciagnie)) sie na (.*)\.$</string>
-							<string>^((Wedrowke) (skrajem lasu|po karczowisku|po lesie)) mozesz kontynuowac (udajac sie na) (.*)\.$</string>
-							<string>^((Wedrowke) (przez) rozlegle laki mozesz kontynuowac (udajac sie na) (.*))\.$</string>
-							<string>^((Wijaca) (sie) (miedzy)) skalami, gorska sciezka prowadzi na (.*)\.$</string>
-							<string>^((Wydeptane) (w) (kukurydzy)) sciezki prowadza na (.*)\.$</string>
-							<string>^((Wyjscia) (prowadza) (tutaj)) w .* kierunkach: (.*)\.$</string>
-							<string>^((Wykopany) (w) (ziemi)) tunel rozgalezia sie tutaj, zas jego odnogi wioda na (.*)\.$</string>
-							<string>^((Wykopany) (w) (ziemi)) tunel wiedzie w dwoch kierunkach: (.*)\.$</string>
-							<string>^((Mozesz) (sie) (stad)) udac na (.*)\.$</string>
-							<string>^((Mozesz) (skierowac) (lodz)) na (.*)\.$</string>
-							<string>^((Trakt) (jest) (zasypany)) glazami i mozna podazac nim tylko w jednym kierunku, na (.*)\.$</string>
-							<string>^((Mozesz) (podazac) (traktem)) na (.*), w strone fortu\.$</string>
-							<string>^((Mozesz) (stad) (poplynac)) na (.*)\.$</string>
-							<string>^((W) (mroku) (nocy)) dostrzegasz .* widoczne wyjsci.: (.*)\.</string>
-							<string>^((Tunel) (ciagnie) (sie)) na (.*)\.</string>
-							<string>^((Jaskinie) (ciagna) (sie)) na (.*)\.</string>
-							<string>^((Tunele) (ciagna) (sie)) na (.*)\.</string>
-							<string>^((Rozpadlina) (ciagnie) (sie)) na (.*)\.</string>
+							<string>^(?:Jest|Sa) tutaj .* widoczn(?:e|ych) wyjsc(?:|ia|ie): (.*)\.$</string>
+							<string>^W gestych ciemnosciach dostrzegasz .* (?:wiodacy|rozwidlajacy sie) na (.*)\.$</string>
+							<string>^Korytarze jaskini ciagna sie na (.*)\.$</string>
+							<string>^Trakt wiedzie na ([^.]+)\.$</string>
+							<string>[tT]rakt rozgalezia sie na (.*)\.$</string>
+							<string>^(?:Szlak|Sciezka) prowadzi tutaj w .* kieru.*: (.*)\.$</string>
+							<string>^Linia brzegowa ciagnie sie na (.*)\.$</string>
+							<string>^Wedrowke (?:skrajem lasu|po karczowisku|po lesie|przez rozlegle laki) mozesz kontynuowac udajac sie na (.*)\.$</string>
+							<string>^Wijaca sie miedzy skalami, gorska sciezka prowadzi na (.*)\.$</string>
+							<string>^Wydeptane w kukurydzy sciezki prowadza na (.*)\.$</string>
+							<string>^Wyjscia prowadza tutaj w .* kierunkach: (.*)\.$</string>
+							<string>^Wykopany w ziemi tunel rozgalezia sie tutaj, zas jego odnogi wioda na (.*)\.$</string>
+							<string>^Wykopany w ziemi tunel wiedzie w dwoch kierunkach: (.*)\.$</string>
+							<string>^Mozesz sie stad udac na (.*)\.$</string>
+							<string>^Mozesz skierowac lodz na (.*)\.$</string>
+							<string>^Trakt jest zasypany glazami i mozna podazac nim tylko w jednym kierunku, na (.*)\.$</string>
+							<string>^Mozesz podazac traktem na (.*), w strone fortu\.$</string>
+							<string>^Mozesz stad poplynac na (.*)\.$</string>
+							<string>^W mroku nocy dostrzegasz .* widoczne wyjsci.: (.*)\.$</string>
+							<string>^Tunel ciagnie sie na (.*)\.$</string>
+							<string>^Jaskinie ciagna sie na (.*)\.$</string>
+							<string>^Tunele ciagna sie na (.*)\.$</string>
+							<string>^Rozpadlina ciagnie sie na (.*)\.$</string>
+							<string>^W gestych ciemnosciach dostrzegasz sciezke wiodaca na (.*)\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -24097,6 +24097,106 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 							<integer>1</integer>
 						</regexCodePropertyList>
 					</Trigger>
+					<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>wyjscia_miasto</name>
+						<script></script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>Na</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>2</integer>
+						</regexCodePropertyList>
+						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+							<name>wyjscia_miasto_1</name>
+							<script>trigger_func_mapper_directions_ui_wyjscia_miasto(matches[2], matches[3])</script>
+							<triggerType>0</triggerType>
+							<conditonLineDelta>0</conditonLineDelta>
+							<mStayOpen>0</mStayOpen>
+							<mCommand></mCommand>
+							<packageName></packageName>
+							<mFgColor>#ff0000</mFgColor>
+							<mBgColor>#ffff00</mBgColor>
+							<mSoundFile></mSoundFile>
+							<colorTriggerFgColor>#000000</colorTriggerFgColor>
+							<colorTriggerBgColor>#000000</colorTriggerBgColor>
+							<regexCodeList>
+								<string>^Na (.+?) znajduje sie .*?\. (?:Ulica|Droga|Sciezka) biegnie na (.*)\.$</string>
+							</regexCodeList>
+							<regexCodePropertyList>
+								<integer>1</integer>
+							</regexCodePropertyList>
+						</Trigger>
+						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+							<name>wyjscia_miasto_2</name>
+							<script>trigger_func_mapper_directions_ui_wyjscia_miasto(matches[2] .. "|" .. matches[3], matches[4])</script>
+							<triggerType>0</triggerType>
+							<conditonLineDelta>0</conditonLineDelta>
+							<mStayOpen>0</mStayOpen>
+							<mCommand></mCommand>
+							<packageName></packageName>
+							<mFgColor>#ff0000</mFgColor>
+							<mBgColor>#ffff00</mBgColor>
+							<mSoundFile></mSoundFile>
+							<colorTriggerFgColor>#000000</colorTriggerFgColor>
+							<colorTriggerBgColor>#000000</colorTriggerBgColor>
+							<regexCodeList>
+								<string>^Na (.+?) znajduje sie .*, (?:|a )na (.+?) .*?\. (?:Ulica|Droga|Sciezka) biegnie na (.*)\.$</string>
+							</regexCodeList>
+							<regexCodePropertyList>
+								<integer>1</integer>
+							</regexCodePropertyList>
+						</Trigger>
+						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+							<name>wyjscia_miasto_3</name>
+							<script>trigger_func_mapper_directions_ui_wyjscia_miasto(matches[2] .. "|" .. matches[3] .. "|" .. matches[4], matches[5])</script>
+							<triggerType>0</triggerType>
+							<conditonLineDelta>0</conditonLineDelta>
+							<mStayOpen>0</mStayOpen>
+							<mCommand></mCommand>
+							<packageName></packageName>
+							<mFgColor>#ff0000</mFgColor>
+							<mBgColor>#ffff00</mBgColor>
+							<mSoundFile></mSoundFile>
+							<colorTriggerFgColor>#000000</colorTriggerFgColor>
+							<colorTriggerBgColor>#000000</colorTriggerBgColor>
+							<regexCodeList>
+								<string>^Na (.+?) znajduje sie .*?, na (.+?) .*?, na (.+?) .*?\. (?:Ulica|Droga|Sciezka) biegnie na (.*)\.$</string>
+							</regexCodeList>
+							<regexCodePropertyList>
+								<integer>1</integer>
+							</regexCodePropertyList>
+						</Trigger>
+						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+							<name>wyjscia_miasto_4</name>
+							<script>trigger_func_mapper_directions_ui_wyjscia_miasto(matches[2] .. "|" .. matches[3] .. "|" .. matches[4] .. "|" .. matches[5], matches[6])</script>
+							<triggerType>0</triggerType>
+							<conditonLineDelta>0</conditonLineDelta>
+							<mStayOpen>0</mStayOpen>
+							<mCommand></mCommand>
+							<packageName></packageName>
+							<mFgColor>#ff0000</mFgColor>
+							<mBgColor>#ffff00</mBgColor>
+							<mSoundFile></mSoundFile>
+							<colorTriggerFgColor>#000000</colorTriggerFgColor>
+							<colorTriggerBgColor>#000000</colorTriggerBgColor>
+							<regexCodeList>
+								<string>^Na (.+?) znajduje sie .*?, na (.+?) .*?, na (.+?) .*?, a na (.+?) .*?\. (?:Ulica|Droga|Sciezka) biegnie na (.*)\.$</string>
+							</regexCodeList>
+							<regexCodePropertyList>
+								<integer>1</integer>
+							</regexCodePropertyList>
+						</Trigger>
+					</TriggerGroup>
 				</TriggerGroup>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>neg_wyjscia-2</name>
@@ -26277,10 +26377,10 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 								<colorTriggerFgColor>#000000</colorTriggerFgColor>
 								<colorTriggerBgColor>#000000</colorTriggerBgColor>
 								<regexCodeList>
-									<string>Intrygujacy dlugowlosy mezczyzna krzyczy: Doplynelismy! Mozna wysiadac!</string>
+									<string>Intrygujacy dlugowlosy mezczyzna krzyczy: Doplynelismy do przystani na Wyspie Milosci! Mozna wysiadac!</string>
 								</regexCodeList>
 								<regexCodePropertyList>
-									<integer>1</integer>
+									<integer>2</integer>
 								</regexCodePropertyList>
 							</Trigger>
 						</TriggerGroup>
@@ -28021,6 +28121,8 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<string>Probujesz przecisnac sie przez otwor na dach, ale ze wzgledu na brak miejsca, zmuszony jestes wrocic na dol.</string>
 						<string>Straznik ignoruje twoja prosbe.</string>
 						<string>Nie mozesz tam przejsc, gdy stoi tu obsada statku.</string>
+						<string>do ciebie: Nikt z bronia nie wejdzie na teren gornej twierdzy. Prosze zostawic ja na stojaku.</string>
+						<string>Przejscie w tym kierunku jest zablokowane przez</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>0</integer>
@@ -28057,6 +28159,8 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<integer>2</integer>
 						<integer>2</integer>
 						<integer>2</integer>
+						<integer>2</integer>
+						<integer>0</integer>
 						<integer>2</integer>
 					</regexCodePropertyList>
 				</Trigger>

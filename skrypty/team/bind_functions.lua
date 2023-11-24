@@ -140,7 +140,10 @@ local szata = function(desc)
     desc = desc:gsub("czarnoodziany zakapturzony", "czarnoodzianego zakapturzonego")
     desc = desc:gsub("czarnoodziany", "czarnoodzianego")
     for k,v in pairs(replace_szata) do
-        desc = desc:gsub(" " .. k, " " .. v)
+      local new = rex.gsub(desc, "\\b" .. k .. "\\b", v)
+      if new ~= desc then
+          return new
+      end
     end
     return desc
 end

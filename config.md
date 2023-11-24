@@ -666,7 +666,7 @@ Listy wrogów (postacie i gildie).
 ### Przkładowo:
 ```json
 "scripts.people.enemy_guild" : ["SC", "MC"]
-"scripts.people.enemy_people" : ["Rurek", "Ogorek"]
+"scripts.people.enemy_people" : ["Rurek", "maly duzy elf", "Zly dobry elf"]
 ```
 
 ---

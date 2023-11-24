@@ -12,7 +12,7 @@ function amap.directions_ui:handle_exits(dirs, any_direction)
         creplaceLine("<" .. color .. ">" .. str)
     end
 
-
+    amap.curr.dirs = dirs
     amap_ui_set_dirs_trigger(dirs)
 end
 

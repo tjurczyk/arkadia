@@ -97,9 +97,21 @@ end
 function scripts.people:enemy_people_starter()
 
     scripts.people.bind_enemies = {}
-
+    local fake_row_id = 1
     for _, v in pairs(scripts.people.enemy_people) do
         local results = db:fetch(scripts.people.db.people, db:like(scripts.people.db.people.name, v))
+              
+        if table.is_empty(results) then
+            results = {
+                {
+                    ["_row_id"] = -fake_row_id,
+                    short = string.lower(v),
+                    guild = 22,
+                    name = "",
+                }
+            }
+            fake_row_id = fake_row_id + 1
+        end
 
         for _, item in pairs(results) do
             scripts.people:enemy_person_build(item)

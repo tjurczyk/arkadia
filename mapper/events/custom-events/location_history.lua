@@ -22,7 +22,11 @@ function amap_step_back_perform()
 
     centerview(amap.curr.id)
     amap:copy_loc(amap.prev, amap.curr)
-    amap_ui_set_dirs_trigger(getRoomExits(amap.curr.id))
+    if amap.curr.dirs then
+        amap_ui_set_dirs_trigger(amap.curr.dirs)
+    else
+        amap_ui_set_dirs_trigger(getRoomExits(amap.curr.id))
+    end
     raiseEvent("amapLocationSteppedBack", location_id, plocation_id)
 end
 

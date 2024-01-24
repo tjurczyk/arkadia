@@ -26,3 +26,7 @@ function trigger_func_skrypty_ui_gags_color_color_innych_spece_mie_ktos_spec_obs
     scripts.gags:gag_spec("MIE", 6, 7, "innych_spece")
 end
 
+function trigger_func_skrypty_ui_gags_color_color_innych_spece_mie_ktos_spec_obszar_ktos_spec_fin()
+    scripts.gags:gag_prefix("MIE "..scripts.gags.fin_prefix, "innych_spece")
+end
+

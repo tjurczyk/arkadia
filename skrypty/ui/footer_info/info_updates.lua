@@ -31,7 +31,7 @@ function scripts.ui:info_hidden_update(val)
     if val == "" then
         scripts.ui.footer_info_hidden:echo("<font color='" .. scripts.ui["footer_info_normal"] .. "'>Ukryty:&nbsp;&nbsp;&nbsp;</font>")
     else
-        local color = nil
+        local color = "black"
         if val == "ok" then
             color = scripts.ui["footer_info_green"]
         elseif tonumber(val) < 5 then

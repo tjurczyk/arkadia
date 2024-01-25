@@ -6,7 +6,7 @@ function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_dwusegmentowa()
 
     local dmg = matches["damage"]
     local value = -1
-        if dmg == "unika" or dmg == "powstrzymujac" then value = 0
+        if dmg == "unik" or dmg == "powstrzymujac" then value = 0
     elseif dmg == "nie zadajac" or dmg == "ledwie muskajac" or dmg =="broczaca" or dmg == "oszczednego" then value = 1
     elseif dmg == "broczaca krwia rane" or dmg == "nieduze obrazenia" then value = 2
     elseif dmg == "krwawo wgryzaja" or dmg == "widoczne obrazenia" then value = 3

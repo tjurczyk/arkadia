@@ -12,8 +12,8 @@ function trigger_func_skrypty_ui_gags_color_color_innych_spece_str_ktos_spec()
     elseif dmg == "zadajac smiertelne obrazenia" then value = 5
     elseif dmg:find("lecz impet uderzenia", 1, true) then value = 0
     else end
-    
-    scripts.gags:gag_spec("STR", value, 5, "innych_spece")
+    local target = scripts.gags:who_hits_attacker_target()
+    scripts.gags:gag_spec("STR", value, 5, target)
 end
 
 function trigger_func_skrypty_ui_gags_color_color_innych_spece_str_ktos_spec_0()

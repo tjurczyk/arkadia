@@ -201,9 +201,11 @@ function herbs:v2_print_single(herbs_arr)
     echo("\n")
 
     local total_herbs_in_this_bag = 0
+    local event_data = {["total_herbs_count"] = 0, ["herbs"] = {}}
     for herb_id, herb_value in pairs(herbs_arr) do
         local amount = 0
         amount  = herb_value["amount"]
+        table.insert(event_data["herbs"], {["name"] = herb_id, ["amount"] = amount})
         total_herbs_in_this_bag = total_herbs_in_this_bag + amount
         local amount_tmp = "    " .. tostring(amount)
         local name_str = string.sub(herb_id .. "                     ", 0, 23)
@@ -227,9 +229,11 @@ function herbs:v2_print_single(herbs_arr)
         end
         cecho("\n")
     end
+    event_data.total_herbs_count = total_herbs_in_this_bag
     cecho("--------------------------------------------------------------------------------\n")
     cecho("  Ilosc ziol w woreczku to <green>"..total_herbs_in_this_bag.."<grey>, a wolne miejsce <green>"..(herbs["full_bag_amount"]-total_herbs_in_this_bag).."\n")
     cecho("--------------------------------------------------------------------------------")
+    raiseEvent("herbBagParsed", event_data)
 end
 
 function herbs:get_clickable_teammate_data(teammate_name)

@@ -200,9 +200,11 @@ function herbs:v2_print_single(herbs_arr)
     cecho("\n ------+-------------------------+-----------------------------------------------")
     echo("\n")
 
+    local total_herbs_in_this_bag = 0
     for herb_id, herb_value in pairs(herbs_arr) do
         local amount = 0
         amount  = herb_value["amount"]
+        total_herbs_in_this_bag = total_herbs_in_this_bag + amount
         local amount_tmp = "    " .. tostring(amount)
         local name_str = string.sub(herb_id .. "                     ", 0, 23)
 
@@ -226,6 +228,8 @@ function herbs:v2_print_single(herbs_arr)
         cecho("\n")
     end
     cecho("--------------------------------------------------------------------------------\n")
+    cecho("  Ilosc ziol w woreczku to <green>"..total_herbs_in_this_bag.."<grey>, a wolne miejsce <green>"..(herbs["full_bag_amount"]-total_herbs_in_this_bag).."\n")
+    cecho("--------------------------------------------------------------------------------")
 end
 
 function herbs:get_clickable_teammate_data(teammate_name)

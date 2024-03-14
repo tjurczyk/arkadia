@@ -65,12 +65,24 @@ function scripts.installer:handle_unzip_scripts(event, ...)
         uninstallPackage("Arkadia")
         tempTimer(1, function()
             scripts.installer:put_version_to_file()
-            os.rename(scripts.installer.unzip_directory, scripts.installer.scripts_directory)
-            installPackage(scripts.installer.scripts_directory .. "Arkadia.xml")
-            if not deleted then
-                scripts:print_log("Nie udalo sie usunac katalogu ze starymi skryptami. Zalecane recznie usuniecie katalogu " .. scripts.installer.to_delete .. " Nowe skrypty powinny dzialac.")
-            end
-            scripts:print_log("Ok aktualizacja udana, zrestartuj Mudleta.")
+            local retry = {}
+            retry.co = coroutine.create(function ()
+                for i=1,10 do
+                  retry.success, retry.err = os.rename(scripts.installer.unzip_directory, scripts.installer.scripts_directory)
+                  if (retry.err) then
+                    tempTimer(1, function() coroutine.resume(retry.co) end)
+                    coroutine.yield()
+                  else
+                    installPackage(scripts.installer.scripts_directory .. "Arkadia.xml")
+                    if not deleted then
+                        scripts:print_log("Nie udalo sie usunac katalogu ze starymi skryptami. Zalecane recznie usuniecie katalogu " .. scripts.installer.to_delete .. " Nowe skrypty powinny dzialac.")
+                    end
+                    scripts:print_log("Ok aktualizacja udana, zrestartuj Mudleta.")    
+                    coroutine.yield()
+                  end
+                end
+            end)
+            coroutine.resume(retry.co)
         end)
     elseif event == "sysUnzipError" then
         scripts:print_log("Blad podczas rozpakowywania skryptow")

@@ -156,6 +156,15 @@ Argumenty:
 
 ---
 
+## `herbBagParsed`
+
+Event podniesiony kiedy sparsowany zostal woreczek przy zagladaniu do niego. 
+
+Argumenty:
+  * `arg1`: dictionary z informacjami o tym jakie tam sa ziola w jakiej ilosci oraz suma ziol
+
+---
+
 ## `assistantPackageDestination`
 
 Event podniesiony kiedy wybrana paczka ma dostepny cel podrozy

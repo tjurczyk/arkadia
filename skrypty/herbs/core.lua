@@ -49,7 +49,7 @@ function herbs:extract_herbs(herbs_arr)
         if int_number then
             -- this is when "25 zoltych jasnych kwiatow"
             item["name"] = herbs.herbs_long_to_short[table.concat(scripts:get_table_without_first_item(split_by_words), " ")]
-            item["amount"] = int_number
+            item["amount"] = tonumber(int_number)
         else
 
             local liczebnik_number = scripts.string_to_liczebnik[split_by_words[1]]

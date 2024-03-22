@@ -162,6 +162,12 @@ Argumenty:
 
 ---
 
+## `herbsDatabaseBuilt`
+
+Event podniesiony kiedy ukonczone zostanie budowanie bazy ziol.
+
+---
+
 ## `herbBagParsed`
 
 Event podniesiony kiedy sparsowany zostal woreczek przy zagladaniu do niego.

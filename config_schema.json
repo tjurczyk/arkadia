@@ -1782,14 +1782,6 @@
       ]
     },
     {
-      "name": "scripts.keybind.configuration.fight_support.keys",
-      "default_value": [],
-      "field_type": "list",
-      "macros_on_modify": [
-        "_keybind"
-      ]
-    },
-    {
       "name": "scripts.keybind.configuration.fight_support.active",
       "default_value": true,
       "field_type": "boolean",
@@ -1813,14 +1805,6 @@
       "default_value": "1",
       "field_type": "string",
       "content_type": "keybind",
-      "macros_on_modify": [
-        "_keybind"
-      ]
-    },
-    {
-      "name": "scripts.keybind.configuration.attack_target.keys",
-      "default_value": [],
-      "field_type": "list",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -1855,14 +1839,6 @@
       ]
     },
     {
-      "name": "scripts.keybind.configuration.critical_hp.keys",
-      "default_value": [],
-      "field_type": "list",
-      "macros_on_modify": [
-        "_keybind"
-      ]
-    },
-    {
       "name": "scripts.keybind.configuration.critical_hp.active",
       "default_value": true,
       "field_type": "boolean",
@@ -1889,14 +1865,6 @@
       ]
     },
     {
-      "name": "scripts.keybind.configuration.functional_key.keys",
-      "default_value": [],
-      "field_type": "list",
-      "macros_on_modify": [
-        "_keybind"
-      ]
-    },
-    {
       "name": "scripts.keybind.configuration.functional_key.active",
       "default_value": true,
       "field_type": "boolean",
@@ -1909,15 +1877,6 @@
       "default_value": [],
       "field_type": "list",
       "content_type": "key_modifiers",
-      "macros_on_modify": [
-        "_keybind"
-      ]
-    },
-    {
-      "name": "scripts.keybind.configuration.attack_bind_objs.key",
-      "default_value": "",
-      "field_type": "string",
-      "content_type": "keybind",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -1961,14 +1920,6 @@
       ]
     },
     {
-      "name": "scripts.keybind.configuration.break_attack_target.keys",
-      "default_value": [],
-      "field_type": "list",
-      "macros_on_modify": [
-        "_keybind"
-      ]
-    },
-    {
       "name": "scripts.keybind.configuration.break_attack_target.active",
       "default_value": true,
       "field_type": "boolean",
@@ -1990,14 +1941,6 @@
       "default_value": "F3",
       "field_type": "string",
       "content_type": "keybind",
-      "macros_on_modify": [
-        "_keybind"
-      ]
-    },
-    {
-      "name": "scripts.keybind.configuration.block_attack_target.keys",
-      "default_value": [],
-      "field_type": "list",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -2031,14 +1974,6 @@
       ]
     },
     {
-      "name": "scripts.keybind.configuration.collect_from_body.keys",
-      "default_value": [],
-      "field_type": "list",
-      "macros_on_modify": [
-        "_keybind"
-      ]
-    },
-    {
       "name": "scripts.keybind.configuration.collect_from_body.active",
       "default_value": true,
       "field_type": "boolean",
@@ -2062,14 +1997,6 @@
       "default_value": "4",
       "field_type": "string",
       "content_type": "keybind",
-      "macros_on_modify": [
-        "_keybind"
-      ]
-    },
-    {
-      "name": "scripts.keybind.configuration.filling_lamp.keys",
-      "default_value": [],
-      "field_type": "list",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -2101,14 +2028,6 @@
       ]
     },
     {
-      "name": "scripts.keybind.configuration.empty_bottle.keys",
-      "default_value": [],
-      "field_type": "list",
-      "macros_on_modify": [
-        "_keybind"
-      ]
-    },
-    {
       "name": "scripts.keybind.configuration.empty_bottle.active",
       "default_value": true,
       "field_type": "boolean",
@@ -2130,14 +2049,6 @@
       "default_value": "BracketLeft",
       "field_type": "string",
       "content_type": "keybind",
-      "macros_on_modify": [
-        "_keybind"
-      ]
-    },
-    {
-      "name": "scripts.keybind.configuration.enter_ship.keys",
-      "default_value": [],
-      "field_type": "list",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -2171,14 +2082,6 @@
       ]
     },
     {
-      "name": "scripts.keybind.configuration.temp1.keys",
-      "default_value": [],
-      "field_type": "list",
-      "macros_on_modify": [
-        "_keybind"
-      ]
-    },
-    {
       "name": "scripts.keybind.configuration.temp1.active",
       "default_value": true,
       "field_type": "boolean",
@@ -2202,14 +2105,6 @@
       "default_value": "Equal",
       "field_type": "string",
       "content_type": "keybind",
-      "macros_on_modify": [
-        "_keybind"
-      ]
-    },
-    {
-      "name": "scripts.keybind.configuration.temp2.keys",
-      "default_value": [],
-      "field_type": "list",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -2243,14 +2138,6 @@
       ]
     },
     {
-      "name": "scripts.keybind.configuration.temp3.keys",
-      "default_value": [],
-      "field_type": "list",
-      "macros_on_modify": [
-        "_keybind"
-      ]
-    },
-    {
       "name": "scripts.keybind.configuration.temp3.active",
       "default_value": true,
       "field_type": "boolean",
@@ -2274,14 +2161,6 @@
       "default_value": "Equal",
       "field_type": "string",
       "content_type": "keybind",
-      "macros_on_modify": [
-        "_keybind"
-      ]
-    },
-    {
-      "name": "scripts.keybind.configuration.temp4.keys",
-      "default_value": [],
-      "field_type": "list",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -2313,14 +2192,6 @@
       ]
     },
     {
-      "name": "scripts.keybind.configuration.temp5.keys",
-      "default_value": [],
-      "field_type": "list",
-      "macros_on_modify": [
-        "_keybind"
-      ]
-    },
-    {
       "name": "scripts.keybind.configuration.temp5.active",
       "default_value": false,
       "field_type": "boolean",
@@ -2342,14 +2213,6 @@
       "default_value": "",
       "field_type": "string",
       "content_type": "keybind",
-      "macros_on_modify": [
-        "_keybind"
-      ]
-    },
-    {
-      "name": "scripts.keybind.configuration.temp6.keys",
-      "default_value": [],
-      "field_type": "list",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -2381,14 +2244,6 @@
       ]
     },
     {
-      "name": "scripts.keybind.configuration.temp7.keys",
-      "default_value": [],
-      "field_type": "list",
-      "macros_on_modify": [
-        "_keybind"
-      ]
-    },
-    {
       "name": "scripts.keybind.configuration.temp7.active",
       "default_value": false,
       "field_type": "boolean",
@@ -2410,14 +2265,6 @@
       "default_value": "",
       "field_type": "string",
       "content_type": "keybind",
-      "macros_on_modify": [
-        "_keybind"
-      ]
-    },
-    {
-      "name": "scripts.keybind.configuration.temp8.keys",
-      "default_value": [],
-      "field_type": "list",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -2449,14 +2296,6 @@
       ]
     },
     {
-      "name": "scripts.keybind.configuration.temp9.keys",
-      "default_value": [],
-      "field_type": "list",
-      "macros_on_modify": [
-        "_keybind"
-      ]
-    },
-    {
       "name": "scripts.keybind.configuration.temp9.active",
       "default_value": false,
       "field_type": "boolean",
@@ -2478,14 +2317,6 @@
       "default_value": "",
       "field_type": "string",
       "content_type": "keybind",
-      "macros_on_modify": [
-        "_keybind"
-      ]
-    },
-    {
-      "name": "scripts.keybind.configuration.temp10.keys",
-      "default_value": [],
-      "field_type": "list",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -2519,14 +2350,6 @@
       ]
     },
     {
-      "name": "scripts.keybind.configuration.multibind1.keys",
-      "default_value": [],
-      "field_type": "list",
-      "macros_on_modify": [
-        "_keybind"
-      ]
-    },
-    {
       "name": "scripts.keybind.configuration.multibind1.active",
       "default_value": true,
       "field_type": "boolean",
@@ -2550,14 +2373,6 @@
       "default_value": "2",
       "field_type": "string",
       "content_type": "keybind",
-      "macros_on_modify": [
-        "_keybind"
-      ]
-    },
-    {
-      "name": "scripts.keybind.configuration.multibind2.keys",
-      "default_value": [],
-      "field_type": "list",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -2591,14 +2406,6 @@
       ]
     },
     {
-      "name": "scripts.keybind.configuration.multibind3.keys",
-      "default_value": [],
-      "field_type": "list",
-      "macros_on_modify": [
-        "_keybind"
-      ]
-    },
-    {
       "name": "scripts.keybind.configuration.multibind3.active",
       "default_value": true,
       "field_type": "boolean",
@@ -2622,14 +2429,6 @@
       "default_value": "4",
       "field_type": "string",
       "content_type": "keybind",
-      "macros_on_modify": [
-        "_keybind"
-      ]
-    },
-    {
-      "name": "scripts.keybind.configuration.multibind4.keys",
-      "default_value": [],
-      "field_type": "list",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -2663,14 +2462,6 @@
       ]
     },
     {
-      "name": "scripts.keybind.configuration.opening_gate.keys",
-      "default_value": [],
-      "field_type": "list",
-      "macros_on_modify": [
-        "_keybind"
-      ]
-    },
-    {
       "name": "scripts.keybind.configuration.opening_gate.active",
       "default_value": true,
       "field_type": "boolean",
@@ -2694,14 +2485,6 @@
       "default_value": "N",
       "field_type": "string",
       "content_type": "keybind",
-      "macros_on_modify": [
-        "_keybind"
-      ]
-    },
-    {
-      "name": "scripts.keybind.configuration.drinking.keys",
-      "default_value": [],
-      "field_type": "list",
       "macros_on_modify": [
         "_keybind"
       ]
@@ -2735,14 +2518,6 @@
       ]
     },
     {
-      "name": "scripts.keybind.configuration.special_exit.keys",
-      "default_value": [],
-      "field_type": "list",
-      "macros_on_modify": [
-        "_keybind"
-      ]
-    },
-    {
       "name": "scripts.keybind.configuration.special_exit.active",
       "default_value": true,
       "field_type": "boolean",
@@ -2764,14 +2539,6 @@
       "default_value": "QuoteLeft",
       "field_type": "string",
       "content_type": "keybind",
-      "macros_on_modify": [
-        "_keybind"
-      ]
-    },
-    {
-      "name": "scripts.keybind.configuration.walk_mode.keys",
-      "default_value": [],
-      "field_type": "list",
       "macros_on_modify": [
         "_keybind"
       ]

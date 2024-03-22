@@ -23,7 +23,7 @@ function herbs:v2_init_herbs()
     for herb_name, herb_actions in pairs(herbs.data.herb_id_to_use) do
         local herb_action_str = ""
         for idx, herb_action in pairs(herb_actions) do
-            if not table.contains({".", "brak"}, herb_action["action"]) then
+            if not table.contains({ ".", "brak" }, herb_action["action"]) then
                 actions[herb_action["action"]] = true
             end
             if herb_action["effect"] ~= nil and herb_action["action"] then
@@ -42,7 +42,9 @@ function herbs:v2_init_herbs()
     if herbs.use_alias then
         killAlias(herbs.use_alias)
     end
-    herbs.use_alias = tempAlias(string.format("^/z_(%s) ([a-z_]+)(?: ([0-9]+))?$", table.concat(table.keys(actions), "|")), "alias_func_skrypty_herbs_zazyj_ziolo()")
+    herbs.use_alias = tempAlias(
+        string.format("^/z_(%s) ([a-z_]+)(?: ([0-9]+))?$", table.concat(table.keys(actions), "|")),
+        "alias_func_skrypty_herbs_zazyj_ziolo()")
 end
 
 function herbs:v2_print_db()
@@ -57,7 +59,8 @@ end
 function herbs:v2_do_print(window, compact)
     if not herbs.db or table.size(herbs.db) == 0 then
         cecho(window, "\n <orange>Brak zbudowanej bazy ziol, ")
-        cechoPopup(window, "<deep_sky_blue>kliknij tutaj aby zrobic '/ziola_buduj'", { [[expandAlias("/ziola_buduj")]] }, { [[/ziola_buduj]] }, true)
+        cechoPopup(window, "<deep_sky_blue>kliknij tutaj aby zrobic '/ziola_buduj'", { [[expandAlias("/ziola_buduj")]] },
+            { [[/ziola_buduj]] }, true)
         cecho(window, " \n\n")
         return
     end
@@ -65,7 +68,8 @@ function herbs:v2_do_print(window, compact)
     if not compact then
         cecho(window, "\n")
         cecho(window, " ------+-------------------------+-----------------------------------------------")
-        cecho(window, "\n   <light_slate_blue>ile <grey>|        <light_slate_blue>nazwa <grey>           | <light_slate_blue>             dzialanie <grey>                      ")
+        cecho(window,
+            "\n   <light_slate_blue>ile <grey>|        <light_slate_blue>nazwa <grey>           | <light_slate_blue>             dzialanie <grey>                      ")
         cecho(window, "\n ------+-------------------------+-----------------------------------------------")
         echo(window, "\n")
     end
@@ -79,8 +83,10 @@ function herbs:v2_do_print(window, compact)
             end
             local amount_tmp = "    " .. tostring(amount)
             local name_str = string.sub(herb_id .. "                     ", 0, 23)
-            local usage_str = string.sub(herbs.herbs_details[herb_id]["details"] .. "                                                                 ", 0, 64)
-            cecho(window,"<grey>  " .. string.sub(amount_tmp, #amount_tmp - 2, #amount_tmp) .. " | ")
+            local usage_str = string.sub(
+                herbs.herbs_details[herb_id]["details"] ..
+                "                                                                 ", 0, 64)
+            cecho(window, "<grey>  " .. string.sub(amount_tmp, #amount_tmp - 2, #amount_tmp) .. " | ")
             local clickable_herb_data = herbs:get_clickable_herb_data(herb_id)
             cechoPopup(window, name_str, clickable_herb_data["herb_actions"], clickable_herb_data["herb_hints"], true)
             cecho(window, " | ")
@@ -109,9 +115,10 @@ function herbs:v2_do_print(window, compact)
         for teammate_name, v in pairs(ateam.team_names) do
             local teammate_clickable_data = herbs:get_clickable_teammate_data(teammate_name)
             cecho(window, " ")
-            cechoPopup(window ,"<pale_green>" .. teammate_name, teammate_clickable_data["teammate_actions"], teammate_clickable_data["teammate_hints"], true)
+            cechoPopup(window, "<pale_green>" .. teammate_name, teammate_clickable_data["teammate_actions"],
+                teammate_clickable_data["teammate_hints"], true)
             if idx ~= table.size(ateam.team_names) then
-                cecho(window," <grey>|")
+                cecho(window, " <grey>|")
             end
             idx = idx + 1
         end
@@ -127,7 +134,8 @@ function herbs:v2_print_db_per_bag(full)
 
     cecho("\n")
     cecho("--------------------------- <green>Ziola w twojej bazie<grey> -------------------------------")
-    cecho("\n  <light_slate_blue>ile <grey>|        <light_slate_blue>nazwa <grey>            | <light_slate_blue>             dzialanie <grey>                      ")
+    cecho(
+        "\n  <light_slate_blue>ile <grey>|        <light_slate_blue>nazwa <grey>            | <light_slate_blue>             dzialanie <grey>                      ")
     cecho("\n--------------------------------------------------------------------------------")
     cecho("\n                                                                                ")
 
@@ -141,16 +149,21 @@ function herbs:v2_print_db_per_bag(full)
         end
 
         cecho("\n       ")
-        local bag_name = "  <LemonChiffon>                  " .. tostring(k) .. ". woreczek<grey> (" .. tostring(bag_count) .. " ziol)"
+        local bag_name = "  <LemonChiffon>                  " ..
+            tostring(k) .. ". woreczek<grey> (" .. tostring(bag_count) .. " ziol)"
         cecho(bag_name)
 
         if herbs.herb_bag_collect_condition_data and herbs.herb_bag_collect_condition_data["bag_id_to_condition"][bag_id] then
             if bag_count == 0 and string.starts(herbs.herb_bag_collect_condition_data["bag_id_to_condition"][bag_id], "<red") then
-                cechoPopup(herbs.herb_bag_collect_condition_data["bag_id_to_condition"][bag_id], { [[expandAlias("/ziola_odloz_woreczek ]] .. tostring(k) .. [[")]] }, { "odloz " .. tostring(k) .. ". woreczek" }, true)
+                cechoPopup(herbs.herb_bag_collect_condition_data["bag_id_to_condition"][bag_id],
+                    { [[expandAlias("/ziola_odloz_woreczek ]] .. tostring(k) .. [[")]] },
+                    { "odloz " .. tostring(k) .. ". woreczek" }, true)
                 cecho(" ")
             elseif string.starts(herbs.herb_bag_collect_condition_data["bag_id_to_condition"][bag_id], "<red") then
                 local this_bag_condition_clickable_data = herbs:get_clickable_bag_condition_data(bag_id)
-                cechoPopup(herbs.herb_bag_collect_condition_data["bag_id_to_condition"][bag_id], this_bag_condition_clickable_data.this_bag_actions, this_bag_condition_clickable_data.this_bag_hints, true)
+                cechoPopup(herbs.herb_bag_collect_condition_data["bag_id_to_condition"][bag_id],
+                    this_bag_condition_clickable_data.this_bag_actions, this_bag_condition_clickable_data.this_bag_hints,
+                    true)
                 cecho(" ")
             else
                 cecho(herbs.herb_bag_collect_condition_data["bag_id_to_condition"][bag_id])
@@ -184,7 +197,8 @@ function herbs:v2_print_db_per_bag(full)
 
     if not herbs.herb_bag_collect_condition_data then
         cecho("\n <orange>Brak stanow woreczkow, ")
-        cechoPopup("<deep_sky_blue>kliknij tutaj aby zrobic '/woreczki_buduj'", { [[expandAlias("/woreczki_buduj")]] }, { [[/woreczki_buduj]] }, true)
+        cechoPopup("<deep_sky_blue>kliknij tutaj aby zrobic '/woreczki_buduj'", { [[expandAlias("/woreczki_buduj")]] },
+            { [[/woreczki_buduj]] }, true)
         cecho(" \n\n")
     end
 end
@@ -196,16 +210,17 @@ function herbs:v2_print_single(herbs_arr)
 
     cecho("\n")
     cecho(" --------------------------- <green>Ziola w tym woreczku<grey> -------------------------------")
-    cecho("\n   <light_slate_blue>ile <grey>|        <light_slate_blue>nazwa <grey>           | <light_slate_blue>             dzialanie <grey>                      ")
+    cecho(
+        "\n   <light_slate_blue>ile <grey>|        <light_slate_blue>nazwa <grey>           | <light_slate_blue>             dzialanie <grey>                      ")
     cecho("\n ------+-------------------------+-----------------------------------------------")
     echo("\n")
 
     local total_herbs_in_this_bag = 0
-    local event_data = {["total_herbs_count"] = 0, ["herbs"] = {}}
+    local event_data = { ["total_herbs_count"] = 0, ["herbs"] = {} }
     for herb_id, herb_value in pairs(herbs_arr) do
         local amount = 0
-        amount  = herb_value["amount"]
-        table.insert(event_data["herbs"], {["name"] = herb_id, ["amount"] = amount})
+        amount       = herb_value["amount"]
+        table.insert(event_data["herbs"], { ["name"] = herb_id, ["amount"] = amount })
         total_herbs_in_this_bag = total_herbs_in_this_bag + amount
         local amount_tmp = "    " .. tostring(amount)
         local name_str = string.sub(herb_id .. "                     ", 0, 23)
@@ -231,7 +246,9 @@ function herbs:v2_print_single(herbs_arr)
     end
     event_data.total_herbs_count = total_herbs_in_this_bag
     cecho("--------------------------------------------------------------------------------\n")
-    cecho("  Ilosc ziol w woreczku to <green>"..total_herbs_in_this_bag.."<grey>, a wolne miejsce <green>"..(herbs["full_bag_amount"]-total_herbs_in_this_bag).."\n")
+    cecho("  Ilosc ziol w woreczku to <green>" ..
+        total_herbs_in_this_bag ..
+        "<grey>, a wolne miejsce <green>" .. (herbs["full_bag_amount"] - total_herbs_in_this_bag) .. "\n")
     cecho("--------------------------------------------------------------------------------")
     raiseEvent("herbBagParsed", event_data)
 end
@@ -246,10 +263,13 @@ function herbs:get_clickable_teammate_data(teammate_name)
             if v <= herb_count then
                 if v == 1 then
                     table.insert(teammate_hints, "daj " .. herb_id)
-                    table.insert(teammate_actions, [[expandAlias("/ziola_daj ]] .. teammate_name .. [[ ]] .. herb_id .. [[")]])
+                    table.insert(teammate_actions,
+                        [[expandAlias("/ziola_daj ]] .. teammate_name .. [[ ]] .. herb_id .. [[")]])
                 else
                     table.insert(teammate_hints, "daj " .. herb_id .. " " .. tostring(v))
-                    table.insert(teammate_actions, [[expandAlias("/ziola_daj ]] .. teammate_name .. [[ ]] .. herb_id .. [[ ]] .. tostring(v) .. [[")]])
+                    table.insert(teammate_actions,
+                        [[expandAlias("/ziola_daj ]] ..
+                        teammate_name .. [[ ]] .. herb_id .. [[ ]] .. tostring(v) .. [[")]])
                 end
             end
         end
@@ -298,7 +318,8 @@ function herbs:get_clickable_herb_data(herb_name)
                 local use_action = ""
                 if current_count > 1 then
                     use_hint = v["action"] .. " " .. tostring(current_count)
-                    use_action = [[expandAlias("/z_]] .. v["action"] .. [[ ]] .. herb_name .. [[ ]] .. current_count .. [[")]]
+                    use_action = [[expandAlias("/z_]] ..
+                        v["action"] .. [[ ]] .. herb_name .. [[ ]] .. current_count .. [[")]]
                 else
                     use_hint = v["action"]
                     use_action = [[expandAlias("/z_]] .. v["action"] .. [[ ]] .. herb_name .. [[")]]
@@ -322,7 +343,8 @@ function herbs:get_clickable_bag_condition_data(bag_id)
         local bag_to = v["key"]
         if not string.starts(herbs.herb_bag_collect_condition_data["bag_id_to_condition"][bag_to], "<red") then
             table.insert(this_bag_hints, "przepakuj do " .. tostring(bag_to) .. ". woreczka")
-            table.insert(this_bag_actions, [[expandAlias("/ziola_przepakuj ]] .. tostring(bag_id) .. [[ ]] .. tostring(bag_to) .. [[")]])
+            table.insert(this_bag_actions,
+                [[expandAlias("/ziola_przepakuj ]] .. tostring(bag_id) .. [[ ]] .. tostring(bag_to) .. [[")]])
         end
         if table.size(this_bag_hints) >= 4 then
             break
@@ -334,7 +356,8 @@ end
 function herbs:print_herb_bag_conditions()
     cecho("\n    <green>Woreczki i ich stany:\n\n")
     for bag_id, condition in pairs(herbs.herb_bag_collect_condition_data.bag_id_to_condition) do
-        local bag_name_wrapped = string.sub("<LemonChiffon>" .. bag_id .. ". woreczek<grey> .................................................", 0, 40)
+        local bag_name_wrapped = string.sub(
+            "<LemonChiffon>" .. bag_id .. ". woreczek<grey> .................................................", 0, 40)
         cecho("  " .. bag_name_wrapped .. " " .. condition .. "\n")
     end
 
@@ -364,7 +387,8 @@ function herbs:coroutine_collect_herb_bag_condition()
     for i = 1, 200, 1 do
         send("ocen " .. tostring(i) .. ". swoj woreczek")
         coroutine.yield()
-        herbs.herb_bag_collect_condition_data["current_bag_id"] = herbs.herb_bag_collect_condition_data["current_bag_id"] + 1
+        herbs.herb_bag_collect_condition_data["current_bag_id"] = herbs.herb_bag_collect_condition_data
+            ["current_bag_id"] + 1
     end
 end
 
@@ -380,7 +404,8 @@ function herbs:_coroutine_build_db()
     herbs.db = {}
     herbs.index = {}
     herbs.counts = {}
-    local count_trigg = tempRegexTrigger("^(Nie widzisz tu niczego takiego.|Doliczyl.s sie ([a-z ]+) sztuk(|i)\\.)$", [[ herbs:building_counted(matches[3]) ]])
+    local count_trigg = tempRegexTrigger("^(Nie widzisz tu niczego takiego.|Doliczyl.s sie ([a-z ]+) sztuk(|i)\\.)$",
+        [[ herbs:building_counted(matches[3]) ]])
     send("policz swoje woreczki")
     coroutine.yield()
 
@@ -394,6 +419,6 @@ function herbs:_coroutine_build_db()
 
     herbs["build_db_coroutine_id"] = nil
     herbs:herbs_building_done()
+    raiseEvent("herbsDatabaseBuilt")
     scripts:print_log("Ok, zbudowalem baze ziol", true)
 end
-

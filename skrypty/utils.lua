@@ -65,6 +65,9 @@ setmetatable(scripts.counted_string_to_int, {
 })
 
 scripts.string_to_liczebnik = {
+    ["jedna"] = 1,
+    ["jeden"] = 1,
+    ["jednej"] = 1,
     ["dwa"] = 2,
     ["dwie"] = 2,
     ["dwoje"] = 2,

@@ -51,7 +51,7 @@ setmetatable(scripts.counted_string_to_int, {
     __index = function(table, key)
         if num[key] then
             return num[key]
-        else 
+        else
             local parts = key:split(" ")
             if #parts == 1 then
                 return tens[parts[1]]
@@ -65,6 +65,9 @@ setmetatable(scripts.counted_string_to_int, {
 })
 
 scripts.string_to_liczebnik = {
+    ["jedna"] = 1,
+    ["jeden"] = 1,
+    ["jednej"] = 1,
     ["dwa"] = 2,
     ["dwie"] = 2,
     ["dwoje"] = 2,
@@ -147,6 +150,3 @@ function scripts:get_table_without_first_item(arr)
 
     return items
 end
-
-
-

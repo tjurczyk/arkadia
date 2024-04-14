@@ -1,8 +1,10 @@
 function amap:print_help()
-    cecho("+-------------------------- <green>Arkadia mapper, ver " .. string.sub(amap.ver .. "   ", 0, 5) .. "<grey> ---------------------------+\n")
+    cecho("+-------------------------- <green>Arkadia mapper, ver " ..
+        string.sub(amap.ver .. "   ", 0, 5) .. "<grey> ---------------------------+\n")
     cecho("|                                                                                |\n")
     cecho("|         <yellow>https://github.com/tjurczyk/arkadia<grey>                                    |\n")
-    cecho("|                         <yellow>Chcesz zadotowac? <LawnGreen>Paypal: dzordzyk@gmail.com<grey>           |\n")
+    cecho(
+        "|                         <yellow>Chcesz zadotowac? <LawnGreen>Paypal: dzordzyk@gmail.com<grey>           |\n")
     cecho("|                                                                                |\n")
     cecho("|                         -----------------------------                          |\n")
     cecho("|                                                                                |\n")
@@ -22,7 +24,8 @@ function amap:print_help()
     cecho("| <light_slate_blue>/mm [draw|follow|off]<grey> - tryb mappera: 'draw' to rysowanie,                     |\n")
     cecho("| 'follow' to sledzenie, 'off' to wylaczone sledzenie.                           |\n")
     cecho("| <light_slate_blue>/lok<grey> - informacja o aktualnej lokacji.                                         |\n")
-    cecho("| <light_slate_blue>/lok [id]<grey> - informacja o lokacji o tym <light_slate_blue>id<grey>.                                     |\n")
+    cecho(
+        "| <light_slate_blue>/lok [id]<grey> - informacja o lokacji o tym <light_slate_blue>id<grey>.                                     |\n")
     cecho("| <light_slate_blue>/zlok<grey> - stara sie zlokalizowac na podstawie GMCP (najwazniejsze trakty,        |\n")
     cecho("| miasta itp. Sa to lokacje, ktore sa widoczne na mapperze w kliencie webowym).  |\n")
     cecho("| <light_slate_blue>/ustaw [numer_lokacji]<grey> - ustawia cie na konkretnej lokacji.                    |\n")
@@ -45,7 +48,8 @@ function amap:print_help()
     cecho("| <yellow>CHODZIK<grey>                                                                        |\n")
     cecho("| <light_slate_blue>/idz [nazwa_skrotu]<grey> - idzie do lokacji [nazwa_skrotu] ('/mapper_skroty').      |\n")
     cecho("| <light_slate_blue>/idz [nazwa_skrotu] [opoz]<grey> - j.w. z danym [opoznieniem].                       |\n")
-    cecho("| <light_slate_blue>/idz [id]<grey> - idzie do lokacji z tym <light_slate_blue>id<grey>.                                         |\n")
+    cecho(
+        "| <light_slate_blue>/idz [id]<grey> - idzie do lokacji z tym <light_slate_blue>id<grey>.                                         |\n")
     cecho("| <light_slate_blue>/idz [id] [opoz]<grey> - j.w. z danym [opoznieniem].                                 |\n")
     cecho("| <light_slate_blue>/stop<grey> - wylacza chodzik.                                                       |\n")
     cecho("| <light_slate_blue>/dalej<grey> - kontynuuje chodzik (przerwany czymkolwiek).                           |\n")
@@ -72,7 +76,8 @@ function amap:print_help()
 end
 
 function amap:print_draw()
-    cecho("+-------------------------- <green>Arkadia mapper, ver " .. string.sub(amap.ver .. "   ", 0, 5) .. "<grey> ---------------------------+\n")
+    cecho("+-------------------------- <green>Arkadia mapper, ver " ..
+        string.sub(amap.ver .. "   ", 0, 5) .. "<grey> ---------------------------+\n")
     cecho("|                                                                                |\n")
     cecho("| <yellow>Dostepne KOMENDY:<grey>                                                              |\n")
     cecho("|                                                                                |\n")
@@ -102,7 +107,8 @@ function amap:print_draw()
     cecho("| <light_slate_blue>/pokaz_kolory<grey> - pokaze liste zdefiniowanych kolorow.                           |\n")
     cecho("|                                                                                |\n")
     cecho("| <light_slate_blue>/waga [wartosc]<grey> - ustawia wage tego pokoju.                                    |\n")
-    cecho("| <light_slate_blue>/waga [wartosc] [lokacja_id]<grey> - ustawia wage lokacje o tym <light_slate_blue>[lokacja_id]<grey>.        |\n")
+    cecho(
+        "| <light_slate_blue>/waga [wartosc] [lokacja_id]<grey> - ustawia wage lokacje o tym <light_slate_blue>[lokacja_id]<grey>.        |\n")
     cecho("|                                                                                |\n")
     cecho("| <light_slate_blue>/kbind [kierunek] [komendy_oddzielone_#]<grey> - Pozwala pod konkretny kierunek      |\n")
     cecho("| zdefiniowac danych zestaw komend, ktory zostanie wykonany po wybraniu tego     |\n")
@@ -111,14 +117,15 @@ function amap:print_draw()
     cecho("| 'otworz drzwi kluczem', nastepnie 'otworz drzwi' i 'w'.                        |\n")
     cecho("| <red>UWAGA<grey>: W zestawie komend do danego kierunku MUSI znalezc sie ten kierunek      |\n")
     cecho("| (czyli w przykladzie 'w'), w przeciwnym razie kierunek nie zostanie wykonany.  |\n")
-    cecho("| <light_slate_blue>/kbind reset<grey> - Zresetuje kbindy na aktualnej lokacji                           |\n")
+    cecho("| <light_slate_blue>/kbind_reset<grey> - Zresetuje kbindy na aktualnej lokacji                           |\n")
     cecho("|                                                                                |\n")
     cecho("|                                                                                |\n")
     cecho("+--------------------------------------------------------------------------------+\n")
 end
 
 function amap:print_options()
-    cecho("+-------------------------- <green>Arkadia mapper, ver " .. string.sub(amap.ver .. "   ", 0, 5) .. "<grey> ---------------------------+\n")
+    cecho("+-------------------------- <green>Arkadia mapper, ver " ..
+        string.sub(amap.ver .. "   ", 0, 5) .. "<grey> ---------------------------+\n")
     cecho("|                                                                                |\n")
     cecho("| Ustawianie opcji poprzez <light_slate_blue>/ustaw_opcje [nazwa_opcji] [wartosc]<grey>.                 |\n")
     cecho("| Przykladowo: '/ustaw_opcje laczenie_stubow 1'                                  |\n")
@@ -147,7 +154,8 @@ function amap:print_options()
 end
 
 function amap:print_shortcuts()
-    cecho("+-------------------------- <green>Arkadia mapper, ver " .. string.sub(amap.ver .. "   ", 0, 5) .. "<grey> ---------------------------+\n")
+    cecho("+-------------------------- <green>Arkadia mapper, ver " ..
+        string.sub(amap.ver .. "   ", 0, 5) .. "<grey> ---------------------------+\n")
     cecho("|                                                                                |\n")
     cecho("| <yellow>Dostepne KOMENDY:<grey>                                                              |\n")
     cecho("|                                                                                |\n")
@@ -162,4 +170,3 @@ function amap:print_shortcuts()
     cecho("|                                                                                |\n")
     cecho("+--------------------------------------------------------------------------------+\n")
 end
-

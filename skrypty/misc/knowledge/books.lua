@@ -83,7 +83,6 @@ end
 function scripts.misc.knowledge:show_book_stats()
     local books_read = db:fetch(scripts.misc.knowledge.db.book_progress,
         { db:eq(scripts.misc.knowledge.db.book_progress.character, scripts.character_name) })
-    -- display(books_read)
 
     local books_per_category = {}
     for _, row in pairs(books_read) do
@@ -95,9 +94,8 @@ function scripts.misc.knowledge:show_book_stats()
             { ["book"] = row.book, ["progress"] = row.progress })
     end
 
-    display(books_per_category)
     for category, books in pairs(books_per_category) do
-        cecho("  ++ <light_slate_blue>" .. category .. "<grey>++\n")
+        cecho("  ++ <light_slate_blue>" .. category .. "<grey> ++\n")
         for _, book_di in pairs(books) do
             if book_di.progress == 1 then
                 cecho(" <ansiLightGreen>+ " .. book_di.book .. "\n")

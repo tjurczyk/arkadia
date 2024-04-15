@@ -30442,6 +30442,13 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<packageName></packageName>
 						<regex>^(wiedza)$</regex>
 					</Alias>
+					<Alias isActive="yes" isFolder="no">
+						<name>wiedza_stats</name>
+						<script>scripts.misc.knowledge:show_book_stats()</script>
+						<command></command>
+						<packageName></packageName>
+						<regex>^/wiedza$</regex>
+					</Alias>
 				</AliasGroup>
 				<Alias isActive="yes" isFolder="no">
 					<name>jezyki</name>

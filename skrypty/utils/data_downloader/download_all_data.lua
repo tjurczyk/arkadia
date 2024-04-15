@@ -10,11 +10,17 @@ function scripts.utils:download_all_data()
 end
 
 function scripts.utils:process_download_all_data()
-    scripts.utils.data_downloader:start_file_downloader(herbs.data_url, herbs.data_file_path, herbs_data_downloaded, "json")
+    scripts.utils.data_downloader:start_file_downloader(herbs.data_url, herbs.data_file_path, herbs_data_downloaded,
+        "json")
     coroutine.yield()
-    scripts.utils.data_downloader:start_file_downloader(scripts.inv.magics_url, scripts.inv.magics_file_path, magics_data_downloaded, "json")
+    scripts.utils.data_downloader:start_file_downloader(scripts.inv.magics_url, scripts.inv.magics_file_path,
+        magics_data_downloaded, "json")
     coroutine.yield()
-    scripts.utils.data_downloader:start_file_downloader(scripts.inv.magic_keys_url, scripts.inv.magic_keys_file_path, magic_keys_data_downloaded, "json")
+    scripts.utils.data_downloader:start_file_downloader(scripts.inv.magic_keys_url, scripts.inv.magic_keys_file_path,
+        magic_keys_data_downloaded, "json")
+    coroutine.yield()
+    scripts.utils.data_downloader:start_file_downloader(misc.knowledge.data_url, misc.knowledge.data_file_path,
+        knowledge_data_downloaded, "json")
     coroutine.yield()
     scripts.utils.download_all_data_coroutine_id = nil
 end
@@ -40,5 +46,11 @@ function magic_keys_data_downloaded(resume_coroutine_id, decoded_data)
     coroutine.resume(scripts.utils.download_all_data_coroutine_id)
 end
 
-tempTimer(0.7, function() scripts.utils:download_all_data() end)
+function knowledge_data_downloaded(resume_coroutine_id, decoded_data)
+    misc.knowledge.raw_data = decoded_data
+    scripts.misc.knowledge:setup_books_data()
+    coroutine.resume(resume_coroutine_id)
+    coroutine.resume(scripts.utils.download_all_data_coroutine_id)
+end
 
+tempTimer(0.7, function() scripts.utils:download_all_data() end)

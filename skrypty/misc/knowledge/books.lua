@@ -1,161 +1,110 @@
-
 scripts.misc = scripts.misc or {}
-scripts.misc.knowdlege = scripts.misc.knowdlege or {} 
+scripts.misc.knowledge = scripts.misc.knowledge or { ["db"] = nil, ["book_declension_map"] = {} }
 
-scripts.misc.knowdlege.books = scripts.misc.knowdlege.books or {
-    ["opened_book_name"] = nil,
-    ["current_book_name"] = nil,
-    ["current_knowledge"] = nil,
-    ["patterns"] = {
-        ["ciezka czerwona ksiege"] = "zglebiaj wiedze o wampirach z ciezkiej czerwonej ksiegi",
-        ["ciezka solidna ksiege"] = "zglebiaj wiedze o stworach pokoniunkcyjnych z ciezkiej solidnej ksiegi",
-        ["czarna gruba ksiege"] = "zglebiaj wiedze o chaosie i jego tworach z czarnej grubej ksiegi",
-        ["czarne nadgryzione tomiszcze"] = "zglebiaj wiedze o szczuroludziach z czarnego nadgryzionego tomiszcza",
-        ["ekstrawagancka pomaranczowa ksiazke"] = "zglebiaj wiedze o wampirach z ekstrawaganckiej pomaranczowej ksiazki",
-        ["elegancka kieszonkowa ksiazeczke"] = "zglebiaj wiedze o magii i jej tworach z eleganckiej kieszonkowej ksiazeczki",
-        ["ilustrowana opasla ksiege"] = "zglebiaj wiedze o szczuroludziach z ilustrowanej opaslej ksiegi",
-        ["kamienna ciezka ksiege"] = "zglebiaj wiedze o golemach z kamiennej ciezkiej ksiegi",
-        ["miekka nieduza ksiazke"] = "zglebiaj wiedze o szczuroludziach z miekkiej nieduzej ksiazki",
-        ["niewielka czarna ksiazeczke"] = "zglebiaj wiedze o smokach i smokowatych z niewielkiej czarnej ksiazeczki",
-        ["opasle szarawe tomiszcze"] = "zglebiaj wiedze o ryboludziach z opaslego szarawego tomiszcza",
-        ["plomienista opasla ksiege"] = "zglebiaj wiedze o magii i jej tworach z plomienistej opaslej ksiegi",
-        ["podniszczony gruby dziennik"] = "zglebiaj wiedze o jaszczuroludziach z podniszczonego grubego dziennika",
-        ["popielata tloczona ksiege"] = "zglebiaj wiedze o goblinoidach z popielatej tloczonej ksiegi",
-        ["poplamiona sfatygowana ksiege"] = "zglebiaj wiedze o wampirach z poplamionej sfatygowanej ksiegi",
-        ["poplamiona wysuszona ksiege"] = "zglebiaj wiedze o pajakach i pajakowatych z poplamionej wysuszonej ksiegi",
-        ["pozolkla powyginana ksiege"] = "zglebiaj wiedze o pajakach i pajakowatych z pozolklej powyginanej ksiegi",
-        ["runiczna kosciana ksiege"] = "zglebiaj wiedze o nieumarlych z runicznej koscianej ksiegi",
-        ["spieta opasla teke"] = "zglebiaj wiedze o golemach z spietej opaslej teki",
-        ["srebrna luskowata ksiege"] = "zglebiaj wiedze o smokach i smokowatych ze srebrnej luskowatej ksiegi",
-        ["srebrnoniebieski zdobiony folial"] = "zglebiaj wiedze o ryboludziach ze srebrnoniebieskiego zdobionego folialu",
-        ["tega okuta ksiege"] = "zglebiaj wiedze o istotach demonicznych z tegiej okutej ksiegi",
-        ["twarda jednobarwna ksiege"] = "zglebiaj wiedze o wampirach z twardej jednobarwnej ksiegi",
-        ["wielka opasla ksiege"] = "zglebiaj wiedze o smokach i smokowatych z wielkiej opaslej ksiegi",
-        ["wysluzona bordowa ksiege"] = "zglebiaj wiedze o chaosie i jego tworach z wysluzonej bordowej ksiegi",
-        ["zatechly przybrudzony rekopis"] = "zglebiaj wiedze o nieumarlych z zatechlego przybrudzonego rekopisu",
-        ["zdobiona oprawna ksiege"] = "zglebiaj wiedze o starszych rasach z zdobionej oprawnej ksiegi",
-        ["chudy skorzany notatnik"] = "zglebiaj wiedze o pajakach i pajakowatych z chudego skorzanego notatnika",
-        ["czarna podniszczona ksiege"] = "zglebiaj wiedze o chaosie i jego tworach z czarnej podniszczonej ksiegi",
-        ["czarna zdobiona ksiege"] = "zglebiaj wiedze o istotach demonicznych z czarnej zdobionej ksiegi",
-        ["gruba ksiege"] = "zglebiaj wiedze o chaosie i jego tworach z grubej ksiegi",
-        ["gruba obita ksiege"] = "zglebiaj wiedze o nieumarlych z grubej obitej ksiegi",
-        ["nieduzy zawilgly notatnik"] = "zglebiaj wiedze o wampirach z nieduzego zawilglego notatnika",
-        ["niewielka pachnaca ksiege"] = "zglebiaj wiedze o chaosie i jego tworach z niewielkiej pachnacej ksiegi",
-        ["pek koralowych tabliczek"] = "zglebiaj wiedze o ryboludziach z peku koralowych tabliczek",
-        ["skorzana makabryczna ksiege"] = "zglebiaj wiedze o nieumarlych z skorzanej makabrycznej ksiegi",
-        ["pogryziona brazowa ksiege"] = "zglebiaj wiedze o goblinoidach z pogryzionej brazowej ksiegi",
-        ["pozlacana ciezka ksiege"] = "zglebiaj wiedze o smokach i smokowatych z pozlacanej ciezkiej ksiegi"
+scripts.misc.knowledge.db = db:create("knowledge", {
+    book_progress = {
+        character = "",
+        book = "",
+        about = "",
+        progress = 0,
+        changed = db:Timestamp("CURRENT_TIMESTAMP"),
+        _index = { "character", "book", "about" },
+        _violations = "IGNORE"
     },
-    ["patterns_alt"] = {
-        ["wielkiej opaslej ksiegi"] = {
-           ["smokach i smokowatych"] = "zglebiaj wiedze o stworach pokoniunkcyjnych z wielkiej opaslej ksiegi",
-           ["stworach pokoniunkcyjnych"] = "zglebiaj wiedze o wampirach z wielkiej opaslej ksiegi"
-        },
-        ["opaslego szarawego tomiszcza"] = {
-            ["ryboludziach"] = "zglebiaj wiedze o starszych rasach z opaslego szarawego tomiszcza"
-        },
-        ["grubej obitej ksiegi"] = {
-            ["nieumarlych"] = "zglebiaj wiedze o nieumarlych z grubej obitej ksiegi"
-        },
-        ["czarnej grubej ksiegi"] = {
-            ["chaosie i jego tworach"] = "zglebiaj wiedze o istotach demonicznych z czarnej grubej ksiegi",
-        },
+    library_progress = {
+        character = "",
+        library = "",
+        location_id = "",
+        about = "",
+        progress = 0,
+        changed = db:Timestamp("CURRENT_TIMESTAMP"),
+        _index = { "character", "book", "about" },
+        _violations = "IGNORE"
     }
 }
-books = scripts.misc.knowdlege.books;
+)
 
-function scripts.misc.knowdlege.books:open_book(command)
-    if not mudlet.supports.coroutines then
+function scripts.misc.knowledge:setup_books_data()
+    for _, book_details in pairs(misc.knowledge.raw_data.books) do
+        scripts.misc.knowledge.book_declension_map[book_details.dopelniacz] = book_details.mianownik
+        scripts.misc.knowledge.book_declension_map[book_details.biernik] = book_details.mianownik
+    end
+end
+
+function scripts.misc.knowledge:start_reading_book(book, about)
+    scripts.misc.knowledge["current_row"] = nil
+    local book_proper = scripts.misc.knowledge.book_declension_map[book]
+    local about_proper = misc.knowledge.declension_category[about]
+
+    if not book_proper then
+        scripts:print_log("Nierozpoznana ksiega: " .. book .. ", zglos na discordzie")
         return
     end
-    
-    if books.trigger1 then disableTrigger(books.trigger1) end
-    if books.trigger2 then disableTrigger(books.trigger2) end
 
-    books.command = command;
-    books.read_coroutine_id = coroutine.create(scripts.misc.knowdlege.books._read_book_coroutine)
-    coroutine.resume(books.read_coroutine_id)
+    local book_about_fetch = db:fetch(scripts.misc.knowledge.db.book_progress,
+        { db:eq(scripts.misc.knowledge.db.book_progress.character, scripts.character_name),
+            db:eq(scripts.misc.knowledge.db.book_progress.book, book_proper),
+            db:eq(scripts.misc.knowledge.db.book_progress.about, about_proper) })
+
+    if #book_about_fetch == 0 then
+        db:add(scripts.misc.knowledge.db.book_progress,
+            {
+                character = scripts.character_name,
+                book = book_proper,
+                about = about_proper,
+                progress = 0.5
+            })
+        book_about_fetch = db:fetch(scripts.misc.knowledge.db.book_progress,
+            { db:eq(scripts.misc.knowledge.db.book_progress.character, scripts.character_name),
+                db:eq(scripts.misc.knowledge.db.book_progress.book, book_proper),
+                db:eq(scripts.misc.knowledge.db.book_progress.about, about_proper) })[1]
+    else
+        book_about_fetch = book_about_fetch[1]
+    end
+
+    scripts.misc.knowledge["current_row"] = book_about_fetch
 end
 
-function scripts.misc.knowdlege.books:_read_book_coroutine(command)
-    books.trigger1 = tempRegexTrigger("^Otwierasz (.*?) na stronie pierwszej\\.$", function() 
-        trigger_func_scripts_misc_book_open(matches[2]) 
-    end, 1)
+function scripts.misc.knowledge:cant_get_more_from_book()
+    if scripts.misc.knowledge.current_row == nil then
+        return
+    end
+    scripts.misc.knowledge.current_row.progress = 1
+    db:update(scripts.misc.knowledge.db.book_progress, scripts.misc.knowledge.current_row)
+end
 
-    send(books.command, false)
+function scripts.misc.knowledge:stop_reading_book()
+    if scripts.misc.knowledge.current_row == nil then
+        return
+    end
+    scripts.misc.knowledge.current_row = nil
+end
 
-    local timer = tempTimer(5, function()
-        if books.trigger1 then disableTrigger(books.trigger1) end
-    end)
+function scripts.misc.knowledge:show_book_stats()
+    local books_read = db:fetch(scripts.misc.knowledge.db.book_progress,
+        { db:eq(scripts.misc.knowledge.db.book_progress.character, scripts.character_name) })
+    -- display(books_read)
 
-    coroutine.yield()
-
-    killTimer(timer)
-    if books.trigger1 then disableTrigger(books.trigger1) end
-
-    if books.opened_book_name then
-        local book_name = books.opened_book_name;
-
-        if books.patterns[book_name] then
-            local command = books.patterns[book_name]
-            scripts.utils.bind_functional_call(function()
-                send(command)
-                books.read_coroutine_id = coroutine.create(scripts.misc.knowdlege.books._continue_book_coroutine)
-                coroutine.resume(books.read_coroutine_id)
-            end, command)
-        else
-            debugc("Ksiega nie odnaleziona " .. book_name)
+    local books_per_category = {}
+    for _, row in pairs(books_read) do
+        if books_per_category[row.about] == nil then
+            books_per_category[row.about] = {}
         end
+
+        table.insert(books_per_category[row.about],
+            { ["book"] = row.book, ["progress"] = row.progress })
+    end
+
+    display(books_per_category)
+    for category, books in pairs(books_per_category) do
+        cecho("  ++ <light_slate_blue>" .. category .. "<grey>++\n")
+        for _, book_di in pairs(books) do
+            if book_di.progress == 1 then
+                cecho(" <ansiLightGreen>+ " .. book_di.book .. "\n")
+            else
+                cecho(" <gold>- " .. book_di.book .. "\n")
+            end
+        end
+        cecho("\n")
     end
 end
-
-
-function scripts.misc.knowdlege.books:_continue_book_coroutine(command)
-
-    books.trigger2 = tempRegexTrigger("^Masz wrazenie, ze z (.*?) nie dowiesz sie juz niczego wiecej o (.*?)\\.$", function()
-        trigger_func_scripts_misc_book_continue(matches[2], matches[3])
-    end, 1)
-
-    local timer = tempTimer(30, function()
-        if books.trigger2 then disableTrigger(books.trigger2) end
-    end)
-
-    coroutine.yield()
-
-    killTimer(timer)
-    if books.trigger2 then disableTrigger(books.trigger2) end
-
-    if books.current_book_name then
-        local book_name = books.current_book_name;
-        local knowledge = books.current_knowledge;
-        local patterns_alt = books.patterns_alt;
-        if patterns_alt[book_name] and patterns_alt[book_name][knowledge] then
-
-            local command = patterns_alt[book_name][knowledge];
-            scripts.utils.bind_functional_call(function()
-                send(command)
-
-                books.read_coroutine_id = coroutine.create(scripts.misc.knowdlege.books._continue_book_coroutine)
-                coroutine.resume(books.read_coroutine_id)
-            end, command)
-        end
-    end  
-end
-
-
-
-function alias_func_scripts_misc_book_open(command)
-    scripts.misc.knowdlege.books:open_book(command)
-end
-
-function trigger_func_scripts_misc_book_open(book_name)
-    books.opened_book_name = string.lower(book_name)
-    coroutine.resume(books.read_coroutine_id)
-end
-
-function trigger_func_scripts_misc_book_continue(book_name, knowledge)
-    books.current_book_name = string.lower(book_name)
-    books.current_knowledge = string.lower(knowledge)
-    coroutine.resume(books.read_coroutine_id)
-end
-

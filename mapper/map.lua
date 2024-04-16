@@ -61,7 +61,8 @@ function amap:locate(noprint, skip_db)
     amap.next_dir_bind = nil
 
     if tmp_loc.x then
-        local curr_id = not amap.legacy_locate and amap:get_room_by_hash(tmp_loc.x, tmp_loc.y, tmp_loc.z, tmp_loc.area) or amap:room_exist(tmp_loc.x, tmp_loc.y, tmp_loc.z, tmp_loc.area)
+        local curr_id = not amap.legacy_locate and amap:get_room_by_hash(tmp_loc.x, tmp_loc.y, tmp_loc.z, tmp_loc.area) or
+            amap:room_exist(tmp_loc.x, tmp_loc.y, tmp_loc.z, tmp_loc.area)
         if curr_id and curr_id > 0 then
             amap.curr.id = curr_id
             amap.curr.x = tmp_loc.x
@@ -76,13 +77,14 @@ function amap:locate(noprint, skip_db)
             msg = "Ok, jestes zlokalizowany po GMCP"
             ret = true
         else
-            msg = "Nie moge Cie zlokalizowac na podstawie tych koordynatow (prawdopodobnie lokacja z tymi koordynatami nie istnieje)"
+            msg =
+            "Nie moge Cie zlokalizowac na podstawie tych koordynatow (prawdopodobnie lokacja z tymi koordynatami nie istnieje)"
         end
     else
         if not skip_db and amap.localization:try_to_locate() then
             msg = "Zlokalizowalem po opisie lokacji i wyjsciach."
             ret = true
-        else 
+        else
             msg = "GMCP nie zawiera koordynatow, nie moge cie zlokalizowac na mapie"
         end
     end
@@ -209,8 +211,10 @@ function get_next_room_from_dirs(room_id, dir, spe, is_team_follow)
     if is_team_follow and not new_id then
         amap:locate(true)
         amap:locate_on_next_location()
-        if not rex.match(spe, "(?:".. standard_lost_follows .. ")$") then
-            amap:log_failed_follow("[" .. getTime(true, "yyyy/MM/dd HH:mm:ss") .. "]: mapper zgubiony. last curr.id: " .. tostring(amap.curr.id) .. ", spe: `" .. spe .. "`\n")
+        if not rex.match(spe, "(?:" .. standard_lost_follows .. ")$") then
+            amap:log_failed_follow("[" ..
+                getTime(true, "yyyy/MM/dd HH:mm:ss") ..
+                "]: mapper zgubiony. last curr.id: " .. tostring(amap.curr.id) .. ", spe: `" .. spe .. "`\n")
         end
     end
 
@@ -218,14 +222,16 @@ function get_next_room_from_dirs(room_id, dir, spe, is_team_follow)
 end
 
 function amap:init_self_locating(skip_db)
-    amap.locate_handler = scripts.event_register:force_register_event_handler(amap.locate_handler, "gmcp.room.info", function ()
-        if amap:locate(true, skip_db) then
+    amap.locate_handler = scripts.event_register:force_register_event_handler(amap.locate_handler, "gmcp.room.info",
+        function()
+            if amap:locate(true, skip_db) then
+                scripts.event_register:kill_event_handler(amap.locate_handler)
+            end
+        end)
+    amap.set_position_handler = scripts.event_register:force_register_event_handler(amap.set_position_handler,
+        "setPosition", function()
             scripts.event_register:kill_event_handler(amap.locate_handler)
-        end
-    end)
-    amap.set_position_handler = scripts.event_register:force_register_event_handler(amap.set_position_handler, "setPosition", function()
-        scripts.event_register:kill_event_handler(amap.locate_handler)
-    end, true)
+        end, true)
 end
 
 function amap:check_direction_coords_correctness(c_x, c_y, c_z, x, y, z, dir)
@@ -341,7 +347,7 @@ function amap:check_room_on_direction_of(room, dir, force)
             local to_check_x, to_check_y, to_check_z = getRoomCoordinates(v)
             to_check_y = -to_check_y
             if not force and amap:check_direction_coords_correctness(amap.curr.x, amap.curr.y, amap.curr.z, to_check_x, to_check_y, to_check_z, dir)
-                    and not n_exits[dir] then
+                and not n_exits[dir] then
                 if not k:starts("script:") then
                     send(k)
                 else
@@ -459,7 +465,7 @@ function alias_func_mapper_map_show_current_room()
 end
 
 function alias_func_mapper_map_show_room_id()
-    amap:print_room_info(tonumber(matches[2]))
+    amap:print_room_info(matches[2])
 end
 
 function alias_func_mapper_map_set_position()

@@ -1,15 +1,25 @@
 function amap:open_map()
     openMapWidget()
     if not scripts.config then
-        self.profile_loaded_handler = scripts.event_register:force_register_event_handler(self.profile_loaded_handler, "profileLoaded", function()
-            raiseEvent("mapOpenEvent")
-        end, true)
+        self.profile_loaded_handler = scripts.event_register:force_register_event_handler(self.profile_loaded_handler,
+            "profileLoaded", function()
+                raiseEvent("mapOpenEvent")
+            end, true)
+    end
+    amap:init_map_data()
+end
+
+function amap:init_map_data()
+    for id, _ in pairs(getRooms()) do
+        local internal_id = getRoomUserData(id, "internal_id")
+        amap.internal_to_mudlet_id[internal_id] = id
     end
 end
+
 tempTimer(1, function() amap:open_map() end)
 
 function amap:map_sync()
-    if table.contains(getPackages(),"map_sync") then
+    if table.contains(getPackages(), "map_sync") then
         uninstallPackage("map_sync")
         scripts:print_log("Map Sync nie jest juz potrzebny.")
     end
@@ -101,7 +111,7 @@ end
 function amap:pre_on_key_event(force, is_alias)
     local went_special = amap:check_room_on_direction_of(amap.curr, amap.dir_from_key, force)
     --local went_special = nil
-    if not went_special and amap.long_to_short[amap.dir_from_key]then
+    if not went_special and amap.long_to_short[amap.dir_from_key] then
         send(amap.walk_mode_to_prefix[amap.walk_mode] .. amap.long_to_short[amap.dir_from_key], not is_alias)
         amap:on_key_event()
     else

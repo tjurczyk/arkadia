@@ -985,7 +985,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>Dostajesz (.*) monet\.$</string>
+						<string>Dostajesz (.*) monet(|y)\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -30448,6 +30448,13 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<command></command>
 						<packageName></packageName>
 						<regex>^/wiedza$</regex>
+					</Alias>
+					<Alias isActive="yes" isFolder="no">
+						<name>wiedza_all</name>
+						<script>scripts.misc.knowledge:show_book_stats(true)</script>
+						<command></command>
+						<packageName></packageName>
+						<regex>^/wiedza\!$</regex>
 					</Alias>
 				</AliasGroup>
 				<Alias isActive="yes" isFolder="no">

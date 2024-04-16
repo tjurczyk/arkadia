@@ -415,7 +415,7 @@ function alias_func_mapper_step_back_bind()
 end
 
 function alias_func_mapper_sciezka()
-    amap:show_path(tonumber(matches[2]))
+    amap:show_path(matches[2])
 end
 
 function alias_func_mapper_nastepny_kierunek()

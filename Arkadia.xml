@@ -31036,7 +31036,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 					<script>alias_func_mapper_map_highlight_path()</script>
 					<command></command>
 					<packageName></packageName>
-					<regex>^/pokaz_sciezke ([0-9]+)$</regex>
+					<regex>^/pokaz_sciezke (\d+|i[a-z0-9]+)$</regex>
 				</Alias>
 			</AliasGroup>
 			<AliasGroup isActive="yes" isFolder="yes">

@@ -422,6 +422,11 @@ function amap:gate_keybind_pressed()
 end
 
 function amap:show_path(dst)
+    if string.starts(dst, "i") then
+        dst = amap.internal_to_mudlet_id[dst]
+    end
+    dst = tonumber(dst)
+
     local path = getPath(amap.curr.id, dst)
     if path then
         amap:print_log("sciezka: " .. table.concat(speedWalkDir, ", "))
@@ -446,6 +451,11 @@ function amap:cancel_highlight()
 end
 
 function amap:do_highlight(to_room_number)
+    if string.starts(to_room_number, "i") then
+        to_room_number = amap.internal_to_mudlet_id[to_room_number]
+    end
+    to_room_number = tonumber(to_room_number)
+
     local path = getPath(amap.curr.id, to_room_number)
 
     for i = 1, table.size(speedWalkPath) do
@@ -512,7 +522,7 @@ function alias_func_mapper_map_go_continue_delay()
 end
 
 function alias_func_mapper_map_highlight_path()
-    amap:do_highlight(tonumber(matches[2]))
+    amap:do_highlight(matches[2])
 end
 
 function trigger_func_locate_on_next()

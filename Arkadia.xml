@@ -2038,7 +2038,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>Zaczynasz zglebiac (.*), probujac dowiedziec sie czegos wiecej o (.*)\.$</string>
+							<string>^Zaczynasz zglebiac (.*), probujac dowiedziec sie czegos wiecej o (.*)\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -2058,10 +2058,10 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>Nie jestes w stanie dluzej czytac.</string>
+							<string>^Nie jestes w stanie dluzej czytac\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
-							<integer>0</integer>
+							<integer>1</integer>
 						</regexCodePropertyList>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -2078,7 +2078,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>Masz wrazenie, ze z .*nie dowiesz sie juz niczego wiecej</string>
+							<string>^Masz wrazenie, ze z .*nie dowiesz sie juz niczego wiecej o.*\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -30980,7 +30980,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 					<script>alias_func_mapper_map_show_room_id()</script>
 					<command></command>
 					<packageName></packageName>
-					<regex>^/lok ([0-9]+)$</regex>
+					<regex>^/lok ([0-9]+|i[a-z0-9]+)$</regex>
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
 					<name>set_position</name>

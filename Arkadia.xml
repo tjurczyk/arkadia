@@ -19153,6 +19153,12 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 								<string>Dobywajac szylkretowego falistego sztyletu, czujesz niebywala jednosc z ta na pozor zwyczajna bronia.</string>
 								<string>Nie jestes w stanie powstrzymac lekkiego usmieszku, na mysl o tym czego mozna dokonac tak grozna bronia jak ta.</string>
 								<string>Przekladasz jedna dlon przez skorzana petle przy stylisku i obiema rekami sciskasz najezony potezny morgenstern, dobywajac oreza.</string>
+								<string>^Blyskawicznie dobywasz .* gotujac sie do nadchodzacego boju\.$</string>
+								<string>^Eleganckim ruchem dobywasz .* przybierajac pelna gracji pozycje walki\.$</string>
+								<string>^Gwaltownie siegasz po .* szykujac sie do rychlego starcia\.$</string>
+								<string>^Pozornie niespiesznym ruchem dobywasz .* zamierajac w wystudiowanej postawie walki\.$</string>
+								<string>^Umiejetnie chwytasz za .* bez leku oczekujac nadchodzacej walki\.$</string>
+								<string>^Zataczasz .* swiszczacego mlynca, przyjmujac przy tym dogodna do wyprowadzenia ciosu pozycje\.$</string>
 							</regexCodeList>
 							<regexCodePropertyList>
 								<integer>2</integer>
@@ -19199,6 +19205,12 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 								<integer>2</integer>
 								<integer>2</integer>
 								<integer>2</integer>
+								<integer>1</integer>
+								<integer>1</integer>
+								<integer>1</integer>
+								<integer>1</integer>
+								<integer>1</integer>
+								<integer>1</integer>
 							</regexCodePropertyList>
 						</Trigger>
 						<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">

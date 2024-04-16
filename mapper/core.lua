@@ -16,6 +16,19 @@ function amap:init_map_data()
     end
 end
 
+function amap:preprocess_before_saving()
+    for id, _ in pairs(getRooms()) do
+        local internal_id = getRoomUserData(id, "internal_id")
+        if internal_id == "" then
+            internal_id = generate_uuid("ixxxxxxxxx")
+            while amap.internal_to_mudlet_id[internal_id] ~= nil do
+                internal_id = generate_uuid("ixxxxxxxxx")
+            end
+            setRoomUserData(id, "internal_id", internal_id)
+        end
+    end
+end
+
 tempTimer(1, function() amap:open_map() end)
 
 function amap:map_sync()

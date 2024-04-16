@@ -21,7 +21,7 @@ function scripts.installer:update_scripts(branch, repo)
     end
 
     scripts.installer.scripts_zip = getMudletHomeDir() .. "/scripts.zip"
-    scripts.installer.unzip_directory = getMudletHomeDir() .. "/".. short_repo_name .."-" .. tag .. "/"
+    scripts.installer.unzip_directory = getMudletHomeDir() .. "/" .. short_repo_name .. "-" .. tag .. "/"
     scripts.installer.scripts_directory = getMudletHomeDir() .. "/arkadia/"
     scripts.installer.to_delete = getMudletHomeDir() .. "/arkadia-old-" .. os.time() .. "/"
 
@@ -35,7 +35,9 @@ function scripts.installer:update_scripts(branch, repo)
         scripts.installer.version_tag = tag
     end
 
-    scripts.installer.scripts_download_handler = scripts.event_register:force_register_event_handler(scripts.installer.scripts_download_handler, "sysDownloadDone", function(_, filename) scripts.installer:handle_scripts_download(_, filename) end)
+    scripts.installer.scripts_download_handler = scripts.event_register:force_register_event_handler(
+        scripts.installer.scripts_download_handler, "sysDownloadDone",
+        function(_, filename) scripts.installer:handle_scripts_download(_, filename) end)
     downloadFile(scripts.installer.scripts_zip, url)
     scripts:print_log("Pobieram paczke skryptow " .. branch .. " z repozytorium " .. repo)
 end
@@ -46,8 +48,10 @@ function scripts.installer:handle_scripts_download(_, filename)
     end
     scripts.event_register:kill_event_handler(scripts.installer.scripts_download_handler)
     scripts:print_log("Paczka pobrana. Rozpakowuje")
-    scripts.event_register:register_event_handler("sysUnzipDone", function(event, ...) scripts.installer:handle_unzip_scripts(event, ...) end, true)
-    scripts.event_register:register_event_handler("sysUnzipError", function(event, ...) scripts.installer:handle_unzip_scripts(event, ...) end, true)
+    scripts.event_register:register_event_handler("sysUnzipDone",
+        function(event, ...) scripts.installer:handle_unzip_scripts(event, ...) end, true)
+    scripts.event_register:register_event_handler("sysUnzipError",
+        function(event, ...) scripts.installer:handle_unzip_scripts(event, ...) end, true)
     unzipAsync(scripts.installer.scripts_zip, getMudletHomeDir())
 end
 
@@ -66,20 +70,23 @@ function scripts.installer:handle_unzip_scripts(event, ...)
         tempTimer(1, function()
             scripts.installer:put_version_to_file()
             local retry = {}
-            retry.co = coroutine.create(function ()
-                for i=1,10 do
-                  retry.success, retry.err = os.rename(scripts.installer.unzip_directory, scripts.installer.scripts_directory)
-                  if (retry.err) then
-                    tempTimer(1, function() coroutine.resume(retry.co) end)
-                    coroutine.yield()
-                  else
-                    installPackage(scripts.installer.scripts_directory .. "Arkadia.xml")
-                    if not deleted then
-                        scripts:print_log("Nie udalo sie usunac katalogu ze starymi skryptami. Zalecane recznie usuniecie katalogu " .. scripts.installer.to_delete .. " Nowe skrypty powinny dzialac.")
+            retry.co = coroutine.create(function()
+                for i = 1, 10 do
+                    retry.success, retry.err = os.rename(scripts.installer.unzip_directory,
+                        scripts.installer.scripts_directory)
+                    if (retry.err) then
+                        tempTimer(1, function() coroutine.resume(retry.co) end)
+                        coroutine.yield()
+                    else
+                        installPackage(scripts.installer.scripts_directory .. "Arkadia.xml")
+                        if not deleted then
+                            scripts:print_log(
+                                "Nie udalo sie usunac katalogu ze starymi skryptami. Zalecane recznie usuniecie katalogu " ..
+                                scripts.installer.to_delete .. " Nowe skrypty powinny dzialac.")
+                        end
+                        scripts:print_log("Ok aktualizacja udana, zrestartuj Mudleta.")
+                        coroutine.yield()
                     end
-                    scripts:print_log("Ok aktualizacja udana, zrestartuj Mudleta.")    
-                    coroutine.yield()
-                  end
                 end
             end)
             coroutine.resume(retry.co)
@@ -108,12 +115,13 @@ function scripts.installer:get_version_from_file()
 end
 
 function scripts.installer:download_mapper(callback)
-    scripts.utils.downloader:downloadFile(getMudletHomeDir() .. "/map_master3.dat", "https://github.com/Delwing/arkadia-mapa/releases/latest/download/map_master3.dat", function()
-        scripts.installer:load_map()
-        if callback then
-            callback()
-        end
-    end, "Pobieram plik mapy")
+    scripts.utils.downloader:downloadFile(getMudletHomeDir() .. "/map_master3.dat",
+        "https://github.com/Delwing/arkadia-mapa/releases/latest/download/map_master3.dat", function()
+            scripts.installer:load_map()
+            if callback then
+                callback()
+            end
+        end, "Pobieram plik mapy")
 end
 
 function scripts.installer:download_people_db()
@@ -143,6 +151,7 @@ function scripts.installer:save_map(branch)
         tree = branch
     end
 
+    amap:preprocess_before_saving()
     local full_name = "/map_master3.dat"
 
     if saveMap(getMudletHomeDir() .. full_name) then

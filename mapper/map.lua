@@ -104,6 +104,17 @@ function amap:locate_on_next_location(skip_db)
 end
 
 function amap:set_position(room_id, silent)
+    if string.starts(room_id, "i") then
+        room_id = amap.internal_to_mudlet_id[room_id]
+        if room_id == nil then
+            if not silent then
+                amap:print_log("Lokacja z tym ID nie istnieje")
+            end
+            return
+        end
+    end
+    room_id = tonumber(room_id)
+
     -- immediately clear next dir bind
     amap.next_dir_bind = nil
 
@@ -472,7 +483,7 @@ function alias_func_mapper_map_show_room_id()
 end
 
 function alias_func_mapper_map_set_position()
-    amap:set_position(tonumber(matches[2]))
+    amap:set_position(matches[2])
 end
 
 function alias_func_mapper_map_go_to_shortcut()

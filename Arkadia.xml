@@ -30987,7 +30987,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 					<script>alias_func_mapper_map_set_position()</script>
 					<command></command>
 					<packageName></packageName>
-					<regex>^/ustaw ([0-9]+)$</regex>
+					<regex>^/ustaw ([0-9]+|i[0-9a-z]+)$</regex>
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
 					<name>go_to_shortcut</name>

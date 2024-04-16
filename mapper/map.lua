@@ -28,6 +28,7 @@ function amap:follow(direction, is_team_follow)
     -- if found, proceed
     if new_id then
         amap.curr.id = new_id
+        amap.curr.internal_id = getRoomUserData(amap.curr.id, "internal_id")
         local curr_area = getRoomArea(amap.curr.id)
         amap.curr.area = getRoomAreaName(curr_area)
 
@@ -42,7 +43,7 @@ function amap:follow(direction, is_team_follow)
         if not is_team_follow then
             raiseEvent("amapWalking", direction)
         end
-        raiseEvent("amapNewLocation", amap.curr.id, direction)
+        raiseEvent("amapNewLocation", amap.curr.id, direction, amap.curr.internal_id)
         amap:copy_loc(amap.prev, amap.curr)
         return true
     else
@@ -65,13 +66,14 @@ function amap:locate(noprint, skip_db)
             amap:room_exist(tmp_loc.x, tmp_loc.y, tmp_loc.z, tmp_loc.area)
         if curr_id and curr_id > 0 then
             amap.curr.id = curr_id
+            amap.curr.internal_id = getRoomUserData(amap.curr.id, "internal_id")
             amap.curr.x = tmp_loc.x
             amap.curr.y = tmp_loc.y
             amap.curr.z = tmp_loc.z
             amap.curr.area = tmp_loc.area
             amap:copy_loc(amap.prev, amap.curr)
             centerview(curr_id)
-            raiseEvent("amapNewLocation", amap.curr.id)
+            raiseEvent("amapNewLocation", amap.curr.id, nil, amap.curr.internal_id)
             amap_ui_set_dirs_trigger(getRoomExits(amap.curr.id))
             amap:follow_mode()
             msg = "Ok, jestes zlokalizowany po GMCP"
@@ -107,6 +109,7 @@ function amap:set_position(room_id, silent)
 
     if getRoomExits(room_id) then
         amap.curr.id = room_id
+        amap.curr.internal_id = getRoomUserData(amap.curr.id, "internal_id")
         amap.curr.x, amap.curr.y, amap.curr.z = getRoomCoordinates(amap.curr.id)
         amap.curr.y = -amap.curr.y
         local curr_area = getRoomArea(amap.curr.id)
@@ -126,7 +129,7 @@ function amap:set_position(room_id, silent)
         amap_ui_set_dirs_trigger(getRoomExits(amap.curr.id))
 
         raiseEvent("setPosition", amap.curr.id)
-        raiseEvent("amapNewLocation", amap.curr.id)
+        raiseEvent("amapNewLocation", amap.curr.id, nil, amap.curr.internal_id)
     else
         if not silent then
             amap:print_log("Lokacja z tym ID nie istnieje")

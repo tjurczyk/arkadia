@@ -1,5 +1,5 @@
 function amap_check_is_gate_room(...)
-    if not arg or table.size(arg) ~= 4 then
+    if not arg then
         return nil
     end
 
@@ -11,4 +11,3 @@ function amap_check_is_gate_room(...)
 end
 
 registerAnonymousEventHandler("amapNewLocation", "amap_check_is_gate_room")
-

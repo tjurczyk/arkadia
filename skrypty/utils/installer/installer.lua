@@ -139,6 +139,7 @@ function scripts.installer:load_map(branch)
     local full_name = "/map_" .. tree .. ".dat"
 
     if loadMap(getMudletHomeDir() .. full_name) then
+        amap:init_map_data()
         scripts:print_log("Mapa zaladowana")
     else
         scripts:print_log("Problem z zaladowaniem mapy")

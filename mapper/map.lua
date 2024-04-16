@@ -495,11 +495,11 @@ function alias_func_mapper_map_go_to_shortcut_delay()
 end
 
 function alias_func_mapper_map_go_to_id()
-    amap:speedwalk_from_id(tonumber(matches[2]))
+    amap:speedwalk_from_id(matches[2])
 end
 
 function alias_func_mapper_map_go_to_id_delay()
-    amap:speedwalk_from_id(tonumber(matches[2]), matches[3])
+    amap:speedwalk_from_id(matches[2], matches[3])
 end
 
 function alias_func_mapper_map_go_continue()

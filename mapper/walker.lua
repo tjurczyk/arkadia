@@ -1,4 +1,3 @@
-
 function amap:gotoRoom(room_id)
     amap.walker_set = true
     gotoRoom(room_id)
@@ -29,6 +28,15 @@ function amap:speedwalk_from_id(room_id, delay)
         error("Wrong input")
     end
 
+    if string.starts(room_id, "i") then
+        room_id = amap.internal_to_mudlet_id[room_id]
+        if room_id == nil then
+            amap:print_log("Nie jestem w stanie zdekodowac tego ID do lokacji mudletowej")
+            return
+        end
+    end
+    room_id = tonumber(room_id)
+
     if not amap.curr.id or amap.curr.id == -1 or not getPath(amap.curr.id, room_id) then
         amap:print_log("Nie ma polaczenia z aktualnej lokacji do docelowej")
         return
@@ -43,7 +51,6 @@ function amap:speedwalk_from_id(room_id, delay)
 end
 
 function doSpeedWalk()
-
     if amap.walker_disabled then
         amap:print_log("Chodzik jest wylaczony. Uzyj '/chodzik wlacz' aby go wlaczyc.")
         return
@@ -89,7 +96,6 @@ function doSpeedWalk()
             send(curr_move)
         end
         amap.walker_timer_id = tempTimer(amap.walker_delay, function() amap:auto_walker() end)
-
     else
         amap:print_log("Chodzik aktualnie pracuje, najpierw zastopuj uzywajac '/stop'")
     end
@@ -194,7 +200,8 @@ end
 
 function amap:walker_info()
     if amap.walker then
-        amap:print_log("Aktualnie idziesz do lokacji '" .. getRoomName(amap.walker_dest) .. "' z opoznieniem " .. tostring(round(amap.walker_delay, 2)))
+        amap:print_log("Aktualnie idziesz do lokacji '" ..
+            getRoomName(amap.walker_dest) .. "' z opoznieniem " .. tostring(round(amap.walker_delay, 2)))
     elseif amap.walker_disabled then
         amap:print_log("Chodzik jest wylaczony. Uzyj '/chodzik wlacz' aby go wlaczyc.")
     else
@@ -247,5 +254,5 @@ function alias_func_mapper_walker_zwolnij_chodzik()
 end
 
 function alias_func_mapper_walker_toggle(value)
-   amap:modify_toggle_walker(value)
+    amap:modify_toggle_walker(value)
 end

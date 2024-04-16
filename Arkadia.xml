@@ -30987,7 +30987,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 					<script>alias_func_mapper_map_set_position()</script>
 					<command></command>
 					<packageName></packageName>
-					<regex>^/ustaw ([0-9]+)$</regex>
+					<regex>^/ustaw ([0-9]+|i[0-9a-z]+)$</regex>
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
 					<name>go_to_shortcut</name>
@@ -31008,14 +31008,14 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 					<script>alias_func_mapper_map_go_to_id()</script>
 					<command></command>
 					<packageName></packageName>
-					<regex>^/idz ([0-9]+)$</regex>
+					<regex>^/idz (\d+|i[0-9a-z]+)$</regex>
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
 					<name>go_to_id_delay</name>
 					<script>alias_func_mapper_map_go_to_id_delay()</script>
 					<command></command>
 					<packageName></packageName>
-					<regex>^/idz ([0-9]+) (([0-9]+)|([0-9]+\.[0-9]+))$</regex>
+					<regex>^/idz (\d+|i[0-9a-z]+) (\d+|\d+\.\d+)$</regex>
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
 					<name>go_continue</name>
@@ -31036,7 +31036,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 					<script>alias_func_mapper_map_highlight_path()</script>
 					<command></command>
 					<packageName></packageName>
-					<regex>^/pokaz_sciezke ([0-9]+)$</regex>
+					<regex>^/pokaz_sciezke (\d+|i[a-z0-9]+)$</regex>
 				</Alias>
 			</AliasGroup>
 			<AliasGroup isActive="yes" isFolder="yes">

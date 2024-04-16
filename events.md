@@ -59,7 +59,7 @@ Argumenty:
 
 * `arg1`: ID nowej lokacji
 * `arg2`: kierunek, ktory zostal zlapany jako ruch
-* `arg2`: internal ID nowej lokacji (skryptowy, zawsze zaczyna sie od `i...`)
+* `arg3`: internal ID nowej lokacji (skryptowy, zawsze zaczyna sie od `i...`)
 
   Event ten jest podnoszony gdy mapper wykryje nowy poprawny ruch na mapie.
 

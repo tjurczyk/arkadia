@@ -25,3 +25,14 @@ function trigger_func_skrypty_misc_ships_buses_dylizans()
     scripts.utils.bind_ship("wem;wsiadz do dylizansu;wlm", false, false)
 end
 
+function trigger_func_skrypty_misc_busses_bryczka_on()
+    scripts.utils.bind_ship("wem;usiadz na bryczce;wlm", false, false)
+end
+
+function trigger_func_skrypty_misc_busses_bryczka_woz_off()
+    scripts.utils.bind_ship("wstan", false, false)
+end
+
+function trigger_func_skrypty_misc_busses_woz_on()
+    scripts.utils.bind_ship("wem;usiadz na bryczce;wlm", false, false)
+end

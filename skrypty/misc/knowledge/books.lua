@@ -48,28 +48,33 @@ function scripts.misc.knowledge:start_reading_book(book, about)
         return
     end
 
+    local book_row = scripts.misc.knowledge:get_or_create_book_about(book, about, 0.5)
+    scripts.misc.knowledge["current_row"] = book_row
+end
+
+function scripts.misc.knowledge:get_or_create_book_about(book, about, progress_on_create)
     local book_about_fetch = db:fetch(scripts.misc.knowledge.db.book_progress,
         { db:eq(scripts.misc.knowledge.db.book_progress.character, scripts.character_name),
-            db:eq(scripts.misc.knowledge.db.book_progress.book, book_proper),
-            db:eq(scripts.misc.knowledge.db.book_progress.about, about_proper) })
+            db:eq(scripts.misc.knowledge.db.book_progress.book, book),
+            db:eq(scripts.misc.knowledge.db.book_progress.about, about) })
 
     if #book_about_fetch == 0 then
         db:add(scripts.misc.knowledge.db.book_progress,
             {
                 character = scripts.character_name,
-                book = book_proper,
-                about = about_proper,
-                progress = 0.5
+                book = book,
+                about = about,
+                progress = progress_on_create
             })
         book_about_fetch = db:fetch(scripts.misc.knowledge.db.book_progress,
             { db:eq(scripts.misc.knowledge.db.book_progress.character, scripts.character_name),
-                db:eq(scripts.misc.knowledge.db.book_progress.book, book_proper),
-                db:eq(scripts.misc.knowledge.db.book_progress.about, about_proper) })[1]
+                db:eq(scripts.misc.knowledge.db.book_progress.book, book),
+                db:eq(scripts.misc.knowledge.db.book_progress.about, about) })[1]
     else
         book_about_fetch = book_about_fetch[1]
     end
 
-    scripts.misc.knowledge["current_row"] = book_about_fetch
+    return book_about_fetch
 end
 
 function scripts.misc.knowledge:cant_get_more_from_book()
@@ -103,6 +108,8 @@ function scripts.misc.knowledge:show_book_stats(full)
         books_started_reading[row.book] = true
     end
 
+    display(books_per_category)
+
     for _, category in pairs(misc.knowledge.categories) do
         if books_per_category[category] == nil then
             books_per_category[category] = {}
@@ -126,6 +133,9 @@ function scripts.misc.knowledge:show_book_stats(full)
     cecho(" |                <yellow>w trakcie<grey>                 |\n")
     cecho(" |              <red>nieprzeczytane<grey>              |\n")
     cecho(" |                                          |\n")
+    cecho(" |  kliknij prawym na ksiazce zeby zmienic  |\n")
+    cecho(" |  jej status.                             |\n")
+    cecho(" |                                          |\n")
     cecho(" +------------------------------------------+\n")
 
     for _, category in pairs(misc.knowledge.categories) do
@@ -141,22 +151,67 @@ function scripts.misc.knowledge:show_book_stats(full)
             cecho(" +------------------------------------------+\n")
 
             for _, book_di in pairs(books_per_category[category]) do
-                local book_str = ""
-                first_half = string.rep(" ", 21 - #book_di.book / 2)
-                book_str = first_half .. "COLOR1" .. book_di.book .. "COLOR2"
-                second_half = string.rep(" ", 42 - #book_str + 12)
-                book_str = book_str .. second_half
-                if book_di.progress == 1 then
-                    book_str = book_str:gsub("COLOR1", "<ansiLightGreen>")
-                elseif book_di.progress == 0.5 then
-                    book_str = book_str:gsub("COLOR1", "<yellow>")
-                else
-                    book_str = book_str:gsub("COLOR1", "<red>")
-                end
-                book_str = book_str:gsub("COLOR2", "<grey>")
-                cecho(" |" .. book_str .. "|\n")
+                scripts.misc.knowledge:print_book_row(book_di.book, category, book_di.progress)
             end
             cecho(" +------------------------------------------+\n")
         end
     end
+end
+
+function scripts.misc.knowledge:print_book_row(book, about, progress)
+    local book_str = ""
+    local first_half = string.rep(" ", 21 - #book / 2)
+    -- book_str = first_half .. "COLOR1" .. book .. "COLOR2"
+    -- local second_half = string.rep(" ", 42 - #book_str + 12)
+    -- book_str = book_str .. second_half
+    cecho(" |" .. first_half)
+    if progress == 1 then
+        -- book_str = book_str:gsub("COLOR1", "<ansiLightGreen>")
+        cechoPopup("<ansiLightGreen>" .. book,
+            {
+                function() scripts.misc.knowledge.mark_book_with_status(book, about, 0) end,
+                function() scripts.misc.knowledge.mark_book_with_status(book, about, 0.5) end
+            },
+            {
+                "oznacz jako nieprzeczytana",
+                "oznacz jako w trakcie"
+            }, true)
+    elseif progress == 0.5 then
+        cechoPopup("<yellow>" .. book,
+            {
+                function() scripts.misc.knowledge.mark_book_with_status(book, about, 0) end,
+                function() scripts.misc.knowledge.mark_book_with_status(book, about, 1) end
+            },
+            {
+                "oznacz jako nieprzeczytana",
+                "oznacz jako przeczytana"
+            }, true)
+    else
+        cechoPopup("<red>" .. book,
+            {
+                function() scripts.misc.knowledge.mark_book_with_status(book, about, 0.5) end,
+                function() scripts.misc.knowledge.mark_book_with_status(book, about, 1) end
+            },
+            {
+                "oznacz jako w trakcie",
+                "oznacz jako przeczytana"
+            }, true)
+    end
+    local second_half = string.rep(" ", 48 - #first_half - #book - 6)
+    cecho("<grey>" .. second_half .. "|\n")
+end
+
+function scripts.misc.knowledge.mark_book_with_status(book, about, progress)
+    local book_row = scripts.misc.knowledge:get_or_create_book_about(book, about, 0)
+    book_row.progress = progress
+    db:update(scripts.misc.knowledge.db.book_progress, book_row)
+    local msg = "ok, ustawilem ksiazke '" .. book .. "' o '" .. about .. "' jako "
+    if progress == 0 then
+        msg = msg .. "nieprzeczytana"
+    elseif progress == 0.5 then
+        msg = msg .. "w trakcie"
+    else
+        msg = msg .. "przeczytana"
+    end
+    scripts:print_log(msg)
 end

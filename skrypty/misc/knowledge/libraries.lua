@@ -82,9 +82,11 @@ function scripts.misc.knowledge:show_library_stats(full)
             libraries_per_category[row.about] = {}
         end
 
-        table.insert(libraries_per_category[row.about],
-            { ["library"] = row.library, ["progress"] = row.progress })
-        libraries_started_reading[row.library .. row.about] = true
+        if row.progress > 0 then
+            table.insert(libraries_per_category[row.about],
+                { ["library"] = row.library, ["progress"] = row.progress })
+            libraries_started_reading[row.library .. row.about] = true
+        end
     end
 
     for _, category in pairs(misc.knowledge.categories) do

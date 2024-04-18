@@ -135,9 +135,11 @@ function scripts.misc.knowledge:show_book_stats(full)
             books_per_category[row.about] = {}
         end
 
-        table.insert(books_per_category[row.about],
-            { ["book"] = row.book, ["progress"] = row.progress })
-        books_started_reading[row.book .. row.about] = true
+        if row.progress > 0 then
+            table.insert(books_per_category[row.about],
+                { ["book"] = row.book, ["progress"] = row.progress })
+            books_started_reading[row.book .. row.about] = true
+        end
     end
 
     for _, category in pairs(misc.knowledge.categories) do

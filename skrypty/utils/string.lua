@@ -238,25 +238,42 @@ function scripts.utils:parse_money_string(money_str)
         ["copper_amount"] = 0,
     }
 
+    echo("asdadasd")
     local current_amount = nil
     local tokens = string.split(money_str, " ")
-    for _, t in pairs(tokens) do
+    local iter = 1
+    local parsed_token
+    display(tokens)
+    while iter <= table.size(tokens) do
         if not current_amount then
-            current_amount = scripts.string_to_liczebnik[t]
+            if tokens[iter] == "i" then
+                iter = iter + 1
+            end
+
+            parsed_token = tokens[iter]
+            iter = iter + 1
+            if scripts.string_to_liczebnik[tokens[iter]] then
+                parsed_token = parsed_token .. " " .. tokens[iter]
+                iter = iter + 1
+            end
+
+            display(parsed_token)
+            current_amount = scripts.string_to_liczebnik[parsed_token]
             if not current_amount then
-                current_amount = tonumber(t)
+                current_amount = tonumber(parsed_token)
             end
         else
-            if string.starts(t, "mit") then
+            if string.starts(tokens[iter], "mit") then
                 amount_dict.mithryl_amount = current_amount
-            elseif string.starts(t, "zlo") then
+            elseif string.starts(tokens[iter], "zlo") then
                 amount_dict.gold_amount = current_amount
-            elseif string.starts(t, "sre") then
+            elseif string.starts(tokens[iter], "sre") then
                 amount_dict.silver_amount = current_amount
             else
                 amount_dict.copper_amount = current_amount
             end
             current_amount = nil
+            iter = iter + 1
         end
     end
     return amount_dict

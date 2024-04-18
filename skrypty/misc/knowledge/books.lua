@@ -137,7 +137,7 @@ function scripts.misc.knowledge:show_book_stats(full)
 
         table.insert(books_per_category[row.about],
             { ["book"] = row.book, ["progress"] = row.progress })
-        books_started_reading[row.book] = true
+        books_started_reading[row.book .. row.about] = true
     end
 
     for _, category in pairs(misc.knowledge.categories) do
@@ -149,7 +149,7 @@ function scripts.misc.knowledge:show_book_stats(full)
     if full == true then
         for category, books in pairs(scripts.misc.knowledge.category_to_books) do
             for book, _ in pairs(books) do
-                if books_started_reading[book] == nil then
+                if books_started_reading[book .. category] == nil then
                     table.insert(books_per_category[category],
                         { ["book"] = book, ["progress"] = 0 })
                 end

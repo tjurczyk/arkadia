@@ -30581,18 +30581,25 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<regex>^(wiedza)$</regex>
 					</Alias>
 					<Alias isActive="yes" isFolder="no">
-						<name>wiedza_stats</name>
-						<script>scripts.misc.knowledge:show_book_stats()</script>
+						<name>wiedza_help</name>
+						<script>scripts.misc.knowledge:show_help()</script>
 						<command></command>
 						<packageName></packageName>
 						<regex>^/wiedza$</regex>
 					</Alias>
 					<Alias isActive="yes" isFolder="no">
-						<name>wiedza_all</name>
+						<name>ksiazki</name>
+						<script>scripts.misc.knowledge:show_book_stats()</script>
+						<command></command>
+						<packageName></packageName>
+						<regex>^/ksiazki$</regex>
+					</Alias>
+					<Alias isActive="yes" isFolder="no">
+						<name>ksiazki_all</name>
 						<script>scripts.misc.knowledge:show_book_stats(true)</script>
 						<command></command>
 						<packageName></packageName>
-						<regex>^/wiedza\!$</regex>
+						<regex>^/ksiazki\!$</regex>
 					</Alias>
 					<Alias isActive="yes" isFolder="no">
 						<name>biblioteka_show</name>

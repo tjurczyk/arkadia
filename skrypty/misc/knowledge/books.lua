@@ -32,6 +32,30 @@ scripts.misc.knowledge.db = db:create("knowledge", {
 }
 )
 
+function scripts.misc.knowledge:show_help()
+    cecho(" +------------------------------------------+\n")
+    cecho(" |                                          |\n")
+    cecho(" |             > ")
+    cechoLink("<light_slate_blue>/ksiazki", function() scripts.misc.knowledge:show_book_stats() end, "/ksiazki", true)
+    cecho("  <                |\n")
+
+    cecho(" |             > ")
+    cechoLink("<light_slate_blue>/ksiazki!", function() scripts.misc.knowledge:show_book_stats(true) end, "/ksiazki!",
+        true)
+    cecho(" <                |\n")
+    cecho(" |           >  ")
+    cechoLink("<light_slate_blue>/biblioteki", function() scripts.misc.knowledge:show_library_stats() end, "/biblioteki",
+        true)
+    cecho("  <              |\n")
+    cecho(" |           >  ")
+    cechoLink("<light_slate_blue>/biblioteki!", function() scripts.misc.knowledge:show_library_stats(true) end,
+        "/biblioteki!",
+        true)
+    cecho(" <              |\n")
+    cecho(" |                                          |\n")
+    cecho(" +------------------------------------------|\n")
+end
+
 function scripts.misc.knowledge:setup_books_data()
     for _, book_details in pairs(misc.knowledge.raw_data.books) do
         scripts.misc.knowledge.book_declension_map[book_details.dopelniacz] = book_details.mianownik

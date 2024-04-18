@@ -133,6 +133,9 @@ function scripts.misc.knowledge:show_book_stats(full)
     cecho(" |                <yellow>w trakcie<grey>                 |\n")
     cecho(" |              <red>nieprzeczytane<grey>              |\n")
     cecho(" |                                          |\n")
+    cecho(" |  kliknij prawym na ksiazce zeby zmienic  |\n")
+    cecho(" |  jej status.                             |\n")
+    cecho(" |                                          |\n")
     cecho(" +------------------------------------------+\n")
 
     for _, category in pairs(misc.knowledge.categories) do

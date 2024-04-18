@@ -75,7 +75,6 @@ function scripts.misc.knowledge:show_library_stats(full)
     local libraries_read = db:fetch(scripts.misc.knowledge.db.library_progress,
         { db:eq(scripts.misc.knowledge.db.library_progress.character, scripts.character_name) })
 
-    display(libraries_read)
     local libraries_per_category = {}
     local libraries_started_reading = {}
     for _, row in pairs(libraries_read) do
@@ -85,7 +84,7 @@ function scripts.misc.knowledge:show_library_stats(full)
 
         table.insert(libraries_per_category[row.about],
             { ["library"] = row.library, ["progress"] = row.progress })
-        libraries_started_reading[row.library] = true
+        libraries_started_reading[row.library .. row.about] = true
     end
 
     for _, category in pairs(misc.knowledge.categories) do
@@ -97,7 +96,7 @@ function scripts.misc.knowledge:show_library_stats(full)
     if full == true then
         for category, libraries in pairs(scripts.misc.knowledge.category_to_libraries) do
             for library, _ in pairs(libraries) do
-                if libraries_started_reading[library] == nil then
+                if libraries_started_reading[library .. category] == nil then
                     table.insert(libraries_per_category[category],
                         { ["library"] = library, ["progress"] = 0 })
                 end

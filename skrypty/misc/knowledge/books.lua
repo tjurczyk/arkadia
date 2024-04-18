@@ -1,6 +1,13 @@
 scripts.misc = scripts.misc or {}
 scripts.misc.knowledge = scripts.misc.knowledge or
-    { ["db"] = nil, ["book_declension_map"] = {}, ["category_to_books"] = {} }
+    {
+        ["db"] = nil,
+        ["book_declension_map"] = {},
+        ["category_to_books"] = {},
+        ["category_to_libraries"] = {},
+        ["library_to_location"] = {},
+        ["location_to_library"] = {}
+    }
 
 scripts.misc.knowledge.db = db:create("knowledge", {
     book_progress = {
@@ -39,17 +46,21 @@ function scripts.misc.knowledge:setup_books_data()
 end
 
 function scripts.misc.knowledge:start_reading_book(book, about)
-    scripts.misc.knowledge["current_row"] = nil
+    scripts.misc.knowledge["book_current_row"] = nil
     local book_proper = scripts.misc.knowledge.book_declension_map[book]
     local about_proper = misc.knowledge.declension_category[about]
+
+    if book == "tutejsze zasoby" then
+        return
+    end
 
     if not book_proper then
         scripts:print_log("Nierozpoznana ksiega: " .. book .. ", zglos na discordzie")
         return
     end
 
-    local book_row = scripts.misc.knowledge:get_or_create_book_about(book, about, 0.5)
-    scripts.misc.knowledge["current_row"] = book_row
+    local book_row = scripts.misc.knowledge:get_or_create_book_about(book_proper, about_proper, 0.5)
+    scripts.misc.knowledge["book_current_row"] = book_row
 end
 
 function scripts.misc.knowledge:get_or_create_book_about(book, about, progress_on_create)
@@ -78,18 +89,15 @@ function scripts.misc.knowledge:get_or_create_book_about(book, about, progress_o
 end
 
 function scripts.misc.knowledge:cant_get_more_from_book()
-    if scripts.misc.knowledge.current_row == nil then
+    if scripts.misc.knowledge.book_current_row == nil then
         return
     end
-    scripts.misc.knowledge.current_row.progress = 1
-    db:update(scripts.misc.knowledge.db.book_progress, scripts.misc.knowledge.current_row)
+    scripts.misc.knowledge.book_current_row.progress = 1
+    db:update(scripts.misc.knowledge.db.book_progress, scripts.misc.knowledge.book_current_row)
 end
 
 function scripts.misc.knowledge:stop_reading_book()
-    if scripts.misc.knowledge.current_row == nil then
-        return
-    end
-    scripts.misc.knowledge.current_row = nil
+    scripts.misc.knowledge.book_current_row = nil
 end
 
 function scripts.misc.knowledge:show_book_stats(full)
@@ -107,8 +115,6 @@ function scripts.misc.knowledge:show_book_stats(full)
             { ["book"] = row.book, ["progress"] = row.progress })
         books_started_reading[row.book] = true
     end
-
-    display(books_per_category)
 
     for _, category in pairs(misc.knowledge.categories) do
         if books_per_category[category] == nil then
@@ -150,6 +156,7 @@ function scripts.misc.knowledge:show_book_stats(full)
             cecho(" |" .. header_str .. "|\n")
             cecho(" +------------------------------------------+\n")
 
+            table.sort(books_per_category[category], function(a, b) return a.book < b.book end)
             for _, book_di in pairs(books_per_category[category]) do
                 scripts.misc.knowledge:print_book_row(book_di.book, category, book_di.progress)
             end
@@ -159,14 +166,9 @@ function scripts.misc.knowledge:show_book_stats(full)
 end
 
 function scripts.misc.knowledge:print_book_row(book, about, progress)
-    local book_str = ""
     local first_half = string.rep(" ", 21 - #book / 2)
-    -- book_str = first_half .. "COLOR1" .. book .. "COLOR2"
-    -- local second_half = string.rep(" ", 42 - #book_str + 12)
-    -- book_str = book_str .. second_half
     cecho(" |" .. first_half)
     if progress == 1 then
-        -- book_str = book_str:gsub("COLOR1", "<ansiLightGreen>")
         cechoPopup("<ansiLightGreen>" .. book,
             {
                 function() scripts.misc.knowledge.mark_book_with_status(book, about, 0) end,

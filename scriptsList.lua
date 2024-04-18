@@ -144,6 +144,7 @@ return {
     "skrypty/misc/skill",
     "skrypty/misc/knowledge/knowledge",
     "skrypty/misc/knowledge/books",
+    "skrypty/misc/knowledge/libraries",
     "skrypty/misc/progress",
     "skrypty/misc/cutting",
     "skrypty/misc/kowal",

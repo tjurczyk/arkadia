@@ -2138,7 +2138,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^Zaczynasz zglebiac tutejsze zasoby, probujac dowiedziec sie czegos wiecej (.*)\.$</string>
+							<string>^Zaczynasz zglebiac tutejsze zasoby, probujac dowiedziec sie czegos wiecej o (.*)\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -30593,6 +30593,20 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<command></command>
 						<packageName></packageName>
 						<regex>^/wiedza\!$</regex>
+					</Alias>
+					<Alias isActive="yes" isFolder="no">
+						<name>biblioteka_show</name>
+						<script>scripts.misc.knowledge:show_library_stats()</script>
+						<command></command>
+						<packageName></packageName>
+						<regex>^/biblioteki$</regex>
+					</Alias>
+					<Alias isActive="yes" isFolder="no">
+						<name>biblioteki_show_all</name>
+						<script>scripts.misc.knowledge:show_library_stats(true)</script>
+						<command></command>
+						<packageName></packageName>
+						<regex>^/biblioteki\!$</regex>
 					</Alias>
 				</AliasGroup>
 				<Alias isActive="yes" isFolder="no">

@@ -5,7 +5,8 @@ scripts.misc.knowledge = scripts.misc.knowledge or
         ["book_declension_map"] = {},
         ["category_to_books"] = {},
         ["category_to_libraries"] = {},
-        ["library_to_location"] = {}
+        ["library_to_location"] = {},
+        ["location_to_library"] = {}
     }
 
 scripts.misc.knowledge.db = db:create("knowledge", {
@@ -115,8 +116,6 @@ function scripts.misc.knowledge:show_book_stats(full)
         books_started_reading[row.book] = true
     end
 
-    display(books_per_category)
-
     for _, category in pairs(misc.knowledge.categories) do
         if books_per_category[category] == nil then
             books_per_category[category] = {}
@@ -157,6 +156,7 @@ function scripts.misc.knowledge:show_book_stats(full)
             cecho(" |" .. header_str .. "|\n")
             cecho(" +------------------------------------------+\n")
 
+            table.sort(books_per_category[category], function(a, b) return a.book < b.book end)
             for _, book_di in pairs(books_per_category[category]) do
                 scripts.misc.knowledge:print_book_row(book_di.book, category, book_di.progress)
             end
@@ -166,14 +166,9 @@ function scripts.misc.knowledge:show_book_stats(full)
 end
 
 function scripts.misc.knowledge:print_book_row(book, about, progress)
-    local book_str = ""
     local first_half = string.rep(" ", 21 - #book / 2)
-    -- book_str = first_half .. "COLOR1" .. book .. "COLOR2"
-    -- local second_half = string.rep(" ", 42 - #book_str + 12)
-    -- book_str = book_str .. second_half
     cecho(" |" .. first_half)
     if progress == 1 then
-        -- book_str = book_str:gsub("COLOR1", "<ansiLightGreen>")
         cechoPopup("<ansiLightGreen>" .. book,
             {
                 function() scripts.misc.knowledge.mark_book_with_status(book, about, 0) end,

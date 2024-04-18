@@ -68,3 +68,125 @@ function scripts.misc.knowledge:get_or_create_library_about(library, about, loca
 
     return library_about_fetch
 end
+
+---------------
+
+function scripts.misc.knowledge:show_library_stats(full)
+    local libraries_read = db:fetch(scripts.misc.knowledge.db.library_progress,
+        { db:eq(scripts.misc.knowledge.db.library_progress.character, scripts.character_name) })
+
+    display(libraries_read)
+    local libraries_per_category = {}
+    local libraries_started_reading = {}
+    for _, row in pairs(libraries_read) do
+        if libraries_per_category[row.about] == nil then
+            libraries_per_category[row.about] = {}
+        end
+
+        table.insert(libraries_per_category[row.about],
+            { ["library"] = row.library, ["progress"] = row.progress })
+        libraries_started_reading[row.library] = true
+    end
+
+    for _, category in pairs(misc.knowledge.categories) do
+        if libraries_per_category[category] == nil then
+            libraries_per_category[category] = {}
+        end
+    end
+
+    if full == true then
+        for category, libraries in pairs(scripts.misc.knowledge.category_to_libraries) do
+            for library, _ in pairs(libraries) do
+                if libraries_started_reading[library] == nil then
+                    table.insert(libraries_per_category[category],
+                        { ["library"] = library, ["progress"] = 0 })
+                end
+            end
+        end
+    end
+
+    cecho(" +------------------------------------------+\n")
+    cecho(" |                                          |\n")
+    cecho(" |               <ansiLightGreen>przeczytane<grey>                |\n")
+    cecho(" |                <yellow>w trakcie<grey>                 |\n")
+    cecho(" |              <red>nieprzeczytane<grey>              |\n")
+    cecho(" |                                          |\n")
+    cecho(" |  kliknij prawym na bibliotece zeby       |\n")
+    cecho(" |  zmienic jej status.                     |\n")
+    cecho(" |                                          |\n")
+    cecho(" +------------------------------------------+\n")
+
+    for _, category in pairs(misc.knowledge.categories) do
+        if #libraries_per_category[category] > 0 then
+            local header_str = ""
+            local first_half = string.rep(" ", 21 - #category / 2)
+            header_str = first_half .. "COLOR1" .. category .. "COLOR2"
+            local second_half = string.rep(" ", 42 - #header_str + 12)
+            header_str = header_str .. second_half
+            header_str = header_str:gsub("COLOR1", "<light_slate_blue>")
+            header_str = header_str:gsub("COLOR2", "<grey>")
+            cecho(" |" .. header_str .. "|\n")
+            cecho(" +------------------------------------------+\n")
+
+            table.sort(libraries_per_category[category], function(a, b) return a.library < b.library end)
+            for _, library_di in pairs(libraries_per_category[category]) do
+                scripts.misc.knowledge:print_library_row(library_di.library, category, library_di.progress)
+            end
+            cecho(" +------------------------------------------+\n")
+        end
+    end
+end
+
+function scripts.misc.knowledge:print_library_row(library, about, progress)
+    local first_half = string.rep(" ", 21 - #library / 2)
+    cecho(" |" .. first_half)
+    if progress == 1 then
+        cechoPopup("<ansiLightGreen>" .. library,
+            {
+                function() scripts.misc.knowledge.mark_library_with_status(library, about, 0) end,
+                function() scripts.misc.knowledge.mark_library_with_status(library, about, 0.5) end
+            },
+            {
+                "oznacz jako nieprzeczytana",
+                "oznacz jako w trakcie"
+            }, true)
+    elseif progress == 0.5 then
+        cechoPopup("<yellow>" .. library,
+            {
+                function() scripts.misc.knowledge.mark_library_with_status(library, about, 0) end,
+                function() scripts.misc.knowledge.mark_library_with_status(library, about, 1) end
+            },
+            {
+                "oznacz jako nieprzeczytana",
+                "oznacz jako przeczytana"
+            }, true)
+    else
+        cechoPopup("<red>" .. library,
+            {
+                function() scripts.misc.knowledge.mark_library_with_status(library, about, 0.5) end,
+                function() scripts.misc.knowledge.mark_library_with_status(library, about, 1) end
+            },
+            {
+                "oznacz jako w trakcie",
+                "oznacz jako przeczytana"
+            }, true)
+    end
+    local second_half = string.rep(" ", 48 - #first_half - #library - 6)
+    cecho("<grey>" .. second_half .. "|\n")
+end
+
+function scripts.misc.knowledge.mark_library_with_status(library, about, progress)
+    local library_row = scripts.misc.knowledge:get_or_create_library_about(library, about,
+        scripts.misc.knowledge.library_to_location[library], 0)
+    library_row.progress = progress
+    db:update(scripts.misc.knowledge.db.library_progress, library_row)
+    local msg = "ok, ustawilem biblioteke '" .. library .. "' o '" .. about .. "' jako "
+    if progress == 0 then
+        msg = msg .. "nieprzeczytana"
+    elseif progress == 0.5 then
+        msg = msg .. "w trakcie"
+    else
+        msg = msg .. "przeczytana"
+    end
+    scripts:print_log(msg)
+end

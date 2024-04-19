@@ -18,7 +18,7 @@ function scripts.misc.knowledge:start_reading_library(about)
     end
 
     local library_name = scripts.misc.knowledge.location_to_library[amap.curr.internal_id]
-    local about_proper = misc.knowledge.declension_category[about]
+    local about_proper = misc.knowledge.declension_category[string.lower(about)]
 
     local library_row = scripts.misc.knowledge:get_or_create_library_about(
         library_name,

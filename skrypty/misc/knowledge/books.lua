@@ -72,7 +72,7 @@ end
 function scripts.misc.knowledge:start_reading_book(book, about)
     scripts.misc.knowledge["book_current_row"] = nil
     local book_proper = scripts.misc.knowledge.book_declension_map[book]
-    local about_proper = misc.knowledge.declension_category[about]
+    local about_proper = misc.knowledge.declension_category[string.lower(about)]
 
     if book == "tutejsze zasoby" then
         return

@@ -145,21 +145,25 @@ function scripts.misc.knowledge:print_library_row(library, about, progress)
         cechoPopup("<ansiLightGreen>" .. library,
             {
                 function() scripts.misc.knowledge.mark_library_with_status(library, about, 0) end,
-                function() scripts.misc.knowledge.mark_library_with_status(library, about, 0.5) end
+                function() scripts.misc.knowledge.mark_library_with_status(library, about, 0.5) end,
+                function() scripts.misc.knowledge.delete_library_about(library, about) end
             },
             {
                 "oznacz jako nieprzeczytana",
-                "oznacz jako w trakcie"
+                "oznacz jako w trakcie",
+                "usun (calkowicie z bazy)"
             }, true)
     elseif progress == 0.5 then
         cechoPopup("<yellow>" .. library,
             {
                 function() scripts.misc.knowledge.mark_library_with_status(library, about, 0) end,
-                function() scripts.misc.knowledge.mark_library_with_status(library, about, 1) end
+                function() scripts.misc.knowledge.mark_library_with_status(library, about, 1) end,
+                function() scripts.misc.knowledge.delete_library_about(library, about) end
             },
             {
                 "oznacz jako nieprzeczytana",
-                "oznacz jako przeczytana"
+                "oznacz jako przeczytana",
+                "usun (calkowicie z bazy)"
             }, true)
     else
         cechoPopup("<red>" .. library,
@@ -190,4 +194,18 @@ function scripts.misc.knowledge.mark_library_with_status(library, about, progres
         msg = msg .. "przeczytana"
     end
     scripts:print_log(msg)
+end
+
+function scripts.misc.knowledge.delete_library_about(library, about)
+    local rows_to_delete = db:fetch(scripts.misc.knowledge.db.library_progress,
+        {
+            db:eq(scripts.misc.knowledge.db.library_progress.character, scripts.character_name),
+            db:eq(scripts.misc.knowledge.db.library_progress.library, library),
+            db:eq(scripts.misc.knowledge.db.library_progress.about, about)
+        }
+    )
+    for _, row in pairs(rows_to_delete) do
+        db:delete(scripts.misc.knowledge.db.library_progress, row)
+    end
+    scripts:print_log("ok")
 end

@@ -29305,7 +29305,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 					<script>alias_config_del_var_index_key()</script>
 					<command></command>
 					<packageName></packageName>
-					<regex>^/cdel(|\!|\!\!) ([a-zA-Z0-9\._]+)[\[\{]{1}(["0-9a-zA-Z]+)[\]\}]{1}$</regex>
+					<regex>^/cdel(|\!|\!\!) ([a-zA-Z0-9\._]+)[\[\{]{1}(["0-9a-zA-Z\._]+)[\]\}]{1}$</regex>
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
 					<name>del_var_index_value</name>

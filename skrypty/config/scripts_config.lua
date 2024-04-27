@@ -13,7 +13,7 @@ function ScriptsConfig:init(file_name, create_config_file)
 
     self._schema_var_config_color = "CornflowerBlue"
     self._user_var_config_color = "MediumSeaGreen"
-    self._lua_type_to_type_match = {"string", "boolean", "number"}
+    self._lua_type_to_type_match = { "string", "boolean", "number" }
     self._config_name = file_name
     self._config_file_path = getMudletHomeDir() .. "/" .. file_name .. ".json"
     self._old_config_file_path = getMudletHomeDir() .. "/" .. file_name .. ".txt"
@@ -38,7 +38,7 @@ function ScriptsConfig:init(file_name, create_config_file)
     self._macro_to_reload_elements = scripts.config_schema.macro_to_reload_elements
     self._config = {}
     if create_config_file then
-        self:save_config{silent=true}
+        self:save_config { silent = true }
     end
     return self
 end
@@ -49,17 +49,18 @@ function ScriptsConfig:load_config(options)
     local file = io.open(self._config_file_path)
     local success, config = pcall(yajl.to_value, file:read("*a"))
     if not success then
-        scripts:print_log(string.format("Plik <yellow>%s<tomato> zawiera bledy. Szczegoly ponizej.", self._config_file_path), true)
+        scripts:print_log(
+            string.format("Plik <yellow>%s<tomato> zawiera bledy. Szczegoly ponizej.", self._config_file_path), true)
         scripts:print_log(config:gsub("\n at .*", ""), false, "white")
         echo("\n")
         return false
     end
     for var, value in pairs(config) do
-        self:set_var{
-            var=var,
-            value=value,
-            skip_var_existence_check=true,
-            silent=true
+        self:set_var {
+            var = var,
+            value = value,
+            skip_var_existence_check = true,
+            silent = true
         }
     end
 
@@ -68,11 +69,11 @@ function ScriptsConfig:load_config(options)
         for var_name, var_schema_config in pairs(self._var_to_config) do
             if self._config[var_name] == nil and not var_schema_config.implicit then
                 new_vars_from_migration[var_name] = true
-                self:set_var{
-                    var=var_name,
-                    value=var_schema_config.default_value,
-                    skip_var_existence_check=true,
-                    silent=true
+                self:set_var {
+                    var = var_name,
+                    value = var_schema_config.default_value,
+                    skip_var_existence_check = true,
+                    silent = true
                 }
             end
         end
@@ -82,7 +83,7 @@ function ScriptsConfig:load_config(options)
     local fixers_applied = scripts.config:apply_fixers()
 
     if table.size(new_vars_from_migration) > 0 or fixers_applied then
-        scripts.config:save_config{silent=true}
+        scripts.config:save_config { silent = true }
     end
 
     if not silent then
@@ -187,7 +188,10 @@ function ScriptsConfig:add_custom_var(options)
     elseif var_type == "boolean" then
         self._config[var_name] = false
     elseif var_type == "map" or var_type == "list" then
-        extra_msg = "\nUWAGA: dodales liste badz mape. Aby wszystko dzialalo poprawnie, dokonaj wstepnej inicjalizacji tej zmiennej w pliku " .. self._config_file_path .. ". Przed dodawaniem/usuwaniem kluczy/elementow, lista badz mapa musi miec swa pierwotna wartosc."
+        extra_msg =
+            "\nUWAGA: dodales liste badz mape. Aby wszystko dzialalo poprawnie, dokonaj wstepnej inicjalizacji tej zmiennej w pliku " ..
+            self._config_file_path ..
+            ". Przed dodawaniem/usuwaniem kluczy/elementow, lista badz mapa musi miec swa pierwotna wartosc."
         self._config[var_name] = {}
         if var_type == "map" then
             var_printable = "{}"
@@ -200,7 +204,10 @@ function ScriptsConfig:add_custom_var(options)
         var_printable = yajl.to_string(self._config[var_name])
     end
 
-    scripts:print_log("(user) dodalem zmienna <" .. self._user_var_config_color .. ">" .. var_name .. "<tomato> o wartosci: <gold>" .. yajl.to_string(self._config[var_name]) .. "<grey>" .. extra_msg)
+    scripts:print_log("(user) dodalem zmienna <" ..
+        self._user_var_config_color ..
+        ">" ..
+        var_name .. "<tomato> o wartosci: <gold>" .. yajl.to_string(self._config[var_name]) .. "<grey>" .. extra_msg)
     return true
 end
 
@@ -242,11 +249,11 @@ function ScriptsConfig:print_single_var(var, color)
     if not string.find(value, ",") and string.sub(value, 1, 1) ~= "{" and string.sub(value, 1, 1) ~= "[" then
         local cset = string.format("printCmdLine(\"/cset %s=%s\")", var, value:gsub("\"", "\\\""))
         cecho("  ")
-        cechoLink("<".. color ..">" .. var .. "<grey>: <gold>" .. value .. "<grey>", cset, "Ustaw " .. var, true)
+        cechoLink("<" .. color .. ">" .. var .. "<grey>: <gold>" .. value .. "<grey>", cset, "Ustaw " .. var, true)
         resetFormat()
         cecho(" \n")
     else
-        cecho("  <".. color ..">" .. var .. "<grey>: <gold>" .. value .. "<grey>\n")
+        cecho("  <" .. color .. ">" .. var .. "<grey>: <gold>" .. value .. "<grey>\n")
     end
 end
 
@@ -296,7 +303,8 @@ function ScriptsConfig:remove_indexed_var(options)
             if removed_value then
                 message = "ok, usunalem '" .. removed_value .. "' (" .. type(removed_value) .. ") z listy"
             else
-                message = "nie usunalem '" .. value_value .. "' (" .. type(value_value) .. ") z listy, bo tego tam nie znalazlem"
+                message = "nie usunalem '" ..
+                    value_value .. "' (" .. type(value_value) .. ") z listy, bo tego tam nie znalazlem"
                 success = false
             end
         else
@@ -310,9 +318,14 @@ function ScriptsConfig:remove_indexed_var(options)
             self._config[var][value_key] = nil
 
             if old_value ~= nil then
-                message = "ok, usunalem klucz '" .. value_key .. "' (" .. type(value_key) .. ") z mapy (mial wartosc '" .. tostring(old_value) .. "' (" .. type(old_value) .. "))"
+                message = "ok, usunalem klucz '" ..
+                    value_key ..
+                    "' (" ..
+                    type(value_key) ..
+                    ") z mapy (mial wartosc '" .. tostring(old_value) .. "' (" .. type(old_value) .. "))"
             else
-                message = "nie usunalem nic, bo mapa nie ma klucza '" .. tostring(value_key) .. "' (" .. type(value_key) .. ")"
+                message = "nie usunalem nic, bo mapa nie ma klucza '" ..
+                    tostring(value_key) .. "' (" .. type(value_key) .. ")"
                 success = false
             end
         else
@@ -321,10 +334,10 @@ function ScriptsConfig:remove_indexed_var(options)
     end
 
     if success then
-        self:_set_mudlet_var{
-            var=var,
-            value=self._config[var],
-            run_macros=options.run_macros
+        self:_set_mudlet_var {
+            var = var,
+            value = self._config[var],
+            run_macros = options.run_macros
         }
     end
     if not options.silent then
@@ -358,7 +371,8 @@ function ScriptsConfig:set_indexed_var(options)
     end
 
     if field_type ~= "list" and field_type ~= "map" then
-        scripts:print_log("indeksowane dodanie dziala tylko dla typow 'list' i 'map', nie do '" .. tostring(field_type) .. "'")
+        scripts:print_log("indeksowane dodanie dziala tylko dla typow 'list' i 'map', nie do '" ..
+            tostring(field_type) .. "'")
         return
     end
 
@@ -369,16 +383,18 @@ function ScriptsConfig:set_indexed_var(options)
             table.insert(self._config[var], value_value)
             message = "ok, dodalem '" .. value_value .. "' (" .. type(value_value) .. ") do listy"
         elseif value_key > table.size(self._config[var]) + 1 then
-            message = "probujesz ustawic " .. value_key ..  " element listy, kiedy lista ma ich tylko " .. tostring(table.size(self._config[var]))
+            message = "probujesz ustawic " ..
+                value_key .. " element listy, kiedy lista ma ich tylko " .. tostring(table.size(self._config[var]))
             success = false
         elseif value_key <= 0 then
             message = "probujesz negatywny badz zerowy element listy, taki nie istnieje, lista indeksowana od 1"
             success = false
         else
             self._config[var][value_key] = value_value
-            message = "ok, ustawilem '" .. tostring(value_value) .. "' ("  .. type(value_value) .. ") jako " .. tostring(value_key) .. " element listy"
+            message = "ok, ustawilem '" ..
+                tostring(value_value) ..
+                "' (" .. type(value_value) .. ") jako " .. tostring(value_key) .. " element listy"
         end
-
     else
         if value_key == nil then
             message = "brak indeksu dla mapy"
@@ -386,19 +402,21 @@ function ScriptsConfig:set_indexed_var(options)
         else
             old_value = self._config[var][value_key]
             self._config[var][value_key] = value_value
-            message = "ok, ustawilem '" .. tostring(value_value) .. "' ("  .. type(value_value) .. ") jako klucz '" .. tostring(value_key) .. "' ("  .. type(value_key) .. ")"
+            message = "ok, ustawilem '" ..
+                tostring(value_value) ..
+                "' (" .. type(value_value) .. ") jako klucz '" .. tostring(value_key) .. "' (" .. type(value_key) .. ")"
             if old_value then
-                message = message .. ", poprzednio bylo '" .. old_value .. "' (" .. type(old_value) .. ")"
+                message = message .. ", poprzednio bylo '" .. tostring(old_value) .. "' (" .. type(old_value) .. ")"
             else
                 message = message .. ", poprzednio pusty indeks"
             end
         end
     end
     if success then
-        self:_set_mudlet_var{
-            var=var,
-            value=self._config[var],
-            run_macros=options.run_macros
+        self:_set_mudlet_var {
+            var = var,
+            value = self._config[var],
+            run_macros = options.run_macros
         }
     end
     if not options.silent then
@@ -420,23 +438,26 @@ function ScriptsConfig:set_var(options)
     end
     local validation_test = nil
     if options.skip_validation_test then
-        validation_test = {true}
+        validation_test = { true }
     else
-        validation_test = self:_validate_var{
-            var=var,
-            value=value
+        validation_test = self:_validate_var {
+            var = var,
+            value = value
         }
     end
 
     if not validation_test[1] then
-        scripts:print_log("ustawienie dla '" .. var .. "' ma niepoprawna wartosc. Oczekiwany typ: '" .. validation_test[2] .. "', otrzymany: '" .. validation_test[3] .. "'")
+        scripts:print_log("ustawienie dla '" ..
+            var ..
+            "' ma niepoprawna wartosc. Oczekiwany typ: '" ..
+            validation_test[2] .. "', otrzymany: '" .. validation_test[3] .. "'")
         return false
     else
         self._config[var] = value
-        self:_set_mudlet_var{
-            var=var,
-            value=value,
-            run_macros=options.run_macros
+        self:_set_mudlet_var {
+            var = var,
+            value = value,
+            run_macros = options.run_macros
         }
     end
     if not options.silent then
@@ -532,18 +553,18 @@ function ScriptsConfig:_validate_var(options)
 
     local var_config = self._var_to_config[var]
     if not var_config then
-        return {true, nil, nil}
+        return { true, nil, nil }
     end
     value_type = self:_get_value_type(value)
     local test_result = false
     -- special case when 'empty_table', it can be either a map or a list, so validate it
     if value_type == 'empty_table' and (var_config.field_type == "list" or var_config.field_type == "map") then
-        return {true, var_config.field_type, var_config.field_type}
+        return { true, var_config.field_type, var_config.field_type }
     end
     if var_config.field_type == value_type then
         test_result = true
     end
-    return {test_result, var_config.field_type, value_type}
+    return { test_result, var_config.field_type, value_type }
 end
 
 function ScriptsConfig:_get_value_type(value)
@@ -566,5 +587,7 @@ end
 
 function ScriptsConfig:_suggestMigration()
     echo("\n")
-    scripts:print_log("Istnieje za to stary plik konfiguracyjny. Sugerowane wykonanie migracji. Za pomoca komendy: <slate_blue>/cmigrate " .. self._config_name, true)
+    scripts:print_log(
+        "Istnieje za to stary plik konfiguracyjny. Sugerowane wykonanie migracji. Za pomoca komendy: <slate_blue>/cmigrate " ..
+        self._config_name, true)
 end

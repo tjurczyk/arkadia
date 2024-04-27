@@ -28549,6 +28549,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<string>Nie mozesz tam przejsc, gdy stoi tu obsada statku.</string>
 						<string>do ciebie: Nikt z bronia nie wejdzie na teren gornej twierdzy. Prosze zostawic ja na stojaku.</string>
 						<string>Przejscie w tym kierunku jest zablokowane przez</string>
+						<string>Przejscie w tym kierunku jest dla ciebie zbyt waskie, nie potrafisz przecisnac sie przez przeswit.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>0</integer>
@@ -28587,6 +28588,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<integer>2</integer>
 						<integer>2</integer>
 						<integer>0</integer>
+						<integer>2</integer>
 						<integer>2</integer>
 					</regexCodePropertyList>
 				</Trigger>

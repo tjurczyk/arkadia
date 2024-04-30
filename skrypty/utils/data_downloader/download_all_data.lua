@@ -48,8 +48,6 @@ end
 
 function knowledge_data_downloaded(resume_coroutine_id, decoded_data)
     misc.knowledge.raw_data = decoded_data
-    scripts.misc.knowledge:setup_books_data()
-    scripts.misc.knowledge:setup_libraries_data()
     coroutine.resume(resume_coroutine_id)
     coroutine.resume(scripts.utils.download_all_data_coroutine_id)
 end

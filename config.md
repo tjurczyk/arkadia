@@ -351,6 +351,17 @@ Włącza oddzielne okno pokazujące zioła. Aktualizowany przez `/pokaz_ziola` o
 ## `herbs.window.font_size`
 Ustawia wielkość czcionki w oknie ziół.
 
+---
+
+## `scripts.misc.knowledge.use_knowledge`
+
+Opcja dla wlaczenia badz wylaczenia ulatwienia czytania ksiazek i bibliotek.
+
+---
+
+## `scripts.misc.knowledge.knowledge_color`
+
+Kolor jaki ma byc uzywanych do ulatwienia czytania ksiaze i bibliotek.
 
 ---
 

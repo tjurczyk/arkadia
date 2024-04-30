@@ -24184,11 +24184,11 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^[ &gt;]*Probujesz otworzyc .* wrota.*</string>
-						<string>^[ &gt;]*Probujesz otworzyc .* drzwiczki.*</string>
-						<string>^[ &gt;]*Probujesz otworzyc .* krate.*</string>
-						<string>^[ &gt;]*Probujesz otworzyc .* brame.*</string>
-						<string>^[ &gt;]*Probujesz otworzyc niewielka furtke.*</string>
+						<string>^Probujesz otworzyc .*wrota.*</string>
+						<string>^Probujesz otworzyc .*drzwiczki.*</string>
+						<string>^Probujesz otworzyc .*krate.*</string>
+						<string>^Probujesz otworzyc .*brame.*</string>
+						<string>^Probujesz otworzyc niewielka furtke.*</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>

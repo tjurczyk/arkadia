@@ -67,7 +67,7 @@
         "func_args": []
       }
     ],
-    "_path" : [
+    "_path": [
       {
         "macro_type": "func_call",
         "func_name": "amap.path_display_refresh",
@@ -485,6 +485,18 @@
       "macros_on_modify": [
         "_herbs"
       ]
+    },
+    {
+      "name": "scripts.misc.knowledge.use_knowledge",
+      "default_value": true,
+      "field_type": "boolean",
+      "macros_on_modify": []
+    },
+    {
+      "name": "scripts.misc.knowledge.knowledge_color",
+      "default_value": "CornflowerBlue",
+      "field_type": "string",
+      "macros_on_modify": []
     },
     {
       "name": "scripts.inv.money_bag_1",

@@ -281,7 +281,8 @@ function scripts.misc.knowledge.process_new_location(internal_id)
 end
 
 function scripts.misc.knowledge.show_library_alias(library_name, popup_calls, popup_hints)
-    cecho(" <CornflowerBlue>" .. library_name .. " >> ")
-    cechoPopup("<CornflowerBlue>czytaj", popup_calls, popup_hints, true)
-    cecho("<CornflowerBlue> <<\n\n")
+    local clr = scripts.misc.knowledge.knowledge_color
+    cecho(" <" .. clr .. ">" .. library_name .. " >> ")
+    cechoPopup("<" .. clr .. ">czytaj", popup_calls, popup_hints, true)
+    cecho("<" .. clr .. "> <<\n\n")
 end

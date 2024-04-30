@@ -51,6 +51,23 @@ misc.knowledge["declension_category"] = {
     ["wampirach"] = "wampiry"
 }
 
+misc.knowledge["knowledge_category_mianownik_to_celownik"] = {
+    ["chaos i jego twory"] = "chaosie i jego tworach",
+    ["goblinoidy"] = "goblinoidach",
+    ["golemy"] = "golemach",
+    ["istoty demoniczne"] = "istotach demonicznych",
+    ["jaszczuroludzie"] = "jaszczuroludziach",
+    ["magia i jej twory"] = "magii i jej tworach",
+    ["nieumarli"] = "nieumarlych",
+    ["pajaki i pajakowate"] = "pajakach i pajakowatych",
+    ["ryboludzie"] = "ryboludziach",
+    ["smoki i smokowate"] = "smokach i smokowatych",
+    ["starsze rasy"] = "starszych rasach",
+    ["stwory pokoniunkcyjne"] = "stworach pokoniunkcyjnych",
+    ["szczuroludzie"] = "szczuroludziach",
+    ["wampiry"] = "wampirach"
+}
+
 function misc.knowledge:knowledge_replace(text)
     if selectString(text, 1) > -1 then
         local add_text = " " .. misc.knowledge_desc[text]

@@ -43,7 +43,9 @@ function amap:follow(direction, is_team_follow)
         if not is_team_follow then
             raiseEvent("amapWalking", direction)
         end
+        -- echo("this raised: " .. tostring(amap.curr.internal_id) .. "\n")
         raiseEvent("amapNewLocation", amap.curr.id, direction, amap.curr.internal_id)
+        -- echo("after this raised\n")
         amap:copy_loc(amap.prev, amap.curr)
         return true
     else

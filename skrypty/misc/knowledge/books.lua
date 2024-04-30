@@ -8,7 +8,8 @@ scripts.misc.knowledge = scripts.misc.knowledge or
         ["library_to_location"] = {},
         ["location_to_library"] = {},
         ["book_hint_trigger_ids"] = {},
-        ["book_to_about_to_progress"] = {}
+        ["book_to_about_to_progress"] = {},
+        ["library_to_about_to_progress"] = {}
     }
 
 scripts.misc.knowledge.db = db:create("knowledge", {
@@ -291,32 +292,32 @@ function scripts.misc.knowledge.process_book_trigger(text, book_di)
     local book_to_about_progress = scripts.misc.knowledge.book_to_about_to_progress[book_di.mianownik]
     selectString(text, 1)
     fg("CornflowerBlue")
-    setUnderline(true)
 
     local popup_f_calls = {}
     local popup_f_hints = {}
 
     for category, about_progress in pairs(book_to_about_progress or {}) do
-        table.insert(popup_f_calls,
-            function()
-                sendAll("otworz " .. book_di.biernik,
-                    "zglebiaj wiedze o " ..
-                    misc.knowledge.knowledge_category_mianownik_to_celownik[category] .. " z " .. book_di.dopelniacz)
-            end)
-        local hint = "czytaj o " .. misc.knowledge.knowledge_category_mianownik_to_celownik[category] .. " ("
-        if progress == 0 then
-            hint = hint .. "nieczytana"
-        elseif progress == 0.5 then
-            hint = hint .. "w trakcie"
-        else
-            hint = hint .. "przeczytana"
+        if about_progress < 1 then
+            table.insert(popup_f_calls,
+                function()
+                    sendAll("otworz " .. book_di.biernik,
+                        "zglebiaj wiedze o " ..
+                        misc.knowledge.knowledge_category_mianownik_to_celownik[category] .. " z " .. book_di.dopelniacz)
+                end)
+            local hint = "czytaj o " .. misc.knowledge.knowledge_category_mianownik_to_celownik[category] .. " ("
+            if about_progress == 0 then
+                hint = hint .. "nieczytana"
+            elseif about_progress == 0.5 then
+                hint = hint .. "w trakcie"
+            end
+            hint = hint .. ")"
+            table.insert(popup_f_hints, hint)
         end
-        hint = hint .. ")"
-        table.insert(popup_f_hints, hint)
     end
 
 
     if #popup_f_calls > 0 then
+        setUnderline(true)
         setPopup("main", popup_f_calls, popup_f_hints)
     end
     resetFormat()

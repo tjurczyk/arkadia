@@ -209,3 +209,79 @@ function scripts.misc.knowledge.delete_library_about(library, about)
     end
     scripts:print_log("ok")
 end
+
+function scripts.misc.knowledge.init_library_aliases()
+    scripts.misc.knowledge.library_to_about_to_progress = {}
+    libraries_with_progress = db:fetch(scripts.misc.knowledge.db.library_progress,
+        { db:eq(scripts.misc.knowledge.db.library_progress.character, scripts.character_name),
+        })
+
+
+    for _, library_di in pairs(libraries_with_progress) do
+        if not scripts.misc.knowledge.library_to_about_to_progress[library_di.location_id] then
+            scripts.misc.knowledge.library_to_about_to_progress[library_di.location_id] = {}
+        end
+        scripts.misc.knowledge.library_to_about_to_progress[library_di.location_id][library_di.about] = (library_di.progress)
+    end
+
+    for library_location_id, library_di in pairs(misc.knowledge.raw_data.libraries) do
+        if not scripts.misc.knowledge.library_to_about_to_progress[library_location_id] then
+            scripts.misc.knowledge.library_to_about_to_progress[library_location_id] = {}
+        end
+
+        for _, category in pairs(library_di.categories) do
+            if not scripts.misc.knowledge.library_to_about_to_progress[library_location_id][category] then
+                scripts.misc.knowledge.library_to_about_to_progress[library_location_id][category] = 0
+            end
+        end
+    end
+
+    scripts.misc.knowledge["event_id_libraries"] = scripts.event_register:force_register_event_handler(
+        scripts.misc.knowledge["event_id_libraries"], "amapNewLocation",
+        function(_, _, _, internal_id) scripts.misc.knowledge.process_new_location(internal_id) end)
+end
+
+function scripts.misc.knowledge.process_new_location(internal_id)
+    if not scripts.misc.knowledge.library_to_about_to_progress[internal_id] then
+        return
+    end
+
+    local popup_f_calls = {}
+    local popup_f_hints = {}
+    for category, progress in pairs(scripts.misc.knowledge.library_to_about_to_progress[internal_id]) do
+        if progress < 1 then
+            table.insert(popup_f_calls,
+                function()
+                    sendAll(
+                        "zglebiaj wiedze o " .. misc.knowledge.knowledge_category_mianownik_to_celownik[category],
+                        true)
+                end)
+            local hint = "zglebiaj o " .. misc.knowledge.knowledge_category_mianownik_to_celownik[category] .. " ("
+            if progress == 0 then
+                hint = hint .. "niezglebiana"
+            elseif progress == 0.5 then
+                hint = hint .. "w trakcie"
+            end
+            hint = hint .. ")"
+            table.insert(popup_f_hints, hint)
+        end
+    end
+
+    if #popup_f_calls == 0 then
+        return
+    end
+
+    tempTimer(1, function()
+        scripts.misc.knowledge.show_library_alias(
+            misc.knowledge.raw_data.libraries[internal_id].name,
+            popup_f_calls,
+            popup_f_hints)
+    end
+    )
+end
+
+function scripts.misc.knowledge.show_library_alias(library_name, popup_calls, popup_hints)
+    cecho(" <CornflowerBlue>" .. library_name .. " >> ")
+    cechoPopup("<CornflowerBlue>czytaj", popup_calls, popup_hints, true)
+    cecho("<CornflowerBlue> <<\n\n")
+end

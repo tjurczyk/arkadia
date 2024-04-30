@@ -1,6 +1,8 @@
 scripts.misc = scripts.misc or {}
 scripts.misc.knowledge = scripts.misc.knowledge or
     {
+        ["use_knowledge"] = true,
+        ["knowledge_color"] = "CornflowerBlue",
         ["db"] = nil,
         ["book_declension_map"] = {},
         ["category_to_books"] = {},
@@ -59,6 +61,19 @@ function scripts.misc.knowledge:show_help()
     cecho(" +------------------------------------------|\n")
 end
 
+function scripts.misc.knowledge:init()
+    if not scripts.misc.knowledge.use_knowledge then
+        return
+    end
+
+    scripts.misc.knowledge:setup_books_data()
+    scripts.misc.knowledge.init_book_triggers()
+    scripts.misc.knowledge:setup_libraries_data()
+    scripts.misc.knowledge.init_library_aliases()
+end
+
+scripts.event_register:register_event_handler("profileLoaded", function() scripts.misc.knowledge:init() end)
+
 function scripts.misc.knowledge:setup_books_data()
     for _, book_details in pairs(misc.knowledge.raw_data.books) do
         scripts.misc.knowledge.book_declension_map[book_details.dopelniacz] = book_details.mianownik
@@ -70,8 +85,6 @@ function scripts.misc.knowledge:setup_books_data()
             scripts.misc.knowledge.category_to_books[category][book_details.mianownik] = true
         end
     end
-
-    scripts.misc.knowledge.init_book_triggers()
 end
 
 function scripts.misc.knowledge:start_reading_book(book, about)
@@ -279,7 +292,6 @@ function scripts.misc.knowledge.init_book_triggers()
     end
 
     for _, book_di in pairs(misc.knowledge.raw_data.books) do
-        -- display(book_di)
         local trig_id = tempRegexTrigger("(" .. book_di.biernik .. ")",
             function()
                 scripts.misc.knowledge.process_book_trigger(matches[2], book_di)
@@ -291,7 +303,7 @@ end
 function scripts.misc.knowledge.process_book_trigger(text, book_di)
     local book_to_about_progress = scripts.misc.knowledge.book_to_about_to_progress[book_di.mianownik]
     selectString(text, 1)
-    fg("CornflowerBlue")
+    fg(scripts.misc.knowledge.knowledge_color)
 
     local popup_f_calls = {}
     local popup_f_hints = {}

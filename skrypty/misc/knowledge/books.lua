@@ -6,7 +6,9 @@ scripts.misc.knowledge = scripts.misc.knowledge or
         ["category_to_books"] = {},
         ["category_to_libraries"] = {},
         ["library_to_location"] = {},
-        ["location_to_library"] = {}
+        ["location_to_library"] = {},
+        ["book_hint_trigger_ids"] = {},
+        ["book_to_about_to_progress"] = {}
     }
 
 scripts.misc.knowledge.db = db:create("knowledge", {
@@ -67,6 +69,8 @@ function scripts.misc.knowledge:setup_books_data()
             scripts.misc.knowledge.category_to_books[category][book_details.mianownik] = true
         end
     end
+
+    scripts.misc.knowledge.init_book_triggers()
 end
 
 function scripts.misc.knowledge:start_reading_book(book, about)
@@ -242,4 +246,78 @@ function scripts.misc.knowledge.mark_book_with_status(book, about, progress)
         msg = msg .. "przeczytana"
     end
     scripts:print_log(msg)
+end
+
+function scripts.misc.knowledge.init_book_triggers()
+    scripts.misc.knowledge.book_to_about_to_progress = {}
+    books_with_progress = db:fetch(scripts.misc.knowledge.db.book_progress,
+        { db:eq(scripts.misc.knowledge.db.book_progress.character, scripts.character_name),
+        })
+
+    for _, trig_id in pairs(scripts.misc.knowledge.book_hint_trigger_ids) do
+        killTrigger(trig_id)
+    end
+
+    for _, book_di in pairs(books_with_progress) do
+        if not scripts.misc.knowledge.book_to_about_to_progress[book_di.book] then
+            scripts.misc.knowledge.book_to_about_to_progress[book_di.book] = {}
+        end
+        scripts.misc.knowledge.book_to_about_to_progress[book_di.book][book_di.about] = book_di.progress
+    end
+
+    for book, book_di in pairs(misc.knowledge.raw_data.books) do
+        if not scripts.misc.knowledge.book_to_about_to_progress[book] then
+            scripts.misc.knowledge.book_to_about_to_progress[book] = {}
+        end
+
+        for _, category in pairs(book_di.categories) do
+            if not scripts.misc.knowledge.book_to_about_to_progress[book][category] then
+                scripts.misc.knowledge.book_to_about_to_progress[book][category] = 0
+            end
+        end
+    end
+
+    for _, book_di in pairs(misc.knowledge.raw_data.books) do
+        -- display(book_di)
+        local trig_id = tempRegexTrigger("(" .. book_di.biernik .. ")",
+            function()
+                scripts.misc.knowledge.process_book_trigger(matches[2], book_di)
+            end)
+        table.insert(scripts.misc.knowledge.book_hint_trigger_ids, trig_id)
+    end
+end
+
+function scripts.misc.knowledge.process_book_trigger(text, book_di)
+    local book_to_about_progress = scripts.misc.knowledge.book_to_about_to_progress[book_di.mianownik]
+    selectString(text, 1)
+    fg("CornflowerBlue")
+    setUnderline(true)
+
+    local popup_f_calls = {}
+    local popup_f_hints = {}
+
+    for category, about_progress in pairs(book_to_about_progress or {}) do
+        table.insert(popup_f_calls,
+            function()
+                sendAll("otworz " .. book_di.biernik,
+                    "zglebiaj wiedze o " ..
+                    misc.knowledge.knowledge_category_mianownik_to_celownik[category] .. " z " .. book_di.dopelniacz)
+            end)
+        local hint = "czytaj o " .. misc.knowledge.knowledge_category_mianownik_to_celownik[category] .. " ("
+        if progress == 0 then
+            hint = hint .. "nieczytana"
+        elseif progress == 0.5 then
+            hint = hint .. "w trakcie"
+        else
+            hint = hint .. "przeczytana"
+        end
+        hint = hint .. ")"
+        table.insert(popup_f_hints, hint)
+    end
+
+
+    if #popup_f_calls > 0 then
+        setPopup("main", popup_f_calls, popup_f_hints)
+    end
+    resetFormat()
 end

@@ -249,7 +249,7 @@ function scripts.misc.knowledge.process_new_location(internal_id)
     local popup_f_calls = {}
     local popup_f_hints = {}
     for category, progress in pairs(scripts.misc.knowledge.library_to_about_to_progress[internal_id]) do
-        if progress < 1 then
+        if category ~= "" and progress < 1 then
             table.insert(popup_f_calls,
                 function()
                     sendAll(

@@ -66,7 +66,6 @@ function herbs:send_get_commands(bag_id, amount, herb_id)
     send("zamknij otwarte woreczki")
 end
 
-
 function herbs:pack_herb_with_herb(bag_number, herb)
     if not herbs["herbs_details"][herb] then
         scripts:print_log("Nie znam takiego ziola")
@@ -92,7 +91,8 @@ function herbs:pack_herb_with_herb(bag_number, herb)
     end
 
     -- pack to the bag
-    sendAll("otworz " .. bag_number .. ". swojego woreczek", "wloz ziola do ".. bag_number .. ". swojego woreczka", "zamknij otwarte woreczki")
+    sendAll("otworz " .. bag_number .. ". swoj woreczek", "wloz ziola do " .. bag_number .. ". swojego woreczka",
+        "zamknij otwarte woreczki")
 
     if to_get == 0 then
         scripts:print_log("Zapakowane")
@@ -102,4 +102,3 @@ function herbs:pack_herb_with_herb(bag_number, herb)
 
     herbs.window:print()
 end
-

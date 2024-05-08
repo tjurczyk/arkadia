@@ -971,6 +971,26 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 						<integer>1</integer>
 					</regexCodePropertyList>
 				</Trigger>
+				<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>selling_transaction</name>
+					<script>scripts.money:calculate_transaction_value(matches[2])</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>Dostajesz (.*) monet(|y)\.$</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>1</integer>
+					</regexCodePropertyList>
+				</Trigger>
 			</TriggerGroup>
 			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>misc</name>
@@ -1671,6 +1691,86 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 								<integer>1</integer>
 							</regexCodePropertyList>
 						</Trigger>
+						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+							<name>bryczka-wsiadanie</name>
+							<script>trigger_func_skrypty_misc_busses_bryczka_on()</script>
+							<triggerType>0</triggerType>
+							<conditonLineDelta>0</conditonLineDelta>
+							<mStayOpen>0</mStayOpen>
+							<mCommand></mCommand>
+							<packageName></packageName>
+							<mFgColor>#ff0000</mFgColor>
+							<mBgColor>#ffff00</mBgColor>
+							<mSoundFile></mSoundFile>
+							<colorTriggerFgColor>#000000</colorTriggerFgColor>
+							<colorTriggerBgColor>#000000</colorTriggerBgColor>
+							<regexCodeList>
+								<string>^.* siada w .*bryczce\.$</string>
+							</regexCodeList>
+							<regexCodePropertyList>
+								<integer>1</integer>
+							</regexCodePropertyList>
+						</Trigger>
+						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+							<name>bryczka-zsiadanie</name>
+							<script>trigger_func_skrypty_misc_busses_bryczka_woz_off()</script>
+							<triggerType>0</triggerType>
+							<conditonLineDelta>0</conditonLineDelta>
+							<mStayOpen>0</mStayOpen>
+							<mCommand></mCommand>
+							<packageName></packageName>
+							<mFgColor>#ff0000</mFgColor>
+							<mBgColor>#ffff00</mBgColor>
+							<mSoundFile></mSoundFile>
+							<colorTriggerFgColor>#000000</colorTriggerFgColor>
+							<colorTriggerBgColor>#000000</colorTriggerBgColor>
+							<regexCodeList>
+								<string>^.* zsiada z .*bryczki\.$</string>
+							</regexCodeList>
+							<regexCodePropertyList>
+								<integer>1</integer>
+							</regexCodePropertyList>
+						</Trigger>
+						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+							<name>woz-wsiadanie</name>
+							<script>trigger_func_skrypty_misc_busses_woz_on()</script>
+							<triggerType>0</triggerType>
+							<conditonLineDelta>0</conditonLineDelta>
+							<mStayOpen>0</mStayOpen>
+							<mCommand></mCommand>
+							<packageName></packageName>
+							<mFgColor>#ff0000</mFgColor>
+							<mBgColor>#ffff00</mBgColor>
+							<mSoundFile></mSoundFile>
+							<colorTriggerFgColor>#000000</colorTriggerFgColor>
+							<colorTriggerBgColor>#000000</colorTriggerBgColor>
+							<regexCodeList>
+								<string>^.* siada na .*wozie\.$</string>
+							</regexCodeList>
+							<regexCodePropertyList>
+								<integer>1</integer>
+							</regexCodePropertyList>
+						</Trigger>
+						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+							<name>woz-zsiadanie</name>
+							<script>trigger_func_skrypty_misc_busses_bryczka_woz_off()</script>
+							<triggerType>0</triggerType>
+							<conditonLineDelta>0</conditonLineDelta>
+							<mStayOpen>0</mStayOpen>
+							<mCommand></mCommand>
+							<packageName></packageName>
+							<mFgColor>#ff0000</mFgColor>
+							<mBgColor>#ffff00</mBgColor>
+							<mSoundFile></mSoundFile>
+							<colorTriggerFgColor>#000000</colorTriggerFgColor>
+							<colorTriggerBgColor>#000000</colorTriggerBgColor>
+							<regexCodeList>
+								<string>^.* zsiada z .*wozu\.$</string>
+							</regexCodeList>
+							<regexCodePropertyList>
+								<integer>1</integer>
+							</regexCodePropertyList>
+						</Trigger>
 					</TriggerGroup>
 				</TriggerGroup>
 				<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -1986,6 +2086,124 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>0</integer>
+						</regexCodePropertyList>
+					</Trigger>
+				</TriggerGroup>
+				<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>knowledge</name>
+					<script></script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList />
+					<regexCodePropertyList />
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>start_reading_book</name>
+						<script>scripts.misc.knowledge:start_reading_book(matches[2], matches[3])</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>^Zaczynasz zglebiac (.*), probujac dowiedziec sie czegos wiecej o (.*)\.$</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>1</integer>
+						</regexCodePropertyList>
+					</Trigger>
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>start_reading_library</name>
+						<script>scripts.misc.knowledge:start_reading_library(matches[2])</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>^Zaczynasz zglebiac tutejsze zasoby, probujac dowiedziec sie czegos wiecej o (.*)\.$</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>1</integer>
+						</regexCodePropertyList>
+					</Trigger>
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>finished_reading_book</name>
+						<script>scripts.misc.knowledge:stop_reading_book()
+scripts.misc.knowledge:stop_reading_library()</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>^Nie jestes w stanie dluzej czytac\.$</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>1</integer>
+						</regexCodePropertyList>
+					</Trigger>
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>cant_get_more_knowledge_from_book</name>
+						<script>scripts.misc.knowledge:cant_get_more_from_book()
+</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>^Masz wrazenie, ze z .*nie dowiesz sie juz niczego wiecej o.*\.$</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>1</integer>
+						</regexCodePropertyList>
+					</Trigger>
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>cant_get_more_from_library</name>
+						<script>scripts.misc.knowledge:cant_get_more_from_library()</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>^Masz wrazenie, ze tutaj nie dowiesz sie juz niczego wiecej o .*\.$</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>1</integer>
 						</regexCodePropertyList>
 					</Trigger>
 				</TriggerGroup>
@@ -19057,6 +19275,12 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 								<string>Dobywajac szylkretowego falistego sztyletu, czujesz niebywala jednosc z ta na pozor zwyczajna bronia.</string>
 								<string>Nie jestes w stanie powstrzymac lekkiego usmieszku, na mysl o tym czego mozna dokonac tak grozna bronia jak ta.</string>
 								<string>Przekladasz jedna dlon przez skorzana petle przy stylisku i obiema rekami sciskasz najezony potezny morgenstern, dobywajac oreza.</string>
+								<string>^Blyskawicznie dobywasz .* gotujac sie do nadchodzacego boju\.$</string>
+								<string>^Eleganckim ruchem dobywasz .* przybierajac pelna gracji pozycje walki\.$</string>
+								<string>^Gwaltownie siegasz po .* szykujac sie do rychlego starcia\.$</string>
+								<string>^Pozornie niespiesznym ruchem dobywasz .* zamierajac w wystudiowanej postawie walki\.$</string>
+								<string>^Umiejetnie chwytasz za .* bez leku oczekujac nadchodzacej walki\.$</string>
+								<string>^Zataczasz .* swiszczacego mlynca, przyjmujac przy tym dogodna do wyprowadzenia ciosu pozycje\.$</string>
 							</regexCodeList>
 							<regexCodePropertyList>
 								<integer>2</integer>
@@ -19103,6 +19327,12 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 								<integer>2</integer>
 								<integer>2</integer>
 								<integer>2</integer>
+								<integer>1</integer>
+								<integer>1</integer>
+								<integer>1</integer>
+								<integer>1</integer>
+								<integer>1</integer>
+								<integer>1</integer>
 							</regexCodePropertyList>
 						</Trigger>
 						<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -23954,11 +24184,11 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^[ &gt;]*Probujesz otworzyc .* wrota.*</string>
-						<string>^[ &gt;]*Probujesz otworzyc .* drzwiczki.*</string>
-						<string>^[ &gt;]*Probujesz otworzyc .* krate.*</string>
-						<string>^[ &gt;]*Probujesz otworzyc .* brame.*</string>
-						<string>^[ &gt;]*Probujesz otworzyc niewielka furtke.*</string>
+						<string>^Probujesz otworzyc .*wrota.*</string>
+						<string>^Probujesz otworzyc .*drzwiczki.*</string>
+						<string>^Probujesz otworzyc .*krate.*</string>
+						<string>^Probujesz otworzyc .*brame.*</string>
+						<string>^Probujesz otworzyc niewielka furtke.*</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -28319,6 +28549,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<string>Nie mozesz tam przejsc, gdy stoi tu obsada statku.</string>
 						<string>do ciebie: Nikt z bronia nie wejdzie na teren gornej twierdzy. Prosze zostawic ja na stojaku.</string>
 						<string>Przejscie w tym kierunku jest zablokowane przez</string>
+						<string>Przejscie w tym kierunku jest dla ciebie zbyt waskie, nie potrafisz przecisnac sie przez przeswit.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>0</integer>
@@ -28357,6 +28588,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<integer>2</integer>
 						<integer>2</integer>
 						<integer>0</integer>
+						<integer>2</integer>
 						<integer>2</integer>
 					</regexCodePropertyList>
 				</Trigger>
@@ -28430,8 +28662,12 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<string>Mimo wlozenia wszystkich sil w wioslowanie nie jestes w stanie pokonac niezwykle silnego pradu wody.</string>
 						<string>Przestajesz wioslowac.</string>
 						<string>Nie mozesz sie tam udac, gdyz wielki pustynny robak lapie cie jednym ze szczekoczulkow i przyciaga do siebie.</string>
+						<string>Lawa nie pozwala isc dalej w tym kierunku. Mozesz jednak sprobowac ja przeskoczyc.</string>
+						<string>Nie mozesz sie tam udac, gdyz walczysz wlasnie z ryba. Jesli chcesz, mozesz , ale licz sie z mozliwoscia uszkodzenia wedki.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
+						<integer>2</integer>
+						<integer>2</integer>
 						<integer>2</integer>
 						<integer>2</integer>
 						<integer>2</integer>
@@ -29057,21 +29293,21 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 					<script>alias_config_set_var_index()</script>
 					<command></command>
 					<packageName></packageName>
-					<regex>^/cset(|\!|\!\!) ([a-zA-Z0-9\._]+)[\[\{]{1}(["0-9a-zA-Z]+)[\]\}]{1}=(true|false|[0-9\.]+)$</regex>
+					<regex>^/cset(|\!|\!\!) ([a-zA-Z0-9\._]+)[\[\{]{1}(["0-9a-zA-Z\._]+)[\]\}]{1}=(true|false|[0-9\.]+)$</regex>
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
 					<name>set_var_index_str</name>
 					<script>alias_config_set_var_index()</script>
 					<command></command>
 					<packageName></packageName>
-					<regex>^/cset(|\!|\!\!) ([a-zA-Z0-9\._]+)[\[\{]{1}(["0-9a-zA-Z]+)[\]\}]{1}=(".*")$</regex>
+					<regex>^/cset(|\!|\!\!) ([a-zA-Z0-9\._]+)[\[\{]{1}(["0-9a-zA-Z\._]+)[\]\}]{1}=(".*")$</regex>
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
 					<name>del_var_index_key</name>
 					<script>alias_config_del_var_index_key()</script>
 					<command></command>
 					<packageName></packageName>
-					<regex>^/cdel(|\!|\!\!) ([a-zA-Z0-9\._]+)[\[\{]{1}(["0-9a-zA-Z]+)[\]\}]{1}$</regex>
+					<regex>^/cdel(|\!|\!\!) ([a-zA-Z0-9\._]+)[\[\{]{1}(["0-9a-zA-Z\._]+)[\]\}]{1}$</regex>
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
 					<name>del_var_index_value</name>
@@ -30347,18 +30583,39 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<regex>^(wiedza)$</regex>
 					</Alias>
 					<Alias isActive="yes" isFolder="no">
-						<name>zglebiaj</name>
-						<script>alias_func_skrypty_misc_zglebiaj_wiedze()</script>
+						<name>wiedza_help</name>
+						<script>scripts.misc.knowledge:show_help()</script>
 						<command></command>
 						<packageName></packageName>
-						<regex>^zglebiaj(?:| wiedze(?:| (\d+)))$</regex>
+						<regex>^/wiedza$</regex>
 					</Alias>
 					<Alias isActive="yes" isFolder="no">
-						<name>otworz ksiazke</name>
-						<script>alias_func_scripts_misc_book_open(matches[2])</script>
+						<name>ksiazki</name>
+						<script>scripts.misc.knowledge:show_book_stats()</script>
 						<command></command>
 						<packageName></packageName>
-						<regex>^(otworz.*?(ksiege|ksiazke|ksiazeczke|tomiszcze|notatnik|dziennik|teke|tabliczek))</regex>
+						<regex>^/ksiazki$</regex>
+					</Alias>
+					<Alias isActive="yes" isFolder="no">
+						<name>ksiazki_all</name>
+						<script>scripts.misc.knowledge:show_book_stats(true)</script>
+						<command></command>
+						<packageName></packageName>
+						<regex>^/ksiazki\!$</regex>
+					</Alias>
+					<Alias isActive="yes" isFolder="no">
+						<name>biblioteka_show</name>
+						<script>scripts.misc.knowledge:show_library_stats()</script>
+						<command></command>
+						<packageName></packageName>
+						<regex>^/biblioteki$</regex>
+					</Alias>
+					<Alias isActive="yes" isFolder="no">
+						<name>biblioteki_show_all</name>
+						<script>scripts.misc.knowledge:show_library_stats(true)</script>
+						<command></command>
+						<packageName></packageName>
+						<regex>^/biblioteki\!$</regex>
 					</Alias>
 				</AliasGroup>
 				<Alias isActive="yes" isFolder="no">
@@ -30884,14 +31141,14 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 					<script>alias_func_mapper_map_show_room_id()</script>
 					<command></command>
 					<packageName></packageName>
-					<regex>^/lok ([0-9]+)$</regex>
+					<regex>^/lok ([0-9]+|i[a-z0-9]+)$</regex>
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
 					<name>set_position</name>
 					<script>alias_func_mapper_map_set_position()</script>
 					<command></command>
 					<packageName></packageName>
-					<regex>^/ustaw ([0-9]+)$</regex>
+					<regex>^/ustaw ([0-9]+|i[0-9a-z]+)$</regex>
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
 					<name>go_to_shortcut</name>
@@ -30912,14 +31169,14 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 					<script>alias_func_mapper_map_go_to_id()</script>
 					<command></command>
 					<packageName></packageName>
-					<regex>^/idz ([0-9]+)$</regex>
+					<regex>^/idz (\d+|i[0-9a-z]+)$</regex>
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
 					<name>go_to_id_delay</name>
 					<script>alias_func_mapper_map_go_to_id_delay()</script>
 					<command></command>
 					<packageName></packageName>
-					<regex>^/idz ([0-9]+) (([0-9]+)|([0-9]+\.[0-9]+))$</regex>
+					<regex>^/idz (\d+|i[0-9a-z]+) (\d+|\d+\.\d+)$</regex>
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
 					<name>go_continue</name>
@@ -30940,7 +31197,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 					<script>alias_func_mapper_map_highlight_path()</script>
 					<command></command>
 					<packageName></packageName>
-					<regex>^/pokaz_sciezke ([0-9]+)$</regex>
+					<regex>^/pokaz_sciezke (\d+|i[a-z0-9]+)$</regex>
 				</Alias>
 			</AliasGroup>
 			<AliasGroup isActive="yes" isFolder="yes">

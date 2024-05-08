@@ -3,6 +3,7 @@ if not amap then
     amap = {
         handlers = {},
         db = { show_notes = true, show_binds = true },
+        internal_to_mudlet_id = {},
         ver = scripts.ver,
         shortcuts = {},
         shorten_exits = false,
@@ -334,35 +335,35 @@ function trigger_func_mapper_jedziesz_wozem(direction)
 end
 
 function trigger_func_mapper_idziesz()
-        registerAnonymousEventHandler("gmcp.room.info", function() amap:locate(true, true) end, true)
-        local exits = {}
-        if table.size(gmcp.room.info.exits) ~= 2 then
-            -- in rare cases if go command was executed and gmcp does not have 2 exits we have to
-            -- use mapper exits
-            for dir,_ in pairs(getRoomExits(amap.curr.id)) do
-                table.insert(exits, amap.english_to_polish[dir])
-            end
-        else
-            exits = gmcp.room.info.exits
+    registerAnonymousEventHandler("gmcp.room.info", function() amap:locate(true, true) end, true)
+    local exits = {}
+    if table.size(gmcp.room.info.exits) ~= 2 then
+        -- in rare cases if go command was executed and gmcp does not have 2 exits we have to
+        -- use mapper exits
+        for dir, _ in pairs(getRoomExits(amap.curr.id)) do
+            table.insert(exits, amap.english_to_polish[dir])
         end
+    else
+        exits = gmcp.room.info.exits
+    end
 
-        if table.size(exits) > 2 or table.size(exits) == 0 then
-            return
-        end
+    if table.size(exits) > 2 or table.size(exits) == 0 then
+        return
+    end
 
-        -- get direction that we came from (in polish)
-        local en_opposite_long = amap.opposite_dir[amap.dir_from_key]
-        local pl_long_dir = amap.english_to_polish[amap.short_to_long[en_opposite_long]]
+    -- get direction that we came from (in polish)
+    local en_opposite_long = amap.opposite_dir[amap.dir_from_key]
+    local pl_long_dir = amap.english_to_polish[amap.short_to_long[en_opposite_long]]
 
-        -- get from determined exits other direction to one that we came from
-        if exits[1] == pl_long_dir then
-            amap.last_go_dir = exits[2]
-        else
-            amap.last_go_dir = exits[1]
-        end
+    -- get from determined exits other direction to one that we came from
+    if exits[1] == pl_long_dir then
+        amap.last_go_dir = exits[2]
+    else
+        amap.last_go_dir = exits[1]
+    end
 
-        amap.dir_from_key = amap.polish_to_english[amap.last_go_dir]
-        amap:follow(amap.dir_from_key, false)
+    amap.dir_from_key = amap.polish_to_english[amap.last_go_dir]
+    amap:follow(amap.dir_from_key, false)
 end
 
 function alias_func_mapper_print_options()
@@ -414,10 +415,9 @@ function alias_func_mapper_step_back_bind()
 end
 
 function alias_func_mapper_sciezka()
-    amap:show_path(tonumber(matches[2]))
+    amap:show_path(matches[2])
 end
 
 function alias_func_mapper_nastepny_kierunek()
     amap:execute_next_direction_bind()
 end
-

@@ -51,7 +51,7 @@ setmetatable(scripts.counted_string_to_int, {
     __index = function(table, key)
         if num[key] then
             return num[key]
-        else 
+        else
             local parts = key:split(" ")
             if #parts == 1 then
                 return tens[parts[1]]
@@ -133,6 +133,14 @@ function scripts:check_gmcp(silent)
     return true
 end
 
+-- in template, all 'x' characters are replaced with random a-zA-Z0-9.
+function generate_uuid(template)
+    return string.gsub(template, '[xy]', function(c)
+        local v = (c == 'x') and math.random(0, 0xf) or math.random(8, 0xb)
+        return string.format('%x', v)
+    end)
+end
+
 function scripts:get_table_without_first_item(arr)
     if not arr then
         error("Wrong input")
@@ -147,6 +155,3 @@ function scripts:get_table_without_first_item(arr)
 
     return items
 end
-
-
-

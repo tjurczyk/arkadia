@@ -1,5 +1,5 @@
 [![Version](https://img.shields.io/github/v/release/tjurczyk/arkadia?label=version&color=%23438f57)](https://github.com/tjurczyk/arkadia/releases)
-![Verify config.md](https://github.com/tjurczyk/arkadia/workflows/Verify%20config.md/badge.svg)
+![Verify config.md](https://github.com/tjurczyk/arkadia/workflows/Verify%20config.md,%20events.md%20and%20requires/badge.svg)
 
 ## Arkadia Skrypty
 
@@ -314,15 +314,14 @@ Rowniez opcjonalnie mozna zalaczy plik `config_schema.json`. Zaktualizuje on ist
 ```
 
 ##### _init.lua_
-```
-    return {
-        "dodatkowe",
-        "skrypty"
-    }
+```lua
+return {
+    "dodatkowe",
+    "skrypty"
+}
 ```
 
 ## KONTAKT
 
-1. Na forum: [@Adremen](http://arkadia.rpg.pl/forum/memberlist.php?mode=viewprofile&u=1084)
+1. [Discord](https://discord.gg/76yaZnw)
 2. [Temat](https://arkadia.rpg.pl/forum/viewtopic.php?f=15&t=1023), w którym można uzyskać pomoc na forum
-3. [Discord](https://discord.gg/76yaZnw)

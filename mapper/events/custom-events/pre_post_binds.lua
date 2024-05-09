@@ -1,5 +1,5 @@
 function amap_check_pre_post_room_event(...)
-    if not arg or table.size(arg) ~= 4 then
+    if not arg then
         return nil
     end
 
@@ -18,4 +18,3 @@ function amap_check_pre_post_room_event(...)
 end
 
 registerAnonymousEventHandler("amapNewLocation", "amap_check_pre_post_room_event")
-

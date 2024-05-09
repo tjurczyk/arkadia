@@ -140,7 +140,10 @@ local szata = function(desc)
     desc = desc:gsub("czarnoodziany zakapturzony", "czarnoodzianego zakapturzonego")
     desc = desc:gsub("czarnoodziany", "czarnoodzianego")
     for k,v in pairs(replace_szata) do
-        desc = desc:gsub(" " .. k, " " .. v)
+      local new = rex.gsub(desc, "\\b" .. k .. "\\b", v)
+      if new ~= desc then
+          return new
+      end
     end
     return desc
 end
@@ -393,7 +396,7 @@ function ateam:give_leader(id)
             real_id = real_id:gsub("czarnoodziana zakapturzona", "czarnoodzianej zakapturzonej")
             real_id = real_id:gsub("czarnoodziana", "czarnoodzianej")
             for k,v in pairs(replace_szata_celownik) do
-                real_id = real_id:gsub(k,v)
+                real_id = rex.gsub(real_id, "\\b" .. k .. "\\b", v)
             end
         end
         sendAll("przekaz prowadzenie " .. real_id, false)

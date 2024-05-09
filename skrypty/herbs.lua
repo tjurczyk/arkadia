@@ -37,6 +37,8 @@ function trigger_func_skrypty_herbs_rozwiaz_rzemyk_pusty()
     if herbs.current_bag_looking then
         coroutine.resume(herbs["build_db_coroutine_id"])
     end
+    local event_data = { ["total_herbs_count"] = 0, ["herbs"] = {} }
+    raiseEvent("herbBagParsed", event_data)
 end
 
 function alias_func_skrypty_herbs_buduj()
@@ -118,4 +120,3 @@ function alias_func_skrypty_herbs_ziola_odloz_woreczek()
     herbs:put_herb_bag_down(matches[2])
     herbs:do_post_actions()
 end
-

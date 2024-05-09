@@ -63,3 +63,23 @@ function trigger_func_skrypty_ui_gags_ciosy_czarny_smukly_mlot()
     end
     scripts.gags:gag(value, 6, target)
 end
+
+-- zielonkawy bretonski mlot
+
+function trigger_func_skrypty_ui_gags_ciosy_zielonkawy_bretonski_mlot()
+    local target = "moje_ciosy"
+    if matches["attacker"] then
+        target = matches["target"] == "cie" and "innych_ciosy_we_mnie" or "innych_ciosy"
+    end
+
+    local dmg = matches["damage"]
+    local value = -1
+    if dmg == "mija" or dmg == "obok" then value = 0
+    elseif dmg == "niewielkie" then value = 1
+    elseif dmg == "raniac" then value = 2
+    elseif dmg == "tlucze" then value = 3
+    elseif dmg == "miazdzy" then value = 4
+    elseif dmg == "miazdzac" then value = 5
+    end
+    scripts.gags:gag(value, 6, target)
+end

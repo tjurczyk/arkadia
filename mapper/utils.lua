@@ -95,6 +95,7 @@ function amap:copy_loc(dst, src)
     if dst then
         if src then
             dst.id = src.id
+            dst.internal_id = src.internal_id
             dst.x = src.x
             dst.y = src.y
             dst.z = src.z
@@ -102,6 +103,7 @@ function amap:copy_loc(dst, src)
             dst.exits = src.exits
         else
             dst.id = nil
+            dst.internal_id = nil
             dst.x = nil
             dst.y = nil
             dst.z = 0
@@ -111,8 +113,6 @@ function amap:copy_loc(dst, src)
     end
 end
 
-
-
 function copy_table(obj)
     local s = {}
     for k, v in pairs(obj) do
@@ -120,8 +120,6 @@ function copy_table(obj)
     end
     return s
 end
-
-
 
 function amap:show_colors()
     display(amap.color_table)
@@ -208,10 +206,27 @@ function amap:parse_trigger_exits(text)
     text = text:gsub(" albo ", ", ")
     local dirs = text:split(", ")
     local final_dirs = {}
-    
+
     for i, dir in pairs(dirs) do
         if amap.long_to_short[amap.polish_to_english[dir]] then
             final_dirs[amap.long_to_short[amap.polish_to_english[dir]]] = true
+            --table.insert(final_dirs, amap.long_to_short[amap.polish_to_english[dir]])
+        else
+            final_dirs[dir] = true
+            --table.insert(final_dirs, dir)
+        end
+    end
+
+    return final_dirs
+end
+
+function amap:parse_trigger_exits2(text, standard_exits)
+    local dirs = text:split("|")
+    local final_dirs = standard_exits
+
+    for i, dir in pairs(dirs) do
+        if amap.long_to_short[amap.polish_to_english_Ms[dir]] then
+            final_dirs[amap.long_to_short[amap.polish_to_english_Ms[dir]]] = true
             --table.insert(final_dirs, amap.long_to_short[amap.polish_to_english[dir]])
         else
             final_dirs[dir] = true
@@ -228,7 +243,6 @@ function amap:log_failed_follow(msg)
     io.write(msg)
     io.close(file)
 end
-
 
 --------------------------
 -- Below is the support for queue
@@ -287,4 +301,3 @@ function List.peek_second_to_last(list)
 end
 
 amap["history"] = get_new_list()
-

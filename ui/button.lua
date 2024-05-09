@@ -25,6 +25,9 @@ function scripts.ui.button:new(id, label, x, y, size, callback, window)
     o.r = 70
     o.g = 130
     o.b = 30
+    o.r_off = 130
+    o.g_off = 30
+    o.b_off = 30
     o.font_size = 10
     o.size = variants[size] and size or "m"
     o.width = variants[o.size].width
@@ -69,5 +72,12 @@ function scripts.ui.button:set_color(r, g, b)
     self.r = r
     self.g = g
     self.b = b
+    self:updateStyleSheet()
+end
+
+function scripts.ui.button:set_color_off(r, g, b)
+    self.r_off = r
+    self.g_off = g
+    self.b_off = b
     self:updateStyleSheet()
 end

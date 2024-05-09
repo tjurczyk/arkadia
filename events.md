@@ -1,4 +1,4 @@
-# Eventy dostępne w skryptach:
+# Eventy dostępne w skryptach
 
 ## `scriptsLoaded`
   
@@ -12,7 +12,8 @@ Event podniesiony przed ladowaniem wszystkich skryptow z plikow .lua
 Moze byc uzyty do ladowania plikow przez moduly zalaczane przed skrypytami
 
 Argumenty:
-  * `arg1`: tablica modulow do zaladowania
+
+* `arg1`: tablica modulow do zaladowania
 
 ---
 
@@ -55,8 +56,10 @@ Event podniesiony jezeli zmieni sie sklad druzyny.
 ## `amapNewLocation`
 
 Argumenty:
-  *  `arg1`: ID nowej lokacji
-  *  `arg2`: kierunek, ktory zostal zlapany jako ruch
+
+* `arg1`: ID nowej lokacji
+* `arg2`: kierunek, ktory zostal zlapany jako ruch
+* `arg3`: internal ID nowej lokacji (skryptowy, zawsze zaczyna sie od `i...`)
 
   Event ten jest podnoszony gdy mapper wykryje nowy poprawny ruch na mapie.
 
@@ -65,7 +68,8 @@ Argumenty:
 ## `setPosition`
 
 Argumenty:
-  * `arg1`: ID ustawionej lokacji
+
+* `arg1`: ID ustawionej lokacji
 
 Event ten jest podnozszony gdy lokacja zostaje ustawiona (recznie lub automatycznie)
 
@@ -92,7 +96,6 @@ Event podniesiony gdy chodzik zostanie przerwany (niezaleznie od przyczyny: blok
 ## `amapWalkerStarted`
 
 Event podniesiony kiedy chodzik zostanie wystartowany.
-
 
 ## `amapWalkerFinished`
 
@@ -122,8 +125,9 @@ Event podniesiony gdy pauser zostal wylaczony (czyli wlaczyl mapper z powrotem)
 
 Event podniesiony gdy zakonczy sie rysowanie rozy wiatrow
 Argumenty:
-  * `arg1`: tablica z normalnymi wyjsciami (e.g.: `{n = true, s = true}`)
-  * `arg2`: tablica ze specjalnymi wyjsciami (e.g.: `{["przejdz przez szczeline"] = true}`)
+
+* `arg1`: tablica z normalnymi wyjsciami (e.g.: `{n = true, s = true}`)
+* `arg2`: tablica ze specjalnymi wyjsciami (e.g.: `{["przejdz przez szczeline"] = true}`)
 
 ---
 
@@ -131,8 +135,9 @@ Argumenty:
 
 Event gracz wykona /cofnij i zostanie cofniety na mapie z sukcesem (czyli byla historia lokacji)
 Argumenty:
-  * `arg1`: lokacja z ktorej mapper sie cofa
-  * `arg2`: lokacja na ktora mapper sie cofa
+
+* `arg1`: lokacja z ktorej mapper sie cofa
+* `arg2`: lokacja na ktora mapper sie cofa
 
 ---
 
@@ -141,18 +146,46 @@ Argumenty:
 Event podniesiony gdy gracz wykonuje ruch przez niego zainicjowany
 
 Argumenty:
-  * `arg1`: kierunek
+
+* `arg1`: kierunek
 
 ---
 
 ## `travelDestinationReached`
 
-Event podniesiony kiedy srodek transportu dotrze do przystanku. 
+Event podniesiony kiedy srodek transportu dotrze do przystanku.
 
 Argumenty:
-  * `arg1`: definicja przystanku
-  * `arg2`: definicja transportu
-  * `arg3`: obiekt podrozy
+
+* `arg1`: definicja przystanku
+* `arg2`: definicja transportu
+* `arg3`: obiekt podrozy
+
+---
+
+## `herbsDatabaseBuilt`
+
+Event podniesiony kiedy ukonczone zostanie budowanie bazy ziol.
+
+---
+
+## `herbBagParsed`
+
+Event podniesiony kiedy sparsowany zostal woreczek przy zagladaniu do niego.
+
+Argumenty:
+
+* `arg1`: dictionary z informacjami o tym jakie tam sa ziola w jakiej ilosci oraz suma ziol
+
+---
+
+## `containerParsed`
+
+Event podniesiony kiedy sparsowany zostal obejrzany pojemnik.
+
+Argumenty:
+
+* `arg1`: dictionary z informacjami o tym jakie elementy w jakiej ilosci sa w pojemniku.
 
 ---
 
@@ -160,7 +193,8 @@ Argumenty:
 
 Event podniesiony kiedy wybrana paczka ma dostepny cel podrozy
 Argumenty:
-  * `arg1`: docelowa lokacja do ktorej wybrana zostala paczka
+
+* `arg1`: docelowa lokacja do ktorej wybrana zostala paczka
 
 ---
 
@@ -257,7 +291,8 @@ Event podniesiony w momencie, kiedy nasza postac jest zaatakowana/nie zaatakowan
 ## `ateam_teammate_attacked`
 
 Argumenty:
-  * `arg1`: true lub false, w zaleznosci czy ktokolwiek z naszej druzyny zostal zostal zaatakowany, czy nikt z druzyny nie jest atakowany.
+
+* `arg1`: true lub false, w zaleznosci czy ktokolwiek z naszej druzyny zostal zostal zaatakowany, czy nikt z druzyny nie jest atakowany.
 
 Event podniesiony w momencie, kiedy ktos z naszego teamu zostaje zaatakowany
 
@@ -278,7 +313,8 @@ Event podniesiony po ochlonieciu od walki
 ## `temporary_bind_executed`
 
 Argumenty:
-  * `arg1`: id bindu
+
+* `arg1`: id bindu
 
   Event podniesiony po wykonaniu bindu tymczasowego
 
@@ -287,9 +323,10 @@ Argumenty:
 ## `ateam_next_attack_obj_bind`
 
 Argumenty:
-  * `arg1`: id arkadiowe obiektu
-  * `arg2`: id mudletowe obiektu
-  * `arg3`: ateam.obj obiektu
+
+* `arg1`: id arkadiowe obiektu
+* `arg2`: id mudletowe obiektu
+* `arg3`: ateam.obj obiektu
 
   Event podniesiony gdy zbindowany zostanie atak z kolejki pod /nn
 
@@ -298,7 +335,8 @@ Argumenty:
 ## `hidden_state`
 
 Argumenty:
-  * `arg1`: status ukrycia
+
+* `arg1`: status ukrycia
 
 Event podniesiony kiedy zmienia sie status ukrycia
 
@@ -307,7 +345,8 @@ Event podniesiony kiedy zmienia sie status ukrycia
 ## `weapon_state`
 
 Argumenty:
-  * `arg1`: status dobycia broni - true|false
+
+* `arg1`: status dobycia broni - true|false
 
    Event podniesiony kiedy zmienia sie status dobycia broni
 
@@ -316,7 +355,8 @@ Argumenty:
 ## `guard_state`
 
 Argumenty:
-  * `arg1`: status zaslony (czas pozostaly lub OK)
+
+* `arg1`: status zaslony (czas pozostaly lub OK)
 
 Event podniesiony kiedy zmienia sie status uzycia zaslony
 
@@ -325,7 +365,8 @@ Event podniesiony kiedy zmienia sie status uzycia zaslony
 ## `order_state`
 
 Argumenty:
-  * `arg1`: status rozkazu (czas pozostaly lub OK)
+
+* `arg1`: status rozkazu (czas pozostaly lub OK)
 
 Event podniesiony kiedy zmienia sie status wydania rozkazu
 
@@ -334,7 +375,8 @@ Event podniesiony kiedy zmienia sie status wydania rozkazu
 ## `switchReleasingGuards`
 
 Argumenty:
-  * `arg1`: stan puszczania zaslon (true/false)
+
+* `arg1`: stan puszczania zaslon (true/false)
 
 Event podniesiony kiedy przelaczone zostanie puszczanie zaslon.
 
@@ -343,22 +385,25 @@ Event podniesiony kiedy przelaczone zostanie puszczanie zaslon.
 ## `equipmentEvaluation`
 
 Argumenty:
-  * `arg1`: tablica ze stanem ekwipinku
+
+* `arg1`: tablica ze stanem ekwipinku
 
 Event podniesiony po ocenieniu elementu ekwipunku.
 
 ## `setVar`
 
 Argumenty:
-  * `arg1`: klucz
-  * `arg2`: wartosc
+
+* `arg1`: klucz
+* `arg2`: wartosc
 
 Event podniesiony po zmianie wartosci klucz konfiguracji.
 
 ## `footerInfoCreators`
 
 Argumenty:
-  * `arg1`: tablica kreatorow
+
+* `arg1`: tablica kreatorow
 
 Event podniesiony po stworzeniu tablicy kreatorow elementow stopki.
 Mozn go wykorzystac, zeby zarejestrowac swoj wlasny element.
@@ -368,16 +413,18 @@ Mozn go wykorzystac, zeby zarejestrowac swoj wlasny element.
 Event podniesiony podczas podrozy dylizansami itp.
 
 Argument:
-  * `arg1`: obiekt podrozy
-  * `arg2`: aktualnie wyliczona lokacja (w przyblizeniu)
+
+* `arg1`: obiekt podrozy
+* `arg2`: aktualnie wyliczona lokacja (w przyblizeniu)
 
 ## `incomingMessage`
 
 Event podniesiony po przeprocesowaniu wiadomosci przychodzacej.
 
 Argument:
-  * `arg1`: typ wiadomosci
-  * `arg2`: tekst wiadomosci
+
+* `arg1`: typ wiadomosci
+* `arg2`: tekst wiadomosci
 
 ## `weaponBroken`
 
@@ -394,6 +441,37 @@ Event podnoszony gdy wyleci ci na ziemie bron u Nekromanty w Tilei
 ## `improveLevelGained`
 
 Argumenty:
-  * `arg1`: jak duży postęp właśnie wpadł (nieznaczne=1, itd.)
+
+* `arg1`: jak duży postęp właśnie wpadł (nieznaczne=1, itd.)
 
 Event podnoszony gdy wiemy o ile postępów urośliśmy.
+
+## `stunStart`
+
+Event podniesiony na początku ogłuszenia postaci gracza.
+
+## `stunEnd`
+
+Event podniesiony na koniec ogłuszenia postaci gracza.
+
+## `tryingToBlock`
+
+Argumenty:
+
+* `arg1`: opis/imię blokującego
+
+Event podniesiony podczas próby bloku na postać gracza.
+
+## `hasBlocked`
+
+Argumenty:
+
+* `arg1`: opis/imię blokującego
+
+  Event podniesiony kiedy postać gracza została zablokowana.
+
+## `playerAttacked`
+
+* `arg1`: opis/imię atakującego
+
+Event podniesiony kiedy postać gracza została zaatkowana. Event podnoszony jest zgodnie z ustawieniem `misc.attack_beep.mode`.

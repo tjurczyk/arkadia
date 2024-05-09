@@ -9,7 +9,6 @@ function amap:add_room_manual()
     if new_id then
         amap:set_position(new_id, true)
     else
-
         amap.curr.x, amap.curr.y, amap.curr.z = amap:get_new_coords(amap.prev.x, amap.prev.y, amap.prev.z, dir)
         amap.curr.area = amap.prev.area
 
@@ -44,7 +43,8 @@ function amap:add_location_located_on(dir, located_on)
         local new_z = nil
 
         if located_on then
-            new_x, new_y, new_z = amap:get_new_coords(amap.curr.x, amap.curr.y, amap.curr.z, amap.short_to_long[located_on])
+            new_x, new_y, new_z = amap:get_new_coords(amap.curr.x, amap.curr.y, amap.curr.z,
+                amap.short_to_long[located_on])
         else
             new_x, new_y, new_z = amap:get_new_coords(amap.curr.x, amap.curr.y, amap.curr.z, amap.short_to_long[dir])
         end
@@ -113,7 +113,6 @@ end
 
 function amap:add_special_exit(to_room_id, exit)
     if amap.mode ~= "off" and amap.mode ~= "follow" then
-
         addSpecialExit(amap.curr.id, tonumber(to_room_id), exit)
 
         centerview(amap.curr.id)
@@ -264,7 +263,10 @@ function amap:set_room_hash()
     local hash = amap:generate_hash(tmp_loc.x, tmp_loc.y, tmp_loc.z, tmp_loc.area)
     local room = getRoomIDbyHash(hash)
     if room ~= -1 and amap.curr.id ~= room then
-        amap:print_log(string.format("Lokacja na ktorej stoisz jest juz na mapie (x:%s, y:%s, z: %s, area: %s) - lokacja ID: %s", tmp_loc.x, tmp_loc.y, tmp_loc.z, tmp_loc.area, room))
+        amap:print_log(string.format(
+            "Lokacja na ktorej stoisz jest juz na mapie (x:%s, y:%s, z: %s, area: %s) - lokacja ID: %s", tmp_loc.x,
+            tmp_loc
+            .y, tmp_loc.z, tmp_loc.area, room))
     elseif amap.curr.id == room then
         amap:print_log("Dla tej lokacji jest ustawiony juz prawidlowy hash.")
     else
@@ -275,7 +277,6 @@ end
 
 function amap:link_rooms(room_src, room_dst, dst)
     if room_src and room_dst and dst then
-
         if not setExit(room_src, room_dst, amap.long_to_short[dst]) then
             amap:print_log("Cos poszlo nie tak...")
             return
@@ -287,7 +288,6 @@ end
 
 function amap:color_room(color)
     if amap.color_table[color] then
-
         setRoomEnv(amap.curr.id, amap.color_table[color])
 
         amap:print_log("Kolor ustawiony")
@@ -298,10 +298,17 @@ end
 
 function amap:print_room_info(room_id)
     local room_to_print = nil
-    if room_id then
-        room_to_print = room_id
+    local internal_room_to_print = nil
+
+    if room_id and string.starts(tostring(room_id), "i") then
+        room_to_print = amap.internal_to_mudlet_id[room_id]
+        internal_room_to_print = room_id
+    elseif room_id then
+        room_to_print = tonumber(room_id)
+        internal_room_to_print = getRoomUserData(room_id, "internal_id")
     elseif amap.curr.id then
         room_to_print = amap.curr.id
+        internal_room_to_print = getRoomUserData(amap.curr.id, "internal_id")
     else
         error("Wrong input")
     end
@@ -311,7 +318,8 @@ function amap:print_room_info(room_id)
         return
     end
 
-    amap:print_log("ID lokacji: <green>" .. room_to_print)
+    amap:print_log("Mudlet ID lokacji: <green>" .. room_to_print)
+    amap:print_log("Internal ID lokacji: <green>" .. internal_room_to_print)
     amap:print_log("Rejon lokacji: <green>" .. getAreaTableSwap()[getRoomArea(room_to_print)])
     local x, y, z = getRoomCoordinates(room_to_print)
     y = -y
@@ -478,7 +486,6 @@ function alias_func_mapper_room_set_gate_room()
     amap:set_gate_room(amap.curr.id, matches[2])
 end
 
-
 function alias_func_mapper_room_set_weight()
     amap:set_room_weight(tonumber(matches[2]), nil)
 end
@@ -494,4 +501,3 @@ end
 function alias_func_mapper_room_reset_dir_bind()
     amap:reset_dir_bind(matches[2], matches[3])
 end
-

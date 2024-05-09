@@ -17,6 +17,10 @@ function scripts.people:process_person_color(text, name, guild, color, suffix_co
     resetFormat()
 end
 
+function scripts.people:can_add_person_short(name)
+   return true
+end
+
 function scripts.people:color_person_build(item, color, guild_color)
     if item.short == "" or scripts.people.already_processed[item["_row_id"]] or (item.short:starts("czarnoodzian") and item.guild ~= scripts.people.guilds.NPC) then
         return
@@ -40,12 +44,14 @@ function scripts.people:color_person_build(item, color, guild_color)
         end
     end
 
-    scripts.tokens:register(item.short, function(current_match)
-        scripts.tokens:process_token(current_match, function()
-            local name = not line:find(" %(to chyba") and item.name
-            scripts.people:process_person_color(current_match, name, guild_str, color, guild_color)
-        end, function(what, k) return not line:find(what .. " chaosu", k) end)
-    end, "people" .. (item.name or ""))
+    if self:can_add_person_short(item.name) then
+        scripts.tokens:register(item.short, function(current_match)
+            scripts.tokens:process_token(current_match, function()
+                local name = not line:find(" %(to chyba") and item.name
+                scripts.people:process_person_color(current_match, name, guild_str, color, guild_color)
+            end, function(what, k) return not line:find(what .. " chaosu", k) end)
+        end, "people" .. (item.name or ""))
+    end
    
     if item.name and item.name ~= "" then
         scripts.tokens:register(item.name, function(current_match)
@@ -91,9 +97,21 @@ end
 function scripts.people:enemy_people_starter()
 
     scripts.people.bind_enemies = {}
-
+    local fake_row_id = 1
     for _, v in pairs(scripts.people.enemy_people) do
         local results = db:fetch(scripts.people.db.people, db:like(scripts.people.db.people.name, v))
+              
+        if table.is_empty(results) then
+            results = {
+                {
+                    ["_row_id"] = -fake_row_id,
+                    short = string.lower(v),
+                    guild = 22,
+                    name = "",
+                }
+            }
+            fake_row_id = fake_row_id + 1
+        end
 
         for _, item in pairs(results) do
             scripts.people:enemy_person_build(item)

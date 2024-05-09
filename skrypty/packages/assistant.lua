@@ -76,6 +76,13 @@ function scripts.packages:pickup(command)
                 self.trigger = nil
             end
         end)
+        self.trigger_refresh = tempRegexTrigger("Lista przesylek zmienila sie i ta, ktora chcesz podjac byc moze nie jest juz ta, ktora widziales w spisie\\.", function()
+            self.current_offer = {}
+            if self.trigger then
+                killTrigger(self.trigger)
+                self.trigger = nil
+            end
+        end)
     end
 end
 
@@ -96,6 +103,7 @@ function scripts.packages:package_given(index)
         self:update_display()
     end
     self:clear()
+    self.current_offer = {}
 end
 
 function scripts.packages:package_delivered(success)

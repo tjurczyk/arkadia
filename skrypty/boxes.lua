@@ -32,6 +32,11 @@ scripts.boxes.db = db:create("boxestwo", {
 })
 
 function scripts.boxes:update()
+    if self.trigger then
+        scripts:print_log("Aktualizacja depozytu juz dziala")
+        return
+    end
+
     if not amap or not amap.curr or not amap.curr.id or amap.curr.id == -1 then
         scripts:print_log("Problem z mapperem")
         return
@@ -48,11 +53,13 @@ function scripts.boxes:update()
     end
 
     self.current_box = self.valid_banks[amap.curr.id]
-    
+
+    self.trigger = tempRegexTrigger(
+        "(Twoj depozyt jest pusty|Nie posiadasz wykupionego depozytu|Twoj depozyt zawiera .*)\\.$", function()
+            self:update_box(matches[1])
+            self.trigger = nil
+        end, 1)
     send("przejrzyj depozyt")
-    self.trigger = tempRegexTrigger("(Twoj depozyt jest pusty|Nie posiadasz wykupionego depozytu|Twoj depozyt zawiera .*)\\.$", function ()
-        self:update_box(matches[1])
-    end, 1)
 end
 
 function scripts.boxes:update_box(update_str)
@@ -128,4 +135,3 @@ end
 function alias_func_skrypty_boxes_print_banks()
     scripts.boxes:print_boxes()
 end
-

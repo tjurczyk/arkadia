@@ -28,6 +28,7 @@ function amap:follow(direction, is_team_follow)
     -- if found, proceed
     if new_id then
         amap.curr.id = new_id
+        amap.curr.internal_id = getRoomUserData(amap.curr.id, "internal_id")
         local curr_area = getRoomArea(amap.curr.id)
         amap.curr.area = getRoomAreaName(curr_area)
 
@@ -42,7 +43,7 @@ function amap:follow(direction, is_team_follow)
         if not is_team_follow then
             raiseEvent("amapWalking", direction)
         end
-        raiseEvent("amapNewLocation", amap.curr.id, direction)
+        raiseEvent("amapNewLocation", amap.curr.id, direction, amap.curr.internal_id)
         amap:copy_loc(amap.prev, amap.curr)
         return true
     else
@@ -61,28 +62,31 @@ function amap:locate(noprint, skip_db)
     amap.next_dir_bind = nil
 
     if tmp_loc.x then
-        local curr_id = not amap.legacy_locate and amap:get_room_by_hash(tmp_loc.x, tmp_loc.y, tmp_loc.z, tmp_loc.area) or amap:room_exist(tmp_loc.x, tmp_loc.y, tmp_loc.z, tmp_loc.area)
+        local curr_id = not amap.legacy_locate and amap:get_room_by_hash(tmp_loc.x, tmp_loc.y, tmp_loc.z, tmp_loc.area) or
+            amap:room_exist(tmp_loc.x, tmp_loc.y, tmp_loc.z, tmp_loc.area)
         if curr_id and curr_id > 0 then
             amap.curr.id = curr_id
+            amap.curr.internal_id = getRoomUserData(amap.curr.id, "internal_id")
             amap.curr.x = tmp_loc.x
             amap.curr.y = tmp_loc.y
             amap.curr.z = tmp_loc.z
             amap.curr.area = tmp_loc.area
             amap:copy_loc(amap.prev, amap.curr)
             centerview(curr_id)
-            raiseEvent("amapNewLocation", amap.curr.id)
+            raiseEvent("amapNewLocation", amap.curr.id, nil, amap.curr.internal_id)
             amap_ui_set_dirs_trigger(getRoomExits(amap.curr.id))
             amap:follow_mode()
             msg = "Ok, jestes zlokalizowany po GMCP"
             ret = true
         else
-            msg = "Nie moge Cie zlokalizowac na podstawie tych koordynatow (prawdopodobnie lokacja z tymi koordynatami nie istnieje)"
+            msg =
+            "Nie moge Cie zlokalizowac na podstawie tych koordynatow (prawdopodobnie lokacja z tymi koordynatami nie istnieje)"
         end
     else
         if not skip_db and amap.localization:try_to_locate() then
             msg = "Zlokalizowalem po opisie lokacji i wyjsciach."
             ret = true
-        else 
+        else
             msg = "GMCP nie zawiera koordynatow, nie moge cie zlokalizowac na mapie"
         end
     end
@@ -100,11 +104,23 @@ function amap:locate_on_next_location(skip_db)
 end
 
 function amap:set_position(room_id, silent)
+    if string.starts(room_id, "i") then
+        room_id = amap.internal_to_mudlet_id[room_id]
+        if room_id == nil then
+            if not silent then
+                amap:print_log("Lokacja z tym ID nie istnieje")
+            end
+            return
+        end
+    end
+    room_id = tonumber(room_id)
+
     -- immediately clear next dir bind
     amap.next_dir_bind = nil
 
     if getRoomExits(room_id) then
         amap.curr.id = room_id
+        amap.curr.internal_id = getRoomUserData(amap.curr.id, "internal_id")
         amap.curr.x, amap.curr.y, amap.curr.z = getRoomCoordinates(amap.curr.id)
         amap.curr.y = -amap.curr.y
         local curr_area = getRoomArea(amap.curr.id)
@@ -124,7 +140,7 @@ function amap:set_position(room_id, silent)
         amap_ui_set_dirs_trigger(getRoomExits(amap.curr.id))
 
         raiseEvent("setPosition", amap.curr.id)
-        raiseEvent("amapNewLocation", amap.curr.id)
+        raiseEvent("amapNewLocation", amap.curr.id, nil, amap.curr.internal_id)
     else
         if not silent then
             amap:print_log("Lokacja z tym ID nie istnieje")
@@ -209,8 +225,10 @@ function get_next_room_from_dirs(room_id, dir, spe, is_team_follow)
     if is_team_follow and not new_id then
         amap:locate(true)
         amap:locate_on_next_location()
-        if not rex.match(spe, "(?:".. standard_lost_follows .. ")$") then
-            amap:log_failed_follow("[" .. getTime(true, "yyyy/MM/dd HH:mm:ss") .. "]: mapper zgubiony. last curr.id: " .. tostring(amap.curr.id) .. ", spe: `" .. spe .. "`\n")
+        if not rex.match(spe, "(?:" .. standard_lost_follows .. ")$") then
+            amap:log_failed_follow("[" ..
+                getTime(true, "yyyy/MM/dd HH:mm:ss") ..
+                "]: mapper zgubiony. last curr.id: " .. tostring(amap.curr.id) .. ", spe: `" .. spe .. "`\n")
         end
     end
 
@@ -218,14 +236,16 @@ function get_next_room_from_dirs(room_id, dir, spe, is_team_follow)
 end
 
 function amap:init_self_locating(skip_db)
-    amap.locate_handler = scripts.event_register:force_register_event_handler(amap.locate_handler, "gmcp.room.info", function ()
-        if amap:locate(true, skip_db) then
+    amap.locate_handler = scripts.event_register:force_register_event_handler(amap.locate_handler, "gmcp.room.info",
+        function()
+            if amap:locate(true, skip_db) then
+                scripts.event_register:kill_event_handler(amap.locate_handler)
+            end
+        end)
+    amap.set_position_handler = scripts.event_register:force_register_event_handler(amap.set_position_handler,
+        "setPosition", function()
             scripts.event_register:kill_event_handler(amap.locate_handler)
-        end
-    end)
-    amap.set_position_handler = scripts.event_register:force_register_event_handler(amap.set_position_handler, "setPosition", function()
-        scripts.event_register:kill_event_handler(amap.locate_handler)
-    end, true)
+        end, true)
 end
 
 function amap:check_direction_coords_correctness(c_x, c_y, c_z, x, y, z, dir)
@@ -318,6 +338,7 @@ function amap:check_room_on_direction_of(room, dir, force)
                 if not string.starts(v, "echo") then
                     if amap.short_to_long[v] then
                         was_regular = true
+                        amap.dir_from_key = amap.short_to_long[v]
                     end
                     send(v, true)
                 else
@@ -340,7 +361,7 @@ function amap:check_room_on_direction_of(room, dir, force)
             local to_check_x, to_check_y, to_check_z = getRoomCoordinates(v)
             to_check_y = -to_check_y
             if not force and amap:check_direction_coords_correctness(amap.curr.x, amap.curr.y, amap.curr.z, to_check_x, to_check_y, to_check_z, dir)
-                    and not n_exits[dir] then
+                and not n_exits[dir] then
                 if not k:starts("script:") then
                     send(k)
                 else
@@ -401,6 +422,11 @@ function amap:gate_keybind_pressed()
 end
 
 function amap:show_path(dst)
+    if string.starts(dst, "i") then
+        dst = amap.internal_to_mudlet_id[dst]
+    end
+    dst = tonumber(dst)
+
     local path = getPath(amap.curr.id, dst)
     if path then
         amap:print_log("sciezka: " .. table.concat(speedWalkDir, ", "))
@@ -425,6 +451,11 @@ function amap:cancel_highlight()
 end
 
 function amap:do_highlight(to_room_number)
+    if string.starts(to_room_number, "i") then
+        to_room_number = amap.internal_to_mudlet_id[to_room_number]
+    end
+    to_room_number = tonumber(to_room_number)
+
     local path = getPath(amap.curr.id, to_room_number)
 
     for i = 1, table.size(speedWalkPath) do
@@ -458,11 +489,11 @@ function alias_func_mapper_map_show_current_room()
 end
 
 function alias_func_mapper_map_show_room_id()
-    amap:print_room_info(tonumber(matches[2]))
+    amap:print_room_info(matches[2])
 end
 
 function alias_func_mapper_map_set_position()
-    amap:set_position(tonumber(matches[2]))
+    amap:set_position(matches[2])
 end
 
 function alias_func_mapper_map_go_to_shortcut()
@@ -474,11 +505,11 @@ function alias_func_mapper_map_go_to_shortcut_delay()
 end
 
 function alias_func_mapper_map_go_to_id()
-    amap:speedwalk_from_id(tonumber(matches[2]))
+    amap:speedwalk_from_id(matches[2])
 end
 
 function alias_func_mapper_map_go_to_id_delay()
-    amap:speedwalk_from_id(tonumber(matches[2]), matches[3])
+    amap:speedwalk_from_id(matches[2], matches[3])
 end
 
 function alias_func_mapper_map_go_continue()
@@ -491,7 +522,7 @@ function alias_func_mapper_map_go_continue_delay()
 end
 
 function alias_func_mapper_map_highlight_path()
-    amap:do_highlight(tonumber(matches[2]))
+    amap:do_highlight(matches[2])
 end
 
 function trigger_func_locate_on_next()

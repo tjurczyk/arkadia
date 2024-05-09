@@ -1,5 +1,5 @@
 amap.path_display = amap.path_display or {
-    highlighter = Highlight:new({}, color_table[amap.path_display_color], {150, 100, 255})
+    highlighter = Highlight:new({}, color_table[amap.path_display_color], { 150, 100, 255 })
 }
 
 function amap.path_display_refresh()
@@ -9,12 +9,18 @@ end
 
 function amap.path_display:start(destination)
     if not tonumber(destination) then
-        destination = amap.shortcuts:get_room_by_name(destination)
-        if not destination then
-            scripts:print_log("Podaj ID lub prawidlowa nazwe skrotu.")
-            return
+        if string.starts(destination, "i") then
+            destination = amap.internal_to_mudlet_id[destination]
+        else
+            destination = amap.shortcuts:get_room_by_name(destination)
         end
     end
+
+    if not destination then
+        scripts:print_log("Podaj ID lub prawidlowa nazwe skrotu.")
+        return
+    end
+
     self.destination = tonumber(destination)
 
     if self.destination == amap.curr.id then
@@ -23,14 +29,14 @@ function amap.path_display:start(destination)
     end
 
     self:show_destination()
-    self.handler = scripts.event_register:force_register_event_handler(self.handler, "amapNewLocation", function() self:show_destination() end)
+    self.handler = scripts.event_register:force_register_event_handler(self.handler, "amapNewLocation",
+        function() self:show_destination() end)
     registerMapInfo("GPS", function() return self:map_info() end)
     enableMapInfo("GPS")
     if not getPath(amap.curr.id, self.destination) then
         scripts:print_log("Aktualnie nie jestem w stanie znalezc sciezki do lokacji " .. destination)
     end
 end
-
 
 function amap.path_display:stop()
     self.highlighter:clear()
@@ -52,7 +58,8 @@ function amap.path_display:show_destination()
 end
 
 function amap.path_display:map_info()
-    return string.format("Sciezka do %d | Odleglosc: %s", self.destination, #speedWalkPath > 0 and #speedWalkPath or "?"), true
+    return string.format("Sciezka do %d | Odleglosc: %s", self.destination, #speedWalkPath > 0 and #speedWalkPath or "?"),
+        true
 end
 
 function alias_func_prowadz(id)

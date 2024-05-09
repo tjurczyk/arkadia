@@ -233,6 +233,156 @@ scripts.ui.cfg["footer_mode5_settings"] = {
   }
 }
 
+-- poczatek konfiguracji wyswietlania dla footer mode6 --
+
+--[[ 
+  show_tip_on_start - pokazuj podpowiedz do konfiguracji trybu mode6
+  bar_width - calkowita szerokosc belki graficznej (bez etykiety tekstowej)
+  bar_height - wysokosc belki
+  bar_item_space - szerokosc odstepu miedzy elementami belki
+  bar_text_color - kolor tekstu na belce
+  bar_text_font - niestandardowa czcionka tekstu na belce
+  bar_text_font_size - rozmiar tekstu na belce
+  bar_text_bold - czy tekst na belce ma byc pogrubiony
+  bar_label_width - szerokosc etykiety belki
+  bar_label_text_color - kolor tekstu etykiety
+  bar_label_improve_text_color - kolor tekstu etykiety dla wyrozniania zmian na plus
+  bar_label_decrease_text_color - kolor tekstu etykiety dla wyrozniania zmian na minus
+  bar_label_text_font_size -- rozmiar tekstu etykiety belki
+  text_indicator_increase - symbol do oznaczania wzrostu
+  text_indicator_decrease - symbol do oznaczania spadku
+  change_indicator_duration - czas trwania wyroznienia po zmianie atrybutu
+  brightness_percentage (0-100) okresla rozpietosc rozjasniania dla colormode brightness
+  
+  Konfiguracja poszczegolnych elementow
+  [values][nazwa_wartosci]
+  Dostepne opcje dla paskow:
+    color - kolor elementu z wartoscia (aktywny)
+    inactive_color - kolor elementu bez wartosci (nieaktywny)
+    gradient_color - kolor docelowy dla przejscia tonalnego, kolor poczatkowy to wartosc "color"
+    inverted (true/false) - odwraca wartosc paska, dla 0 pasek zapelniony dla max_value pusty, 
+                            pozwala zamienic np. poziom najedzenia na glod, poziom napicia na pragnienie itp
+    improve_on_decrease - okresla czy wartosc paska polepsza sie przy wzroscie wartosci (false), np. kondycja, 
+                          czy na spadku wartosci (true), np. zmeczenie,
+                          uzywane do wyrozniania zmian, odwraca logike przy inverted = true
+    color_mode: - tryb kolorowania
+    - solid - zdefiniowany kolor
+    - brightness - zdefiniowany kolor z rozjasnianiem
+    - gradient - przejscie tonalne od color do gradient_color
+    - footer_bar - kolory wg wartosci zdefiniowane w scripts.ui.footer_bar
+]]--
+scripts.ui.cfg["footer_mode6_settings"] = {
+  ["show_tip_on_start"] = true,
+  ["bar_width"] = 102,
+  ["bar_height"] = 16,
+  ["bar_item_space"] = 1,
+  ["bar_text_color"] = "#000000",
+  ["bar_text_font"] = "",
+  ["bar_text_font_size"] = 8,
+  ["bar_text_bold"] = true,
+  ["bar_label_width"] = 32,
+  ["bar_label_text_color"] = "#ffffff",
+  ["bar_label_improve_text_color"] = "#ffff00",
+  ["bar_label_worsen_text_color"] = "#00ffff",
+  ["text_indicator_increase"] = "↑",
+  ["text_indicator_decrease"] = "↓",
+  ["bar_label_text_font_size"] = 10,
+  ["change_indicator_duration"] = 10,
+  ["brightness_percentage"] = 50,
+  ["values"] = {
+    ["hp"] = {
+       ["color"]= "#e4190c",
+       ["inactive_color"] = "#6c6563",
+       ["gradient_color"] = "#ff0b64",
+       ["inverted"] = false,
+       ["color_mode"] = "solid",
+       ["improve_on_decrease"] = false,
+    },
+    ["fatigue"] = {
+       ["color"]= "#05b12f",
+       ["inactive_color"] = "#6c6563",
+       ["gradient_color"] = "#0799c9",
+       ["inverted"] = false,
+       ["color_mode"] = "solid",
+       ["improve_on_decrease"] = true,
+    },
+    ["mana"] = {
+       ["color"]= "#308dff",
+       ["inactive_color"] = "#6c6563",
+       ["gradient_color"] = "#30ffa2",
+       ["inverted"] = false,
+       ["color_mode"] = "solid",
+       ["improve_on_decrease"] = false,
+    },
+    ["soaked"] = {
+       ["color"]= "#add8e6",
+       ["inactive_color"] = "#6c6563",
+       ["gradient_color"] = "#9fd1a8",
+       ["inverted"] = false,
+       ["color_mode"] = "solid",
+       ["improve_on_decrease"] = false,
+    },
+    ["stuffed"] = {
+       ["color"]= "#8c482e",
+       ["inactive_color"] = "#6c6563",
+       ["gradient_color"] = "#8c602e",
+       ["inverted"] = false,
+       ["color_mode"] = "solid",
+       ["improve_on_decrease"] = false,
+    },
+    ["intox"]= {
+       ["color"]= "#fb00ff",
+       ["inactive_color"] = "#6c6563",
+       ["gradient_color"] = "#ff0084",
+       ["inverted"] = false,
+       ["color_mode"] = "solid",
+       ["improve_on_decrease"] = true,
+    },
+    ["headache"] = {
+       ["color"]= "#b8b8b8",
+       ["inactive_color"] = "#6c6563",
+       ["gradient_color"] = "#9f7f7f",
+       ["inverted"] = false,
+       ["color_mode"] = "solid",
+       ["improve_on_decrease"] = true,
+    },
+    ["panic"] = {
+       ["color"]= "#ffd504",
+       ["inactive_color"] = "#6c6563",
+       ["gradient_color"] = "#ff04d5",
+       ["inverted"] = false,
+       ["color_mode"] = "solid",
+       ["improve_on_decrease"] = true,
+    },
+    ["encumbrance"] = {
+       ["color"]= "#e2ef27",
+       ["inactive_color"] = "#6c6563",
+       ["gradient_color"] = "#e324d3",
+       ["inverted"] = false,
+       ["color_mode"] = "solid",
+       ["improve_on_decrease"] = true,
+    },
+    ["improve"] = {
+       ["color"]= "#5b1dbf",
+       ["inactive_color"] = "#6c6563",
+       ["gradient_color"] = "#ac1dbf",
+       ["inverted"] = false,
+       ["color_mode"] = "solid",
+       ["improve_on_decrease"] = false,
+    },
+    ["form"] = {
+       ["color"]= "#ff8404",
+       ["inactive_color"] = "#6c6563",
+       ["gradient_color"] = "#ffc404",
+       ["inverted"] = false,
+       ["color_mode"] = "solid",
+       ["improve_on_decrease"] = false,
+    },
+  }
+}
+
+-- koniec konfiguracji wyswietlania dla footer mode6 --
+
 scripts.ui.img_path = getMudletHomeDir() .. "/arkadia/ui/assets/"
 scripts.ui.themes = scripts.ui.themes or {}
 force_require("ui/themes/plain")

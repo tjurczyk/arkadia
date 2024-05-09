@@ -30,7 +30,7 @@ function scripts.character.combat_state:end_combat()
         self.timer = tempTimer(1, function() self:update() end, true)
         self.state = false
         if self.trigger_blocked_actions_bind and not self.trigger then
-            self.trigger = tempRegexTrigger("^(Nie mozesz wykonac ataku tak szybko po zakonczeniu walki\.|Ochlon troche po walce!|Ochlon troche od walki\\.\\.\\.)$", function()
+            self.trigger = tempRegexTrigger("^(Nie mozesz wykonac ataku tak szybko po zakonczeniu walki\\.|Ochlon troche po walce!|Ochlon troche od walki\\.\\.\\.)$", function()
                 creplaceLine(matches[1] .. " <yellow>(" .. self:get_cooloff_timer() .. "s)<reset>")
                 self.command = command
             end)

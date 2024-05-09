@@ -3,7 +3,7 @@ function trigger_func_skrypty_ui_gags_color_color_moje_spece_noz_ja_spec()
     local value = -1
         if dmg == "mija" or dmg == "unika" or dmg == "nieskoordynowany" then value = 0
     elseif dmg == "nieznaczne" or dmg == "drasniecie" then value = 1
-    elseif dmg == "wbijasz" or dmg == "bolesny" then value = 2
+    elseif dmg == "wbijasz" or dmg == "bolesny" or dmg=="celnie" then value = 2
     elseif dmg == "bolesna" or dmg == "krwawa" or dmg=="znaczne" then value = 3
     elseif dmg == "krwawiaca" or dmg == "ranisz" or dmg=="powazne" then value = 4
     elseif dmg == "zaglebiasz" or dmg == "tryska krew" then value = 5

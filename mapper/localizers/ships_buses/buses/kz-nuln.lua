@@ -17,4 +17,3 @@ function trigger_func_mapper_localizers_ships_buses_buses_kz_nuln_gps_polnoc_nul
     amap:print_log("GPS: Polnoc Nuln", true)
     amap:set_position(7256, true)
 end
-

@@ -351,6 +351,17 @@ Włącza oddzielne okno pokazujące zioła. Aktualizowany przez `/pokaz_ziola` o
 ## `herbs.window.font_size`
 Ustawia wielkość czcionki w oknie ziół.
 
+---
+
+## `scripts.misc.knowledge.use_knowledge`
+
+Opcja dla wlaczenia badz wylaczenia ulatwienia czytania ksiazek i bibliotek.
+
+---
+
+## `scripts.misc.knowledge.knowledge_color`
+
+Kolor jaki ma byc uzywanych do ulatwienia czytania ksiaze i bibliotek.
 
 ---
 
@@ -666,7 +677,7 @@ Listy wrogów (postacie i gildie).
 ### Przkładowo:
 ```json
 "scripts.people.enemy_guild" : ["SC", "MC"]
-"scripts.people.enemy_people" : ["Rurek", "Ogorek"]
+"scripts.people.enemy_people" : ["Rurek", "maly duzy elf", "Zly dobry elf"]
 ```
 
 ---
@@ -1045,6 +1056,7 @@ Dozwolone wartosci:
 * `mode3` - pasek z wartosciami tekstowymi (dostarczony przez Daracana)
 * `mode4` - pasek z wartosciami tekstowymi (inversionz, dostarczony przez Kazura)
 * `mode5` - pasek z wartosciami tekstowymi i belkami (dostarczony przez Zendrina)
+* `mode6` - pasek z wartosciami tekstowymi i belkami (polaczenie mode4 i mode5)
 
 `mode4` wymaga wgrania czcionek inversionz. Trzeba pobrac z <https://www.dafont.com/search.php?q=inversionz> i wrzucic do katalogu "fonts" w mudlet-data.
 
@@ -1232,7 +1244,6 @@ Dokladna lista znajduje sie tutaj: <https://github.com/Mudlet/Mudlet/blob/develo
 
 ## `scripts.keybind.configuration.fight_support.modifier`
 ## `scripts.keybind.configuration.fight_support.key`
-## `scripts.keybind.configuration.fight_support.keys`
 ## `scripts.keybind.configuration.fight_support.active`
 
 Wsparcie
@@ -1241,7 +1252,6 @@ Wsparcie
 
 ## `scripts.keybind.configuration.attack_target.modifier`
 ## `scripts.keybind.configuration.attack_target.key`
-## `scripts.keybind.configuration.attack_target.keys`
 ## `scripts.keybind.configuration.attack_target.active`
 
 Atakowanie celu ataku
@@ -1250,7 +1260,6 @@ Atakowanie celu ataku
 
 ## `scripts.keybind.configuration.critical_hp.modifier`
 ## `scripts.keybind.configuration.critical_hp.key`
-## `scripts.keybind.configuration.critical_hp.keys`
 ## `scripts.keybind.configuration.critical_hp.active`
 
 Uzycie kondycji w niskim stanie hp
@@ -1259,7 +1268,6 @@ Uzycie kondycji w niskim stanie hp
 
 ## `scripts.keybind.configuration.functional_key.modifier`
 ## `scripts.keybind.configuration.functional_key.key`
-## `scripts.keybind.configuration.functional_key.keys`
 ## `scripts.keybind.configuration.functional_key.active`
 
 Funkcjonalny bind (domyslnie ']')
@@ -1267,7 +1275,6 @@ Funkcjonalny bind (domyslnie ']')
 ---
 
 ## `scripts.keybind.configuration.attack_bind_objs.modifier`
-## `scripts.keybind.configuration.attack_bind_objs.key`
 ## `scripts.keybind.configuration.attack_bind_objs.keys`
 ## `scripts.keybind.configuration.attack_bind_objs.active`
 
@@ -1277,7 +1284,6 @@ Atakowanie osoby z bindow
 
 ## `scripts.keybind.configuration.break_attack_target.modifier`
 ## `scripts.keybind.configuration.break_attack_target.key`
-## `scripts.keybind.configuration.break_attack_target.keys`
 ## `scripts.keybind.configuration.break_attack_target.active`
 
 Przelamywanie i atakowanie celu ataku
@@ -1286,7 +1292,6 @@ Przelamywanie i atakowanie celu ataku
 
 ## `scripts.keybind.configuration.block_attack_target.modifier`
 ## `scripts.keybind.configuration.block_attack_target.key`
-## `scripts.keybind.configuration.block_attack_target.keys`
 ## `scripts.keybind.configuration.block_attack_target.active`
 
 Blokowanie celu ataku
@@ -1295,7 +1300,6 @@ Blokowanie celu ataku
 
 ## `scripts.keybind.configuration.collect_from_body.modifier`
 ## `scripts.keybind.configuration.collect_from_body.key`
-## `scripts.keybind.configuration.collect_from_body.keys`
 ## `scripts.keybind.configuration.collect_from_body.active`
 
 Zbieranie z cial
@@ -1304,15 +1308,14 @@ Zbieranie z cial
 
 ## `scripts.keybind.configuration.filling_lamp.modifier`
 ## `scripts.keybind.configuration.filling_lamp.key`
-## `scripts.keybind.configuration.filling_lamp.keys`
 ## `scripts.keybind.configuration.filling_lamp.active`
+
 Dopelnianie lampy
 
 ---
 
 ## `scripts.keybind.configuration.empty_bottle.modifier`
 ## `scripts.keybind.configuration.empty_bottle.key`
-## `scripts.keybind.configuration.empty_bottle.keys`
 ## `scripts.keybind.configuration.empty_bottle.active`
 
 Odlozenie pustej butelki
@@ -1321,7 +1324,6 @@ Odlozenie pustej butelki
 
 ## `scripts.keybind.configuration.enter_ship.modifier`
 ## `scripts.keybind.configuration.enter_ship.key`
-## `scripts.keybind.configuration.enter_ship.keys`
 ## `scripts.keybind.configuration.enter_ship.active`
 
 Wsiadanie na statki i dylizanse
@@ -1330,7 +1332,6 @@ Wsiadanie na statki i dylizanse
 
 ## `scripts.keybind.configuration.temp1.modifier`
 ## `scripts.keybind.configuration.temp1.key`
-## `scripts.keybind.configuration.temp1.keys`
 ## `scripts.keybind.configuration.temp1.active`
 
 Tymczasowy keybind (1)
@@ -1339,7 +1340,6 @@ Tymczasowy keybind (1)
 
 ## `scripts.keybind.configuration.temp2.modifier`
 ## `scripts.keybind.configuration.temp2.key`
-## `scripts.keybind.configuration.temp2.keys`
 ## `scripts.keybind.configuration.temp2.active`
 
 Tymczasowy keybind (2)
@@ -1348,7 +1348,6 @@ Tymczasowy keybind (2)
 
 ## `scripts.keybind.configuration.temp3.modifier`
 ## `scripts.keybind.configuration.temp3.key`
-## `scripts.keybind.configuration.temp3.keys`
 ## `scripts.keybind.configuration.temp3.active`
 
 Tymczasowy keybind (3)
@@ -1357,7 +1356,6 @@ Tymczasowy keybind (3)
 
 ## `scripts.keybind.configuration.temp4.modifier`
 ## `scripts.keybind.configuration.temp4.key`
-## `scripts.keybind.configuration.temp4.keys`
 ## `scripts.keybind.configuration.temp4.active`
 
 Tymczasowy keybind (4)
@@ -1366,7 +1364,6 @@ Tymczasowy keybind (4)
 
 ## `scripts.keybind.configuration.temp5.modifier`
 ## `scripts.keybind.configuration.temp5.key`
-## `scripts.keybind.configuration.temp5.keys`
 ## `scripts.keybind.configuration.temp5.active`
 
 Tymczasowy keybind (5) (domyslnie nieaktywny)
@@ -1375,7 +1372,6 @@ Tymczasowy keybind (5) (domyslnie nieaktywny)
 
 ## `scripts.keybind.configuration.temp6.modifier`
 ## `scripts.keybind.configuration.temp6.key`
-## `scripts.keybind.configuration.temp6.keys`
 ## `scripts.keybind.configuration.temp6.active`
 
 Tymczasowy keybind (6) (domyslnie nieaktywny)
@@ -1384,7 +1380,6 @@ Tymczasowy keybind (6) (domyslnie nieaktywny)
 
 ## `scripts.keybind.configuration.temp7.modifier`
 ## `scripts.keybind.configuration.temp7.key`
-## `scripts.keybind.configuration.temp7.keys`
 ## `scripts.keybind.configuration.temp7.active`
 
 Tymczasowy keybind (7) (domyslnie nieaktywny)
@@ -1393,7 +1388,6 @@ Tymczasowy keybind (7) (domyslnie nieaktywny)
 
 ## `scripts.keybind.configuration.temp8.modifier`
 ## `scripts.keybind.configuration.temp8.key`
-## `scripts.keybind.configuration.temp8.keys`
 ## `scripts.keybind.configuration.temp8.active`
 
 Tymczasowy keybind (8) (domyslnie nieaktywny)
@@ -1402,7 +1396,6 @@ Tymczasowy keybind (8) (domyslnie nieaktywny)
 
 ## `scripts.keybind.configuration.temp9.modifier`
 ## `scripts.keybind.configuration.temp9.key`
-## `scripts.keybind.configuration.temp9.keys`
 ## `scripts.keybind.configuration.temp9.active`
 
 Tymczasowy keybind (9) (domyslnie nieaktywny)
@@ -1411,7 +1404,6 @@ Tymczasowy keybind (9) (domyslnie nieaktywny)
 
 ## `scripts.keybind.configuration.temp10.modifier`
 ## `scripts.keybind.configuration.temp10.key`
-## `scripts.keybind.configuration.temp10.keys`
 ## `scripts.keybind.configuration.temp10.active`
 
 Tymczasowy keybind (10) (domyslnie nieaktywny)
@@ -1420,7 +1412,6 @@ Tymczasowy keybind (10) (domyslnie nieaktywny)
 
 ## `scripts.keybind.configuration.multibind1.modifier`
 ## `scripts.keybind.configuration.multibind1.key`
-## `scripts.keybind.configuration.multibind1.keys`
 ## `scripts.keybind.configuration.multibind1.active`
 
 multibind na lokacje (1)
@@ -1429,7 +1420,6 @@ multibind na lokacje (1)
 
 ## `scripts.keybind.configuration.multibind2.modifier`
 ## `scripts.keybind.configuration.multibind2.key`
-## `scripts.keybind.configuration.multibind2.keys`
 ## `scripts.keybind.configuration.multibind2.active`
 
 multibind na lokacje (2)
@@ -1438,7 +1428,6 @@ multibind na lokacje (2)
 
 ## `scripts.keybind.configuration.multibind3.modifier`
 ## `scripts.keybind.configuration.multibind3.key`
-## `scripts.keybind.configuration.multibind3.keys`
 ## `scripts.keybind.configuration.multibind3.active`
 
 multibind na lokacje (3)
@@ -1447,7 +1436,6 @@ multibind na lokacje (3)
 
 ## `scripts.keybind.configuration.multibind4.modifier`
 ## `scripts.keybind.configuration.multibind4.key`
-## `scripts.keybind.configuration.multibind4.keys`
 ## `scripts.keybind.configuration.multibind4.active`
 
 multibind na lokacje (4)
@@ -1456,7 +1444,6 @@ multibind na lokacje (4)
 
 ## `scripts.keybind.configuration.opening_gate.modifier`
 ## `scripts.keybind.configuration.opening_gate.key`
-## `scripts.keybind.configuration.opening_gate.keys`
 ## `scripts.keybind.configuration.opening_gate.active`
 
 Otwieranie bram
@@ -1465,7 +1452,6 @@ Otwieranie bram
 
 ## `scripts.keybind.configuration.drinking.modifier`
 ## `scripts.keybind.configuration.drinking.key`
-## `scripts.keybind.configuration.drinking.keys`
 ## `scripts.keybind.configuration.drinking.active`
 
 Picie ze zrodel wody
@@ -1474,7 +1460,6 @@ Picie ze zrodel wody
 
 ## `scripts.keybind.configuration.special_exit.modifier`
 ## `scripts.keybind.configuration.special_exit.key`
-## `scripts.keybind.configuration.special_exit.keys`
 ## `scripts.keybind.configuration.special_exit.active`
 
 Bindy do przejsc specjalnych
@@ -1483,7 +1468,6 @@ Bindy do przejsc specjalnych
 
 ## `scripts.keybind.configuration.walk_mode.modifier`
 ## `scripts.keybind.configuration.walk_mode.key`
-## `scripts.keybind.configuration.walk_mode.keys`
 ## `scripts.keybind.configuration.walk_mode.active`
 
 Tryby chodzenia
@@ -1664,6 +1648,8 @@ Dostępne wartości:
 * `plain` - bez szablonu
 * `plain_border` - zwykla, prostokatna ramka
 * `parchment` - pergamin
+* `parchment2` - pergamin
+* `parchment3` - pergamin
 
 Dla zaawansowanych - dodatkowe szablony można stworzyć na podstawie dodając je do tablicy `scripts.mail_creator.templates` analogicznie jak już te istniejące.
 
@@ -1825,6 +1811,16 @@ Wyłącza wrap w oknie walki.
 Dostępne wartości:
 * `true` - wrap wyłączony
 * `false` - wrap włączony
+
+---
+
+## `scripts.ui.combat_window.hide_buttons`
+
+Wyłącza przyciski w oknie walki. Wymaga restartu!
+
+Dostępne wartości:
+* `true` - przyciski wyłączone
+* `false` - przyciski włączone
 
 ---
 

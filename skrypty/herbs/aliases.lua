@@ -35,9 +35,14 @@ function herbs:get_herb_from_bag(name, amount, bag_id)
         self:send_get_commands(bag_id, herbs.db[bag_id][name]["amount"], name)
         herbs.db[bag_id][name] = nil
         herbs.index[name][bag_id] = nil
+        herbs.counts[name] = herbs.counts[name] - ret_val
+        if herbs.counts[name] == 0 then
+            herbs.counts[name] = nil
+        end
     else
         ret_val = amount
         herbs.db[bag_id][name]["amount"] = herbs.db[bag_id][name]["amount"] - amount
+        herbs.counts[name] = herbs.counts[name] - ret_val
         self:send_get_commands(bag_id, amount, name)
     end
     herbs.window:print()

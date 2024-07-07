@@ -17,7 +17,8 @@ function misc.counter2:add_log(original_text, year, month, day, hour)
         day = day,
         text = original_text,
         hour = hour,
-        character = scripts.character_name
+        character = scripts.character_name,
+        roomId = amap.curr.id
     })
 
     if not ret then

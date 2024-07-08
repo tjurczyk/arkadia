@@ -19,8 +19,8 @@ misc.counter2["db_log"] = db:create("countertwolog", {
     }
 })
 
-misc.counter2["db_daysum"] = db:create("countertwo_daysum", {
-    countertwo_daysum = {
+misc.counter2["db_daysum"] = db:create("countertwodaysum", {
+    countertwodaysum = {
         year = 0,
         month = 0,
         day = 0,

@@ -11,7 +11,7 @@ function misc.counter2:add_item(original_text, item)
 end
 
 function misc.counter2:add_log(original_text, year, month, day, hour)
-    local ret = db:add(misc.counter2.db_log.countertwolog, {
+    local ret = db:add(misc.counter2.db_log.counter2_log, {
         year = year,
         month = month,
         day = day,
@@ -28,18 +28,18 @@ end
 
 function misc.counter2:add_sum(item, year, month, day, type)
     -- first, update for this type this date
-    local retrieved = db:fetch(misc.counter2.db_daysum.countertwo_daysum,
+    local retrieved = db:fetch(misc.counter2.db_daysum.counter2_daysum,
         {
-            db:eq(misc.counter2.db_daysum.countertwo_daysum.year, year),
-            db:eq(misc.counter2.db_daysum.countertwo_daysum.month, month),
-            db:eq(misc.counter2.db_daysum.countertwo_daysum.day, day),
-            db:eq(misc.counter2.db_daysum.countertwo_daysum.character, scripts.character_name),
-            db:eq(misc.counter2.db_daysum.countertwo_daysum.type, type)
+            db:eq(misc.counter2.db_daysum.counter2_daysum.year, year),
+            db:eq(misc.counter2.db_daysum.counter2_daysum.month, month),
+            db:eq(misc.counter2.db_daysum.counter2_daysum.day, day),
+            db:eq(misc.counter2.db_daysum.counter2_daysum.character, scripts.character_name),
+            db:eq(misc.counter2.db_daysum.counter2_daysum.type, type)
         })
 
 
     if not retrieved or table.size(retrieved) == 0 then
-        local ret = db:add(misc.counter2.db_daysum.countertwo_daysum, {
+        local ret = db:add(misc.counter2.db_daysum.counter2_daysum, {
             year = year,
             month = month,
             day = day,
@@ -55,23 +55,23 @@ function misc.counter2:add_sum(item, year, month, day, type)
         local update_item = retrieved[1]
         local count = tonumber(update_item["amount"])
         update_item["amount"] = count + 1
-        db:update(misc.counter2.db_daysum.countertwo_daysum, update_item)
+        db:update(misc.counter2.db_daysum.counter2_daysum, update_item)
     else
         scripts:print_log("Cos poszlo nie tak z zapisem do globalnych zabitych", true)
         return
     end
 
     -- now do 'all' (count for day)
-    local retrieved = db:fetch(misc.counter2.db_daysum.countertwo_daysum,
+    local retrieved = db:fetch(misc.counter2.db_daysum.counter2_daysum,
         {
-            db:eq(misc.counter2.db_daysum.countertwo_daysum.year, year),
-            db:eq(misc.counter2.db_daysum.countertwo_daysum.month, month),
-            db:eq(misc.counter2.db_daysum.countertwo_daysum.day, day),
-            db:eq(misc.counter2.db_daysum.countertwo_daysum.type, "all")
+            db:eq(misc.counter2.db_daysum.counter2_daysum.year, year),
+            db:eq(misc.counter2.db_daysum.counter2_daysum.month, month),
+            db:eq(misc.counter2.db_daysum.counter2_daysum.day, day),
+            db:eq(misc.counter2.db_daysum.counter2_daysum.type, "all")
         })
 
     if not retrieved or table.size(retrieved) == 0 then
-        local ret = db:add(misc.counter2.db_daysum.countertwo_daysum, {
+        local ret = db:add(misc.counter2.db_daysum.counter2_daysum, {
             year = year,
             month = month,
             day = day,
@@ -87,7 +87,7 @@ function misc.counter2:add_sum(item, year, month, day, type)
         local update_item = retrieved[1]
         local count = tonumber(update_item["amount"])
         update_item["amount"] = count + 1
-        db:update(misc.counter2.db_daysum.countertwo_daysum, update_item)
+        db:update(misc.counter2.db_daysum.counter2_daysum, update_item)
     else
         scripts:print_log("Cos poszlo nie tak z zapisem do globalnych zabitych", true)
         return
@@ -100,9 +100,9 @@ function misc.counter2:show_short()
         return
     end
 
-    local sql_query = "SELECT * FROM countertwo_daysum WHERE character=\"" ..
-        scripts.character_name .. "\" AND type!=\"all\" ORDER BY _row_id ASC"
-    local retrieved = db:fetch_sql(misc.counter2.db_daysum.countertwo_daysum, sql_query)
+    local sql_query = "SELECT * FROM counter2_daysum WHERE character=\"" ..
+    scripts.character_name .. "\" AND type!=\"all\" ORDER BY _row_id ASC"
+    local retrieved = db:fetch_sql(misc.counter2.db_daysum.counter2_daysum, sql_query)
 
     local count_dict = {}
 
@@ -146,9 +146,9 @@ function misc.counter2:show_long()
         return
     end
 
-    local sql_query = "SELECT * FROM countertwo_daysum WHERE character=\"" ..
-        scripts.character_name .. "\" AND type!=\"all\" ORDER BY _row_id ASC"
-    local retrieved = db:fetch_sql(misc.counter2.db_daysum.countertwo_daysum, sql_query)
+    local sql_query = "SELECT * FROM counter2_daysum WHERE character=\"" ..
+    scripts.character_name .. "\" AND type!=\"all\" ORDER BY _row_id ASC"
+    local retrieved = db:fetch_sql(misc.counter2.db_daysum.counter2_daysum, sql_query)
 
     cecho("<grey>+---------------------------------------------------------+\n")
     cecho("<grey>|                                                         |\n")
@@ -211,7 +211,7 @@ function misc.counter2:show_logs(year, month, day)
     end
 
     local date = "" .. year
-    local sql_query = "SELECT * FROM countertwolog WHERE character=\"" .. scripts.character_name ..
+    local sql_query = "SELECT * FROM counter2_log WHERE character=\"" .. scripts.character_name ..
         "\" AND year=\"" .. year .. "\" "
 
     if month ~= nil then
@@ -224,7 +224,7 @@ function misc.counter2:show_logs(year, month, day)
     end
     sql_query = sql_query .. " ORDER BY _row_id ASC"
 
-    local retrieved = db:fetch_sql(misc.counter2.db_log.countertwolog, sql_query)
+    local retrieved = db:fetch_sql(misc.counter2.db_log.counter2_log, sql_query)
 
     local date = string.sub(date .. "               ", 1, 11)
 
@@ -273,10 +273,10 @@ function misc.counter2:reset()
         scripts:print_log("Probujesz wykasowac cala baze zabitych, od tego nie ma odwrotu. Aby wykonac, powtorz komende")
         misc.counter2.retried = true
     else
-        db:delete(misc.counter2.db_log.countertwolog,
-            db:eq(misc.counter2.db_log.countertwolog.character, scripts.character_name))
-        db:delete(misc.counter2.db_daysum.countertwo_daysum,
-            db:eq(misc.counter2.db_daysum.countertwo_daysum.character, scripts.character_name))
+        db:delete(misc.counter2.db_log.counter2_log,
+            db:eq(misc.counter2.db_log.counter2_log.character, scripts.character_name))
+        db:delete(misc.counter2.db_daysum.counter2_daysum,
+            db:eq(misc.counter2.db_daysum.counter2_daysum.character, scripts.character_name))
         scripts:print_log("Ok")
     end
 

@@ -11,7 +11,7 @@ function misc.counter2:add_item(original_text, item)
 end
 
 function misc.counter2:add_log(original_text, year, month, day, hour)
-    local ret = db:add(misc.counter2.db_log.countertwolog, {
+    local ret = db:add(misc.counter2.db_log.counterlog, {
         year = year,
         month = month,
         day = day,
@@ -211,7 +211,7 @@ function misc.counter2:show_logs(year, month, day)
     end
 
     local date = "" .. year
-    local sql_query = "SELECT * FROM countertwolog WHERE character=\"" .. scripts.character_name ..
+    local sql_query = "SELECT * FROM counterlog WHERE character=\"" .. scripts.character_name ..
         "\" AND year=\"" .. year .. "\" "
 
     if month ~= nil then
@@ -224,7 +224,7 @@ function misc.counter2:show_logs(year, month, day)
     end
     sql_query = sql_query .. " ORDER BY _row_id ASC"
 
-    local retrieved = db:fetch_sql(misc.counter2.db_log.countertwolog, sql_query)
+    local retrieved = db:fetch_sql(misc.counter2.db_log.counterlog, sql_query)
 
     local date = string.sub(date .. "               ", 1, 11)
 
@@ -273,8 +273,8 @@ function misc.counter2:reset()
         scripts:print_log("Probujesz wykasowac cala baze zabitych, od tego nie ma odwrotu. Aby wykonac, powtorz komende")
         misc.counter2.retried = true
     else
-        db:delete(misc.counter2.db_log.countertwolog,
-            db:eq(misc.counter2.db_log.countertwolog.character, scripts.character_name))
+        db:delete(misc.counter2.db_log.counterlog,
+            db:eq(misc.counter2.db_log.counterlog.character, scripts.character_name))
         db:delete(misc.counter2.db_daysum.counterdaysum,
             db:eq(misc.counter2.db_daysum.counterdaysum.character, scripts.character_name))
         scripts:print_log("Ok")

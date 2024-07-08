@@ -6,8 +6,8 @@ misc.counter["all_kills"] = misc.counter["all_kills"] or 0
 misc.counter.killed_amount["JA"] = misc.counter.killed_amount["JA"] or 0
 
 -- counter2
-misc.counter2["db_log"] = db:create("countertwolog", {
-    countertwolog = {
+misc.counter2["db_log"] = db:create("counterlog", {
+    counterlog = {
         year = 0,
         month = 0,
         day = 0,

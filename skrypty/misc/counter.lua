@@ -6,8 +6,8 @@ misc.counter["all_kills"] = misc.counter["all_kills"] or 0
 misc.counter.killed_amount["JA"] = misc.counter.killed_amount["JA"] or 0
 
 -- counter2
-misc.counter2["db_log"] = db:create("counter2log", {
-    counter2_log = {
+misc.counter2["db_log"] = db:create("countertwolog", {
+    countertwolog = {
         year = 0,
         month = 0,
         day = 0,
@@ -19,8 +19,8 @@ misc.counter2["db_log"] = db:create("counter2log", {
     }
 })
 
-misc.counter2["db_daysum"] = db:create("counter2daysum", {
-    counter2_daysum = {
+misc.counter2["db_daysum"] = db:create("countertwo_daysum", {
+    countertwo_daysum = {
         year = 0,
         month = 0,
         day = 0,
@@ -56,4 +56,3 @@ function trigger_func_process_kill_for_teammate()
         scripts.ui:info_killed_update()
     end
 end
-

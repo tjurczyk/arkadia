@@ -4,7 +4,7 @@ amap.localization = amap.localization or {
 }
 
 amap.localization.db = db:create("roomdescriptions", {
-    roomDescriptions = {
+    roomdescriptions = {
         room_id = -1,
         short = "",
         exitDesc = "",
@@ -15,9 +15,9 @@ amap.localization.db = db:create("roomdescriptions", {
 })
 
 function amap.localization:try_to_locate()
-    local results = db:fetch(self.db.roomDescriptions, db:AND(
-        db:eq(self.db.roomDescriptions.short, self.current_short),
-        db:eq(self.db.roomDescriptions.exitDesc, self.current_exit)
+    local results = db:fetch(self.db.roomdescriptions, db:AND(
+        db:eq(self.db.roomdescriptions.short, self.current_short),
+        db:eq(self.db.roomdescriptions.exitDesc, self.current_exit)
     ))
     if #results == 1 then
         amap:set_position(results[1].room_id, true)

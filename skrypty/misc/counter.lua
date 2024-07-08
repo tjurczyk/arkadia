@@ -6,7 +6,7 @@ misc.counter["all_kills"] = misc.counter["all_kills"] or 0
 misc.counter.killed_amount["JA"] = misc.counter.killed_amount["JA"] or 0
 
 -- counter2
-misc.counter2["db_log"] = db:create("counter2_log", {
+misc.counter2["db_log"] = db:create("counter2log", {
     counter2_log = {
         year = 0,
         month = 0,
@@ -14,11 +14,12 @@ misc.counter2["db_log"] = db:create("counter2_log", {
         hour = "",
         text = "",
         character = "",
+        roomId = 0,
         changed = db:Timestamp("CURRENT_TIMESTAMP")
     }
 })
 
-misc.counter2["db_daysum"] = db:create("counter2_daysum", {
+misc.counter2["db_daysum"] = db:create("counter2daysum", {
     counter2_daysum = {
         year = 0,
         month = 0,

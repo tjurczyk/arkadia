@@ -3,7 +3,7 @@ amap.localization = amap.localization or {
     current_short = ""
 }
 
-amap.localization.db = db:create("roomDescriptions", {
+amap.localization.db = db:create("roomdescriptions", {
     roomDescriptions = {
         room_id = -1,
         short = "",

@@ -29,10 +29,11 @@ scripts.inv.containers.magics_and_keys_filter = function(contents)
     local magics = {}
     local keys = {}
     for k, v in pairs(contents) do
-        if table.contains(scripts.inv.magic_keys_data.magic_keys, string.lower(v["name"])) then
+        local name = string.lower(v["name"])
+        if table.contains(scripts.inv.magic_keys_data.magic_keys, name) then
             table.insert(magics, v)
         end
-        if table.contains(scripts.inv.magics_data.magics, string.lower(v["name"])) then
+        if table.contains(scripts.inv.magics_data.magics, name) then
             table.insert(keys, v)
         end
     end

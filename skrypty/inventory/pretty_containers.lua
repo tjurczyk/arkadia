@@ -113,10 +113,10 @@ scripts.inv.pretty_containers.name_transformers = {
             return "<" .. scripts.inv.magic_keys_color .. ">" .. name
         end
     },
-    ["mithryl"] = { check = function(name) return rex.find(name, "mithryl\\w* monet") end, transform = AutomaticTable.color_transformer("pale_turquoise") },
-    ["gold"] = { check = function(name) return rex.find(name, "zlot\\w* monet") end, transform = AutomaticTable.color_transformer("gold") },
-    ["silver"] = { check = function(name) return rex.find(name, "srebrn\\w* monet") end, transform = AutomaticTable.color_transformer("white") },
-    ["copper"] = { check = function(name) return rex.find(name, "miedzian\\w* monet") end, transform = AutomaticTable.color_transformer("SaddleBrown") },
+    ["mithryl"] = { check = function(name) return rex.find(name, "mithryl\\w+ monet") end, transform = AutomaticTable.color_transformer("pale_turquoise") },
+    ["gold"] = { check = function(name) return rex.find(name, "zlot\\w+ monet") end, transform = AutomaticTable.color_transformer("gold") },
+    ["silver"] = { check = function(name) return rex.find(name, "srebrn\\w+ monet") end, transform = AutomaticTable.color_transformer("white") },
+    ["copper"] = { check = function(name) return rex.find(name, "miedzian\\w+ monet") end, transform = AutomaticTable.color_transformer("SaddleBrown") },
 }
 
 local count_name_transformer = function(item)

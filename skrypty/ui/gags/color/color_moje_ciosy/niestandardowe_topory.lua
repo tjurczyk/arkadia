@@ -28,7 +28,7 @@ function trigger_func_skrypty_ui_gags_ciosy_kunsztowny_mithrylowy_topor_bojowy()
     local value = -1
         if dmg == "uskakuje"  then value = 0
     elseif dmg == "dotyka"    then value = 1
-    elseif dmg == "rabie" or dmg == "ciezkie"  then value = 2
+    elseif dmg == "rani" or dmg == "rabie" or dmg == "ciezkie"  then value = 2
     elseif dmg == "kosci"     then value = 3
     elseif dmg == "tnie"    then value = 4
     elseif dmg == "trafia"    then value = 5

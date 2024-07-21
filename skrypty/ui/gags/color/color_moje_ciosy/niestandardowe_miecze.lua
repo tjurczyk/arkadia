@@ -49,8 +49,7 @@ function trigger_func_skrypty_ui_gags_ciosy_smukly_miecz()
 
     local dmg = matches["damage"]
     local value = -1
-        if dmg == "uderzyc" then value = 0
-    elseif dmg == "sparowac" then value = 0
+        if dmg == "uderzyc" or dmg == "probujesz" or dmg == "sparowac" then value = 0
     elseif dmg == "ledwo musnac" then value = 1
     elseif dmg == "lekko zaciac"  then value = 2
     elseif dmg == "mocno" then value = 3

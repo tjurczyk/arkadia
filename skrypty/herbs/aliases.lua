@@ -2,7 +2,7 @@ local biernik_digits = { 2, 3, 4 }
 
 function herbs:get_herbs(name, amount)
     if not herbs.herbs_details[name] then
-        scripts:print_log("Nie znam takiego ziola")
+        scripts:print_log("Nie znam takiego ziola '"..name.."'")
     end
 
     local to_get = amount

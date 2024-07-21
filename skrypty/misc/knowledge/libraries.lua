@@ -12,6 +12,7 @@ function scripts.misc.knowledge:setup_libraries_data()
 end
 
 function scripts.misc.knowledge:start_reading_library(about)
+    if scripts.misc.knowledge.use_knowledge ~=  true then return end
     if scripts.misc.knowledge.location_to_library[amap.curr.internal_id] == nil then
         scripts:print_log("Nierozpoznana biblioteka, zglos na discordzie")
         return

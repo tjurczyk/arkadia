@@ -29,7 +29,7 @@ end
 scripts.people:load_db()
 
 scripts.people["showing_names"] = true
-scripts.people["updating_names"] = false
+scripts.people["updating_names"] = true
 
 scripts.people["name_color"] = "yellow"
 scripts.people["guild_color"] = "dark_orange"

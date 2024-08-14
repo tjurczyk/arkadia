@@ -8685,9 +8685,13 @@ scripts.misc.knowledge:stop_reading_library()</script>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
 											<string>mistern\w+ obosieczn\w+ topor</string>
+											<string>Konczac atak przyklekasz na jedno kolano, nie ogladajac sie nawet na swoja ofiare. Mimowolnie usmiechasz sie, gdy slyszysz gluchy odglos padajacego na ziemie ciala.</string>
+											<string>przykleka na jedno kolano nie ogladajac sie nawet na swa ofiare, ktorej cialem targa nagly skurcz a z otwartych arterii tryska strumien krwi. Twarz</string>
 										</regexCodeList>
 										<regexCodePropertyList>
 											<integer>1</integer>
+											<integer>0</integer>
+											<integer>0</integer>
 										</regexCodePropertyList>
 										<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 											<name>moje</name>
@@ -8861,8 +8865,10 @@ scripts.misc.knowledge:stop_reading_library()</script>
 													<string>^Szybki niczym atak kobry cios gornego szpikulca sterczacego z twojego misternego obosiecznego topora z mordercza sila trafia (?'target'.+?)(?: w (?'where'.+?), momentalnie pozbawiajac (?:go|ja) zycia\. Bezwladne cialo pada u twych stop, wciaz jeszcze broczac krwia ze smiertelnej rany|, momentalnie konczac walke)\.$</string>
 													<string>^Szybkim wypadem wymijasz (?'target'.+?) i wykorzystujac rozpedzona mase swego misternego obosiecznego topora bez trudu wyprowadzasz w pedzie dwa smiertelne ciosy\.$</string>
 													<string>^Rzucajac sie do ostatecznego ataku wyprowadzasz straszliwe, pelne sily ciecie swym misternym obosiecznym toporem, ktore z mordercza precyzja smiertelnie godzi (?'target'.+?) w (?'where'.+?), ostatecznie konczac boj\.$</string>
+													<string>^Konczac atak przyklekasz na jedno kolano, nie ogladajac sie nawet na swoja ofiare. Mimowolnie usmiechasz sie, gdy slyszysz gluchy odglos padajacego na ziemie ciala.$</string>
 												</regexCodeList>
 												<regexCodePropertyList>
+													<integer>1</integer>
 													<integer>1</integer>
 													<integer>1</integer>
 													<integer>1</integer>
@@ -9057,7 +9063,7 @@ scripts.misc.knowledge:stop_reading_library()</script>
 												<colorTriggerBgColor>#000000</colorTriggerBgColor>
 												<regexCodeList>
 													<string>^(?'attacker'\w+(?: \w+){0,4}) szybkim niczym atak kobry ciosem sterczacego z misternego obosiecznego topora gornego szpikulca z mordercza sila i precyzja trafia (?'target'.+?) w (?'where'.+?), momentalnie (konczac walke|pozbawiajac (?:go|ja) zycia\. Bezwladne cialo wali sie na ziemie, wciaz broczac krwia ze smiertelnej rany)\.$</string>
-													<string>^Konczac atak (?'attacker'.+?) przykleka na jedno kolano nie ogladajac sie nawet na swa ofiare, ktorej cialem targa nagly skurcz a z otwartych arterii tryska strumien krwi\. Twarz .+? wykrzywia paskudny grymas gdy cialo z gluchymloskotem pada na ziemie\.$</string>
+													<string>^Konczac atak (?'attacker'.+?) przykleka na jedno kolano nie ogladajac sie nawet na swa ofiare, ktorej cialem targa nagly skurcz a z otwartych arterii tryska strumien krwi\. Twarz .+? wykrzywia paskudny grymas gdy cialo z gluchym loskotem pada na ziemie\.$</string>
 													<string>^Rzucajac sie do ostatecznego ataku (?'attacker'.+?) wyprowadza straszliwe, pelne sily ciecie swym misternym obosiecznym toporem, ktore z mordercza precyzja smiertelnie godzi (?'target'.+?) w (?'where'.+?), ostatecznie konczac boj\.$</string>
 													<string>^(?'attacker'\w+(?: \w+){0,4}) szybkim wypadem wymija (?'target'.+?), a jednoczesnie jego misterny obosieczny topor rozblyskuje dwukrotnie, zadajac mordercze ciecia\.$</string>
 												</regexCodeList>

@@ -386,6 +386,9 @@ function ateam:print_obj_team(id, obj)
 
         -- name section
         local str_name = self.options.own_name
+	if ateam.options.own_name_as_fatigue == true then
+            str_name = "<reset>[<LightSlateBlue>" .. states_fatigue[scripts.character.state["fatigue"]] .. "<reset>]"
+        end
         local str_name_original = obj["desc"]
         if str_id ~= " @" then
             str_name = str_name_original

@@ -189,6 +189,14 @@
       ]
     },
     {
+      "name": "ateam.options.own_name_as_fatigue",
+      "default_value": false,
+      "field_type": "boolean",
+      "macros_on_modify": [
+        "_ateam"
+      ]
+    },
+    {
       "name": "ateam.options.alphabetical_sort_team",
       "default_value": true,
       "field_type": "boolean",

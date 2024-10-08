@@ -14,13 +14,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Checkout docs
-        uses: actions/checkout@v4
         with:
           repository: Delwing/arkadia-docs-browser
-          path: docs
-      - name: Setup docs
-        uses: ./docs
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
-          xml-file: ../Arkadia.xml
-          docs-file: ../aliases.md
+          path: data
+      - name: Setup docs
+        uses: ./
+        with:
+          xml-file: data/Arkadia.xml
+          docs-file: data/aliases.md

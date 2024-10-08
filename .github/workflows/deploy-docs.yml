@@ -16,3 +16,8 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: Delwing/arkadia-docs-browser
+      - name: Setup docs
+        uses: ./
+        with:
+          xml-file: data/Arkadia.xml
+          docs-file: data/aliases.md

@@ -16,6 +16,12 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: Delwing/arkadia-docs-browser
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          path: data
+      - run: ls
+      - run: ls ..
       - name: Setup docs
         uses: ./
         with:

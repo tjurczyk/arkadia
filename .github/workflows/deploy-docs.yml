@@ -4,7 +4,6 @@ on:
   push:
     branches: ["master"]
 
-
 jobs:
   deploy:
     environment:
@@ -20,7 +19,6 @@ jobs:
         uses: actions/checkout@v4
         with:
           path: data
-      - run: ls ../../actions
       - name: Setup docs
         uses: ./
         with:

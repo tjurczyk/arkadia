@@ -22,6 +22,7 @@ jobs:
           path: data
       - run: ls
       - run: ls ..
+      - run: ls ../..
       - name: Setup docs
         uses: ./
         with:

@@ -14,8 +14,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Setup docs
-        uses: Delwing/arkadia-docs-browser@master
+      - name: Checkout docs
+        uses: actions/checkout@v4
         with:
-          xml-file: Arkadia.xml
-          docs-file: aliases.md
+          repository: Delwing/arkadia-docs-browser
+          path: docs
+      - name: Setup docs
+        uses: ./docs
+        with:
+          xml-file: ../Arkadia.xml
+          docs-file: ../aliases.md

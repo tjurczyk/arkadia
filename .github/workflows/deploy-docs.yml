@@ -20,6 +20,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           path: data
+          clean: 'false'
       - name: Setup docs
         uses: ./
         with:

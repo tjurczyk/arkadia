@@ -19,6 +19,3 @@ jobs:
         with:
           xml-file: Arkadia.xml
           docs-file: aliases.md
-
-          
-    

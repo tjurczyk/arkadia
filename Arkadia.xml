@@ -16575,7 +16575,7 @@ scripts.misc.knowledge:stop_reading_library()</script>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>^Trzymana przez .* blekitno-srebrna trojkatna tarcza rozblyskuje nagle niesamowicie ostrym blekitnym swiatlem, skierowanym w strone (.*), lecz .*</string>
+											<string>^Trzymana przez (?'attacker'.+?) blekitno-srebrna trojkatna tarcza rozblyskuje nagle niesamowicie ostrym blekitnym swiatlem, skierowanym w strone (?'target'.+?), leczrozblysk jest tak silny, ze na chwile rowniez ty odruchowo mruzysz oczy przed oslepiajaca jasnoscia!$</string>
 										</regexCodeList>
 										<regexCodePropertyList>
 											<integer>1</integer>

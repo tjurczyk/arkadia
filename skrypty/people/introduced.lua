@@ -34,6 +34,9 @@ end
 
 function scripts.people.introduced:process_introduced(matches)
     local people = string.split(matches[2]:gsub(" i ", ", "), ", ")
+    local key = "przedstawieni." .. scripts.character_name
+    self.previous_introduced = scripts.state_store:get(key)
+    scripts.state_store:set(key, people)
     for k, name in pairs(people) do
         if not table.contains(self.introduced, name) then
             if selectString(name, 1) > -1 then

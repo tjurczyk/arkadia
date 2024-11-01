@@ -26,11 +26,6 @@ function trigger_func_skrypty_ui_gags_color_color_moje_spece_bar_ja_fin()
     scripts.gags:gag_prefix("JA "..scripts.gags.fin_prefix, "moje_spece")
 end
 
-function trigger_func_skrypty_ui_gags_color_color_moje_spece_bar_ja_granit()
-    scripts.gags:gag_prefix("GRA OGL", "moje_spece")
-    ateam:may_setup_paralyzed_name(matches["target"])
-end
-
 function trigger_func_skrypty_ui_gags_color_color_moje_spece_bar_ja_spec_ja_ogluch()
     scripts.gags:gag_own_spec("OGL")
     ateam:may_setup_paralyzed_name(matches["target"])

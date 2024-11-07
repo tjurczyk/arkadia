@@ -16595,7 +16595,7 @@ scripts.misc.knowledge:stop_reading_library()</script>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>zaczyna wpatrywac sie pustym wzrokiem w slepia weza wijacego sie u podstawy ciemnogranatowego smuklego helmu na glowie</string>
+											<string>^(?'target'\w+(?: \w+){0,4}) zaczyna wpatrywac sie pustym wzrokiem w slepia weza wijacego sie u podstawy ciemnogranatowego smuklego helmu na glowie (?'attacker'.*)\.$</string>
 										</regexCodeList>
 										<regexCodePropertyList>
 											<integer>1</integer>
@@ -16615,7 +16615,7 @@ scripts.misc.knowledge:stop_reading_library()</script>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>^Nagle lustrzana powierzchnia lsniacej plomienistej tarczy .+? rozblyskuje jasnoczerwonym, palacym swiatlem\.</string>
+											<string>^Nagle lustrzana powierzchnia lsniacej plomienistej tarczy (?'attacker'.+?) rozblyskuje jasnoczerwonym, palacym swiatlem\.</string>
 										</regexCodeList>
 										<regexCodePropertyList>
 											<integer>1</integer>

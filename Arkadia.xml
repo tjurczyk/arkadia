@@ -2452,8 +2452,10 @@ scripts.misc.knowledge:stop_reading_library()</script>
 						<string>(.*) atakuje cie!</string>
 						<string>(.*) atakuje cie nie dajac ci czasu na skontrowanie swojego ataku!</string>
 						<string>^Ku twojemu zdumieniu, (.*) pojawil sie nagle tuz obok ciebie!</string>
+						<string>^Oczy (.*) zachodza woalem rytualnego transu, gdy jak blyskawica rzuca sie on na ciebie, rozniecajac burze Tanca Smierci!</string>
 					</regexCodeList>
 					<regexCodePropertyList>
+						<integer>1</integer>
 						<integer>1</integer>
 						<integer>1</integer>
 						<integer>1</integer>

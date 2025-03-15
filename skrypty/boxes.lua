@@ -15,6 +15,7 @@ scripts["boxes"] = scripts["boxes"] or {
         [893] = "scala",
         [1999] = "rinde",
         [8059] = "guleta",
+        [26630] = "parravon",
     }
 }
 

@@ -28787,9 +28787,13 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<string>Przestajesz wioslowac.</string>
 						<string>Nie mozesz sie tam udac, gdyz wielki pustynny robak lapie cie jednym ze szczekoczulkow i przyciaga do siebie.</string>
 						<string>Lawa nie pozwala isc dalej w tym kierunku. Mozesz jednak sprobowac ja przeskoczyc.</string>
-						<string>Nie mozesz sie tam udac, gdyz walczysz wlasnie z ryba. Jesli chcesz, mozesz , ale licz sie z mozliwoscia uszkodzenia wedki.</string>
+						<string>Nie mozesz sie tam udac, gdyz walczysz wlasnie z ryba. Jesli chcesz, mozesz</string>
+						<string>Nie masz sil plynac.</string>
+						<string>Plot jest za wysoki dla ciebie.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
+						<integer>2</integer>
+						<integer>2</integer>
 						<integer>2</integer>
 						<integer>2</integer>
 						<integer>2</integer>

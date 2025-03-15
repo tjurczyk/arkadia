@@ -1066,17 +1066,17 @@ Dozwolone wartosci:
 
 Lista elementów na środkowej belce, kolejność tutaj jest kolejnoscia, jaka bedzie na belce.
 Dozwolone elementy: 
-* zmeczenie
-* mana
-* pragnienie
-* upicie
-* kac
-* kondycja
-* postepy
-* panika
-* glod
-* forma
-* przeciazenie
+* `zmeczenie`
+* `mana`
+* `pragnienie`
+* `upicie`
+* `kac`
+* `kondycja`
+* `postepy`
+* `panika`
+* `glod`
+* `forma`
+* `przeciazenie`
 
 Przykład:
 ```json

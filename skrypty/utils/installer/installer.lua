@@ -126,7 +126,7 @@ end
 
 function scripts.installer:download_people_db()
     scripts.installer.mode = "people"
-
+    db:close("people")
     downloadFile(getMudletHomeDir() .. "/Database_people.db", "http://arkadia.kamerdyner.net/master3/Database_people.db")
 end
 

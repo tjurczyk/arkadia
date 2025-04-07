@@ -2,7 +2,7 @@ local biernik_digits = { 2, 3, 4 }
 
 function herbs:get_herbs(name, amount)
     if not herbs.herbs_details[name] then
-        scripts:print_log("Nie znam takiego ziola '"..name.."'")
+        scripts:print_log("Nie znam takiego ziola '" .. name .. "'")
     end
 
     local to_get = amount
@@ -38,6 +38,13 @@ function herbs:get_herb_from_bag(name, amount, bag_id)
         herbs.counts[name] = herbs.counts[name] - ret_val
         if herbs.counts[name] == 0 then
             herbs.counts[name] = nil
+            herbs.index[name] = nil
+            for idx, val in pairs(herbs.sorted_herb_ids) do
+                if val == name then
+                    table.remove(herbs.sorted_herb_ids, idx)
+                    break
+                end
+            end
         end
     else
         ret_val = amount

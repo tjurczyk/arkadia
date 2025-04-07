@@ -89,7 +89,6 @@ function scripts.utils:extract_string_list(list_str)
     if table.size(split_by_i) == 1 then
         -- this is single herb
         table.insert(items, split_by_i[1])
-
     elseif table.size(split_by_i) == 2 then
         -- more than one type in the bag
         table.insert(items, split_by_i[2])
@@ -172,7 +171,8 @@ function scripts.utils:print_string_list(list_arr)
         if table.contains(scripts.inv.magics_data.magics, string.lower(v["name"])) then
             ret_str = ret_str .. "\n<grey>  " .. amount_str .. " | <" .. scripts.inv.magics_color .. ">" .. v["name"]
         elseif table.contains(scripts.inv.magic_keys_data.magic_keys, string.lower(v["name"])) then
-            ret_str = ret_str .. "\n<grey>  " .. amount_str .. " | <" .. scripts.inv.magic_keys_color .. ">" .. v["name"]
+            ret_str = ret_str .. "\n<grey>  " .. amount_str .. " | <" .. scripts.inv.magic_keys_color .. ">" .. v
+                ["name"]
         else
             ret_str = ret_str .. "\n<grey>  " .. amount_str .. " | " .. v["name"]
         end
@@ -232,4 +232,53 @@ end
 
 function scripts.utils.gender_form(male, female)
     return scripts.character:is_male() and male or female
+end
+
+function scripts.utils:parse_money_string(money_str)
+    local amount_dict = {
+        ["mithryl_amount"] = 0,
+        ["gold_amount"] = 0,
+        ["silver_amount"] = 0,
+        ["copper_amount"] = 0,
+    }
+
+    echo("asdadasd")
+    local current_amount = nil
+    local tokens = string.split(money_str, " ")
+    local iter = 1
+    local parsed_token
+    display(tokens)
+    while iter <= table.size(tokens) do
+        if not current_amount then
+            if tokens[iter] == "i" then
+                iter = iter + 1
+            end
+
+            parsed_token = tokens[iter]
+            iter = iter + 1
+            if scripts.string_to_liczebnik[tokens[iter]] then
+                parsed_token = parsed_token .. " " .. tokens[iter]
+                iter = iter + 1
+            end
+
+            display(parsed_token)
+            current_amount = scripts.string_to_liczebnik[parsed_token]
+            if not current_amount then
+                current_amount = tonumber(parsed_token)
+            end
+        else
+            if string.starts(tokens[iter], "mit") then
+                amount_dict.mithryl_amount = current_amount
+            elseif string.starts(tokens[iter], "zlo") then
+                amount_dict.gold_amount = current_amount
+            elseif string.starts(tokens[iter], "sre") then
+                amount_dict.silver_amount = current_amount
+            else
+                amount_dict.copper_amount = current_amount
+            end
+            current_amount = nil
+            iter = iter + 1
+        end
+    end
+    return amount_dict
 end

@@ -30300,6 +30300,27 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 					<packageName></packageName>
 					<regex>^/ziola_odloz_woreczek ([0-9]+)</regex>
 				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>show_grouped_herbs</name>
+					<script>herbs:show_summary(false)</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/zshow$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>show_grouped_herbs_all</name>
+					<script>herbs:show_summary(true)</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/zshow\!$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>show_grouped_herbs_category</name>
+					<script>herbs:show_summary(false, matches[2])</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/zshow (zme|kon|man|odt|wzm|poz)$</regex>
+				</Alias>
 			</AliasGroup>
 			<AliasGroup isActive="yes" isFolder="yes">
 				<name>people</name>

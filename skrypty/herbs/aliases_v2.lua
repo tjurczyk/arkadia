@@ -72,10 +72,18 @@ function herbs:do_pre_post_actions(pre_post)
     misc:run_separeted_command(actions)
 end
 
+function herbs:print_build_herbs_db_message()
+    window = "main"
+    cecho(window, "\n <orange>Brak zbudowanej bazy ziol, ")
+    cechoPopup(window, "<deep_sky_blue>kliknij tutaj aby zrobic '/ziola_buduj'", { [[expandAlias("/ziola_buduj")]] },
+        { [[/ziola_buduj]] }, true)
+    cecho(window, " \n\n")
+end
+
 function herbs:show_summary(full, one_category)
     local window = "main"
     if not herbs.db or table.size(herbs.db) == 0 then
-        zielarz:print_build_herbs_db_message()
+        herbs:print_build_herbs_db_message()
         return
     end
 
@@ -85,12 +93,12 @@ function herbs:show_summary(full, one_category)
         "\n   <light_slate_blue>ile <grey>|        <light_slate_blue>nazwa <grey>           | <light_slate_blue>             dzialanie <grey>                      ")
     echo(window, "\n")
 
-    local herbs_categories = zielarz.herbs_categories_print_order
+    local herbs_categories = herbs.herbs_categories_print_order
     if not full then
         herbs_categories = { "zmeczenie", "kondycja", "mana" }
     end
     if one_category then
-        herbs_categories = { zielarz.short_category_to_category[one_category] }
+        herbs_categories = { herbs.short_category_to_category[one_category] }
     end
     local tmp_total_herbs_in_this_category = ""
     local herbs_total = 0
@@ -105,7 +113,7 @@ function herbs:show_summary(full, one_category)
         local unique_herbs = 0
         for _, herb_id in pairs(herbs.sorted_herb_ids) do
             local v = herbs.index[herb_id]
-            if table.size(v) > 0 and table.contains(zielarz.herbs_categories[herb_category], herb_id) then
+            if table.size(v) > 0 and table.contains(herbs.herbs_categories[herb_category], herb_id) then
                 unique_herbs = unique_herbs + 1
                 local amount = 0
                 for i, j in pairs(v) do

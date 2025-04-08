@@ -487,6 +487,32 @@
       ]
     },
     {
+      "name": "herbs.smart_application_skip_kon",
+      "default_value": {},
+      "field_type": "map",
+      "macros_on_modify": [
+        "_herbs"
+      ]
+    },
+    {
+      "name": "herbs.smart_application_skip_man",
+      "default_value": {},
+      "field_type": "map",
+      "macros_on_modify": [
+        "_herbs"
+      ]
+    },
+    {
+      "name": "herbs.smart_application_skip_zme",
+      "default_value": {
+        "deliona": true
+      },
+      "field_type": "map",
+      "macros_on_modify": [
+        "_herbs"
+      ]
+    },
+    {
       "name": "scripts.misc.knowledge.use_knowledge",
       "default_value": true,
       "field_type": "boolean",

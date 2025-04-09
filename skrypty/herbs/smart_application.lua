@@ -37,18 +37,16 @@ function herbs:init_smart_application()
 end
 
 function herbs:smart_application_execute(htype)
-    if herbs.smart_application_queue[htype].index == 0 then
+    if table.size(herbs.smart_application_queue[htype].herbs) == 0 then
         herbs:smart_application_init_htype_queue(htype)
     end
 
     herbs:smart_application_htype_queue_pretty_msg(htype)
     local taking_herb = herbs.smart_application_queue[htype].herbs[herbs.smart_application_queue[htype].index]
-    cecho(" wezme " .. taking_herb .. "\n")
-    -- herbs.counts[taking_herb] = herbs.counts[taking_herb] - 1
-    -- if herbs.counts[taking_herb] == 0 then
-    --     herbs.counts[taking_herb] = nil
-    -- end
-
+    local action = herbs.smart_application_action[htype][taking_herb]
+    -- cecho(" <CadetBlue>aplikuje " .. taking_herb)
+    cecho(string.format(" <CadetBlue>aplikuje %s", taking_herb))
+    expandAlias("/z_" .. action .. " " .. taking_herb)
     herbs:smart_application_increment_queue(htype)
 
     if herbs.counts[taking_herb] == nil or herbs.counts[taking_herb] == 0 then
@@ -166,4 +164,15 @@ function herbs:smart_application_init_htype_queue(htype)
     if table.size(herbs.smart_application_queue[htype].herbs) > 0 then
         herbs.smart_application_queue[htype].index = 1
     end
+end
+
+function alias_func_skrypty_herbs_smart_apply(htype)
+    herbs:smart_application_execute(htype)
+end
+
+function alias_func_skrypty_herbs_smart_apply_reset(htype)
+    herbs.smart_application_queue[htype].herbs = {}
+    herbs.smart_application_queue[htype].index = 0
+    herbs:smart_application_init_htype_queue(htype)
+    scripts:print_log("ok")
 end

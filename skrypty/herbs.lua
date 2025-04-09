@@ -120,3 +120,7 @@ function alias_func_skrypty_herbs_ziola_odloz_woreczek()
     herbs:put_herb_bag_down(matches[2])
     herbs:do_post_actions()
 end
+
+function alias_func_skrypty_herbs_show_herbs(full, one_category)
+    herbs:show_summary(full, one_category)
+end

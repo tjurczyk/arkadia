@@ -3,12 +3,12 @@ herbs['smart_application_skip_man'] = herbs['smart_application_skip_man'] or {}
 herbs['smart_application_skip_zme'] = herbs['smart_application_skip_zme'] or { deliona = true }
 
 function herbs:init_smart_application()
-    herbs['smart_application_queue'] = {
-        kon = { herbs = {}, index = 0 },
-        man = { herbs = {}, index = 0 },
-        zme = { herbs = {}, index = 0 },
-    }
+    scripts.event_register:kill_event_handler(herbs['smart_application_db_built_init_handler'])
+    herbs['smart_application_db_built_init_handler'] = scripts.event_register:force_register_event_handler(
+        herbs['smart_application_db_built_init_handler'], "herbsDatabaseBuilt",
+        function() herbs:reset_smart_application_queue() end)
 
+    herbs:reset_smart_application_queue()
     herbs['smart_application_action'] = {
         kon = {},
         man = {},
@@ -34,6 +34,14 @@ function herbs:init_smart_application()
             end
         end
     end
+end
+
+function herbs:reset_smart_application_queue()
+    herbs['smart_application_queue'] = {
+        kon = { herbs = {}, index = 0 },
+        man = { herbs = {}, index = 0 },
+        zme = { herbs = {}, index = 0 },
+    }
 end
 
 function herbs:smart_application_execute(htype)
@@ -71,12 +79,14 @@ function herbs:smart_application_htype_queue_pretty_msg(htype)
     local prop_category = herbs.short_category_to_category[htype]
     local herbs_in_htype = herbs.smart_application_queue[htype].herbs
     if herbs.smart_application_queue[htype].index == 0 then
-        cecho(" <CadetBlue>nie ma aktualnej kolejki ziol dla " ..
-            prop_category .. ", aby zaczac: /zaplikuj " .. prop_category)
+        cecho(string.format(
+            " <tomato>%s<CadetBlue> brak ziol w kolejce, aby rozpoczac: /zapl %s\n",
+            htype,
+            htype))
         return
     end
 
-    cecho(" <CadetBlue>ziola w kolejce: ")
+    cecho(string.format(" <tomato>%s<CadetBlue> ziola w kolejce: ", htype))
     for _, herb_id in pairs(herbs.herbs_categories[prop_category]) do
         if herbs.counts[herb_id] ~= nil and herbs.counts[herb_id] > 0 and herbs.smart_application_action[htype][herb_id] ~= nil then
             local clr = "<grey> "
@@ -175,4 +185,11 @@ function alias_func_skrypty_herbs_smart_apply_reset(htype)
     herbs.smart_application_queue[htype].index = 0
     herbs:smart_application_init_htype_queue(htype)
     scripts:print_log("ok")
+end
+
+function alias_func_skrypty_herbs_smart_apply_show_status()
+    scripts:print_log("aktualna kolejka")
+    herbs:smart_application_htype_queue_pretty_msg("kon")
+    herbs:smart_application_htype_queue_pretty_msg("man")
+    herbs:smart_application_htype_queue_pretty_msg("zme")
 end

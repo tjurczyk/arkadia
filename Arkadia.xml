@@ -30335,6 +30335,13 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 					<packageName></packageName>
 					<regex>^/zapl\! (kon|man|zme)$</regex>
 				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>smart_apply_herbs_show</name>
+					<script>alias_func_skrypty_herbs_smart_apply_show_status()</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/zapl$</regex>
+				</Alias>
 			</AliasGroup>
 			<AliasGroup isActive="yes" isFolder="yes">
 				<name>people</name>

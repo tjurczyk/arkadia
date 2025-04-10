@@ -27,7 +27,7 @@ function herbs:init_smart_application()
 
         for __, herb in pairs(herbs.herbs_categories[prop_category]) do
             for ___, action in pairs(herbs.data.herb_id_to_use[herb]) do
-                if string.find(action.effect, htype_str_to_search) then
+                if action ~= nil and string.find(action.effect, htype_str_to_search) then
                     herbs.smart_application_action[htype][herb] = action.action
                     break
                 end

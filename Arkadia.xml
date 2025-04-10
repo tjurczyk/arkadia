@@ -30302,24 +30302,45 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
 					<name>show_grouped_herbs</name>
-					<script>herbs:show_summary(false)</script>
+					<script>alias_func_skrypty_herbs_show_herbs(false)</script>
 					<command></command>
 					<packageName></packageName>
 					<regex>^/zshow$</regex>
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
 					<name>show_grouped_herbs_all</name>
-					<script>herbs:show_summary(true)</script>
+					<script>alias_func_skrypty_herbs_show_herbs(true)</script>
 					<command></command>
 					<packageName></packageName>
 					<regex>^/zshow\!$</regex>
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
 					<name>show_grouped_herbs_category</name>
-					<script>herbs:show_summary(false, matches[2])</script>
+					<script>alias_func_skrypty_herbs_show_herbs(false, matches[2])</script>
 					<command></command>
 					<packageName></packageName>
 					<regex>^/zshow (zme|kon|man|odt|wzm|poz)$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>smart_apply_herbs</name>
+					<script>alias_func_skrypty_herbs_smart_apply(matches[2])</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/zapl (kon|man|zme)$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>smart_apply_herbs_reset</name>
+					<script>alias_func_skrypty_herbs_smart_apply_reset(matches[2])</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/zapl\! (kon|man|zme)$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>smart_apply_herbs_show</name>
+					<script>alias_func_skrypty_herbs_smart_apply_show_status()</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/zapl$</regex>
 				</Alias>
 			</AliasGroup>
 			<AliasGroup isActive="yes" isFolder="yes">

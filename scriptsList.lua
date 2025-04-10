@@ -112,6 +112,7 @@ return {
     "skrypty/herbs/help",
     "skrypty/herbs/herb_window",
     "skrypty/herbs/herbs_effects",
+    "skrypty/herbs/smart_application",
     "skrypty/mail/mail_creator",
     "skrypty/people/core",
     "skrypty/people/tools",

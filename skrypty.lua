@@ -1,4 +1,4 @@
-scripts = scripts or { ver = "4.97" }
+scripts = scripts or { ver = "4.98" }
 scripts.event_handlers = scripts.event_handlers or {}
 
 function alias_func_skrypty_help()

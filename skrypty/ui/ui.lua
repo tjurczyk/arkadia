@@ -22,6 +22,7 @@ function scripts.ui:setup()
 
     scripts.ui:setup_states_window()
     scripts.ui:setup_talk_window()
+    scripts.ui:setup_team_talk_window()
     
     scripts.ui:setup_footer()
     scripts.ui:setup_footer_closed()

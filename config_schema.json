@@ -1342,6 +1342,14 @@
       ]
     },
     {
+      "name": "scripts.ui.separate_team_talk_window",
+      "default_value": false,
+      "field_type": "boolean",
+      "macros_on_modify": [
+        "_ux"
+      ]
+    },
+    {
       "name": "scripts.ui.fancy.enabled",
       "default_value": false,
       "field_type": "boolean",

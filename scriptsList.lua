@@ -274,6 +274,7 @@ return {
     "skrypty/ui/footer_main_modes/main_footer_updater_mode5",
     "skrypty/ui/footer_main_modes/main_footer_updater_mode6",
     "skrypty/ui/talk_window/ui_talk_window",
+    "skrypty/ui/talk_window/ui_team_talk_window",
     "skrypty/ui/talk_window/talk_history",
     "skrypty/ui/gmcp_handlers/gmcp_state_handler",
     "skrypty/ui/gmcp_handlers/gmcp_room_time_handler",

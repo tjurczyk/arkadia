@@ -850,6 +850,17 @@ Format ma zostac taki jak ponizej: `"typ_komunikatu" : true`
   "emotes" : true
 }
 ```
+
+---
+
+## `scripts.ui.separate_team_talk_window`
+
+Ustawienie czy ma byc osobne okno rozmow druzyny
+
+Wartości:
+* `false` - wylaczone
+* `true` - bedzie to osobne okno
+
 ---
 
 ## `scripts.ui.states_window_height`

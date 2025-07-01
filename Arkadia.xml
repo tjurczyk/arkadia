@@ -2452,8 +2452,10 @@ scripts.misc.knowledge:stop_reading_library()</script>
 						<string>(.*) atakuje cie!</string>
 						<string>(.*) atakuje cie nie dajac ci czasu na skontrowanie swojego ataku!</string>
 						<string>^Ku twojemu zdumieniu, (.*) pojawil sie nagle tuz obok ciebie!</string>
+						<string>^Oczy (.*) zachodza woalem rytualnego transu, gdy jak blyskawica rzuca sie on na ciebie, rozniecajac burze Tanca Smierci!</string>
 					</regexCodeList>
 					<regexCodePropertyList>
+						<integer>1</integer>
 						<integer>1</integer>
 						<integer>1</integer>
 						<integer>1</integer>
@@ -4008,6 +4010,7 @@ scripts.misc.knowledge:stop_reading_library()</script>
 												<string>^Wykorzystujac chwile, w ktorej glowica twego dlugiego runicznego korbacza wybucha ognista poswiata, probujesz nia uderzyc (?'target'.+?), lecz robisz to tak nieumiejetnie, ze bronmija cel w bezpiecznej dlan odleglosci\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
+												<integer>1</integer>
 												<integer>1</integer>
 												<integer>1</integer>
 												<integer>1</integer>
@@ -13217,6 +13220,46 @@ scripts.misc.knowledge:stop_reading_library()</script>
 										</regexCodeList>
 										<regexCodePropertyList>
 											<integer>3</integer>
+										</regexCodePropertyList>
+									</Trigger>
+									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+										<name>ja_gigantyczny_granitowy_mlot</name>
+										<script>trigger_func_skrypty_ui_gags_color_color_moje_spece_bar_ja_granit()</script>
+										<triggerType>0</triggerType>
+										<conditonLineDelta>0</conditonLineDelta>
+										<mStayOpen>0</mStayOpen>
+										<mCommand></mCommand>
+										<packageName></packageName>
+										<mFgColor>#ff0000</mFgColor>
+										<mBgColor>#ffff00</mBgColor>
+										<mSoundFile></mSoundFile>
+										<colorTriggerFgColor>#000000</colorTriggerFgColor>
+										<colorTriggerBgColor>#000000</colorTriggerBgColor>
+										<regexCodeList>
+											<string>^Bierzesz ogromny zamach swoim gigantycznym granitowym mlotem i uderzasz nim w glowe (?'target'.+?)\. Przeciwnik mruga oczami, nie bardzo wiedzac, co sie dzieje\. Porzadnie (?:go|ja) zamroczylo\.$</string>
+										</regexCodeList>
+										<regexCodePropertyList>
+											<integer>1</integer>
+										</regexCodePropertyList>
+									</Trigger>
+									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+										<name>ja_jasniejacy_zdobiony_jatagan</name>
+										<script>trigger_func_skrypty_ui_gags_color_color_moje_spece_bronie_jasniejacy_zdobiony_jatagan()</script>
+										<triggerType>0</triggerType>
+										<conditonLineDelta>0</conditonLineDelta>
+										<mStayOpen>0</mStayOpen>
+										<mCommand></mCommand>
+										<packageName></packageName>
+										<mFgColor>#ff0000</mFgColor>
+										<mBgColor>#ffff00</mBgColor>
+										<mSoundFile></mSoundFile>
+										<colorTriggerFgColor>#000000</colorTriggerFgColor>
+										<colorTriggerBgColor>#000000</colorTriggerBgColor>
+										<regexCodeList>
+											<string>^Rozblysk swiatla oslepia (?'target'.*)!$</string>
+										</regexCodeList>
+										<regexCodePropertyList>
+											<integer>1</integer>
 										</regexCodePropertyList>
 									</Trigger>
 									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -23442,7 +23485,8 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^[&gt; ]*(?:Rozwiazujesz na chwile rzemyk, sprawdzajac zawartosc swojego|Uwaznie ogladasz zawartosc) (?:[a-zA-Z -]+? woreczka)[a-z ]*?\. W srodku dostrzegasz (?'content'[a-zA-Z0-9, -]+)\.$</string>
+						<string>^[&gt; ]*Rozwiazujesz na chwile rzemyk, sprawdzajac zawartosc swojego[a-zA-Z -]*woreczka[a-z ]*\. W srodku dostrzegasz (?'content'[a-zA-Z0-9, -]+)\.$</string>
+						<string>^[&gt; ]*Uwaznie ogladasz zawartosc[a-zA-Z -]*woreczka[a-z ]*\. W srodku dostrzegasz (?'content'[a-zA-Z0-9, -]+)\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -23462,7 +23506,8 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^[&gt; ]*(?:Uwaznie ogladasz zawartosc|Rozwiazujesz na chwile rzemyk, sprawdzajac zawartosc swojego) [a-zA-Z -]*woreczka[a-z ]*. W jego srodku nic jednak nie ma\.$</string>
+						<string>^[&gt; ]*Uwaznie ogladasz zawartosc[a-zA-Z -]*woreczka[a-z ]*. W jego srodku nic jednak nie ma\.$</string>
+						<string>^[&gt; ]*Rozwiazujesz na chwile rzemyk, sprawdzajac zawartosc swojego[a-zA-Z -]*woreczka[a-z ]*. W jego srodku nic jednak nie ma\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -28787,9 +28832,13 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<string>Przestajesz wioslowac.</string>
 						<string>Nie mozesz sie tam udac, gdyz wielki pustynny robak lapie cie jednym ze szczekoczulkow i przyciaga do siebie.</string>
 						<string>Lawa nie pozwala isc dalej w tym kierunku. Mozesz jednak sprobowac ja przeskoczyc.</string>
-						<string>Nie mozesz sie tam udac, gdyz walczysz wlasnie z ryba. Jesli chcesz, mozesz , ale licz sie z mozliwoscia uszkodzenia wedki.</string>
+						<string>Nie mozesz sie tam udac, gdyz walczysz wlasnie z ryba. Jesli chcesz, mozesz</string>
+						<string>Nie masz sil plynac.</string>
+						<string>Plot jest za wysoki dla ciebie.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
+						<integer>2</integer>
+						<integer>2</integer>
 						<integer>2</integer>
 						<integer>2</integer>
 						<integer>2</integer>
@@ -30293,6 +30342,48 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 					<command></command>
 					<packageName></packageName>
 					<regex>^/ziola_odloz_woreczek ([0-9]+)</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>show_grouped_herbs</name>
+					<script>alias_func_skrypty_herbs_show_herbs(false)</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/zshow$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>show_grouped_herbs_all</name>
+					<script>alias_func_skrypty_herbs_show_herbs(true)</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/zshow\!$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>show_grouped_herbs_category</name>
+					<script>alias_func_skrypty_herbs_show_herbs(false, matches[2])</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/zshow (zme|kon|man|odt|wzm|poz)$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>smart_apply_herbs</name>
+					<script>alias_func_skrypty_herbs_smart_apply(matches[2])</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/zapl (kon|man|zme)$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>smart_apply_herbs_reset</name>
+					<script>alias_func_skrypty_herbs_smart_apply_reset(matches[2])</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/zapl\! (kon|man|zme)$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>smart_apply_herbs_show</name>
+					<script>alias_func_skrypty_herbs_smart_apply_show_status()</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/zapl$</regex>
 				</Alias>
 			</AliasGroup>
 			<AliasGroup isActive="yes" isFolder="yes">

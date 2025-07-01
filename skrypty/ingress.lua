@@ -86,12 +86,14 @@ function scripts.ingress:post_process_message(msg)
         decho("talk_window", timestamp .. scripts.ui.separate_talk_window_prefix .. ansi2decho(gmcp.gmcp_msgs.decoded))
     end
     if scripts.ui.separate_team_talk_window and scripts.ui.separate_talk_window_msg_types[gmcp.gmcp_msgs.type] then
-        local plain = ansi2string(gmcp.gmcp_msgs.decoded)
         local team = false
-        if ateam and ateam.team_names then
+        local plain = ansi2string(gmcp.gmcp_msgs.decoded):lower()
+        if plain:starts("mowisz") or plain:starts("krzyczysz") or plain:starts("szepczesz") then
+            team = true
+        end
+        if not team and ateam and ateam.team_names then
             for name, _ in pairs(ateam.team_names) do
-                local pattern = "^" .. string.lower(string.gsub(name, "([^%w])", "%%%1"))
-                if string.lower(plain):find(pattern) then
+                if plain:starts(name:lower()) or plain:starts("[" .. name:lower()) then
                     team = true
                     break
                 end

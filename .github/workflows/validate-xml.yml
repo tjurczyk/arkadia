@@ -1,0 +1,25 @@
+name: Validate Arkadia XML
+
+on:
+  push:
+    paths:
+      - 'Arkadia.xml'
+      - 'Arkadia.xsd'
+  pull_request:
+    paths:
+      - 'Arkadia.xml'
+      - 'Arkadia.xsd'
+
+jobs:
+  validate-xml:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Validate info.xml using XML schema info.xsd
+      uses: ChristophWurst/xmllint-action@v1
+      with:
+        xml-file: ./Arkadia.xml
+        xml-schema-file: ./.github/workflows/Arkadia.xsd

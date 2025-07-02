@@ -11,7 +11,6 @@ scripts.event_register = scripts.event_register or {
 --- * `onetime`: if one time
 ---
 --- Just as in https://wiki.mudlet.org/w/Manual:Miscellaneous_Functions#registerAnonymousEventHandler
-
 function scripts.event_register:register_event_handler(event, callback, onetime)
     local mudlet_id = registerAnonymousEventHandler(event, callback, onetime)
     local internal_id = #scripts.event_register.handlers + 1
@@ -55,7 +54,7 @@ end
 function scripts.event_register:kill_event_handler(internal_id)
     if scripts.event_register.handlers[internal_id] then
         killAnonymousEventHandler(scripts.event_register.handlers[internal_id])
-        scripts.event_register[internal_id] = nil
+        scripts.event_register.handlers[internal_id] = nil
     end
 end
 

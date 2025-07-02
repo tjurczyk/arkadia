@@ -177,6 +177,10 @@ function herbs:smart_application_init_htype_queue(htype)
 end
 
 function alias_func_skrypty_herbs_smart_apply(htype)
+    if not herbs.db or table.size(herbs.db) == 0 then
+            herbs:print_build_herbs_db_message()
+            return
+    end
     herbs:smart_application_execute(htype)
 end
 

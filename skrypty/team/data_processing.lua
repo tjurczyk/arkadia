@@ -2,6 +2,7 @@ function ateam:may_setup_paralyzed_name(name_in_declension)
     local id_of_people_on_location_found = scripts.utils:get_best_fuzzy_match(name_in_declension, ateam.people_on_location, 0.6)
     if id_of_people_on_location_found ~= -1 then
         ateam:setup_paralyzed(ateam.people_on_location[id_of_people_on_location_found])
+        raiseEvent("startParalyzed", id_of_people_on_location_found)
     end
 end
 
@@ -9,6 +10,7 @@ function ateam:may_end_paralyzed_name(name_in_declension)
     local id_of_people_on_location_found = scripts.utils:get_best_fuzzy_match(name_in_declension, ateam.people_on_location, 0.6)
     if id_of_people_on_location_found ~= -1 then
         ateam:end_paralyzed(ateam.people_on_location[id_of_people_on_location_found])
+        raiseEvent("endParalyzed", id_of_people_on_location_found)
     end
 end
 

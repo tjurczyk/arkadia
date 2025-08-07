@@ -1063,9 +1063,7 @@ Wielkosc czcionki w oknie stanow
 
 ---
 
-## `scripts.ui.footer_r`
-## `scripts.ui.footer_g`
-## `scripts.ui.footer_b`
+## `scripts.ui.footer_color`
 
 Kolor stopki
 

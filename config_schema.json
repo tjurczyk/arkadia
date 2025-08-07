@@ -1528,25 +1528,10 @@
       ]
     },
     {
-      "name": "scripts.ui.footer_r",
-      "default_value": 0,
-      "field_type": "number",
-      "macros_on_modify": [
-        "_ux"
-      ]
-    },
-    {
-      "name": "scripts.ui.footer_g",
-      "default_value": 0,
-      "field_type": "number",
-      "macros_on_modify": [
-        "_ux"
-      ]
-    },
-    {
-      "name": "scripts.ui.footer_b",
-      "default_value": 47,
-      "field_type": "number",
+      "name": "scripts.ui.footer_color",
+      "default_value": "#00002f",
+      "field_type": "string",
+      "content_type": "hex_color",
       "macros_on_modify": [
         "_ux"
       ]

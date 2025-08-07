@@ -35,7 +35,8 @@ function scripts.ui:setup_footer()
     })
 
     scripts.ui.bottom:setStyleSheet(scripts.ui.current_theme:get_footer_stylesheet())
-    scripts.ui.bottom:setColor(scripts.ui.footer_r, scripts.ui.footer_g, scripts.ui.footer_b)
+    local r, g, b = scripts.ui.footer_color:match("#?(%x%x)(%x%x)(%x%x)")
+    scripts.ui.bottom:setColor(tonumber(r, 16), tonumber(g, 16), tonumber(b, 16))
 
     scripts.ui.footer_vertical = Geyser.VBox:new({
         name = "scripts.ui.footer_vertical",

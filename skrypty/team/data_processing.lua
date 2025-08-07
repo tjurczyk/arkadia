@@ -14,7 +14,7 @@ function ateam:may_end_paralyzed_name(name_in_declension)
     local id_of_people_on_location_found = scripts.utils:get_best_fuzzy_match(name_in_declension, ateam.people_on_location, 0.6)
     if id_of_people_on_location_found ~= -1 then
         local desc = ateam.people_on_location[id_of_people_on_location_found]
-        ateam:end_paralyzed()
+        ateam:end_paralyzed(desc)
         local id = scripts.utils:get_id_from_name(desc)
         if id then
             raiseEvent("endParalyzed", id)

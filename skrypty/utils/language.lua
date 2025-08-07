@@ -47,3 +47,12 @@ function scripts.utils:get_best_fuzzy_match(query, docs, min_ratio)
     return -1
 end
 
+function scripts.utils:get_id_from_name(name)
+    if ateam and ateam.objs then
+        for k, v in pairs(ateam.objs) do
+            if v.desc == name then
+                return k
+            end
+        end
+    end
+end

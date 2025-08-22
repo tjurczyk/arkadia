@@ -4021,7 +4021,6 @@ scripts.misc.knowledge:stop_reading_library()</script>
 												<integer>1</integer>
 												<integer>1</integer>
 												<integer>1</integer>
-												<integer>1</integer>
 											</regexCodePropertyList>
 										</Trigger>
 										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -18534,7 +18533,7 @@ scripts.misc.knowledge:stop_reading_library()</script>
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^(?:[A-Z][a-z]+) (?:[a-z]+ ){1,3}(?:z umbem)? rozpada(?:ja)? sie!$</string>
+							<string>^(?:[A-Z][a-z]+) (?:[a-z]+ ){1,3}(?:z umbem )?rozpada(?:ja)? sie!$</string>
 							<string>^(?:[A-Z][a-z]+) (?:[a-z-]+ ?){1,3} ((?:[A-Z][a-z]+ |(?:\w+ ){3,4}))rozpada(?:ja)? sie!</string>
 						</regexCodeList>
 						<regexCodePropertyList>

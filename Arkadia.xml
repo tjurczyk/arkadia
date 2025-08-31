@@ -25829,7 +25829,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 							</Trigger>
 						</TriggerGroup>
 						<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-							<name>quenelles-merceaux</name>
+							<name>quenelles-parravon</name>
 							<script></script>
 							<triggerType>0</triggerType>
 							<conditonLineDelta>0</conditonLineDelta>
@@ -25845,7 +25845,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 							<regexCodePropertyList />
 							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 								<name>gps_quenelles</name>
-								<script>trigger_func_mapper_localizers_ships_buses_buses_quenelles_merceaux_gps_quenelles()</script>
+								<script>trigger_func_mapper_localizers_ships_buses_buses_quenelles_parravon_gps_quenelles()</script>
 								<triggerType>0</triggerType>
 								<conditonLineDelta>0</conditonLineDelta>
 								<mStayOpen>0</mStayOpen>
@@ -25865,7 +25865,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 							</Trigger>
 							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 								<name>gps_montlac</name>
-								<script>trigger_func_mapper_localizers_ships_buses_buses_quenelles_merceaux_gps_montlac()</script>
+								<script>trigger_func_mapper_localizers_ships_buses_buses_quenelles_parravon_gps_montlac()</script>
 								<triggerType>0</triggerType>
 								<conditonLineDelta>0</conditonLineDelta>
 								<mStayOpen>0</mStayOpen>
@@ -25885,7 +25885,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 							</Trigger>
 							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 								<name>gps_merceaux</name>
-								<script>trigger_func_mapper_localizers_ships_buses_buses_quenelles_merceaux_gps_merceaux()</script>
+								<script>trigger_func_mapper_localizers_ships_buses_buses_quenelles_parravon_gps_merceaux()</script>
 								<triggerType>0</triggerType>
 								<conditonLineDelta>0</conditonLineDelta>
 								<mStayOpen>0</mStayOpen>
@@ -25898,6 +25898,26 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 								<colorTriggerBgColor>#000000</colorTriggerBgColor>
 								<regexCodeList>
 									<string>Postoj, w wiosce Merceaux-Descloux</string>
+								</regexCodeList>
+								<regexCodePropertyList>
+									<integer>0</integer>
+								</regexCodePropertyList>
+							</Trigger>
+							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+								<name>gps_parravon</name>
+								<script>trigger_func_mapper_localizers_ships_buses_buses_quenelles_parravon_gps_parravon()</script>
+								<triggerType>0</triggerType>
+								<conditonLineDelta>0</conditonLineDelta>
+								<mStayOpen>0</mStayOpen>
+								<mCommand></mCommand>
+								<packageName></packageName>
+								<mFgColor>#ff0000</mFgColor>
+								<mBgColor>#ffff00</mBgColor>
+								<mSoundFile></mSoundFile>
+								<colorTriggerFgColor>#000000</colorTriggerFgColor>
+								<colorTriggerBgColor>#000000</colorTriggerBgColor>
+								<regexCodeList>
+									<string>Z zewnatrz dochodzi stlumiony glos woznicy: Postoj, plac przed zajazdem.</string>
 								</regexCodeList>
 								<regexCodePropertyList>
 									<integer>0</integer>

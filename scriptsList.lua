@@ -325,7 +325,7 @@ return {
     "mapper/localizers/ships_buses/buses/nuln-salignac",
     "mapper/localizers/ships_buses/buses/nuln-jouinard",
     "mapper/localizers/ships_buses/buses/nuln-blekitna",
-    "mapper/localizers/ships_buses/buses/quenelles-merceaux",
+    "mapper/localizers/ships_buses/buses/quenelles-parravon",
     "mapper/localizers/ships_buses/buses/wyzima-oxen",
     "mapper/localizers/ships_buses/buses/maribor-grabowa",
     "mapper/localizers/ships_buses/buses/maribor-verden",

@@ -29,7 +29,6 @@ function scripts.people:process_someone(short, name)
         return
     end
 
-    echo("http://51.38.32.53/cgi-bin/people_listener.py?people_string=" .. name_short .. "!" .. title)
     getHTTP("http://51.38.32.53/cgi-bin/people_listener.py?people_string=" .. name_short .. "!" .. title)
 end
 

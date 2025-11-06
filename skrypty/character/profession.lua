@@ -3,7 +3,7 @@ scripts.character.profession = scripts.character.profession or {}
 local state_store_key = "character.profession"
 local full_profession_points = 240
 local weekly_points = 10
-local plus_point = 1
+local plus_point = 3
 local one_week_in_seconds = 604800
 
 function scripts.character.profession:init()
@@ -87,5 +87,5 @@ end
 function trigger_func_show_reset_prompt()
     cecho("\n<CadetBlue>(skrypty)<tomato>: Jezeli rozpoczynasz trenowanie nowego zawodu nacisnij ")
     cechoLink("tutaj", function() reset_profession() end, "/staz 0")
-    scripts:print_log("Jezeli znasz wartosc stazu (240 pelny staz, 10 punktow za tydzien, 1 punkt za +staz) wpisz /staz [liczba]", true)
+    scripts:print_log("Jezeli znasz wartosc stazu (240 pelny staz, 10 punktow za tydzien, 3 punkt za +staz) wpisz /staz [liczba]", true)
 end

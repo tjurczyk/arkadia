@@ -25,7 +25,7 @@ function scripts.people:process_someone(short, name)
     name_short = name_short:gsub(" ", "_")
 
     local host = getConnectionInfo()
-    if host ~= "arkadia.rpg.pl" then
+    if host ~= "arkadia.rpg.pl" and host ~= "188.165.19.40" then
         return
     end
 

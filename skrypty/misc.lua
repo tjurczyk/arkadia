@@ -187,18 +187,38 @@ end
 function trigger_func_skrypty_misc_porownanie_wszystkich()
     local level = {
         ["rownie dobrze zbudowan"] = 0,
+        ["duzo gorzej zbudowan"] = -5,
+        ["znacznie gorzej zbudowan"] = -4,
+        ["gorzej zbudowan"] = -3,
+        ["troche gorzej zbudowan"] = -2,
+        ["niewiele gorzej zbudowan"] = -1,
         ["niewiele lepiej zbudowan"] = 1,
         ["troche lepiej zbudowan"] = 2,
         ["lepiej zbudowan"] = 3,
         ["znacznie lepiej zbudowan"] = 4,
         ["duzo lepiej zbudowan"] = 5,
         ["rownie siln"] = 0,
+        ["duzo slabsz"] = -5,
+        ["znacznie slabsz"] = -4,
+        ["slabsz"] = -3,
+        ["troche slabsz"] = -2,
+        ["niewiele slabsz"] = -1,
+        ["duzo mniej siln"] = -5,
+        ["znacznie mniej siln"] = -4,
+        ["mniej siln"] = -3,
+        ["troche mniej siln"] = -2,
+        ["niewiele mniej siln"] = -1,
         ["niewiele silniejsz"] = 1,
         ["troche silniejsz"] = 2,
         ["silniejsz"] = 3,
         ["znacznie silniejsz"] = 4,
         ["duzo silniejsz"] = 5,
         ["rownie zreczn"] = 0,
+        ["duzo mniej zreczn"] = -5,
+        ["znacznie mniej zreczn"] = -4,
+        ["mniej zreczn"] = -3,
+        ["troche mniej zreczn"] = -2,
+        ["niewiele mniej zreczn"] = -1,
         ["niewiele zreczniejsz"] = 1,
         ["troche zreczniejsz"] = 2,
         ["zreczniejsz"] = 3,
@@ -206,14 +226,22 @@ function trigger_func_skrypty_misc_porownanie_wszystkich()
         ["duzo zreczniejsz"] = 5,
     }
 
-    local res = level[matches['desc']]
-    if matches['mod'] ~= "" then res = -res end
-    table.insert(scripts.comparing_all.current_compare_results, res)
+    local stats = matches['desc']
+    local strEnd, conStart = string.find(stats, ", ", 1, true)
+    local conEnd, dexStart = string.find(stats, " i ", conStart + 1, true)
+
+    local str = string.sub(stats, 1, strEnd - 2)
+    local con = string.sub(stats, conStart + 1, conEnd - 2)
+    local dex = string.sub(stats, dexStart + 1, stats:len())
+
+    table.insert(scripts.comparing_all.current_compare_results, -level[str])
+    table.insert(scripts.comparing_all.current_compare_results, -level[dex])
+    table.insert(scripts.comparing_all.current_compare_results, -level[con])
     deleteLine()
 
-    if table.size(scripts.comparing_all.current_compare_results) == scripts.comparing_all.current_compare_count then
+    if table.size(scripts.comparing_all.current_compare_results) == scripts.comparing_all.current_compare_count * 3 then
         disableTrigger("porownanie-wszystkich")
-        misc:comparing_after(scripts.comparing_all.current_compare_results)
+        tempTimer(0.1, function() misc:comparing_after(scripts.comparing_all.current_compare_results) end)
     end
 end
 
@@ -289,13 +317,11 @@ function alias_func_skrypty_misc_porownaj_ze_wszystkimi()
     end
 
     scripts.comparing_all["current_compare_results"] = {}
-    scripts.comparing_all["current_compare_count"] = table.size(scripts.comparing_all["objects_to_check"]) * 3
+    scripts.comparing_all["current_compare_count"] = table.size(scripts.comparing_all["objects_to_check"])
     enableTrigger("porownanie-wszystkich")
 
     for _, v in pairs(scripts.comparing_all["objects_to_check"]) do
-        send("porownaj sile z ob_" .. v, false)
-        send("porownaj zrecznosc z ob_" .. v, false)
-        send("porownaj wytrzymalosc z ob_" .. v, false)
+        send("ocen ob_" .. v, false)
     end
 end
 

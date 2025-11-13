@@ -320,8 +320,7 @@ function ateam:por_func(id)
             if ateam.objs[ateam.my_id]["attack_num"] then
                 -- only if attack_num is ~= false for me
                 local ob_desc = "ob_" .. ateam.objs[ateam.my_id]["attack_num"]
-                sendAll("porownaj sile z " .. ob_desc, "porownaj zrecznosc z " .. ob_desc,
-                    "porownaj wytrzymalosc z " .. ob_desc, false)
+                send("ocen " .. ob_desc, false)
             else
                 scripts:print_log("Nie walczysz z nikim")
                 return
@@ -334,15 +333,13 @@ function ateam:por_func(id)
         elseif ateam.normal_ids[tonumber(id)] then
             id_retrieved = ateam.normal_ids[tonumber(id)]
         elseif string.find(id, "ob_") then
-            sendAll("porownaj sile z " .. id, "porownaj zrecznosc z " .. id,
-                "porownaj wytrzymalosc z " .. id, false)
+            send("ocen " .. id, false)
             return
         end
 
         if id_retrieved then
             local ob_desc = "ob_" .. id_retrieved
-            sendAll("porownaj sile z " .. ob_desc, "porownaj zrecznosc z " .. ob_desc,
-                "porownaj wytrzymalosc z " .. ob_desc, false)
+            send("ocen " .. ob_desc, false)
         else
             scripts:print_log("Nie ma takiego id")
             return
@@ -352,7 +349,7 @@ end
 
 function ateam:por2_func(name)
     if name then
-        sendAll("porownaj sile z " .. name, "porownaj zrecznosc z " .. name, "porownaj wytrzymalosc z " .. name, false)
+        send("ocen " .. name, false)
     end
 end
 

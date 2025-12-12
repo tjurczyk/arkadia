@@ -3,7 +3,7 @@ local function color_hit(value)
     if scripts.gags:is_type("combat.avatar") then
         target = "innych_ciosy_we_mnie"
 
-        if selectString(matches["damage"] .. " cie", 1) > -1 then
+        if matches.damage and selectString(matches["damage"] .. " cie", 1) > -1 then
             setFgColor(255, 153, 51)
         end
         resetFormat()

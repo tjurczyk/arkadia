@@ -13296,8 +13296,10 @@ scripts.misc.knowledge:stop_reading_library()</script>
 									<regexCodeList>
 										<string>^(?'attacker'\w+(?: \w+){0,4}?) (?'damage'ledwo muska|lekko rani|bardzo ciezko rani|powaznie rani|rani|masakruje|smiertelnie rani) (?'target'cie) (?'weapon'.+?), trafiajac cie w (?'where'.*)\.$</string>
 										<string>^(?'attacker'\w+(?: \w+){0,4}?) (?'damage'ledwo muska|lekko rani|bardzo ciezko rani|powaznie rani|rani|masakruje|smiertelnie rani) (?'target_weapon'.+?), trafiajac (?:go|ja|je) w (?'where'.*)\.$</string>
+										<string>^(\S+(?:\s+\S+){0,3})\s+nie\s+udaje\s+sie\s+trafic\s+(\S+(?:\s+\S+){0,3})\s+((?:lewym|lewa|prawym|prawa)\s+\S+|\S+(?:\s+\S+){2,3})\.$</string>
 									</regexCodeList>
 									<regexCodePropertyList>
+										<integer>1</integer>
 										<integer>1</integer>
 										<integer>1</integer>
 									</regexCodePropertyList>
@@ -17078,6 +17080,7 @@ scripts.misc.knowledge:stop_reading_library()</script>
 										<string> w ostatniej chwili (?:za|o)slania sie</string>
 										<string>w (?!ciebie).+?, lecz widmowe pedy wyrastajace nagle z okraglego migotliwego puklerza zatrzymuja ten cios\.$</string>
 										<string>naciera na (?!ciebie).+?, lecz jego .+? z hukiem trafia w</string>
+										<string>nadstawia starozytny piecioboczny puklerz, zbijajac uderzenie</string>
 									</regexCodeList>
 									<regexCodePropertyList>
 										<integer>1</integer>
@@ -17086,6 +17089,7 @@ scripts.misc.knowledge:stop_reading_library()</script>
 										<integer>1</integer>
 										<integer>1</integer>
 										<integer>1</integer>
+										<integer>0</integer>
 									</regexCodePropertyList>
 								</Trigger>
 							</TriggerGroup>
@@ -17673,7 +17677,7 @@ scripts.misc.knowledge:stop_reading_library()</script>
 								<colorTriggerFgColor>#000000</colorTriggerFgColor>
 								<colorTriggerBgColor>#000000</colorTriggerBgColor>
 								<regexCodeList>
-									<string>^(Nie udaje ci sie trafic|Probujesz trafic|Ledwo muskasz|Lekko ranisz) (?'target'.+?) (lew\w+|praw\w+) (piescia|kolanem|stopa|lokciem|rekawica|butem)</string>
+									<string>^(Nie udaje ci sie trafic|Probujesz trafic|Ledwo muskasz|Lekko ranisz|Ranisz|Powaznie ranisz|Bardzo ciezko ranisz|Masakrujesz) (?&lt;target&gt;.+?) (lew\w+|praw\w+) (piescia|kolanem|stopa|lokciem|rekawica|butem)</string>
 									<string>^Wykonujesz zamach ((lewym|prawym) butem) mierzac w (?'target'.+?), lecz t(a|en) paruje go .*\.$</string>
 								</regexCodeList>
 								<regexCodePropertyList>

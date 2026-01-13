@@ -18115,7 +18115,7 @@ scripts.misc.knowledge:stop_reading_library()</script>
 								<colorTriggerFgColor>#000000</colorTriggerFgColor>
 								<colorTriggerBgColor>#000000</colorTriggerBgColor>
 								<regexCodeList>
-									<string>^[ &gt;]*.* unosi swoja .* i szybko przesuwa sie za ciebie, kryjac.*</string>
+									<string>^[ &gt;]*.* (unosi|zastawia sie) swoja .* i szybko przesuwa sie za ciebie, kryjac.*</string>
 								</regexCodeList>
 								<regexCodePropertyList>
 									<integer>1</integer>
@@ -19619,7 +19619,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 							<string>^.*Probujesz zaslonic .* przed ciosami .* jednak nie jestes w stanie tego uczynic\.$</string>
 							<string>^.*Bezskutecznie rzucasz sie na .*, probujac przebic sie przez .*\.$</string>
 							<string>^.*Rzucasz sie na .* przebijajac sie przez .*\.$</string>
-							<string>^.*unosi .* i szybko przesuwa sie (za ciebie|w twoja strone).*</string>
+							<string>^.*(unosi|zastawia sie) .* i szybko przesuwa sie (za ciebie|w twoja strone).*</string>
 							<string>[ &gt;]*Unosisz swoja .* i przesuwasz sie w strone .*, bezskutecznie probujac</string>
 							<string>[ &gt;]*Na rozkaz .* probujesz zaslonic .* przed ciosami .*, jednak nie jestes w stanie tego uczynic.</string>
 							<string>[ &gt;]*Na rozkaz .* zaslaniasz .* przed ciosami .*.</string>

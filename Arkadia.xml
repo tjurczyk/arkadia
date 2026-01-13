@@ -19407,6 +19407,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 								<string>^Pozornie niespiesznym ruchem dobywasz .* zamierajac w wystudiowanej postawie walki\.$</string>
 								<string>^Umiejetnie chwytasz za .* bez leku oczekujac nadchodzacej walki\.$</string>
 								<string>^Zataczasz .* swiszczacego mlynca, przyjmujac przy tym dogodna do wyprowadzenia ciosu pozycje\.$</string>
+								<string>^Powolnym, demonstracyjnym wrecz gestem siegasz po</string>
 							</regexCodeList>
 							<regexCodePropertyList>
 								<integer>2</integer>
@@ -19453,6 +19454,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 								<integer>2</integer>
 								<integer>2</integer>
 								<integer>2</integer>
+								<integer>1</integer>
 								<integer>1</integer>
 								<integer>1</integer>
 								<integer>1</integer>

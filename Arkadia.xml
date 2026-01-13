@@ -7701,7 +7701,7 @@ scripts.misc.knowledge:stop_reading_library()</script>
 											<colorTriggerFgColor>#000000</colorTriggerFgColor>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
-												<string>raniac</string>
+												<string>bojowa, raniac</string>
 											</regexCodeList>
 											<regexCodePropertyList>
 												<integer>0</integer>
@@ -19406,8 +19406,6 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 								<string>^Gwaltownie siegasz po .* szykujac sie do rychlego starcia\.$</string>
 								<string>^Pozornie niespiesznym ruchem dobywasz .* zamierajac w wystudiowanej postawie walki\.$</string>
 								<string>^Umiejetnie chwytasz za .* bez leku oczekujac nadchodzacej walki\.$</string>
-								<string>^Zataczasz .* swiszczacego mlynca, przyjmujac przy tym dogodna do wyprowadzenia ciosu pozycje\.$</string>
-								<string>^Powolnym, demonstracyjnym wrecz gestem siegasz po</string>
 							</regexCodeList>
 							<regexCodePropertyList>
 								<integer>2</integer>
@@ -19459,6 +19457,26 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 								<integer>1</integer>
 								<integer>1</integer>
 								<integer>1</integer>
+							</regexCodePropertyList>
+						</Trigger>
+						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+							<name>weapon_on_2</name>
+							<script>trigger_func_skrypty_ui_footer_elements_weapon_on()</script>
+							<triggerType>0</triggerType>
+							<conditonLineDelta>0</conditonLineDelta>
+							<mStayOpen>0</mStayOpen>
+							<mCommand></mCommand>
+							<packageName></packageName>
+							<mFgColor>#ff0000</mFgColor>
+							<mBgColor>#ffff00</mBgColor>
+							<mSoundFile></mSoundFile>
+							<colorTriggerFgColor>#000000</colorTriggerFgColor>
+							<colorTriggerBgColor>#000000</colorTriggerBgColor>
+							<regexCodeList>
+								<string>^Zataczasz .* swiszczacego mlynca, przyjmujac przy tym dogodna do wyprowadzenia ciosu pozycje\.$</string>
+								<string>^Powolnym, demonstracyjnym wrecz gestem siegasz po</string>
+							</regexCodeList>
+							<regexCodePropertyList>
 								<integer>1</integer>
 								<integer>1</integer>
 							</regexCodePropertyList>

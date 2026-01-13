@@ -4,3 +4,5 @@
 .vscode/*
 !.vscode/extensions.json
 .luarc.json
+
+.claude

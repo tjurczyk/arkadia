@@ -78,24 +78,15 @@ function string:count_people(str)
 end
 
 function scripts.utils:extract_string_list(list_str)
-    local items = {}
+    local items = string.split(list_str, ", ")
 
-    local split_by_i = string.split(list_str, " i ")
+    if #items > 1 then
+        local last_part = items[#items]
+        local i_pos = last_part:find(" i ", 1, true)
 
-    if table.size(split_by_i) == 1 then
-        -- this is single herb
-        table.insert(items, split_by_i[1])
-
-    elseif table.size(split_by_i) == 2 then
-        -- more than one type in the bag
-        table.insert(items, split_by_i[2])
-
-        -- see if more than 2
-        local split_by_comma = string.split(split_by_i[1], ", ")
-
-        for k, v in pairs(split_by_comma) do
-            -- add each herb from splited by ','
-            table.insert(items, v)
+        if i_pos then
+            items[#items] = last_part:sub(1, i_pos - 1)
+            table.insert(items, last_part:sub(i_pos + 3))
         end
     end
 

@@ -18,20 +18,19 @@ function scripts.people:process_someone(short, name)
 
     local title = name
     title = title:gsub(" ", "_")
-    
+
     name = scripts.people:strip_ranks(name)
 
     local name_short = short
     name_short = name_short:gsub(" ", "_")
 
     local host = getConnectionInfo()
-    if host ~= "arkadia.rpg.pl" then
+    if host ~= "arkadia.rpg.pl" and host ~= "188.165.19.40" then
         return
     end
 
-    getHTTP("http://158.69.205.60/cgi-bin/people_listener.py?people_string=" .. name_short .. "!" .. title)
+    getHTTP("http://51.38.32.53/cgi-bin/people_listener.py?people_string=" .. name_short .. "!" .. title)
 end
-
 
 function scripts.people:process_someone_delay(short, title)
     local name = nil
@@ -299,7 +298,8 @@ function scripts.people:add_person_to_guild(id, guild_name)
         for k, v in pairs(person) do
             v["guild"] = 0
             if scripts.people:update_person(v) then
-                scripts:print_log("Usunieta gildia postaci o imieniu <green>" .. v.name .. "<tomato> i opisie: <green>" .. v.short .. "<tomato>.")
+                scripts:print_log("Usunieta gildia postaci o imieniu <green>" ..
+                    v.name .. "<tomato> i opisie: <green>" .. v.short .. "<tomato>.")
             else
                 scripts:print_log("Cos poszlo nie tak...")
             end
@@ -308,7 +308,10 @@ function scripts.people:add_person_to_guild(id, guild_name)
         for k, v in pairs(person) do
             v["guild"] = guild_code
             if scripts.people:update_person(v) then
-                scripts:print_log("Dodana gildia <green>" .. guild_name .. "<tomato> do postaci o imieniu <green>" .. v.name .. "<tomato> i opisie: <green>" .. v.short .. "<tomato>.")
+                scripts:print_log("Dodana gildia <green>" ..
+                    guild_name ..
+                    "<tomato> do postaci o imieniu <green>" ..
+                    v.name .. "<tomato> i opisie: <green>" .. v.short .. "<tomato>.")
             else
                 scripts:print_log("Cos poszlo nie tak...")
             end
@@ -411,4 +414,3 @@ function scripts.people.go_to_person_location(id, delay)
         amap:go_to_mail()
     end
 end
-

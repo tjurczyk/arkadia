@@ -11,6 +11,7 @@ function herbs:v2_init_data()
     local file_content = file_handle:read("*all")
     herbs["data"] = yajl.to_value(file_content)
     herbs:v2_init_herbs()
+    herbs:create_herbs_category_data()
 end
 
 function herbs:v2_init_herbs()
@@ -45,6 +46,74 @@ function herbs:v2_init_herbs()
     herbs.use_alias = tempAlias(
         string.format("^/z_(%s) ([a-z_]+)(?: ([0-9]+))?$", table.concat(table.keys(actions), "|")),
         "alias_func_skrypty_herbs_zazyj_ziolo()")
+end
+
+function herbs:create_herbs_category_data()
+    herbs["herbs_categories"] = {
+        ["zmeczenie"] = {},
+        ["kondycja"] = {},
+        ["odtrutki"] = {},
+        ["wzmocnienie"] = {},
+        ["mana"] = {},
+        ["pozostale"] = {}
+    }
+    herbs["herb_to_categories"] = {}
+    herbs["herbs_categories_print_order"] = { "zmeczenie", "kondycja", "mana", "odtrutki", "wzmocnienie", "pozostale" }
+    local not_non_primary = { "swietlik", "rosiczka" }
+
+    for herb_name, herbs_details in pairs(herbs.herbs_details) do
+        local herb_usage = herbs_details["details"]
+        herbs.herb_to_categories[herb_name] = {}
+        local none_of_the_primary = true
+        if string.find(herb_usage, "-zmc") then
+            table.insert(herbs.herbs_categories.zmeczenie, herb_name)
+            none_of_the_primary = false
+            table.insert(herbs.herb_to_categories[herb_name], "zmeczenie")
+        end
+        if string.find(herb_usage, "+kon") then
+            table.insert(herbs.herbs_categories.kondycja, herb_name)
+            none_of_the_primary = false
+            table.insert(herbs.herb_to_categories[herb_name], "kondycja")
+        end
+        if string.find(herb_usage, "odtr") then
+            table.insert(herbs.herbs_categories.odtrutki, herb_name)
+            none_of_the_primary = false
+            table.insert(herbs.herb_to_categories[herb_name], "odtrutki")
+        end
+        if string.find(herb_usage, "+sil") or string.find(herb_usage, "+wyt") or string.find(herb_usage, "+zrc") or string.find(herb_usage, "+odw") or string.find(herb_usage, "+spo") or string.find(herb_usage, "+int") then
+            table.insert(herbs.herbs_categories.wzmocnienie, herb_name)
+            none_of_the_primary = false
+            table.insert(herbs.herb_to_categories[herb_name], "wzmocnienie")
+        end
+        if string.find(herb_usage, "+man") then
+            table.insert(herbs.herbs_categories.mana, herb_name)
+            none_of_the_primary = false
+            table.insert(herbs.herb_to_categories[herb_name], "mana")
+        end
+
+        if none_of_the_primary == true and not table.contains(not_non_primary, herb_name) then
+            table.insert(herbs.herbs_categories.pozostale, herb_name)
+            table.insert(herbs.herb_to_categories[herb_name], "pozostale")
+        end
+    end
+    table.insert(herbs.herbs_categories.mana, "rosiczka")
+    table.insert(herbs.herbs_categories.kondycja, "przelot")
+
+    table.sort(herbs.herbs_categories.zmeczenie)
+    table.sort(herbs.herbs_categories.kondycja)
+    table.sort(herbs.herbs_categories.odtrutki)
+    table.sort(herbs.herbs_categories.wzmocnienie)
+    table.sort(herbs.herbs_categories.mana)
+    table.sort(herbs.herbs_categories.pozostale)
+
+    herbs["short_category_to_category"] = {
+        zme = "zmeczenie",
+        kon = "kondycja",
+        man = "mana",
+        odt = "odtrutki",
+        wzm = "wzmocnienie",
+        poz = "pozostale"
+    }
 end
 
 function herbs:v2_print_db()

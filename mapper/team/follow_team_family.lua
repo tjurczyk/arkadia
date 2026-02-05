@@ -28,6 +28,6 @@ function trigger_func_mapper_team_follow_team_family_special()
 end
 
 function trigger_func_mapper_non_standard_follows(direction)
-    amap.dir_from_team_follow = amap.polish_to_english[direction]
+    amap.dir_from_team_follow = amap.polish_to_english[direction] or direction
     amap:follow(amap.dir_from_team_follow, true)
 end

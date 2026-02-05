@@ -54,7 +54,7 @@ function scripts.packages:add(index, name, city, time)
     selectString(name, 1)
     local command = "wybierz paczke " .. index
     setLink(function() send(command) end, command)
-    
+
     self.current_offer[index] = { name = name, location = location }
     if city and city ~= "" then
         self.current_offer[index].city = city
@@ -171,6 +171,10 @@ function scripts.packages:get_from_db(name)
     if result and table.size(result) >= 1 then
         return result[1], table.size(result) > 0 and table.size(result) > 1
     end
+end
+
+function scripts.packages:remove_all_by_name(name)
+    db:delete(self.db.packages, "name = \"" .. name .. "\" COLLATE NOCASE")
 end
 
 function trigger_packages_assistant_open()

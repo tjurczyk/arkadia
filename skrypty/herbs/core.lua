@@ -3,6 +3,7 @@ function herbs:init_herbs()
         herbs:create_triggers()
     end
     herbs:v2_init_data()
+    herbs:init_smart_application()
     herbs.window:create()
 end
 

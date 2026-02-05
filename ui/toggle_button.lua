@@ -17,9 +17,9 @@ function scripts.ui.toggle_button:onRelease()
     self.callback(self.toggled, self)
 end
 
-function scripts.ui.toggle_button:updateStyleSheet()
-    local color = self.toggled and string.format("rgb(%s, %s, %s, %%s)", self.r, self.g, self.b) or
-        string.format("rgb(%s, %s, %s, %%s)", self.r_off, self.g_off, self.b_off)
+function scripts.ui.toggle_button:updateStyleSheet()    
+    local color = self.toggled and string.format("rgb(%s, %s, %s)", self.r, self.g, self.b) or
+        string.format("rgb(%s, %s, %s)", self.r_off, self.g_off, self.b_off)
     setLabelStyleSheet(self.id, scripts.ui.current_theme:get_button_stylesheet(color, self.font_size, self.size))
 end
 

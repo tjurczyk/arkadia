@@ -475,3 +475,16 @@ Argumenty:
 * `arg1`: opis/imię atakującego
 
 Event podniesiony kiedy postać gracza została zaatkowana. Event podnoszony jest zgodnie z ustawieniem `misc.attack_beep.mode`.
+
+
+## `startParalyzed`
+
+Event podniesiony kiedy postać na lokacji zostaje ogluszona.
+
+* `arg1`: id ogluszonej postaci
+
+## `endParalyzed`
+
+Event podniesiony kiedy postać na lokacji przestaje być ogluszona.
+
+* `arg1`: id ogluszonej postaci

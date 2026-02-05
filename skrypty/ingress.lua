@@ -85,6 +85,28 @@ function scripts.ingress:post_process_message(msg)
         end
         decho("talk_window", timestamp .. scripts.ui.separate_talk_window_prefix .. ansi2decho(gmcp.gmcp_msgs.decoded))
     end
+    if scripts.ui.separate_team_talk_window and scripts.ui.separate_talk_window_msg_types[gmcp.gmcp_msgs.type] then
+        local team = false
+        local plain = ansi2string(gmcp.gmcp_msgs.decoded):lower()
+        if plain:starts("mowisz") or plain:starts("krzyczysz") or plain:starts("szepczesz") then
+            team = true
+        end
+        if not team and ateam and ateam.team_names then
+            for name, _ in pairs(ateam.team_names) do
+                if plain:starts(name:lower()) or plain:starts("[" .. name:lower()) then
+                    team = true
+                    break
+                end
+            end
+        end
+        if team then
+            local timestamp = ""
+            if scripts.ui.separate_talk_window_timestamp and string.trim(scripts.ui.separate_talk_window_timestamp) ~= "" then
+                timestamp = string.format("[%s] ", os.date(scripts.ui.separate_talk_window_timestamp))
+            end
+            decho("team_talk_window", timestamp .. scripts.ui.separate_talk_window_prefix .. ansi2decho(gmcp.gmcp_msgs.decoded))
+        end
+    end
     if gmcp.gmcp_msgs.type == "comm" then
         scripts.ui.talk_history:add(msg)
     end

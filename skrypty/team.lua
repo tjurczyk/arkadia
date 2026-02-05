@@ -52,13 +52,17 @@ ateam["footer_info_attack_mode_to_text"] = { "A", "AW", "AWR" }
 
 function trigger_func_skrypty_team_start_ateam()
     tempTimer(4, function() ateam:start_ateam() end)
-    tempTimer(5, function() scripts.ui:setup_talk_window() end)
+    tempTimer(5, function()
+        scripts.ui:setup_talk_window()
+        scripts.ui:setup_team_talk_window()
+    end)
 end
 
 
 ateam.loginHandler = scripts.event_register:register_singleton_event_handler(ateam.loginHandler, "loginSuccessful", function()
     ateam:restart_ateam();
     scripts.ui:setup_talk_window()
+    scripts.ui:setup_team_talk_window()
 end)
 
 function trigger_func_skrypty_team_left_team(leaver)

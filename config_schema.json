@@ -487,6 +487,32 @@
       ]
     },
     {
+      "name": "herbs.smart_application_skip_kon",
+      "default_value": {},
+      "field_type": "map",
+      "macros_on_modify": [
+        "_herbs"
+      ]
+    },
+    {
+      "name": "herbs.smart_application_skip_man",
+      "default_value": {},
+      "field_type": "map",
+      "macros_on_modify": [
+        "_herbs"
+      ]
+    },
+    {
+      "name": "herbs.smart_application_skip_zme",
+      "default_value": {
+        "deliona": true
+      },
+      "field_type": "map",
+      "macros_on_modify": [
+        "_herbs"
+      ]
+    },
+    {
       "name": "scripts.misc.knowledge.use_knowledge",
       "default_value": true,
       "field_type": "boolean",
@@ -1316,6 +1342,14 @@
       ]
     },
     {
+      "name": "scripts.ui.separate_team_talk_window",
+      "default_value": false,
+      "field_type": "boolean",
+      "macros_on_modify": [
+        "_ux"
+      ]
+    },
+    {
       "name": "scripts.ui.fancy.enabled",
       "default_value": false,
       "field_type": "boolean",
@@ -1494,25 +1528,10 @@
       ]
     },
     {
-      "name": "scripts.ui.footer_r",
-      "default_value": 0,
-      "field_type": "number",
-      "macros_on_modify": [
-        "_ux"
-      ]
-    },
-    {
-      "name": "scripts.ui.footer_g",
-      "default_value": 0,
-      "field_type": "number",
-      "macros_on_modify": [
-        "_ux"
-      ]
-    },
-    {
-      "name": "scripts.ui.footer_b",
-      "default_value": 47,
-      "field_type": "number",
+      "name": "scripts.ui.footer_color",
+      "default_value": "#00002f",
+      "field_type": "string",
+      "content_type": "hex_color",
       "macros_on_modify": [
         "_ux"
       ]

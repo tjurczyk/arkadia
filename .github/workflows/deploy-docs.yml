@@ -3,6 +3,7 @@ name: Deploy documentation to Pages
 on:
   push:
     branches: ["master"]
+  workflow_dispatch:
 
 permissions:
   contents: read

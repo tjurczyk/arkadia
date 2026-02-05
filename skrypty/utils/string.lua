@@ -2,6 +2,10 @@ function string.starts(String, Start)
     return string.sub(String, 1, string.len(Start)) == Start
 end
 
+function string.endswith(str, ending)
+    return str:sub(-#ending) == ending
+end
+
 function trim_string(str)
     return str:match("^%s*(.-)%s*$")
 end

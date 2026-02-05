@@ -10,6 +10,7 @@ misc.counter.utils.two_word_mobs = {
     "lodowego trolla",
     "pajaka sieciarza",
     "pomiot chaosu",
+    "rumaka bojowego",
     "rycerza chaosu",
     "smoczego ogra",
     "smoka chaosu",

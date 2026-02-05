@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+  <!-- Root element -->
+  <xs:element name="MudletPackage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="TriggerPackage" minOccurs="0"/>
+        <xs:element ref="TimerPackage" minOccurs="0"/>
+        <xs:element ref="AliasPackage" minOccurs="0"/>
+        <xs:element ref="ActionPackage" minOccurs="0"/>
+        <xs:element ref="ScriptPackage" minOccurs="0"/>
+        <xs:element ref="KeyPackage" minOccurs="0"/>
+        <xs:element ref="HelpPackage" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute name="version" type="xs:string" use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- TriggerPackage -->
+  <xs:element name="TriggerPackage">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="TriggerGroup"/>
+        <xs:element ref="Trigger"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- TriggerGroup -->
+  <xs:element name="TriggerGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="name" type="xs:string"/>
+        <xs:element name="script" type="xs:string"/>
+        <xs:element name="triggerType" type="xs:integer"/>
+        <xs:element name="conditonLineDelta" type="xs:integer"/>
+        <xs:element name="mStayOpen" type="xs:integer"/>
+        <xs:element name="mCommand" type="xs:string"/>
+        <xs:element name="packageName" type="xs:string"/>
+        <xs:element name="mFgColor" type="xs:string"/>
+        <xs:element name="mBgColor" type="xs:string"/>
+        <xs:element name="mSoundFile" type="xs:string"/>
+        <xs:element name="colorTriggerFgColor" type="xs:string"/>
+        <xs:element name="colorTriggerBgColor" type="xs:string"/>
+        <xs:element name="regexCodeList" type="regexCodeListType"/>
+        <xs:element name="regexCodePropertyList" type="regexCodePropertyListType"/>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element ref="TriggerGroup"/>
+          <xs:element ref="Trigger"/>
+        </xs:choice>
+      </xs:sequence>
+      <xs:attributeGroup ref="triggerAttributes"/>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- Trigger -->
+  <xs:element name="Trigger">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="name" type="xs:string"/>
+        <xs:element name="script" type="xs:string"/>
+        <xs:element name="triggerType" type="xs:integer"/>
+        <xs:element name="conditonLineDelta" type="xs:integer"/>
+        <xs:element name="mStayOpen" type="xs:integer"/>
+        <xs:element name="mCommand" type="xs:string"/>
+        <xs:element name="packageName" type="xs:string"/>
+        <xs:element name="mFgColor" type="xs:string"/>
+        <xs:element name="mBgColor" type="xs:string"/>
+        <xs:element name="mSoundFile" type="xs:string"/>
+        <xs:element name="colorTriggerFgColor" type="xs:string"/>
+        <xs:element name="colorTriggerBgColor" type="xs:string"/>
+        <xs:element name="regexCodeList" type="regexCodeListType"/>
+        <xs:element name="regexCodePropertyList" type="regexCodePropertyListType"/>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element ref="TriggerGroup"/>
+          <xs:element ref="Trigger"/>
+        </xs:choice>
+      </xs:sequence>
+      <xs:attributeGroup ref="triggerAttributes"/>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- TimerPackage -->
+  <xs:element name="TimerPackage">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="TimerGroup"/>
+        <xs:element ref="Timer"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- TimerGroup -->
+  <xs:element name="TimerGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="name" type="xs:string"/>
+        <xs:element name="script" type="xs:string"/>
+        <xs:element name="command" type="xs:string"/>
+        <xs:element name="packageName" type="xs:string"/>
+        <xs:element name="time" type="xs:string"/>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element ref="TimerGroup"/>
+          <xs:element ref="Timer"/>
+        </xs:choice>
+      </xs:sequence>
+      <xs:attributeGroup ref="timerAttributes"/>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- Timer -->
+  <xs:element name="Timer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="name" type="xs:string"/>
+        <xs:element name="script" type="xs:string"/>
+        <xs:element name="command" type="xs:string"/>
+        <xs:element name="packageName" type="xs:string"/>
+        <xs:element name="time" type="xs:string"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="timerAttributes"/>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- AliasPackage -->
+  <xs:element name="AliasPackage">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="AliasGroup"/>
+        <xs:element ref="Alias"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- AliasGroup -->
+  <xs:element name="AliasGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="name" type="xs:string"/>
+        <xs:element name="script" type="xs:string"/>
+        <xs:element name="command" type="xs:string"/>
+        <xs:element name="packageName" type="xs:string"/>
+        <xs:element name="regex" type="xs:string"/>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element ref="AliasGroup"/>
+          <xs:element ref="Alias"/>
+        </xs:choice>
+      </xs:sequence>
+      <xs:attributeGroup ref="aliasAttributes"/>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- Alias -->
+  <xs:element name="Alias">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="name" type="xs:string"/>
+        <xs:element name="script" type="xs:string"/>
+        <xs:element name="command" type="xs:string"/>
+        <xs:element name="packageName" type="xs:string"/>
+        <xs:element name="regex" type="xs:string"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="aliasAttributes"/>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- ActionPackage -->
+  <xs:element name="ActionPackage">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="ActionGroup"/>
+        <xs:element ref="Action"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- ActionGroup -->
+  <xs:element name="ActionGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="name" type="xs:string"/>
+        <xs:element name="packageName" type="xs:string"/>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element ref="ActionGroup"/>
+          <xs:element ref="Action"/>
+        </xs:choice>
+      </xs:sequence>
+      <xs:attributeGroup ref="actionAttributes"/>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- Action -->
+  <xs:element name="Action">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="name" type="xs:string"/>
+        <xs:element name="packageName" type="xs:string"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="actionAttributes"/>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- ScriptPackage -->
+  <xs:element name="ScriptPackage">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="ScriptGroup"/>
+        <xs:element ref="Script"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- ScriptGroup -->
+  <xs:element name="ScriptGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="name" type="xs:string"/>
+        <xs:element name="packageName" type="xs:string"/>
+        <xs:element name="script" type="xs:string"/>
+        <xs:element name="eventHandlerList" type="eventHandlerListType"/>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element ref="ScriptGroup"/>
+          <xs:element ref="Script"/>
+        </xs:choice>
+      </xs:sequence>
+      <xs:attributeGroup ref="scriptAttributes"/>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- Script -->
+  <xs:element name="Script">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="name" type="xs:string"/>
+        <xs:element name="packageName" type="xs:string"/>
+        <xs:element name="script" type="xs:string"/>
+        <xs:element name="eventHandlerList" type="eventHandlerListType"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="scriptAttributes"/>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- KeyPackage -->
+  <xs:element name="KeyPackage">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="KeyGroup"/>
+        <xs:element ref="Key"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- KeyGroup -->
+  <xs:element name="KeyGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="name" type="xs:string"/>
+        <xs:element name="packageName" type="xs:string"/>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element ref="KeyGroup"/>
+          <xs:element ref="Key"/>
+        </xs:choice>
+      </xs:sequence>
+      <xs:attributeGroup ref="keyAttributes"/>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- Key -->
+  <xs:element name="Key">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="name" type="xs:string"/>
+        <xs:element name="packageName" type="xs:string"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="keyAttributes"/>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- HelpPackage -->
+  <xs:element name="HelpPackage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="helpURL" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- Complex Types -->
+  <!-- 
+    CONSTRAINT: regexCodeList and regexCodePropertyList must have the same number of elements.
+    Each regexCodeList <string> element must have a corresponding regexCodePropertyList <integer> element.
+    Maximum 50 elements allowed in each list.
+  -->
+  <xs:complexType name="regexCodeListType">
+    <xs:sequence>
+      <xs:element name="string" type="xs:string" minOccurs="0" maxOccurs="50"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="regexCodePropertyListType">
+    <xs:sequence>
+      <xs:element name="integer" type="xs:integer" minOccurs="0" maxOccurs="50"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="eventHandlerListType">
+    <xs:sequence>
+      <xs:element name="string" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Attribute Groups -->
+  <xs:attributeGroup name="triggerAttributes">
+    <xs:attribute name="isActive" type="yesNoType" use="required"/>
+    <xs:attribute name="isFolder" type="yesNoType" use="required"/>
+    <xs:attribute name="isTempTrigger" type="yesNoType" use="required"/>
+    <xs:attribute name="isMultiline" type="yesNoType" use="required"/>
+    <xs:attribute name="isPerlSlashGOption" type="yesNoType" use="required"/>
+    <xs:attribute name="isColorizerTrigger" type="yesNoType" use="required"/>
+    <xs:attribute name="isFilterTrigger" type="yesNoType" use="required"/>
+    <xs:attribute name="isSoundTrigger" type="yesNoType" use="required"/>
+    <xs:attribute name="isColorTrigger" type="yesNoType" use="required"/>
+    <xs:attribute name="isColorTriggerFg" type="yesNoType" use="required"/>
+    <xs:attribute name="isColorTriggerBg" type="yesNoType" use="required"/>
+  </xs:attributeGroup>
+
+  <xs:attributeGroup name="aliasAttributes">
+    <xs:attribute name="isActive" type="yesNoType" use="required"/>
+    <xs:attribute name="isFolder" type="yesNoType" use="required"/>
+  </xs:attributeGroup>
+
+  <xs:attributeGroup name="actionAttributes">
+    <xs:attribute name="isActive" type="yesNoType" use="required"/>
+    <xs:attribute name="isFolder" type="yesNoType" use="required"/>
+  </xs:attributeGroup>
+
+  <xs:attributeGroup name="scriptAttributes">
+    <xs:attribute name="isActive" type="yesNoType" use="required"/>
+    <xs:attribute name="isFolder" type="yesNoType" use="required"/>
+  </xs:attributeGroup>
+
+  <xs:attributeGroup name="keyAttributes">
+    <xs:attribute name="isActive" type="yesNoType" use="required"/>
+    <xs:attribute name="isFolder" type="yesNoType" use="required"/>
+  </xs:attributeGroup>
+
+  <xs:attributeGroup name="timerAttributes">
+    <xs:attribute name="isActive" type="yesNoType" use="required"/>
+    <xs:attribute name="isFolder" type="yesNoType" use="required"/>
+    <xs:attribute name="isTempTimer" type="yesNoType" use="required"/>
+    <xs:attribute name="isOffsetTimer" type="yesNoType" use="required"/>
+  </xs:attributeGroup>
+
+  <!-- Simple Types -->
+  <xs:simpleType name="yesNoType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="yes"/>
+      <xs:enumeration value="no"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+</xs:schema>

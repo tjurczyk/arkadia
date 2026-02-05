@@ -8,8 +8,8 @@ function trigger_func_skrypty_ui_gags_ciosy_obosieczny_gwiezdny_topor()
     local dmg = matches["damage"]
     local value = -1
         if dmg == "tnie plytko" then value = 1
-    elseif dmg == "tnie gladko" then value = 2
-    elseif dmg == "tnie lekko" then value = 3
+    elseif dmg == "tnie lekko" then value = 2
+    elseif dmg == "tnie gladko" then value = 3
     elseif dmg == "tnie szeroko" then value = 4
     elseif dmg == "tnie gleboko" then value = 5
     elseif dmg == "niemal przecina w pol" then value = 6

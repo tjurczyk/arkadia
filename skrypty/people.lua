@@ -1,4 +1,4 @@
-scripts["people"] = scripts["people"] or { 
+scripts["people"] = scripts["people"] or {
     db = {},
     mail = {
         show_automatically = false
@@ -24,8 +24,9 @@ function scripts.people:load_db()
             changed = db:Timestamp("CURRENT_TIMESTAMP"),
             _index = { "name", "short" }
         }
-    }) 
+    })
 end
+
 scripts.people:load_db()
 
 scripts.people["showing_names"] = true
@@ -149,4 +150,3 @@ end
 function alias_func_skrypty_people_nabindach_()
     attack_binds_reset()
 end
-

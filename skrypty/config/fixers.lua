@@ -25,3 +25,31 @@ function scripts.config_fixers.fix_beep(config)
     end
     return false
 end
+
+function scripts.config_fixers.fix_footer_color(config)
+    local r = config._config["scripts.ui.footer_r"]
+    local g = config._config["scripts.ui.footer_g"]
+    local b = config._config["scripts.ui.footer_b"]
+    local color = config._config["scripts.ui.footer_color"]
+    local changed = false
+
+    if not color and r and g and b then
+        config._config["scripts.ui.footer_color"] = string.format("#%02X%02X%02X", r, g, b)
+        changed = true
+    end
+
+    if config._config["scripts.ui.footer_r"] then
+        config._config["scripts.ui.footer_r"] = nil
+        changed = true
+    end
+    if config._config["scripts.ui.footer_g"] then
+        config._config["scripts.ui.footer_g"] = nil
+        changed = true
+    end
+    if config._config["scripts.ui.footer_b"] then
+        config._config["scripts.ui.footer_b"] = nil
+        changed = true
+    end
+
+    return changed
+end

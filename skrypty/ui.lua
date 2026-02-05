@@ -6,7 +6,6 @@ scripts.ui.states_windows_loaded = {}
 -- width for wrapping the states window
 scripts.ui.states_window_p_width = 95
 
--- width for wrapping the talk window
 scripts.ui.separate_talk_window_p_width = 0.8
 
 -- prefix for the talk window
@@ -57,14 +56,12 @@ scripts.ui.footer_map_font_size = 10
 scripts.ui.footer_font_size = 11
 scripts.ui.states_font_size = 11
 
-scripts.ui.footer_r = 0
-scripts.ui.footer_g = 0
-scripts.ui.footer_b = 47
-
-scripts.ui.footer_b = 47
+scripts.ui.footer_color = "#00002f"
 
 scripts.ui.separate_talk_window = false
 scripts.ui.separate_talk_window_font_size = 12
+
+scripts.ui.separate_team_talk_window = false
 
 scripts.ui.cfg["footer_mode"] = "mode2"
 scripts.ui.cfg["footer_items"] = {

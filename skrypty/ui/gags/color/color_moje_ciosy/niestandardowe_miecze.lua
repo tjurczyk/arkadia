@@ -151,14 +151,15 @@ function trigger_func_skrypty_ui_gags_ciosy_waski_kunsztowny_sihill()
     local dmg = matches["damage"]
     local value = -1
         if dmg == "obok" or dmg == "niezgrabnym" then value = 0
-    elseif dmg == "nieznaczne" or dmg =="tnac"  then value = 1
+    elseif dmg == "nieznaczne" then value = 1
     elseif dmg == "lekko raniac" then value = 2
-    elseif dmg == "raniac" then value = 3
-    elseif dmg == "wbija" then value = 4
+    elseif dmg == "kontrujesz" or dmg == "tnac" then value = 3
+    elseif dmg == "gleboko" or dmg == "raniac" or dmg == "wbija" then value = 4
     elseif dmg == "ogromne" then value = 5
-    elseif dmg == "bryzg" then return trigger_func_skrypty_ui_gags_ciosy_bron_fin()
+    elseif dmg == "smiertelne" or dmg == "bryzg" then
+        return trigger_func_skrypty_ui_gags_ciosy_bron_fin()
     end
-    scripts.gags:gag(value, 6, target)
+    scripts.gags:gag(value, 5, target)
 end
 
 -- Gorejacy dlugi talwar

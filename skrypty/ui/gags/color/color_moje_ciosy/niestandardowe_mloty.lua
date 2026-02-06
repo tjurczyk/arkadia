@@ -78,8 +78,10 @@ function trigger_func_skrypty_ui_gags_ciosy_zielonkawy_bretonski_mlot()
     elseif dmg == "niewielkie" then value = 1
     elseif dmg == "raniac" then value = 2
     elseif dmg == "tlucze" then value = 3
-    elseif dmg == "miazdzy" then value = 4
-    elseif dmg == "miazdzac" then value = 5
+    elseif dmg == "miazdzy" or dmg == "miazdzac" then value = 4
+    elseif dmg == "fontanne" then value = 5
+    elseif dmg == "kopnieciem" or dmg == "kopniakiem" then
+        return trigger_func_skrypty_ui_gags_ciosy_bron_fin()
     end
     scripts.gags:gag(value, 6, target)
 end

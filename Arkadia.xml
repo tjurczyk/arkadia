@@ -17561,6 +17561,7 @@ scripts.misc.knowledge:stop_reading_library()</script>
 									<string>Gigantyczny drapiezny troll pochyla leb i szarzuje, by uderzyc cie kreconymi rogami prosto w klatke piersiowa. Potezny cios odrzuca cie i wyrywa oddech z piersi.</string>
 									<string>^(Saurgl|Posepny okrutny rycerz chaosu) pochyla glowe i z przerazliwa sila uderza dlugimi, ostro zakonczonymi rogami wyrastajacymi mu spod czarnego helmu\. Potezny cios odrzuca cie i wyrywa oddech z piersi\.$</string>
 									<string> poteznym ciosem ogona oglusza cie.</string>
+									<string>^.+ trafia cie kopytem w glowe z taka sila, ze robi ci sie ciemno przed oczami\.$</string>
 								</regexCodeList>
 								<regexCodePropertyList>
 									<integer>0</integer>
@@ -17577,6 +17578,7 @@ scripts.misc.knowledge:stop_reading_library()</script>
 									<integer>2</integer>
 									<integer>1</integer>
 									<integer>0</integer>
+									<integer>1</integer>
 								</regexCodePropertyList>
 							</Trigger>
 							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -17740,8 +17742,10 @@ scripts.misc.knowledge:stop_reading_library()</script>
 									<string>.* znienacka kopie ([ a-zA-Z]+) w noge i kiedy ten traci rytm walki, przywala mu piescia prosto w nos\.$</string>
 									<string>^Gigantyczny drapiezny troll pochyla leb i szarzuje, by uderzyc ([ a-zA-Z]+) kreconymi rogami prosto w klatke piersiowa\. Potezny cios odrzuca ofiare i wyrywa jej oddech z piersi\.$</string>
 									<string>^(?:Saurgl|Posepny okrutny rycerz chaosu) pochyla glowe i szarzuje, by uderzyc ([ a-zA-Z]+) dlugimi, ostro zakonczonymi rogami wyrastajacymi mu spod czarnego helmu\. Potezny cios odrzuca ofiare i wyrywa jej oddech z piersi\.$</string>
+									<string>^.+ trafia ([ a-zA-Z]+) kopytem w glowe z taka sila, ze ofiara zaczyna chwiac sie na nogach polprzytomnie\.$</string>
 								</regexCodeList>
 								<regexCodePropertyList>
+									<integer>1</integer>
 									<integer>1</integer>
 									<integer>1</integer>
 									<integer>1</integer>

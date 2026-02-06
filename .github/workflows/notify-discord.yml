@@ -45,5 +45,5 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: ArkadiaScriptsInstaller.xml
           asset_name: ArkadiaScriptsInstaller.xml
-          tag: ${{ github.ref }}
+          tag: ${{ github.event.release.tag_name }}
           overwrite: true

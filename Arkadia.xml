@@ -6023,10 +6023,24 @@ scripts.misc.knowledge:stop_reading_library()</script>
 											<string>^Rozpedzona glowica (?'weapon'zielonkawego bretonskiego mlota) (?'attacker'\w+(?: \w+){0,4}) (?'damage'mija) (?'target'\w+(?: \w+){0,4}) o wlos\.$</string>
 											<string>^Rozpedzona glowica (?'weapon'zielonkawego bretonskiego mlota) (?'attacker'\w+(?: \w+){0,4}) szczesliwie przeszywa powietrze tuz (?'damage'obok) (?'target'ciebie)\.$</string>
 											<string>^Wykonujac zamaszysty cios swoim (?'weapon'zielonkawym bretonskim mlotem) (?'attacker'\w+(?: \w+){0,4}) (?'damage'tlucze) (?'where_target'.+?) pozostawiajac paskudna rane\.$</string>
-											<string>^(?'attacker'\w+(?: \w+){0,4}) naglym kopniakiem podcina (?'where_target'.+?) przewracajac (?:go|ja) na ziemie\. Stajac okrakiem nad przeciwnikiem wznosi swoj (?'weapon'zielonkawy bretonski mlot) nad glowe i poteznym ciosem (?'damage'miazdzy) </string>
+											<string>^(?'attacker'\w+(?: \w+){0,4}) naglym (?'damage'kopniakiem) podcina (?'where_target'.+?) przewracajac (?:go|ja) na ziemie\. Stajac okrakiem nad przeciwnikiem wznosi swoj (?'weapon'zielonkawy bretonski mlot) nad glowe i poteznym ciosem miazdzy </string>
 											<string>^Kolczasta glowica (?'weapon'zielonkawego bretonskiego mlota) (?'attacker'\w+(?: \w+){0,4}) z pelnego rozpedu trafia (?'target'\w+(?: \w+){0,4}) w (?'where'.+?)\. Slyszysz nieprzyjemne chrupniecie gdy cios dosiega celu (?'damage'miazdzac) okoliczne kosci\.$</string>
+											<string>^Rozpedzona glowica twojego (?'weapon'zielonkawego bretonskiego mlota) pechowo (?'damage'mija) .+? o wlos\.$</string>
+											<string>^Glowica (?'weapon'zielonkawego bretonskiego mlota) zahaczasz (?'where_target'.+?) pozostawiajac na je(?:go|j) ciele (?'damage'niewielkie) zasinienie\.$</string>
+											<string>^Wykonujac zamaszysty cios swoim (?'weapon'zielonkawym bretonskim mlotem) (?'damage'tlucze)sz (?'where_target'.+?) pozostawiajac paskudna rane\.$</string>
+											<string>^Sciskajac mocno trzonek (?'weapon'zielonkawego bretonskiego mlota) i celujac w (?'where_target'.+?) tluczesz (?:go|ja) (?'damage'raniac) dotkliwie\.$</string>
+											<string>^Kolczasta glowica twojego (?'weapon'zielonkawego bretonskiego mlota) z pelnego rozpedu trafia .+? i z nieprzyjemnym chrupnieciem (?'damage'miazdzy) </string>
+											<string>^Z zacieciem przeprowadzasz atak na .+? (?'weapon'zielonkawym bretonskim mlotem)\. .+?(?'damage'fontanne) gestej, sinawej krwi\.$</string>
+											<string>^Naglym (?'damage'kopnieciem) podcinasz nogi .+?\. Stajac okrakiem nad przeciwnikiem wznosisz swoj (?'weapon'zielonkawy bretonski mlot) nad glowe i poteznym ciosem miazdzysz</string>
 										</regexCodeList>
 										<regexCodePropertyList>
+											<integer>1</integer>
+											<integer>1</integer>
+											<integer>1</integer>
+											<integer>1</integer>
+											<integer>1</integer>
+											<integer>1</integer>
+											<integer>1</integer>
 											<integer>1</integer>
 											<integer>1</integer>
 											<integer>1</integer>
@@ -7382,8 +7396,22 @@ scripts.misc.knowledge:stop_reading_library()</script>
 											<string>^(?'attacker'\w+(?: \w+){0,4}) (?'damage'niezgrabnym) ruchem probuje zaskoczyc (?'target'\w+(?: \w+){0,4}), ale jego wyrzucony przed siebie waski kunsztowny sihill dzga tylko powietrze\.$</string>
 											<string>^(?'attacker'\w+(?: \w+){0,4}) atakuje waskim kunsztownym sihillem z niemozliwie wygietego przegubu dloni, zadajac zaskoczone(j|mu) (?'target'\w+(?: \w+){0,4}) (?'damage'ogromne) obrazenia\.$</string>
 											<string>^(?'attacker'\w+(?: \w+){0,4}) blyskawicznie kontruje atak (?'target'\w+(?: \w+){0,4}), (?'damage'tnac) (?:go|ja) w (?'where'.+?) waskim kunsztownym sihillem\.$</string>
+											<string>^Wykonujesz zamaszysty cios .+? tuz (?'damage'obok) (?'target'.+)\.$</string>
+											<string>^Niezbyt czysto trafiasz (?'target'.+) waskim kunsztownym sihillem, pozostawiajac na (?:jego|jej) ciele zaledwie (?'damage'nieznaczne) drasniecie\.$</string>
+											<string>^Wykonujesz oszczedne (?:ciecie|pchniecie), (?'damage'lekko raniac) (?'target'.+) w (?:.+) koncowka waskiego kunsztownego sihilla\.$</string>
+											<string>^Blyskawicznie (?'damage'kontrujesz) atak (?'target'.+), (?:dzgajac|tnac) (?:go|ja) w (?:.+) waskim kunsztownym sihillem\.$</string>
+											<string>^Precyzyjnym i mocnym sztychem waskiego kunsztownego sihilla dosiegasz (?:.+) (?'target'.+), (?'damage'gleboko) (?:go|ja) raniac\.$</string>
+											<string>^Atakujesz waskim kunsztownym sihillem z niemozliwie wygietego przegubu dloni, zadajac zaskoczon(?:emu|ej) (?'target'.+) (?'damage'ogromne) obrazenia\.$</string>
+											<string>^Zgrabnym ruchem zwodzisz (?'target'.+) i .+? wbijasz w (?:jego|jej) cialo (?'damage'smiertelne) ostrze waskiego kunsztownego sihilla\.$</string>
 										</regexCodeList>
 										<regexCodePropertyList>
+											<integer>1</integer>
+											<integer>1</integer>
+											<integer>1</integer>
+											<integer>1</integer>
+											<integer>1</integer>
+											<integer>1</integer>
+											<integer>1</integer>
 											<integer>1</integer>
 											<integer>1</integer>
 											<integer>1</integer>

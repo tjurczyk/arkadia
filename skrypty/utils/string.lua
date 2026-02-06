@@ -81,19 +81,30 @@ function string:count_people(str)
     return sum
 end
 
+function scripts.utils:split_by_i(text)
+    local parts = string.split(text, " i ")
+    local count = #parts
+    if count == 1 then
+        return text, nil
+    elseif count == 2 then
+        return parts[1], parts[2]
+    else
+		local rest = {}
+        for i = 1, #parts - 1 do
+            table.insert(rest, parts[i])
+        end
+        return table.concat(rest, " i "), parts[#parts]
+    end
+end
+
 function scripts.utils:extract_string_list(list_str)
     local items = string.split(list_str, ", ")
 
-    if #items > 1 then
-        local last_part = items[#items]
-        local i_pos = last_part:find(" i ", 1, true)
-
-        if i_pos then
-            items[#items] = last_part:sub(1, i_pos - 1)
-            table.insert(items, last_part:sub(i_pos + 3))
-        end
+	local first, second = scripts.utils:split_by_i(items[#items])
+    if second then
+        items[#items] = first
+        table.insert(items, second)
     end
-
     return scripts.utils:_extract_list_items(items)
 end
 

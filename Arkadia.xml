@@ -7402,7 +7402,7 @@ scripts.misc.knowledge:stop_reading_library()</script>
 											<string>^Blyskawicznie (?'damage'kontrujesz) atak (?'target'.+), (?:dzgajac|tnac) (?:go|ja) w (?:.+) waskim kunsztownym sihillem\.$</string>
 											<string>^Precyzyjnym i mocnym sztychem waskiego kunsztownego sihilla dosiegasz (?:.+) (?'target'.+), (?'damage'gleboko) (?:go|ja) raniac\.$</string>
 											<string>^Atakujesz waskim kunsztownym sihillem z niemozliwie wygietego przegubu dloni, zadajac zaskoczon(?:emu|ej) (?'target'.+) (?'damage'ogromne) obrazenia\.$</string>
-											<string>^Zgrabnym ruchem zwodzisz (?'target'.+) i .+? wbijasz w (?:jego|jej) cialo (?'damage'smiertelne) ostrze waskiego kunsztownego sihilla\.$</string>
+											<string>^Zgrabnym ruchem zwodzisz (?'target'.+) i .+? wbijasz w (?:jego|jej) cialo (?'damage'smiertelne) ostrze waskiego kunsztownego sihilla\.</string>
 										</regexCodeList>
 										<regexCodePropertyList>
 											<integer>1</integer>

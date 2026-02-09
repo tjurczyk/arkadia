@@ -12725,7 +12725,7 @@ scripts.misc.knowledge:stop_reading_library()</script>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>^[ &gt;]Probujesz dosiegnac * jednak twoja bron nieznacznie chybia celu\.$</string>
+											<string>^[ &gt;]*Probujesz dosiegnac * jednak twoja bron nieznacznie chybia celu\.$</string>
 										</regexCodeList>
 										<regexCodePropertyList>
 											<integer>1</integer>

@@ -488,3 +488,7 @@ Event podniesiony kiedy postać na lokacji zostaje ogluszona.
 Event podniesiony kiedy postać na lokacji przestaje być ogluszona.
 
 * `arg1`: id ogluszonej postaci
+
+## `maneuverAttempted`
+
+Event podniesiony kiedy postac gracza wykonala manewr bojowy (przelamanie, wycofanie).

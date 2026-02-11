@@ -20,7 +20,7 @@ function trigger_func_skrypty_ui_gags_color_color_zaslony_nieudane_nie_wycofanie
     if scripts.gags:delete_line("zaslony_nieudane") then
         return
     end
-    
+
     selectCurrentLine()
     local str_replace = "[ NIE WYCOFU ] "
     prefix(str_replace)
@@ -28,5 +28,8 @@ function trigger_func_skrypty_ui_gags_color_color_zaslony_nieudane_nie_wycofanie
         fg(scripts.gag_colors["zaslony_nieudane"])
     end
     resetFormat()
+    if matches[4] == "toba" then
+        raiseEvent("maneuverAttempted")
+    end
 end
 

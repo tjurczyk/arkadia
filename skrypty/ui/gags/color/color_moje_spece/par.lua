@@ -1,5 +1,5 @@
 function trigger_func_skrypty_ui_gags_color_color_moje_spece_par_ja_spec_0()
-    scripts.gags:gag_own_spec(0, 5)
+    scripts.gags:gag_own_spec(0, 7)
 end
 
 function trigger_func_skrypty_ui_gags_color_color_moje_spece_par_ja_spec_fin()

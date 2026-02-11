@@ -68,11 +68,13 @@ function trigger_func_skrypty_ui_gags_color_color_other_przelamanie_ty()
     creplaceLine("<green>\n\n[ TY LAMIESZ ] " .. matches[2] .. "\n\n")
     ateam:may_setup_broken_defense(matches[3])
     resetFormat()
+    raiseEvent("maneuverAttempted")
 end
 
 function trigger_func_skrypty_ui_gags_color_color_other_nie_przelamanie_ty()
     creplaceLine("<tomato>\n\n[ NIE LAMIESZ ] " .. matches[2] .. "\n\n")
     resetFormat()
+    raiseEvent("maneuverAttempted")
 end
 
 function trigger_func_skrypty_ui_gags_color_color_other_nie_przelamanie()

@@ -22,6 +22,7 @@ function trigger_func_skrypty_ui_gags_color_color_zaslony_udane_wycofanie_za_cie
     end
 
     scripts.gags:gag_prefix(" WYC ZA CIE ", "zaslony_udane")
+    raiseEvent("maneuverAttempted")
 end
 
 function trigger_func_skrypty_ui_gags_color_color_zaslony_udane_wycofanie_sie_ty()

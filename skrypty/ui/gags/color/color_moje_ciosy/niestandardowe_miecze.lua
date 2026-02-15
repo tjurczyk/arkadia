@@ -175,7 +175,8 @@ function trigger_func_skrypty_ui_gags_ciosy_gorejacy_dlugi_talwar()
     elseif dmg == "parzac"  then value = 1
     elseif dmg == "spore" then value = 2
     elseif dmg == "wybucha" then value = 3
-    elseif dmg == "olbrzymim" then trigger_func_skrypty_ui_gags_ciosy_bron_fin()
+    elseif dmg == "potworne" then value = 4
+    elseif dmg == "olbrzymim" then return trigger_func_skrypty_ui_gags_ciosy_bron_fin()
     end
     scripts.gags:gag(value, 6, target)
 end
@@ -196,6 +197,22 @@ function trigger_func_skrypty_ui_gags_ciosy_rapier()
     elseif dmg == "poszarpana" then value = 4
     elseif dmg == "poszarpana, krwawiaca" then value = 5
     elseif dmg == "przebija" then value = 6
+    end
+    scripts.gags:gag(value, 6, target)
+end
+
+-- dlugi mglisty poltorak
+function trigger_func_skrypty_ui_gags_ciosy_dlugi_mglisty_poltorak()
+    local target = "moje_ciosy"
+    if matches["attacker"] then
+        target = (matches["target"] == nil or matches["target"] == "") and "innych_ciosy_we_mnie" or "innych_ciosy"
+    end
+
+    local dmg = matches["damage"]
+    local value = -1
+        if dmg == ""then value = 0
+    elseif dmg == "ledwie osmalajac" then value = 1
+    elseif dmg == "nieznacznie przypiekajac" then value = 2
     end
     scripts.gags:gag(value, 6, target)
 end

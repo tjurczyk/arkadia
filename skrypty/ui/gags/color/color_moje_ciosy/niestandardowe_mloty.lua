@@ -85,3 +85,37 @@ function trigger_func_skrypty_ui_gags_ciosy_zielonkawy_bretonski_mlot()
     end
     scripts.gags:gag(value, 6, target)
 end
+
+-- kosciany kilof
+
+function trigger_func_skrypty_ui_gags_ciosy_kosciany_kilof()
+    local target = "moje_ciosy"
+    if matches["attacker"] then
+        target = matches["target"] == "cie" and "innych_ciosy_we_mnie" or "innych_ciosy"
+    end
+
+    local dmg = matches["damage"]
+    local value = -1
+    if dmg == "" then
+        value = 0
+    elseif dmg == "jedynie nieznaczne" then
+        value = 1
+    elseif dmg == "znaczne" then
+        value = 2
+    elseif dmg == "bardzo rozlegle" then
+        value = 3
+    elseif dmg == "bolesne" then
+        value = 4
+    elseif dmg == "straszliwe" then
+        value = 5
+    elseif dmg == "powazne" then
+        value = 6
+        trigger_func_skrypty_ui_gags_ciosy_bron_fin()
+        return
+    else
+        selectString(dmg, 1)
+        setUnderline(true)
+        resetFormat()
+    end
+    scripts.gags:gag(value, 5, target)
+end

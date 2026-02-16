@@ -17092,7 +17092,7 @@ scripts.misc.knowledge:stop_reading_library()</script>
 										<string> w ostatniej chwili (?:za|o)slania sie</string>
 										<string>w (?!ciebie).+?, lecz widmowe pedy wyrastajace nagle z okraglego migotliwego puklerza zatrzymuja ten cios\.$</string>
 										<string>naciera na (?!ciebie).+?, lecz jego .+? z hukiem trafia w</string>
-										<string>nadstawia starozytny piecioboczny puklerz, zbijajac uderzenie</string>
+										<string>nadstawia .+?, zbijajac uderzenie</string>
 									</regexCodeList>
 									<regexCodePropertyList>
 										<integer>1</integer>
@@ -17101,7 +17101,7 @@ scripts.misc.knowledge:stop_reading_library()</script>
 										<integer>1</integer>
 										<integer>1</integer>
 										<integer>1</integer>
-										<integer>0</integer>
+										<integer>1</integer>
 									</regexCodePropertyList>
 								</Trigger>
 							</TriggerGroup>

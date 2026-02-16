@@ -86,9 +86,9 @@ function trigger_func_skrypty_ui_gags_ciosy_masywny_dlugi_sztylet_moje()
     elseif dmg == "cofa" then value = 1
     elseif dmg == "plytka"  then value = 2
     elseif dmg == "brzydka"  then value = 2
-    elseif dmg == "" then value = 4
+    elseif dmg == "Krew" then value = 4
     elseif dmg == "dotkliwe" then value = 5
-    elseif dmg == "" then value = 6
+    elseif dmg == "gleboko" then value = 6
     elseif dmg == "wbijajac" then
         return scripts.gags:gag_prefix(scripts.gags.fin_prefix, target)
     end

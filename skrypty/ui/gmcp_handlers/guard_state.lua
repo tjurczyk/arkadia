@@ -26,3 +26,13 @@ scripts.event_handlers["skrypty/ui/gmcp_handlers/guard_state.guard_state.guard_s
 
 registerNamedTimer("arkadia", "cover_timer", 0.1, timer_func_skrypty_cover_timer, true)
 stopNamedTimer("arkadia", "cover_timer")
+
+if scripts.event_handlers["skrypty/ui/gmcp_handlers/guard_state.maneuverAttempted"] then
+    killAnonymousEventHandler(scripts.event_handlers["skrypty/ui/gmcp_handlers/guard_state.maneuverAttempted"])
+end
+
+scripts.event_handlers["skrypty/ui/gmcp_handlers/guard_state.maneuverAttempted"] = registerAnonymousEventHandler("maneuverAttempted", function()
+    ateam.cover_command_click = nil
+    scripts.ui.guard_state_epoch = getEpoch()
+    resumeNamedTimer("arkadia", "cover_timer")
+end)

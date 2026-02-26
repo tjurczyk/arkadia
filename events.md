@@ -491,4 +491,4 @@ Event podniesiony kiedy postać na lokacji przestaje być ogluszona.
 
 ## `maneuverAttempted`
 
-Event podniesiony kiedy postac gracza wykonala manewr bojowy (przelamanie, wycofanie).
+Event podniesiony kiedy postac gracza wykonala manewr bojowy (zaslona, przelamanie, wycofanie) lub ktos wykonal manewr w kierunku gracza.

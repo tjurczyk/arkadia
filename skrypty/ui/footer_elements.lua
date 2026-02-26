@@ -21,16 +21,6 @@ function trigger_func_skrypty_ui_footer_elements_weapon_off()
     raiseEvent("weapon_state", false)
 end
 
-function trigger_func_skrypty_ui_footer_elements_cover_action_success()
-    ateam.cover_command_click = nil
-    scripts.ui.guard_state_epoch = getEpoch()
-    resumeNamedTimer("arkadia", "cover_timer")
-end
-
-function trigger_func_skrypty_ui_footer_elements_cover_action_fail()
-    scripts.ui.guard_state_epoch = getEpoch()
-    resumeNamedTimer("arkadia", "cover_timer")
-end
 
 function trigger_func_skrypty_ui_footer_elements_order_action()
     scripts.ui.order_state_epoch = getEpoch()

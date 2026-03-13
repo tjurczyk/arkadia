@@ -17574,6 +17574,7 @@ scripts.misc.knowledge:stop_reading_library()</script>
 									<string>^(Saurgl|Posepny okrutny rycerz chaosu) pochyla glowe i z przerazliwa sila uderza dlugimi, ostro zakonczonymi rogami wyrastajacymi mu spod czarnego helmu\. Potezny cios odrzuca cie i wyrywa oddech z piersi\.$</string>
 									<string> poteznym ciosem ogona oglusza cie.</string>
 									<string>^.+ trafia cie kopytem w glowe z taka sila, ze robi ci sie ciemno przed oczami\.$</string>
+									<string>ognisty podmuch odrzuca cie i parzy z taka sila, ze na chwile tracisz przytomnosc</string>
 								</regexCodeList>
 								<regexCodePropertyList>
 									<integer>0</integer>
@@ -17591,6 +17592,7 @@ scripts.misc.knowledge:stop_reading_library()</script>
 									<integer>1</integer>
 									<integer>0</integer>
 									<integer>1</integer>
+									<integer>0</integer>
 								</regexCodePropertyList>
 							</Trigger>
 							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -17638,6 +17640,26 @@ scripts.misc.knowledge:stop_reading_library()</script>
 								</regexCodeList>
 								<regexCodePropertyList>
 									<integer>1</integer>
+									<integer>1</integer>
+								</regexCodePropertyList>
+							</Trigger>
+							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+								<name>ogluch-demon-skrzydla-ktos</name>
+								<script>trigger_func_skrypty_ui_gags_color_color_ogluchy_ogluch_demon_skrzydla_ktos()</script>
+								<triggerType>0</triggerType>
+								<conditonLineDelta>0</conditonLineDelta>
+								<mStayOpen>0</mStayOpen>
+								<mCommand></mCommand>
+								<packageName></packageName>
+								<mFgColor>#ff0000</mFgColor>
+								<mBgColor>#ffff00</mBgColor>
+								<mSoundFile></mSoundFile>
+								<colorTriggerFgColor>#000000</colorTriggerFgColor>
+								<colorTriggerBgColor>#000000</colorTriggerBgColor>
+								<regexCodeList>
+									<string>ognisty podmuch odrzuca i parzy (.+)!</string>
+								</regexCodeList>
+								<regexCodePropertyList>
 									<integer>1</integer>
 								</regexCodePropertyList>
 							</Trigger>

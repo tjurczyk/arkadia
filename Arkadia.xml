@@ -19612,7 +19612,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 							</regexCodePropertyList>
 						</Trigger>
 					</TriggerGroup>
-						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>order_action</name>
 						<script>trigger_func_skrypty_ui_footer_elements_order_action()</script>
 						<triggerType>0</triggerType>
@@ -28596,6 +28596,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<string>Drabina jest zbyt nisko, by ja wykorzystac do zejscia.</string>
 						<string>Ktos inny juz to zaczal robic. Otwor nie jest dosc szeroki by udalo sie to dwom osobom na raz.</string>
 						<string>Wejscie do kurhanu jest zamkniete kamienna plyta.</string>
+						<string>nie pozwoli ci zblizyc sie do drzwi.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>2</integer>
@@ -28628,6 +28629,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<integer>2</integer>
 						<integer>2</integer>
 						<integer>2</integer>
+						<integer>0</integer>
 					</regexCodePropertyList>
 				</Trigger>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">

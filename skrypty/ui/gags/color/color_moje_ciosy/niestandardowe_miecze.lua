@@ -171,7 +171,7 @@ function trigger_func_skrypty_ui_gags_ciosy_gorejacy_dlugi_talwar()
 
     local dmg = matches["damage"]
     local value = -1
-        if dmg == "" then value = 0
+        if dmg == "" or dmg == "probuje" then value = 0
     elseif dmg == "parzac"  then value = 1
     elseif dmg == "spore" then value = 2
     elseif dmg == "wybucha" then value = 3

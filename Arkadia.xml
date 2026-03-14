@@ -18451,10 +18451,10 @@ scripts.misc.knowledge:stop_reading_library()</script>
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>Jestes tak zmeczony, ze nie mozesz dalej podazac w tym kierunku.</string>
+							<string>^[ &gt;]*Jestes tak zmeczon(y|a), ze nie mozesz (dalej podazac|isc) w tym kierunku\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
-							<integer>2</integer>
+							<integer>1</integer>
 						</regexCodePropertyList>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -28490,7 +28490,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^[ &gt;]*Jestes tak zmeczon(y|a), ze nie mozesz dalej podazac w tym kierunku\.$</string>
+						<string>^[ &gt;]*Jestes tak zmeczon(y|a), ze nie mozesz (dalej podazac|isc) w tym kierunku\.$</string>
 						<string>stoi ci na drodze.</string>
 						<string>Bierzesz rozbieg i probujesz przeskoczyc wyrwe, jednak zle wymierzasz odleglosc</string>
 						<string>krypty zablokowane jest przez kamienna plyte.</string>

@@ -29191,7 +29191,6 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 							<string>Nie jestes dowodca zadnej druzyny.</string>
 							<string>Nie wolno ci sie tam udac.</string>
 							<string>Nie mozesz sie tam udac, gdyz musisz najpierw zejsc z wozu</string>
-							<string>Nie ma takiej komendy. Wpisz</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -29201,7 +29200,6 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
-							<integer>2</integer>
 							<integer>2</integer>
 							<integer>2</integer>
 							<integer>2</integer>

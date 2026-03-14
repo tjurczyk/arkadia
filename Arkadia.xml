@@ -28519,6 +28519,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<string>Ogromny stwor blokuje dojscie do bramy.</string>
 						<string>^Ruszasz po granitowej posadzce na [a-z-]+, jednak powstrzymuje cie buchajacy z peknietego chodnika strumien goracej pary\.$</string>
 						<string>Musisz najpierw przywiazac do kolowrotu jakas line lub sznur.</string>
+						<string>Musisz najpierw zarzucic na belke jakas line lub sznur.</string>
 						<string>Nie udaje ci sie przecisnac przez geste krzaki.</string>
 						<string>Ruszasz w dalsza droge ale nagle stajesz w pol kroku. Twoja znajomosc wykrywania pulapek podpowiada ci, ze w tym miejscu moze kryc sie jakies niebezpieczenstwo.</string>
 						<string>Wrota sa zatopione w lodzie, nie da sie ich otworzyc.</string>
@@ -28560,6 +28561,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<integer>1</integer>
 						<integer>2</integer>
 						<integer>1</integer>
+						<integer>2</integer>
 						<integer>2</integer>
 						<integer>2</integer>
 						<integer>2</integer>
@@ -28618,6 +28620,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<string>Drabina jest zbyt nisko, by ja wykorzystac do zejscia.</string>
 						<string>Ktos inny juz to zaczal robic. Otwor nie jest dosc szeroki by udalo sie to dwom osobom na raz.</string>
 						<string>Wejscie do kurhanu jest zamkniete kamienna plyta.</string>
+						<string>nie pozwoli ci zblizyc sie do drzwi.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>2</integer>
@@ -28650,6 +28653,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<integer>2</integer>
 						<integer>2</integer>
 						<integer>2</integer>
+						<integer>0</integer>
 					</regexCodePropertyList>
 				</Trigger>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -28773,7 +28777,6 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<string>Probujesz otworzyc polyskujace wrota, ale nie udaje ci sie to.</string>
 						<string>Probujesz isc naprzod, ale sliski lod sprawia, ze wywracasz sie na nim.</string>
 						<string>^Zbyt raptowanie probujesz znowu ruszyc na .*, przez co tylko jeszcze bardziej placzesz sobie nogi w gestwinie pajeczych sieci\.$</string>
-						<string>nie pozwoli ci zblizyc sie do drzwi.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -28783,7 +28786,6 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<integer>2</integer>
 						<integer>2</integer>
 						<integer>1</integer>
-						<integer>0</integer>
 					</regexCodePropertyList>
 				</Trigger>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -29191,6 +29193,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 							<string>Nie jestes dowodca zadnej druzyny.</string>
 							<string>Nie wolno ci sie tam udac.</string>
 							<string>Nie mozesz sie tam udac, gdyz musisz najpierw zejsc z wozu</string>
+							<string>Nie ma takiej komendy. Wpisz</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -29200,6 +29203,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
+							<integer>2</integer>
 							<integer>2</integer>
 							<integer>2</integer>
 							<integer>2</integer>

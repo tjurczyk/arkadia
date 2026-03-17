@@ -28621,6 +28621,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<string>Ktos inny juz to zaczal robic. Otwor nie jest dosc szeroki by udalo sie to dwom osobom na raz.</string>
 						<string>Wejscie do kurhanu jest zamkniete kamienna plyta.</string>
 						<string>nie pozwoli ci zblizyc sie do drzwi.</string>
+						<string>Nie mozesz sie stad wymknac posiadajac przy sobie zrodlo swiatla.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>2</integer>
@@ -28653,6 +28654,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<integer>2</integer>
 						<integer>2</integer>
 						<integer>2</integer>
+						<integer>0</integer>
 						<integer>0</integer>
 					</regexCodePropertyList>
 				</Trigger>

@@ -1565,6 +1565,23 @@ Komenda do zmiany w trakcie gry: `/opoz [wartosc]`
 
 ---
 
+## `amap.walker_mode`
+
+Tryb chodzika (speedwalk). Okresla w jaki sposob chodzik przemieszcza postac.
+
+Dozwolone wartosci:
+* `timer` - klasyczny tryb oparty na timerach, wysyla kierunki co N sekund (domyslny)
+* `mudidz` - tryb oparty na wbudowanej komendzie 'idz' z MUD-a. Na prostych odcinkach uzywa 'idz marszem/truchtem/biegiem', na skrzyzowaniach wysyla kierunki recznie z losowym opoznieniem. Nie dziala w trybie przemykania.
+
+Opoznienie z `amap.walker_delay` jest mapowane na najblizszy mudowy odpowiednik:
+* <= 1.5s → szybkim biegiem (1s)
+* <= 2.5s → biegiem (2s)
+* <= 3.5s → truchtem (3s)
+* <= 4.5s → marszem (4s)
+* > 4.5s → niespiesznie (5s)
+
+---
+
 ## `amap.path_display_color`
 
 Kolor podswietlania sciezki lazika

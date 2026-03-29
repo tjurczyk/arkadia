@@ -16,13 +16,13 @@
 
 amap.walker_idz = amap.walker_idz or {}
 
--- Mapowanie opoznienia (sekundy) na predkosc mudowa
+-- Mapowanie opoznienia (sekundy) na predkosc mudowa dla trybu idz
 amap.walker_idz.delay_to_speed = {
-    { max = 1.5, speed = "szybkim biegiem", delay = 1 },
-    { max = 2.5, speed = "biegiem",         delay = 2 },
-    { max = 3.5, speed = "truchtem",        delay = 3 },
-    { max = 4.5, speed = "marszem",         delay = 4 },
-    { max = math.huge, speed = "niespiesznie", delay = 5 },
+    { max = 1.5, speed = "szybkim biegiem" },
+    { max = 2.5, speed = "biegiem" },
+    { max = 3.5, speed = "truchtem" },
+    { max = 4.5, speed = "marszem" },
+    { max = math.huge, speed = "niespiesznie" },
 }
 
 -- Domyslna predkosc w trybie mudidz (marszem = 4s)
@@ -47,8 +47,8 @@ amap.walker_idz.timer_stoj = nil
 local SAFETY_TIMEOUT = 30
 
 --[[
-    Mapuje podane opoznienie (sekundy) na predkosc mudowa.
-    Zwraca: speed_string, effective_delay
+    Mapuje podane opoznienie (sekundy) na string predkosci mudowej.
+    Zwraca: speed_string, oryginalny_delay
 ]]
 function amap.walker_idz:get_mud_speed(delay)
     if not delay then
@@ -195,12 +195,9 @@ function amap.walker_idz:start()
         return
     end
 
-    -- Oblicz predkosc mudowa: jesli uzytkownik podal delay w /idz, uzyj go;
-    -- w przeciwnym razie uzyj domyslnego dla mudidz (marszem = 4s)
-    local input_delay = self.default_delay
-    if amap.walker_delay ~= amap.set_walker_delay then
-        input_delay = amap.walker_delay
-    end
+    -- Oblicz predkosc mudowa bazujac na delay'u z /idz (amap.walker_delay)
+    -- w przeciwnym razie uzyj domyslnego z konfiguracji lub 4s
+    local input_delay = amap.walker_delay or amap.set_walker_delay or self.default_delay
     local speed, eff_delay = self:get_mud_speed(input_delay)
     self.mud_speed = speed
     self.base_delay = eff_delay

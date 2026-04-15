@@ -255,6 +255,16 @@ Po podniesieniu tego eventa jest wykonywany 'beep'. Warunkiem jest posiadanie ka
 
 ---
 
+## `playSound`
+
+Argumenty:
+
+* `arg1`: nazwa dzwieku (np. "block", "stun", "weapon")
+
+Po podniesieniu tego eventa odtwarzany jest plik dzwiekowy `<nazwa>.wav` z katalogu sounds/. Jesli plik nie zostanie znaleziony, odtwarzany jest domyslny beep.
+
+---
+
 ## `miscAttackBeepModeOne`
 
 Event podniesiony gdy postac zostala zaatakowana przez kogos z wrogow.

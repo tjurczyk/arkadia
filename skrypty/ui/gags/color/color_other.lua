@@ -34,7 +34,7 @@ function trigger_func_skrypty_ui_gags_color_color_other_zabil_color()
 end
 
 function trigger_func_skrypty_ui_gags_color_color_other_mozesz_dobywac()
-    raiseEvent("playBeep")
+    raiseEvent("playSound", "weapon")
     raiseEvent("canWieldAfterKnockOff")
     creplaceLine("<green>\n\n[    BRON    ]<cornsilk> Mozesz dobyc broni klawiszem '" .. scripts.keybind:keybind_tostring("functional_key") .."'\n\n")
     resetFormat()
@@ -44,7 +44,7 @@ function trigger_func_skrypty_ui_gags_color_color_other_mozesz_dobywac()
 end
 
 function trigger_func_skrypty_ui_gags_color_color_other_wytracenie_tobie()
-    raiseEvent("playBeep")
+    raiseEvent("playSound", "weapon")
     raiseEvent("weaponKnockedOff")
     raiseEvent("weapon_state", false)
     creplaceLine("\n\n<tomato>[    BRON    ] " .. matches[2] .. "\n\n")
@@ -83,7 +83,7 @@ function trigger_func_skrypty_ui_gags_color_color_other_nie_przelamanie()
 end
 
 function trigger_func_skrypty_ui_gags_color_color_other_nekro_tilea()
-    raiseEvent("playBeep")
+    raiseEvent("playSound", "weapon")
     raiseEvent("weaponKnockedOffNekroTilea")
     creplaceLine("<green>\n\n[    BRON    ]<cornsilk> Wez bron i dobadz jej\n\n")
     resetFormat()

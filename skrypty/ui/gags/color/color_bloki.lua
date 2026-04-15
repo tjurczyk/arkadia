@@ -27,8 +27,8 @@ function trigger_func_skrypty_ui_gags_color_color_bloki_zajmuje_pozycje()
         return
     end
 
-    raiseEvent("playBeep")
-    tempTimer(0.3, function () raiseEvent("playBeep") end)
+    raiseEvent("playSound", "block")
+    tempTimer(0.3, function () raiseEvent("playSound", "block") end)
     creplaceLine("<tomato>\n\n[    BLOK    ] " .. matches[1])
     resetFormat()
 end
@@ -47,7 +47,7 @@ function trigger_func_skrypty_ui_gags_color_color_bloki_blokuje_ci_droge()
         return
     end
 
-    raiseEvent("playBeep")
+    raiseEvent("playSound", "block")
     creplaceLine("<red>\n\n[    BLOK    ] <reset>" .. matches[1])
     resetFormat()
 end
@@ -116,8 +116,8 @@ function trigger_func_skrypty_ui_gags_color_color_bloki_blokowanie_proba_kogos()
         return
     end
 
-    raiseEvent("playBeep")
-    tempTimer(0.3, function () raiseEvent("playBeep") end)
+    raiseEvent("playSound", "block")
+    tempTimer(0.3, function () raiseEvent("playSound", "block") end)
     creplaceLine("<tomato>\n\n[    BLOK    ] " .. matches[2])
     resetFormat()
 end

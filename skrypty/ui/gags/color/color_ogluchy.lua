@@ -4,6 +4,7 @@ function trigger_func_skrypty_ui_gags_color_color_ogluchy_ogluch()
     end
 
     raiseEvent("stunStart")
+    raiseEvent("playSound", "stun")
     selectCurrentLine()
     prefix("<red>[OGLUCH] ", cecho)    
     cecho("<red>\n\n[   OGLUCH   ] ----- JESTES OGLUSZONY -----\n\n")

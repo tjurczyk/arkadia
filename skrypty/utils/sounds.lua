@@ -39,6 +39,14 @@ function scripts.sounds:init()
     self.handler2 = scripts.event_register:register_singleton_event_handler(self.handler, "playBeep", function()
         self:play_beep()
     end)
+    self.handler3 = scripts.event_register:register_singleton_event_handler(self.handler, "playSound", function(_, sound_name)
+        local path = string.format("%s/%s.wav", self.dir, sound_name)
+        if lfs.attributes(path) then
+            scripts.sound_player:play(path)
+        else
+            self:play_beep()
+        end
+    end)
 
 
     for _,sound in pairs(lfs.list_files(self.dir)) do

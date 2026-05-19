@@ -18155,7 +18155,7 @@ scripts.misc.knowledge:stop_reading_library()</script>
 								<colorTriggerFgColor>#000000</colorTriggerFgColor>
 								<colorTriggerBgColor>#000000</colorTriggerBgColor>
 								<regexCodeList>
-									<string>^[ &gt;]*.* (unosi|zastawia sie) swoja .* i szybko przesuwa sie za ciebie, kryjac.*</string>
+									<string>^[ &gt;]*.* (unosi|zastawia sie) swo(?:ja|im) .* i szybko przesuwa sie za ciebie, kryjac.*</string>
 									<string>^[ &gt;]*Sprytnie manewrujac .+ kryje sie za twoimi plecami przed atakami</string>
 								</regexCodeList>
 								<regexCodePropertyList>
@@ -18177,7 +18177,7 @@ scripts.misc.knowledge:stop_reading_library()</script>
 								<colorTriggerFgColor>#000000</colorTriggerFgColor>
 								<colorTriggerBgColor>#000000</colorTriggerBgColor>
 								<regexCodeList>
-									<string>[ &gt;]*Unosisz swoja .* i (?:szybko )?przesuwasz sie za .*, kryjac sie przed atakami</string>
+									<string>[ &gt;]*(?:Unosisz swoja|Zastawiasz sie swo(?:ja|im)) .* i (?:szybko )?przesuwasz sie za .*, kryjac sie przed atakami</string>
 									<string>^[ &gt;]*Sprytnie manewrujac kryjesz sie za plecami .+ przed atakami</string>
 								</regexCodeList>
 								<regexCodePropertyList>
@@ -18199,7 +18199,7 @@ scripts.misc.knowledge:stop_reading_library()</script>
 								<colorTriggerFgColor>#000000</colorTriggerFgColor>
 								<colorTriggerBgColor>#000000</colorTriggerBgColor>
 								<regexCodeList>
-									<string>(?:(?:unosi|zastawia sie) swoja .+? i |)szybko przesuwa sie za (?!ciebie).+?, (?:kryjac sie przed atakami .+?|uciekajac przed twoimi ciosami)\.$</string>
+									<string>(?:(?:unosi|zastawia sie) swo(?:ja|im) .+? i |)szybko przesuwa sie za (?!ciebie).+?, (?:kryjac sie przed atakami .+?|uciekajac przed twoimi ciosami)\.$</string>
 									<string>^[ &gt;]*Sprytnie manewrujac .+ kryje sie za plecami (?!twoimi).+? przed atakami</string>
 								</regexCodeList>
 								<regexCodePropertyList>
@@ -18281,7 +18281,7 @@ scripts.misc.knowledge:stop_reading_library()</script>
 								<colorTriggerFgColor>#000000</colorTriggerFgColor>
 								<colorTriggerBgColor>#000000</colorTriggerBgColor>
 								<regexCodeList>
-									<string>[ &gt;]*Unosisz swoja .+? i przesuwasz sie w strone .+?, bezskutecznie probujac</string>
+									<string>[ &gt;]*(?:Unosisz swoja|Zastawiasz sie swo(?:ja|im)) .+? i przesuwasz sie w strone .+?, bezskutecznie probujac</string>
 									<string>(\w+(?: \w+){0,4}?) unosi swoja .+? i szybko przesuwa sie w (twoja strone|strone .+?), bezskutecznie probujac skryc sie za (nia|nim|toba) przed atakami .*\.$</string>
 								</regexCodeList>
 								<regexCodePropertyList>

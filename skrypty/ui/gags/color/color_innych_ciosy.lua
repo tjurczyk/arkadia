@@ -21,7 +21,7 @@ function trigger_func_skrypty_ui_gags_color_color_innych_ciosy_ktos()
     elseif damage == "rani" then value = 3
     elseif damage == "powaznie rani" then value = 4
     elseif damage == "bardzo ciezko rani" then value = 5
-    elseif damage == "masakruje" or damage == "smiertelnie rani" then value = 6 end
+    elseif damage == "masakruje" or damage == "smiertelnie rani" or damage == "niemal smiertelnie rani" then value = 6 end
     color_hit(value)
 end
 

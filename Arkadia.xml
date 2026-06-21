@@ -4994,6 +4994,76 @@ scripts.misc.knowledge:stop_reading_library()</script>
 											</regexCodePropertyList>
 										</Trigger>
 									</TriggerGroup>
+									<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+										<name>ciernisty_ciezki_morgenstern</name>
+										<script></script>
+										<triggerType>0</triggerType>
+										<conditonLineDelta>0</conditonLineDelta>
+										<mStayOpen>0</mStayOpen>
+										<mCommand></mCommand>
+										<packageName></packageName>
+										<mFgColor>#ff0000</mFgColor>
+										<mBgColor>#ffff00</mBgColor>
+										<mSoundFile></mSoundFile>
+										<colorTriggerFgColor>#000000</colorTriggerFgColor>
+										<colorTriggerBgColor>#000000</colorTriggerBgColor>
+										<regexCodeList>
+											<string>[Cc]iernist\w+ ciezk\w+ morgenster\w+</string>
+										</regexCodeList>
+										<regexCodePropertyList>
+											<integer>1</integer>
+										</regexCodePropertyList>
+										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+											<name>ciernisty_ciezki_morg</name>
+											<script>trigger_func_skrypty_ui_gags_ciosy_ciernisty_ciezki_morg()</script>
+											<triggerType>0</triggerType>
+											<conditonLineDelta>0</conditonLineDelta>
+											<mStayOpen>0</mStayOpen>
+											<mCommand></mCommand>
+											<packageName></packageName>
+											<mFgColor>#aa0000</mFgColor>
+											<mBgColor>#000000</mBgColor>
+											<mSoundFile></mSoundFile>
+											<colorTriggerFgColor>#000000</colorTriggerFgColor>
+											<colorTriggerBgColor>#000000</colorTriggerBgColor>
+											<regexCodeList>
+												<string>^(?'damage'Ledwo zadrapujesz) (?'target'.+?) w (?'where'.+?) swoim ciernistym ciezkim morgensternem\.$</string>
+												<string>^(?'damage'Kaleczysz lekko) (?'target'.+?) w (?'where'.+?) zamaszystym uderzeniem swojego ciernistego ciezkiego morgensterna\.$</string>
+												<string>^Wyprowadzonym znad glowy uderzeniem swojego ciernistego ciezkiego morgensterna (?'damage'tluczesz bolesnie) (?'target'.+?), zostawiajac na (?:jego|jej) ciele krwawiace zadrapania\.$</string>
+												<string>^Niespodziewanym uderzeniem ciernistego ciezkiego morgensterna (?'damage'obijasz bolesnie) (?'target'.+?), zostawiajac na (?:jego|jej) ciele poszarpana rane\.$</string>
+												<string>^Upstrzona kolcami glowica twojego ciernistego ciezkiego morgensterna trafia w (?'where'.+?), zostawiajac (?'damage'broczace krwia rany)\.$</string>
+												<string>^Podbiegasz do przeciwnika i miazdzacym ciosem (?'damage'masakrujesz) (?'target'.+?) ciernistym ciezkim morgensternem, zanurzajac dlugie ciernie gleboko w (?:jego|jej) ciele\.$</string>
+											</regexCodeList>
+											<regexCodePropertyList>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+											</regexCodePropertyList>
+										</Trigger>
+										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+											<name>ciernisty_ciezki_morg_fin</name>
+											<script>trigger_func_skrypty_ui_gags_ciosy_bron_fin()</script>
+											<triggerType>0</triggerType>
+											<conditonLineDelta>0</conditonLineDelta>
+											<mStayOpen>0</mStayOpen>
+											<mCommand></mCommand>
+											<packageName></packageName>
+											<mFgColor>#ff0000</mFgColor>
+											<mBgColor>#ffff00</mBgColor>
+											<mSoundFile></mSoundFile>
+											<colorTriggerFgColor>#000000</colorTriggerFgColor>
+											<colorTriggerBgColor>#000000</colorTriggerBgColor>
+											<regexCodeList>
+												<string>^Bezlitosnym uderzeniem ciernistego ciezkiego morgensterna obalasz (?'target'.+?) na ziemie\. Srebrzyste ciernie wnikaja w (?:jego|jej) cialo tak gleboko, ze gdy wyszarpujesz bron, zostaja na niej kawalki miesa\.$</string>
+											</regexCodeList>
+											<regexCodePropertyList>
+												<integer>1</integer>
+											</regexCodePropertyList>
+										</Trigger>
+									</TriggerGroup>
 								</TriggerGroup>
 								<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 									<name>mloty</name>

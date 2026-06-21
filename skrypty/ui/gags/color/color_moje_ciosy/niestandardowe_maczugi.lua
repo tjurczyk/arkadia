@@ -302,3 +302,29 @@ end
 function trigger_func_skrypty_ui_gags_najezony_potezny_morgenstern_moje()
     scripts.gags:gag(0, 1, "moje_ciosy")
 end
+
+-- Ciernisty ciezki morgenstern
+
+function trigger_func_skrypty_ui_gags_ciosy_ciernisty_ciezki_morg()
+    local target = "moje_ciosy"
+    if matches["attacker"] then
+        target = matches["target"] == "cie" and "innych_ciosy_we_mnie" or "innych_ciosy"
+    end
+
+    local dmg = matches["damage"]
+    local value = -1
+    if dmg == "Ledwo zadrapujesz" then
+        value = 1
+    elseif dmg == "Kaleczysz lekko" then
+        value = 2
+    elseif dmg == "tluczesz bolesnie" then
+        value = 3
+    elseif dmg == "obijasz bolesnie" then
+        value = 4
+    elseif dmg == "broczace krwia rany" then
+        value = 5
+    elseif dmg == "masakrujesz" then
+        value = 6
+    end
+    scripts.gags:gag(value, 6, target)
+end

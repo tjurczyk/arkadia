@@ -359,7 +359,7 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^Otwart(?:y|a|e) (?'container'.+? (plecak|torba|sakwa|sakiewka|szkatulka|wor|worek))(?: z .*)? zawiera (?'content'.*)\.$</string>
+							<string>^Otwart(?:y|a|e) (?'container'.+? (plecak|torba|sakwa|sakiewka|szkatulka|wor|worek))(?: ze? .*)? zawiera (?'content'.*)\.$</string>
 							<string>^Uwaznie ogladasz zawartosc (?'container'.+?)\. W srodku dostrzegasz (?'content'.*)\.$</string>
 							<string>^Rozwiazujesz na chwile rzemyk, sprawdzajac zawartosc swojej (?'container'.+? sakiewki).+?\. W srodku dostrzegasz (?'content'.*)\.$</string>
 							<string>^Otwierasz na chwile (?'container'.+?), sprawdzajac zawartosc\. W srodku dostrzegasz (?'content'.*)\.$</string>

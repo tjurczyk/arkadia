@@ -28817,7 +28817,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<string>Podejscie pod mury silnie bronionego zamku nie jest najlepszym pomyslem.</string>
 						<string>Ruszasz razno na [a-z-]+, lecz po kilku krokach grzezniesz w krzakach.</string>
 						<string>Wstep tylko dla czlonkow Zgromadzenia.</string>
-						<string>^[ &gt;]*(\w+\s+){1,4}zagradza ci droge\.$</string>
+						<string>^[ &gt;]*(\w+\s+){1,4}(?:zagradza|zastawia) ci droge\.$</string>
 						<string>Drzwi sa zamkniete, musisz sie wrocic.</string>
 						<string>Mimo wlozenia wszystkich sil w wioslowanie nie jestes w stanie pokonac niezwykle silnego pradu wody.</string>
 						<string>Przeciez lezysz na lozku! Moze lepiej najpierw z niego wstac?</string>

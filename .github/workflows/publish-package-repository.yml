@@ -1,0 +1,95 @@
+name: Publish to Mudlet package repository
+
+# Builds arkadia.mpackage for a release, attaches it to that release, and
+# submits it to packages.mudlet.org.
+#
+# No token is stored for this. The job asks GitHub for a short-lived OIDC token
+# describing this run, and the package repository decides whether to accept it
+# from its trusted-publishers.json - which registers this repository and this
+# workflow file by path. Moving the publish step to another workflow file, or
+# into a reusable workflow, will stop it being accepted.
+#
+# This workflow owns arkadia.mpackage end to end so nothing races it: building
+# it here rather than in notify-discord.yml means the asset is guaranteed to
+# exist by the time it is submitted.
+#
+# The publish opens a pull request against Mudlet/mudlet-package-repository; a
+# maintainer still merges it.
+#
+# NOTE: the upstream "Validate mpackage file" workflow greps the unpacked
+# archive for os.exec|lfs.rmdir|sysDataSendRequest and fails on a hit. This
+# package legitimately uses sysDataSendRequest (12 handlers) and lfs.rmdir, so
+# that check fails and auto-merge will not fire -- every PR needs a Mudlet
+# maintainer to review and merge it by hand.
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Release tag to build and publish"
+        required: true
+
+permissions:
+  contents: write # attach the built .mpackage to the release
+  id-token: write # mint the OIDC token that authenticates the publish
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    env:
+      TAG: ${{ github.event.release.tag_name || inputs.tag }}
+    steps:
+      - name: Checkout the released tag
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.release.tag_name || inputs.tag }}
+
+      - name: Build Arkadia mpackage
+        run: python ./.github/workflows/build_mpackage.py arkadia.mpackage
+
+      - name: Attach it to the release
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: arkadia.mpackage
+          asset_name: arkadia.mpackage
+          tag: ${{ env.TAG }}
+          overwrite: true
+
+      - name: Submit to packages.mudlet.org
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const tag = process.env.TAG
+            const { data: release } = await github.rest.repos.getReleaseByTag({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              tag,
+            })
+
+            const asset = release.assets.find(a => a.name === 'arkadia.mpackage')
+            if (!asset) {
+              throw new Error(`release ${tag} has no arkadia.mpackage asset`)
+            }
+
+            // Minted for this run only, expires in minutes, and usable nowhere
+            // else: the audience pins it to the package repository.
+            const token = await core.getIDToken('https://packages.mudlet.org')
+
+            const response = await fetch('https://packages.mudlet.org/api/publish', {
+              method: 'POST',
+              headers: {
+                authorization: `Bearer ${token}`,
+                'content-type': 'application/json',
+              },
+              body: JSON.stringify({ artifactUrl: asset.browser_download_url }),
+            })
+
+            const result = await response.json().catch(() => ({}))
+            if (!response.ok) {
+              throw new Error(result.error || `publish failed with HTTP ${response.status}`)
+            }
+
+            core.notice(`arkadia ${result.version} submitted: ${result.pullRequest}`)

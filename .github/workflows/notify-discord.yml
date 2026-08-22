@@ -27,6 +27,8 @@ jobs:
           DISCORD_WEBHOOK: 'https://discord.com/api/webhooks/${{ secrets.SKRYPTY_WEBHOOK_ID }}/${{ secrets.SKRYPTY_WEBHOOK_TOKEN }}'
       - name: Checkout repo
         uses: actions/checkout@v3
+      # arkadia.mpackage is built and attached by publish-package-repository.yml,
+      # which owns it end to end so the two workflows cannot race for the asset.
       - name: Bump Version
         run: python ./.github/workflows/bump_version.py
       - name: Create Pull Request

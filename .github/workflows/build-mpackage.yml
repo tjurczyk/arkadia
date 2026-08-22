@@ -1,0 +1,108 @@
+name: Build mpackage
+
+# Builds arkadia.mpackage on every pull request, so the packaging is known to
+# work before a release depends on it.
+#
+# Without this the build script would first run during publish-package-repository.yml
+# on a real release, where a mistake in it is discovered at the worst moment
+# and with a version number already burned.
+#
+# It also checks the parts of the archive that the Mudlet package repository
+# validates on submission, so a package that would be rejected there fails here
+# instead - and the archive layout Mudlet itself depends on, which is what makes
+# the package unpack into <profile>/arkadia/.
+
+on:
+  pull_request:
+    paths-ignore:
+      - '**.md'
+  push:
+    branches: [master]
+    paths-ignore:
+      - '**.md'
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build the package
+        run: python ./.github/workflows/build_mpackage.py arkadia.mpackage
+
+      - name: Check the archive
+        run: |
+          set -euo pipefail
+
+          # Mudlet imports every *.xml and *.trigger in the root of the archive,
+          # so a second one there would be installed alongside Arkadia.xml.
+          ROOT_XML=$(unzip -Z1 arkadia.mpackage | grep -v '/' | grep -Ei '\.(xml|trigger)$' || true)
+          if [ "$ROOT_XML" != "Arkadia.xml" ]; then
+            echo "Error: the archive root must hold exactly Arkadia.xml, found:"
+            echo "${ROOT_XML:-(nothing)}" | sed 's/^/  /'
+            exit 1
+          fi
+          echo "Pass: Arkadia.xml is the only importable file in the root"
+
+          # config.lua decides the directory the archive unpacks into. It has to
+          # be "arkadia", lowercase, or the .lua files land somewhere init.lua
+          # does not put on package.path - and on Linux and macOS the case
+          # matters as much as the spelling.
+          unzip -p arkadia.mpackage config.lua > config.lua.check
+          if ! grep -q '^mpackage = "arkadia"$' config.lua.check; then
+            echo 'Error: config.lua must declare mpackage = "arkadia"'
+            grep '^mpackage' config.lua.check || echo '  (no mpackage line at all)'
+            exit 1
+          fi
+          echo "Pass: unpacks into the arkadia directory"
+
+          # The package repository greps config.lua for each of these on
+          # submission and rejects the package if one is missing.
+          MISSING=""
+          for field in mpackage title version created author description; do
+            grep -q "^${field} =" config.lua.check || MISSING="${MISSING} ${field}"
+          done
+          if [ -n "$MISSING" ]; then
+            echo "Error: config.lua is missing required fields:${MISSING}"
+            exit 1
+          fi
+          echo "Pass: config.lua carries every field the package repository wants"
+
+          # The version is stamped from skrypty.lua at build time; a mismatch
+          # means the stamping silently did nothing.
+          WANT=$(sed -nE 's/.*ver[[:space:]]*=[[:space:]]*"([0-9.]+)".*/\1/p' skrypty.lua | head -1)
+          GOT=$(sed -nE 's/^version = "([^"]*)"$/\1/p' config.lua.check | head -1)
+          if [ "$WANT" != "$GOT" ]; then
+            echo "Error: skrypty.lua says ${WANT} but the archive says ${GOT}"
+            exit 1
+          fi
+          echo "Pass: archive is version ${GOT}"
+
+          # scriptsList.lua names every module init.lua requires; one missing
+          # from the archive is a package that loads into a broken state.
+          unzip -Z1 arkadia.mpackage | sort > archive.list
+          python - <<'PY'
+          import re, sys
+
+          listed = open('scriptsList.lua', encoding='utf-8').read()
+          modules = re.findall(r'"([^"]+)"', listed)
+          have = set(open('archive.list', encoding='utf-8').read().split())
+
+          missing = [m for m in modules if f'{m}.lua' not in have and f'{m}/init.lua' not in have]
+          if missing:
+              print('Error: modules named by scriptsList.lua are not in the archive:')
+              for m in missing:
+                  print(f'  {m}')
+              sys.exit(1)
+          print(f'Pass: all {len(modules)} modules from scriptsList.lua are present')
+          PY
+
+      - name: Keep the archive for inspection
+        uses: actions/upload-artifact@v4
+        with:
+          name: arkadia.mpackage
+          path: arkadia.mpackage
+          retention-days: 7

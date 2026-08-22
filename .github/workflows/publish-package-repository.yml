@@ -46,6 +46,38 @@ jobs:
         with:
           ref: ${{ github.event.release.tag_name || inputs.tag }}
 
+      - name: Check the release tag matches scripts.ver
+        run: |
+          set -euo pipefail
+
+          # The version in the archive is stamped from skrypty.lua, and the
+          # release is tagged by hand. notify-discord.yml raises the bump as a
+          # pull request *after* a release, so if that pull request has not been
+          # merged when the next release is cut, the tag moves on while
+          # skrypty.lua does not - and this would publish a second, different
+          # archive claiming to be the version already on the shelf. Tags are
+          # unique, so that mismatch is the only way to ship a duplicate
+          # version, and it is silent unless something looks.
+          WANT="${TAG#v}"
+          GOT=$(sed -nE 's/.*ver[[:space:]]*=[[:space:]]*"([0-9.]+)".*/\1/p' skrypty.lua | head -1)
+
+          if [ -z "$GOT" ]; then
+            echo "Error: could not read the version out of skrypty.lua"
+            exit 1
+          fi
+
+          if [ "$WANT" != "$GOT" ]; then
+            echo "Error: release ${TAG} does not match scripts.ver ${GOT} in skrypty.lua."
+            echo
+            echo "The version bump for this release has most likely not been merged yet -"
+            echo "look for an open 'version bump' pull request, merge it, then re-run this"
+            echo "workflow. Publishing now would put a second archive labelled ${GOT} into"
+            echo "the package repository, and nothing would offer it as an upgrade."
+            exit 1
+          fi
+
+          echo "Pass: release ${TAG} matches scripts.ver ${GOT}"
+
       - name: Build Arkadia mpackage
         run: python ./.github/workflows/build_mpackage.py arkadia.mpackage
 

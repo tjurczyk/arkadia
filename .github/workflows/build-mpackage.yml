@@ -100,9 +100,15 @@ jobs:
           print(f'Pass: all {len(modules)} modules from scriptsList.lua are present')
           PY
 
+      # archive: false uploads the file as-is. Without it the artifact is zipped
+      # for transport, so downloading it from the run page hands you
+      # arkadia.mpackage.zip and Mudlet will not take that - it has to be
+      # unwrapped by hand first. The upload takes the file's own name when
+      # archive is false, which is arkadia.mpackage either way; `name` is
+      # ignored in that mode, so it is not set.
       - name: Keep the archive for inspection
         uses: actions/upload-artifact@v7
         with:
-          name: arkadia.mpackage
           path: arkadia.mpackage
+          archive: false
           retention-days: 7

@@ -27,7 +27,7 @@ for root, directories, files in path:
             with open(root + "/" + file) as lua:
                 data = lua.readlines()
                 for line in data:
-                    variable = re.search("require\(\"(.*)\"\)", line)
+                    variable = re.search(r'require\("(.*)"\)', line)
                     if variable:
                         requires.append(variable.group(1).replace(".", "/"))
 

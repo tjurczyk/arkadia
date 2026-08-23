@@ -1,7 +1,8 @@
 import re
 import os
 
-exempts = ["short_installer", "installer", "skrypty/utils/installer/recovery_script_content"]
+# config is the .mpackage manifest read by Mudlet, not a module the scripts load.
+exempts = ["short_installer", "installer", "skrypty/utils/installer/recovery_script_content", "config"]
 
 with open('scriptsList.lua', 'r') as file:
     data = file.readlines()

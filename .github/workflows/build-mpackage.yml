@@ -28,7 +28,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Build the package
         run: python ./.github/workflows/build_mpackage.py arkadia.mpackage
@@ -101,7 +101,7 @@ jobs:
           PY
 
       - name: Keep the archive for inspection
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: arkadia.mpackage
           path: arkadia.mpackage

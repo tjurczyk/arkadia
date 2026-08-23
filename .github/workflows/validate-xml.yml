@@ -16,7 +16,7 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v7
 
     - name: Validate info.xml using XML schema info.xsd
       uses: ChristophWurst/xmllint-action@v1

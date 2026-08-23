@@ -33,7 +33,7 @@ jobs:
       # bump made there is a bump made on whatever master looked like when the
       # release was cut - carrying a revert of anything merged since.
       - name: Checkout master
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           ref: master
       # arkadia.mpackage is built and attached by publish-package-repository.yml,

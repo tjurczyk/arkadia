@@ -12,7 +12,7 @@ lua_files = []
 
 
 for line in data:
-    variable = re.search("\"(.*)\"", line)
+    variable = re.search(r'"(.*)"', line)
     if variable:
         requires.append(variable.group(1))
 

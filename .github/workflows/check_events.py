@@ -10,7 +10,7 @@ events = []
 raise_events = []
 
 for line in data:
-    variable = re.search("## `(.*)`", line)
+    variable = re.search(r"## `(.*)`", line)
     if variable:
         events.append(variable.group(1))
 

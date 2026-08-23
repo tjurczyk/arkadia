@@ -12,6 +12,11 @@ version = "0.0.0"
 created = "2026-08-22T00:00:00+02:00"
 author = "tjurczyk, Delwing"
 title = "Skrypty do Arkadii"
+-- Names a file the archive carries at .mudlet/Icon/<icon> - the layout Mudlet's
+-- own package exporter writes and the one both Mudlet and the package
+-- repository look in. Mudlet's package manager scales it to 96x96; the
+-- repository's reindex extracts it to packages/icons/ for the website.
+icon = "arkadia.png"
 -- Rendered as Markdown on packages.mudlet.org. Nothing inside may close the
 -- long bracket early - the site's parser also stops at the first closing pair.
 description = [[Kompletny zestaw skryptów do polskiego MUD-a **Arkadia** (arkadia.rpg.pl, port 23 lub 20023) - walka, interfejs, ekwipunek, zioła, baza postaci i statystyki w jednej paczce.

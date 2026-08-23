@@ -71,6 +71,19 @@ jobs:
           fi
           echo "Pass: config.lua carries every field the package repository wants"
 
+          # An icon that is named but not carried fails quietly everywhere: the
+          # package manager falls back to the generic icon and the repository's
+          # reindex just records no icon, so nothing reports the missing file.
+          ICON=$(sed -nE 's/^icon = "([^"]*)"$/\1/p' config.lua.check | head -1)
+          if [ -n "$ICON" ]; then
+            if ! unzip -Z1 arkadia.mpackage | grep -qxF ".mudlet/Icon/${ICON}"; then
+              echo "Error: config.lua names icon '${ICON}' but the archive has no .mudlet/Icon/${ICON}"
+              unzip -Z1 arkadia.mpackage | grep '^\.mudlet/' | sed 's/^/  /' || echo '  (no .mudlet/ entries at all)'
+              exit 1
+            fi
+            echo "Pass: icon ${ICON} is where Mudlet and the repository look for it"
+          fi
+
           # The version is stamped from skrypty.lua at build time; a mismatch
           # means the stamping silently did nothing.
           WANT=$(sed -nE 's/.*ver[[:space:]]*=[[:space:]]*"([0-9.]+)".*/\1/p' skrypty.lua | head -1)

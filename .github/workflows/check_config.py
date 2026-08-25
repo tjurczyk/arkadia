@@ -8,7 +8,7 @@ readme_vars = []
 schema_vars = []
 
 for line in data:
-    variable = re.search("## `(.*)`", line)
+    variable = re.search(r"## `(.*)`", line)
     if variable:
         readme_vars.append(variable.group(1))
 

@@ -10,7 +10,7 @@ events = []
 raise_events = []
 
 for line in data:
-    variable = re.search("## `(.*)`", line)
+    variable = re.search(r"## `(.*)`", line)
     if variable:
         events.append(variable.group(1))
 
@@ -21,7 +21,7 @@ for root, directories, files in path:
             with open(root + "/" + file) as luas:
                 data = luas.readlines()
                 for line in data:
-                    variable = re.search("raise(?:Global)?Event\(\"(.*?)\"(?:\s*,.*)*\)", line)
+                    variable = re.search(r'raise(?:Global)?Event\("(.*?)"(?:\s*,.*)*\)', line)
                     if variable:
                         raise_events.append(variable.group(1))
 

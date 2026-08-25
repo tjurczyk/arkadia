@@ -6,6 +6,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    # Pushing the version bump to master and attaching the installer to the
+    # release; no pull request is opened any more, so nothing else is needed.
+    permissions:
+      contents: write
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
@@ -25,20 +29,55 @@ jobs:
           DISCORD_USERNAME: Rafgart
           DISCORD_AVATAR: https://arkadia.rpg.pl/forum/download/file.php?avatar=88_1235778613.jpg
           DISCORD_WEBHOOK: 'https://discord.com/api/webhooks/${{ secrets.SKRYPTY_WEBHOOK_ID }}/${{ secrets.SKRYPTY_WEBHOOK_TOKEN }}'
-      - name: Checkout repo
-        uses: actions/checkout@v3
-      - name: Bump Version
-        run: python ./.github/workflows/bump_version.py
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v5
+      # Explicitly master: a release event checks out the tag by default, and a
+      # bump made there is a bump made on whatever master looked like when the
+      # release was cut - carrying a revert of anything merged since.
+      - name: Checkout master
+        uses: actions/checkout@v7
         with:
-          base: "master"
-          branch: "version-bump"
-          delete-branch: true
-          title: 'version bump'
-          body: 'version bump'
+          ref: master
+      # arkadia.mpackage is built and attached by publish-package-repository.yml,
+      # which owns it end to end so the two workflows cannot race for the asset.
+      - name: Bump version on master
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAG: ${{ github.event.release.tag_name }}
+        run: |
+          set -euo pipefail
+
+          # Committed rather than raised as a pull request. A pull request opened
+          # with GITHUB_TOKEN starts no workflow runs, so it arrives with no
+          # checks and nothing can gate it - leaving a one-line mechanical change
+          # waiting on somebody to notice it. Waiting is the whole problem:
+          # publish-package-repository.yml refuses to publish a release whose tag
+          # disagrees with skrypty.lua, which is exactly what an unmerged bump
+          # produces.
+          WANT="${TAG#v}"
+          CURRENT=$(sed -nE 's/.*ver[[:space:]]*=[[:space:]]*"([0-9.]+)".*/\1/p' skrypty.lua | head -1)
+
+          # Only bump master off the version that was just released. Anything
+          # else means it has moved on already - a re-run of this workflow, or a
+          # bump done by hand - and bumping again would skip a version.
+          if [ "$CURRENT" != "$WANT" ]; then
+            echo "::notice::master is on ${CURRENT} and ${WANT} was released, so the bump has already happened - leaving it alone"
+            exit 0
+          fi
+
+          python ./.github/workflows/bump_version.py
+          NEW=$(sed -nE 's/.*ver[[:space:]]*=[[:space:]]*"([0-9.]+)".*/\1/p' skrypty.lua | head -1)
+          if [ "$NEW" = "$CURRENT" ]; then
+            echo "Error: bump_version.py left the version at ${CURRENT}"
+            exit 1
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -am "update script version to ${NEW}"
+
+          # Somebody may have pushed while this ran; rebase onto them rather than
+          # failing the release notification over it.
+          git pull --rebase origin master
+          git push origin HEAD:master
+          echo "::notice::master bumped ${CURRENT} -> ${NEW}"
       - name: Upload Arkadia installer xml to release
         uses: svenstaro/upload-release-action@v2
         with:

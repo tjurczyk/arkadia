@@ -1,7 +1,8 @@
 import re
 import os
 
-exempts = ["short_installer", "installer", "skrypty/utils/installer/recovery_script_content"]
+# config is the .mpackage manifest read by Mudlet, not a module the scripts load.
+exempts = ["short_installer", "installer", "skrypty/utils/installer/recovery_script_content", "config"]
 
 with open('scriptsList.lua', 'r') as file:
     data = file.readlines()
@@ -11,7 +12,7 @@ lua_files = []
 
 
 for line in data:
-    variable = re.search("\"(.*)\"", line)
+    variable = re.search(r'"(.*)"', line)
     if variable:
         requires.append(variable.group(1))
 
@@ -26,7 +27,7 @@ for root, directories, files in path:
             with open(root + "/" + file) as lua:
                 data = lua.readlines()
                 for line in data:
-                    variable = re.search("require\(\"(.*)\"\)", line)
+                    variable = re.search(r'require\("(.*)"\)', line)
                     if variable:
                         requires.append(variable.group(1).replace(".", "/"))
 

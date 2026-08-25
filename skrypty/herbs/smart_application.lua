@@ -9,11 +9,20 @@ function herbs:init_smart_application()
         function() herbs:reset_smart_application_queue() end)
 
     herbs:reset_smart_application_queue()
+    herbs:build_smart_application_action()
+end
+
+function herbs:build_smart_application_action()
     herbs['smart_application_action'] = {
         kon = {},
         man = {},
         zme = {}
     }
+
+    if not herbs.short_category_to_category or not herbs.herbs_categories then
+        -- baza ziol jeszcze niedostepna, akcje zbuduja sie po jej pobraniu
+        return
+    end
 
     for htype, _ in pairs(herbs['smart_application_action']) do
         local prop_category = herbs.short_category_to_category[htype]

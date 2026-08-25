@@ -31,7 +31,7 @@ scripts.misc.knowledge.db = db:create("knowledge", {
         about = "",
         progress = 0,
         changed = db:Timestamp("CURRENT_TIMESTAMP"),
-        _index = { "character", "book", "about" },
+        _index = { "character", "library", "location_id", "about" },
         _violations = "IGNORE"
     }
 }

@@ -28,7 +28,7 @@ scripts.boxes.db = db:create("boxestwo", {
         updated = "",
         room_id = -1,
         changed = db:Timestamp("CURRENT_TIMESTAMP"),
-        _index = { "name" }
+        _index = { "character", "bank" }
     }
 })
 

@@ -1,29 +1,35 @@
 name: Publish to Mudlet package repository
 
-# TEST BRANCH (test/publish-403). Diagnostic build of the publish step, cut
-# down so it can be re-run as many times as we like without cutting a release.
+# TEST BRANCH (test/publish-403). See the branch's first commit for why this
+# file is a diagnostic rather than the real publish workflow.
 #
-# It keeps the one thing that matters: the file path. The registry pins
-# job_workflow_ref by path only - .github/workflows/publish-package-repository.yml
-# - and puts no `ref` condition on arkadia, so a run from this branch is
-# authorised exactly as a run from master is. The tag rule on artifactUrl only
-# applies to runs on a tag, so a branch run may point at any release asset, and
-# this one points at the 4.112 one that is already attached.
+# packages.mudlet.org is behind Cloudflare, which answers a runner with a
+# managed challenge before Vercel ever sees the request. This run works out
+# *what* Cloudflare is scoring, by varying one thing at a time:
 #
-# Building, the version check and the release upload are all gone: none of them
-# has anything to do with the 403, and each of them needs a release.
+#   - path:   the site root vs the API route, to tell a rule aimed at /api
+#             from something applied to the whole zone
+#   - method: GET vs POST
+#   - agent:  curl's default User-Agent vs a browser's, to tell a header
+#             heuristic (Browser Integrity Check, Bot Fight Mode's signature
+#             list) from a judgement about the IP itself
+#   - client: curl vs node's fetch, which differ in TLS fingerprint - so if
+#             curl passes where node does not, the scoring is on JA3/JA4 and
+#             no header will fix it
 #
-# Three probes, in order, each allowed to run whatever the one before it did:
-#   1. an unauthenticated POST - if this comes back as the endpoint's own JSON
-#      401 then nothing in front of the site is blocking runners wholesale
-#   2. the same POST with a real OIDC token, headers and body dumped raw
-#   3. the node fetch the real workflow uses, so the failing path is reproduced
-#      exactly rather than approximated by curl
+# A row that reaches the origin carries x-vercel-* headers; a challenged one
+# carries cf-mitigated instead. That column is the answer.
 #
-# Delete this branch once the cause is found.
+# The real publish is behind an input so a diagnostic run has no side effects -
+# a successful one opens a pull request on Mudlet/mudlet-package-repository.
 
 on:
   workflow_dispatch:
+    inputs:
+      publish:
+        description: "Also attempt the real publish (opens a PR if it works)"
+        type: boolean
+        default: false
   push:
     branches: [test/publish-403]
 
@@ -35,57 +41,77 @@ env:
   ENDPOINT: https://packages.mudlet.org/api/publish
   AUDIENCE: https://packages.mudlet.org
   TAG: "4.112"
+  UA_CHROME: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
 
 jobs:
-  publish:
+  fingerprint:
     runs-on: ubuntu-latest
     steps:
-      - name: Probe 1 - unauthenticated POST
+      - name: What is Cloudflare scoring
         run: |
-          set -uo pipefail
-          echo "::group::response"
-          curl -sS -i -X POST "$ENDPOINT" \
-            -H 'content-type: application/json' \
-            --max-time 30 -d '{}' | head -c 2000
-          echo
-          echo "::endgroup::"
-
-      - name: Probe 2 - authenticated POST, raw
-        if: always()
-        run: |
+          set +e
           set -uo pipefail
 
-          # The same token core.getIDToken() asks for, minted straight from the
-          # runner's OIDC service so curl can carry it.
-          TOKEN=$(curl -sS -H "Authorization: Bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" \
-            "${ACTIONS_ID_TOKEN_REQUEST_URL}&audience=https%3A%2F%2Fpackages.mudlet.org" \
-            | jq -r .value)
-
-          if [ -z "$TOKEN" ] || [ "$TOKEN" = "null" ]; then
-            echo "could not mint an OIDC token"; exit 1
-          fi
-
-          # Which run this token describes, so a rejection about the claims can
-          # be read without decoding anything by hand. Signature dropped.
-          echo "::group::token claims"
-          echo "$TOKEN" | cut -d. -f2 | tr '_-' '/+' \
-            | awk '{ n = length % 4; printf "%s%s", $0, substr("===", 1, n ? 4 - n : 0) }' \
-            | base64 -d 2>/dev/null | jq '{repository, repository_id, repository_owner_id, ref, job_workflow_ref, runner_environment, aud}'
-          echo "::endgroup::"
-
-          ASSET="https://github.com/${GITHUB_REPOSITORY}/releases/download/${TAG}/arkadia.mpackage"
-
-          echo "::group::response"
-          curl -sS -i -X POST "$ENDPOINT" \
-            -H "authorization: Bearer $TOKEN" \
-            -H 'content-type: application/json' \
-            --max-time 60 \
-            -d "{\"artifactUrl\":\"$ASSET\"}" | head -c 4000
+          echo "runner egress IP: $(curl -sS --max-time 15 https://api.ipify.org)"
           echo
-          echo "::endgroup::"
 
-      - name: Probe 3 - the node fetch the real workflow uses
+          probe() {
+            local name="$1"; shift
+            local dump code mitigated vercel
+            dump=$(curl -sS -o /dev/null -D - -w '%{http_code}' --max-time 30 "$@" 2>&1)
+            code=$(printf '%s' "$dump" | tail -1)
+            mitigated=$(printf '%s\n' "$dump" | grep -i '^cf-mitigated:' | tr -d '\r' | cut -d' ' -f2)
+            vercel=$(printf '%s\n' "$dump" | grep -ci '^x-vercel')
+            printf '%-44s %-5s  mitigated=%-10s reached-origin=%s\n' \
+              "$name" "$code" "${mitigated:-no}" "$([ "$vercel" -gt 0 ] && echo yes || echo NO)"
+          }
+
+          JSON='content-type: application/json'
+
+          probe "GET  /          curl UA"    https://packages.mudlet.org/
+          probe "GET  /          chrome UA"  https://packages.mudlet.org/ -H "user-agent: $UA_CHROME"
+          probe "GET  /api/publish curl UA"  "$ENDPOINT"
+          probe "GET  /api/publish chrome UA" "$ENDPOINT" -H "user-agent: $UA_CHROME"
+          probe "POST /api/publish curl UA"  "$ENDPOINT" -X POST -H "$JSON" -d '{}'
+          probe "POST /api/publish chrome UA" "$ENDPOINT" -X POST -H "$JSON" -d '{}' -H "user-agent: $UA_CHROME"
+          probe "POST /api/publish browserish" "$ENDPOINT" -X POST -H "$JSON" -d '{}' \
+            -H "user-agent: $UA_CHROME" \
+            -H 'accept: application/json, text/plain, */*' \
+            -H 'accept-language: en-GB,en;q=0.9' \
+            -H 'origin: https://packages.mudlet.org' \
+            -H 'referer: https://packages.mudlet.org/upload'
+
+      - name: The same two POSTs from node's fetch
         if: always()
+        uses: actions/github-script@v9
+        with:
+          script: |
+            // curl and node do not present the same TLS handshake. If node is
+            // challenged where curl was not, the scoring is below HTTP and
+            // spoofing a User-Agent cannot help.
+            const run = async (label, headers) => {
+              const response = await fetch(process.env.ENDPOINT, {
+                method: 'POST',
+                headers: { 'content-type': 'application/json', ...headers },
+                body: '{}',
+              })
+              await response.text()
+              core.info(
+                `${label.padEnd(28)} ${response.status}  ` +
+                `mitigated=${response.headers.get('cf-mitigated') ?? 'no'}  ` +
+                `reached-origin=${response.headers.get('x-vercel-id') ? 'yes' : 'NO'}`,
+              )
+            }
+
+            await run('node, default UA', {})
+            await run('node, chrome UA', { 'user-agent': process.env.UA_CHROME })
+
+  publish:
+    needs: fingerprint
+    if: inputs.publish
+    runs-on: ubuntu-latest
+    steps:
+      - name: Submit to packages.mudlet.org
         uses: actions/github-script@v9
         with:
           script: |
@@ -98,7 +124,6 @@ jobs:
             if (!asset) throw new Error(`release ${process.env.TAG} has no arkadia.mpackage asset`)
 
             const token = await core.getIDToken(process.env.AUDIENCE)
-
             const response = await fetch(process.env.ENDPOINT, {
               method: 'POST',
               headers: {
@@ -108,20 +133,14 @@ jobs:
               body: JSON.stringify({ artifactUrl: asset.browser_download_url }),
             })
 
-            // Read as text, not json: the whole question is what a body that
-            // is not the endpoint's JSON actually says, and .json() throws it
-            // away before anyone can look.
             const raw = await response.text()
-            core.info(`HTTP ${response.status} ${response.statusText}`)
-            for (const [name, value] of response.headers) core.info(`${name}: ${value}`)
-            core.info('--- body ---')
-            core.info(raw.slice(0, 4000))
+            core.info(`HTTP ${response.status}`)
+            core.info(raw.slice(0, 2000))
 
             if (!response.ok) {
               let parsed = {}
               try { parsed = JSON.parse(raw) } catch {}
               throw new Error(parsed.error || `publish failed with HTTP ${response.status}`)
             }
-
             const result = JSON.parse(raw)
             core.notice(`arkadia ${result.version} submitted: ${result.pullRequest}`)

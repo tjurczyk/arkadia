@@ -1,116 +1,105 @@
 name: Publish to Mudlet package repository
 
-# Builds arkadia.mpackage for a release, attaches it to that release, and
-# submits it to packages.mudlet.org.
+# TEST BRANCH (test/publish-403). Diagnostic build of the publish step, cut
+# down so it can be re-run as many times as we like without cutting a release.
 #
-# No token is stored for this. The job asks GitHub for a short-lived OIDC token
-# describing this run, and the package repository decides whether to accept it
-# from its trusted-publishers.json - which registers this repository and this
-# workflow file by path. Moving the publish step to another workflow file, or
-# into a reusable workflow, will stop it being accepted.
+# It keeps the one thing that matters: the file path. The registry pins
+# job_workflow_ref by path only - .github/workflows/publish-package-repository.yml
+# - and puts no `ref` condition on arkadia, so a run from this branch is
+# authorised exactly as a run from master is. The tag rule on artifactUrl only
+# applies to runs on a tag, so a branch run may point at any release asset, and
+# this one points at the 4.112 one that is already attached.
 #
-# This workflow owns arkadia.mpackage end to end so nothing races it: building
-# it here rather than in notify-discord.yml means the asset is guaranteed to
-# exist by the time it is submitted.
+# Building, the version check and the release upload are all gone: none of them
+# has anything to do with the 403, and each of them needs a release.
 #
-# The publish opens a pull request against Mudlet/mudlet-package-repository; a
-# maintainer still merges it.
+# Three probes, in order, each allowed to run whatever the one before it did:
+#   1. an unauthenticated POST - if this comes back as the endpoint's own JSON
+#      401 then nothing in front of the site is blocking runners wholesale
+#   2. the same POST with a real OIDC token, headers and body dumped raw
+#   3. the node fetch the real workflow uses, so the failing path is reproduced
+#      exactly rather than approximated by curl
 #
-# NOTE: the upstream "Validate mpackage file" workflow greps the unpacked
-# archive for os.exec|lfs.rmdir|sysDataSendRequest and fails on a hit. This
-# package legitimately uses sysDataSendRequest (12 handlers) and lfs.rmdir, so
-# that check fails and auto-merge will not fire -- every PR needs a Mudlet
-# maintainer to review and merge it by hand.
+# Delete this branch once the cause is found.
 
 on:
-  release:
-    types: [published]
   workflow_dispatch:
-    inputs:
-      tag:
-        description: "Release tag to build and publish"
-        required: true
+  push:
+    branches: [test/publish-403]
 
 permissions:
-  contents: write # attach the built .mpackage to the release
-  id-token: write # mint the OIDC token that authenticates the publish
+  contents: read
+  id-token: write
+
+env:
+  ENDPOINT: https://packages.mudlet.org/api/publish
+  AUDIENCE: https://packages.mudlet.org
+  TAG: "4.112"
 
 jobs:
   publish:
     runs-on: ubuntu-latest
-    env:
-      TAG: ${{ github.event.release.tag_name || inputs.tag }}
     steps:
-      - name: Checkout the released tag
-        uses: actions/checkout@v7
-        with:
-          ref: ${{ github.event.release.tag_name || inputs.tag }}
-
-      - name: Check the release tag matches scripts.ver
+      - name: Probe 1 - unauthenticated POST
         run: |
-          set -euo pipefail
+          set -uo pipefail
+          echo "::group::response"
+          curl -sS -i -X POST "$ENDPOINT" \
+            -H 'content-type: application/json' \
+            --max-time 30 -d '{}' | head -c 2000
+          echo
+          echo "::endgroup::"
 
-          # The version in the archive is stamped from skrypty.lua, and the
-          # release is tagged by hand. notify-discord.yml raises the bump as a
-          # pull request *after* a release, so if that pull request has not been
-          # merged when the next release is cut, the tag moves on while
-          # skrypty.lua does not - and this would publish a second, different
-          # archive claiming to be the version already on the shelf. Tags are
-          # unique, so that mismatch is the only way to ship a duplicate
-          # version, and it is silent unless something looks.
-          WANT="${TAG#v}"
-          GOT=$(sed -nE 's/.*ver[[:space:]]*=[[:space:]]*"([0-9.]+)".*/\1/p' skrypty.lua | head -1)
+      - name: Probe 2 - authenticated POST, raw
+        if: always()
+        run: |
+          set -uo pipefail
 
-          if [ -z "$GOT" ]; then
-            echo "Error: could not read the version out of skrypty.lua"
-            exit 1
+          # The same token core.getIDToken() asks for, minted straight from the
+          # runner's OIDC service so curl can carry it.
+          TOKEN=$(curl -sS -H "Authorization: Bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" \
+            "${ACTIONS_ID_TOKEN_REQUEST_URL}&audience=https%3A%2F%2Fpackages.mudlet.org" \
+            | jq -r .value)
+
+          if [ -z "$TOKEN" ] || [ "$TOKEN" = "null" ]; then
+            echo "could not mint an OIDC token"; exit 1
           fi
 
-          if [ "$WANT" != "$GOT" ]; then
-            echo "Error: release ${TAG} does not match scripts.ver ${GOT} in skrypty.lua."
-            echo
-            echo "The version bump for this release has most likely not been merged yet -"
-            echo "look for an open 'version bump' pull request, merge it, then re-run this"
-            echo "workflow. Publishing now would put a second archive labelled ${GOT} into"
-            echo "the package repository, and nothing would offer it as an upgrade."
-            exit 1
-          fi
+          # Which run this token describes, so a rejection about the claims can
+          # be read without decoding anything by hand. Signature dropped.
+          echo "::group::token claims"
+          echo "$TOKEN" | cut -d. -f2 | tr '_-' '/+' \
+            | awk '{ n = length % 4; printf "%s%s", $0, substr("===", 1, n ? 4 - n : 0) }' \
+            | base64 -d 2>/dev/null | jq '{repository, repository_id, repository_owner_id, ref, job_workflow_ref, runner_environment, aud}'
+          echo "::endgroup::"
 
-          echo "Pass: release ${TAG} matches scripts.ver ${GOT}"
+          ASSET="https://github.com/${GITHUB_REPOSITORY}/releases/download/${TAG}/arkadia.mpackage"
 
-      - name: Build Arkadia mpackage
-        run: python ./.github/workflows/build_mpackage.py arkadia.mpackage
+          echo "::group::response"
+          curl -sS -i -X POST "$ENDPOINT" \
+            -H "authorization: Bearer $TOKEN" \
+            -H 'content-type: application/json' \
+            --max-time 60 \
+            -d "{\"artifactUrl\":\"$ASSET\"}" | head -c 4000
+          echo
+          echo "::endgroup::"
 
-      - name: Attach it to the release
-        uses: svenstaro/upload-release-action@v2
-        with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: arkadia.mpackage
-          asset_name: arkadia.mpackage
-          tag: ${{ env.TAG }}
-          overwrite: true
-
-      - name: Submit to packages.mudlet.org
+      - name: Probe 3 - the node fetch the real workflow uses
+        if: always()
         uses: actions/github-script@v9
         with:
           script: |
-            const tag = process.env.TAG
             const { data: release } = await github.rest.repos.getReleaseByTag({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              tag,
+              tag: process.env.TAG,
             })
-
             const asset = release.assets.find(a => a.name === 'arkadia.mpackage')
-            if (!asset) {
-              throw new Error(`release ${tag} has no arkadia.mpackage asset`)
-            }
+            if (!asset) throw new Error(`release ${process.env.TAG} has no arkadia.mpackage asset`)
 
-            // Minted for this run only, expires in minutes, and usable nowhere
-            // else: the audience pins it to the package repository.
-            const token = await core.getIDToken('https://packages.mudlet.org')
+            const token = await core.getIDToken(process.env.AUDIENCE)
 
-            const response = await fetch('https://packages.mudlet.org/api/publish', {
+            const response = await fetch(process.env.ENDPOINT, {
               method: 'POST',
               headers: {
                 authorization: `Bearer ${token}`,
@@ -119,9 +108,20 @@ jobs:
               body: JSON.stringify({ artifactUrl: asset.browser_download_url }),
             })
 
-            const result = await response.json().catch(() => ({}))
+            // Read as text, not json: the whole question is what a body that
+            // is not the endpoint's JSON actually says, and .json() throws it
+            // away before anyone can look.
+            const raw = await response.text()
+            core.info(`HTTP ${response.status} ${response.statusText}`)
+            for (const [name, value] of response.headers) core.info(`${name}: ${value}`)
+            core.info('--- body ---')
+            core.info(raw.slice(0, 4000))
+
             if (!response.ok) {
-              throw new Error(result.error || `publish failed with HTTP ${response.status}`)
+              let parsed = {}
+              try { parsed = JSON.parse(raw) } catch {}
+              throw new Error(parsed.error || `publish failed with HTTP ${response.status}`)
             }
 
+            const result = JSON.parse(raw)
             core.notice(`arkadia ${result.version} submitted: ${result.pullRequest}`)

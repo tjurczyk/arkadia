@@ -54,7 +54,7 @@ function callback_block_attack_obj()
 end
 
 function callback_collect_from_body()
-    scripts.inv.collect:key_pressed(false)
+    scripts.inv.collect:collect_all_armed()
 end
 
 function callback_filling_lamp()

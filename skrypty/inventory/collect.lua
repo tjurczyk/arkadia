@@ -15,6 +15,9 @@ scripts.inv.collect["type_modes"] = {
 }
 scripts.inv.collect["money_type"] = 1
 scripts.inv.collect["current_mode"] = 3
+scripts.inv.collect["collect_pending"] = false
+scripts.inv.collect["collect_armed"] = false
+scripts.inv.collect["handlers"] = scripts.inv.collect["handlers"] or {}
 scripts.inv.collect["footer_info_collect_to_text"] = { "M", "K", "MK", "M+", "K+", "M+K+", "" }
 
 
@@ -88,10 +91,36 @@ function scripts.inv.collect:key_pressed(force, index, put_into_bag)
     end
 end
 
+function scripts.inv.collect:collect_all()
+    dead_bodies_trigg = tempRegexTrigger("^.*Doliczyl.s sie ([a-z]+) sztuk(|i)\\.$", function() scripts.inv.after_counting_collect(matches[2]) end, 1)
+    send("policz wszystkie ciala")
+end
+
+function scripts.inv.collect:collect_all_armed()
+    if not scripts.inv.collect.collect_armed then
+        return
+    end
+    scripts.inv.collect.collect_armed = false
+    scripts.inv.collect:collect_all()
+end
+
+function scripts.inv.collect:maybe_arm_after_combat()
+    if not scripts.inv.collect.collect_pending then
+        return
+    end
+    if ateam.event.me_attacked or ateam.event.team_attacked then
+        return
+    end
+    scripts.inv.collect.collect_pending = false
+    scripts.inv.collect.collect_armed = true
+    scripts.utils.echobind("wez ze wszystkich cial", function() scripts.inv.collect:collect_all_armed() end, "wez ze wszystkich cial", "collect_from_body", 1)
+end
+
 function scripts.inv.collect:killed_action()
     if scripts.inv.collect["current_mode"] ~= 7 or table.size(scripts.inv.collect.extra) > 0 then
-        scripts.utils.echobind("wez z ciala", function() scripts.inv.collect:key_pressed(false) end, "wez z ciala", "collect_from_body", 1)
+        scripts.inv.collect.collect_pending = true
         scripts.inv.collect.check_body = true
+        scripts.inv.collect:maybe_arm_after_combat()
     end
 end
 
@@ -102,8 +131,9 @@ function scripts.inv.collect:team_killed_action(name)
     end
 
     if ateam.team_names[name] then
-        scripts.utils.echobind("wez z ciala", function() scripts.inv.collect:key_pressed(false) end, "wez z ciala", "collect_from_body", 1)
+        scripts.inv.collect.collect_pending = true
         scripts.inv.collect.check_body = true
+        scripts.inv.collect:maybe_arm_after_combat()
     end
 end
 
@@ -149,4 +179,21 @@ function scripts.inv.after_counting_collect(bodies_count)
         scripts.inv.collect:key_pressed(true, i, last)
     end
 end
+
+function scripts.inv.collect:init()
+    for _, event_id in pairs(self.handlers) do
+        scripts.event_register:kill_event_handler(event_id)
+    end
+
+    table.insert(self.handlers, scripts.event_register:register_event_handler("ateam_am_attacked", function(_, state) if not state then scripts.inv.collect:maybe_arm_after_combat() end end))
+    table.insert(self.handlers, scripts.event_register:register_event_handler("ateam_teammate_attacked", function(_, state) if not state then scripts.inv.collect:maybe_arm_after_combat() end end))
+    table.insert(self.handlers, scripts.event_register:register_event_handler("amapNewLocation", function() scripts.inv.collect:reset_collect_state() end))
+end
+
+function scripts.inv.collect:reset_collect_state()
+    scripts.inv.collect.collect_pending = false
+    scripts.inv.collect.collect_armed = false
+end
+
+scripts.inv.collect:init()
 

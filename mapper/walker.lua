@@ -74,6 +74,16 @@ function doSpeedWalk()
         return
     end
 
+    -- Tryb mudidz: deleguj do modulu walker_idz
+    if amap.walker_mode == "mudidz" then
+        if amap.walker == false then
+            amap.walker_idz:start()
+        else
+            amap:print_log("Chodzik aktualnie pracuje, najpierw zastopuj uzywajac '/stop'")
+        end
+        return
+    end
+
     -- just in case., if walker is working, don't spawn another one
     if amap.walker == false then
         amap.dir_from_key = nil
@@ -152,6 +162,14 @@ function amap:terminate_walker()
         return
     end
 
+    -- Cleanup mudidz walker if active
+    if amap.walker_idz and amap.walker_idz.active then
+        if amap.walker_idz.idz_running then
+            send("stoj")
+        end
+        amap.walker_idz:cleanup()
+    end
+
     amap:reset_walker()
     raiseEvent("amapWalkerTerminated")
     amap:print_log("Chodzik przerwany", true)
@@ -161,6 +179,11 @@ function amap:stop_walker()
     -- this is run when the walker finishes
     if not amap.walker then
         return
+    end
+
+    -- Cleanup mudidz walker if active
+    if amap.walker_idz and amap.walker_idz.active then
+        amap.walker_idz:cleanup()
     end
 
     amap:reset_walker()
@@ -231,7 +254,11 @@ function alias_func_mapper_walker_walker_stop()
     if amap.walker == false then
         amap:print_log("Chodzik nie pracuje")
     else
-        amap:terminate_walker()
+        if amap.walker_idz and amap.walker_idz.active then
+            amap.walker_idz:force_stop()
+        else
+            amap:terminate_walker()
+        end
     end
 end
 

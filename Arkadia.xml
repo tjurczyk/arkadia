@@ -17989,9 +17989,11 @@ scripts.misc.knowledge:stop_reading_library()</script>
 								<regexCodeList>
 									<string>(^[ &gt;]*Bol w (prawej|lewej) dloni staje sie mniej odczuwalny\.$)</string>
 									<string>Nagle czujesz,  jak dziwna sila opanowuje twe czlonki.  Nie jestes w stanie kontrolowac swojego zachowania!</string>
+									<string>Czujesz, ze efekt dzialania czaru 'rozbrojenie postaci' konczy sie i powoli odzyskujesz czucie w swoich dloniach.</string>
 								</regexCodeList>
 								<regexCodePropertyList>
 									<integer>1</integer>
+									<integer>0</integer>
 									<integer>0</integer>
 								</regexCodePropertyList>
 							</Trigger>

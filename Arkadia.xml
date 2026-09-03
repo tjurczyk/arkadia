@@ -32154,6 +32154,13 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 					<regex>/dodaj_gps_lokacje ([0-9,]+) (.*)$</regex>
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
+					<name>add_gps_regex</name>
+					<script>alias_func_map_sync_add_gps_regex()</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>/dodaj_gps_regex (.*)$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
 					<name>remove_gps</name>
 					<script>alias_func_map_sync_remove_gps()</script>
 					<command></command>

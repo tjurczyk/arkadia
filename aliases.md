@@ -1315,7 +1315,15 @@ Usuwa zapisane komendy podążania dla bieżącej lub wskazanej lokacji.
 
 ## `/dodaj_gps <opis>`
 
-Dodaje punkt GPS opisujący bieżącą lokację.
+Dodaje punkt GPS opisujący bieżącą lokację. Kolejne linie rozdziela się znakiem `#`,
+a linia zaczynająca się od `re:` jest wyrażeniem regularnym zamiast zwykłego tekstu —
+dzięki temu jeden punkt może łączyć stałą nazwę lokacji ze wzorcem na linię, która się
+zmienia. Zwykły tekst dopasowuje się w dowolnym miejscu linii.
+
+## `/dodaj_gps_regex <wzorce>`
+
+To samo co `/dodaj_gps`, ale każda linia jest wyrażeniem regularnym — bez potrzeby
+poprzedzania każdej z nich `re:`.
 
 ## `/dodaj_gps_obszar <obszar>`
 

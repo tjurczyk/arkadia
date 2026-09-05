@@ -3069,7 +3069,7 @@ scripts.misc.knowledge:stop_reading_library()</script>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
 											<string>szybkim ciosem upiorn</string>
-											<string>^(?'attacker'.+?) ledwo muska (?'target'.+?) upiornym ciemnym mlotem, trafiajac (?:go|ja) w (?'where'.*)\.$</string>
+											<string>^(?'attacker'.+?) ledwo muska (?'target'.+?) upiornym ciemnym \w+, trafiajac (?:go|ja) w (?'where'.*)\.$</string>
 										</regexCodeList>
 										<regexCodePropertyList>
 											<integer>0</integer>
@@ -3091,7 +3091,7 @@ scripts.misc.knowledge:stop_reading_library()</script>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
 											<string>gwaltownym uderzeniem upiorn</string>
-											<string>^Gwaltownym wymachem upiornego ciemnego mlota w (?'where'.+?) dosiegasz (?'target'.+?), lekko (?:go|ja) raniac\.$</string>
+											<string>^Gwaltownym wymachem upiornego ciemnego \w+ w (?'where'.+?) dosiegasz (?'target'.+?), lekko (?:go|ja) raniac\.$</string>
 										</regexCodeList>
 										<regexCodePropertyList>
 											<integer>0</integer>

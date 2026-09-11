@@ -38,6 +38,7 @@ return {
     "mapper/walker",
     "mapper/walk_cmd",
     "mapper/walker_highlights",
+    "mapper/walker_idz",
     "mapper/utils",
     "mapper/shortcuts",
     "mapper/test_command",

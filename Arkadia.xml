@@ -18356,9 +18356,11 @@ scripts.misc.knowledge:stop_reading_library()</script>
 								<colorTriggerBgColor>#000000</colorTriggerBgColor>
 								<regexCodeList>
 									<string>[ &gt;]*(?:(?:Unosisz swoja|Zastawiasz sie swo(?:ja|im)) .+? i przesuwasz|Przesuwasz) sie w strone .+?, bezskutecznie probujac</string>
-									<string>(\w+(?: \w+){0,4}?) unosi swoja .+? i szybko przesuwa sie w (twoja strone|strone .+?), bezskutecznie probujac skryc sie za (nia|nim|toba) przed atakami .*\.$</string>
+									<string>(\w+(?: \w+){0,4}?) (?:unosi swoja .+? i )?szybko przesuwa sie w (twoja strone|strone .+?), bezskutecznie probujac skryc sie za (nia|nim|toba) przed atakami .*\.$</string>
+									<string>(\w+(?: \w+){0,4}?) (?:unosi swoja .+? i )?szybko przesuwa sie w (twoja strone|strone .+?), bezskutecznie probujac uciec przed (twoimi|.+?) ciosami\.$</string>
 								</regexCodeList>
 								<regexCodePropertyList>
+									<integer>1</integer>
 									<integer>1</integer>
 									<integer>1</integer>
 								</regexCodePropertyList>

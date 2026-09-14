@@ -25915,11 +25915,9 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 								<colorTriggerFgColor>#000000</colorTriggerFgColor>
 								<colorTriggerBgColor>#000000</colorTriggerBgColor>
 								<regexCodeList>
-									<string>Postoj, na rynku Averheim</string>
 									<string>Postoj, na rynku przed gospoda</string>
 								</regexCodeList>
 								<regexCodePropertyList>
-									<integer>0</integer>
 									<integer>0</integer>
 								</regexCodePropertyList>
 							</Trigger>

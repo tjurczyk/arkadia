@@ -17916,8 +17916,10 @@ scripts.misc.knowledge:stop_reading_library()</script>
 								<colorTriggerBgColor>#000000</colorTriggerBgColor>
 								<regexCodeList>
 									<string>^Nagle (?'attacker'\w+(?: \w+){0,4}) wykonuje zamaszysty cios (?'weapon'.+?), ktory (?'damage'ledwo muska|lekko rani|bardzo ciezko rani|powaznie rani|rani|masakruje|niemal smiertelnie rani|smiertelnie rani) (?'target'.+?) w (?'where'.*)\.$</string>
+									<string>^(?'attacker'\w+(?: \w+){0,4}) wzbija sie w powietrze i szponami (?'damage'ledwo muska|lekko rani|bardzo ciezko rani|powaznie rani|rani|masakruje|niemal smiertelnie rani|smiertelnie rani) (?'target'.+?) w (?'where'.*)\.$</string>
 								</regexCodeList>
 								<regexCodePropertyList>
+									<integer>1</integer>
 									<integer>1</integer>
 								</regexCodePropertyList>
 							</Trigger>

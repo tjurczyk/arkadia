@@ -17005,6 +17005,7 @@ scripts.misc.knowledge:stop_reading_library()</script>
 										<string>Szkarlatne luski dzwiecza cicho, gdy oslaniasz sie swoja rogata tarcza przed uderzeniem</string>
 										<string>w ciebie, lecz widmowe pedy wyrastajace nagle z okraglego migotliwego puklerza zatrzymuja ten cios.</string>
 										<string>jednak udaje ci sie (?:sparowac ten cios|zablokowac ten atak)</string>
+										<string>lecz ty odpychasz (?:go|ja) .+? tarcza\.$</string>
 									</regexCodeList>
 									<regexCodePropertyList>
 										<integer>1</integer>
@@ -17013,6 +17014,7 @@ scripts.misc.knowledge:stop_reading_library()</script>
 										<integer>0</integer>
 										<integer>2</integer>
 										<integer>0</integer>
+										<integer>1</integer>
 										<integer>1</integer>
 									</regexCodePropertyList>
 								</Trigger>

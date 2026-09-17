@@ -70,15 +70,70 @@ function scripts.plugins_installer:handle_unzip(event, plugin_name, reference, .
         if reference then
             local base_name = self.plugin_directory .. reference
             local files = lfs.list_files(base_name)
+
             if table.size(files) == 1 then
-                os.rename(base_name .. "/" .. files[1], self.plugin_directory .. plugin_name)
+                local source = base_name .. "/" .. files[1]
+                local target = self.plugin_directory .. plugin_name
+                local old_target = target .. "_todelete"
+
+                if lfs.isdir(target) then
+                    local success, err = os.rename(target, old_target)
+
+                    if not success then
+                        scripts:print_log(
+                            "[ERROR] Nie udalo sie przygotowac aktualizacji pluginu "
+                                .. plugin_name
+                                .. ": "
+                                .. tostring(err)
+                        )
+                        return
+                    end
+                end
+
+                local success, err = os.rename(source, target)
+
+                if not success then
+                    if lfs.isdir(old_target) then
+                        local rollback_success, rollback_err =
+                            os.rename(old_target, target)
+
+                        if not rollback_success then
+                            scripts:print_log(
+                                "[ERROR] Nie udalo sie przywrocic poprzedniej wersji pluginu "
+                                    .. plugin_name
+                                    .. ": "
+                                    .. tostring(rollback_err)
+                            )
+                            return
+                        end
+                    end
+
+                    scripts:print_log(
+                        "[ERROR] Nie udalo sie zaktualizowac pluginu "
+                            .. plugin_name
+                            .. ": "
+                            .. tostring(err)
+                    )
+                    return
+                end
+
                 scripts.installer.delete_dir(base_name)
+
+                if lfs.isdir(old_target) then
+                    scripts.installer.delete_dir(old_target)
+                end
             elseif table.size(files) > 1 then
-                os.rename(self.plugin_directory .. plugin_name, self.plugin_directory .. plugin_name .. "_todelete")
+                os.rename(
+                    self.plugin_directory .. plugin_name,
+                    self.plugin_directory .. plugin_name .. "_todelete"
+                )
                 os.rename(base_name, self.plugin_directory .. plugin_name)
-                scripts.installer.delete_dir(self.plugin_directory .. plugin_name .. "_todelete")
+                scripts.installer.delete_dir(
+                    self.plugin_directory .. plugin_name .. "_todelete"
+                )
             end
         end
+
         scripts:print_log("Plugin " .. plugin_name .. " rozpakowany")
         load_plugin(plugin_name)
         os.remove(self.plugin_zip)
@@ -117,7 +172,7 @@ function scripts.plugins_installer:handle_drop(filepath, suffix)
         self.plugin_zip = filepath
         self:handle_unzip(event, plugin_name, nil, ...)
     end, true)
-    
+
     unzipAsync(filepath, self.plugin_directory .. plugin_name)
 end
 

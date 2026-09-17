@@ -92,7 +92,9 @@ function load_plugin(plugin_name)
         local is_git_repo = io.exists(file_path .. "/.git")
         uninstallPackage(plugin_name)
         if io.exists(module_path) then
-            if not pcall(getModulePriority, plugin_name) then
+            local module_priority = getModulePriority(plugin_name)
+
+            if module_priority == nil then
                 installModule(module_path)
                 setModulePriority(plugin_name, base_prio + table.size(scripts.plugins))
             end

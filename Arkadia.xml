@@ -28464,10 +28464,10 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 							<colorTriggerFgColor>#000000</colorTriggerFgColor>
 							<colorTriggerBgColor>#000000</colorTriggerBgColor>
 							<regexCodeList>
-								<string>Okret wplywa na wody delty Pontaru, wyraznie widac juz zebate blanki poteznych murow Novigradu</string>
+								<string>Wysoki kruczowlosy mezczyzna krzyczy: Doplynelismy do poludniowego nabrzeza w Novigradzie! Mozna wysiadac!</string>
 							</regexCodeList>
 							<regexCodePropertyList>
-								<integer>3</integer>
+								<integer>2</integer>
 							</regexCodePropertyList>
 						</Trigger>
 					</TriggerGroup>

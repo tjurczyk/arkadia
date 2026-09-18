@@ -27087,10 +27087,10 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 								<colorTriggerFgColor>#000000</colorTriggerFgColor>
 								<colorTriggerBgColor>#000000</colorTriggerBgColor>
 								<regexCodeList>
-									<string>Intrygujacy dlugowlosy mezczyzna krzyczy: Doplynelismy do poludniowego nabrzeza w Novigradzie! Mozna wysiadac!</string>
+									<string>^(?:Intrygujacy dlugowlosy mezczyzna|Gvidon) krzyczy: Doplynelismy do poludniowego nabrzeza w Novigradzie! Mozna wysiadac!$</string>
 								</regexCodeList>
 								<regexCodePropertyList>
-									<integer>2</integer>
+									<integer>1</integer>
 								</regexCodePropertyList>
 							</Trigger>
 							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -27107,10 +27107,10 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 								<colorTriggerFgColor>#000000</colorTriggerFgColor>
 								<colorTriggerBgColor>#000000</colorTriggerBgColor>
 								<regexCodeList>
-									<string>Intrygujacy dlugowlosy mezczyzna krzyczy: Doplynelismy do przystani na Wyspie Milosci! Mozna wysiadac!</string>
+									<string>^(?:Intrygujacy dlugowlosy mezczyzna|Gvidon) krzyczy: Doplynelismy do przystani na Wyspie Milosci! Mozna wysiadac!$</string>
 								</regexCodeList>
 								<regexCodePropertyList>
-									<integer>2</integer>
+									<integer>1</integer>
 								</regexCodePropertyList>
 							</Trigger>
 						</TriggerGroup>
@@ -28464,10 +28464,10 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 							<colorTriggerFgColor>#000000</colorTriggerFgColor>
 							<colorTriggerBgColor>#000000</colorTriggerBgColor>
 							<regexCodeList>
-								<string>Wysoki kruczowlosy mezczyzna krzyczy: Doplynelismy do poludniowego nabrzeza w Novigradzie! Mozna wysiadac!</string>
+								<string>^(?:Wysoki kruczowlosy mezczyzna|Annibale) krzyczy: Doplynelismy do poludniowego nabrzeza w Novigradzie! Mozna wysiadac!$</string>
 							</regexCodeList>
 							<regexCodePropertyList>
-								<integer>2</integer>
+								<integer>1</integer>
 							</regexCodePropertyList>
 						</Trigger>
 					</TriggerGroup>

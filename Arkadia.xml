@@ -28358,7 +28358,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 								</regexCodePropertyList>
 							</Trigger>
 						</TriggerGroup>
-						<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="yes" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 							<name>piana-temeria</name>
 							<script></script>
 							<triggerType>0</triggerType>
@@ -28377,11 +28377,11 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 							<regexCodePropertyList>
 								<integer>1</integer>
 							</regexCodePropertyList>
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 								<name>gps-temeria</name>
-								<script>trigger_func_mapper_localizers_ships_buses_piana_temeria_gps_temeria()</script>
+								<script>trigger_func_mapper_localizers_ships_buses_ships_piana_temeria_gps_temeria()</script>
 								<triggerType>0</triggerType>
-								<conditonLineDelta>1</conditonLineDelta>
+								<conditonLineDelta>0</conditonLineDelta>
 								<mStayOpen>0</mStayOpen>
 								<mCommand></mCommand>
 								<packageName></packageName>
@@ -28391,17 +28391,17 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 								<colorTriggerFgColor>#000000</colorTriggerFgColor>
 								<colorTriggerBgColor>#000000</colorTriggerBgColor>
 								<regexCodeList>
-									<string>Doplynelismy do przystani na poludniowym brzegu Pontaru! Mozna wysiadac!</string>
+									<string>przystani na poludniowym brzegu Pontaru</string>
 								</regexCodeList>
 								<regexCodePropertyList>
 									<integer>0</integer>
 								</regexCodePropertyList>
 							</Trigger>
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 								<name>gps-piana</name>
-								<script>trigger_func_mapper_localizers_ships_buses_piana_temeria_gps_piana()</script>
+								<script>trigger_func_mapper_localizers_ships_buses_ships_piana_temeria_gps_piana()</script>
 								<triggerType>0</triggerType>
-								<conditonLineDelta>1</conditonLineDelta>
+								<conditonLineDelta>0</conditonLineDelta>
 								<mStayOpen>0</mStayOpen>
 								<mCommand></mCommand>
 								<packageName></packageName>
@@ -28411,7 +28411,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 								<colorTriggerFgColor>#000000</colorTriggerFgColor>
 								<colorTriggerBgColor>#000000</colorTriggerBgColor>
 								<regexCodeList>
-									<string>Doplynelismy do przystani na polnocnym brzegu Pontaru! Mozna wysiadac!</string>
+									<string>przystani na polnocnym brzegu Pontaru</string>
 								</regexCodeList>
 								<regexCodePropertyList>
 									<integer>0</integer>
@@ -28439,7 +28439,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 							</regexCodePropertyList>
 							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 								<name>gps-urbimo</name>
-								<script>trigger_func_mapper_localizers_ships_buses_urbimo_novigrad_gps_urbimo()</script>
+								<script>trigger_func_mapper_localizers_ships_buses_ships_urbimo_novigrad_gps_urbimo()</script>
 								<triggerType>0</triggerType>
 								<conditonLineDelta>0</conditonLineDelta>
 								<mStayOpen>0</mStayOpen>
@@ -28459,7 +28459,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 							</Trigger>
 							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 								<name>gps-novigrad</name>
-								<script>trigger_func_mapper_localizers_ships_buses_urbimo_novigrad_gps_novigrad()</script>
+								<script>trigger_func_mapper_localizers_ships_buses_ships_urbimo_novigrad_gps_novigrad()</script>
 								<triggerType>0</triggerType>
 								<conditonLineDelta>0</conditonLineDelta>
 								<mStayOpen>0</mStayOpen>
@@ -28499,7 +28499,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 							</regexCodePropertyList>
 							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 								<name>gps-urbimo</name>
-								<script>trigger_func_mapper_localizers_ships_buses_urbimo_wyspaslubow_gps_urbimo()</script>
+								<script>trigger_func_mapper_localizers_ships_buses_ships_urbimo_wyspaslubow_gps_urbimo()</script>
 								<triggerType>0</triggerType>
 								<conditonLineDelta>0</conditonLineDelta>
 								<mStayOpen>0</mStayOpen>
@@ -28519,7 +28519,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 							</Trigger>
 							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 								<name>gps-wyspaslubow</name>
-								<script>trigger_func_mapper_localizers_ships_buses_urbimo_wyspaslubow_gps_wyspaslubow()</script>
+								<script>trigger_func_mapper_localizers_ships_buses_ships_urbimo_wyspaslubow_gps_wyspaslubow()</script>
 								<triggerType>0</triggerType>
 								<conditonLineDelta>0</conditonLineDelta>
 								<mStayOpen>0</mStayOpen>
@@ -28539,88 +28539,6 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 							</Trigger>
 						</TriggerGroup>
 					</Trigger>
-					<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-						<name>urbimo-wyspaslubow-opis</name>
-						<script></script>
-						<triggerType>0</triggerType>
-						<conditonLineDelta>0</conditonLineDelta>
-						<mStayOpen>0</mStayOpen>
-						<mCommand></mCommand>
-						<packageName></packageName>
-						<mFgColor>#ff0000</mFgColor>
-						<mBgColor>#ffff00</mBgColor>
-						<mSoundFile></mSoundFile>
-						<colorTriggerFgColor>#000000</colorTriggerFgColor>
-						<colorTriggerBgColor>#000000</colorTriggerBgColor>
-						<regexCodeList />
-						<regexCodePropertyList />
-						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-							<name>urbimo-gps</name>
-							<script>trigger_func_mapper_localizers_ships_buses_urbimo_wyspaslubow_urbimo_gps()</script>
-							<triggerType>0</triggerType>
-							<conditonLineDelta>2</conditonLineDelta>
-							<mStayOpen>0</mStayOpen>
-							<mCommand></mCommand>
-							<packageName></packageName>
-							<mFgColor>#ff0000</mFgColor>
-							<mBgColor>#ffff00</mBgColor>
-							<mSoundFile></mSoundFile>
-							<colorTriggerFgColor>#000000</colorTriggerFgColor>
-							<colorTriggerBgColor>#000000</colorTriggerBgColor>
-							<regexCodeList>
-								<string>Port.</string>
-								<string>Sa tutaj dwa widoczne wyjscia: zachod i polnocny-wschod.</string>
-							</regexCodeList>
-							<regexCodePropertyList>
-								<integer>2</integer>
-								<integer>2</integer>
-							</regexCodePropertyList>
-						</Trigger>
-						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-							<name>urbimo-noc-gps</name>
-							<script>trigger_func_mapper_localizers_ships_buses_urbimo_wyspaslubow_urbimo_noc_gps()</script>
-							<triggerType>0</triggerType>
-							<conditonLineDelta>2</conditonLineDelta>
-							<mStayOpen>0</mStayOpen>
-							<mCommand></mCommand>
-							<packageName></packageName>
-							<mFgColor>#ff0000</mFgColor>
-							<mBgColor>#ffff00</mBgColor>
-							<mSoundFile></mSoundFile>
-							<colorTriggerFgColor>#000000</colorTriggerFgColor>
-							<colorTriggerBgColor>#000000</colorTriggerBgColor>
-							<regexCodeList>
-								<string>Port.</string>
-								<string>W mroku nocy dostrzegasz dwa widoczne wyjscia: zachod i polnocny-wschod.</string>
-							</regexCodeList>
-							<regexCodePropertyList>
-								<integer>2</integer>
-								<integer>2</integer>
-							</regexCodePropertyList>
-						</Trigger>
-						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-							<name>wyspa-gps</name>
-							<script>trigger_func_mapper_localizers_ships_buses_urbimo_wyspaslubow_wyspa_gps()</script>
-							<triggerType>0</triggerType>
-							<conditonLineDelta>2</conditonLineDelta>
-							<mStayOpen>0</mStayOpen>
-							<mCommand></mCommand>
-							<packageName></packageName>
-							<mFgColor>#ff0000</mFgColor>
-							<mBgColor>#ffff00</mBgColor>
-							<mSoundFile></mSoundFile>
-							<colorTriggerFgColor>#000000</colorTriggerFgColor>
-							<colorTriggerBgColor>#000000</colorTriggerBgColor>
-							<regexCodeList>
-								<string>Przystan.</string>
-								<string>Sa tutaj dwa widoczne wyjscia: poludnie i polnocny-zachod.</string>
-							</regexCodeList>
-							<regexCodePropertyList>
-								<integer>2</integer>
-								<integer>2</integer>
-							</regexCodePropertyList>
-						</Trigger>
-					</TriggerGroup>
 				</TriggerGroup>
 			</TriggerGroup>
 			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">

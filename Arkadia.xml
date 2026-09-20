@@ -6945,9 +6945,19 @@ scripts.misc.knowledge:stop_reading_library()</script>
 												<string>^Widzac, ze na ostrzu gorejacego dlugiego talwara zaczynaja pelzac ogniste plomyki, (?'attacker'\w+(?: \w+ \w+|)) wykonuje szybki zamach, trafiajac (?'target'\w+(?: \w+){0,4}) w (?'where'.+?), pozostawiajac tam (?'damage'spore) oparzenie\.$</string>
 												<string>^Brzeszczot gorejacego dlugiego talwara rozgrzewa sie nagle do czerwonosci, zas po jego powierzchni zaczynaja tanczyc krwistoczerwone plomienie\. Wykorzystujac nadarzajaca sie okazje, (?'attacker'\w+(?: \w+ \w+|)) z calych sil uderza nim (?'target'\w+(?: \w+){0,4}) w (?'where'.+?), pozostawiajac (?'damage'potworne) obrazenia\.$</string>
 												<string>^(?'attacker'\w+(?: \w+){0,4}) niezgrabnym ruchem (?'damage'probuje) zaskoczyc (?'target'\w+(?: \w+){0,4}), ale je(?:go|j) wyrzucony przed siebie gorejacy dlugi talwar dzga tylko powietrze\.$</string>
-												<string>^(?'attacker'\w+(?: \w+){0,4}) szybkim ruchem kluje (?'target'\w+(?: \w+){0,4}) gorejacym dlugim talwarem w (?'where'.+?)\. W momencie dotyku z ostrza miecza bucha fala ognia, ktora znacznie parzy przeciwnika\.$</string>
+												<string>^(?'attacker'\w+(?: \w+){0,4}) szybkim ruchem kluje (?'target'\w+(?: \w+){0,4}) gorejacym dlugim talwarem w (?'where'.+?)\. W momencie dotyku z ostrza miecza bucha fala ognia, ktora (?'damage'znacznie) parzy (?:cie|przeciwni(?:czke|ka))\.$</string>
+												<string>^Gdy z silnego zamachu tniesz (?'target'\w+(?: \w+){0,4}) w (?'where'.+?), brzeszczot gorejacego dlugiego talwara (?'damage'wybucha) krwistoczerwonym jezorem ognia, mocno parzac (?:twego przeciwnika|twoja przeciwniczke)\.$</string>
+												<string>^Gdy uderzasz (?'target'\w+(?: \w+){0,4}) gorejacym dlugim talwarem w (?'where'.+?), klinga twego miecza rozpala sie do czerwonosci, (?'damage'parzac) nieznacznie przeciwni(?:ka|czke)\.$</string>
+												<string>^Dostrzegajac slabosc (?'target'\w+(?: \w+){0,4}), blyskawicznie (?:don|do niej) doskakujesz, by wbic swoj gorejacy dlugi talwar w (?'where'.+)\. Klinga miecza wybucha (?'damage'olbrzymim) plomieniem, ktore w mgnieniu oka ogarnia tw(?:ego przeciwnika|oja przeciwniczke), zakanczajac je(?:go|j) zywot\.$</string>
+												<string>^Widzac, ze na ostrzu twego gorejacego dlugiego talwara zaczynaja pelzac ogniste plomyki, wykonujesz szybki zamach, trafiajac (?'target'\w+(?: \w+){0,4}) w (?'where'.+?), pozostawiajac tam (?'damage'spore) oparzenie\.$</string>
+												<string>^Brzeszczot twego gorejacego dlugiego talwara rozgrzewa sie nagle do czerwonosci, zas po jego powierzchni zaczynaja tanczyc krwistoczerwone plomienie\. Wykorzystujac nadarzajaca sie okazje, z calych sil uderzasz nim (?'target'\w+(?: \w+){0,4}) w (?'where'.+?), pozostawiajac (?'damage'potworne) obrazenia\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
 												<integer>1</integer>
 												<integer>1</integer>
 												<integer>1</integer>
@@ -13382,7 +13392,7 @@ scripts.misc.knowledge:stop_reading_library()</script>
 									<regexCodeList>
 										<string>^(?'attacker'\w+(?: \w+){0,4}?) (?'damage'ledwo muska|lekko rani|bardzo ciezko rani|powaznie rani|rani|masakruje|smiertelnie rani) (?'target'cie) (?'weapon'.+?), trafiajac cie w (?'where'.*)\.$</string>
 										<string>^(?'attacker'\w+(?: \w+){0,4}?) (?'damage'ledwo muska|lekko rani|bardzo ciezko rani|powaznie rani|rani|masakruje|smiertelnie rani) (?'target_weapon'.+?), trafiajac (?:go|ja|je) w (?'where'.*)\.$</string>
-										<string>^(\S+(?:\s+\S+){0,3})\s+nie\s+udaje\s+sie\s+trafic\s+(\S+(?:\s+\S+){0,3})\s+((?:lewym|lewa|prawym|prawa)\s+\S+|\S+(?:\s+\S+){2,3})\.$</string>
+										<string>^(\S+(?:\s+\S+){0,3})\s+nie\s+udaje\s+sie\s+trafic\s+(\S+(?:\s+\S+){0,3})\s+((?:lewym|lewa|prawym|prawa)\s+\S+|\S+(?:\s+\S+){0,3})\.$</string>
 									</regexCodeList>
 									<regexCodePropertyList>
 										<integer>1</integer>

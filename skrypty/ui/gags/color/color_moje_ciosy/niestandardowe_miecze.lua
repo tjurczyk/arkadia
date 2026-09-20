@@ -175,7 +175,6 @@ function trigger_func_skrypty_ui_gags_ciosy_gorejacy_dlugi_talwar()
     elseif dmg == "parzac"  then value = 1
     elseif dmg == "spore" then value = 2
     elseif dmg == "wybucha" then value = 3
-    -- znacznie: kolor obrazen potwierdza pasmo wysokie (4/4), ale ono obejmuje stopnie 3-5; sama czworka wynika z pozycji w rozkladzie czestotliwosci
     elseif dmg == "znacznie" then value = 4
     elseif dmg == "potworne" then value = 5
     elseif dmg == "olbrzymim" then return trigger_func_skrypty_ui_gags_ciosy_bron_fin()

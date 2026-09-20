@@ -342,7 +342,7 @@ return {
     "mapper/localizers/ships_buses/ships/rozrog-mekan",
     "mapper/localizers/ships_buses/ships/faroe-skellige-rozrog",
     "mapper/localizers/ships_buses/ships/skellige-hindersfjall",
-    "mapper/localizers/ships_buses/ships/skellige-kaerhemdall",
+    "mapper/localizers/ships_buses/ships/skellige-spikeroog",
     "mapper/localizers/ships_buses/ships/novigrad-skellige",
     "mapper/localizers/ships_buses/ships/novigrad-oxenfurt-bialymost",
     "mapper/localizers/ships_buses/ships/oxenfurt-blaviken",

@@ -27459,7 +27459,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 							</Trigger>
 						</TriggerGroup>
 						<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="yes" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-							<name>skellige-kaerhemdall</name>
+							<name>skellige-spikeroog</name>
 							<script></script>
 							<triggerType>0</triggerType>
 							<conditonLineDelta>0</conditonLineDelta>
@@ -27478,8 +27478,8 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 								<integer>1</integer>
 							</regexCodePropertyList>
 							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>gps_kaerhemdall</name>
-								<script>trigger_func_mapper_localizers_ships_buses_ships_skellige_kaerhemdall_gps_kaerhemdall()</script>
+								<name>gps_spikeroog</name>
+								<script>trigger_func_mapper_localizers_ships_buses_ships_skellige_spikeroog_gps_spikeroog()</script>
 								<triggerType>0</triggerType>
 								<conditonLineDelta>0</conditonLineDelta>
 								<mStayOpen>0</mStayOpen>
@@ -27499,7 +27499,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 							</Trigger>
 							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 								<name>gps_skellige</name>
-								<script>trigger_func_mapper_localizers_ships_buses_ships_skellige_kaerhemdall_gps_skellige()</script>
+								<script>trigger_func_mapper_localizers_ships_buses_ships_skellige_spikeroog_gps_skellige()</script>
 								<triggerType>0</triggerType>
 								<conditonLineDelta>0</conditonLineDelta>
 								<mStayOpen>0</mStayOpen>

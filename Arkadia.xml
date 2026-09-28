@@ -30312,7 +30312,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 					<script>alias_func_put_magics_down()</script>
 					<command></command>
 					<packageName></packageName>
-					<regex>^/odloz_magie(| do (\w+))$</regex>
+					<regex>^/odloz_magie(| do (.+))$</regex>
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
 					<name>przejrzyj magie</name>

@@ -30319,7 +30319,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 					<script>alias_func_przejrzyj_magie()</script>
 					<command></command>
 					<packageName></packageName>
-					<regex>^/przejrzyj(| (\w+))$</regex>
+					<regex>^/przejrzyj(| (.+))$</regex>
 				</Alias>
 			</AliasGroup>
 			<AliasGroup isActive="yes" isFolder="yes">

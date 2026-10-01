@@ -30,11 +30,3 @@ function trigger_func_mapper_localizers_room_gps_kasyno()
     amap:set_position(5465, true)
 end
 
-function trigger_func_mapper_localizers_room_gps_espadon_krzaki_w()
-    amap:set_position(7042, true)
-end
-
-function trigger_func_mapper_localizers_room_gps_espadon_krzaki_e()
-    amap:set_position(7046, true)
-end
-

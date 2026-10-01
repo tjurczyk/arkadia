@@ -28642,6 +28642,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<string>Probujesz znalezc dogodne przejscie przez strumien, lecz woda jest w tym miejscu zbyt gleboka.</string>
 						<string>Probujesz rozpaczliwie wspiac sie na gore, ale zeslizgujesz sie po mokrych kamieniach.</string>
 						<string>^[ &gt;]*Kierujesz sie w strone krzakow porastajacych [a-z-]+ czesc kotliny, lecz bezradnie zatrzymujesz sie przed zwarta sciana kolcow i galezi\.</string>
+						<string>Probujesz przecisnac sie przez krzewy w rozrzedzonym miejscu, rosliny drapia cie po twarzy, zupelnie jakby nie chcac przepuscic intruza.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -28686,6 +28687,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<integer>2</integer>
 						<integer>2</integer>
 						<integer>1</integer>
+						<integer>0</integer>
 					</regexCodePropertyList>
 				</Trigger>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">

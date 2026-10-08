@@ -36,11 +36,6 @@ end
 
 -- Arlekiny
 
-function trigger_func_skrypty_ui_gags_ciosy_arlekiny(value)
-    local target = scripts.gags:who_hits()
-    scripts.gags:gag(value, 6, target)
-end
-
 function trigger_func_skrypty_ui_gags_ciosy_smukly_miecz()
     local target = "moje_ciosy"
     if matches["attacker"] then
@@ -59,7 +54,7 @@ function trigger_func_skrypty_ui_gags_ciosy_smukly_miecz()
     elseif dmg == "zakanczajac" then return trigger_func_skrypty_ui_gags_ciosy_bron_fin()
     end
 
-    trigger_func_skrypty_ui_gags_ciosy_arlekiny(value)
+    scripts.gags:gag(value, 6, target)
 end
 
 -- Szczerba

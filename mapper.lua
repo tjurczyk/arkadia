@@ -19,6 +19,7 @@ if not amap then
         walker_set = false,
         walker_disabled = false,
         walker_on_map_click = true,
+        walker_mode = "timer",
         set_walker_delay = 2,
         walker_delay = 2,
         walker_bind = nil,

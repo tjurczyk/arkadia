@@ -71,66 +71,75 @@ function scripts.plugins_installer:handle_unzip(event, plugin_name, reference, .
             local base_name = self.plugin_directory .. reference
             local files = lfs.list_files(base_name)
 
-            if table.size(files) == 1 then
-                local source = base_name .. "/" .. files[1]
-                local target = self.plugin_directory .. plugin_name
-                local old_target = target .. "_todelete"
+            if table.size(files) == 0 then
+                scripts:print_log("[ERROR] Paczka pluginu " .. plugin_name .. " jest pusta")
+                scripts.installer.delete_dir(base_name)
+                return
+            end
 
-                if lfs.isdir(target) then
-                    local success, err = os.rename(target, old_target)
+            -- A zip with a single top-level directory is unwrapped; otherwise the
+            -- unpacked directory itself becomes the plugin directory.
+            local wrapped = table.size(files) == 1 and lfs.isdir(base_name .. "/" .. files[1])
+            local source = wrapped and (base_name .. "/" .. files[1]) or base_name
+            local target = self.plugin_directory .. plugin_name
+            local old_target = target .. "_todelete"
 
-                    if not success then
-                        scripts:print_log(
-                            "[ERROR] Nie udalo sie przygotowac aktualizacji pluginu "
-                                .. plugin_name
-                                .. ": "
-                                .. tostring(err)
-                        )
-                        return
-                    end
-                end
+            if lfs.isdir(old_target) then
+                pcall(scripts.installer.delete_dir, old_target)
+            end
 
-                local success, err = os.rename(source, target)
+            if lfs.isdir(target) then
+                local success, err = os.rename(target, old_target)
 
                 if not success then
-                    if lfs.isdir(old_target) then
-                        local rollback_success, rollback_err =
-                            os.rename(old_target, target)
-
-                        if not rollback_success then
-                            scripts:print_log(
-                                "[ERROR] Nie udalo sie przywrocic poprzedniej wersji pluginu "
-                                    .. plugin_name
-                                    .. ": "
-                                    .. tostring(rollback_err)
-                            )
-                            return
-                        end
-                    end
-
                     scripts:print_log(
-                        "[ERROR] Nie udalo sie zaktualizowac pluginu "
+                        "[ERROR] Nie udalo sie przygotowac aktualizacji pluginu "
                             .. plugin_name
                             .. ": "
                             .. tostring(err)
                     )
                     return
                 end
+            end
 
-                scripts.installer.delete_dir(base_name)
+            local success, err = os.rename(source, target)
 
+            if not success then
                 if lfs.isdir(old_target) then
-                    scripts.installer.delete_dir(old_target)
+                    local rollback_success, rollback_err =
+                        os.rename(old_target, target)
+
+                    if not rollback_success then
+                        scripts:print_log(
+                            "[ERROR] Nie udalo sie przywrocic poprzedniej wersji pluginu "
+                                .. plugin_name
+                                .. ": "
+                                .. tostring(rollback_err)
+                        )
+                        return
+                    end
                 end
-            elseif table.size(files) > 1 then
-                os.rename(
-                    self.plugin_directory .. plugin_name,
-                    self.plugin_directory .. plugin_name .. "_todelete"
+
+                scripts:print_log(
+                    "[ERROR] Nie udalo sie zaktualizowac pluginu "
+                        .. plugin_name
+                        .. ": "
+                        .. tostring(err)
                 )
-                os.rename(base_name, self.plugin_directory .. plugin_name)
-                scripts.installer.delete_dir(
-                    self.plugin_directory .. plugin_name .. "_todelete"
-                )
+                return
+            end
+
+            if wrapped then
+                scripts.installer.delete_dir(base_name)
+            end
+
+            if lfs.isdir(old_target) then
+                local deleted, del_err = pcall(scripts.installer.delete_dir, old_target)
+                if not deleted then
+                    scripts:print_log(
+                        "[WARN] Nie udalo sie usunac starej wersji pluginu: " .. tostring(del_err)
+                    )
+                end
             end
         end
 

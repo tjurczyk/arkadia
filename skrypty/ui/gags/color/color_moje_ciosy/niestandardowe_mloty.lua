@@ -102,9 +102,9 @@ function trigger_func_skrypty_ui_gags_ciosy_kosciany_kilof()
         value = 1
     elseif dmg == "znaczne" then
         value = 2
-    elseif dmg == "bardzo rozlegle" then
-        value = 3
     elseif dmg == "bolesne" then
+        value = 3
+    elseif dmg == "bardzo rozlegle" then
         value = 4
     elseif dmg == "straszliwe" then
         value = 5
